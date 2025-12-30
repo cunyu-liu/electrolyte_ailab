@@ -1,0 +1,67 @@
+# Question
+
+Molecular interactions are a crucial aspect in chemical biology. In chemical biology research, small chemical molecules may either directly interact with targets or regulate the interactome between targets and other proteins. With the advancement of chemical biology, detection techniques for molecular interactions have also evolved, leading to the emergence of numerous methods with varying response speeds, precision, and application scopes. Regarding detection techniques for molecular interactions, please select the most accurate statement from the following options.
+
+A. Co-immunoprecipitation (Co-IP) is one of the most commonly used methods for detecting protein-protein interactions within cells, providing information about these interactions in the cellular context. Co-IP describes direct protein-protein interactions within cells and can be used for qualitative or semi-quantitative analysis. It is often combined with analytical methods such as mass spectrometry.  
+B. The proximity ligation assay (PLA) technology exhibits extremely high sensitivity, enabling the detection of extremely weak protein-protein interactions within cells. In the proximity ligation assay, DNA amplification can generate thousands of DNA strands; fluorescently labeled DNA fragments can complement the amplified products, thereby achieving signal amplification for weak signals. Additionally, when using the proximity ligation assay, it is important to avoid using primary antibodies from the same species to detect two interacting protein targets.  
+C. Microscale thermophoresis (MST) is a technique capable of detecting interactions without immobilization, offering advantages such as minimal sample requirement and rapid detection. MST specifically measures concentration changes caused by the thermophoresis of labeled molecules in a temperature gradient field, enabling the detection of molecular interactions in cell lysates. Considering a 1:1 binding process, when the receptor concentration is  $50\mathrm{nM}$ , the fitted curve yields an  $EC_{50}$  of  $42.75\mathrm{nM}$  and a  $K_{d}$  of  $35.4\mathrm{nM}$ . The measured  $K_{d}$  is slightly higher than the true value.
+
+D. Isothermal titration calorimetry (ITC) can measure the thermodynamic effects of molecular interactions, binding stoichiometry, binding dissociation constant, and other information. ITC has strict requirements for the strength of molecular interactions. Assuming the binding constant of a small molecule compound to a protein is on the order of  $10^{12}$ , and the protein concentration is  $10^{-7} \, \text{mol} \cdot \text{L}^{-1}$ , direct titration of the protein-small molecule interaction using ITC can only obtain the binding process  $\Delta H$ , without information on  $K_d$  or binding stoichiometry.  
+E. Surface plasmon resonance (SPR) technology is a method to measure interaction strength by detecting changes in the plasmon resonance angle and reflected light intensity before and after the binding of ligands to proteins immobilized on the chip surface. SPR technology can not only perform affinity analysis at the thermodynamic level but also characterize interactions at the kinetic level. Considering an SPR experiment with single-site binding and uniformly fixed receptors, the initial velocity of the adsorption process is usually faster, while the initial velocity of the desorption process is slower.  
+F. Biofilm Interference (BLI) technology is an emerging detection method. The principle of BLI is similar to SPR, but BLI measures the wavelength shift of the interference wave over time after binding. BLI has a broad monitoring range and is insensitive to buffer components, making it suitable for detecting various interactions, from proteins and small molecule inhibitors to antigen-antibody binding. It can even analyze interactions on the surface of live cells, but it cannot be used to estimate the concentration of specific biomolecules in crude samples.
+
+# Answer
+
+Correct Answer: E
+
+# Detailed Explanation
+
+This question examines the description of the principles and application ranges of common interaction methods. Option A's statement "describing direct protein-protein interactions within cells" is incorrect because IP experiments often capture multiple proteins in protein complexes, where these proteins may not necessarily interact directly with each other. To prove direct interactions, additional experiments such as chemical crosslinking or in vitro pull-down assays are required, making this option incorrect.
+
+# CHECKPOINT
+
+1 PTS
+
+Co-IP can detect either direct or indirect interactions
+
+Option B describes PLA technology. PLA employs a rolling circle amplification method, which differs from traditional DNA replication by producing only a single DNA strand containing thousands of repeat fragments. These repeat fragments generate signals by hybridizing with fluorescent probes, making option B incorrect.
+
+# CHECKPOINT
+
+1 PTS
+
+Rolling circle amplification in PLA technology produces only one DNA strand
+
+Option C describes MST technology. MST not only detects thermophoresis but also measures temperature-dependent fluorescence intensity changes (TRIC) due to the presence of a temperature field. Therefore, the claim that it exclusively detects thermophoresis is incorrect. MST requires the receptor concentration to be lower than the
+
+$K_{d}$  value. In the given experiment, the receptor concentration is significantly higher, but the  $K_{d}$  can still be estimated by fitting the Hill equation to obtain the  $EC_{50}$ . Since the binding is 1:1, the actual  $K_{d}$  can be roughly estimated as  $K_{d} = 42.75 - 0.5 \times 50 = 17.75\mathrm{nM}$ , meaning the fitted result is correctly larger.
+
+# CHECKPOINT
+
+1 PTS
+
+MST detects both thermophoresis and TRIC effects
+
+Option D describes ITC technology. ITC has strict requirements for molecular interaction strengths, typically requiring the product of the binding constant  $K_{a}$  and the initial protein concentration  $K_{a}[P]_{0}$  to be between 10 and 1000. When  $K_{a}[P]_{0}$  is less than 2, no information can be obtained. In the given system,  $K_{a}[P]_{0}$  is approximately  $10^{5}$ . Under these conditions, although the exact  $K_{d}$  cannot be measured directly, the  $\Delta \mathrm{H}$  and binding stoichiometry (n) can still be determined, making option D incorrect.
+
+# CHECKPOINT
+
+1 PTS
+
+In the given ITC conditions, information about binding stoichiometry can be obtained
+
+Option E describes SPR technology. For a single-site, uniformly fixed receptor SPR experiment, the interaction process can be described by first-order kinetics. Deriving the kinetic equations, the adsorption process yields  $\frac{d[PL]}{dt} = c(k_{on}[L] + k_{off})e^{-(k_{on}[L] + k_{off})t}$ , while the desorption process (with  $[L] = 0$ ) gives  $\frac{d[PL]}{dt} = ck_{off}e^{-k_{off}t}$ . Considering the initial rate at  $t = 0$ , it is evident that the initial rate of adsorption is faster, making option E correct.
+
+# CHECKPOINT
+
+1 PTS
+
+In SPR experiments following first-order kinetics, adsorption is typically faster initially while desorption is slower
+
+Option F describes BLI technology, which is similar in principle to SPR. BLI is highly sensitive and widely applicable. Since its binding rate is often correlated with analyte concentration, it can determine the concentration of a specific molecule in a sample by fitting a standard curve. In practice, BLI is also commonly used to measure the concentration of carbohydrate compounds, making option F incorrect.
+
+# CHECKPOINT
+
+1 PTS
+
+By fitting a concentration-binding rate standard curve, BLI can be used for concentration determination

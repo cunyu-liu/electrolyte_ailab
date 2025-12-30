@@ -1,0 +1,90 @@
+# 题目
+
+1915年诺贝尔化学奖获得者Willstätter在20世纪前期首次通过人工合成的方法合成了环辛四烯（后面简称为COT)，其合成路线如下图所示：
+
+![](images/ebb75ee3f668589bcebfe5e5156c76e599a856d5ed651b377571d43f890ebf00.jpg)
+
+起始反应物  $\mathrm{O} = \mathrm{C} 1 \mathrm{CC} 2 \mathrm{~N}(\mathrm{C}) \mathrm{C}(\mathrm{C} 1) \mathrm{CCC} 2$  在 Na 和乙醇条件下生成  ${ }^{**} \mathrm{A}^{**}$ , 随后  ${ }^{**} \mathrm{A}^{**}$  在乙酸、硫酸条件下生成  ${ }^{**} \mathrm{B}^{**}$ ,  ${ }^{**} \mathrm{B}^{**}$  在碘甲烷、氧化银作用下加热产生  ${ }^{**} \mathrm{C}^{**}$ ,  ${ }^{**} \mathrm{C}^{**}$  在溴、二甲胺作用下生成  ${ }^{**} \mathrm{D}^{**}$ ,  ${ }^{**} \mathrm{D}^{**}$  在碘甲烷、氧化银作用下加热产生 COT
+
+随着对于COT研究的逐渐深入，科学家们发现COT在合成导电高分子聚合材料中有着重要的应用。如下图所示合成路线，H为一种常见导电高分子聚合材料，由COT经过一系列反应得到。
+
+![](images/fe8ac24f8619adcc383cddd5da7b7639cea17e79b4cdc6b9dd7ae8ab0fd050f9.jpg)
+
+n分子COT在加热条件下与O=C(OC)C#CC(OC)=O反应生成n分子**E**, n分子**E**在Grubbs二代催化剂作用下生成**F**, **F**经加热生成**H**和n分子**G**
+
+# 选出下列选项中正确的一项
+
+A.  $\mathrm{COT}$  可以与 U 生成化学式为  $\mathrm{U}(\mathrm{COT})_{2}$  的配合物, 该配合物在氧气中氧化生成  $\mathrm{U}_{3} \mathrm{O}_{8}$ , 在该燃烧反应的化学方程式中, 生成一分子  $\mathrm{U}_{3} \mathrm{O}_{8}$  需要消耗 21.33 分子氧气  
+B. C 的不饱和度为3  
+C. D 中不存在共轭双键
+
+D. B 生成 C 的反应中, 产生了一原子数为 13 的小分子, 该小分子会进一步与碘甲烷反应  
+E. F 具有导电性  
+F. E有两个环  
+G. G 中存在共轭体系, 共有 6 个原子参与共轭
+
+# 答案
+
+正确答案: D
+
+# 详细解析
+
+U 的 COT 配合物化学式为  $\mathrm{U}(\mathrm{C}_{8} \mathrm{H}_{8})_{2}$ , 氧化为一分子  $\mathrm{U}_{3} \mathrm{O}_{8}$  需要消耗三分子  $\mathrm{U}(\mathrm{C}_{8} \mathrm{H}_{8})_{2}$ , 同时作为配体的 COT 被氧化为 48 分子  $\mathrm{CO}_{2}$  和 24 分子  $\mathrm{H}_{2} \mathrm{O}$ , 这一过程共消耗  $8+48^{*} 2+24=128$  个氧原子, 即 64 分子氧气。
+
+# CHECKPOINT
+
+1 PTS
+
+生成一分子  $\mathrm{U}_{3} \mathrm{O}_{8}$  需要消耗 64 分子氧气，选项A错误
+
+在 COT 的合成路线中，首先在钠乙醇中发生羰基的还原，变成羟基，得到 OC1CC2N(C)C(C1)CCC2 (A)；随后 A 在酸性条件下失水消除得到CN1C2CCCC1C=CC2 (B)；在 B 生成 C 的过程中，碘甲烷与氨基反应生成季铵盐，氧化银作为碱在加热条件下发生 Hoffmann 消除，由于 B 中氨基与主环成两根键，因此可以消除两次，得到 C1=C\C=C/C=C\CC/1 (C)，不饱和度为 4。
+
+# CHECKPOINT
+
+1 PTS
+
+C 的化学式为  $\mathrm{C}_{8} \mathrm{H}_{10}$ , 不饱和度为 4 , 选项B错误
+
+在使用碘甲烷的 Hoffmann 消除反应中，碘甲烷会保持与氨基反应生成季铵盐，最终得到三个烷基为甲基的季铵盐，随后消除，离去一分子三甲胺，原子数为 13，并可以进一步与碘甲烷反应产生四甲基碘化铵。
+
+# CHECKPOINT
+
+1 PTS
+
+B生成C的反应中消除一分子原子数为13的三甲胺，其可进一步与碘化钾反应，选项D正确
+
+C在溴和二甲胺反应下得到D，应当是溴与双键发生加成后被二甲胺取代，最后再进行一次Hoffmann消除得到COT。溴的加成反应和二甲胺的取代可能产生多种产物，但是产物中保留共轭双键更加稳定，因此D可能为CN(C)C1CCC(N(C)C)/C=C\C=C/1（D1）或CN(C)C1C(N(C)C)CC/C=C\C=C/1（D2），其中D2在发生一次Hoffmann消除后会得到共轭体系，此时另一氨基在  $sp^2$  碳上，无法再进行消除，D的实际结构为D1。但无论是D1还是D2都具有共轭体系。
+
+# CHECKPOINT
+
+1 PTS
+
+加成会倾向于得到更稳定的带共轭体系的产物，选项C错误
+
+在常见有机导电高分子中，都需要具有共轭主电子体系。COT 在加热条件下与丁炔二酸二甲酯反应，发生 Diels-Alder 反应，可能得到  $\mathrm{O} = \mathrm{C}(\mathrm{OC})\mathrm{C}1 = \mathrm{C}(\mathrm{C}(\mathrm{OC}) = \mathrm{O})\mathrm{C}2 / \mathrm{C} = \mathrm{C}\backslash \mathrm{C} = \mathrm{C} / \mathrm{C}1\mathrm{C} = \mathrm{C}2$  （E1）或共轭双键环化为四元环的异构体  $\mathrm{O} = \mathrm{C}(\mathrm{OC})\mathrm{C}1 = \mathrm{C}(\mathrm{C}(\mathrm{OC}) = \mathrm{O})\mathrm{C}2\mathrm{C}3\mathrm{C} = \mathrm{CC}3\mathrm{C}1\mathrm{C} = \mathrm{C}2$  （E2）。其中 E1 无法在 Grubbs 催化剂的作用下形成聚合物，而 E2 可以通过 ROMP 反应得到聚合物，因此 E 的结构为 E1，含有 3 个环。
+
+# CHECKPOINT
+
+1 PTS
+
+E 的结构为  $\mathrm{O} = \mathrm{C}(\mathrm{OC})\mathrm{C}1 = \mathrm{C}(\mathrm{C}(\mathrm{OC}) = \mathrm{O})\mathrm{C}2\mathrm{C}3\mathrm{C} = \mathrm{CC}3\mathrm{C}1\mathrm{C} = \mathrm{C}2$ ，含有 3 个环，选项F错误
+
+E 可以通过 ROMP 反应得到 F，结构如下图所示，其中不含共轭主电子体系，不具有导电性。
+
+![](images/0307b8a7cca8ee534a0d46dbd474c35ec3d4a6f64af5ddc55e91482ab87cd367.jpg)
+
+该聚合物结构可以表示为  $O = C(C1 = C([C@H]2[C@@H]([C@@H]([C@@H]1C = C2)C = C)C = C)C(OC) = O)OC$  相互之间具有的两个单取代烯基发生烯烃复分解失去一分子乙烯，单体间以双键相连构成的聚合物
+
+# CHECKPOINT
+
+1 PTS
+
+F 不含共轭主电子体系，不具有导电性，选项E错误
+
+F 在加热条件下可以发生逆 Diels-Alder 反应，产生邻苯二甲酸二甲酯（G）和常见导电高分子聚乙炔 (H)，G 中的两个酯基与苯环共轭，有 10 个原子参与共轭。
+
+# CHECKPOINT
+
+1 PTS
+
+G中的两个酯基与苯环共轭，有10个原子参与共轭，选项G错误

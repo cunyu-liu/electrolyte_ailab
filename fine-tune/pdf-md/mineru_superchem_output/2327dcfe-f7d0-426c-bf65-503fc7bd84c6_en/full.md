@@ -1,0 +1,105 @@
+# Question
+
+In host-guest chemistry, to improve the stability of the complex formed between the host molecule and the guest molecule, the structure of the host molecule needs to be pre-organized and designed before the host molecule binds to the guest molecule. This process is called the pre-organization of the host molecule (pre-organization). For example, crown ethers (such as 18-crown -6) can be regarded as structures obtained by pre-organizing coordinating oxygen atoms. Such a pre-organized structure enables 18-crown -6 to form a very stable complex with potassium ions.
+
+Missing open brace for superscript 下,  $K^{+}$ 在水溶液中的溶剂化焓  $\Delta_{sov}H_m$
+
+$= -76\mathrm{kJ / mol}$  , but the solvation free energy is only  $\Delta_{sov}G_m^{\circ} = -48~kJ / mol$
+
+Scientists have synthesized a molecule called spherand, and its structure is shown in the figure below.
+
+The following is the structure of the molecule  
+![](images/423103cb19db4f4a81674c205a16ae4623081dcd821097211b4d70ebdf1d267f.jpg)  
+CC1=CC2=C(C(=C1)CC3=CC(=CC(=C3OC)CC4=CC(=CC(=C4OC)CC5=CC(=CC(=C5OC)CC6=C(C(=CC(=C6)C)CC7=C(C(=CC(=C7)C)CC8=C(C(=CC(=C8)C)CC9)=CC(=CC(=C9)C) CC10 = C(=CC(=C10) CC11 = C(=CC(=C11) CC12 = C(=CC(=C12) CC13 = C(=CC(=C13) CC14 = C(=CC(=C14) CC15 = C(=CC(=C15) CC16 = C(=CC(=C16) CC17 = C(=CC(=C17) CC18 = C(=CC(=C18) CC19 = C(=CC(=C19) CC20 = C(=CC(=C20) CC21 = C(=CC(=C21) CC22 = C(=CC(=C22) CC23 = C(=CC(=C23) CC24 = C(=CC(=C24) CC25 = C(=CC(=C25) CC26 = C(=CC(=C26) CC27 = C(C(=CC(=C27)C) CC28 = C(C(=CC(=C28)C) CC29 = C(C(=CC(=C29) C) CC30 = C(C(=CC(=C30) C) CC31 = C(C(=CC(=C31) C) CC32 = C(C(=CC(=C32) C) CC33 = C(C(=CC(=C33) C) CC34 = C(C(=CC(=C34) C) CC35 = C(C(=CC(=C35) C) CC36 = C(C(=CC(=C36) C) CC37 = C(C(=CC(=C37) C) CC38 = C(C(=CC(=C38) C) CC39 = C(C(=CC(=C39) C) CC40 = C(C(=CC(=C40) C) CC41 = C(C(=CC(=C41) C) CC42 = C(C(=CC(=C42) C) CC43 = C(C(=CC(=C43) C) CC44 = C(C(=CC(=C44) C) CC45 = C(C(=CC(=C45) C) CC46 = C(C(=CC(=C46) C) CC47 = C(C(=CC(=C47) C) CC48 = C(C(=CC(=C48) C) CC49 = C(C(=CC(=C49) C) CC50 = C(C(=CC(=C50) C) CC51 = C(C(=CC(=C51) C) CC52 = C(C(=CC(=C52) C) CC53 = C(C(=CC(=C53) C) CC54 = C(C(=CC(=C54) C) CC55 = C(C(=CC(=C55) C) CC56 = C(C(=CC(=C56) C) CC57 = C(C(=CC(=C57) C) CC58 = C(C(=CC(=C58) C) CC59 = C(C(=CC(=C59) C) CC60 = C(C(=CC(=C60) C) CC61 = C(C(=CC(=C61) C) CC62 = C(C(=CC(=C62) C) CC63 = C(C(=CC(=C63) C) CC64 = C(C(=CC(=C64) C) CC65 = C(C(=CC(=C65) C) CC66 = C(C(=CC(=C66) C) CC67 = C(C(=CC(=C67) C) CC68 = C(C(=CC(=C68) C) CC69 = C(C(=CC(=C69) C) CC70 = C(C(=CC(=C70) C) CC71 = C(C(=CC(=C71) C) CC72 = C(C(=CC(=C72) C) CC73 = C(C(=CC(=C73) C) CC74 = C(C(=CC(=C74) C) CC75 = C(C(=CC(=C75) C) CC76 = C(C(=CC(=C76) C) CC77 = C(C(=CC(=C77) C) CC78 = C(C(=CC(=C78) C) CC79 = C(C(=CC(=C79) C) CC80 = C(C ( 80 )
+
+For the following statements, all the correct options are:
+
+a:  $25^{\circ}C$ , 100 kPa  $\text{下}$ ,  $\Delta_{\text{sov}}S_{m}^{\circ} = -94J \cdot mol^{-1} \cdot K^{-1}$ , the reason for the entropy decrease is that the movement of water molecules bound to potassium ions is restricted, mainly due to the reduction of vibrational degrees of freedom.  
+b:  $25^{\circ}C, 100kPa$  下，  $\Delta_{\mathrm{sov}}S_{m}^{\circ} = 94J \cdot mol^{-1} \cdot K^{-1}$ ，the reason for the entropy increase is that the movement of water molecules bound to potassium ions is restricted, mainly due to the reduction of translational and rotational degrees of freedom.  
+c: In aqueous solution, the pre-organized 18-crown-6 is more likely to bind to  $K^{+}$  than water molecules, and this phenomenon is mainly due to the effect of entropy.  
+d: In aqueous solution, the pre-organized 18-crown-6 is more difficult to bind to  $K^{+}$  than water molecules, and this phenomenon is mainly due to the effect of enthalpy.  
+e: In aqueous solution, the pre-organized 18-crown-6 is more likely to bind to  $K^{+}$  than water molecules, and this phenomenon is mainly due to the effect of enthalpy.  
+f: In aqueous solution, the pre-organized 18-crown  $-6$  is more difficult to bind to  $K^{+}$  than water molecules, and this phenomenon is mainly due to the effect of entropy.
+
+g: Compared to 18-crown-6, spherand is more likely to bind to  $Li^{+}$ , because the absolute value of the entropy decrease of spherand binding to  $Li^{+}$  is smaller than that of 18-crown-6.  
+h: Compared to 18-crown-6, spherand is more likely to bind to  $Li^{+}$ , because the absolute value of the enthalpy change of spherand binding to  $Li^{+}$  is greater than that of 18-crown-6.  
+i: Compared to 18-crown -6, spherand is more difficult to bind to  $Li^{+}$ , because the absolute value of the entropy decrease of spherand binding to  $Li^{+}$  is greater than that of 18-crown -6.  
+j: Compared to 18-crown -6, spherand is more difficult to bind to  $Li^{+}$ , because the absolute value of the enthalpy change of spherand binding to  $Li^{+}$  is smaller than that of 18-crown -6.  
+k: Compared to 18-crown-6, spherand is more likely to bind to  $Li^{+}$ , because the absolute value of the entropy increase of spherand binding to  $Li^{+}$  is greater than that of 18-crown-6.  
+1: Compared to 18-crown -6, spherand is more difficult to bind to  $Li^{+}$ , because the absolute value of the entropy increase of spherand binding to  $Li^{+}$  is smaller than that of 18-crown -6.
+
+A. c, g, h  
+B. a, c, g, h  
+C. c, g  
+D. a, b, c  
+E. c, e, i, j  
+F. d, f, j, k  
+G. a, e, j, i  
+H. a, f, g, h  
+1. a, g, h
+
+# Answer
+
+Correct Answer: A
+
+# Detailed Explanation
+
+Obtained from  $\Delta_{sov}G_m^\circ = \Delta_{sov}H_m^\circ -T\Delta_{sov}S_m^\circ$  ..  $\Delta_{sov}S_m^{\circ} = -94J\cdot mol^{-1}\cdot K^{-1}$  . The movement of water molecules bound to potassium ions is restricted, resulting in a negative entropy change for the reaction. The reduction in translational and rotational degrees of freedom of multiple water molecules in the potassium ion hydration shell will lead to a significant entropy decrease.
+
+# CHECKPOINT
+
+1 PTS
+
+The reduction in translational and rotational degrees of freedom of multiple water molecules in the potassium ion hydration shell will lead to a significant entropy decrease.
+
+# a,b incorrect
+
+Because the structure of 18-crown-6 can be regarded as a structure in which the complexation sites are combined in advance, that is, an entropy reduction process is performed in advance, which leads to a smaller entropy reduction in the 18-crown-6 complexation  $K^{+}$  step than the entropy reduction of hydration. Therefore, 18-crown-6 is more likely to bind to  $K^{+}$  than water molecules. More broadly, ring-forming reactions can be seen as pre-assembling two reaction sites in one molecule, which can effectively reduce the entropy decrease of the reaction.
+
+# CHECKPOINT
+
+1 PTS
+
+an entropy reduction process is performed in advance, which leads to a smaller entropy reduction in the 18-crown-6 complexation  $K^{+}$  step than the entropy reduction of hydration
+
+Pre-organized 18-crown  $-6$  is more likely to bind to  $K^{+}$  than water molecules
+
+# CHECKPOINT
+
+1 PTS
+
+Pre-organized 18-crown  $-6$  is more likely to bind to  $K^{+}$  than water molecules
+
+# c correct
+
+The process of crown ether complexation with potassium ions and the process of potassium ion hydration are both processes in which oxygen atoms and metal ions generate electrostatic interactions, and the coordination numbers of the metal ions are also similar, so the enthalpy changes of these two processes are not much different, so it is not the effect of enthalpy.
+
+# CHECKPOINT
+
+1 PTS
+
+The process of crown ether complexation with potassium ions and the process of potassium ion hydration are both processes in which oxygen atoms and metal ions generate electrostatic interactions, and the coordination numbers of the metal ions are similar, the enthalpy changes of these two processes are not much different
+
+# d,e,f incorrect
+
+Crown ethers are flexible macrocyclic compounds whose carbon-carbon and carbon-oxygen bonds can rotate freely; however, after complexation with  $Li^{+}$ , their ring structure becomes rigid, which also leads to entropy reduction. In spherand molecules, due to the steric hindrance of the benzene ring, their structure is very rigid; therefore, the entropy reduction of spherands before and after binding to metal ions is smaller. Spherands pre-expend more entropy than crown ethers before complexation.
+
+# CHECKPOINT
+
+1 PTS
+
+the entropy reduction of spherands before and after binding to metal ions is smaller. Spherands pre-expend more entropy than crown ethers before complexation.
+
+On the other hand, due to the restriction of the rigid ring system of spherands, the distance between the six oxygen atoms in the spherands is short, and the repulsive force is large; after the spherand complexes with  $Li^{+}$ , the repulsive force between the oxygen atoms is alleviated; therefore, relative to crown ethers, spherand complexation with  $Li^{+}$  is a reaction with a more negative enthalpy change. Spherands pre-expend more enthalpy than crown ethers before complexation.
+
+# CHECKPOINT
+
+1 PTS
+
+the distance between the six oxygen atoms in the spherands is short, and the repulsive force is large; after the spherand complexes with  $Li^{+}$ , the repulsive force between the oxygen atoms is alleviated; relative to crown ethers, spherand complexation with  $Li^{+}$  is a reaction with a more negative enthalpy change
+
+Spherands are more likely to complex with  $Li^{+}$
+
+g,h correct, i,j,k,l incorrect
+
+Answer A is correct.

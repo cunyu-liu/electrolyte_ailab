@@ -1,0 +1,113 @@
+# 题目
+
+有下述五个过程：
+
+1. 在温热的乙腈溶液中氟化钠与二氯化硫反应，产物之一是黄红色液体；  
+2. 高温高压下Ni和  $\mathrm{PF}_3$  反应，生成一种四面体型分子；  
+3. 向偏硼酸钠中通入足量二氧化碳生成硼砂晶体；  
+4.少量  $\mathrm{ClF}_3$  加入肼的溶液当中剧烈反应；  
+5. 铜与四氧化二氮在硝基甲烷中反应，产物含  $\mathrm{Cu} 22.73\%$
+
+根据上述五个过程的化学方程式（系数为最简整数比），下列说法中错误的是
+
+A. 过程1化学反应方程式系数和为13  
+B. 过程2化学反应方程式系数和为6  
+C. 过程3中反应物的系数和为  $17$  
+D. 过程4中反应物的系数和为6  
+E. 过程5的产物是一种重要的生物分子  
+F. 过程4产物均为双原子小分子  
+G. 以上选项均不正确
+
+# 答案
+
+正确答案：F
+
+# 详细解析
+
+这是一道化学方程式题目，主要考察对于无机反应产物的推断。
+
+过程1中，包含S和Cl的黄红色液体为  $\mathrm{S}_2\mathrm{Cl}_2$  ，可以据此判断S和Cl的去向。由于NaF参与了反应，Na的去向就仅为和Cl结合，F的去向也仅为和S结合，形成常见的  $\mathrm{SF}_4$  。
+
+# CHECKPOINT
+
+1 PTS
+
+产物为  $\mathrm{S}_2\mathrm{Cl}_2$  、NaCl和  $\mathrm{SF}_4$
+
+因此，配平的方程式为  $4\mathrm{NaF} + 3\mathrm{SCl}_2 = \mathrm{S}_2\mathrm{Cl}_2 + 4\mathrm{NaCl} + \mathrm{SF}_4$  ，系数和为13，A选项正确。
+
+# CHECKPOINT
+
+0.5 PTS
+
+过程1配平后方程系数和为13
+
+过程2中，四面体型分子为  $\mathrm{Ni}(\mathrm{PF}_3)_4$  ，配平方程式为  $\mathrm{Ni} + 4\mathrm{PF}_3 = \mathrm{Ni}(\mathrm{PF}_3)_4$  ，系数和为6，B选项正确。
+
+# CHECKPOINT
+
+1 PTS
+
+四面体型分子对应四个配体，配平后方程式系数和为6
+
+过程3中，硼砂晶体为  $\mathrm{Na_2B_4O_7\cdot 10H_2O}$  。此外，注意到  $\mathrm{CO_2}$  足量，形成的  $\mathrm{Na_2CO_3}$  会进一步和  $\mathrm{CO_2}$  反应，产物应为  $\mathrm{NaHCO_3}$  。
+
+# CHECKPOINT
+
+1 PTS
+
+硼砂为  $\mathrm{Na}_{2} \mathrm{~B}_{4} \mathrm{O}_{7} \cdot 10 \mathrm{H}_{2} \mathrm{O}$ , 且反应产物为  $\mathrm{NaHCO}_{3}$
+
+因此，配平的方程式为  $4\mathrm{NaBO}_{2} + 2\mathrm{CO}_{2} + 11\mathrm{H}_{2}\mathrm{O} = \mathrm{Na}_{2}\mathrm{B}_{4}\mathrm{O}_{7}\cdot 10\mathrm{H}_{2}\mathrm{O} + 2\mathrm{NaHCO}_{3}$ ，反应物系数和为17，C选项正确。
+
+# CHECKPOINT
+
+0.5 PTS
+
+过程2配平后方程式反应物系数和为17
+
+过程4中，题干提出"剧烈反应"，说明发生了剧烈的氧化还原反应，有  $\mathrm{N}_2$  生成。Cl(III)具有强氧化性，会被还原至-1价。需要指出，由于0价Cl（即  $\mathrm{Cl}_2$  )也具有强氧化性，会和  $\mathrm{N}_2\mathrm{H}_4$  继续反应，产物中不应出现 $\mathrm{Cl}_2$  。
+
+# CHECKPOINT
+
+1 PTS
+
+过程4反应产物中Cl为-1价
+
+题干中指出反应环境为肼的溶液，应当注意产物的存在形式。生成的HCl和HF会和肼结合，形成  $\mathrm{N}_2\mathrm{H}_5\mathrm{Cl}$  和  $\mathrm{N}_2\mathrm{H}_5\mathrm{F}$  。
+
+# CHECKPOINT
+
+1 PTS
+
+反应产物应当与肼结合形成  $\mathrm{N}_2\mathrm{H}_5\mathrm{Cl}$  和  $\mathrm{N}_2\mathrm{H}_5\mathrm{F}$
+
+因此，配平的化学方程式为  $\mathrm{ClF}_3 + 5\mathrm{N}_2\mathrm{H}_4 = \mathrm{N}_2 + \mathrm{N}_2\mathrm{H}_5\mathrm{Cl} + 3\mathrm{N}_2\mathrm{H}_5\mathrm{F}$  。反应物的系数和为6，选项D正确；产物中不仅只有双原子分子，选项F错误。
+
+# CHECKPOINT
+
+0.5 PTS
+
+过程4反应物系数和为6
+
+过程5中，不妨假设产物为  $\mathrm{CuN_xO_y}$ ，解不定方程  $\frac{63.55}{63.55 + 14.01\mathrm{x} + 16\mathrm{y}} = 0.2273$ ，其中，x和y均为整数。其一组解为  $\mathrm{x} = 4, \mathrm{y} = 10$ ，即  $\mathrm{CuN_4O_{10}}$ 。考虑元素守恒，3个  $\mathrm{N}_2\mathrm{O}_4$  除去产物  $\mathrm{CuN_4O_{10}}$  还剩两个N和两个O，即两个NO分子。
+
+# CHECKPOINT
+
+1 PTS
+
+过程5反应产物为  $\mathrm{CuN_4O_{10}}$
+
+因此，配平的化学方程式为  $\mathrm{Cu} + 3\mathrm{N}_2\mathrm{O}_4 = \mathrm{CuN}_4\mathrm{O}_{10} + 2\mathrm{NO}$ ，事实上，即  $\mathrm{Cu(NO_3)_2\cdot N_2O_4}$ 。由于NO是重要的生物分子，选项E正确。
+
+# CHECKPOINT
+
+1 PTS
+
+过程5另一个产物为NO
+
+# CHECKPOINT
+
+1 PTS
+
+选项D错误，A,B,C,E,F均正确

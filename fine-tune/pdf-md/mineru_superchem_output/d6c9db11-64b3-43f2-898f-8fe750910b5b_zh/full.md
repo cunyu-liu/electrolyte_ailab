@@ -1,0 +1,95 @@
+# 题目
+
+开采矿物会产生大量废水，具有较高选择性的碘量法测定钴含量步骤如下：
+
+\textcircled{1} 称取 0.2517 克三氧化二砷基准物, 溶于  $10\% \mathrm{NaOH}$ , 定容至  $250.0 \mathrm{~mL}$  。
+
+$\times$  textcircled{2} 取废水  $500.0 \mathrm{~mL}$ , 蒸发浓缩后加入一定量硝酸-盐酸, 蒸发至干, 用适量水溶解可溶性盐, 再次加入硝酸和氯酸钾, 煮沸, 过滤沉淀, 洗涤沉淀。
+
+$\mathrm{pH} = 9 - 9.5$  ，移入  $50.0 \mathrm{~mL}$  碘标准溶液，震荡后静置一段时间。
+
+\textcircled{4} 用亚砷酸钠溶液滴定过量的碘，近终点时加入淀粉，待蓝色褪去后读数。空白实验消耗亚砷酸钠  $30.46 \mathrm{~mL}$ ，滴定实验消耗亚砷酸钠  $14.65 \mathrm{~mL}$ 。
+
+根据以上内容，选择正确答案。
+
+A. 其他选项均不正确  
+B. 体系中亚砷酸溶液滴定碘的化学方程式如下:
+
+$$
+\mathrm {A s O} _ {3} ^ {3 -} + \mathrm {I} _ {2} + 2 \mathrm {N H} _ {3} + \mathrm {H} _ {2} \mathrm {O} \rightarrow \mathrm {A s O} _ {4} ^ {3 -} + 2 \mathrm {I} ^ {-} + 2 \mathrm {N H} _ {4} ^ {+}
+$$
+
+C. 可以准确称取升华提纯的碘固体配制碘标准溶液, 再用  $\mathrm{Na}_{2} \mathrm{~S}_{2} \mathrm{O}_{3}$  溶液代替亚砷酸钠溶液进行滴定。  
+D. 试样中Co元素浓度为  $18.96 \mathrm{mg} / \mathrm{L}$  
+E. 试样中Co元素浓度为  $9.48 \mathrm{mg} / \mathrm{L}$  
+F. 试样中Co元素浓度为  $37.93 \mathrm{mg} / \mathrm{L}$
+
+# 答案
+
+正确答案: F
+
+# 详细解析
+
+化学反应方程式中，砷酸分子第三步电离的pKa为11.50，第二步电离的pKa为6.96。铵根离子的pKa为9.25。
+
+# CHECKPOINT
+
+1 PTS
+
+砷酸分子第三步电离的pKa为11.50，第二步电离的pKa为6.96。铵根离子的pKa为9.25
+
+因此，反应方程式中砷酸分子的存在形式应为  $\mathrm{HAsO}_4^{2-}$ ，所以选项B错误。
+
+# CHECKPOINT
+
+1 PTS
+
+砷酸分子的存在形式应为  $\mathrm{HAsO}_4^{2-}$  。
+
+碱性条件下  $\mathrm{I}_2$  与  $\mathrm{S}_2\mathrm{O}_3^{2-}$  的反应不定量，可能生成高价硫产物，无法用作滴定。所以选项C错误。
+
+# CHECKPOINT
+
+1 PTS
+
+碱性条件下  $\mathrm{I}_{2}$  与  $\mathrm{S}_{2} \mathrm{O}_{3}^{2-}$  的反应不定量
+
+As(III)会被氧化为  $\mathrm{As(V)}$  ，  $\mathrm{I}_2(0)$  会被还原为负一价，  $\mathrm{Co(II)}$  被氧化为  $\mathrm{Co(III)}$  ，因此反应的比例如下： $\mathrm{As_2O_3}\sim 2\mathrm{I_2}\sim 4\mathrm{Co}^{2 + }$  ，当反应比例判断出错，会得到选项D或选项E。
+
+# CHECKPOINT
+
+1 PTS
+
+反应比例  $\mathrm{As}_2\mathrm{O}_3 \sim 2\mathrm{I}_2 \sim 4\mathrm{Co}^{2+}$
+
+$$
+\mathrm {c} \left(\mathrm {A s} _ {2} \mathrm {O} _ {3}\right) = \frac {\mathrm {m} \left(\mathrm {A s} _ {2} \mathrm {O} _ {3}\right)}{\mathrm {V}} \cdot \mathrm {M} \left(\mathrm {A s} _ {2} \mathrm {O} _ {3}\right) = 0. 0 0 5 0 8 9 \mathrm {m o l} \cdot \mathrm {L} ^ {- 1}
+$$
+
+# CHECKPOINT
+
+1 PTS
+
+$$
+\mathrm {c} \left(\mathrm {A s} _ {2} \mathrm {O} _ {3}\right) = 0. 0 0 5 0 8 9 \mathrm {m o l} \cdot \mathrm {L} ^ {- 1}
+$$
+
+空白实验与滴定实验消耗  $\mathrm{As(III)}$  的差，对应着  $\mathrm{Co}$  的含量： $\mathrm{n(Co) = c(As_2O_3)\cdot(V_1 - V_2)\cdot 4 = 0.3218mmol}$
+
+# CHECKPOINT
+
+1 PTS
+
+$$
+\mathrm {n (C o) = 0 . 3 2 1 8 m m o l}
+$$
+
+$\omega (\mathrm{Co}) = \frac{\mathrm{n(Co)}\cdot\mathrm{M(Co)}}{\mathrm{V}} = 37.93\mathrm{mg / L}$  ，因此正确选项为F，故而选项A错误。
+
+# CHECKPOINT
+
+1 PTS
+
+$$
+\omega (\mathrm {C o}) = 3 7. 9 3 \mathrm {m g} / \mathrm {L}
+$$

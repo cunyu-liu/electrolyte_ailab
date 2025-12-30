@@ -1,0 +1,99 @@
+# 题目
+
+聚羟基脂肪酸酯(PHA)是一类可降解的聚酯类材料，对实现可持续发展循环塑料经济有重要作用。其中一类聚合物可由单体A与  ${ }^{t} \mathrm{Bu}-\mathrm{P}_{4}$  、  $\mathrm{BnOH}$  在  $70^{\circ} \mathrm{C}$  下发生开环聚合反应得到。
+
+$$
+^ t \mathrm {B u - P _ {4}} = ^ {\mathrm {t}} \mathrm {B u N P} [ \mathrm {N P} (\mathrm {N M e _ {2}}) _ {3} ] _ {3})
+$$
+
+![](images/ba1ecac4b8c7615e0ff5530c9af7410bde4e4c7dc9e7178b8bf2009dde4e8b0c.jpg)
+
+如图所示为一聚酯类化合物，其重复单元的结构为  $O = C([*)C([R])([R])C(C)O[*]$
+
+有以下说法：
+
+1. A 中含有四元环，且若  $\mathrm{R} = \mathrm{Me}$ ，则其化学式为  $\mathrm{C}_{6} \mathrm{H}_{10} \mathrm{O}_{2}$  
+2.  ${}^{t}\mathrm{{Bu}} - {\mathrm{P}}_{4}$  直接与  $\mathbf{A}$  反应引发聚合  
+3.  ${}^{t}\mathrm{{Bu}} - {\mathrm{P}}_{4}$  仅起到碱的作用  
+4. 若  $\mathrm{R} = \mathrm{Me}$  且考虑聚合物的封端且数均分子量为 5244 , 则该聚合物的平均聚合度为 45  
+5. 已知  $\mathrm{R} = \mathrm{H}$  时，聚合物在  $180^{\circ} \mathrm{C}$  下会迅速分解；则当  $\mathrm{R} = \mathrm{Me}$  时，聚合物在  $180^{\circ} \mathrm{C}$  下也会迅速分解  
+6. 当  $\mathrm{R} = \mathrm{H}$  时, 聚合物热解产物的结构为  $\mathrm{OC}(/ \mathrm{C} = \mathrm{C} \backslash \mathrm{C}) = \mathrm{O}$
+
+则所有正确说法对应编号之和为：
+
+A. 1
+
+B. 2  
+C. 3  
+D. 4  
+E. 5  
+F. 6  
+G. 7  
+H. 8  
+1. 9  
+J. 10  
+K. 11  
+L. 12  
+M. 13  
+N. 14  
+O. 15
+
+# 答案
+
+正确答案: H
+
+# 详细解析
+
+聚合物的重复单元是  $O = C([*)C([R])([R])C(C)O[*]$ ，这是一个酯的结构。开环聚合得到聚酯，意味着  $\mathbf{A}$  是一个环状的内酯，由重复单元结构不难推断出  $\mathbf{A}$  的结构为CC1OC(C1([R])[R])=O，当  $\mathrm{R} = \mathrm{Me}$  时， $\mathbf{A}$  的化学式为  $\mathrm{C}_6\mathrm{H}_{10}\mathrm{O}_2$ 。
+
+# CHECKPOINT
+
+1 PTS
+
+A 的结构为CC1OC(C1([R])[R])=O，含有四元环，当  $\mathrm{R} = \mathrm{Me}$  时，A 的化学式为  $\mathrm{C}_{6} \mathrm{H}_{10} \mathrm{O}_{2}$ ，说法1正确
+
+${ }^{t} \mathrm{Bu}-\mathrm{P}_{4}$  为大位阻碱, 自身亲核能力弱, 无法直接与 A 反应引发聚合, 而是通过拔除苯甲醇的羟基氢产生负离子引发聚合。
+
+# CHECKPOINT
+
+1 PTS
+
+${ }^{t} \mathrm{Bu}-\mathrm{P}_{4}$  位阻大, 无法亲核引发聚合, 说法2错误
+
+# CHECKPOINT
+
+1 PTS
+
+${ }^{t} \mathrm{Bu}-\mathrm{P}_{4}$  通过拔除苯甲醇羟基氢引发聚合, 起到碱的作用, 说法3正确
+
+苯甲醇负离子进攻引发聚合，则聚合物一端封端为苯甲酯，后续聚合依靠产生的醇负离子继续亲核，直到质子化后聚合停止。当  $\mathrm{R} = \mathrm{Me}$  时，聚合物重复单元为  $\mathrm{C}_{6} \mathrm{H}_{10} \mathrm{O}_{2}$ ，分子量为 114.14，两端封端可以认为是增加了额外的苯甲醇，分子量为 108.14。则平均聚合度  $n$  为： $(5244 - 108.14) \div 114.14 = 45$
+
+# CHECKPOINT
+
+1 PTS
+
+聚合物封端为苯甲酯和氢，计算得平均聚合度为  $(5244 - 108.14) \div 114.14 = 45$  ，说法4正确
+
+当  $\mathrm{R} = \mathrm{H}$  时，加热条件下聚合物会发生酯的热裂解，产生烯烃和羧酸。当酯基  $\alpha$  位没有氢时，热裂解无法发生，故当  $\mathrm{R} = \mathrm{Me}$  时聚合物可以保持稳定。
+
+# CHECKPOINT
+
+1 PTS
+
+当酯基  $\alpha$  位不存在氢时，聚合物无法发生热裂解，因此  $\mathrm{R} = \mathrm{Me}$  时聚合物可在  $180^{\circ} \mathrm{C}$  下保持稳定，说法5错误
+
+发生热裂解时，氢与酯基氧处于对位，此时甲基与羰基处于对位的构型最稳定，产生的双键中甲基与羧基处于反式，结构为OC(/C=C/C)=O
+
+![](images/1ff86fd8dd767d31e9591c061086cc926a3b2971eb7fbe360179ddf1bc77e627.jpg)
+
+![](images/e2339dfa08a14792fd6cc3b13b386ad1b50fe111b1ffda90b8a5fcd480c7e967.jpg)
+
+展示出两种（考虑到酯基氧所连碳原子手性）可能的热裂解构象的纽曼投影式，均采取对交叉构象，其中酯基氧处于羰基α位氢的对位，甲基保持在羰基对位，夹在两个氢原子之间使势能最低，随后裂解产生反式双键，图中的R表示聚合物的其他部分，无特殊意义
+
+# CHECKPOINT
+
+1 PTS
+
+热裂解时最稳定的构象中甲基位于羰基对位，热解后得到反式双键，结构为OC(/C=C/C)=O，说法6错误
+
+正确的说法为1，3，4，和为8，选H

@@ -1,0 +1,111 @@
+# 题目
+
+对于某种金属X，将X的氧化物A、一种常见三元酸与该酸的1:1型铵盐混合共热至  $300^{\circ}C$  ，经水洗、干燥可得到化合物Y，式量在240到260之间，且不含结晶水。若将其溶于稀硫酸，溶液颜色无显著变化但有沉淀生成(反应1)，而将其溶于浓硫酸则会得到澄清的红色溶液。将化合物Y于惰性气氛中加热至  $340^{\circ}C$  ，失重  $3.65\%$  ，得到化合物B(反应2)；继续加热至  $460^{\circ}C$  又失重  $10.14\%$  ，得到化合物C(反应3)；随后加热至  $800^{\circ}C$  ，未观察到明显失重，化合物C发生熔化并完全转化为化合物D。D的式量为C的1.5倍。
+
+所有反应的化学方程式系数为最简整数，通过推理判断下面哪个选项是正确的。
+
+A. +5氧化态是金属  $\mathbf{X}$  的稳定氧化态  
+B. Y具有强氧化性  
+C. 反应 1 中产物的物种数大于反应物的物种数  
+D. 反应 1 中产物系数和大于反应物系数和  
+E. 反应3失重部分的平均相对分子质量小于反应2失重部分的平均相对分子质量  
+F. 本题目所有化合物中, 金属元素共有 4 种价态  
+G. 以上选项均不正确
+
+# 答案
+
+正确答案: C
+
+# 详细解析
+
+化合物  $\mathbf{Y}$  可溶于浓硫酸得到澄清红色溶液，可能是含Mn化合物、铁氰化物、碘单质等，结合其它题干不存在氰根离子和碘，可说明中心金属是Mn；还可分析化合物  $\mathbf{Y}$  组成，常见三元酸为磷酸，则  $\mathbf{Y}$  可能是磷酸铵盐、焦磷酸铵盐，结合式量区间焦磷酸铵盐为合理答案，此时金属离子对应第一过渡周期金属元素，结合前述化学性质分析可以确定X为Mn。+5氧化态不是Mn的稳定氧化态，选项A错误。
+
+# CHECKPOINT
+
+1 PTS
+
+金属  $\mathbf{X}$  为  $\mathrm{Mn}$  。
+
+# CHECKPOINT
+
+0.5 PTS
+
++5氧化态不是Mn的稳定氧化态，选项A错误
+
+生成化合物  $\mathbf{Y}$  的反应方程式：
+
+$$
+4 \mathrm {M n O} _ {2} + 4 \mathrm {N H} _ {4} \mathrm {H} _ {2} \mathrm {P O} _ {4} + 4 \mathrm {H} _ {3} \mathrm {P O} _ {4} \rightarrow 4 \mathrm {N H} _ {4} \mathrm {M n P} _ {2} \mathrm {O} _ {7} + 1 0 \mathrm {H} _ {2} \mathrm {O} + \mathrm {O} _ {2}
+$$
+
+Y中Mn为  $+3$  氧化态，不具有强氧化性，选项B错误。
+
+# CHECKPOINT
+
+1 PTS
+
+Y 为  $\mathrm{NH}_{4} \mathrm{MnP}_{2} \mathrm{O}_{7}$ , 其中  $\mathrm{Mn}$  为  $+3$  氧化态, 不具有强氧化性, 选项  $B$  错误。
+
+反应1：  $2\mathrm{NH}_{4}\mathrm{MnP}_{2}\mathrm{O}_{7} + 2\mathrm{H}_{2}\mathrm{SO}_{4} + 4\mathrm{H}_{2}\mathrm{O} \rightarrow (\mathrm{NH}_{4})_{2}\mathrm{SO}_{4} + \mathrm{MnSO}_{4} + \mathrm{MnO}_{2} + 4\mathrm{H}_{3}\mathrm{PO}_{4}$
+
+反应1产物的物种数为4，产物系数和为7，反应物的物种数为3，反应物系数和为8，选项C正确，选项D错误。
+
+# CHECKPOINT
+
+1 PTS
+
+反应1产物的物种数为4，反应物的物种数为3，前者大于后者，选项  $C$  正确。
+
+# CHECKPOINT
+
+1 PTS
+
+反应1产物系数和为7，反应物系数和为8，前者小于后者，选项D错误。
+
+惰性气氛加热失重过程：
+
+第一步失重:  $\mathrm{M}_1 = w_1 \times \mathrm{H} = 3.65 \times 10^{-2} \times 246.922\mathrm{g} \cdot \mathrm{mol}^{-1} = 9.01\mathrm{g} \cdot \mathrm{mol}^{-1}$ , 对应 0.5 个
+
+$\mathrm{H}_2\mathrm{O}$  分子;
+
+# CHECKPOINT
+
+1 PTS
+
+第一步失重  $9.01 \mathrm{~g} / \mathrm{mol}$ , 对应 0.5 个  $H_{2} O$
+
+第二步失重:  $\mathrm{H}_{2} = w_{2} \times \mathrm{H} = 10.14 \times 10^{-2} \times 246.922 \, \mathrm{g} \cdot \mathrm{mol}^{-1} = 25.04 \, \mathrm{g} \cdot \mathrm{mol}^{-1}$ , 对应 0.5
+
+个  $\mathrm{NH}_3$  分子和0.5个  $\mathrm{NH}_2\mathrm{OH}$  分子(进一步分解为  $\mathrm{N}_2$  、  $\mathrm{H}_2\mathrm{O}$  、  $\mathrm{NH}_3$  );
+
+# CHECKPOINT
+
+1 PTS
+
+第二步失重  $25.04 \mathrm{~g} / \mathrm{mol}$
+
+反应2：  $2\mathrm{NH}_{4}\mathrm{MnP}_{2}\mathrm{O}_{7}\rightarrow \mathrm{Mn}_{2}(\mathrm{NH}_{3})_{2}\mathrm{P}_{4}\mathrm{O}_{13} + \mathrm{H}_{2}\mathrm{O}$
+
+反应3：  $3\mathrm{Mn}_{2}(\mathrm{NH}_{3})_{2}\mathrm{P}_{4}\mathrm{O}_{13}\rightarrow 3\mathrm{Mn}_{2}\mathrm{P}_{4}\mathrm{O}_{12} + 4\mathrm{NH}_{3} + \mathrm{N}_{2} + 3\mathrm{H}_{2}\mathrm{O}$
+
+由上，反应3失重部分的平均相对分子量：
+
+$$
+m = (4 \times 1 7. 0 3 4 + 2 8. 0 2 + 3 \times 1 8. 0 1 6) / 8 = 1 8. 7 8
+$$
+
+反应3失重部分平均相对分子量为18.78，反应2失重部分的平均相对分子量为18.02，选项E错误。
+
+整个题目涉及化合物中，共涉及到  $+2$  氧化态  $\left(\mathrm{Mn}_{2} \mathrm{P}_{4} \mathrm{O}_{12}\right)$  、  $+3$  氧化态  $\left(\mathrm{NH}_{4} \mathrm{MnP}_{2} \mathrm{O}_{7}\right)$  、  $+4$  氧化态  $\left(\mathrm{MnO}_{2}\right)$  三种氧化态的  $\mathrm{Mn}$ ，选项  $F$  错误。
+
+# CHECKPOINT
+
+0.5 PTS
+
+反应3失重部分平均相对分子量为18.78，反应2失重部分的平均相对分子量为18.02，选项  $E$  错误。
+
+# CHECKPOINT
+
+1 PTS
+
+整个题目涉及化合物中，涉及到  $+2$  氧化态  $\mathrm{(Mn_2P_4O_{12})}$  、  $+3$  氧化态  $\mathrm{(NH_4MnP_2O_7)}$  、  $+4$  氧化态  $\mathrm{(MnO_2)}$  三种氧化态的  $\mathrm{Mn}$ ，选项  $F$  错误。

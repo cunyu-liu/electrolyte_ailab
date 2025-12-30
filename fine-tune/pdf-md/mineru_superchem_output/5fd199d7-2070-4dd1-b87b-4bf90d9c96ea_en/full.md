@@ -1,0 +1,114 @@
+# Question
+
+The following four reaction substrates for the possible generation of furan via thermal elimination of  $\mathrm{H}_{2}$  were given:
+
+![](images/7401415a732061ec98b5f58667e109181c411a263e30220a0d74e6f12a22bf4b.jpg)
+
+![](images/d56093be466f37fcba41f55c87f578282cfcec4107dbeb9d191cffe3f58e24e6.jpg)
+
+![](images/ce99b911845732e0f393cde0e108971e12ba2a3707fc371b2271a2e4824b2385.jpg)
+
+![](images/90d352acea1d2f3e60b59e81856969ab099fa1811a5d54f76bfb06b722cd3ccf.jpg)
+
+Here are four different chemical molecules, from left to right, the SMILES notations are: `C1=CCOC1`, `C1=COCC1`, `C1COCC1`, `C1COCO1`.
+
+In the absence of a catalyst, select the option that best fits the question regarding the ease with which the reaction proceeds.
+
+A. All other options are incorrect  
+B. The ease of reaction for the first and second reactions from left to right is indistinguishable, and significantly higher than that of other molecules.  
+C. The ease of reaction for the second and third from the left is indistinguishable and significantly higher than other molecules.  
+D. The ease of reaction for the first and fourth, from left to right, is indistinguishable and significantly higher than that of other molecules.  
+E. The ease of reaction for the third and fourth molecules from left to right is indistinguishable and significantly higher than that of other molecules.
+
+F. The ease of reaction for the first substance from left to right is higher than the second, and significantly higher than other molecules.  
+G. The ease of reaction for the second substance from left to right is higher than the first, and significantly higher than other molecules.  
+H. The ease of reaction for the third substance from left to right is higher than that of the second, and significantly higher than that of other molecules.  
+1. The ease of reaction for the second substance from left to right is higher than the third, and significantly higher than other molecules.  
+J. The ease of reaction for the third substance from left to right is higher than that of the fourth, and significantly higher than that of other molecules.  
+K. The ease of reaction for the fourth substance from left to right is higher than the third, and significantly higher than other molecules.  
+L. The ease of reaction for the fourth substance from left to right is higher than the first, and significantly higher than other molecules.  
+M. The ease of reaction for the first substance from left to right is higher than that of the fourth, and significantly higher than that of other molecules.  
+N. Furan is already present in the four options, results can be obtained without heating.  
+O. Regardless of heating, none of the four molecules are capable of forming furan.
+
+# Answer
+
+Correct Answer: F
+
+# Detailed Explanation
+
+First, analyzing the four possible reactants we know, we can find that the first and second can obtain furan by removing one  $H_{2}$ ; the third requires removing two  $H_{2}$  to form furan, and the fourth reactant cannot form furan upon heating because it has two oxygen atoms.
+
+# CHECKPOINT
+
+1 PTS
+
+The first and second reactants from left to right generate furan by removing one molecule of  $H_{2}$
+
+# CHECKPOINT
+
+1 PTS
+
+The third reactant from left to right generates furan by removing two molecules of  $H_{2}$
+
+# CHECKPOINT
+
+1 PTS
+
+The fourth molecule from left to right cannot generate furan by heating alone
+
+Then we know that the first and second reactants are easier to react than the third and fourth.
+
+To analyze the ease of reaction of the first and second reactants, we need to consider it from the perspective of furan hydrogenation according to the principle of microscopic reversibility. The oxygen atoms do not change before and after the reaction, so we only need to study the remaining  $\pi_4^4$  system.
+
+# CHECKPOINT
+
+1 PTS
+
+Analyze based on the principle of microscopic reversibility
+
+The reverse reaction of the first reaction is equivalent to the 1,4-addition of butadiene, as shown in the figure below, both the left and right interaction modes are symmetry-allowed:
+
+![](images/252cfcfd6711d25942a4b9fe8056b50d5b78672d1544673d36a5d4abc96b62d7.jpg)  
+$\mathrm{H}_{2}$  LUMO  
+呋喃 HOMO
+
+![](images/a4b9b4be0ae1fbe29a9f313fc94b7b68fdbf1f52c01d2b4743946c7bcc6d68c7.jpg)  
+$\mathrm{H}_{2} \mathrm{HOMO}$  
+呋喃 LUMO
+
+The image is a schematic diagram of a molecular orbital structure without coordinate axes or legends. The background is white, and the overall layout is divided into left and right symmetrical blocks. Each block contains
+
+two upper and lower three-dimensional molecular orbital diagrams. The orbitals consist of continuous or separated spatial regions composed of red and yellow, used to represent the distribution of electron clouds in the molecule. The text "H $_2$  LUMO" is labeled in the upper left corner of the image, "H $_2$  HOMO" in the upper right, "Furan HOMO" in the lower left, and "Furan LUMO" in the lower right. In the "H $_2$  LUMO" block, the molecule is connected by a gray line connecting two gray spheres, representing the connection between the two atoms. In the orbital diagram, two sets of red and yellow ellipsoid electron clouds are symmetrically distributed above and below, generally forming a four-lobed structure. There is no obvious fusion between the colors, and the red and
+
+yellow are located on one side of each lobe, showing obvious phase separation characteristics. In the "H₂ HOMO" block, there is a large red sphere at the top, and a flower-petal-shaped orbital composed of alternating red and yellow is closely distributed directly below. The red area is more concentrated at the top and sides of the center, and the yellow area fills the lower position. The overall orbital distribution has a mirror-symmetric feel, and the bottom is connected to two gray small spheres. In the "Furan HOMO" block in the lower left, the central red sphere is surrounded by four obliquely distributed red-yellow orbital lobes. Each lobe is composed of red and yellow parts, and the colors intersect in the middle. The overall arrangement is X-shaped, and the orbitals are concentrated on a plane. The lower gray skeleton connects multiple spheres in a zigzag pattern, with a gray sphere on each side. The orbitals are symmetrically unfolded around the skeleton. In the "Furan LUMO" block in the lower right, the uppermost part is a large spherical red orbital, and the lower main orbital area is more complex. Red and yellow electron clouds are staggered, and the center is a symmetrical multi-leaf structure. Red is mainly concentrated on the left and right sides and above the central axis, while yellow fills the lower position and the middle of the leaves. The bottom is still the same gray skeleton structure and connects multiple gray spheres. The entire orbital diagram presents a three-dimensional symmetrical distribution. All text uses black standard fonts, without any coordinate axes, units, numerical ranges, legends, arrows, or titles.
+
+# CHECKPOINT
+
+1 PTS
+
+The reaction of the first reactant is allowed
+
+The reverse reaction of the second reaction is equivalent to the 1,2-addition of butadiene, and the following left and right interaction modes are symmetry-forbidden:
+
+![](images/e744fdcbbf18afb77847d5b39c78860f8221b7048975414142a5c61295f97d2e.jpg)  
+$\mathrm{H}_2$  LUMO
+
+![](images/71b1fa9722899b4f9d4f99b5cfeb6b246ed45df34a3f295839cac8ec9bf69253.jpg)  
+呋喃 HOMO
+
+![](images/35e7a3edc9ca99ed3b514c2c14671970285f5f933bcbacdb66054c619461b15e.jpg)  
+$\mathrm{H}_2$  HOMO
+
+![](images/11a0a108f5ad429c3f0d5cfeb6c24f674e0f7fa5343ced8d5d01ae6ea0573b2d.jpg)  
+呋喃 LUMO
+
+The image is a schematic diagram of a molecular orbital structure without titles, coordinate axes, or legends. The background is white, and the overall structure is divided into two symmetrical groups of blocks on the left and right. Each group of blocks contains two molecular orbital isosurface images arranged vertically. The molecular orbitals in the image are composed of red and yellow three-dimensional spherical or lobed regions, used to represent different spatial phases or electron density distributions. The text "H $_2$  LUMO" is labeled in the upper left corner, "H $_2$  HOMO" in the upper right, "Furan HOMO" in the lower left, and "Furan LUMO" in the lower right. In the "H $_2$  LUMO" block in the upper left corner, the upper part is a pair of closely connected red and yellow ellipsoids, arranged side by side, forming a mirror-symmetric structure; the lower part is the orbital diagram of "Furan HOMO", with a small red sphere in the center, and a set of red-yellow leaf-shaped orbitals arranged symmetrically above and below on the left and right. The red is located in the upper left and lower right, and the yellow is located in the upper right and lower left, forming an overall cross-shaped four-lobed distribution. The bottom skeleton is connected by gray small balls, with a gray sphere at each end on the left and right. In the "H $_2$  HOMO" block in the upper right corner, the top is a complete spherical red orbital, suspended independently above the main orbital. The main orbital area is distributed in a symmetrical three-lobed or four-lobed shape. The red is concentrated in the upper center and side lobes, and the yellow is located in the lower center and lower left and right leaves. The orbital is connected to two gray spheres below. In the "Furan LUMO" orbital diagram in the lower right corner, the orbital presents a relatively complex symmetrical distribution around the central nucleus. There is a dense arrangement of one red and one yellow sphere in the center, surrounded by multiple red-yellow leaf-shaped orbitals distributed up, down, left, and right. The red areas are mainly concentrated on the left and right sides and above the central axis, and the yellow fills the upper and lower positions and the lower part of the central axis. The orbital generally forms a ring-shaped or five-lobed structure, and the bottom is still connected to a gray skeleton chain with two gray small balls at the end. All structures in the image use red and yellow to represent the molecular orbital phase, and gray small balls and connecting lines represent atoms and bond connections. No coordinate axes, values, units, legends, or arrow markers appear in the image. All text labels use black standard fonts.
+
+# CHECKPOINT
+
+1 PTS
+
+The reaction of the second reactant is forbidden
+
+Thus, we know that the first reactant is easier to react than the second, so we choose F.

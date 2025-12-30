@@ -1,0 +1,697 @@
+# Recent Advances in Zn-Ion Batteries
+
+Ming Song, Hua Tan, Dongliang Chao,* and Hong Jin Fan*
+
+The ever-growing demands for electrical energy storage have stimulated the pursuit of alternative advanced batteries. Zn-ion batteries (ZIBs) are receiving increased attentions due to the low cost, high safety, and high eco-efficiency. However, it is still a big challenge to develop suitable cathode materials for intercalation of Zn ions. This review provides a timely access for researchers to the recent activities regarding ZIBs. First, cathode materials including various manganese oxides, vanadium compounds, and Prussian blue analogs are summarized with details in crystal structures and Zn ion storage mechanisms. Then, the electrolytes and their influences on the electrochemical processes are discussed. Finally, opinions on the current challenge of ZIBs and perspective to future research directions are provided.
+
+# 1. Introduction
+
+The modern economic society and industrial civilization have witnessed a growing demand for electricity energy that is projected to double by 2050.[1] Pursuing and employing inexpensive and reliable electricity energy generated from renewable and clean energy sources is our final destination. Electrical energy storage (EES), as a crucial part to realize this goal, does offer a sound approach for promoting grid reliability since the renewable energy sources including wind, solar, tidal and geothermal are all inherently intermittent and generally dispersed. Among available EES technologies, electrochemical methods are competitive in specific energy, flexibility, and scalability.[2] In this arena, Li-ion battery (LIB) has become a protagonist due to its versatility.[3] However, it was estimated that making  $1\mathrm{kWh}$  LIB results in an emission of  $\approx 75\mathrm{kgCO_2}$ , and in comparison, generating  $1\mathrm{kWh}$  electricity from coal products just produces  $\approx 1\mathrm{kg}$ $\mathrm{CO_2}$ , which means LIB will only begin to has the environmental benefit beyond hundreds of cycles.[4] As to the economic cost, lithium presents a long-term risk of shortage since it is not
+
+Dr. M. Song  
+College of Chemistry and Chemical Engineering  
+Xuzhou University of Technology  
+Xuzhou 221111, China  
+Dr. M. Song, H. Tan, Dr. D. Chao, Prof. H. J. Fan  
+School of Physical and Mathematical Sciences  
+Nanyang Technological University  
+Singapore 637371, Singapore  
+E-mail: ChaoD@ntu.edu.sg; fanhj@ntu.edu.sg  
+H. Tan  
+State Key Laboratory of Crystal Material  
+Shandong University  
+Jinan 250100, China
+
+![](images/f205f1b6adf4ae4e52d7cff5d39f0e82ed20f9f085ce25c44f0b0eba0c4b05f6.jpg)
+
+The ORCID identification number(s) for the author(s) of this article can be found under https://doi.org/10.1002/adfm.201802564.
+
+DOI: 10.1002/adfm.201802564
+
+quite abundant and even regarded as the gold of next century by some alarmists. Therefore, LIB is far from satisfactory concerning environmental and economic cost. This circumstance has led researchers to seek opportunities from alternative batteries with monovalent (K, Na) or multivalent  $(\mathrm{Mg},\mathrm{Ca},\mathrm{Zn},\mathrm{Al})$  elements/cations. For instance, the Na-ion battery (NIB) is now flourishing because of its relatively low cost and has great hope for the grid application for which weight is not a prior concern. The attractiveness of rechargeable multivalent metal-ion  $(\mathrm{Mg}^{2+},\mathrm{Ca}^{2+},\mathrm{Zn}^{2+},\mathrm{Al}^{3+})$  batteries resides in the employment of earth-abundant polyvalent cations
+
+and associated multielectron transfer reactions. The Zn-ion battery (ZIB), in particular, comprises of a zinc metal anode, the aqueous electrolyte in majority and a cathode for accommodation of Zn ions. Significantly, it differs from the traditional alkaline Zn battery (such as Zn-Mn or Ni-Zn battery) that is based on dissolution/precipitation reactions at the Zn anode  $(\mathrm{Zn} + 4\mathrm{OH}^{-}\leftrightarrow \mathrm{Zn(OH)}_{4}^{2 - } + 2\mathrm{e}^{-}\leftrightarrow \mathrm{ZnO} + 2\mathrm{OH}^{-} + \mathrm{H}_{2}\mathrm{O} + 2\mathrm{e}^{-})$  and  $\mathrm{H^{+}}$  intercalation/extraction reactions at the cathode  $(\mathrm{NiOOH}+$ $\mathrm{H}_2\mathrm{O} + \mathrm{e}^{-}\leftrightarrow \mathrm{Ni(OH)}_2 + \mathrm{OH}^{-})$  .[5] Also, it is distinguished from other batteries with Zn anode but no intercalation of Zn ions in cathode reactions. These batteries cannot be named ZIBs and are out of the scope of this Review. For the ZIB, its merits and advantages lie in the following aspects:
+
+(1) Utilization of Zn metal anode. Zinc has a relative high capacity density of  $5855\mathrm{mAhcm}^{-3}$  (Table 1) as well as the feature of safety and nontoxicity. In addition, the redox potential of zinc is  $-0.763\mathrm{V}$  versus standard hydrogen electrode (SHE), which is more suitable in aqueous electrolyte.  
+(2) Implement of near neutral or slightly acidic electrolyte (PH:3.6-6.0). In alkaline Zn battery with KOH electrolyte, the formation of zinc dendrite and  $\mathrm{ZnO}$  gives rise to the severe capacity fading and low coulombic efficiency, which partially offsets the benefit of Zn anode.[6] Nevertheless, this issue does not exist in ZIBs where nonalkaline electrolytes such as  $\mathrm{ZnSO_4}$  solutions are used.  
+(3) Manufacture and recycling of battery. Facile to fabricate and recycle battery is the both concerns of environment and economy. Apparently, compared with other battery systems mentioned above, high eco-efficiency is another superiority of the ZIB since its components are simple, inexpensive, and environment friendly.
+
+These virtues make the development of ZIBs a global imperative and provide a potential candidate for large-scale EES. However, despite of relative small ionic radius of  $\mathrm{Zn^{2 + }}$  (0.75 Å),
+
+it is not an easy task to pursue suitable insertion materials because the electrostatic interaction between divalent Zn ions and crystal structures of cathode materials is much stronger than that of Li ions. Although the co-insertion of water molecules around Zn ions can buffer their high charge density, it is worth noting that high hydrated ionic radius of  $\mathrm{Zn^{2+}}$  (Table 1) will raise additional tough demands on intercalation materials.
+
+So far, development of the insertion hosts for ZIBs is still in its infancy stage and in-depth understanding of the ingress process is required. In this review, we will first focus on the cathode materials and associated reaction mechanism during the discharge/charge processes, aiming to pursue better cathode materials for ZIBs in future. Then, present electrolytes in use will also be introduced since they have exhibited a pivotal role in achieving excellent electrochemical performances. We hope this review draws more attentions to ZIBs and boosts its practical applications.
+
+# 2. Cathode Materials and Reaction Mechanism
+
+# 2.1. Mn-Based Cathodes
+
+As the 10th most abundant element in the crust, manganese (Mn) is easily oxidized near the Earth's surface to manganese oxide/hydroxide minerals which were used by the ancients thousands of years ago. In the past 150 years, manganese oxides have been widely implemented as the deoxidizer and desulfurizer in steel making as well as ion/molecular sieves, catalysts and battery materials. A remarkable diversity of atomic structures and multivalent phases are displayed in manganese oxide/ hydroxide minerals due to the three different oxidation states of Mn: +2, +3 and +4. Mn-based materials have been researched and reported in Zn-ion battery arena for the past 15 years since many of their atomic architectures can readily accommodate a wide assortment of other metal cations including Zn ions.
+
+To better understand Mn-based materials used in ZIBs, first, important Mn oxides and their crystal structures are described below. It is because the basic building unit  $\mathrm{MnO}_6$  octahedra can be assembled by sharing corners/edges into chain/tunnel/layered-type structures, that a large variety of different crystal structures of  $\mathrm{MnO}_2$  are formed.
+
+(1) Tunnel structure (1*1 cross section). In pyrolusite-type  $\mathrm{MnO}_2$  ( $\beta$ - $\mathrm{MnO}_2$ ),  $\mathrm{MnO}_6$  octahedra are assembled by sharing
+
+![](images/dd641cb6ae5086605dde5f6afb54739ecf7a3c8358b1ce1cf76a9c21596c4d9f.jpg)
+
+Hong Jin Fan is currently an associate professor at Nanyang Technological University (NTU). He received his Ph.D. degree from National University of Singapore in 2003, followed by postdoc at Max-Planck-Institute of Microstructure Physics, Germany and University of Cambridge. His research interests
+
+include semiconductor nanowires and related heterostructures, electrochemical energy conversion, and storage (including photo- and electrocatalysts, batteries, and supercapacitors).
+
+edges into single chains which then form a framework structure with  $(1^{*}1)$  tunnels by sharing corners (Figure 1a).
+
+(3) Tunnel structure (1*2 cross section). In ramsdellite-type  $\mathrm{MnO}_2$  (R- $\mathrm{MnO}_2$ ), double chains are formed through assembling the edge-shared  $\mathrm{MnO}_6$  octahedra. Then, a framework structure with (1*2) tunnels is built by sharing corners of these double chains (Figure 1b).  
+(3) Tunnel structure (1*1 and 1*2 cross sections). Nsutite-type  $\mathrm{MnO}_2$  ( $\gamma$ - $\mathrm{MnO}_2$ ) is actually an intergrowth between  $\beta$ - $\mathrm{MnO}_2$  and R- $\mathrm{MnO}_2$ . Thus, in general, tunnels with  $1*1$  and  $1*2$  cross sections coexist in  $\gamma$ - $\mathrm{MnO}_2$  (Figure 1c).  
+(4) Tunnel structure (2*2 cross section). In holland-type  $\mathrm{MnO}_2$  ( $\alpha$ - $\mathrm{MnO}_2$ ), all tunnels are built by corner-shared double chains consist of  $\mathrm{MnO}_6$  octahedra (Figure 1d). Manjiroite-type, cryptomelane-type, and coronadite-type  $\mathrm{MnO}_2$  can also refer to  $\alpha$ - $\mathrm{MnO}_2$  since these minerals have similar structures but different predominant tunnel cations: hollandite (Ba), manjiroite (Na), cryptomelane (K), and coronadite (Pb).  
+(5) Tunnel structure (2*3 cross section). Forromanchite-type  $\mathrm{MnO}_2$ , the tunnels are built by double and triple chains, and thus  $2^{*}3$  cross sections are typically observed (Figure 1e).  
+(6) Tunnel structure (3*3 cross section). Todorokite-type  $\mathrm{MnO}_2$  has relatively large tunnels with 3*3 square cross sections since it is constructed of triple chains composed of  $\mathrm{MnO}_6$  octahedra (Figure 1f). Due to the large tunnels, various
+
+Table 1. A comparison of monovalent/multivalent metals in the standard potential, theoretical capacity, and ionic radius.  
+
+<table><tr><td>Element</td><td>Standard potential [V] versus SHE[7]</td><td>Specific capacity [mAh g-1]</td><td>Capacity density [mAh cm-3]</td><td>Ionic radius [Å][8]</td><td>Hydrated ionic radiusa) [Å][9]</td></tr><tr><td>Li</td><td>-3.040</td><td>3860</td><td>2061</td><td>0.76</td><td>3.40–3.82</td></tr><tr><td>Na</td><td>-2.713</td><td>1166</td><td>1129</td><td>1.02</td><td>2.76–3.60</td></tr><tr><td>K</td><td>-2.924</td><td>685</td><td>610</td><td>1.38</td><td>2.01–3.31</td></tr><tr><td>Mg</td><td>-2.356</td><td>2206</td><td>3834</td><td>0.72</td><td>3.00–4.70</td></tr><tr><td>Ca</td><td>-2.840</td><td>1337</td><td>2072</td><td>1.00</td><td>4.12–4.20</td></tr><tr><td>Zn</td><td>-0.763</td><td>820</td><td>5855</td><td>0.75</td><td>4.04–4.30</td></tr><tr><td>Al</td><td>-1.676</td><td>2980</td><td>8046</td><td>0.53</td><td>4.80</td></tr></table>
+
+a)Data from different literatures.
+
+![](images/3c0e2fa873fd42f7a5f2b1779a6e101f4a6e982202bf29596cca144c2434e1b6.jpg)
+
+![](images/b9b62d6bdc25783967b3776475a439462c463f1668c82cab84d6d46370f62e93.jpg)
+
+![](images/fdaf82d736f5ffc6bfaae504299a5c7471d609ca42985831d02f46619fd8b0c0.jpg)
+
+![](images/c4fa19150e75e337dfdd38af9d1c4e0d8694830614434b034805472a718adfe2.jpg)
+
+![](images/7ba8d58831217027acf875a8a7654f2577a4f253cb8f1978e3e9084097f5e500.jpg)
+
+![](images/de7c8b134638492322a34bfe4447ad76e299c60126a366324f526b9052dbbf76.jpg)
+
+![](images/24bb1a4e3c5d7f8c3d776a7dd7cd4bce49281e54e48e1e72f1537b4c6884c051.jpg)  
+Figure 1. Polyhedral representations of manganese oxide crystal structures: a)  $\beta\text{-MnO}_2$  (pyrolusite-type); b) R-MnO $_2$  (ramsdellite-type); c)  $\gamma\text{-MnO}_2$  (nsutite-type); d)  $\alpha\text{-MnO}_2$  (hollandite-type); e) romanechite-type MnO $_2$ ; f) todorokite-type MnO $_2$ ; g)  $\delta\text{-MnO}_2$  (birnessite-type); h)  $\lambda\text{-MnO}_2$  (spinel-type).
+
+![](images/eff2c13046d0f8994320bd54fd6c5e361afbe107de41ead3b2f60578027637b7.jpg)
+
+![](images/82b8aa940840e415e7f16833ec3e8349e5ea74fe61fdd7140a4b8c140e0c48f7.jpg)
+
+cations and water can be accommodated within the todorokite structure.
+
+(7) Layered structure. Besides chains,  $\mathrm{MnO}_6$  octahedra can also be assembled into sheets by sharing their edges (Figure 1g). Then, layered-type  $\mathrm{MnO}_2$  ( $\delta$ - $\mathrm{MnO}_2$ ) is constructed by these sheets of  $\mathrm{MnO}_6$  octahedra. Other cations or water molecules are usually accommodated in the interlayers, which plays the role to stabilize the layered structure. Thus, chalcophanite, birnessite, buserite, and vernadite, mentioned in the literatures, with diverse interlayer cations and water molecules, have analogous layered structures but different interlayer spacings.  
+(8) 3D structure. Hausmannite-type  $\mathrm{MnO}_2$  ( $\mathrm{Mn}_3\mathrm{O}_4$ ) has a spinel-like structure ( $\lambda$ - $\mathrm{MnO}_2$ ) with  $\mathrm{Mn}^{2+}$  in the tetrahedral sites and  $\mathrm{Mn}^{3+}$  in the octahedral sites (Figure 1h). Similarly,  $\mathrm{Zn}^{2+}$  rather than  $\mathrm{Mn}^{2+}$  accommodate in the tetrahedral site in  $\mathrm{ZnMn}_2\mathrm{O}_4$ .
+
+It is of importance that these structures can transform mutually. For example, buserite with  $10\AA$  interlayer spacings can collapse to birnessite with  $7\AA$  interlayer spacings through drying and losing partial water layers.[10] Buserite can be obtained from birnessite, simply, by exchanging interlayer Na ions with Mg ions because of their stronger hydration effect.[11] Todorokite will be formed by hydrothermal treatment of buserite.[12] By exchanging interlayer  $\mathrm{Na^{+}}$  in birnessite with  $\mathrm{Li^{+}}$ ,  $\mathrm{K^{+}}$ ,  $\mathrm{Mg}^{2+}$ , and  $\mathrm{Ba}^{2+}$ , following with hydrothermal treatment under various conditions, ramsdellite  $(1^{*}2)$ , spinel (3D), hollandite  $(2^{*}2)$ , todorokite  $(3^{*}3)$ , pyrolusite  $(1^{*}1)$ , and romanechite  $(2^{*}3)$  phases can be obtained.[13] All these transformations are accompanied by the entrance or exit of different cations or water molecules, which is extremely beneficial to understanding the mechanism of Zn-ion battery. These Mn oxides with diverse structures will,
+
+definitely, influence reaction mechanism and exhibit different electrochemical performances in ZIBs.[14]
+
+# 2.1.1.  $\gamma$ -MnO $_2$  (1*1 and 1*2 Tunnels)
+
+In 2003,  $\gamma \mathrm{MnO}_2$  that had been widely used in alkaline  $\mathrm{Zn}/$ $\mathrm{MnO}_2$  battery was first reported to be applied in ZIBs. Kumar et al. speculated a mechanism for the reversible intercalation/deintercalation of  $\mathrm{Zn}$  ions in  $\gamma \mathrm{MnO}_2$  using a gel polymer electrolyte with  $\mathrm{Zn(CF_3SO_3)_2}$  salt.[15] As for aqueous electrolytes such as  $\mathrm{ZnSO_4}$  or  $\mathrm{Zn(NO_3)_2}$  solutions, initial reports reached a conclusion of  $\mathrm{H^{+}}$  insertion into  $\gamma \mathrm{MnO}_2$ , which was the reaction mechanism in alkaline  $\mathrm{Zn / MnO_2}$  battery.[16] Further researches based on in situ X-ray absorption near edge structure (XANES) and in situ synchrotron X-ray diffraction (XRD) proved that  $\mathrm{Mn}^{4 + }$  in  $\mathrm{MnO}_2$  reduced to  $\mathrm{Mn}^{3 + }$  and  $\mathrm{Mn}^{2 + }$  after discharging and after one complete discharge/charge cycle, the manganese oxidation state was back close to that of original  $\gamma \mathrm{-MnO}_2$ .[17] In details, spinel-type  $\mathrm{ZnMn_2O_4}$ , tunnel-type  $\gamma \mathrm{-Zn_xMnO_2}$  and layered-type  $\mathrm{Zn}_{\gamma}\mathrm{MnO}_2$  were clarified to gradually emerge during the discharge process. Hence, these results indicate the occurrence of  $\mathrm{Zn}^{2 + }$  insertion and it is schematically shown in Figure 2. During the early stages of discharge, transformation of partial  $\gamma \mathrm{-MnO}_2$  to spinel-type  $\mathrm{ZnMn_2O_4}$  occurs. Then, in the intermediate stage, tunnel-type  $\gamma \mathrm{-Zn_xMnO_2}$  emerges because of the continuous  $\mathrm{Zn}^{2 + }$  insertion. In the final stage, a proportion of fully inserted tunnels expands and collapses to the layeredtype  $\mathrm{Zn}_{\gamma}\mathrm{MnO}_2$ . Fortunately, accompanied with  $9.21\%$  volume change, almost all the above discharge products can revert to the original  $\gamma \mathrm{-MnO}_2$  after recharging, which reveals a relatively reversible  $\mathrm{Zn}^{2 + }$  insertion/extraction for  $\gamma \mathrm{-MnO}_2$  with  $1^{\ast}1$  and  $1^{\ast}2$  tunnels.
+
+![](images/ea4fe14df898473174927f5f01db9bc2f1d4ece41d35a22d9a0303457540f01e.jpg)  
+Figure 2. The schematic illustration of  $\mathsf{Zn^{2 + }}$  insertion processes in  $\gamma \text{-MnO}_2$ . Reproduced with permission.[17] Copyright 2015, American Chemical Society.
+
+# 2.1.2.  $\alpha$ -MnO $_2$  (2*2 Tunnels)
+
+$$
+Z n ^ {2 +} + 2 e ^ {-} + 2 M n O _ {2} \leftrightarrow Z n M n _ {2} O _ {4} \tag {1}
+$$
+
+Besides  $\gamma\text{-MnO}_2$ ,  $\alpha\text{-MnO}_2$  with  $2^{*}2$  tunnels is another hot topic in studies of Mn-based ZIBs.[18]  $\alpha\text{-MnO}_2$  with a partially crystalline state was first applied in 2009 with a specific capacity of  $210\mathrm{mAhg^{-1}}$ .[19] The discharge capacity was reported to remain about  $100\%$  after cycling for 100 times at a  $6\mathrm{C}$  rate due to the relatively large and stable  $2^{*}2$  tunnels of  $\alpha\text{-MnO}_2$ .[16] It was speculated that accompanied with the reduction of Mn valence states,  $\mathrm{Zn}^{2+}$  did intercalate into the cathode after discharging since the  $\mathrm{Zn/Mn}$  ratio was  $0.36/0.33$  in the discharged electrode, and the ingress/egress process of  $\mathrm{Zn}^{2+}$  could be represented by Reaction (1)
+
+The formation/disappearance of  $\mathrm{ZnMn_2O_4}$  after discharging/ charging is shown in Figure 3a and a reversible switch of Mn oxidation states between  $\mathrm{Mn}^{4+}$  and  $\mathrm{Mn}^{3+}$  have been clarified by ex situ synchrotron X-ray absorption spectra (XAS) results (Figure 3b,c).[20] Furthermore, the interplanar spacing values for the (110) plane of  $\alpha\text{-MnO}_2$  were calculated to change between 7.036 and  $6.915\AA$  during the  $\mathrm{Zn}^{2+}$  insertion/extraction processes (Figure 3e), corresponding to a  $3.12\%$  change of the unit cell volume (Figure 3d). These results above conclude a reversible discharge/charge process and the intercalation/deintercalation of  $\mathrm{Zn}$  ions can be achieved using this  $\alpha\text{-MnO}_2$
+
+![](images/7bff9c2b9539fd8fa98ecd44d601d7ece410b898c7b882d76352dad506206b65.jpg)
+
+![](images/f18f9471ddbcb3bfff406623f0bdec4459cfe0370f33b27e5c1e6d614bd05784.jpg)
+
+![](images/37b02bf3802837fcff6f70ed50fd7a7deb4c9f5703d757b6d3f508bc2ca6f21d.jpg)
+
+![](images/29a4956aa9797ce861cac78fac0e7b52315fe11d7836a2e998b5d0e970700c63.jpg)  
+Figure 3. Electrochemical processes of  $\mathrm{Zn^{2+}}$  insertion/extraction associated with  $\mathrm{ZnMn_2O_4}$  formation/disappearance in  $\alpha\text{-MnO}_2$ . a) Ex situ synchrotron XRD patterns of  $\alpha\text{-MnO}_2$  electrodes in discharged/charged states. Ex situ XANES of  $\alpha\text{-MnO}_2$  electrodes in b) discharged and c) recharged states. (d) The interplanar spacing change of adjacent (110) planes after Zn-insertion. e) Cyclic voltammograms at  $0.5\mathrm{mVs^{-1}}$  and f) galvanostatic discharge/ charge profiles at  $83\mathrm{mA g^{-1}}$  of  $\alpha\text{-MnO}_2$  electrodes. All panels reproduced with permission.[20] Copyright 2015, Elsevier.
+
+![](images/460250d33d64fd5ab295edd65b43473fb237641ecea0614e8a401e937bea86e0.jpg)
+
+![](images/bce7e47eee6ec37caf8a0e6ae83e19fd1aa2abf0343906b03cddce92b5a21bd9.jpg)
+
+cathode with a specific capacity of more than  $225\mathrm{mAhg^{-1}}$  (Figure 3f).
+
+Later, the mechanism of the  $\mathrm{Zn^{2 + }}$  insertion during the discharge process was described to be a reversible and electrochemical triggered phase transition from the as-prepared  $\alpha \text{-MnO}_2$  to the chalcophanite-like or Zn-birnessite structure.[21] An analogue of  $\mathrm{ZnMn_3O_7\cdot 3H_2O}$  with a layered-type structure similar to birnessite was formed after discharging.[22] In this process,  $\approx 1 / 3$  of the total Mn in the electrode was dissolved in electrolyte because of Jahn-Teller effect during the discharge process (Reactions 2 and 3), nevertheless it was completely recovered to as-prepared  $\alpha \text{-MnO}_2$  upon recharging (Reaction 4)
+
+$$
+\mathrm {M n} ^ {4 +} (\mathrm {s}) + \mathrm {e} ^ {-} \rightarrow \mathrm {M n} ^ {3 +} (\mathrm {s}) \tag {2}
+$$
+
+$$
+2 \mathrm {M n} ^ {3 +} (\mathrm {s}) \rightarrow \mathrm {M n} ^ {4 +} (\mathrm {s}) + \mathrm {M n} ^ {2 +} (\mathrm {a q}) \tag {3}
+$$
+
+$$
+\mathrm {M n} ^ {2 +} (\mathrm {a q}) \rightarrow \mathrm {M n} ^ {4 +} (\mathrm {s}) + 2 \mathrm {e} ^ {-} \tag {4}
+$$
+
+Thus, as shown in Figure 4, with the insertion of  $\mathrm{Zn^{2+}}$ ,  $\mathrm{Mn^{4+}}$  is reduced to  $\mathrm{Mn^{3+}}$ . Then, the gray bridge-like double chains of  $\mathrm{Mn^{3+}O_6}$  units are gradually destroyed because of the  $\mathrm{Mn^{2+}}$  dissolution (Reaction 3). Then Zn-birnessite structure is formed during this thermodynamically favorable process. Fortunately, dissolved  $\mathrm{Mn^{2+}}$  can intercalate back and bridge the layers to tunnels during the recharge process and then the structure of  $\alpha\text{-MnO}_2$  recovers.
+
+As mentioned before, buserite with  $10\AA$  interlayer spacings can collapse to birnessite with  $7\AA$  interlayer spacings through drying and losing one water layer. The above conclusion of reversible phase transition between  $\alpha\text{-MnO}_2$  and Zn-birnessite was further corrected by in situ XRD patterns and the Zn-buserite was supposed to be the direct discharge product which collapsed to birnessite after drying.[23] Buserite is known to have triple water layers in the tunnels and Zn ions adopt octahedral configurations on the Mn vacancy sites coordinated with three oxygen atoms adjacent to vacancy sites and another three ones from water molecules inside the tunnels. As show in Figure 5a, the characteristic peaks  $(2\theta = 8.06^{\circ}$ ,  $16.18^{\circ}$ , and  $24.39^{\circ}$ ) of buserite gradually emerge and disappear reversely during the discharge and charge processes, respectively. Regions I and IV are related to the single-phase reaction of  $\alpha\text{-MnO}_2$  and regions II and III correspond to the two-phase coexistence of  $\alpha\text{-MnO}_2$  and Zn-buserite (Figure 5b). More importantly, the large volumetric changes between  $\alpha\text{-MnO}_2$  and Zn-buserite during cycling will trigger a great deal of residual structural stresses, resulting in amorphization and capacity reduction of  $\alpha\text{-MnO}_2$ . Therefore, the discharge capacity was found to decrease gradually at  $0.2\mathrm{C}$  and capacity retention reaches  $70\%$  only after 30 cycles (Figure 5c).[23] These cycle performances are inconsistent with previously reported ones, different synthesis processes and morphologies of  $\alpha\text{-MnO}_2$  may be responsible for the discrepancy.
+
+Other than the previous  $\mathrm{Zn^{2 + }}$  insertion-type reaction mechanism, a different conversion-type one based on the reversible precipitation/dissolution of  $\mathrm{Zn_4(OH)_6SO_4\cdot nH_2O}$
+
+![](images/2e0480e45fb4396edbc01d674b2388d68aaaa05473ac2b21e2e119b23558c473.jpg)  
+Figure 4. The schematic illustrating of phase transition between Zn-birnessite and  $\alpha\text{-MnO}_2$ .
+
+(zinc hydroxide sulfate, ZHS), triggered by pH changes of the electrolyte during discharge/charge process, has been proposed.[24] According to in situ XRD patterns combined with the refinement of the fully discharged electrode, the  $\mathrm{Zn_4(OH)_6SO_4\cdot 5H_2O}$  phase was labeled as the discharge product. Intriguing, the ZHS in the discharged electrode could be washed off by acetic acid, which indicated this precipitate was formed on the surface of  $\alpha\text{-MnO}_2$  and no Zn ions inserted into the tunnels of  $\alpha\text{-MnO}_2$ . Results of AAS and in situ pH measurements of the electrolyte further proved that this precipitation process was reversible and triggered by pH variation. Due to the Jahn-Teller effect,  $\mathrm{Mn}^{3+}$  produced from  $\mathrm{MnO}_2$  (Reaction 3) during the discharge process, was prone to undergo a disproportionation (Reaction 4). Thus, the initial
+
+reaction was described as Reaction 5, which gradually changed the pH of electrolyte and triggered Reaction 6
+
+$$
+\mathrm {M n O} _ {2} + 2 \mathrm {H} _ {2} \mathrm {O} + 2 \mathrm {e} ^ {-} \rightarrow \mathrm {M n} ^ {2 +} + 4 \mathrm {O H} ^ {-} \tag {5}
+$$
+
+$$
+4 Z n ^ {2 +} + S O _ {4} ^ {2 -} + 6 O H ^ {-} + 5 H _ {2} O \rightarrow Z n _ {4} (O H) _ {6} (S O _ {4}) \cdot 5 H _ {2} O \downarrow \tag {6}
+$$
+
+Another explanation on the formation mechanism of ZHS was attributed to the conversion reaction between  $\alpha\text{-MnO}_2$  and  $\mathrm{H^{+}}$  (Reaction 8), which was supposed to bring about the evolution of sequent  $\mathrm{OH^{-}}$  (Reaction 7) that further reacts with  $\mathrm{ZnSO_4}$  and  $\mathrm{H}_2\mathrm{O}$  to form ZHS (Reaction 9).[25] After discharging, original  $\alpha\text{-MnO}_2$  nanofibers were transformed to short nanorods with a lattice distance of  $0.33~\mathrm{nm}$  and nanoparticle
+
+![](images/3d23caabd8971615156e31a4d036da6f1c215d33370774ddc235bd83d70cf1e1.jpg)  
+(a)  
+time
+
+![](images/c08713c7c6a7fab991fb55983236a5d78b65392dbf29d7d01210fb834a6c8a3a.jpg)  
+(b)
+
+![](images/b3f0e3ee8a94affd8227e47b768d5d390975583c572e0ccfa5cc0a5effffe8c7.jpg)  
+Figure 5. Electrochemical processes of  $\mathsf{Zn^{2 + }}$  insertion/extraction associated with the phase transition between Zn-buserite and  $\alpha \text{-MnO}_2$ . a) In situ XRD patterns and b) corresponding reaction regions of  $\alpha \text{-MnO}_2$  electrodes during the electrochemical cycling. c) Galvanostatic discharge/charge profiles at  $10.5\mathrm{mA}\mathrm{g}^{-1}$  of  $\alpha \text{-MnO}_2$  electrodes. All panels reproduced with permission.[23] Copyright 2015, Royal Chemical Society.
+
+![](images/a65d90e752d5bfab9837fc9219e7058234402fed47e279931b52ac0470dd3744.jpg)
+
+![](images/fa5c3813705a1660f0f130f2c4085f14e491cb9868298efc447b69bd730d19b6.jpg)
+
+![](images/2271dcfedd9d1866f0e7af05ea56611705790b2d14dcc12d0479e8aca90625e9.jpg)
+
+![](images/fbb94ab51f0dabbceb866cd500d426f4b0860a1eaa44a85ad93f263578e014bd.jpg)
+
+![](images/1fb7d3793305bb2c385193c523a003ce9fe19c2ee0ee005d14634f55aeea0cb9.jpg)  
+Figure 6. Electrochemical reaction processes of  $\alpha\text{-MnO}_2$  associated with  $\mathsf{Zn_4(OH)_6SO_4\cdot nH_2O}$  precipitation/dissolution. TEM/HRTEM images of  $\alpha\text{-MnO}_2$  electrodes in a-c) discharged and e-g) charged states during the first cycle. The arrows in (b) and (f) indicate the growth directions of  $\alpha\text{-MnO}_2$  nanorods. d) STEM-HAADF image and STEM-EDS mappings of  $\alpha\text{-MnO}_2$  nanorods in the discharged state during the first cycle. All panels reproduced with permission.[25] Copyright 2016, Macmillan Publishers Limited.
+
+![](images/4df204480857ebcd7bdd6de8735594530d082a948dde6ac64ac7af285d9a5c70.jpg)
+
+![](images/f912770137c8e1888bbe4a80d0b9708f6a678b47d5e25028b5778f0064b66745.jpg)
+
+![](images/c351e78044b15e255ba68841cc9652038de0d2c1061480edcb39be0db622a513.jpg)
+
+![](images/0848f7fffc3649c1c6374b0d7739e1693b90e619288550c9002adbfd3502bdef.jpg)
+
+aggregates with a lattice distance of  $0.26\mathrm{nm}$  (Figure 6a). These discharge products were identified to MOOH through ex situ HR-TEM (Figure 6b,c) and XRD, which supported the Reaction 8. Reaction 9 was supposed to occur because of the observation of ZHS in discharged electrodes through nuclear magnetic resonance and XRD. Interestingly, after charging, the lattice distances of above nanorods and nanoparticle aggregates reverted to those of original  $\alpha\text{-MnO}_2$  (Figure 6f,g) although their morphologies were retained (Figure 6e). These results indicated reversible discharge/charge behaviors between  $\alpha\text{-MnO}_2$  and  $\mathrm{MnOOH} / \mathrm{ZHS}$
+
+$$
+\mathrm {H} _ {2} \mathrm {O} \leftrightarrow \mathrm {H} ^ {+} + \mathrm {O H} ^ {-} \tag {7}
+$$
+
+$$
+\mathrm {M n O} _ {2} + \mathrm {H} ^ {+} + \mathrm {e} ^ {-} \leftrightarrow \mathrm {M n O O H} \tag {8}
+$$
+
+$$
+\begin{array}{l} \frac {1}{2} \mathrm {Z n} ^ {2 +} + \mathrm {O H} ^ {-} + \frac {1}{6} \mathrm {Z n S O} _ {4} + \frac {6}{x} \mathrm {H} _ {2} \mathrm {O} \\ \leftrightarrow \frac {1}{6} \mathrm {Z n S O} _ {4} \left[ \mathrm {Z n} (\mathrm {O H}) _ {2} \right] _ {3} \cdot x \mathrm {H} _ {2} \mathrm {O} \tag {9} \\ \end{array}
+$$
+
+However, it is worth noting that XRD patterns of ZHS phase are nearly identical to the previously reported  $\mathrm{Zn}$ -birnessite and more analysis methods are required to further clarify the reaction mechanism of  $\alpha\text{-MnO}_2$ . Recently, studies based on cathodes prepared directly by  $\mathrm{Zn}_4(\mathrm{OH})_6\mathrm{SO}_4\cdot 5\mathrm{H}_2\mathrm{O}$  have provided a further understanding on the actual circumstances for long-term cycling of the  $\mathrm{MnO}_2$  cathodes.[26]
+
+In short, although there are some disputations on the mechanism of discharge/charge processes for  $\alpha\text{-MnO}_2$ , great advances have been achieved in  $\alpha\text{-MnO}_2$  cathode and the goal of developing low-cost, simple, fast, and
+
+environment-friendly synthesis methods for  $\alpha\text{-MnO}_2$  cathode is being under consideration.[27]
+
+# 2.1.3. Todorokite-Type  $\mathsf{MnO}_2$  (3\*3 Tunnels)
+
+Theoretically, todorokite-type  $\mathrm{MnO}_2$  is more facile to accommodate and transfer  $\mathrm{Zn}^{2+}$  by the virtue of its larger tunnels  $(3^*3)$ , which signifies higher capacities and better rate performances. However, other than Zn ions, various cations and water molecules will exist in the tunnels to maintain the todorokite structure, which will influence the sites for  $\mathrm{Zn}^{2+}$  accommodation. The amount and type of these species depend on the synthesis method. Todorokite-type  $\mathrm{MnO}_2$  with preoccupied  $\mathrm{Mg}^{2+}$  and water molecules  $(\mathrm{Mg}_{1.8}\mathrm{Mn}_6\mathrm{O}_{12}\cdot 4.8\mathrm{H}_2\mathrm{O})$  was prepared by hydrothermal treatment of Mg-buserite and only  $98\mathrm{mAh~g^{-1}}$  was obtained during the first cycle.[28] Nevertheless, cycle and rate performances were reported to be better than these of  $\alpha$ - $\mathrm{MnO}_2$  since the larger tunnels of todorokite-structure  $\mathrm{MnO}_2$ . Unfortunately, the XRD of discharged electrode has not been analyzed in details to explain the structural change or the  $\mathrm{Zn}^{2+}$  intercalation mechanism.
+
+# 2.1.4.  $\delta$ -MnO $_2$  (Layered Structure)
+
+Nanoflake  $\delta \mathrm{-MnO}_2$  with a layered structure has been synthesized and used in ZIBs. After discharging, spinel-type  $\mathrm{ZnMn_2O_4}$  was emerged and no other irreversible phases such as MnOOH,  $\mathrm{Mn}_{2}\mathrm{O}_{3}$ , or  $\mathrm{ZnO}$  were detected. Meanwhile, high zinc concentration with  $\mathrm{Zn:~Mn = 0.59:1}$  was found in discharged electrode.[29] Thus, the preliminary conclusion that partial layer-type  $\delta \mathrm{-MnO}_2$  undergoes a structural transformation to spinel  $\mathrm{ZnMn_2O_4}$  has
+
+been proposed. Hydrate  $\delta\text{-MnO}_2$  ( $\mathrm{K}_{0.11}\mathrm{MnO}_2\cdot 0.7\mathrm{H}_2\mathrm{O}$ ) was also studied using a nonaqueous electrolyte.[30] It was deduced that the layer-type  $\delta\text{-MnO}_2$  cycled reversibly between the pristine  $\mathrm{MnO}_2$  and  $\mathrm{Zn}_x\mathrm{MnO}_2$  with  $\mathrm{Zn}^{2+}$  intercalation and without proton participation. However, upon long-term cycling, obvious capacity fading and impedance changes were observed, which might be related with the dissolution of  $\mathrm{Mn}^{2+}$ , decomposition of electrolyte and precipitation of  $\mathrm{ZnO}$  on the anode. These results keep the reaction mechanism of  $\delta\text{-MnO}_2$  being mysterious.
+
+# 2.1.5. Spinel-Type MnO $_2$  (3D Structure)
+
+Initially, it was speculated that intercalation of  $\mathrm{Zn^{2 + }}$  was very limited in  $\lambda \text{-MnO}_2$  due to the limited 3D tunnels.[16] Later,  $\lambda \text{-MnO}_2$  synthesized through simply leaching  $\mathrm{LiMn}_2\mathrm{O}_4$  displayed a specific capacity of  $442.6\mathrm{mAhg^{-1}}$  at  $13.8\mathrm{mA}\mathrm{g}^{-1}$ . Hence, it was supposed that the insertion of  $\mathrm{Zn^{2 + }}$  into  $\lambda \text{-MnO}_2$  was most likely responsible.[31] Thus, spinel  $\mathrm{ZnMn}_2\mathrm{O}_4$  and  $\mathrm{MnMn}_2\mathrm{O}_4$ $(\mathrm{Mn}_3\mathrm{O}_4)$  were further implemented in ZIBs.
+
+Concerning that ideal spinel  $\mathrm{ZnMn_2O_4}$  (ZMO) seems unfit for  $\mathrm{Zn^{2 + }}$  insertion due to the high electrostatic repulsion among  $\mathrm{Zn^{2 + }}$  cations in the lattice (Figure 1h), cation-deficient
+
+spinel ZMO thus was prepared and a capacity retention of  $94\%$  over 500 cycles at  $500\mathrm{mA}\mathrm{g}^{-1}$  was achieved.[32] These Mn vacancies or deficiencies not only favor  $\mathrm{Zn^{2 + }}$  transfer owing to the low electrostatic barrier, but also mitigate the dissolution of Mn species because of the higher mean Mn valence (+3.22). More importantly, various characteristic methods have proved that  $\mathrm{Zn^{2 + }}$  rather than  $\mathrm{H^{+}}$  intercalation gives rise to the electrochemical behaviors of ZMO (Reaction10, Y denotes vacancy)
+
+$$
+\begin{array}{r l} & \mathrm {Z n M n} _ {1. 8 6} \mathrm {Y} _ {0. 1 4} \mathrm {O} _ {4} \leftrightarrow \mathrm {Z n} _ {(1 - x)} \mathrm {M n} _ {1. 8 6} \mathrm {Y} _ {0. 1 4} \mathrm {O} _ {4} \\ & + 2 x e ^ {-} + x \mathrm {Z n} ^ {2 +} (0 <   x <   1) \end{array} \tag {10}
+$$
+
+Recently, it was shown that  $\beta\text{-MnO}_2$  nanorods can transform to spinel  $\mathrm{ZnMn_2O_4}$  phase (1\*1 tunnels) after several cycles and this spinel phase can further cycle over 200 times.[33] Other crystal phase from transformation of  $\beta\text{-MnO}_2$  has also been reported[34] but only limited work on good electrochemical performance has been reported.
+
+Another spinel-type  $\mathrm{Mn}_3\mathrm{O}_4$ $(\mathrm{MnMn}_2\mathrm{O}_4)$  was applied in ZIBs.[35] For the intercalation of  $\mathrm{Zn}^{2+}$ , charging  $\mathrm{Mn}_3\mathrm{O}_4$  to remove the  $\mathrm{Mn}^{2+}$  in the tetrahedral sites is a prerequisite (Figure 1h). As shown in Figure 7a,d,  $\mathrm{Mn}_5\mathrm{O}_8$  was first formed
+
+![](images/378bfc6029fac5d7d4e9a04b9c27986bc37b1f5373db999d84c7de1f9713f1d9.jpg)
+
+![](images/2bbdadc1bda437a1e47a9c3832909d83a4b0b24575c7b4ec78290d3020924f8b.jpg)  
+Figure 7. Electrochemical processes of  $\mathsf{Zn^{2 + }}$  insertion/extraction in spinel-type  $\mathsf{Mn}_3\mathsf{O}_4$  a) Ex situ XRD of  $\mathsf{Mn}_3\mathsf{O}_4$  electrodes at the first cycle. HR-TEM images of new Zn-birnessite in b) discharged and c) charged states. d) Schematic reaction pathway of spinel-type  $\mathsf{Mn}_3\mathsf{O}_4$  in the first cycle. e) Galvanostatic discharge/charge profiles, f) rate capabilities, and g) cycling performances of  $\mathsf{Mn}_3\mathsf{O}_4$  electrodes. All panels reproduced with permission.[35] Copyright 2018, Elsevier.
+
+![](images/860c182b8b381486ce1d682c592c09498e5db5d9fb56118609f57e3e92c01d95.jpg)
+
+![](images/3ca1f1cec167d9acdd2e0e31aa9f335bfd1a9e901e672036671cec5cbdef69e0.jpg)
+
+![](images/dc80936c7a3eaf9eff2f7f2511c69a4ce81363e51014961826e9db561469f5c5.jpg)
+
+![](images/3176820890d167ee737fb9bc9b5f5b78ffd2b2033d14da0e1b2d9a663019a865.jpg)
+
+during the charge process (Reaction 11). It then transformed to birnessite-type  $\mathrm{MnO}_2$  (Figure 7b,c) triggered by  $\mathrm{Mn}^{2+}$  dissolution and  $\mathrm{H}_2\mathrm{O}$  insertion (Reaction 12)
+
+$$
+2 \mathrm {M n} _ {3} \mathrm {O} _ {4} \rightarrow \mathrm {M n} _ {5} \mathrm {O} _ {8} + \mathrm {M n} ^ {2 +} + 2 \mathrm {e} ^ {-} \tag {11}
+$$
+
+$$
+\mathrm {M n} _ {5} \mathrm {O} _ {8} + x \mathrm {H} _ {2} \mathrm {O} \rightarrow 4 \mathrm {M n O} _ {2} \cdot x \mathrm {H} _ {2} \mathrm {O} + \mathrm {M n} ^ {2 +} + 2 \mathrm {e} ^ {-} \tag {12}
+$$
+
+After the following discharge, Zn-birnessite was formed since Zn ions intercalate into the interlamination of birnessite accompanied by the reduction of  $\mathrm{Mn}^{4+}$  to  $\mathrm{Mn}^{3+}$ . Unfortunately,  $\mathrm{MnOOH}$  and  $\mathrm{Zn_4SO_4(OH)_6\cdot 5H_2O}$  were also found, indicating a complex reaction mechanism. It is worth noting that because most  $\mathrm{Mn}_3\mathrm{O}_4$  has transferred into birnessite after a few cycles, the obtained electrochemical performances in Figure 7e-g are, in fact, provided by the layer-structured birnessite instead of the as-prepared spinel- $\mathrm{Mn}_3\mathrm{O}_4$ .
+
+# 2.1.6. Other Mn Oxides
+
+Akhtenskite-structure  $\mathrm{MnO}_2$  ( $\varepsilon$ - $\mathrm{MnO}_2$ ) is a metastable phase which has been found in electrolytic manganese dioxide (EMD) deposited at a relatively high current density. Rather than the orthorhombic EMD ( $\gamma$ - $\mathrm{MnO}_2$ ),  $\varepsilon$ - $\mathrm{MnO}_2$  exhibits hexagonal symmetry where  $\mathrm{Mn}^{4+}$  ions are distributed randomly in one-half of the face-shared octahedral sites.[36] In other words,
+
+$\varepsilon \text{-MnO}_2$  comprises of face-shared  $[\mathrm{MnO}_6]$  and  $[\mathrm{YO}_6]$  octahedra (Y denotes vacancy). Akhtenskite-type  $\mathrm{MnO}_2$  with interconnected nanoflakes morphology was uniformly deposited on the surface of carbon fiber paper and acted as binder-free cathode of ZIBs.[37] Extraordinary cycling performances of nearly  $100\%$  retention over 10 000 cycles at 6.5 C (Figure 8a) were rationalized as a consequence of the unique nanostructure with abundant electrode/electrolyte interfaces and reduced ion diffusion paths. Many a characteristic method, exemplified by galvanostatic intermittent titration technique (GITT), has been carried out to verify a mechanism of both  $\mathrm{H^{+}}$  insertion (Region I) and  $\mathrm{Zn}^{2+}$  insertion (Region II) (Figure 8b,c). Both MnOOH (from  $\mathrm{H^{+}}$  insertion) and  $\mathrm{ZnMn_2O_4}$  (from  $\mathrm{Zn}^{2+}$  insertion) phases were observed in the postmortem examinations of discharged electrodes (Figure 8d). Furthermore, electrolytes without  $\mathrm{H^{+}}$  or  $\mathrm{Zn}^{2+}$  significantly influenced the Region I or II, respectively, which was reasonable to postulate that both  $\mathrm{H^{+}}$  and  $\mathrm{Zn}^{2+}$  had participated in the discharge/discharge process.
+
+Zn ions have also reported to insert into  $\alpha\text{-Mn}_2\mathrm{O}_3$ , making the transformation of bixbyite-type  $\mathrm{Mn}_2\mathrm{O}_3$  to layered-type Zn-birnessite.[38] After the insertion of  $\mathrm{Zn}^{2+}$ , the original  $\alpha\text{-Mn}_2\mathrm{O}_3$  undergone transformation to Zn-birnessite phase, accompanying with the reduction of  $\mathrm{Mn}^{3+}$  to  $\mathrm{Mn}^{2+}$ . In the charge process, when  $\mathrm{Zn}^{2+}$  extracted from the host with the oxidation of  $\mathrm{Mn}^{2+}$  to  $\mathrm{Mn}^{3+}$ , Zn-birnessite then reverted to original  $\alpha\text{-Mn}_2\mathrm{O}_3$ . However, this material with the +3 valence of Mn has to face the issue of Mn dissolution, which seems harmful for the cycle life of ZIBs.
+
+![](images/43e94e805964649b6c05e5aa4c84e3483163047ff6f85aad21bf877ae16e98fa.jpg)
+
+![](images/8155f3f8f0a5bd0b948ed533bd33af1771be74b22fe88a3a0c6ed57a42ff4b7c.jpg)
+
+![](images/44d7b8a38a66746ce10e903a346d05720d65eab28388604e8047da6263015bd1.jpg)  
+Figure 8. Electrochemical processes of  $\mathsf{H}^+$  and  $Zn^{2+}$  co-insertion in  $\varepsilon\text{-MnO}_2$ . a) Cycling performances, b) galvanostatic discharge/charge profiles, and c) galvanostatic intermittent titration technique (GITT) profiles of  $\varepsilon\text{-MnO}_2$  electrodes. d) Ex situ XRD of  $\varepsilon\text{-MnO}_2$  electrodes at different depth of discharge. All panels reproduced with permission.[37] Copyright 2017, American Chemical Society.
+
+![](images/ffd5d70af620ca0fd6f8c3d62736f342f3b37182eec280db73acd2b4626f4183.jpg)
+
+In short, various  $\mathrm{MnO}_2$  with different framework structures including  $\alpha$ -,  $\beta$ -,  $\gamma$ -,  $\delta$ -,  $\varepsilon$ -,  $\lambda$ -, and todorokite- $\mathrm{MnO}_2$  have been researched in ZIBs, which exhibits unique features of discharge/charge processes. However, discussions on the reaction mechanism are still far from the consensus.
+
+Considering the intrinsically poor electrical conductivity of  $\mathrm{MnO_2}$  above, acid-treated CNT with rich oxygen-containing function groups was used for growing  $\mathrm{MnO_2}$  and improving the electron transport. Owing to the 3D conductive CNT network, the as-prepared  $\mathrm{MnO_2 / CNT}$  nanocomposites exhibited an improved performance (665 mAh g $^{-1}$  at 100 mA g $^{-1}$ ).[39] Graphene also promoted the electrical conductivity and charge transfer kinetics of  $\mathrm{MnO_2}$ , which brought about a high specific energy of 406.6 Wh kg $^{-1}$ .[40]
+
+It is worth noting that binder and conductive additive are commonly used in most cathodes above, to be mixed with  $\mathrm{MnO_2}$ . As is well-known, polytetrafluoroethylene, polyvinylidene fluoride (PVDF), and teflonated acetylene black are acted as the binder, and acetylene black/carbon black plays the role of conductive additive. The cathodes for ZIBs are then obtained by casting the mixtures onto current collectors such as stainless-steel foil/mesh, titanium foil, or carbon fiber cloths. However, due to the morphological and structural changes of  $\mathrm{MnO_2}$  during the discharge/charge processes, obviously, these cathodes cannot satisfy the hunger for high-performance ZIBs. To address this issue, 3D porous nitrogen-doped carbon cloth has been used to deposit  $\mathrm{MnO_2}$  nanorod arrays and remarkable rate performances  $(249\mathrm{mAhg^{-1}}$  at  $6000\mathrm{mA g^{-1}})$  has been achieved.[41] As mentioned before, carbon fiber papers with uniformly deposited  $\mathrm{MnO_2}$  nanoflakes have exhibited excellent cycle life (100% retention over 10 000 cycles).[37] Carbon nanofoam paper, working as a substrate for affixing  $\mathrm{MnO}_x$ , was synthesized and superior electrochemical performances were achieved.[42] However, works are far from comprehensive and further binder-free researches can be conducted through learning
+
+from other electrochemical arenas such as supercapacitor or electrocatalysis.
+
+# 2.2. V-Based Cathodes
+
+Last four decades have witnessed a growing interest in V-based compounds, especially vanadium oxides, as cathode materials for advanced secondary batteries since the vanadium oxidation states and their redox properties are various. There is by far more than 179 mineral species containing V element and it is too diverse to simply classify all the species in this review. Therefore, to deeply understand the reaction processes of Zn-ion batteries using V-based materials, we just introduce the knowledge of basic V-O coordination polyhedra which are assembled into different frameworks of vanadium oxides. As mentioned in Part 2.1, the octahedra are typical in  $\mathrm{MnO}_2$  owing to the Mn in oxidation state  $+4$ , whereas the V coordination polyhedra vary from tetrahedron through square pyramid and trigonal bipyramid to distorted and regular octahedra (Figure 9).[43] Such continuous changes in these complex polyhedra in parallel with changes in the V oxidation state may allow the insertion/extraction of multiple ions including  $\mathrm{Zn}^{2+}$  without breaking the structures of vanadium oxides.
+
+(1) Tetrahedron. V ions in the tetrahedra are always  $\mathrm{V}^{5+}$  and any attempts to change it will give rise to a dramatic structural change. Thus, it seems helpless to use the vanadium oxides with pure tetrahedral frameworks (e.g., tetrahedra chains) since the reversible intercalation/deintercalation of divalent ions is difficult to realize without structural changes.  
+(2) Trigonal bipyramid and square pyramid. By adding a fifth O atom opposite one face and simultaneously moving the V atom to the center of this face, the trigonal bipyramid or square pyramid can be obtained from a tetrahedron. The fifth O atom can come from neighbor tetrahedra chains by
+
+![](images/41b7c276834314fbc161181168891d0edec44b55ae2e42aafea96a53c7cfcbc3.jpg)  
+Figure 9. Metamorphosis of the vanadium coordination polyhedra. V-O bonds with shorter lengths compared with other bonds are denoted as  $\mathrm{V} = \mathrm{O}$ .
+
+![](images/421b6818eddf5218e7daeedba77ba4d7b940d83dcf6361369eeb8a6c1d509612.jpg)  
+Figure 10. Transformation of two tetrahedra chains into one square pyramid double chain observed from different directions.
+
+sharing the vertexes (Figure 10). Trigonal bipyramid and square pyramid differ in their four O atoms in the bottom (coplanar or noncoplanar) (Figure 9). V ions in the trigonal bipyramid or square pyramid can be  $\mathrm{V}^{4+}$  or  $\mathrm{V}^{5+}$ .
+
+(3) Distorted octahedron and regular octahedron. Addition of sixth O atom which can come from another pyramid chains converts square pyramid to distorted octahedron and then regular octahedron (Figure 9). V ions in the distorted octahedron can be  $\mathrm{V}^{4+}$  or  $\mathrm{V}^{5+}$  and in lower oxidation states (+3 or below) V adopts the regular octahedron like most other transition metals.
+
+Then, it can be thought that various structures of vanadium oxide are composed of the above polyhedra which link to form chains and then layers/ 3D frameworks.[43,44] More than 60 vanadium oxide with different open frameworks have been established through the permutation and combination of these five coordination polyhedra. However, only a few vanadium oxide and other V-based materials have been studied in ZIBs.
+
+Diverse vanadium oxides with Zn ions in their frameworks have been synthesized and characterized from twenty years ago. Among them,  $\mathrm{Zn}_x\mathrm{V}_2\mathrm{O}_5\cdot \mathrm{yH}_2\mathrm{O}$  can be easily obtained by the ion exchange method through direct immersing  $\mathrm{V}_{2}\mathrm{O}_{5}$  xerogel in an aqueous  $\mathrm{ZnCl}_2$  solution, which indicates a feasible intercalation of Zn ions into vanadium oxides.[45] It was in 1995 that the electrochemical intercalation of  $\mathrm{Zn}^{2+}$  into the vanadium oxide  $(\mathrm{V}_{6}\mathrm{O}_{13})$  was first researched.[46] However, the first vanadium oxides used in ZIBs is  $\mathrm{V}_{2}\mathrm{O}_{5}$  mainly because  $\mathrm{V}_{2}\mathrm{O}_{5}$  and its derivatives have wide catalytic, electrochemical applications in other fields.
+
+# 2.2.1.  $V_{2}O_{5}$  and  $M_xV_2O_5$
+
+Generally speaking,  $\mathrm{V}_2\mathrm{O}_5$  and  $\mathrm{M}_x\mathrm{V}_2\mathrm{O}_5$  compounds (M = alkali, alkaline earth, metals) can be characterized by single or double layer lattices comprised of square pyramids or octahedra mentioned above.[44b] For instance,  $\sigma\text{-}\mathrm{Zn}_{0.25}\mathrm{V}_2\mathrm{O}_5$ ,  $\delta\text{-}\mathrm{Zn}_{0.25}\mathrm{V}_2\mathrm{O}_5$ , and  $\mathrm{Ca}_{0.25}\mathrm{V}_2\mathrm{O}_5$  can be classified into single layers of  $[\mathrm{V}_2\mathrm{O}_5]$  type.[47]  $\delta\text{-}\mathrm{LiV}_2\mathrm{O}_5$  is of the double layered type and  $\mathrm{Na}_{0.33}\mathrm{V}_2\mathrm{O}_5$  has a 3D network. Therefore, 2D and 3D structures are usually found in  $\mathrm{V}_2\mathrm{O}_5$  and  $\mathrm{M}_x\mathrm{V}_2\mathrm{O}_5$  compounds.
+
+The  $\mathrm{V}_2\mathrm{O}_5$  is built from square pyramid layers which are formed by sharing edges and corners of square pyramids chains. Figure 11a shows a typical square pyramid layer of  $\alpha\text{-}\mathrm{V}_2\mathrm{O}_5$ , but it has also been described as a distorted octahedron layer in some reports, which may make us confused. Actually, they are two different recognitions on the structures since the square pyramids can include another oxygen from the next layer, forming distorted octahedron layers (Figure 11b). However, the description of  $\mathrm{V}_2\mathrm{O}_5$  using square pyramid layers in this review is more appropriate.[44b] More importantly, it can be understood that the existence of water molecules or ions such as Zn ions in the interlayers may change the layered structure and significantly affect the discharge/charge processes and electrochemical performances of ZIBs.
+
+1)  $\mathrm{V}_2\mathrm{O}_5$  and  $\mathrm{Zn}_{0.25}\mathrm{V}_2\mathrm{O}_5$ . In 1998, it was reported that using a  $\mathrm{V}_2\mathrm{O}_5$  aerogel cathode, high-energy intercalation batteries based on  $\mathrm{Zn}^{2+}$  might be attainable.[48] Later, XAS further explained the large intercalation capacity.[49] Until 2016, studies on V-based cathodes began to grab researchers' extensive attentions.[50] Hydrated  $\mathrm{V}_2\mathrm{O}_5$  has a large interlayer spacing ( $\approx 13.5\AA$ ) because of the incorporation of water molecules and can be a good candidate for the intercalation of  $\mathrm{Zn}^{2+}$ . After the insertion of  $\mathrm{Zn}^{2+}$  and concomitant reduction of  $\mathrm{V}^{5+}$  to  $\mathrm{V}^{4+}$ , the  $\approx 1.9\AA$  interlayer spacing change of  $\mathrm{V}_2\mathrm{O}_5$  was observed.[51] With the  $2.43\%$  change of the (200) lattice spacing,  $\mathrm{V}_2\mathrm{O}_5$  exhibited a well rate and cycle property (2000 cycles at  $2000\mathrm{mA}\mathrm{g}^{-1}$ .[52] Although not all the Zn ions can be deintercalated after recharging, the residual Zn ions are supposed to act as the interlayer pillars and keep the layered structure stable during discharge/charge processes.
+
+Similarly to  $\mathrm{V}_2\mathrm{O}_5$ ,  $\mathrm{Zn}_{0.25}\mathrm{V}_2\mathrm{O}_5\cdot n\mathrm{H}_2\mathrm{O}$  composed of  $\mathrm{V}_2\mathrm{O}_5$  layers was applied in ZIBs.[53] As mentioned before, the  $\mathrm{V}_2\mathrm{O}_5$  layers in  $\mathrm{Zn}_{0.25}\mathrm{V}_2\mathrm{O}_5\cdot n\mathrm{H}_2\mathrm{O}$  are built by  $\mathrm{VO}_6$  octahedra,  $\mathrm{VO}_5$  trigonal bipyramids, and  $\mathrm{VO}_4$  tetrahedra, which
+
+![](images/0767cead458302755758b7b184709239df17b0c4dafa8c82a8876081af600c3d.jpg)
+
+![](images/6a9b03af3ec873f190a7b1aa9133d6418a4515ffee24bb8d3ca9770fe2a0cd42.jpg)  
+Figure 11. Two different representations of  $\alpha\text{-}\mathbf{V}_2\mathbf{O}_5$  layers. A typical layer of  $\alpha\text{-}\mathbf{V}_2\mathbf{O}_5$  composed of a) square pyramids chains or b) distorted octahedra chains observed from different directions.
+
+is analogous to that of  $\sigma Zn_{0.25}V_2O_5$  phase (not  $\delta$  phase as claimed in ref. [53]).[43,47b] Then these layers are separated by Zn ions and water molecules. The Zn atom is octahedrally coordinated by two apical oxygens of  $V_{2}O_{5}$  layers on opposite sides and by four coplanar water molecules. During the discharge/charge processes, this framework of  $\mathrm{Zn}_{0.25}\mathrm{V}_2\mathrm{O}_5\cdot n\mathrm{H}_2\mathrm{O}$  changed reversibly. As shown in Figure 12a,c, due to the water intercalation,  $\mathrm{Zn_xV_2O_5\cdot nH_2O}$  (10.8 Å interlayer distance) first transformed to  $\mathrm{Zn}_x\mathrm{V}_2\mathrm{O}_5\cdot y\mathrm{H}_2\mathrm{O}$  ( $y > n$ ) (12.9 Å interlayer distance) after being immersed in aqueous electrolyte. During
+
+the discharge process, a phase transition took place when the intercalation of Zn ions is up to  $0.3\mathrm{mol}$ $(x = 0.55)$  and a contraction of the interlayer distance from 12.9 to  $11.0\AA$  were observed (Figure 12b). This strange contraction was supposed to be caused by the expulsion of water molecules when Zn ions inserted into  $\mathrm{Zn}_x\mathrm{V}_2\mathrm{O}_5\cdot n\mathrm{H}_2\mathrm{O}$ . After recharging, with the deintercalation of Zn ions and the re-intercalation of water molecules, a phase with  $13.4\AA$  interlayer spacing was achieved. Then, its interlayer spacing further reduced to that of initial  $\mathrm{Zn_{0.25}V_2O_5\cdot yH_2O}$ $(12.9\AA)$  after  $90\mathrm{min}$  rest (Figure 12a).
+
+![](images/6b901457d2415743624dd873e693a8c67cb24c7d297f7067d415a07f91ce48b1.jpg)
+
+![](images/664ab520becc6d584324e9a43835874e5425fb91c353b554f212f1713167987b.jpg)
+
+![](images/15345e4b288906399cbf7a305ceac8ff92b580dbe4d7ad43e33208246bd8f380.jpg)
+
+![](images/1c29113b88e3b1811e9e7ea3cf1a4b6ac128c04749958947108375bec77929cd.jpg)
+
+![](images/1f937a78635a008c3fc75b0d20e9ef9e89ca638c3d10634c566b595488aeb89d.jpg)  
+Figure 12. Electrochemical processes of  $\mathsf{Zn^{2 + }}$  insertion/extraction in  $\mathsf{V}_2\mathsf{O}_5\cdot n\mathsf{H}_2\mathsf{O}$  and  $\mathsf{Zn}_{0.25}\mathsf{V}_2\mathsf{O}_5\cdot n\mathsf{H}_2\mathsf{O}$  aided by the structural water. a) XRD patterns of  $\mathsf{Zn}_{0.25}\mathsf{V}_2\mathsf{O}_5\cdot n\mathsf{H}_2\mathsf{O}$  electrodes in different states and b) Operando XRD measurement during the second electrochemical cycle. c) Schematic illustrating of the reversible water intercalation into  $\mathsf{Zn}_{0.25}\mathsf{V}_2\mathsf{O}_5\cdot n\mathsf{H}_2\mathsf{O}$  immersed in electrolyte/ $\mathsf{H}_2\mathsf{O}$  and  $\mathsf{Zn^{2 + }}$  insertion/extraction accompanying water deintercalation/intercalation. d) Galvanostatic discharge/charge profiles and e) cycling performances of  $\mathsf{Zn}_{0.25}\mathsf{V}_2\mathsf{O}_5\cdot n\mathsf{H}_2\mathsf{O}$  electrodes. a-e) were reproduced with permission.[53] Copyright 2016, Macmillan Publishers Limited, part of Springer Nature. (f) Crystal structures of VOG in different states. (g) Rate capabilities of VOG electrodes. f-g) were reproduced with permission.[54] Copyright 2017, Wiley-VCH.
+
+![](images/049587ebb253665f7366e2257fbb5678fc1e715424a11c3723d4086f912af1eb.jpg)
+
+This reversible discharge/charge process provided remarkable electrochemical performances based on the  $\mathrm{Zn_{0.25}V_2O_5\cdot yH_2O}$  cathode (Figure 12d,e). Moreover, it was claimed that water molecules play a vital role in this process including buffering the high charge density of the  $\mathrm{Zn^{2+}}$ , lowering the activation energy for charge transfer and expanding/contracting the layered galleries to allow  $\mathrm{Zn^{2+}}$  ingress/egress.
+
+Recently, the important role of structural water has been further demonstrated by Mai et al., using  $\mathrm{V}_2\mathrm{O}_5\cdot n\mathrm{H}_2\mathrm{O}/$  graphene (VOG) as cathode and  $3\mathrm{M}\mathrm{Zn}(\mathrm{CF}_3\mathrm{SO}_3)_2$  as electrolyte.[54] As shown in Figure 12f, VOG has 1.29 structural water per unit and a large interlayer spacing of  $\approx 12.6\AA$ . After immersing the charged state electrode in the electrolyte, water molecules and electrolyte ions  $(\mathrm{CF}_3\mathrm{SO}_3^-)$  and  $\mathrm{Zn^{2 + }}$  were verified to enter into VOG with a reduction of interlayer distance from 12.6 to  $10.4\AA$ . Formation of hydrogen bonds was supposed to give rise to the decreased distance. For the discharge process, this interlayer distance increased from 10.4 to  $13.5\AA$  because of  $\mathrm{Zn^{2 + }}$  intercalation and the phase transition also occurred when  $0.3\mathrm{mol}\mathrm{Zn^{2 + }}$  was intercalated into the interlayers. During the above processes, the shielding layer of structural water decreased the effective charge of  $\mathrm{Zn^{2 + }}$  and increases the distance between  $\mathrm{Zn^{2 + }}$  and the neighboring  $\mathrm{O^{2 - }}$ . Therefore, it is understandable that a high discharge capacity of  $248\mathrm{mAhg^{-1}}$  can still be obtained even at an extremely high rate of  $30\mathrm{A g^{-1}}$  (Figure 12g). Although two opposite results on the interlayer distance change have been reported by two groups, it is no doubt that water molecules are of significance in promoting the electrochemical performances of this kind of layered-type hydrate  $\mathrm{V}_2\mathrm{O}_5$  material.
+
+In addition to the water molecules, the 1D morphology of  $\mathrm{Zn_{0.25}V_2O_5\cdot nH_2O}$  also benefits the high-speed insertion/ extraction of Zn ions. For instance, ultralong  $\mathrm{Zn_{0.25}V_2O_5\cdot nH_2O}$  nanobelt ( $\approx 10~\mu \mathrm{m}$  length,  $\approx 150~\mathrm{nm}$  width and  $\approx 10~\mathrm{nm}$  thickness) exhibited an excellent rate performance with only  $7\%$  decrease of capacity at 8C as compared to that at 1C.[53] This unique morphology is largely due to the layer structure of  $\mathrm{Zn_{0.25}V_2O_5\cdot nH_2O}$  along the directions of octahedra chains.
+
+2)  $\mathrm{Ca}_{0.25}\mathrm{V}_2\mathrm{O}_5$ . Analogous to the layers of  $\delta -\mathrm{Ag}_{0.68}\mathrm{V}_2\mathrm{O}_5$  [43,47a] the  $\mathrm{V}_2\mathrm{O}_5$  layers in  $\mathrm{Ca}_{0.25}\mathrm{V}_2\mathrm{O}_5$  are built by quadruple octahedra chains sharing their edges (Figure 13a). One Ca atom is coordinated by four coplanar oxygens from the water molecules and three apical oxygens from the  $\mathrm{V}_2\mathrm{O}_5$  layers to form a  $\mathrm{CaO_7}$  polyhedron (Figure 13b).[55] It is speculated that the interlayer
+
+space in  $\mathrm{Ca}_{0.25}\mathrm{V}_2\mathrm{O}_5$  is larger than that in  $\mathrm{Zn}_{0.25}\mathrm{V}_2\mathrm{O}_5$  because of the longer  $\mathrm{Ca - O}$  bonds, which will further facilitate the insertion/extraction of  $\mathrm{Zn}^{2 + }.$  [56] Based on this assumption,  $\mathrm{Ca}_{0.25}\mathrm{V}_2\mathrm{O}_5$  nanobelts with similar morphology to that of  $\mathrm{Zn}_{0.25}\mathrm{V}_2\mathrm{O}_5$  but fourfold higher electrical conductivity, was used in ZIBs. At a power density of  $1825\mathrm{Wkg^{-1}}$  , the battery could still provide an energy density of  $133\mathrm{Whkg^{-1}}$  , meanwhile an extraordinary cycle performance (8000 cycles) was demonstrated. These remarkable properties of  $\mathrm{Ca}_{0.25}\mathrm{V}_2\mathrm{O}_5$  were verified to arise from the highly reversible intercalation of  $\mathrm{Zn}^{2 + }$  and its stable crystal structure. It is worth noting that an obvious peak split in XRD and fast capacity fade have been observed if discharging to the voltage lower than  $0.6\mathrm{V}$  This phenomenon was speculated to be related with the huge structural stress and the dramatic crystal distortion came from more  $\mathrm{Zn}^{2 + }$  intercalation. We believe that since the apical oxygens in  $\mathrm{ZnO_6}$  polyhedron are usually provided by  $\mathrm{VO_4}$  tetrahedra which do not exist in the  $[\mathrm{V}_2\mathrm{O}_5]$  layers of  $\mathrm{Ca}_{0.25}\mathrm{V}_2\mathrm{O}_5$  (only  $\mathrm{VO}_6$  octahedra exist), the intercalation of large amounts  $\mathrm{Zn}^{2 + }$  will cause the exchange of ions between  $\mathrm{Ca^{2 + }}$  and  $\mathrm{Zn}^{2 + }$  and changes the coordination polyhedra from  $\mathrm{VO}_6$  octahedra to  $\mathrm{VO}_4$  tetrahedra, which gives rise to the crystal distortion and capacity fade.
+
+3)  $\mathrm{Na}_{0.33}\mathrm{V}_2\mathrm{O}_5$ . Different from those of  $\mathrm{Ca}_{0.25}\mathrm{V}_2\mathrm{O}_5$ , the quadruple octahedra chains are linked by double chains of square pyramids through sharing their corners in  $\mathrm{Na}_{0.33}\mathrm{V}_2\mathrm{O}_5$  (Figure 13c).[43] It is easy to understand that after intercalation of  $\mathrm{Zn}^{2+}$ , this framework of  $\mathrm{Na}_{0.33}\mathrm{V}_2\mathrm{O}_5$  will suffer a huge structural stress because of the relatively limited spaces for  $\mathrm{Zn}^{2+}$  accommodation, which has been verified recently.[57] During the discharge process, a new  $\mathrm{Zn}_x\mathrm{Na}_{0.33}\mathrm{V}_2\mathrm{O}_5$  phase appeared and was is probably related to the crystal distortion because of  $\mathrm{Zn}^{2+}$  intercalation. Moreover, a large capacity fade from  $373\mathrm{mAhg^{-1}}$  to  $277\mathrm{mAhg^{-1}}$  during the initial two cycles was observed and the insertion of  $\mathrm{Zn}^{2+}$  in "dead sites" was to blame for it. However,  $\mathrm{Na}^+$  were claimed to act as the stabilizer in keeping the reversible phase transform during the discharge/charge processes, thereby ensuring an enhanced cycling stability (up to 1000 cycles).
+
+# 2.2.2.  $M_{x}V_{3}O_{7}$  and  $M_{x}V_{3}O_{8}$
+
+$\mathrm{LiV}_3\mathrm{O}_8$ $\mathrm{NaV_3O_8}$  , and  $\mathrm{H}_2\mathrm{V}_3\mathrm{O}_8$ $(\mathrm{V}_{3}\mathrm{O}_{7}\cdot \mathrm{H}_{2}\mathrm{O})$  are composed of  $\mathrm{VO}_6$  octahedra and  $\mathrm{VO}_5$  square pyramids and they differ in
+
+![](images/18b88cb3f90d9ec83e13fbeac04df5be3fe66124fea2965895d276bf56865471.jpg)  
+Figure 13. Crystal structures of  $\mathrm{Ca}_{0.25}\mathrm{V}_2\mathrm{O}_5$  and  $\mathrm{Na}_{0.33}\mathrm{V}_2\mathrm{O}_5$ . a) The  $[\mathrm{V}_2\mathrm{O}_5]$  layers in  $\mathrm{Ca}_{0.25}\mathrm{V}_2\mathrm{O}_5$ . b) The  $\mathrm{CaO_7}$  and  $\mathrm{ZnO_6}$  polyhedron. c) Crystal structure of  $\mathrm{Na}_{0.33}\mathrm{V}_2\mathrm{O}_5$ .
+
+![](images/4d5e85249d1cd1d53d8ee6ed98ff9b655aa3b4c46361cbdaa145da2073456e1f.jpg)  
+Figure 14. Crystal structures of a)  $\mathrm{MV}_3\mathrm{O}_8$  and b)  $\mathrm{H}_2\mathrm{V}_3\mathrm{O}_8$  ( $\mathrm{V}_3\mathrm{O}_7\cdot \mathrm{H}_2\mathrm{O}$ ).
+
+![](images/2e2363162b07cfafe9e1ee18f1307c082537cc82cb237481606ba9e39aecc4eb.jpg)
+
+which corner these two kinds of coordination polyhedra share (Figure 14).
+
+1)  $\mathrm{LiV}_3\mathrm{O}_8$  and  $\mathrm{NaV}_3\mathrm{O}_8$ . In  $\mathrm{LiV}_3\mathrm{O}_8$  and  $\mathrm{NaV}_3\mathrm{O}_8$ , the edge-shared octahedral  $(\mathrm{VO}_6)$  and square pyramids  $(\mathrm{VO}_5)$  chains construct the  $\mathrm{V}_3\mathrm{O}_8$  layers along the  $z$  axis by sharing their corners, and  $\mathrm{Li}^+$  or  $\mathrm{Na}^+$  ions in the interstitial sites link  $\mathrm{V}_3\mathrm{O}_8$  layers together.[58] The layered-type structure and the relative high oxidation states of V (+5) in  $\mathrm{LiV}_3\mathrm{O}_8$  and  $\mathrm{NaV}_3\mathrm{O}_8$  make it a potential candidate for Zn ions intercalation/deintercalation. During the discharge process,  $\mathrm{LiV}_3\mathrm{O}_8$  exhibited a solid-solution behavior when Zn ions intercalated into its interlayers at the initial stage (1.28–0.82 V).[59] With the emergence of  $\mathrm{ZnLiV}_3\mathrm{O}_8$  in the intermediate stage (0.82–0.7 V), two successive two-phase reactions occurred. At the last stage, the solid-solution behavior of the  $\mathrm{Zn}_{\gamma}\mathrm{LiV}_3\mathrm{O}_8$  ( $\gamma \geq 1$ ) was observed. For the recharging process, it was less complicated since the  $\mathrm{Zn}_{\gamma}\mathrm{LiV}_3\mathrm{O}_8$  transformed directly to  $\mathrm{LiV}_3\mathrm{O}_8$ . Owing to the layer structure in  $\mathrm{LiV}_3\mathrm{O}_8$ , Zn insertion was almost completely reversible and negligible structural variation after cycling was observed.
+
+As to  $\mathrm{NaV}_3\mathrm{O}_8$ , it maintained only  $17\%$  of the initial capacity after 4000 cycles.[60] Relatively limited capacities and cycle lives were also found in  $\mathrm{Na}_{1.1}\mathrm{V}_3\mathrm{O}_{7.9}$  nanoribbons although graphene was used to improve the reaction kinetics.[61] As mentioned above, crystal water plays a vital role in promoting the electrochemical performances of vanadium oxides. Therefore, compared to  $\mathrm{NaV}_3\mathrm{O}_8$ ,  $\mathrm{NaV}_3\mathrm{O}_8\cdot 1.63\mathrm{H}_2\mathrm{O}$ , and  $\mathrm{Na}_2\mathrm{V}_6\mathrm{O}_{16}\cdot 3\mathrm{H}_2\mathrm{O}$ $(2(\mathrm{NaV}_3\mathrm{O}_8\cdot 1.5\mathrm{H}_2\mathrm{O}))$  have exhibited superior electrochemical properties,[60,62] especially the cycling stability (6000 cycles) and rate performance  $(110\mathrm{mAh}~\mathrm{g}^{-1}$  even at  $20\mathrm{A}~\mathrm{g}^{-1})$
+
+2)  $\mathrm{H}_2\mathrm{V}_3\mathrm{O}_8(\mathrm{V}_3\mathrm{O}_7\cdot \mathrm{H}_2\mathrm{O})$  As to  $\mathrm{H}_2\mathrm{V}_3\mathrm{O}_8$ ,  $\mathrm{VO}_6$  octahedra and  $\mathrm{VO}_5$  square pyramids connect each other by different conjunction methods into  $\mathrm{V}_3\mathrm{O}_8$  layers, which looks akin to that of  $\mathrm{LiV}_3\mathrm{O}_8$  except H atoms are bonded to O atoms in  $\mathrm{VO}_6$  octahedra forming hydrogen bonds (Figure 14b). Since  $\mathrm{V}^{5+}$  and  $\mathrm{V}^{4+}$  coexist in  $\mathrm{H}_2\mathrm{V}_3\mathrm{O}_8$  with the ratio of 2:1, electrochemical performances thus differ from that of  $\mathrm{LiV}_3\mathrm{O}_8$  where only  $\mathrm{V}^{5+}$  exists. A high capacitive contribution in the total capacity was observed at a high scan rate, which benefited the rate property (113.9 mAh g $^{-1}$  at 5 A g $^{-1}$ ).[63] Moreover, the addition of graphene was proved to further improve the charge
+
+transfer kinetics of the  $\mathrm{H}_2\mathrm{V}_3\mathrm{O}_8$  cathode especially after large cycling numbers.[64] According to various measurements,  $\mathrm{Zn}_x\mathrm{H}_2\mathrm{V}_3\mathrm{O}_8$  was the reversible discharge product and recently, it was claimed that up to two Zn ions could reversibly ingress/egress the  $\mathrm{H}_2\mathrm{V}_3\mathrm{O}_8$  with the formation of a new  $\mathrm{Zn}_2\mathrm{V}_3\mathrm{O}_7\cdot \mathrm{H}_2\mathrm{O}$  phase with a different crystal structure.[65] Apparently, these results above indicate a phase transformation is inevitable since the intercalated zinc ions a great deal will give rise to the dissimilar coordination environments and structural changes of  $\mathrm{H}_2\mathrm{V}_3\mathrm{O}_8$ .
+
+# 2.2.3.  $M_{x}V_{2}O_{7}$
+
+In  $\mathrm{Zn_2V_2O_7}$  or  $\mathrm{Zn}_3\mathrm{V}_2\mathrm{O}_7(\mathrm{OH})_2\cdot 2\mathrm{H}_2\mathrm{O}$ , V is tetrahedral coordination in  $[\mathrm{V}_2\mathrm{O}_7]$  groups which are aligned along the  $z$ -axis to build up the frameworks.[43] As mentioned before, a dramatic structural change will take place if pure tetrahedral frameworks are used. Fortunately, five-coordinated  $[\mathrm{ZnO}_5]$  trigonal bipyramids and water molecules may play the important role in stabilizing the structures during discharge/charge processes. In details, this porous crystal framework with  $\approx 7.19\AA$  interlayer spacing is built up of zinc oxide layers separated by V-O-V pillars (tetrahedra) and water molecules randomly accommodate in the cavities, which will provide facile diffusion of Zn ions.
+
+Ultralong layered-type  $\mathrm{Zn}_3\mathrm{V}_2\mathrm{O}_7(\mathrm{OH})_2\cdot 2\mathrm{H}_2\mathrm{O}$  nanowires[66] and  $\alpha \text{-Zn}_2\mathrm{V}_2\mathrm{O}_7$  nanowires have been studied in ZIBs (Figure 15).[67] The  $\mathrm{Zn}_3\mathrm{V}_2\mathrm{O}_7(\mathrm{OH})_2\cdot 2\mathrm{H}_2\mathrm{O}$  cathode was operated from 50 to  $3000\mathrm{mA}\mathrm{g}^{-1}$  (Figure 15c) and a capacity retention of  $68\%$  after 300 cycles was achieved (Figure 15d). As to the  $\alpha \text{-Zn}_2\mathrm{V}_2\mathrm{O}_7$  cathode, it could be cycled at  $4400\mathrm{mA}\mathrm{g}^{-1}$  (Figure 15g) and the capacity retention was  $85\%$  after 1000 cycles (Figure 15h). A high capacitive contribution in the total current response was both observed, which promoted their rate performances. Intriguingly, the byproduct of  $\mathrm{Zn}_4\mathrm{SO}_4(\mathrm{OH})_6\cdot 4\mathrm{H}_2\mathrm{O}$  that was usually found in Mn-based cathodes was found in both two V-based materials here. The formation/decomposition of the  $\mathrm{Zn}_4\mathrm{SO}_4(\mathrm{OH})_6\cdot 5\mathrm{H}_2\mathrm{O}$  was proposed to explain the reversible discharge/charge mechanism and the capacity fading at the initial cycles.[67,68] The hydroxide sulfate was thought to be related with the decomposition of electrolyte. As we have mentioned before,  $\mathrm{VO}_4$  tetrahedra must transfer to other kinds of polyhedra when the valence of V is below  $+5$  (Figure 9) and we believe the structural change of  $\mathrm{VO}_4$  tetrahedra may also be
+
+![](images/3cd945ad2a3181d2bd29e5115401278aa19562b0d72c7dbcd92375360f7932c9.jpg)
+
+![](images/6137fe4ea8271b5b64d32d9b2b41b6981d32b01a198625ee8082b388a878c7a3.jpg)
+
+![](images/66626181f51a0edcba732b33c0c1f5f0584bb981ff2aa3c73701ed618ac1d94c.jpg)
+
+![](images/7bb6d642a69d67b1f8bab18fd4d83073dca4a29ae2482ed9eaf6f9c46178e484.jpg)
+
+![](images/c96246f15f433ccbcdeb909d55d1e36b004ca43216d3cb4699b98fa0422b3e01.jpg)
+
+![](images/bb972fd1bdb3d76c09519421394bee49ba99d6af25792a134e92d50ab6c8f2ac.jpg)
+
+![](images/48b988b1eb514201dcfcbc7c1aa43b8fdbbde00eb4c2c507779b6523001057ce.jpg)  
+Figure 15. Morphologic characteristics and electrochemical performances of the  $\mathsf{Zn}_2\mathsf{V}_2\mathsf{O}_7$  and  $\mathsf{Zn}_3\mathsf{V}_2\mathsf{O}_7(\mathsf{OH})_2\cdot 2\mathsf{H}_2\mathsf{O}$ . a) SEM and b) TEM images of  $\mathsf{Zn}_3\mathsf{V}_2\mathsf{O}_7(\mathsf{OH})_2\cdot 2\mathsf{H}_2\mathsf{O}$  nanowires. c) Rate capabilities and d) cycle performances of  $\mathsf{Zn}_3\mathsf{V}_2\mathsf{O}_7(\mathsf{OH})_2\cdot 2\mathsf{H}_2\mathsf{O}$  electrodes. a-d) were reproduced with permission.[66] Copyright 2017, Wiley-VCH. e) SEM and f) TEM images of  $\alpha -\mathsf{Zn}_2\mathsf{V}_2\mathsf{O}_7$  nanowires. g) Rate capabilities and h) cycle performances of  $\alpha -\mathsf{Zn}_2\mathsf{V}_2\mathsf{O}_7$  electrodes. e-h) were reproduced with permission.[67] Copyright 2018, Royal Chemical Society.
+
+![](images/42f03f7345a0959830baa6bee421f40236c168bdcf73977fa04396a2860c1ea4.jpg)
+
+responsible for this hydroxide sulfate byproduct and capacity fading.
+
+# 2.2.4.  $M_{x}V O_{2}$
+
+Hollandite structure  $\mathrm{M}_x\mathrm{VO}_2$  is composed of square pyramids and provides  $2^{*}2$  tunnels that are analogous to those of hollandite  $\mathrm{MnO}_2$  ( $\alpha$ -MnO $_2$ ). Hollandite-type  $\mathrm{VO}_{1.52}(\mathrm{OH})_{0.77}$  with this structure has been selected as  $\mathrm{Zn}^{2+}$  intercalation materials of ZIBs.[69] Partially replacing V ions by  $\mathrm{Al}^{3+}$  ions provides decreased particle size and increased specific surface area for  $\mathrm{V}_{1-x}\mathrm{Al}_x\mathrm{O}_{1.52}(\mathrm{OH})_{0.77}$ , which is beneficial to improving its electrochemical performances. More importantly, Al doping can give rise to a higher operation voltage and a more stable tunnel structure of  $\mathrm{V}_{1-x}\mathrm{Al}_x\mathrm{O}_{1.52}(\mathrm{OH})_{0.77}$  because of stronger Al-O bonds and thus effectively promotes the cycle performances.
+
+# 2.2.5.  $M_{x}VO_{4}$
+
+In the structure of  $\mathrm{M}_x\mathrm{VO}_4$  such as  $\mathrm{Zn}_2(\mathrm{OH})\mathrm{VO}_4$ ,  $[\mathrm{VO}_4]$  tetrahedra are interconnected by  $[\mathrm{ZnO}_6]$  octahedral chains to form
+
+a 3D framework of  $\mathrm{[Zn(OH)VO_4]}$ , the voids of which are filled by Zn ions. This indicates that the insertion/extraction of Zn ions may not change the framework of  $\mathrm{[Zn(OH)VO_4]}$  and thus high cycle and rate performances will be realized. Based on this assumption, recently, our group reported the  $\mathrm{Zn_2(OH)}$ $\mathrm{VO}_4$  cathode with ultrathin mesoporous arrays. As shown in Figure 16a,b, nanoflakes have typical thickness less than  $10\mathrm{nm}$ , average lateral width of  $\approx 400\mathrm{nm}$  and height  $\approx 5\mu \mathrm{m}$ . By the virtues of the unique morphology and structure, excellent high-rate capability (101 mAh  $\mathrm{g}^{-1}$  at  $50\mathrm{C} / 10\mathrm{A}\mathrm{g}^{-1}$ , Figure 16c) and ultrastable cycling (89% capacity retention after 2000 cycles, Figure 16d) have been achieved. Based on the results of First-principle calculation on the diffusion energy barriers of Zn ions (0.21 eV for the migration pathways D1, Figure 16e), we draw the conclusions that the largely exposed  $b - c$  plane with small thickness which is parallel to the 2D diffusion paths, is favorable for fast  $\mathrm{Zn^{2 + }}$  migration and high rate energy storage.
+
+# 2.2.6. Other V-Based Materials
+
+In addition to vanadium oxides, vanadium phosphates and vanadium sulfides have also been studied in aqueous ZIBs.
+
+![](images/3f0377097e2cbf6e09482fa8e43dc65ea518d20561e3b20247b297639bfdfd69.jpg)
+
+![](images/8a5f3b373f0fee4f7d5230ac5d01cc186addf1ef361e6c55b7a37992a9a9c649.jpg)
+
+![](images/cfd9df5eb91afddbcef6599d21d2f96ed7154b6996a64ba69dda0d1176e19c1e.jpg)
+
+![](images/d8ac664b0746907452e6e5cc65e74b0beeed0dacbc24a9023737d0f32942a602.jpg)  
+Figure 16. Morphologic characteristics and electrochemical performances of  $\mathsf{Zn_2(OH)VO_4}$ . a) SEM images of  $\mathsf{Zn_2(OH)VO_4}$  with a homogeneous nanoflake structure. b) TEM images of  $\mathsf{Zn_2(OH)VO_4}$  showing porous surface of the array. c) Rate capabilities and d) cycling performances of  $\mathsf{Zn_2(OH)}$ $\mathsf{VO_4}$ . e) First-principle calculation of the in-plane b-c diffusion energy barriers and the corresponding pathways for Zn-ion migration. The arrows indicate optimum diffusion paths. Figures are reproduced with permission.[68] Copyright 2018, Wiley-VCH.
+
+![](images/e0c205e3f90ff7e95d791f80e8eb4d5347508787791340a2f6da208b3aa135f7.jpg)
+
+![](images/34020babf9542d9b11b916138c4f98c3c6b18103063b0fbd6193b9fa45ce2d17.jpg)
+
+NASICON structured  $\mathrm{Na}_3\mathrm{V}_2(\mathrm{PO}_4)_3$  wrapped by graphene-like carbon was evaluated as the cathode.[70] During the first charge process, two  $\mathrm{Na^{+}}$  ions deintercalated from the NVP framework giving rise to the formation of  $\mathrm{NaV}_2(\mathrm{PO}_4)_3$  (Figure 17). Then, Zn ions inserted into  $\mathrm{NaV}_2(\mathrm{PO}_4)_3$  matrix to form  $\mathrm{Zn}_x\mathrm{NaV}_2(\mathrm{PO}_4)_3$  in the following discharge process accompanied by the reduction of V ions valence from  $\mathrm{V}^{4 + }$  to  $\mathrm{V}^{3 + }$ . This battery exhibited a specific capacity of  $97\mathrm{mAhg^{-1}}$  at  $50~\mathrm{mA~g^{-1}}$  (Figure 17b). Obviously, the specific capacity of this kind of NASICON V-based materials are limited and increasing the discharge voltage is a choice to promote the specific energy. Thus, a NASICON  $\mathrm{Na}_3\mathrm{V}_2(\mathrm{PO}_4)_2\mathrm{F}_3$  with  $0.6\mathrm{V}$  higher discharge plateaus than that of  $\mathrm{Na}_3\mathrm{V}_2(\mathrm{PO}_4)_3$  was adopted and improved electrochemical performances were achieved (Figure 17c).[71]
+
+$\mathrm{VS}_2$  is a typical layered transition-metal dichalcogenides (TMDs) with an interlayer spacing of  $5.76\AA$ , in which  $\mathrm{V}$  layers are connected to two S layers to form a sandwich  $\mathrm{VS}_2$  structure. Owing to its relative high conductivity and large layer spacing,  $\mathrm{VS}_2$  has been applied as ZIB cathode material.[72] For the discharge process, two steps were signified by the results of multiple analysis methods. In the first step  $(0.82 - 0.65\mathrm{V})$ ,  $\mathrm{Zn}$  ions was intercalated into the layers of  $\mathrm{VS}_2$  to form conductive  $\mathrm{Zn}_{0.09}\mathrm{VS}_2$ , which was a highly reversible process. Then, a larger capacity contribution was provided by the phase change from  $\mathrm{Zn}_{0.09}\mathrm{VS}_2$  to  $\mathrm{Zn}_{0.23}\mathrm{VS}_2$  between 0.65 and  $0.45\mathrm{V}$ . This intercalation of  $\mathrm{Zn}^{2+}$  is realized by self-adaptation of the interlayer space of  $\mathrm{VS}_2$  which expands along the  $c$ -axis (only  $1.73\%$  ) and shrinks along the  $a$ - and  $b$ -axes. As to the charge process, reversible deintercalation of  $\mathrm{Zn}$  ions from  $\mathrm{Zn}_{0.23}\mathrm{VS}_2$
+
+to form the  $\mathrm{VS}_2$  phase was revealed. This research indicates more layered TMDs may be suitable for the application of Zn-ion battery.
+
+# 2.3. Prussian Blue Analogs-Based Cathodes
+
+Prussian blue analogs (PBAs)  $\mathrm{MFe(CN)_6}$  ( $\mathrm{M} = \mathrm{Fe}$ , Co, Ni, Cu, Mn...) refer to the transition-metal hexacyanoferrates which have open framework structures, sufficient redox-active sites, and relative strong structural stabilities. They have attracted great attentions in Na-ion and K-ion batteries because of their unique crystal structures.[73]
+
+The crystal structure of Prussian blue analogs is illustrated in Figure 18. PBAs has a typical face-centered cubic (fcc) structure, in which Fe (III) bonds with C atoms and M bonds with N atoms forming  $\mathrm{FeC}_6$  and  $\mathrm{MN}_6$  octahedra, respectively. Then, these two kinds of octahedra are linked by  $(\mathbb{C}\equiv \mathbb{N})$  bridges, forming an open 3D framework.
+
+Due to the large interstitial sites and special tunnels, PBAs allow facile and reversible electrochemical insertion/extraction of diverse ions including Zn ions. The ingress/egress processes of various ions are influenced by the heteroatoms (such as alkali metal atoms) and water molecules which usually exist in the interstitial sites of PBAs. Therefore, PBAs can also be written as  $\mathrm{A_xM[Fe(CN)_6]_y\cdot zH_2O}$  ( $\mathrm{A} = \mathrm{Li}$ , Na, K...). Theoretically, a two-mole electron transfer can be realized in one-mole PBA since it contains two redox active centers:  $\mathrm{M^{2 + } / M^{3 + }}$  and  $\mathrm{Fe^{2 + } / }$ $\mathrm{Fe^{3 + }}$  couples. However, lattice defects of  $\mathrm{Fe(CN)_6}$  and vacancies are easily formed in the conventional synthetic process, which
+
+![](images/2f9dac20e38fb7468da25a5755d6a949b2ad0a6c1fb663fb6ea3966b1f23ef32.jpg)  
+(a)
+
+![](images/00b411e8ab6b67c1320217fe477f102cbfb12673d2c1eeca131bf160f5ced430.jpg)  
+Figure 17. Electrochemical processes of  $\mathsf{Zn^{2 + }}$  insertion/extraction in  $\mathrm{Na}_3\mathrm{V}_2(\mathrm{PO}_4)_3$  and  $\mathrm{Na}_3\mathrm{V}_2(\mathrm{PO}_4)_2\mathrm{F}_3$  a) Schematic representation for phase transition of  $\mathrm{Na}_3\mathrm{V}_2(\mathrm{PO}_4)_3$  during cycling. b) Galvanostatic discharge/charge profiles of  $\mathrm{Na}_3\mathrm{V}_2(\mathrm{PO}_4)_3$  electrodes at different C rates. a,b) Reproduced with permission.[70] Copyright 2016, Elsevier. c) Galvanostatic discharge/charge profiles of  $\mathrm{Na}_3\mathrm{V}_2(\mathrm{PO}_4)_2\mathrm{F}_3$  electrodes at various current densities. Reproduced with permission.[71] Copyright 2018, Elsevier.
+
+![](images/a733e37858d7fd2a2ea5c2c87e1f3c42f85e3495eda3e97f7fa032c840e8f6fb.jpg)
+
+blocks off the active sites in PBAs. As mentioned above, M can be many redox-active transition-metals such as Fe, Ni, Cu, Mn, which makes it easy to tune the electrochemical properties of PBAs. For instance, the redox potentials of  $\mathrm{Fe}^{2+}/^{3+}$  couples in  $\mathrm{Na}_2\mathrm{CoFe - PBA}$  (CoHCF),  $\mathrm{Na}_2\mathrm{CuFe - PBA}$  (CuHCF), and  $\mathrm{Na}_2\mathrm{NiFe - PBA}$  (NiHCF) are  $+0.90\mathrm{V}, +0.58\mathrm{V}$  and  $+0.45\mathrm{V}$  (vs  $\mathrm{Ag / AgCl}$ ), respectively.[74] More importantly, the robust 3D frameworks of PBAs are stable toward the insertion/extraction processes of
+
+gust ions. Therefore, PBAs compounds are also considered as the hosts for reversible insertion of Zn cations in recent five years. Up to now, NiHCF, copper hexacyanoferrate (CuHCF), and FeCHF with the typical cubic structure and ZnHCF with a rhombohedral framework have been studied as cathodes in ZIBs.
+
+In 2014, a ZIB based on ZnHCF was first proposed by Liu et al. and a relative high operation voltage of about  $1.7\mathrm{V}$
+
+![](images/3cda4507e04ee35453561c1b3178752361b1f6630028abc26f1a1dc094238fb5.jpg)  
+Figure 18. Schematic frameworks of Prussian blue analogues  $\mathrm{MFe(CN)_6}$  ( $\mathbf{M} = \mathbf{Fe}$ , Co, Ni, Cu, Mn) with  $\mathsf{Zn^{2+}}$  intercalation/deintercalation.
+
+was realized.[75] Because the as-prepared  $\mathrm{ZnHCF}$  has a large amount of  $\mathrm{Fe(CN)_6}$  vacancies in the crystal lattice, the typical cubic structure is not stable and will transform to the rhombohedral structure after dying. Then,  $\mathrm{ZnN_4}$  tetrahedra rather than  $\mathrm{ZnN_6}$  octahedra are linked with  $\mathrm{FeC_6}$  octahedra via  $(\mathbb{C}\equiv \mathbb{N})$  bridges, forming an open 3D framework. This structure was responsible for the intercalation/deintercalation of  $\mathrm{Zn^{2 + }}$  and the capacity retention of  $76\%$  after 100 cycles. According to the results of ICP and XRD, it was indicated that  $0.85\mathrm{mol}\mathrm{Zn}^{2 + }$  was inserted into  $1\mathrm{mol}\mathrm{Zn}_3[\mathrm{Fe}(\mathrm{CN})_6]_2$  with the partial reduction of  $\mathrm{Fe}^{3 + }$  to  $\mathrm{Fe}^{2 + }$  after discharging and then, a reversible extraction of  $\mathrm{Zn^{2 + }}$  was observed after charging. Owing to the high operation voltage, an energy density of  $100\mathrm{Whkg^{-1}}$  was obtained although the discharge capacity was only  $65.4\mathrm{mAhg^{-1}}$  at 1C. In addition, controlling the morphologies of  $\mathrm{ZnHCF}$  with different exposed facets is of significance to improve their electrochemical performances.[76]
+
+Another Prussian blue analog CuHCF is composed of a cubic framework with  $\mathrm{CuN_6}$  and  $\mathrm{FeC_6}$  octahedra linked by linear  $(\mathbb{C}\equiv \mathbb{N})$  bridges (Figure 18). CuHCF nanoparticles with lattice parameter of  $10.1\AA$  were synthesized and worked as the cathode material for ZIBs.[77] The maximum discharge capacity of  $56\mathrm{mAhg^{-1}}$  was claimed to be related to the insertion of Zn ions in CuHCF. Although the specific capacity was not satisfactory, a relative high average cell voltage of  $1.73\mathrm{V}$  was obtained.[78] The reported specific energy/power of CuHCF was  $45.7\mathrm{Whkg^{-1}} / 52.5\mathrm{Wkg^{-1}}$  at  $60\mathrm{mA g^{-1}}$  and  $33.8\mathrm{Whkg^{-1}} / 1477\mathrm{Wkg^{-1}}$  at  $600\mathrm{mA g^{-1}}$  respectively. As to the cycle life, only 100 cycles have been realized. Preliminary studies on the mechanism of capacity fade have speculated that it is strongly related with the electrolyte (discussed in Part 3) and current density.[79] Furthermore, it is not because of the dissolution of the material, but a phase transition of the CuHCF that gives rise to the cyclic fading. The structure and composition of CuHCF tend to change since Zn ions will fill into the vacancies of the crystal lattice. This second phase will nucleate from CuHCF and it can be regarded as a partial incorporation of Cu in  $\mathrm{ZnHCF}$  and a partial incorporation of Zn in CuHCF. However, the detailed phase transformation mechanism is still far from clear.
+
+As for FeHCF, the discharge process involves two steps that are related to the reductions of high-spin Fe(III) coordinated with N atoms and low-spin Fe(III) coordinated with C atoms, respectively.[80] Although a specific capacity of  $120\mathrm{mAhg^{-1}}$  was achieved in the half-cell test, the average discharge voltage was only  $\approx 1.1\mathrm{V}$  for FeHCF and it was much lower than that of ZnHCF and CuHCF.[81]
+
+Similarly, the inserted  $\mathrm{Zn^{2 + }}$  was found in the interstitial cavity of NiHCF, which caused the increase of Fe-C interatomic distance (from 1.84 to  $1.98\AA$  ) but the decrease of the unit cell volume with the partial reduction of  $\mathrm{Fe}^{3 + }$  to  $\mathrm{Fe}^{2 + }$  [82] Unfortunately, the low specific capacity of  $56\mathrm{mAhg^{-1}}$  combined with the limited platform voltage  $(\approx 1.2\mathrm{V})$  makes NiHCF unattractive concerning the specific energy.
+
+In short, the studies on electrochemical insertion of Zn ions in PBAs are only on the early stage of proof-of-concept, nevertheless, the pioneering research opened a new field for the development of better cathodes for ZIBs.
+
+# 2.4. Other Cathode Materials
+
+In addition to the above three families of cathode materials in ZIBs,  $\mathrm{Mo}_6\mathrm{S}_8$  was also found to have the ability to adopt Zn ions.[83] A specific capacity of  $134\mathrm{mAhg^{-1}}$  was achieved in the first discharge process that could be divided into two steps: the formation of  $\mathrm{ZnMo_6S_8}$  from  $\mathrm{Mo}_6\mathrm{S}_8$  between  $1.00 - 0.45\mathrm{V}$  and the transformation of  $\mathrm{Zn}_2\mathrm{Mo}_6\mathrm{S}_8$  from  $\mathrm{ZnMo_6S_8}$  around  $\approx 0.35\mathrm{V}.$  [84] However, this kind of cathode material does not seem intriguing considering its low maintainable discharge plateau ( $\approx 0.35\mathrm{V}$  vs  $\mathrm{Zn / Zn^{2 + }}$  , Figure 19a).
+
+Besides the inorganic materials mentioned above, organic ones have also been applied in ZIBs in the past two years since they are biodegradable and beneficial for the battery assembly/ recovery. The 9,10-di(1,3-dithiol-2-ylidene)-9,10-dihydroanthracene (exTTF) was first reported to work as the cathode with an extraordinary cycle life ( $\approx$ 10000 cycles, Figure 19b) and a theoretical capacity of  $133\mathrm{mAhg^{-1}}$ .[85] In addition, thousands of quinone compounds have been found in nature and their electrochemical reactions are of importance in the biological electron transport systems. Last year, the quinone electrodes were first studied in other aqueous batteries ( $\mathrm{Li^{+}}$ ,  $\mathrm{Na^{+}}$ ,  $\mathrm{K^{+}}$ , and  $\mathrm{Mg}^{2+}$ ).[86] Recently, quinone electrodes were researched in ZIBs.[87] The ions could be stored in quinone compounds through coordinating to the negatively charged oxygen atoms in the electrochemical reduced carbonyl groups, which was named as the "ion-coordination" mechanism. Five kinds of quinone compounds were applied in ZIBs and among them, calix[4]quinone (C4Q) exhibited a relative high capacity  $(335\mathrm{mAhg^{-1}})$ , long cycle life (1000 cycles) and a low discharge/charge voltage gap of  $0.07\mathrm{V}$ . However, inhibiting the dissolution of discharge products and protecting zinc anodes from poisoning by quinones are required to achieve the longer cycle life. Chen's group has also used Poly(benzoquinonyl sulfide) (PBQS) as the cathode material because of its abundant active sites and low molecular weight.[88] It was claimed that the O atoms in PBQS molecules could bond  $\mathrm{Zn}^{2+}$  reversibly (Figure 19d) and  $78\%$  capacity retention at  $1000\mathrm{mA g^{-1}}$  was achieved owing to its fast kinetic of  $\mathrm{Zn}^{2+}$  intercalation (Figure 19c). The work on organic electrodes will enlighten the applications of promising polymers as cathodes for high-performance aqueous ZIBs.
+
+In short, various cathode materials including three large nominated families (Mn-based, V-based, and Prussian blue analog based materials) have been researched in ZIBs. The unique features of their structures and morphologies are mainly responsible for their different electrochemical performances and reaction mechanisms. It is because the different electrolytes can also influence the discharge/charge processes, that we will briefly introduce the electrolytes used in ZIBs.
+
+# 3. Electrolytes and Electrochemical Performances
+
+# 3.1. Aqueous Electrolytes
+
+ZIBs based on aqueous electrolytes have been extensively researched since aqueous solutions are safer, cheaper and more facile for battery assembly than nonaqueous electrolytes.
+
+![](images/87413bed1987793051e52a0d790f1b94643546a230b0d5c49ca036021fee6156.jpg)  
+(a)
+
+![](images/79a7d7f4db84308bfbd4116a3f34313ba7f1c31cdf39ac84779709a92d989003.jpg)  
+(b)  
+(d)
+
+![](images/f5282d530820f9e1417688c4a753404d9da83398398e131416f1c8f11a44e9c3.jpg)  
+(c)  
+Figure 19. Electrochemical characteristics of  $Zn^{2+}$  insertion/extraction in  $\mathrm{Mo}_6\mathrm{S}_8$ , exTTF, and PBQS. a) Galvanostatic discharge/charge profiles of  $\mathrm{Mo}_6\mathrm{S}_8$  electrodes at different C rates. Reproduced with permission.[84] Copyright 2016, Royal Chemical Society. b) Rate capabilities and cycling performances of exTTF electrodes. Reproduced with permission.[85] Copyright 2016, Macmillan Publishers Limited, part of Springer Nature. c) Galvanostatic discharge/charge curves of PBQS electrodes and d) the optimized structure of a segment on the PBQS chain after combination with Zn. c,d) Reproduced with permission.[88] Copyright 2018, Royal Chemical Society.
+
+![](images/79e167300f7c95391be199c555df26d04c25ed3df2597581a0b1b983004f3c4f.jpg)
+
+Moreover, higher ionic conductivity, in general, is provided by aqueous electrolytes, which benefits the high-rate performance. Hence, these features make the aqueous ZIB act as a promising alternative for stationary fast-response balancing systems, where safety, cost, response time are more important than weight. As mentioned before, alkaline aqueous electrolytes tend to give rise to the formation of zinc dendrite and  $\mathrm{ZnO}$ , resulting in a severe capacity fading and low coulombic efficiency. On the other hand, strong acidic electrolytes will bring about the corrosion of  $\mathrm{Zn}$  anode and current collectors, resulting in poor long-term reliability. Therefore, neutral or mildly acidic electrolytes seem preferable for implementations in ZIBs. Different zinc salts including  $\mathrm{Zn(CF_3SO_3)_2}$ ,  $\mathrm{ZnSO_4}$ ,  $\mathrm{Zn(NO_3)_2}$ ,  $\mathrm{Zn(CH_3COO)_2}$ ,  $\mathrm{ZnF_2}$ ,  $\mathrm{Zn(ClO_4)_2}$ , and  $\mathrm{ZnCl_2}$  have been studied by far.
+
+It is because  $\mathrm{ZnCl_2}$  electrolytes exhibited a narrow anodic potential window and  $\mathrm{Zn(ClO_4)_2}$  solutions showed a higher overpotential, that neither of them seemed suitable to be the ideal electrolyte in ZIBs.[79] As to  $\mathrm{ZnF_2}$ , its application is limited by its low solubility in water. To improve the stability of V-based cathode and compatibility of environment,[70,80,81]  $\mathrm{Zn(CH_3COO)_2}$ , a widely used additive in food supplements, has been used in ZIBs in spite of its featureless electrochemical performances.
+
+The  $\mathrm{Zn(NO_3)_2}$  solution was initially cooperated with an  $\mathrm{MnO}_2$  cathode and a zinc anode, which exhibited a rapid and reversible electrochemical dissolution/deposition process of zinc at the anode.[16] However, contrary results were found when  $1\mathrm{M}\mathrm{Zn}(\mathrm{NO}_3)_2$  or  $0.02\mathrm{M}\mathrm{Zn}(\mathrm{NO}_3)_2$  was used.[32,79] It was speculated that nitrate ions are strong oxidants,
+
+resulting in degradations of both Zn anode and CuHCF cathode.
+
+$\mathrm{ZnSO_4}$  is widely used in ZIBs owing to its cost and stability, and remarkable performances have been achieved based on its aqueous electrolyte. However, this kind of electrolyte seems not perfect or irreplaceable because of the associated issue of  $\mathrm{Zn}_{4}(\mathrm{OH})_{6}\mathrm{SO}_{4}\cdot n\mathrm{H}_{2}\mathrm{O}$  (ZHS) mentioned in Part 2. Lee et al. proposed a reversible precipitation/dissolution process of ZHS, which was triggered by the pH changes during the discharge/charge processes.[24] The initial discharge reaction was demonstrated to being accompanied by the PH increase of electrolyte  $(\mathrm{MnO}_2 + 2\mathrm{H}_2\mathrm{O} + 2\mathrm{e}^-\rightarrow \mathrm{Mn}^{2 + } + 4\mathrm{OH}^-)$ . When the PH reached  $\approx 5.47$  the precipitation reaction  $(4\mathrm{Zn}^{2 + } + \mathrm{SO}_4^{2 - } + 6\mathrm{OH}^- +5\mathrm{H}_2\mathrm{O}\rightarrow \mathrm{Zn}_4(\mathrm{OH})_6(\mathrm{SO}_4)\cdot 5\mathrm{H}_2\mathrm{O})$  was triggered. Another formation mechanism of ZHS is also related with the evolution of  $\mathrm{OH^{-}}$  in  $\mathrm{ZnSO_4}$  solutions.[25] While, since the ZHS has been also found in V-based cathodes or a  $\mathrm{Zn - Zn}$  symmetry cells, it indicates that the formation ZHS has nothing to do with the cathode, but is a possible self-side reaction of electrolyte.[62] It was claimed in some literatures that the decomposition of electrolyte and formation of ZHS should take responsibilities for the capacity fading in the initial several cycles.[62,67] Nevertheless, the ZHS on the surface of cathode was also thought to suppress further capacity fading and be beneficial for the stability of cathode. More importantly, the consistent recognition that ZHS can dissolve reversibly during the successive discharge process, leading to a conclusion that the formation of ZHS seems not to be a huge problem. Recently, the reversibility of ZHS has been further proved through using ZHS directly as the cathode.[26]
+
+In addition to  $\mathrm{ZnSO_4}$  solutions,  $\mathrm{Zn(CF_3SO_3)_2}$  electrolytes have become favorable. In Mn-based ZIBs,  $\mathrm{Zn(CF_3SO_3)_2}$  can alleviate the dissolution of cathode materials, which cannot be realized in  $\mathrm{ZnSO_4}$  electrolyte if a proper amount of  $\mathrm{MnSO_4}$  was not added to the latter.[25,32,37] Furthermore, bulky  $\mathrm{CF_3SO_3^-}$  anions can benefit the stability of  $\mathrm{Zn}$  anode and promote the kinetic of cathode through reducing the solvation effect of  $\mathrm{Zn}$  ions and facilitating their transportation. Thus, outstanding ZIB performances have been achieved based on the  $\mathrm{Zn(CF_3SO_3)_2}$  electrolyte. However, it is worth noting that,  $\mathrm{Zn(CF_3SO_3)_2}$  is  $\approx 18$  times more expensive than  $\mathrm{ZnSO_4}$ .
+
+# 3.2. Nonaqueous Electrolytes
+
+Initially, room temperature ionic liquid electrolytes such as 1-ethyl-3-methylimidazolium bis(trifluoromethanesulfonyl)imide,[89] and 1-buthyl-3-methylimidazolium bis(trifluoromethanesulfonyl)imide,[90] attracted researchers' attention due to their negligible vapor pressure, relatively high temperature/electrochemical stability and high ionic transport. However, neither the discharge capacities nor the cycle lives seem satisfactory.[91]
+
+To pursue an ideal electrolyte with good electrode compatibility, tentative researches have been carried out based on acetonitrile electrolytes. The  $0.5\mathrm{M}$  acetonitrile-  $\mathrm{Zn(CF_3SO_3)_2}$  electrolyte exhibited a highly reversible Zn deposition behavior  $(\geq 99\%)$  of coulombic efficiency) with a low overpotential  $(\approx 0.1\mathrm{V})$  and a high anodic stability (up to  $\approx 3.6\mathrm{V}$  vs  $\mathrm{Zn}^{2 + } / \mathrm{Zn}$ ).[50] This extraordinary coulombic efficiency of Zn anode was also achieved using  $0.5\mathrm{M}$  acetonitrile-  $\mathrm{Zn(ClO_4)_2}$  electrolyte.[82] However, gradual capacity fading of cathodes was observed, which might be related with the decomposition of electrolyte. In addition, a low specific capacity, a large voltage hysteresis, and a poor rate property were also reported based on V-based materials.[65] Actually, Zn ions are surrounded by solvent molecules and counter anions in the electrolytes and the intercalation of Zn ions requires a desolvation penalty at the cathode/electrolyte interface. In aqueous solutions, this penalty is relatively low because of the possible coinersion of water molecules.[65] Moreover, the ubiquitous crystal water in interlayers of cathode materials may also be responsible for this low penalty. Nevertheless, in nonaqueous solutions, the solvent co-intercalation with  $\mathrm{Zn}^{2 + }$  is hard to realize concerning the large radius of the solvation shell  $(\approx 9.5\AA$  in acetonitrile solutions). Therefore, the poor kinetics in nonaqueous electrolytes is reasonable.
+
+# 4. Summary and Outlook
+
+In summary, various cathode materials out of the three families (Mn-based, V-based, and Prussian blue analog based materials) have been studied for Zn-ion batteries. The unique features of their crystal structures and morphologies account for their different electrochemical performances and reaction mechanisms.
+
+First, various  $\mathrm{MnO}_2$  including  $\alpha$ ,  $\beta$ ,  $\gamma$ ,  $\delta$ ,  $\varepsilon$ ,  $\lambda$ , and todorokite- $\mathrm{MnO}_2$  with different tunneled, layered, or 3D structures have been synthesized and applied as cathode
+
+materials. Despite the great advance in the electrochemical performance, the reaction mechanism of the  $\mathrm{MnO}_2$  cathode remains controversial and is under debate. By and large, three charge/discharge mechanisms for  $\mathrm{MnO}_2$  have been reported so far: the reversible  $\mathrm{Zn}^{2+}$  insertion/extraction in/from bulk phase of  $\mathrm{MnO}_2$ ; the reversible  $\mathrm{H}^+$  insertion/extraction in/from bulk phase of  $\mathrm{MnO}_2$  accompanied with the deposition of  $\mathrm{Zn}$  species  $(\mathrm{Zn}_4(\mathrm{OH})_6\mathrm{SO}_4\cdot \mathrm{xH}_2\mathrm{O}$  phase) on its surface; and the reversible co-insertion/co-extraction of both  $\mathrm{Zn}^{2+}$  and  $\mathrm{H}^+$  in different charge/discharge steps. Thus, more comprehensive studies are required to reach a consensus on the reaction mechanism of the Mn-based materials. Nonetheless, we can draw the following conclusions:
+
+1) In general, as-prepared  $\mathrm{MnO}_2$  will transform to other crystal phases in the first few discharge/charge cycles, which is generally called the "activation process." During this transition period, gradual increase in capacities is observed from both galvanostatic charge-discharge (GCD) curves and cyclic voltammetry (CV) responses. Layered-type  $\mathrm{MnO}_2$  such as birnessite is usually formed after the transition and plays a vital role in the subsequent cycles. Thus, some reported reversible intercalation and deintercalation of  $\mathrm{Zn}^{2+}$ , in fact, are related with transformed layer-structured  $\mathrm{MnO}_2$  rather than as-prepared  $\mathrm{MnO}_2$ .  
+2) Subsequent cycle process has witnessed the fade of capacities. This is because of the large change in crystal structure, volume and morphology between discharge-state and charge-state electrodes with residual structural stresses a great deal. Thus, gradual amorphization of  $\mathrm{MnO}_2$  is sometimes observed as the cycle proceeds. Nanomaterials could better accommodate the strain through slippage at domain boundaries, which is beneficial to alleviating the capacity fade. Therefore, it may be advantageous to have nano- $\mathrm{MnO}_2$  with a large layer width.  
+3) Due to the Jahn-Teller effect,  $\mathrm{Mn}^{2+}$  dissolution may be an accomplice for the limited cycle life. Adding  $\mathrm{Mn}^{2+}$  into the electrolyte to suppress the  $\mathrm{Mn}^{2+}$  dissolution from the  $\mathrm{MnO}_2$  electrodes is an option; but an appropriate concentration is needed to provide an equilibrium between the  $\mathrm{Mn}^{2+}$  dissolution and the re-oxidation. Using  $\mathrm{Zn(CF_3SO_3)_2}$  salt can also alleviate this dissolution issue.  
+4) Although many characterization methods have been employed to reveal the  $\mathrm{Zn}$  ion storage mechanism of  $\mathrm{MnO}_2$ , some of them are hard to clarify the authentic discharge/charge process. For example, CV curves of some  $\mathrm{MnO}_2$  of different structures are similar and XRD patterns of certain discharge products are nearly identical (e.g.,  $\mathrm{Zn}_4(\mathrm{OH})_6\mathrm{SO}_4\cdot x\mathrm{H}_2\mathrm{O}$  and  $\mathrm{Zn}$ -birnessite phases). Thus, more in situ characterization techniques such as in situ TEM may be helpful to disclosing the true reaction process.
+
+Second, V-based materials including vanadium oxides, vanadium phosphates and vanadium sulfides are also popular cathodes materials in ZIBs. The reaction mechanism of V-based cathodes is seemingly simpler than that of Mn-based ones since it is a consensus that the ingress/egress of Zn ions do take place. Moreover, V-based materials have longer cycle lives and higher rate performances, but lower discharge
+
+voltages as compared with Mn-based ones. Considering the fact that hundreds of V-based materials with various layer or tunnel spacings have been found, they will most likely become the priority candidate for the cathode materials. The authors suggest more attention should be paid to the following issues:
+
+1) A stable framework during cycling is the priority for choosing a suitable V-based cathode material. Reversible changes of layer spacings have been observed in most studies and water molecules or trapped cations play a pivotal role in stabilizing the crystal structure. Further researches should focus on the relationship among electrolyte species and concentrations, solvation effect of Zn ions, and crystal structures of the cathode material since these three aspects are linked to each other. Changing any of three factors will result in a different reaction process, and subsequently the battery performance.  
+2) At high current densities, the GCD curves and CV responses are sometimes different in the first cycle from those of following cycles. This may correlate with a fine self-adjusting of the crystal structure in the first cycle to serve for the fast intercalation/deintercalation of Zn ions. This process of self-adjusting may be related with the change of V-O polyhedra and their connection types. Deep understanding this process is important to promoting the rate and cycle performances.
+
+Third, the state-of-the-art performance of PBAs in ZIBs is much poorer than those in other batteries. For instance, a specific capacity of  $209\mathrm{mA}\mathrm{g}^{-1}$  and a specific energy of 730 Wh  $\mathrm{kg}^{-1}$  have been achieved in Na-ion batteries using PBAs cathode.[92] The intrinsic crystal irregularity will enormously affect the electrochemical performances of PBAs.[93] The randomly distributed  $\mathrm{Fe(CN)_6}$  vacancies can break down the connection of the Fe-CN-M bonds, forming a distorted and defective lattice, and interrupt the electronic conduction along Fe-CN-M. Hence, it is of importance to reduce the lattice defects and interstitial water contents in order to realize high performance. In addition, it is nontrivial that PBAs will decompose to form highly toxic and contaminate cyanide  $\mathrm{CN^{-}}$  under high temperatures or strongly acidic condition, although they are nontoxic under the ordinary environment and used as antidotes for heavy metal poisoning in medicine.[94]
+
+Fourth, as to the electrolyte, the characteristics of anions and solvents have played a significant role in stabilizing electrode materials and promoting electrochemical performances of ZIBs. Aqueous  $\mathrm{ZnSO_4}$  and  $\mathrm{Zn(CF_3SO_3)_2}$  solutions are currently preferable in ZIBs because of their overall good electrochemical properties. However,  $\mathrm{Zn(CF_3SO_3)_2}$  is  $\approx 18$  times more expensive than  $\mathrm{ZnSO_4}$  while the byproduct of hydroxide sulfate forms easily in the  $\mathrm{ZnSO_4}$  electrolyte. The formation and disappearance of hydroxide sulfate is a common issue for both Mn- and V-based materials when  $\mathrm{ZnSO_4}$  electrolyte is used. However the process is still poorly understood and thus requires further in-depth study. More importantly, we should note that acid electrolytes such as  $1\mathrm{M}$ $\mathrm{ZnSO4}$  (PH 4.0) and  $3\mathrm{M}$ $\mathrm{Zn(CF_3SO_3)_2}$  (PH 3.6) are not helpful to maintaining the long-term reliability of the Zn anode and other components. This
+
+issue has not been seriously looked attended since the amount of Zn anode is much excessive than that of cathodes in most studies.
+
+Lastly, as to the zinc anode, relatively less attention has been paid to anode materials, although several important challenges also remain. In fact, ever since the era of Volta piles, zinc have been employed as electrode in various primary and secondary Zn-based batteries in the past 200 years. As mentioned before, in alkaline Zn batteries such as Zn-Mn, Ni-Zn, and Zn-air batteries, the unsatisfactory performance of zinc anode associated with dendrite growth, shape change, passivation and hydrogen evolution have been realized and summarized in recent reviews.[95] However, the issue of dendrite growth caused by concentration gradient of  $\mathrm{Zn(OH)_4}^{2-}$  and passivation by  $\mathrm{ZnO}$  can be circumvented when neutral or slightly acidic electrolytes are used.[95a] Zinc dendrite tend to form in ZIBs particularly at extremely high current densities. Therefore, the problems of morphologic change, hydrogen evolution and zinc corrosion, especially at high current densities, should be tackled in ZIBs in order to achieve a high coulombic efficiency. Optimizing electrode 3D nanostructures and adding electrolyte/electrode additives are proven effective ways to solve these problems. Recently, a nearly  $100\%$  coulombic efficiency was realized by the Wang group when a highly concentrated neutral Zn-ion electrolyte was implemented.[96] Although the electrolyte is  $\approx 500$  times more expensive than  $1\mathrm{M}\mathrm{ZnSO}_4$  electrolyte, this work is scientifically enlightening for further researches on ZIBs.
+
+All in all, although the reaction mechanism differs in different cathode materials, there exists a strong relationship between the crystallographic forms and electrochemical performances. Hence, to better understand the electrochemical reaction mechanism, it is of necessity to focus on the basic polyhedra and the crystal structures. A summary of the electrochemical properties of various ZIBs is presented in Figure 20 and Table 2. One can see that Prussian blue analogs can provide high operation voltages but with low specific capacities and poor cycle lives. Mn-based materials exhibit moderate discharge potentials and acceptable rate/ cycle performances. And the V-based cathodes have low operation voltage and specific capacity compared to Mn-based ones, but other properties, such as cycling stability and rater performance, stand out. Therefore, it is hard to say for the moment which type of cathode material will be the winner. As shown in Figure 21, neither high specific energy nor high specific power can be realized in Prussian blue analogs-based cathodes. Mn-based materials provide higher specific energy and V-based materials reveal higher specific power. For the practical application, we should focus more on the specific energy/power based on total mass of both cathode, anode, electrolyte and current collectors, as most reported ZIBs based on Zn foil anodes have a large portion of nonactive material mass contribution. Therefore, modification of the Zn anode with a higher utilization efficiency should not be ignored.
+
+What's the future of ZIBs? Since all the components in ZIBs are simple, low cost can be realized by choosing cheap electrolytes and cathode materials. It has been estimated that the cost of ZIBs is lower than US$65/kWh,[53] which is
+
+![](images/9678830b1cc19b7da0b2760bac30260f8473d10b8f6f253493302050ab056536.jpg)  
+Figure 20. Specific capacities and average discharge potentials of representative cathode materials in ZIBs.
+
+much cheaper than that of current LIBs (US\(300/kWh),[3] and close to that of Ni-Fe batteries (US\)72/kWh) and Lead-acid batteries (US\)48/kWh).[97] In addition, considering the relative high capacity density of Zn (5855 mAh cm\(^{-3}\), Table 1), high energy density ZIBs are achievable through combining cathode materials with high capacity densities and suitable redox potentials. For instance, based on the V-based material, an energy density of 450 Wh L\(^{-1}\) has been realized.[53] Therefore, ZIBs have great hope for the application of grid scale energy storage. For the practical applications, the existing manufacture infrastructure for Zn electrodes in alkaline Zn batteries can be leveraged to quickly scale up the commercialization of ZIBs. However, challenges of ZIBs still reside in the pursuit of high energy efficiency cathode materials, stable Zn anode materials with long cyclic life without limiting the depth of discharge, and cheap electrolytes which work in harmony with electrodes.
+
+In addition, ZIB is also a suitable candidate for a safe and flexible device because of their intrinsic advantage in safety which negates the requirement for a rigid protective casing.[98] More importantly, developing bio-safe ZIBs is another choice. It is noted that a few death accidents have been reported about the common coin batteries in toys were swallowed by toddlers.[100] This underscores the necessity that batteries should be made safer. As for ZIBs, the  $\mathrm{Zn}$  metal is nontoxic and has not been reported dangerous if it is eaten. And the cathode materials may be derived from biodegradable or edible materials such as organics from plants or animals. Moreover, use aqueous  $\mathrm{Zn}^{2+}$  solutions such as zinc gluconate (zinc supplements for human) as the electrolyte is currently under investigation. Therefore, in principle all the components in ZIBs can be made from safe materials. We foresee that safe and cost-efficient ZIBs will be realized in the near future.
+
+![](images/3e5294878d47952b4cf75f84cdc2afb9c9f082965ce0eaeaefd7c70e072e123d.jpg)  
+Figure 21. Ragone plots of representative cathode materials in ZIBs.
+
+Table 2. The comparison for electrochemical performances of representative cathode materials in ZIBs.  
+
+<table><tr><td>Cathode material</td><td>Electrolyte</td><td>Average discharge voltage (vs Zn/Zn2+) / Specific capacity/Rate performance</td><td>Cycle performance</td><td>Ref.</td></tr><tr><td>γ-MnO2</td><td>Zn(CF3SO3)2in PC+EC+PVDF</td><td>1.25 V at 200 μA cm-2105 mAh g-1at 10 μA cm-235.2% retained at 200 μA cm-2</td><td>65% retained after 65 cycles at 200 μA cm-2</td><td>[15]</td></tr><tr><td>γ-MnO2</td><td>1 M ZnSO4</td><td>1.32 V at 0.05 mA cm-2285 mAh g-1at 0.05 mA cm-257.8% retained at 0.5 mA cm-2</td><td>63% retained after 40 cycles at 0.5 mA cm-2</td><td>[17]</td></tr><tr><td>α-MnO2</td><td>1 M ZnSO4</td><td>1.26 V at 83 mA g-1353 mAh g-1at 16 mA g-112.2% retained at 1333 mA g-1</td><td>63% retained after 50 cycles at 83 mA g-1</td><td>[20]</td></tr><tr><td>α-MnO2</td><td>1 M ZnSO4</td><td>1.26 V at 10.5 mA g-1205 mAh g-1at 10.5 mA g-157.7% retained at 210 mA g-1</td><td>66% retained after 30 cycles at 10.5 mA g-1</td><td>[21]</td></tr><tr><td>α-MnO2</td><td>1 M ZnSO4</td><td>1.3 V at 10.5 mA g-1195 mAh g-1at 10.5 mA g-185.6% retained at 42 mA g-1</td><td>70% retained after 30 cycles at 42 mA g-1</td><td>[23]</td></tr><tr><td>α-MnO2</td><td>2 M ZnSO4+0.1 M MnSO4</td><td>1.32 V at 61.6 mA g-1255 mAh g-1at 61.6 mA g-144.3% retained at 3080 mA g-1</td><td>92% retained after 5000 cycles at 1540 mA g-1</td><td>[25]</td></tr><tr><td>α-MnO2@CNT</td><td>2 M ZnSO4+0.5 M MnSO4</td><td>1.35 V at 100 mA g-1665 mAh g-1at 100 mA g-115.0% retained at 5000 mA g-1</td><td>99% retained after 500 cycles at 5000 mA g-1</td><td>[39]</td></tr><tr><td>α-MnO2on 3D N-doped porous carbon cloth</td><td>2 M ZnCl2+0.4 M MnSO4</td><td>1.34 V at 500 mA g-1353 mAh g-1at 500 mA g-170.5% retained at 6000 mA g-1</td><td>94% retained after 1000 cycles at 1000 mA g-1</td><td>[41]</td></tr><tr><td>α-MnO2</td><td>1 M ZnSO4</td><td>1.3 V at 16 mA g-1323 mAh g-1at 16 mA g-114.6% retained at 1666 mA g-1</td><td>46% retained after 75 cycles at 83 mA g-1</td><td>[27]</td></tr><tr><td>α-MnO2@graphene</td><td>2 M ZnSO4+0.2 M MnSO4</td><td>1.33 V at 300 mA g-1382 mAh g-1at 300 mA g-155% retained at 3000 mA g-1</td><td>94% retained after 3000 cycles at 3000 mA g-1</td><td>[40]</td></tr><tr><td>todorokite-MnO2</td><td>1 M ZnSO4</td><td>1.3 V at 50 mA g-1108 mAh g-1at 50 mA g-1</td><td>83% retained after 50 cycles at 50 mA g-1</td><td>[28]</td></tr><tr><td>δ-MnO2</td><td>1 M ZnSO4</td><td>1.28 V at 83 mA g-1250 mAh g-1at 83 mA g-124.6% retained at 1333 mA g-1</td><td>46% retained after 100 cycles at 83 mA g-1</td><td>[29]</td></tr><tr><td>δ-MnO2</td><td>0.5 M Zn(CF3SO3)2in acetonitrile</td><td>0.75 V at 12.3 mA g-1120 mAh g-1at 12.3 mA g-127.3% retained at 308 mA g-1</td><td>48% retained after 125 cycles at 12.3 mA g-1</td><td>[30]</td></tr><tr><td>Birnessite MnO2</td><td>0.25 M ZnSO4+0.75 M Na2SO4</td><td>1.37 V at 308 mA g-1305 mAh g-1at 308 mA g-145.9% retained at 3080 mA g-1</td><td>53% retained after 1000 cycles at 3080 mA g-1</td><td>[42]</td></tr><tr><td>λ-MnO2</td><td>1 M ZnSO4</td><td>1.3 V at 13.6 mA g-1442.6 mAh g-1at 13.6 mA g-17.6% retained at 408 mA g-1</td><td>/</td><td>[31]</td></tr><tr><td>Spinel ZnMn2O4@C</td><td>3 M Zn(CF3SO3)2</td><td>1.36 V at 50 mA g-1150 mAh g-1at 50 mA g-148% retained at 2000 mA g-1</td><td>94% retained after 500 cycles at 500 mA g-1</td><td>[32]</td></tr><tr><td>Spinel Mn3O4</td><td>2 M ZnSO4</td><td>1.36 V at 100 mA g-1239 mAh g-1at 100 mA g-151.8% retained at 2000 mA g-1</td><td>73% retained after 300 cycles at 500 mA g-1</td><td>[35]</td></tr><tr><td>β-MnO2</td><td>1 M ZnSO4+0.1 M MnSO4</td><td>1.29 V at 100 mA g-1270 mAh g-1at 100 mA g-131.9% retained at 1056 mA g-1</td><td>75% retained after 200 cycles at 200 mA g-1</td><td>[33]</td></tr><tr><td>β-MnO2</td><td>3 M Zn(CF3SO3)2+0.1 M Mn(CF3SO3)2</td><td>1.31 V at 0.65C258 mAh g-1at 0.65C38.8% retained at 132.5C</td><td>94% retained after 2000 cycles at 6.5 C</td><td>[34]</td></tr></table>
+
+Table 2. Continued.  
+
+<table><tr><td>Cathode material</td><td>Electrolyte</td><td>Average discharge voltage (vs Zn/Zn2+) / Specific capacity / Rate performance</td><td>Cycle performance</td><td>Ref.</td></tr><tr><td>ε-MnO2on carbon fiber paper</td><td>2 M ZnSO4+0.2 M MnSO4</td><td>1.3 V at 90 mA g-1290 mAh g-1at 90 mA g-158.6% retained at 1950 mA g-1</td><td>99.3% retained after 10 000 cycles at 1950 mA g-1</td><td>[37]</td></tr><tr><td>α-Mn2O3</td><td>2 M ZnSO4+0.1 M MnSO4</td><td>1.34 V at 100 mA g-1140 mAh g-1at 100 mA g-163.6% retained at 2000 mA g-1</td><td>51% retained after 2000 cycles at 2000 mA g-1</td><td>[38]</td></tr><tr><td>V2O5</td><td>21 M LiTFSI+1 M Zn(CF3SO3)2</td><td>0.9 V at 50 mA g-1242 mAh g-1at 50 mA g-164.5% retained at 1000 mA g-1</td><td>80% retained after 2000 cycles at 2000 mA g-1</td><td>[52]</td></tr><tr><td>V2O5·nH2O</td><td>0.5 M Zn(CF3SO3)2in acetonitrile</td><td>0.76 V at 14.4 mA g-1196 mAh g-1at 14.4 mA g-166.3% retained at 2880 mA g-1</td><td>87% retained after 120 cycles at 14.4 mA g-1</td><td>[50]</td></tr><tr><td>V2O5·nH2O</td><td>3 M Zn(CF3SO3)2</td><td>0.69 V at 300 mA g-1372 mAh g-1at 300 mA g-166.7% retained at 30 000 mA g-1</td><td>71% retained after 900 cycles at 6000 mA g-1</td><td>[54]</td></tr><tr><td>Zn0.25V2O5·nH2O</td><td>1 M ZnSO4</td><td>0.71 V at 300 mA g-1282 mAh g-1at 300 mA g-193% retained at 2400 mA g-1</td><td>80% retained after 1000 cycles at 2400 mA g-1</td><td>[53]</td></tr><tr><td>Ca0.25V2O5</td><td>1 M ZnSO4</td><td>0.8 V at 0.2 C340 mAh g-1at 0.2 C21.2% retained at 80 C</td><td>64% retained after 5000 cycles at 80 C</td><td>[56]</td></tr><tr><td>Na0.33V2O5</td><td>3 M Zn(CF3SO3)2</td><td>0.66 V at 200 mA g-1373 mAh g-1at 200 mA g-125.8% retained at 2000 mA g-1</td><td>93% retained after 1000 cycles at 1000 mA g-1</td><td>[57]</td></tr><tr><td>LiV3O8</td><td>1 M ZnSO4</td><td>0.81 V at 16 mA g-1256 mAh g-1at 16 mA g-111.3% retained at 1666 mA g-1</td><td>75% retained after 65 cycles at 133 mA g-1</td><td>[59]</td></tr><tr><td>Na2V6O16·1.63H2O</td><td>3 M Zn(CF3SO3)2</td><td>0.77 V at 50 mA g-1352 mAh g-1at 50 mA g-146% retained at 2000 mA g-1</td><td>90% retained after 6000 cycles at 5000 mA g-1</td><td>[60]</td></tr><tr><td>Na1.1V3O7.9@rGO</td><td>1 M Zn(CF3SO3)2</td><td>0.69 V at 300 mA g-1220 mAh g-1at 300 mA g-1</td><td>77% retained after 100 cycles at 300 mA g-1</td><td>[61]</td></tr><tr><td>Na2V6O16·3H2O</td><td>1 M ZnSO4</td><td>0.7 V at 100 mA g-1361 mAh g-1at 100 mA g-131.9% retained at 20 000 mA g-1</td><td>80% retained after 1000 cycles at 14 440 mA g-1</td><td>[62]</td></tr><tr><td>H2V3O8</td><td>3 M Zn(CF3SO3)2</td><td>0.62 V at 100 mA g-1423.8 mAh g-1at 100 mA g-126.8% retained at 5000 mA g-1</td><td>94% retained after 1000 cycles at 5000 mA g-1</td><td>[63]</td></tr><tr><td>H2V3O8@Graphene</td><td>3 M Zn(CF3SO3)2</td><td>0.61 V at 100 mA g-1394 mAh g-1at 100 mA g-154.6% retained at 3000 mA g-1</td><td>87% retained after 2000 cycles at 6000 mA g-1</td><td>[64]</td></tr><tr><td>V3O7·H2O</td><td>1 M ZnSO4 or 0.25 M Zn(CF3SO3)2 in acetonitrile</td><td>0.7 V at 375 mA g-1375 mAh g-1at 375 mA g-172% retained at 3000 mA g-1</td><td>80% retained after 200 cycles at 3000 mA g-1</td><td>[65]</td></tr><tr><td>Zn3V2O7(OH)2·2H2O</td><td>1 M ZnSO4</td><td>0.72 V at 50 mA g-1213 mAh g-1at 50 mA g-125.4% retained at 3000 mA g-1</td><td>68% retained after 300 cycles at 200 mA g-1</td><td>[66]</td></tr><tr><td>Zn2V2O7</td><td>1 M ZnSO4</td><td>0.68 V at 300 mA g-1248 mAh g-1at 50 mA g-168.5% retained at 4400 mA g-1</td><td>85% retained after 1000 cycles at 4000 mA g-1</td><td>[67]</td></tr><tr><td>Hollandite V1-Al6O1.52(OH)0.77</td><td>1 M ZnSO4</td><td>0.65 V at 15 mA g-1156 mAh g-1at 15 mA g-141.0% retained at 1000 mA g-1</td><td>68% retained after 50 cycles at 15 mA g-1</td><td>[69]</td></tr></table>
+
+Table 2. Continued.  
+
+<table><tr><td>Cathode material</td><td>Electrolyte</td><td>Average discharge voltage (vs Zn/Zn2+) / Specific capacity / Rate performance</td><td>Cycle performance</td><td>Ref.</td></tr><tr><td>Na3V2(PO4)3@C</td><td>0.5 M Zn(CH3COO)2</td><td>1.1 V at 50 mA g-197 mAh g-1at 50 mA g-159.8% retained at 1000 mA g-1</td><td>74% retained after 100 cycles at 50 mA g-1</td><td>[70]</td></tr><tr><td>Na3V2(PO4)2F3@C</td><td>2 M Zn(CF3SO3)2</td><td>1.62 V at 80 mA g-175 mAh g-1at 80 mA g-144% retained at 3000 mA g-1</td><td>95% retained after 4000 cycles at 1000 mA g-1</td><td>[71]</td></tr><tr><td>VS2</td><td>1 M ZnSO4</td><td>0.62 V at 50 mA g-1190.3 mAh g-1at 50 mA g-160.1% retained at 2000 mA g-1</td><td>98% retained after 200 cycles at 500 mA g-1</td><td>[72]</td></tr><tr><td>ZnHCF</td><td>1 M ZnSO4</td><td>1.73 V at 60 mA g-165.4 mAh g-1at 60 mA g-169.6% retained at 600 mA g-1</td><td>76% retained after 100 cycles at 300 mA g-1</td><td>[75]</td></tr><tr><td>ZnHCF</td><td>3 M ZnSO4</td><td>1.79 V at 60 mA g-166.5 mAh g-1at 60 mA g-176.4% retained at 600 mA g-1</td><td>81% retained after 200 cycles at 300 mA g-1</td><td>[76]</td></tr><tr><td>ZnHCF@MnO2</td><td>0.5 M ZnSO4</td><td>1.68 V at 100 mA g-1118mAh g-1at 100 mA g-164% retained at 1000 mA g-1</td><td>77% retained after 1000 cycles at 500 mA g-1</td><td>[99]</td></tr><tr><td>CuHCF</td><td>1 M ZnSO4</td><td>1.61 V at 20 mA g-156 mAh g-1at 20 mA g-166.3% retained at 288 mA g-1</td><td>77% retained after 20 cycles at 20 mA g-1</td><td>[77]</td></tr><tr><td>CuHCF</td><td>0.02 M ZnSO4</td><td>1.7 V at 60 mA g-153 mAh g-1at 60 mA g-181.1% retained at 600 mA g-1</td><td>96% retained after 100 cycles at 60 mA g-1</td><td>[78]</td></tr><tr><td>FeHCF</td><td>1 M Zn(CH3COO)2+ choline acetate with 30 wt% of water</td><td>1.06 V at 10 mA g-1122 mAh g-1at 10 mA g-124.6% retained at 60 mA g-1</td><td>/</td><td>[81]</td></tr><tr><td>FeHCF</td><td>1 M Zn(CH3COO)2+ choline acetate with 30 wt% of water</td><td>0.95 V at 0.1 mA cm-254 mAh g-1at 0.1 mA cm-2</td><td>99% retained after 50 cycles at 0.1 mA cm-2</td><td>[80]</td></tr><tr><td>NiHCF</td><td>0.5 M Zn(ClO4)2In acetonitrile</td><td>1.23 V at 11.2 mA g-155.6 mAh g-1at 11.2 mA g-114.4% retained at 224 mA g-1</td><td>/</td><td>[82]</td></tr><tr><td>Mo6S8</td><td>0.1 M ZnSO4</td><td>0.41 V at 6.4 mA g-1134 mAh g-1at 6.4 mA g-142.5% retained at 128 mA g-1</td><td>/</td><td>[84]</td></tr><tr><td>Quinone</td><td>3 M Zn(CF3SO3)2</td><td>1.0 V at 20 mA g-1335 mAh g-1at 20 mA g-151.7% retained at 1000 mA g-1</td><td>87% retained after 1000 cycles at 500 mA g-1</td><td>[87]</td></tr><tr><td>PBQS</td><td>3 M Zn(CF3SO3)2</td><td>0.95 V at 20 mA g-1203 mAh g-1at 20 mA g-178% retained at 1000 mA g-1</td><td>86% retained after 50 cycles at 40 mA g-1</td><td>[88]</td></tr></table>
+
+# Acknowledgements
+
+M.S. and H.T. contributed equally to this work. M.S. is thankful to funds from the Science Foundation of Jiangsu Province (BK20171169) and Jiangsu Higher Education Institutions (16KJB150037). Financial support by the China Scholarship Council (Nos. 201708320127 and 201706220185) to academic visits to the Nanyang Technological University, Singapore is appreciated. H.J.F. acknowledges the support by Singapore Ministry of Education AcRF Tier 1 grant (RF12/17).
+
+# Conflict of Interest
+
+The authors declare no conflict of interest.
+
+# Keywords
+
+cathode materials, magnesium based cathodes, post Li-ion batteries, vanadium based cathodes, Zn-ion batteries, Zn ion intercalation
+
+Received: April 15, 2018
+
+Revised: May 24, 2018
+
+Published online: August 5, 2018
+
+[1] B. Dunn, H. Kamath, J.-M. Tarascon, Science 2011, 334, 928.  
+[2] G. L. Soloveichik, Annu. Rev. Chem. Biomol. 2011, 2, 503.  
+[3] O. Schmidt, A. Hawkes, A. Gambhir, I. Staffell, Nat. Energy 2017, 2, 17110.
+
+[4] D. Larcher, J. M. Tarascon, Nat. Chem. 2015, 7, 19.  
+[5] a) F. R. McLarnon, E. J. Cairns, J. Electrochem. Soc. 1991, 138, 645; b) K. Kordesh, M. Weissenbacher, J. Power Sources 1994, 51, 61.  
+[6] J. F. Parker, C. N. Chervin, I. R. Pala, M. Machler, M. F. Burz, J. W. Long, D. R. Rolison, Science 2017, 356, 415.  
+[7] J. A. Dean, Lange's Handbook of Chemistry, 15th ed., McGraw-Hill, Inc., New York 1999.  
+[8] Y. Marcus, Chem. Rev. 1988, 88, 1475.  
+[9] B. Tansel, Sep. Purif. Technol. 2012, 86, 119.  
+[10] J. E. Post, Proc. Natl. Acad. Sci. USA 1999, 96, 3447.  
+[11] D. C. Golden, C. C. Chen, J. B. Dixon, Clays Clay Miner. 1987, 35, 271.  
+[12] a) D. Golden, C. Chen, J. Dixon, Science 1986, 231, 717; b) Y. Shen, R. Zerger, R. DeGuzman, S. Suib, L. McCurdy, D. Potter, C. O'young, Science 1993, 260, 511.  
+[13] Q. Feng, K. Yanagisawa, N. Yamasaki, J. Porous Mater. 1998, 5, 153.  
+[14] C. Wei, C. Xu, B. Li, H. Du, F. Kang, J. Phys. Chem. Solids 2012, 73, 1487.  
+[15] G. Kumar, Solid State Ionics 2003, 160, 289.  
+[16] C. Xu, B. Li, H. Du, F. Kang, Angew. Chem., Int. Ed. Engl. 2012, 51, 933.  
+[17] M. H. Alfaruqi, V. Mathew, J. Gim, S. Kim, J. Song, J. P. Baboo, S. H. Choi, J. Kim, Chem. Mater. 2015, 27, 3609.  
+[18] C. Xu, S. W. Chiang, J. Ma, F. Kang, J. Electrochem. Soc. 2013, 160, A93.  
+[19] C. Xu, H. Du, B. Li, F. Kang, Y. Zeng, Electrochem. Solid-State Lett. 2009, 12, A61.  
+[20] M. H. Alfaruqi, J. Gim, S. Kim, J. Song, J. Jo, S. Kim, V. Mathew, J. Kim, J. Power Sources 2015, 288, 320.  
+[21] B. Lee, C. S. Yoon, H. R. Lee, K. Y. Chung, B. W. Cho, S. H. Oh, Sci. Rep. 2014, 4, 6066.  
+[22] A. Manceau, E. Silvester, C. Bartoli, B. Lanson, V. A. Drits, Am. Mineral. 1997, 82, 1150.  
+[23] B. Lee, H. R. Lee, H. Kim, K. Y. Chung, B. W. Cho, S. H. Oh, Chem. Commun. 2015, 51, 9265.  
+[24] B. Lee, H. R. Seo, H. R. Lee, C. S. Yoon, J. H. Kim, K. Y. Chung, B. W. Cho, S. H. Oh, ChemSusChem 2016, 9, 2948.  
+[25] H. Pan, Y. Shao, P. Yan, Y. Cheng, K. S. Han, Z. Nie, C. Wang, J. Yang, X. Li, P. Bhattacharya, K. T. Mueller, J. Liu, Nat. Energy 2016, 1, 16039.  
+[26] S. Zhao, B. Han, D. Zhang, Q. Huang, L. Xiao, L. Chen, D. G. Ivey, Y. Deng, W. Wei, J. Mater. Chem. A 2018, 6, 5733.  
+[27] M. H. Alfaruqi, S. Islam, J. Gim, J. Song, S. Kim, D. T. Pham, J. Jo, Z. Xiu, V. Mathew, J. Kim, Chem. Phys. Lett. 2016, 650, 64.  
+[28] J. Lee, J. B. Ju, W. I. Cho, B. W. Cho, S. H. Oh, Electrochim. Acta 2013, 112, 138.  
+[29] M. H. Alfaruqi, J. Gim, S. Kim, J. Song, D. T. Pham, J. Jo, Z. Xiu, V. Mathew, J. Kim, Electrochem. Commun. 2015, 60, 121.  
+[30] S.-D. Han, S. Kim, D. Li, V. Petkov, H. D. Yoo, P. J. Phillips, H. Wang, J. J. Kim, K. L. More, B. Key, R. F. Klie, J. Cabana, V. R. Stamenkovic, T. T. Fister, N. M. Markovic, A. K. Burrell, S. Tepavcevic, J. T. Vaughey, Chem. Mater. 2017, 29, 4874.  
+[31] C. Yuan, Y. Zhang, Y. Pan, X. Liu, G. Wang, D. Cao, Electrochim. Acta 2014, 116, 404.  
+[32] N. Zhang, F. Cheng, Y. Liu, Q. Zhao, K. Lei, C. Chen, X. Liu, J. Chen, J. Am. Chem. Soc. 2016, 138, 12894.  
+[33] S. Islam, M. H. Alfaruqi, V. Mathew, J. Song, S. Kim, S. Kim, J. Jo, J. P. Baboo, D. T. Pham, D. Y. Putro, Y.-K. Sun, J. Kim, J. Mater. Chem. A 2017, 5, 23299.  
+[34] N. Zhang, F. Cheng, J. Liu, L. Wang, X. Long, X. Liu, F. Li, J. Chen, Nat. Commun. 2017, 8, 405.  
+[35] J. Hao, J. Mou, J. Zhang, L. Dong, W. Liu, C. Xu, F. Kang, Electrochim. Acta 2018, 259, 170.  
+[36] D. Simon, R. Morton, J. Gislason, Adv. X-Ray Anal. 2004, 47, 267.  
+[37] W. Sun, F. Wang, S. Hou, C. Yang, X. Fan, Z. Ma, T. Gao, F. Han, R. Hu, M. Zhu, C. Wang, J. Am. Chem. Soc. 2017, 139, 9775.
+
+[38] B. Jiang, C. Xu, C. Wu, L. Dong, J. Li, F. Kang, Electrochim. Acta 2017, 229, 422.  
+[39] D. Xu, B. Li, C. Wei, Y.-B. He, H. Du, X. Chu, X. Qin, Q.-H. Yang, F. Kang, Electrochim. Acta 2014, 133, 254.  
+[40] B. Wu, G. Zhang, M. Yan, T. Xiong, P. He, L. He, X. Xu, L. Mai, Small 2018, 14, 1703850.  
+[41] W. Qiu, Y. Li, A. You, Z. Zhang, G. Li, X. Lu, Y. Tong, J. Mater. Chem. A 2017, 5, 14838.  
+[42] J. S. Ko, M. B. Sassin, J. F. Parker, D. R. Rolison, Jeffrey W. Long, Sustainable Energy Fuels 2018, 2, 626.  
+[43] P. Y. Zavalij, M. S. Whittingham, Acta Crystallogr., Sect. B: Struct. Sci. 1999, 55, 627.  
+[44] a) H. T. Evans, J. M. Hughes, Am. Mineral. 1990, 75, 508; b) J. Galy, J. Solid State Chem. 1992, 100, 229.  
+[45] J.-C. Badot, N. Baffier, J. Mater. Chem. 1992, 2, 1167.  
+[46] H.-K. Park, S.-H. Such, W. Smyrl, J. Ind. Eng. Chem. 1995, 1, 28.  
+[47] a) T. Yao, Y. Oka, N. Yamamoto, Mater. Res. Bull. 1992, 27, 669; b) Y. Oka, O. Tamada, T. Yao, N. Yamamoto, J. Solid State Chem. 1996, 126, 65.  
+[48] D. Le, S. Passerini, F. Coustier, J. Guo, T. Soderstrom, B. Owens, W. Smyrl, Chem. Mater. 1998, 10, 682.  
+[49] M. Giorgetti, S. Passerini, M. Berrettoni, W. Smyrl, J. Synchrotron Radiat. 1999, 6, 743.  
+[50] P. Senguttuvan, S.-D. Han, S. Kim, A. L. Lipson, S. Tepavcevic, T. T. Fister, I. D. Bloom, A. K. Burrell, C. S. Johnson, Adv. Energy Mater. 2016, 6, 1600826.  
+[51] S. Tepavcevic, H. Xiong, V. R. Stamenkovic, X. Zuo, M. Balasubramanian, V. B. Prakapenka, C. S. Johnson, T. Rajh, ACS Nano 2011, 6, 530.  
+[52] P. Hu, M. Yan, T. Zhu, X. Wang, X. Wei, J. Li, L. Zhou, Z. Li, L. Chen, L. Mai, ACS Appl. Mater. Interfaces 2017, 9, 42717.  
+[53] D. Kundu, B. D. Adams, V. Duffort, S. H. Vajargah, L. F. Nazar, Nat. Energy 2016, 1, 16119.  
+[54] M. Yan, P. He, Y. Chen, S. Wang, Q. Wei, K. Zhao, X. Xu, Q. An, Y. Shuang, Y. Shao, K. T. Mueller, L. Mai, J. Liu, J. Yang, Adv. Mater. 2018, 30, 1703725.  
+[55] Y. Oka, T. Yao, N. Yamamoto, J. Solid State Chem. 1997, 132, 323.  
+[56] C. Xia, J. Guo, P. Li, X. Zhang, H. N. Alshareef, Angew. Chem., Int. Ed. Engl. 2018, 57, 3943.  
+[57] P. He, G. Zhang, X. Liao, M. Yan, X. Xu, Q. An, J. Liu, L. Mai, Adv. Energy Mater. 2018, 8, 1702463.  
+[58] a) A. Wadsley, Acta Crystallogr. 1957, 10, 261; b) A. Weeks, R. Marvin, D. Ross, Am. Mineral. 1963, 48, 1187; c) O. Durupthy, N. Steunou, T. Coradin, J. Maquet, C. Bonhomme, J. Livage, J. Mater. Chem. 2005, 15, 1090.  
+[59] M. H. Alfaruqi, V. Mathew, J. Song, S. Kim, S. Islam, D. T. Pham, J. Jo, S. Kim, J. P. Baboo, Z. Xiu, K.-S. Lee, Y.-K. Sun, J. Kim, Chem. Mater. 2017, 29, 1684.  
+[60] P. Hu, T. Zhu, X. Wang, X. Wei, M. Yan, J. Li, W. Luo, W. Yang, W. Zhang, L. Zhou, Z. Zhou, L. Mai, Nano Lett. 2018, 18, 1758.  
+[61] Y. Cai, F. Liu, Z. Luo, G. Fang, J. Zhou, A. Pan, S. Liang, Energy Storage Mater. 2018, 13, 168.  
+[62] V. Soundharrajan, B. Sambandam, S. Kim, M. H. Alfaruqi, D. Y. Putro, J. Jo, S. Kim, V. Mathew, Y.-K. Sun, J. Kim, Nano Lett. 2018, 18, 2402.  
+[63] P. He, Y. Quan, X. Xu, M. Yan, W. Yang, Q. An, L. He, L. Mai, Small 2017, 13, 1702551.  
+[64] Q. Pang, C. Sun, Y. Yu, K. Zhao, Z. Zhang, P. M. Voyles, G. Chen, Y. Wei, X. Wang, Adv. Energy Mater. 2018, 8, 1800144.  
+[65] D. Kundu, S. Hosseini Vajargah, L. Wan, B. Adams, D. Prendergast, L. F. Nazar, Energy Environ. Sci. 2018, 11, 881.  
+[66] C. Xia, J. Guo, Y. Lei, H. Liang, C. Zhao, H. N. Alshareef, Adv. Mater. 2018, 30, 1705580.
+
+[67] B. Sambandam, V. Soundharrajan, S. Kim, M. H. Alfaruqi, J. Jo, S. Kim, V. Mathew, Y.-k. Sun, J. Kim, J. Mater. Chem. A 2018, 6, 3850.  
+[68] D. Chao, C. Zhu, M. Song, P. Liang, X. Zhang, N. H. Tiep, H. Zhao, J. Wang, R. Wang, H. Zhang, H. J. Fan, Adv. Mater. 2018, https://doi.org/10.1002/adma.201803181.  
+[69] J. H. Jo, Y.-K. Sun, S.-T. Myung, J. Mater. Chem. A 2017, 5, 8367.  
+[70] G. Li, Z. Yang, Y. Jiang, C. Jin, W. Huang, X. Ding, Y. Huang, Nano Energy 2016, 25, 211.  
+[71] W. Li, K. Wang, S. Cheng, K. Jiang, Energy Storage Mater. 2018, 15, 14.  
+[72] P. He, M. Yan, G. Zhang, R. Sun, L. Chen, Q. An, L. Mai, Adv. Energy Mater. 2017, 7, 1601920.  
+[73] a) L. Wang, Y. Lu, J. Liu, M. Xu, J. Cheng, D. Zhang, J. B. Goodenough, Angew. Chem., Int. Ed. Engl. 2013, 52, 1964; b) C. D. Wessells, R. A. Huggins, Y. Cui, Nat. Commun. 2011, 2, 550.  
+[74] X. Wu, M. Sun, S. Guo, J. Qian, Y. Liu, Y. Cao, X. Ai, H. Yang, ChemNanoMat 2015, 1, 188.  
+[75] L. Zhang, L. Chen, X. Zhou, Z. Liu, Adv. Energy Mater. 2015, 5, 1400930.  
+[76] L. Zhang, L. Chen, X. Zhou, Z. Liu, Sci. Rep. 2015, 5, 18263.  
+[77] Z. Jia, B. Wang, Y. Wang, Mater. Chem. Phys. 2015, 149-150, 601.  
+[78] R. Trocoli, F. La Mantia, ChemSusChem 2015, 8, 481.  
+[79] G. Kasiri, R. Trócoli, A. Bani Hashemi, F. La Mantia, Electrochim. Acta 2016, 222, 74.  
+[80] Z. Liu, P. Bertram, F. Endres, J. Solid State Electrochem. 2017, 21, 2021.  
+[81] Z. Liu, G. Pulletikurthi, F. Endres, ACS Appl. Mater. Interfaces 2016, 8, 12158.  
+[82] M. S. Chae, J. W. Heo, H. H. Kwak, H. Lee, S.-T. Hong, J. Power Sources 2017, 337, 204.  
+[83] E. Gocke, W. Schramm, P. Dolscheid, R. Schoellhorn, J. Solid State Chem. 1987, 70, 71.  
+[84] M. S. Chae, J. W. Heo, S. C. Lim, S. T. Hong, Inorg. Chem. 2016, 55, 3294.  
+[85] B. Häupler, C. Rössel, A. M. Schwenke, J. Winsberg, D. Schmidt, A. Wild, U. S. Schubert, NPG Asia Mater. 2016, 8, e283.  
+[86] Y. Liang, Y. Jing, S. Gheytani, K. Y. Lee, P. Liu, A. Facchetti, Y. Yao, Nat. Mater. 2017, 16, 841.
+
+[87] Q. Zhao, W. Huang, Z. Luo, L. Liu, Y. Lu, Y. Li, L. Li, J. Hu, H. Ma, J. Chen, Sci. Adv. 2018, 4, eaao1761.  
+[88] J. Chen, G. Dawut, Y. Lu, L. Miao, Inorg. Chem. Front. 2018, 5, 1391.  
+[89] a) J. J. Xu, H. Ye, J. Huang, Electrochem. Commun. 2005, 7, 1309; b) J. P. Tafur, A. J. Fernández Romero, J. Membr. Sci. 2014, 469, 499.  
+[90] J. P. Tafur, J. Abad, E. Roman, A. J. Fernández Romero, Electrochem. Commun. 2015, 60, 190.  
+[91] a) C. C. Ho, J. W. Evans, P. K. Wright, J. Micromech. Microeng. 2010, 20, 104009; b) J. P. T. Guisao, A. J. F. Romero, Electrochim. Acta 2015, 176, 1447.  
+[92] H. W. Lee, R. Y. Wang, M. Pasta, S. Woo Lee, N. Liu, Y. Cui, Nat. Commun. 2014, 5, 5280.  
+[93] J. Qian, C. Wu, Y. Cao, Z. Ma, Y. Huang, X. Ai, H. Yang, Adv. Energy Mater. 2018, 8, 1702619.  
+[94] a) C. Aparicio, L. Machala, Z. Marusak, J. Therm. Anal. Calorim. 2011, 110, 661; b) Y. You, X.-L. Wu, Y.-X. Yin, Y.-G. Guo, Energy Environ. Sci. 2014, 7, 1643.  
+[95] a) J. Fu, Z. P. Cano, M. G. Park, A. Yu, M. Fowler, Z. Chen, Adv. Mater. 2017, 29; b) P. Gu, M. Zheng, Q. Zhao, X. Xiao, H. Xue, H. Pang, J. Mater. Chem. A 2017, 5, 7651; c) A. R. Mainar, L. C. Colmenares, J. A. Blázquez, I. Urdampilleta, Int. J. Energy Res. 2018, 42, 903; d) L. F. Arenas, A. Loh, D. P. Trudgeon, X. Li, C. P. de León, F. C. Walsh, Renewable Sustainable Energy Rev. 2018, 90, 992.  
+[96] F. Wang, O. Borodin, T. Gao, X. Fan, W. Sun, F. Han, A. Faraone, J. A. Dura, K. Xu, C. Wang, Nat. Mater. 2018, 17, 543.  
+[97] J. O. G. Posada, A. J. Rennie, S. P. Villar, V. L. Martins, J. Marinaccio, A. Barnes, C. F. Glover, D. A. Worsley, P. J. Hall, Renewable Sustainable Energy Rev. 2017, 68, 1174.  
+[98] a) H. Li, C. Han, Y. Huang, Y. Huang, M. Zhu, Z. Pei, Q. Xue, Z. Wang, Z. Liu, Z. Tang, Energy Environ. Sci. 2018, 11, 941; b) H. Li, Z. Liu, G. Liang, Y. Huang, Y. Huang, M. Zhu, Z. Pei, Q. Xue, Z. Tang, Y. Wang, B. Li, C. Zhi, ACS Nano 2018, 12, 3140.  
+[99] K. Lu, B. Song, Y. Zhang, H. Ma, J. Zhang, J. Mater. Chem. A 2017, 5, 23628.  
+[100] see BBC news: http://www.bbc.com/news/uk-england-derbyshire-39696226; http://www.bbc.com/news/uk-england-hampshire-37554515.

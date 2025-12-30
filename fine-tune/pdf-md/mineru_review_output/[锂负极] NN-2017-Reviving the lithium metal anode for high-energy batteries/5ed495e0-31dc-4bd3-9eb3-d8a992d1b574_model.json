@@ -1,0 +1,4109 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.082,
+                0.033,
+                0.342,
+                0.058
+            ],
+            "angle": 0,
+            "content": "REVIEW ARTICLE"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.082,
+                0.062,
+                0.48,
+                0.075
+            ],
+            "angle": 0,
+            "content": "PUBLISHED ONLINE: 7 MARCH 2017 | DOI: 10.1038/NNANO.2017.16"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.695,
+                0.035,
+                0.914,
+                0.075
+            ],
+            "angle": 0,
+            "content": "nature nanotechnology"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.068,
+                0.122,
+                0.711,
+                0.191
+            ],
+            "angle": 0,
+            "content": "Reviving the lithium metal anode for high-energy batteries"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.205,
+                0.428,
+                0.224
+            ],
+            "angle": 0,
+            "content": "Dingchang Lin\\(^{1\\dagger}\\), Yayuan Liu\\(^{1\\dagger}\\) and Yi Cui\\(^{1,2\\star}\\)"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.235,
+                0.931,
+                0.346
+            ],
+            "angle": 0,
+            "content": "Lithium-ion batteries have had a profound impact on our daily life, but inherent limitations make it difficult for Li-ion chemistries to meet the growing demands for portable electronics, electric vehicles and grid-scale energy storage. Therefore, chemistries beyond Li-ion are currently being investigated and need to be made viable for commercial applications. The use of metallic Li is one of the most favoured choices for next-generation Li batteries, especially Li-S and Li-air systems. After falling into oblivion for several decades because of safety concerns, metallic Li is now ready for a revival, thanks to the development of investigative tools and nanotechnology-based solutions. In this Review, we first summarize the current understanding on Li anodes, then highlight the recent key progress in materials design and advanced characterization techniques, and finally discuss the opportunities and possible directions for future development of Li anodes in applications."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.371,
+                0.492,
+                0.478
+            ],
+            "angle": 0,
+            "content": "Since the introduction of commercial Li-ion batteries in 1991, we have witnessed tremendous development in portable electronic devices, and the recent emergence of electric vehicles promises to revolutionize personal transportation too<sup>1,2</sup>. The inherent limitations of Li-ion chemistry make it unlikely, however, that this type of battery can meet the growing demand for energy density<sup>2-3</sup>, and it is now widely accepted that battery chemistries beyond Li-ion need to be developed."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.479,
+                0.491,
+                0.719
+            ],
+            "angle": 0,
+            "content": "Lithium metal is the ultimate choice for the anode in a Li battery, because it has the highest theoretical capacity \\((3,860\\mathrm{mAhg^{-1}}\\) or \\(2,061\\mathrm{mAhcm}^{-3})\\) and lowest electrochemical potential \\((-3.04\\mathrm{V}\\) versus the standard hydrogen electrode)\\(^{3,4}\\) of all possible candidates. Furthermore, a Li metal anode is indispensable for Li-S and Li-air systems, both of which are being intensively studied for next-generation energy-storage applications. The benefits of Li metal chemistry are summarized in Fig. 1a. State-of-the-art Li-ion cells can reach a specific energy of \\(\\sim 250\\mathrm{Whkg^{-1}}\\) ,which is an order of magnitude lower than the practical value of petrol (gasoline). Once the anode is replaced by Li, a Li-LMO cell (where LMO is a lithium transition-metal oxide) can deliver a specific energy of \\(\\sim 440\\mathrm{Whkg^{-1}}\\) Transition to Li-S and Li-air systems can further boost the specific energy to \\(\\sim 650\\mathrm{Whkg^{-1}}\\) and \\(\\sim 950\\mathrm{Whkg^{-1}}\\) , respectively. In terms of volumetric energy density, the best commercial Li-ion cell already possesses a relatively high value of \\(\\sim 700\\mathrm{Whl^{-1}}\\) but moving to a Li-air system would offer a practical value greater than \\(1,100\\mathrm{Whl^{-1}}\\) comparable to that of petrol."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.72,
+                0.492,
+                0.868
+            ],
+            "angle": 0,
+            "content": "In fact, metallic Li was used in the infancy of Li battery research, including in the first viable Li secondary batteries pioneered by Stanley Whittingham at Exxon in the 1970s. In the late 1980s, Moli Energy commercialized Li metal batteries using a \\(\\mathrm{MoS}_2\\) cathode paired with excess Li; this device could be cycled hundreds of times, and millions of cylindrical-type cells were sold to the market. But frequent accidents, including fires caused by dendrite formation, brought safety concerns to public attention, ultimately leading to the recall of all the cells[7,8]. In subsequent years, NEC and Mitsui conducted intensive reliability tests on over 500,000 Li metal cells but still failed to resolve the safety issue. At the same time,"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.504,
+                0.371,
+                0.931,
+                0.439
+            ],
+            "angle": 0,
+            "content": "Sony developed carbonaceous anodes to replace Li and successfully built reliable Li-ion cells that have been used until now<sup>3</sup>. As a result, the commercialization of Li metal anodes was halted. Now, however, Li-ion cells are approaching the limit of their capabilities, and attempts to revive the Li metal anode are becoming a necessity."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.504,
+                0.439,
+                0.931,
+                0.547
+            ],
+            "angle": 0,
+            "content": "Recently, growing research efforts have been devoted to improving our understanding of Li metal chemistry and developing better Li anodes. This Review aims to provide an overview of the fundamentals of Li anodes and to summarize the recent key progress on methodologies, materials and characterization techniques. Our main objective is to illustrate the revolution that is taking place in this field and thus provide inspiration for future developments in Li metal chemistry."
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.505,
+                0.558,
+                0.722,
+                0.572
+            ],
+            "angle": 0,
+            "content": "Challenges of Li metal anodes"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.504,
+                0.573,
+                0.93,
+                0.721
+            ],
+            "angle": 0,
+            "content": "Before the Li anode can become a viable technology, formidable challenges need to be overcome, the greatest of which are safety and cyclability. Similar to many other metals, Li tends to deposit in dendritic form<sup>4</sup>, which is known to be the main cause of thermal runaway and explosion hazards caused by internally shorting the cells. Therefore, dendrite-free Li deposition needs to be achieved as a basic demand. Good cyclability is also mandatory, as low Coulombic efficiency and the gradual increase of the Li anode overpotential leads to capacity fading during cycling. To deal with these issues, we need to attain a profound understandings of interfacial chemistries, Li deposition behaviour and the correlations among them."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.504,
+                0.733,
+                0.931,
+                0.87
+            ],
+            "angle": 0,
+            "content": "Solid electrolyte interphase formation on Li surface. Since the pioneering studies by Emanuel Peled\\(^{9,10}\\) and Doron Aurbach\\(^{11,12}\\), the solid electrolyte interphase (SEI) has become a critical component of battery research. Owing to the highly negative electrochemical potential of \\(\\mathrm{Li^{+} / Li}\\), virtually any available electrolyte can be reduced at the Li surface\\(^{13}\\). Passivation by the SEI makes it possible to operate a cell under such a reductive environment and extend the voltage window to \\(4\\mathrm{V}\\) and above. Early explorations of SEI on the Li surface and the theories derived from these have been extensively applied to carbonaceous anodes with great success\\(^{14}\\). Compared with Li-ion"
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.066,
+                0.908,
+                0.93,
+                0.947
+            ],
+            "angle": 0,
+            "content": "\\(^{1}\\)Department of Materials Science and Engineering, Stanford University, Stanford, California 94305, USA. \\(^{2}\\)Stanford Institute for Materials and Energy Sciences, SLAC National Accelerator Laboratory, 2575 Sand Hill Road, Menlo Park, California 94025, USA. \\(^{†}\\)These authors contributed equally to this work. *e-mail: yicui@stanford.edu"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.069,
+                0.962,
+                0.091,
+                0.972
+            ],
+            "angle": 0,
+            "content": "194"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.463,
+                0.961,
+                0.93,
+                0.973
+            ],
+            "angle": 0,
+            "content": "NATURE NANOTECHNOLOGY | VOL 12 | MARCH 2017 | www.nature.com/naturenanotechnology"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.3,
+                0.982,
+                0.698,
+                0.994
+            ],
+            "angle": 0,
+            "content": "© 2017 Macmillan Publishers Limited, part of Springer Nature. All rights reserved."
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.067,
+                0.028,
+                0.521,
+                0.044
+            ],
+            "angle": 0,
+            "content": "NATURE NANOTECHNOLOGY DOI: 10.1038/NNANO.2017.16"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.698,
+                0.025,
+                0.931,
+                0.046
+            ],
+            "angle": 0,
+            "content": "REVIEW ARTICLE"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.208,
+                0.066,
+                0.221,
+                0.075
+            ],
+            "angle": 0,
+            "content": "a"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.207,
+                0.076,
+                0.51,
+                0.265
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.533,
+                0.066,
+                0.543,
+                0.075
+            ],
+            "angle": 0,
+            "content": "c"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.528,
+                0.064,
+                0.791,
+                0.266
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.068,
+                0.286,
+                0.08,
+                0.296
+            ],
+            "angle": 0,
+            "content": "b"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.071,
+                0.291,
+                0.931,
+                0.376
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.065,
+                0.398,
+                0.925,
+                0.491
+            ],
+            "angle": 0,
+            "content": "Figure 1 | Opportunities and challenges for Li metal anodes. a, Bar chart showing the practical specific energy (pink) and energy densities (blue) of petrol (gasoline) and typical Li batteries including the state-of-the-art Li-ion battery, the Li metal/LMO cell, Li-S and Li-air cells. Battery casings, separators and electrolytes are all taken into account. b, Schematic showing the Li stripping/plating process. Step 1: Li plating causes volume expansion, which cracks the SEI film. Step 2: further plating causes Li dendrites to shoot out through the cracks. Step 3: Li stripping produces isolated Li which becomes part of the 'dead' Li, while volume contraction results in further SEI fracture. Step 4: Continuous cycling causes steps 1-3 to occur repeatedly, and this finally results in accumulated dead Li, thick SEI and porous Li electrode. c, Correlations among the different challenges in the Li metal anode, originating from high reactivity and infinite relative volume change."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.505,
+                0.492,
+                0.587
+            ],
+            "angle": 0,
+            "content": "chemistry, however, the Li anode imposes much more restrictive requirements on the SEI. As well as having ion-conduction and electron-blocking capability, researchers have concluded that the SEI on Li needs to be homogeneous in composition, morphology and ionic conductivity. As there is considerable interface fluctuation during cycling, good flexibility or even an elastic SEI is required[4,15,16]."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.586,
+                0.491,
+                0.773
+            ],
+            "angle": 0,
+            "content": "Organic carbonates are the electrolyte of choice for almost all commercial Li-ion batteries today, but they are not ideal for Li metal cells. The initial SEI composition is mainly the product of Li alkyl carbonates (ROCOOLi) by means of one-electron reduction of alkyl carbonates, which can be further converted to \\(\\mathrm{Li}_2\\mathrm{CO}_3\\) in the presence of trace amounts of water[11]. Depending on the salts used, Li halides[17] as well as large-molecular-weight polymers[18] can be present in the SEI. More stable components such as \\(\\mathrm{Li}_2\\mathrm{O}\\), \\(\\mathrm{Li}_2\\mathrm{CO}_3\\) and Li halides dominate the inner layer of the SEI, while metastable ROCOOLi is distributed at the outer layer[12,15]. The SEI can be further described by a 'mosaic model' formed by the heterogeneous stacking of small domains with distinct compositions[10]. Overall, SEIs of this type lack flexibility, making them vulnerable during interfacial fluctuation."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.773,
+                0.492,
+                0.868
+            ],
+            "angle": 0,
+            "content": "Ethers are much better electrolyte solvents for Li anodes, with higher Coulombic efficiency \\((>98\\%)\\) and evident dendrite suppression achieved in several systems[13,19]. This has been attributed to the formation of oligomers that show good flexibility and strong binding affinity to the Li surface[15]. However, ethers have been excluded from most commercial batteries, mainly owing to their low anodic decomposition voltage \\((< 4\\mathrm{V}\\) vs \\(\\mathrm{Li^{+} / Li})\\) and high flammability[13]."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.868,
+                0.492,
+                0.949
+            ],
+            "angle": 0,
+            "content": "Despite these shortcomings, it is important to continue studying Li anodes in both kinds of electrolyte system. On one hand, by improving Li anodes in carbonate electrolytes, we would be able to replace the carbonaceous anode and instantly boost the specific energy of current Li-ion cells. On the other hand, developing Li anodes in ether electrolytes will be beneficial in the long run for"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.504,
+                0.505,
+                0.93,
+                0.547
+            ],
+            "angle": 0,
+            "content": "new battery systems (Li-S and Li-air)\\(^{5}\\). More importantly, the two electrolyte systems share similar fundamentals regarding SEI formation and many findings in one system can be applied to the other."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.504,
+                0.558,
+                0.931,
+                0.775
+            ],
+            "angle": 0,
+            "content": "Theories on Li dendrite growth. Dendritic deposition is a common occurrence during high-current electroplating of metals such as Cu, Ni and Zn, but this phenomenon has been comprehensively understood, and it is not an issue in industrial applications[20]. During electroplating, there is a cation concentration gradient in the electrolyte between the two electrodes. Once a critical current density \\( J^{\\star} \\) is reached, the current can only be sustained for a certain period called the Sand's time, \\( \\tau \\), after which cations become depleted in the electrolyte, breaking the electrical neutrality at the plated electrode surface. This builds up a local space charge, bringing about the formation of ramified metal depositions. This theory works well to predict the electroplating of Li dendrites for current densities higher than \\( J^{\\star} \\) (refs 21,22). But because \\( J^{\\star} \\) is relatively large in commonly used electrolytes and cell configurations, the cells are most often operated far below \\( J^{\\star} \\). Nevertheless, dendritic Li deposition can still be observed[23], suggesting that a different mechanism is at play."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.504,
+                0.774,
+                0.931,
+                0.908
+            ],
+            "angle": 0,
+            "content": "This theory oversimplifies the Li plating process, as it does not take into consideration interfacial chemistry. In contrast to other high-redox-potential metals, Li spontaneously forms an SEI at its surface. According to the abovementioned 'mosaic model', the SEI exhibits heterogeneous Li-ion conductivity, which aids inhomogeneous nucleation. Moreover, cracks can form in the SEI under large volume variation during cycling; in turn, this exposes fresh Li underneath, which has an even lower energy barrier for Li-ion transport. The enhanced ion flux at cracks intensifies non-uniform Li deposition."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.504,
+                0.908,
+                0.931,
+                0.949
+            ],
+            "angle": 0,
+            "content": "Lithium dendrite growth is self-enhanced, and several theories have been proposed to rationalize this phenomenon. One theory is that protrusions with high curvature have a considerably higher"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.066,
+                0.961,
+                0.534,
+                0.973
+            ],
+            "angle": 0,
+            "content": "NATURE NANOTECHNOLOGY | VOL 12 | MARCH 2017 | www.nature.com/naturenanotechnology"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.908,
+                0.962,
+                0.93,
+                0.972
+            ],
+            "angle": 0,
+            "content": "195"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.3,
+                0.982,
+                0.698,
+                0.993
+            ],
+            "angle": 0,
+            "content": "© 2017 Macmillan Publishers Limited, part of Springer Nature. All rights reserved."
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.068,
+                0.025,
+                0.301,
+                0.047
+            ],
+            "angle": 0,
+            "content": "REVIEW ARTICLE"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.477,
+                0.029,
+                0.93,
+                0.044
+            ],
+            "angle": 0,
+            "content": "NATURE NANOTECHNOLOGY DOI: 10.1038/NNANO.2017.16"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.062,
+                0.492,
+                0.145
+            ],
+            "angle": 0,
+            "content": "electric field at their tips, which thus tend to attract more Li-ions, resulting in further growth of the protrusions and finally evolving into dendrites\\(^{24}\\). Another factor is that the hemispherical tips of protrusions enable three-dimensional (3D) Li-ion diffusion, rather than the one-directional diffusion observed in flat surfaces, leading to faster Li deposition on the tips\\(^{4,25}\\)."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.156,
+                0.493,
+                0.332
+            ],
+            "angle": 0,
+            "content": "Infinite relative volume change. All electrode materials undergo volume change during operation. Even commercial intercalation electrodes such as graphite exhibit a volume change of \\(\\sim 10\\%\\) (ref. 26). Alloy-type anodes undergo a much greater volume change (\\(\\sim 400\\%\\) for Si), and this is an obstacle to their commercialization[27]. The relative volume change of a Li anode is virtually infinite, owing to its hostless nature. From a practical perspective, the areal capacity of a single-sided commercial electrode needs to reach at least \\(3\\mathrm{mAhcm}^{-2}\\), equivalent to a relative change in thickness of \\(\\sim 14.6~{\\mu\\mathrm{m}}\\) for Li. The value could be even higher for future batteries, meaning that Li interface movement during cycling could be tens of micrometres. This imposes formidable challenges on the SEI stability."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.344,
+                0.493,
+                0.575
+            ],
+            "angle": 0,
+            "content": "Correlations among Li metal challenges. The main problems of Li anodes are summarized in Fig. 1b. During Li plating, the huge volume expansion can rupture the fragile SEI (step 1), promoting Li dendrite growth through the cracks (step 2). During Li stripping, volume contraction further fractures the SEI, while stripping from kinks in a dendrite or from its roots can break the electrical contact and produce 'dead' Li (metal that is electrically isolated from the substrate; step 3). After continuous cycling (step 4), the repeated process can produce a porous Li electrode, a thick accumulated SEI layer and excessive dead Li, leading to blocked ion transport and capacity fading. More detailed correlations are summarized in Fig. 1c. We emphasize that among the many challenges identified throughout the years, high chemical reactivity and infinite relative volume change should be regarded as the two root issues (centre circle of Fig. 1c). Fracture of the SEI, in conjunction with further chemical side-reactions, dendrite formation and dead Li, eventually results in both safety hazards and capacity fading."
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.067,
+                0.586,
+                0.409,
+                0.6
+            ],
+            "angle": 0,
+            "content": "Electrolyte engineering for stabilizing Li anodes"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.6,
+                0.491,
+                0.734
+            ],
+            "angle": 0,
+            "content": "Electrolyte components, especially additives, have been investigated to improve the performance of Li anodes. These additives can decompose, polymerize or adsorb on the Li surface, modifying the physico-chemical properties of the SEI and therefore regulating the current distribution during Li deposition[28]. The presence of additives, sometimes even at ppm levels, can alter the deposition morphology and cycling efficiency. Classic examples of additives in the early era of Li anode research included gaseous molecules \\(\\mathrm{(CO_2}\\), \\(\\mathrm{SO}_2\\), \\(\\mathrm{N}_2\\mathrm{O})^{29,30}\\), 2-methylfuran[31], organic aromatic compounds[32], vinylene carbonate[33] and various surfactants[34]."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.747,
+                0.493,
+                0.95
+            ],
+            "angle": 0,
+            "content": "Fluorinated compounds. Among other additives, HF was intensively investigated[35,36]. Small amounts of HF and \\(\\mathrm{H}_2\\mathrm{O}\\) in carbonate electrolytes promote the formation of a dense and uniform \\(\\mathrm{LiF} / \\mathrm{Li}_2\\mathrm{O}\\) bilayer on the Li surface, which leads to smooth and hemispherical Li deposition. However, the Coulombic efficiency is still insufficient, and this protective effect wears off after several cycles, as the SEI eventually becomes too thick for HF to reach the Li surface during deposition. Similar phenomena have been observed with fluorinated salts such as \\(\\mathrm{LiPF_6}\\) and with other active fluorine-containing additives, such as \\((\\mathrm{C}_2\\mathrm{H}_5)_4\\mathrm{NF}(\\mathrm{HF})_4\\) and LiF (refs. 37,38). Fluoroethylene carbonate as a film-forming additive has also been proved to increase the Coulombic efficiency significantly[39]. It produces a thin and soft surface film with homogeneous structure, and aids Li-ion transport through the SEI, both desirable effects for suppressing Li dendrites."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.503,
+                0.062,
+                0.931,
+                0.266
+            ],
+            "angle": 0,
+            "content": "Self-healing electrostatic shield. Dendrite-free Li deposition was recently achieved in carbonate electrolyte by using \\(\\mathrm{Cs^{+}}\\) and \\(\\mathrm{Rb^{+}}\\) as additives, which functioned by a 'self-healing electrostatic shield' mechanism[24,40]. According to the Nernst equation, it is possible for metal cation additives \\((\\mathbf{M}^{+})\\) to have an effective reduction potential below that of \\(\\mathrm{Li^{+}}\\), if \\(\\mathbf{M}^{+}\\) has a standard reduction potential close to \\(\\mathrm{Li^{+}}\\) and a much lower concentration. Therefore, as illustrated in Fig. 2a, during Li deposition, \\(\\mathbf{M}^{+}\\) will adsorb on the Li surface without being reduced. If non-uniform Li deposition occurs, the charge accumulation at the protuberances will attract more \\(\\mathbf{M}^{+}\\) near the tip to form an electrostatic shield. This positively charged shield repels the incoming \\(\\mathrm{Li^{+}}\\) and thus slows down the propagation of protrusions. Compared with the dendritic Li morphology in a control electrolyte (Fig. 2b), a considerable improvement in deposition quality can be observed (Fig. 2c)."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.504,
+                0.277,
+                0.931,
+                0.427
+            ],
+            "angle": 0,
+            "content": "Synergistic effect of Li polysulfide and \\(\\mathrm{LiNO}_3\\). \\(\\mathrm{LiNO}_3\\) is an important additive in ether electrolytes, especially for Li-S batteries<sup>41</sup>, but can also stabilize the Li anode when combined with Li polysulfide<sup>42</sup>. In the presence of both additives, Li can be plated into a pancake-shaped morphology without dendrites in ether electrolyte, which cannot be achieved with \\(\\mathrm{LiNO}_3\\) alone. This synergy is attributed to the competition between the two additives towards the reaction with Li. \\(\\mathrm{LiNO}_3\\) reacts first to passivate the Li surface, and Li polysulfide then reacts to form \\(\\mathrm{Li}_2\\mathrm{S} / \\mathrm{Li}_2\\mathrm{S}_2\\) in the upper layer of the SEI to prevent electrolyte decomposition. This synergistic effect enables stable cycling even at high current density."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.504,
+                0.438,
+                0.931,
+                0.68
+            ],
+            "angle": 0,
+            "content": "High salt concentration. In the scenario of Li-ion depletion model for dendrite growth, high Li salt concentration can increase the threshold \\( J^{\\star} \\) and thus suppress dendrite formation. Following this line of reasoning, a new class of electrolytes for Li-S batteries with a lithium bis(trifluoromethanesulphonyl)imide (LiTFSI) salt concentration as high as \\( 7\\mathrm{M} \\) has been developed[43]. The highly-concentrated electrolyte effectively suppressed Li dendrites (Fig. 2d) and reduced the dissolution of Li polysulfide, which is a major problem in Li-S batteries. Moreover, the approach resulted in high Li-ion transference number (the fraction of current contributed by Li-ion movement), owing to the incompletely solvated Li-ion, making it favourable for high-rate operations. In a similar approach, using a \\( 4\\mathrm{M} \\) lithium bisfluorosulfonyl)imide (LiFSI) in ether electrolyte resulted in nodule-like Li plating (Fig. 2e) and high Coulombic efficiency even at high current density[44,45]. Although high salt concentration provides a route to the stable and safe operation of Li anodes, more economical production of Li salts is needed to reduce the costs."
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.505,
+                0.692,
+                0.825,
+                0.707
+            ],
+            "angle": 0,
+            "content": "Stabilizing Li anode by interface engineering"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.504,
+                0.707,
+                0.93,
+                0.83
+            ],
+            "angle": 0,
+            "content": "The SEI stability has an immediate impact on the plating/stripping behaviour and cycle life of Li metal batteries. Therefore, SEI engineering is a critical aspect in addressing the challenges of Li metal. Moreover, a robust SEI is particularly important in batteries in which active species can diffuse freely through the electrolyte (such as Li polysulfide in Li-S) or where inherent contamination is present \\(\\mathrm{(H_2O,CO_2}\\) and \\(\\mathrm{N}_2\\) in Li-air). Ideally, the SEI should be homogeneous; have a relatively thin, compact structure; and possess high ionic conductivity and high elastic strength."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.504,
+                0.84,
+                0.931,
+                0.95
+            ],
+            "angle": 0,
+            "content": "Artificial SEI. One commonly adopted approach to stabilize the SEI involves covering the Li surface with a protective layer before cycling. For the most part, this artificial SEI should be a strong physical barrier against dendrite propagation, as theoretical predictions show that a surface coating strength in the order of gigapascal is effective to suppress dendrites\\(^{4,46}\\). But it was recently proposed that a modulus of tens of megascals might be sufficient if the surface tension and ion transport were modified\\(^{47}\\). The coatings are often"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.069,
+                0.962,
+                0.091,
+                0.972
+            ],
+            "angle": 0,
+            "content": "196"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.463,
+                0.962,
+                0.93,
+                0.973
+            ],
+            "angle": 0,
+            "content": "NATURE NANOTECHNOLOGY | VOL 12 | MARCH 2017 | www.nature.com/naturenanotechnology"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.3,
+                0.982,
+                0.698,
+                0.994
+            ],
+            "angle": 0,
+            "content": "© 2017 Macmillan Publishers Limited, part of Springer Nature. All rights reserved."
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.067,
+                0.028,
+                0.521,
+                0.044
+            ],
+            "angle": 0,
+            "content": "NATURE NANOTECHNOLOGY DOI: 10.1038/NNANO.2017.16"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.698,
+                0.025,
+                0.931,
+                0.046
+            ],
+            "angle": 0,
+            "content": "REVIEW ARTICLE"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.062,
+                0.493,
+                0.344
+            ],
+            "angle": 0,
+            "content": "chemically stable and dense to prevent Li corrosion by the electrolyte, while possessing reasonable Li-ion conductivity (Fig. 3a). Artificial SEI can be formed by controlled exposure of Li with chosen chemicals. For example, the reaction between substituted-silane and the natural OH-terminated layer on clean Li surface results in a protective coating stable under static conditions with low initial impedance and slow impedance growth when exposed to organic electrolytes\\(^{48,49}\\). Tetraethoxysilane-generated silicate coating has been even more effective in improving cycle life\\(^{50}\\). Gaseous species can also be used: for example, \\(\\mathrm{N}_2\\) has been used to form \\(\\mathrm{Li}_3\\mathrm{N}\\) coating at room temperature\\(^{51,52}\\), as well as acetylene to form polyacetylene through in situ polymerization\\(^{53}\\). Ionic liquids and common electrolyte additives have also been used for a more stable interface\\(^{54,55}\\). Recently, a thin (\\(\\sim 50\\)-nm) yet uniform \\(\\mathrm{Li}_3\\mathrm{PO}_4\\) artificial SEI on Li was used\\(^{56}\\); thanks to the good Li-ion conductivity and high Young's modulus of this passivation layer, the modified electrode exhibited a smooth, compact interface without obvious dendrites after 200 cycles (Fig. 3b). Nevertheless, to be effective, artificial SEI formation by direct chemical reaction with Li usually requires very good control over the reaction conditions and the contamination levels (moisture, oxygen and so on)."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.344,
+                0.493,
+                0.588
+            ],
+            "angle": 0,
+            "content": "Advanced thin-film fabrication techniques, which are capable of minimizing Li corrosion in air during processing and meeting the challenges associated with the low melting point of Li, promise more precise control over the coating thickness, uniformity, conformity and defect density. For example, stable Li electrodes have been fabricated by radio-frequency magnetron sputtering of a thin film of lithium phosphorus oxynitride solid electrolyte\\(^{57}\\). Atomic-layer deposition (ALD) has emerged as the premier deposition process for the low-temperature fabrication of uniform, conformal and ultrathin films. ALD coating of Li surface with ionically conducting oxides and sulfides has been demonstrated to extend the lifetime of Li anodes\\(^{58,59}\\). A 14-nm coating of \\(\\mathrm{Al_2O_3}\\), for example, was found to delay the onset of Li tarnishing for \\(20\\mathrm{h}\\) upon exposure to air, and to effectively retard Li corrosion in organic solvents and polysulfides (Fig. 3c). Other techniques such as doctor blading have also been explored for artificial SEI fabrication\\(^{60}\\). Finally, inert ceramic particles coated on separators have also been used to mechanically inhibit dendrite growth\\(^{61}\\)."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.599,
+                0.491,
+                0.8
+            ],
+            "angle": 0,
+            "content": "Nanoscale interfacial engineering. This approach relies on using chemically stable and mechanically strong scaffolds to reinforce the SEI formed during electrochemical cycling\\(^{62,63}\\). The SEI forms on top of the scaffold, and ideally the two move together during battery cycling without fracturing. Simultaneously, Li-ions can pass freely through the scaffold such that deposition can take place underneath without forming dendrites (Fig. 3d). For example, if interconnected hollow carbon nanospheres on Cu are used, column-like Li is formed (Fig. 3e), rather than dendrites\\(^{62}\\). The electrode produced in this way also had better Coulombic efficiency and cycling stability. Direct growth of 2D hexagonal boron nitride (h-BN) on Cu current collectors was also proposed\\(^{63}\\). The remarkable chemical stability and mechanical strength of h-BN afforded a stable SEI and smooth Li deposition (Fig. 3f). Graphene grown directly on Cu or transferred to the Li surface is also effective in scaffolding the SEI\\(^{63,64}\\)."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.801,
+                0.492,
+                0.896
+            ],
+            "angle": 0,
+            "content": "Relatively low electrical conductivity is desirable when choosing the appropriate scaffold materials, in order to prevent direct Li deposition on top of it. Relatively weak interaction between the scaffold and the current collector is also needed to give the scaffold the flexibility to expand and contract during cycling. Given the large toolbox of the burgeoning 2D materials and nanostructure synthesis, more scaffold designs are to be expected."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.908,
+                0.492,
+                0.95
+            ],
+            "angle": 0,
+            "content": "Homogenizing Li-ion flux. Because the spatial inhomogeneity in Li-ion distribution on an electrode surface contributes directly to dendrite formation, it is important to develop strategies for"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.507,
+                0.066,
+                0.515,
+                0.074
+            ],
+            "angle": 0,
+            "content": "a"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.517,
+                0.065,
+                0.929,
+                0.267
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.507,
+                0.276,
+                0.515,
+                0.285
+            ],
+            "angle": 0,
+            "content": "b"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.518,
+                0.284,
+                0.7,
+                0.402
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.708,
+                0.276,
+                0.717,
+                0.285
+            ],
+            "angle": 0,
+            "content": "d"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.719,
+                0.284,
+                0.928,
+                0.404
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.507,
+                0.411,
+                0.515,
+                0.419
+            ],
+            "angle": 0,
+            "content": "C"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.521,
+                0.417,
+                0.702,
+                0.535
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.708,
+                0.424,
+                0.716,
+                0.432
+            ],
+            "angle": 0,
+            "content": "e"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.719,
+                0.429,
+                0.929,
+                0.521
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.502,
+                0.546,
+                0.922,
+                0.827
+            ],
+            "angle": 0,
+            "content": "Figure 2 | Effects of different electrolyte additives. a, Schematic illustration of the Li deposition process based on the self-healing electrostatic shield mechanism. In the top panel, Li cations (green) are attracted to the negative charge on a protruding point, adding to it and causing further growth. In the presence of metal cation additives \\((\\mathsf{M}^{+})\\) with effective reduction potential below that of \\(\\mathrm{Li^{+}}\\) (lower panel), however, the \\(\\mathsf{M}^{+}\\) additive (red) can be adsorbed on the Li surface instead to form an electrostatic shield, repelling the incoming \\(\\mathrm{Li^{+}}\\) and thus slowing the growth of protrusions. b,c, Morphologies of Li deposited in \\(1\\mathrm{M}\\) \\(\\mathrm{LiPF}_6/\\) propylene carbonate (PC) at \\(0.1\\mathrm{mAcm}^{-2}\\), without additive (b) and with \\(0.05\\mathrm{M}\\) \\(\\mathrm{CsPF}_6\\) additive \\((c)^{24}\\). The addition of \\(\\mathrm{CsPF}_6\\) produces a much more uniform surface without obvious dendrites. d, SEM image of Li metal surface after 280 cycles in \\(7\\mathrm{M}\\) bis(trifluoromethane)sulfonimide lithium (LiTFSI) 1,3-dioxolane/dimethoxy ethane (DOL/DME) electrolyte\\(^{43}\\), which shows a smooth surface without dendritic deposition (\\(0.1\\mathrm{mAcm}^{-2}\\)). e, Surface morphologies and optical images (insets) of Li deposited on Cu in \\(1\\mathrm{M}\\) \\(\\mathrm{LiPF}_6/PC\\) (left) and \\(4\\mathrm{M}\\) lithium bis(fluorosulfonyl)imide (LiFSI)/DME (right)\\(^{44}\\) at \\(1.0\\mathrm{mAcm}^{-2}\\). The latter exhibits nodule-like deposited Li with much larger particle size. Figure adapted with permission from: b,c, ref. 24, American Chemical Society; d, ref. 43, Macmillan Publishers Ltd; e, ref. 44, Macmillan Publishers Ltd."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.503,
+                0.84,
+                0.931,
+                0.95
+            ],
+            "angle": 0,
+            "content": "producing a more uniform Li-ion flux. A direct and practical approach is to increase the effective surface area of the electrode to dissipate the current density; this can be realized by manipulating the nanoarchitectures of metal current collectors. A 3D Cu current collector with submicrometre skeleton structure was synthesized by reduction of \\(\\mathrm{Cu(OH)_2}\\) fibres[65]. In planar current collectors, Li nuclei at the initial stage of deposition resemble sharp tips that locally enhance the Li-ion flux, amplifying dendrite"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.067,
+                0.961,
+                0.534,
+                0.973
+            ],
+            "angle": 0,
+            "content": "NATURE NANOTECHNOLOGY | VOL 12 | MARCH 2017 | www.nature.com/naturenanotechnology"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.908,
+                0.962,
+                0.93,
+                0.971
+            ],
+            "angle": 0,
+            "content": "197"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.3,
+                0.982,
+                0.698,
+                0.993
+            ],
+            "angle": 0,
+            "content": "© 2017 Macmillan Publishers Limited, part of Springer Nature. All rights reserved."
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.068,
+                0.025,
+                0.302,
+                0.047
+            ],
+            "angle": 0,
+            "content": "REVIEW ARTICLE"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.477,
+                0.029,
+                0.93,
+                0.044
+            ],
+            "angle": 0,
+            "content": "NATURE NANOTECHNOLOGY DOI: 10.1038/NNANO.2017.16"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.092,
+                0.065,
+                0.47,
+                0.165
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.083,
+                0.178,
+                0.276,
+                0.301
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.306,
+                0.179,
+                0.468,
+                0.301
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.492,
+                0.064,
+                0.899,
+                0.163
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.492,
+                0.179,
+                0.724,
+                0.301
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.734,
+                0.177,
+                0.922,
+                0.301
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.435,
+                0.316,
+                0.548,
+                0.327
+            ],
+            "angle": 0,
+            "content": "Homogenizing ion flux"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.091,
+                0.337,
+                0.268,
+                0.525
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.301,
+                0.336,
+                0.475,
+                0.523
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.506,
+                0.336,
+                0.685,
+                0.523
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.337,
+                0.887,
+                0.523
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.067,
+                0.545,
+                0.916,
+                0.68
+            ],
+            "angle": 0,
+            "content": "Figure 3 | Interface engineering on Li metal. a, Schematic showing the design principles and mechanisms of artificial SEI. b, Top-view SEM images of \\(\\mathrm{Li}_3\\mathrm{PO}_4\\)-modified Li anode after 200 cycles\\(^{56}\\). c, Optical images of pristine (top) and 14 nm ALD \\(\\mathrm{Al}_2\\mathrm{O}_3\\)-protected (bottom) Li metal foil soaked in 1 M sulfur/DME solution for 7 days\\(^{58}\\). d, Schematic showing how interconnected hollow carbon spheres create a scaffold for stabilizing the SEI layer. The volumetric change of the Li deposition process is accommodated by the flexible coating of hollow carbon nanospheres. e, Cross-section SEM image showing columnar Li deposited underneath carbon nanosphere layer, with more uniform Li distribution\\(^{62}\\). f, Top-view SEM image after the first Li deposition on a h-BN protected anode\\(^{63}\\). g, Uneven Li-ion flux distribution on Cu foil current collector and the resulting dendritic Li deposition\\(^{72}\\). h-j, More uniform Li-ion flux distribution fulfilled by 3D current collector \\((\\mathbf{h})^{65}\\), improved electrolyte intake \\((\\mathbf{i})^{70}\\), and polar surface cover layer \\((\\mathbf{j})^{72}\\). The corresponding morphologies of deposited Li are presented below each schematic image. Figure reproduced/adapted with permission from: b, ref. 56, Wiley; c, ref. 58, American Chemical Society; d,e, ref. 62, Macmillan Publishers Ltd; f, ref. 63, American Chemical Society; g,j, ref. 72, American Chemical Society; h, ref. 65, Macmillan Publishers Ltd; i, ref. 70, Wiley."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.693,
+                0.492,
+                0.95
+            ],
+            "angle": 0,
+            "content": "growth (Fig. 3g). In contrast, the numerous protuberances on 3D Cu current collectors can all serve as charge centres and nucleation sites, affording a more homogeneously distributed electric field (Fig. 3h). In ether electrolyte, Li fills the pores of the 3D current collector during deposition and forms a relatively flat surface, improving Coulombic efficiency and cycling stability. Several other studies applied similar design principles yet with different synthetic approaches, such as chemical dealloying\\(^{66}\\), and solvent-evaporation assisted assembly\\(^{67}\\). High-surface-area carbon-based materials, such as graphene and carbon fibres, have also been implemented as advanced current collectors\\(^{68,69}\\). Improving the electrolyte-wettability of separators is an alternative approach along this line\\(^{70,71}\\), as demonstrated for polyethylene separators coated with polydopamine using a simple dip-coating method (Fig. 3i)\\(^{70}\\). In another example, the polar functional groups of an oxidized polyacrylonitrile nanofibre layer on top of the current collector bind Li-ions in the electrolyte and retard their movements toward spots with highly concentrated Li-ion flux (Fig. 3j)\\(^{72}\\). Similar effects have subsequently been observed with glass fibres\\(^{73}\\)."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.505,
+                0.693,
+                0.928,
+                0.722
+            ],
+            "angle": 0,
+            "content": "Finally, strategies involving a mechanically patterned Li surface\\(^{74}\\), or stabilized Li powder, can also serve this purpose\\(^{75,76}\\)."
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.505,
+                0.733,
+                0.854,
+                0.747
+            ],
+            "angle": 0,
+            "content": "Minimizing volume change by using stable hosts"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.504,
+                0.747,
+                0.928,
+                0.773
+            ],
+            "angle": 0,
+            "content": "Although the infinite relative volume change is a critical aspect of Li anodes<sup>16</sup>, this issue is only just starting to be tackled."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.504,
+                0.774,
+                0.93,
+                0.95
+            ],
+            "angle": 0,
+            "content": "Recently, to address the problem of relative volume change, stable host materials[77] have been introduced that contain prestored Li, infused into nanoscale gaps in the form of molten metal. This approach is especially important for Li-S and Li-air cells, as both involve cathodes in the non-lithiated form during battery construction. In one example, layered reduced graphene oxide was fabricated through Li-assisted reduction of graphene oxide (Fig. 4a) and found to possess unique molten Li wettability (or lithophilicity)[77]. By simply touching the edge of the reduced graphene oxide to molten Li, Li can be infused into the matrix by capillarity. This layered composite of Li/reduced graphene oxide reduced the relative volume change of Li anode to below \\(20\\%\\), resulting in much more stable cycling, lower polarization and"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.069,
+                0.962,
+                0.091,
+                0.972
+            ],
+            "angle": 0,
+            "content": "198"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.463,
+                0.962,
+                0.93,
+                0.973
+            ],
+            "angle": 0,
+            "content": "NATURE NANOTECHNOLOGY | VOL 12 | MARCH 2017 | www.nature.com/naturenanotechnology"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.3,
+                0.982,
+                0.698,
+                0.993
+            ],
+            "angle": 0,
+            "content": "© 2017 Macmillan Publishers Limited, part of Springer Nature. All rights reserved."
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.067,
+                0.028,
+                0.521,
+                0.045
+            ],
+            "angle": 0,
+            "content": "NATURE NANOTECHNOLOGY DOI: 10.1038/NNANO.2017.16"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.698,
+                0.025,
+                0.931,
+                0.047
+            ],
+            "angle": 0,
+            "content": "REVIEW ARTICLE"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.072,
+                0.065,
+                0.526,
+                0.222
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.556,
+                0.063,
+                0.928,
+                0.222
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.171,
+                0.236,
+                0.825,
+                0.393
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.065,
+                0.409,
+                0.916,
+                0.515
+            ],
+            "angle": 0,
+            "content": "Figure 4 | Stable hosts for Li metal and guided Li deposition. a, Schematic and corresponding SEM images of the materials in synthetic procedures from a graphene oxide (GO) film (left), a sparked reduced graphene oxide (rGO) film (middle) to a layered Li-rGO composite film (right)\\(^{77}\\). b, Electrospun polyimide (PI) coated with ZnO by ALD to form core-shell PI-ZnO. The ZnO coating produces a 'lithiophilic' matrix into which molten Li can steadily infuse\\(^{78}\\). The lower panels show cross-sectional SEM images of the Li-coated PI matrix before (left) and after (right) complete Li stripping, from which no significant volume change can be seen\\(^{78}\\). c, Coulombic efficiency of different electrodes when cycled in an alkyl carbonate electrolyte at \\(0.5\\mathrm{mAcm}^{-2}\\) and schematic of Li metal nanocapsules (inset), where gold nanoparticles (Au NP) are loaded within carbon spheres to act as the seeds for Li nucleation and deposition inside the nanocapsules\\(^{80}\\). Figure adapted/reproduced with permission from: a, ref. 77, Macmillan Publishers Ltd; b, ref. 78, Macmillan Publishers Ltd; c, ref. 80, Macmillan Publishers Ltd."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.532,
+                0.49,
+                0.626
+            ],
+            "angle": 0,
+            "content": "dendrite-proof properties. This strategy has several advantages: first, a stable host minimizes the volume variation by dividing dense Li into smaller domains; second, the increased active Li surface greatly reduces the effective current density, homogenizing the ion flux and further suppressing dendrites; third, stable volume can be maintained at the electrode level to avoid stress fluctuation within a cell, thus minimizing safety concerns."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.626,
+                0.49,
+                0.816
+            ],
+            "angle": 0,
+            "content": "Excellent lithophilicity of the host materials is a prerequisite for molten Li infusion. However, unlike reduced graphene oxide, most available materials cannot be well wetted by molten Li (ref. 77). In this circumstance, it is possible to develop a universal surface functionalization method to afford lithophilicity by means of a thin and conformal coating of Si or \\(\\mathrm{ZnO}\\) (Fig. 4b)[78,79]. This effect can be explained by the spontaneous reaction between Si or \\(\\mathrm{ZnO}\\) and molten Li, which affords more lithophilic species \\((\\mathrm{Li}_x\\mathrm{Si}\\) and \\(\\mathrm{Li}_x\\mathrm{Zn}/\\) \\(\\mathrm{Li}_2\\mathrm{O}\\), respectively) on the surface. Other species that can chemically react with Li may also be good candidates as a coating layer. Using this surface functionalization strategy, stable hosts were constructed out of originally lithophobic carbon nanofibres and thermal-resistant polymeric network, which then showed minimal volume variation (Fig. 4b) and good cyclability."
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.065,
+                0.827,
+                0.3,
+                0.841
+            ],
+            "angle": 0,
+            "content": "Guided Li plating and protection"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.84,
+                0.49,
+                0.949
+            ],
+            "angle": 0,
+            "content": "In Li-LMO cells where Li is pre-stored in the cathode, the anode can in principle start with an empty reservoir. However, successful confinement of Li deposition in the anode is challenging because of random Li nucleation and growth. A solution would be to engineer a seeded growth to control the Li deposition[80]. It was found that Li nucleation calls for different overpotential on different metallic substrates; an appreciable nucleation barrier exists for metals with negligible solubility in Li (for example Cu), whereas no nucleation"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.504,
+                0.532,
+                0.931,
+                0.655
+            ],
+            "angle": 0,
+            "content": "barrier is present for metals exhibiting a definite Li solubility (for example Au, Ag and Zn). Based on this, hollow carbon nanocapsules with embedded Au seeds were designed (inset in Fig. 4c), in which the Au seeds facilitate Li deposition solely inside the nanocapsules, and the carbon shells act as hosts to stabilize the SEI. High Coulombic efficiency (over \\(98\\%\\)) can be obtained for over 300 cycles even in an alkyl carbonate electrolyte (Fig. 4c). In addition to the seeded growth strategy, guided Li plating can also be achieved by tuning the surface morphology[74]."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.504,
+                0.666,
+                0.929,
+                0.894
+            ],
+            "angle": 0,
+            "content": "Preventing dendrite propagation by use of solid electrolyte Developing advanced solid electrolytes is important to prevent Li dendrite growth and side reactions of Li. This can be achieved through a relatively straightforward strategy involving the development of physical obstacles to stop dendrite propagation. Solid electrolytes mainly fall into two categories: inorganic ceramic electrolytes and solid polymer electrolytes. Inorganic ceramic electrolyte is a general term pertaining all kinds of inorganic Li-ion conductive species such as sulfides\\(^{81-86}\\), oxides\\(^{87-91}\\), nitrides\\(^{92,93}\\) and phosphates\\(^{94-96}\\), while solid polymer electrolyte describes those blending Li salts with polymers\\(^{97-99}\\). Several criteria need to be met for solid electrolytes to be effective: (1) sufficiently high modulus to stop Li dendrite penetration; (2) sufficient Li-ion conductivity at ambient temperature; (3) wide electrochemical stability window without cathodic or anodic decomposition at either electrode; (4) low interfacial resistance and good adhesion with both electrodes."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.504,
+                0.894,
+                0.931,
+                0.95
+            ],
+            "angle": 0,
+            "content": "Generally, inorganic ceramics exhibit satisfactory ionic conductivity and mechanical properties\\(^{100}\\). Some of them, such as \\(\\mathrm{Li}_{10}\\mathrm{GeP}_2\\mathrm{S}_{12}\\) (ref. 84) and \\(\\mathrm{Li}_{9.54}\\mathrm{Si}_{1.74}\\mathrm{P}_{1.44}\\mathrm{S}_{11.7}\\mathrm{Cl}_{0.3}\\) (ref. 86), have ionic conductivity approaching or even surpassing that of liquid"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.066,
+                0.961,
+                0.534,
+                0.973
+            ],
+            "angle": 0,
+            "content": "NATURE NANOTECHNOLOGY | VOL 12 | MARCH 2017 | www.nature.com/naturenanotechnology"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.908,
+                0.962,
+                0.93,
+                0.971
+            ],
+            "angle": 0,
+            "content": "199"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.3,
+                0.982,
+                0.698,
+                0.993
+            ],
+            "angle": 0,
+            "content": "© 2017 Macmillan Publishers Limited, part of Springer Nature. All rights reserved."
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.068,
+                0.025,
+                0.302,
+                0.047
+            ],
+            "angle": 0,
+            "content": "REVIEW ARTICLE"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.477,
+                0.029,
+                0.93,
+                0.044
+            ],
+            "angle": 0,
+            "content": "NATURE NANOTECHNOLOGY DOI: 10.1038/NNANO.2017.16"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.072,
+                0.065,
+                0.38,
+                0.266
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.409,
+                0.063,
+                0.652,
+                0.265
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.669,
+                0.064,
+                0.919,
+                0.257
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.071,
+                0.279,
+                0.308,
+                0.408
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.071,
+                0.415,
+                0.296,
+                0.522
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.334,
+                0.28,
+                0.645,
+                0.517
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.687,
+                0.282,
+                0.929,
+                0.368
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.685,
+                0.377,
+                0.928,
+                0.51
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.065,
+                0.544,
+                0.927,
+                0.694
+            ],
+            "angle": 0,
+            "content": "Figure 5 | Inorganic and polymer solid electrolytes. a, Arrhenius plot showing the ionic conductivity of \\(\\mathrm{Li}_{10}\\mathrm{GeP}_2\\mathrm{S}_{12}\\), a superionic conductor<sup>84</sup>. Inset: the crystal structure of \\(\\mathrm{Li}_{10}\\mathrm{GeP}_2\\mathrm{S}_{12}\\) projected from the \\(c\\)-axis. b, Tensile strength comparison, at \\(40^{\\circ}\\mathrm{C}\\), between the single-ion conductor triblock copolymer P(STFSILi)-b-PEO-b-P(STFSILi) with 31 wt% P(STFSILi), and PS-PEO-PS with 25 wt% PS loaded with bis(trifluoromethane)sulfonimide lithium (LiTFSI) (ref. 107). Inset: chemical structure of P(STFSILi)-b-PEO-b-P(STFSILi) (ref. 107). c, Schematic showing a crosslinked composite of hairy nanoparticles and the poly(phenylene oxide) (PPO), which can be used to create a relatively tough membrane. d, Cross-sectional SEM image (top) and digital photo (bottom) showing flexible, one-particle-thick, \\(\\mathrm{Li}_{1.6}\\mathrm{Al}_{0.5}\\mathrm{Ti}_{0.95}\\mathrm{Ta}_{0.5}(\\mathrm{PO}_4)_3\\)-polymer membranes<sup>109</sup>. e, Schematic showing a full cell with a composite electrolyte in a polymer/ceramic/polymer sandwich structure. f, Arrhenius plot showing the great improvement in ionic conductivity of polyacrylonitrile (PAN) solid electrolyte when blended with LLTO nanowires, and the smaller improvement with LLTO nanoparticles. g, Polyacrylonitrile solid electrolyte blended with LLTO nanowires offers a continuous conduction pathway, unlike isolated LLTO particle fillers<sup>111</sup>. h, Schematic showing the LLZO-nanowire-blended PEO solid electrolyte<sup>112</sup>. Figure adapted/reproduced with permission from: a, ref. 84, Macmillan Publishers Ltd; b, ref. 107, Macmillan Publishers Ltd; c, ref. 108, Macmillan Publishers Ltd; d, ref. 109, Wiley; f,g, ref. 111, American Chemical Society; h, ref. 112, PNAS."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.719,
+                0.492,
+                0.881
+            ],
+            "angle": 0,
+            "content": "electrolytes (Fig. 5a), as summarized in Table 1. The elastic modulus of most of the inorganic ceramics ranges from tens to hundreds of gigapascals, which should be sufficient to prevent the formation of Li dendrites. However, a trade-off exists between modulus and surface adhesion with the electrodes; high-modulus materials often do not afford good adhesion, especially for Li metal[101]. Poor adhesion can, in turn, significantly increase interfacial resistance during cycling. Moreover, the electrochemical stability window of inorganic ceramics, especially sulfides, is narrow[102]. Although not generally observed in cyclic voltammetry, redox reactions can still happen at the electrode/electrolyte interface with formation of ion-blocking layers, severely affecting the cell kinetics."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.881,
+                0.492,
+                0.95
+            ],
+            "angle": 0,
+            "content": "Solid polymer electrolytes usually exhibit ionic conductivity 2-5 orders of magnitude lower than that of liquids. Their elastic modulus is also mediocre (typically \\(<0.1\\mathrm{GPa}\\)). As a result, simple polymer/salt blends cannot fully stop the protrusion of Li dendrites[22]. Nevertheless, the adhesion between the solid polymer"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.503,
+                0.719,
+                0.931,
+                0.95
+            ],
+            "angle": 0,
+            "content": "electrolytes and the electrodes is much better than for ceramics, and most solid polymer electrolytes exhibit good flexibility and scalable fabrication, which is favourable for practical battery manufacturing. Therefore, this type of electrolyte remains an actively studied topic, and progress in this field has been well summarized in several reviews\\(^{103-105}\\). Continuous efforts have been made to further improve their ionic conductivity and mechanical strength. Block copolymers were designed to decouple their mechanical properties from their Li-ion conductivity by introducing mechanical reinforcement blocks such as polystyrene\\(^{106}\\), while high Li-ion transference number was achieved by incorporating single-ion conductors (inset formula in Fig. 5b)\\(^{107}\\). As a consequence, enhanced mechanical strength and better Li-ion conductivity could be obtained simultaneously (Fig. 5b). To solve the modulus versus adhesion dilemma, a block copolymer with liquid-like surface and mechanically strong bulk phase was developed\\(^{101}\\). Alternatively, combining a crosslinked 'hairy' \\(\\mathrm{SiO}_2\\) nanoparticle"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.069,
+                0.962,
+                0.094,
+                0.972
+            ],
+            "angle": 0,
+            "content": "200"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.463,
+                0.962,
+                0.93,
+                0.973
+            ],
+            "angle": 0,
+            "content": "NATURE NANOTECHNOLOGY | VOL 12 | MARCH 2017 | www.nature.com/naturenanotechnology"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.3,
+                0.982,
+                0.698,
+                0.993
+            ],
+            "angle": 0,
+            "content": "© 2017 Macmillan Publishers Limited, part of Springer Nature. All rights reserved."
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.068,
+                0.028,
+                0.521,
+                0.045
+            ],
+            "angle": 0,
+            "content": "NATURE NANOTECHNOLOGY DOI: 10.1038/NNANO.2017.16"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.698,
+                0.025,
+                0.931,
+                0.047
+            ],
+            "angle": 0,
+            "content": "REVIEW ARTICLE"
+        },
+        {
+            "type": "table_caption",
+            "bbox": [
+                0.072,
+                0.073,
+                0.862,
+                0.101
+            ],
+            "angle": 0,
+            "content": "Table 1 | Comparison of room-temperature ionic conductivity, modulus and electrochemical stability window of different solid electrolytes."
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.072,
+                0.104,
+                0.927,
+                0.248
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Materials</td><td>Ionic conductivity at 25°C (mS cm-1)</td><td>Elastic modulus (GPa)</td><td>Electrochemical stability window (V)</td><td>References</td></tr><tr><td>Li2S-P2S5</td><td>~0.3-3</td><td>~18-25</td><td>1.71-2.31</td><td>82, 83, 85, 102</td></tr><tr><td>Li10GeP2S12</td><td>~12</td><td>~20</td><td>1.71-2.14</td><td>84, 100, 102</td></tr><tr><td>Li3xLa2/3-xTiO3</td><td>~1</td><td>~190-260</td><td>1.75-3.71</td><td>87, 89, 100, 102</td></tr><tr><td>Li7La3Zr2O12</td><td>~0.8</td><td>~150</td><td>0.05-2.91</td><td>88, 90, 91, 100, 102</td></tr><tr><td>Li3N</td><td>~1</td><td>~150</td><td>0-0.44</td><td>92, 93, 100</td></tr><tr><td>LIPON</td><td>~0.001</td><td>~77</td><td>0.68-2.63</td><td>95, 96, 102</td></tr><tr><td>PEO/Li salt blends</td><td>0.001-0.1</td><td>&lt;0.1</td><td>to ~5* (compatible with Li)</td><td>97-99</td></tr></table>"
+        },
+        {
+            "type": "table_footnote",
+            "bbox": [
+                0.076,
+                0.251,
+                0.299,
+                0.261
+            ],
+            "angle": 0,
+            "content": "*Obtained from cyclic voltammetry measurement data."
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.071,
+                0.313,
+                0.08,
+                0.322
+            ],
+            "angle": 0,
+            "content": "a"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.074,
+                0.313,
+                0.335,
+                0.456
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.071,
+                0.462,
+                0.08,
+                0.47
+            ],
+            "angle": 0,
+            "content": "b"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.078,
+                0.472,
+                0.332,
+                0.552
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.351,
+                0.313,
+                0.36,
+                0.322
+            ],
+            "angle": 0,
+            "content": "c"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.352,
+                0.313,
+                0.7,
+                0.55
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.749,
+                0.313,
+                0.76,
+                0.322
+            ],
+            "angle": 0,
+            "content": "d"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.763,
+                0.319,
+                0.913,
+                0.435
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.75,
+                0.439,
+                0.76,
+                0.447
+            ],
+            "angle": 0,
+            "content": "e"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.765,
+                0.441,
+                0.911,
+                0.553
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.072,
+                0.57,
+                0.08,
+                0.58
+            ],
+            "angle": 0,
+            "content": "f"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.073,
+                0.569,
+                0.237,
+                0.742
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.254,
+                0.573,
+                0.264,
+                0.582
+            ],
+            "angle": 0,
+            "content": "g"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.266,
+                0.576,
+                0.596,
+                0.741
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.607,
+                0.571,
+                0.617,
+                0.58
+            ],
+            "angle": 0,
+            "content": "h"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.617,
+                0.581,
+                0.914,
+                0.733
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.067,
+                0.761,
+                0.93,
+                0.948
+            ],
+            "angle": 0,
+            "content": "Figure 6 | Advanced techniques for Li metal characterizations. a, Schematic diagram of in situ TEM setup in open-cell configuration\\(^{115}\\). In this design, either solid electrolyte or ionic liquid is used as Li-ion conductor, and no volatile electrolyte presents. b, In situ TEM study of Li deposition behaviour under carbon hemispheres within an open-cell configuration\\(^{62}\\), demonstrating the technique as a powerful tool for visualizing the electrochemical behaviour of nano-engineered Li electrodes. c, Schematic illustration of an in situ electrochemical fluid-cell TEM holder and the corresponding liquid-cell design\\(^{120}\\). d,e, In situ TEM study on SEI (d) and Li dendrite growth (e) within a liquid cell\\(^{121}\\). A dendrite was observed to grow from the base point of the SEI while dissolving from tip and kink points. f, Schematic showing the cell design for in operando micro-focused synchrotron X-ray diffraction\\(^{127}\\). g, X-ray tomography 3D reconstructed images showing cross-sections of symmetric Li-polymer-Li cells cycled to various stages with charge passes of \\(0^{\\circ} \\mathrm{C} \\mathrm{cm}^{-2}\\) (top left), \\(9^{\\circ} \\mathrm{C} \\mathrm{cm}^{-2}\\) (top right), \\(84^{\\circ} \\mathrm{C} \\mathrm{cm}^{-2}\\) (bottom left) and \\(296^{\\circ} \\mathrm{C} \\mathrm{cm}^{-2}\\) (bottom right)\\(^{128}\\). Yellow indicates the brightest voxels. Dendritic structures underneath the polymer/electrode interface were observed at an early stage of dendrite development. h, Three-dimensional \\({ }^{7} \\mathrm{Li}\\) MRI of symmetric bag cell (frequency encoding in x, phase encoding in y and z) after Li plating. The 2D slices are horizontal (x-y) cross-sections (perpendicular to the z direction)\\(^{131}\\). The technique has the potential to provide both spatial and quantitative information on Li microstructure formation. Figure adapted/reproduced with permission from: a, ref. 115, American Chemical Society; b, ref. 62, Macmillan Publishers Ltd; c, ref. 120, Cambridge Univ. Press; d,e, ref. 121, American Chemical Society; f, ref. 127, Macmillan Publishers Ltd; g, ref. 128, Macmillan Publishers Ltd; h, ref. 131, Macmillan Publishers Ltd."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.067,
+                0.962,
+                0.534,
+                0.973
+            ],
+            "angle": 0,
+            "content": "NATURE NANOTECHNOLOGY | VOL 12 | MARCH 2017 | www.nature.com/naturenanotechnology"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.908,
+                0.963,
+                0.93,
+                0.972
+            ],
+            "angle": 0,
+            "content": "201"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.3,
+                0.983,
+                0.698,
+                0.994
+            ],
+            "angle": 0,
+            "content": "© 2017 Macmillan Publishers Limited, part of Springer Nature. All rights reserved."
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.068,
+                0.025,
+                0.302,
+                0.047
+            ],
+            "angle": 0,
+            "content": "REVIEW ARTICLE"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.477,
+                0.029,
+                0.93,
+                0.044
+            ],
+            "angle": 0,
+            "content": "NATURE NANOTECHNOLOGY DOI: 10.1038/NNANO.2017.16"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.062,
+                0.492,
+                0.09
+            ],
+            "angle": 0,
+            "content": "with gel polymer electrolyte (Fig. 5c) afforded enhanced mechanical strength and good ionic conductivity\\(^{108}\\)."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.09,
+                0.493,
+                0.306
+            ],
+            "angle": 0,
+            "content": "The combination of solid polymer electrolytes and Li-ion conductive inorganic ceramics is a promising strategy. A membrane combining one-particle-thick \\(\\mathrm{Li}_{1.6}\\mathrm{Al}_{0.5}\\mathrm{Ti}_{0.95}\\mathrm{Ta}_{0.5}(\\mathrm{PO}_4)_3\\) with a flexible polymer was developed to afford both flexibility and dendrite suppression (Fig. 5d)\\(^{109}\\). Recently, a polymer/ceramic/polymer sandwich structure was proposed (Fig. 5e)\\(^{110}\\). In this architecture, \\(\\mathrm{Li}_{1.3}\\mathrm{Al}_{0.3}\\mathrm{Ti}_{1.7}(\\mathrm{PO}_4)_3\\) (LATP) and cross-linked poly(ethylene glycol) methyl ether acrylate were combined to afford a soft interface with mechanically strong ceramic bulk, making it a valid approach for solving the modulus-adhesion dilemma and suppressing Li dendrite growth. In addition, blends of 1D \\(\\mathrm{Li}_{3x}\\mathrm{La}_{2/3-x}\\mathrm{TiO}_3\\) (LLTO) nanowires with polyacrylonitrile can offer continuous Li-ion conduction pathways and thus highly improved ionic conductivity (\\(>0.1\\mathrm{mScm^{-1}}\\) at room temperature; Fig. 5f,g)\\(^{111}\\). The combination of garnet phase \\(\\mathrm{Li}_7\\mathrm{La}_3\\mathrm{Zr}_2\\mathrm{O}_{12}\\) (LLZO) nanowires and poly(ethylene oxide) (PEO) electrolyte (Fig. 5h) exhibits a similar effect\\(^{112}\\)."
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.067,
+                0.317,
+                0.428,
+                0.331
+            ],
+            "angle": 0,
+            "content": "Advanced characterization techniques on Li metal"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.331,
+                0.492,
+                0.586
+            ],
+            "angle": 0,
+            "content": "Diverse characterization techniques have been developed to study fundamental aspects of Li anodes. These techniques can broadly be divided into two categories: those used to study the microstructures of Li deposition and those used to probe the surface chemistry. Techniques often used to meet these two purposes — for example scanning electron microscopy (SEM), transmission electron microscopy (TEM), optical microscopy, atomic force microscopy (AFM), and nuclear magnetic resonance (NMR) for morphological investigations, and Fourier transform infrared spectroscopy (FTIR), X-ray photoelectron spectroscopy (XPS) and Auger electron spectroscopy (AES) for surface analysis — have been well summarized in previous reviews[4,113]. Here, it is important to highlight that most of the characterizations reported in the early years were done ex situ or in situ under static conditions (without cycling). Applying in operando diagnostics can provide more meaningful information on the dynamics of Li anode in a real working environment, but remains underdeveloped, mostly because of the high reactivity of metallic Li and its low atomic number, which makes it a weak scatterer for electrons and X-rays."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.587,
+                0.492,
+                0.734
+            ],
+            "angle": 0,
+            "content": "Open-cell in situ TEM techniques were initially used to observe Li dendrite formation[114-116] and then proven powerful for visualizing the electrochemical behaviour of nano-engineered Li electrodes (Fig. 6a,b)[62,77,80]. Similarly, in situ SEM has been used to probe the inhomogeneity of Li deposition[117]. But these open-cell investigations used either an ionic liquid or a solid electrolyte, because liquid electrolytes would be too volatile. Unfortunately, this deviates considerably from most practical situations. As an alternative, optical microscopy would be compatible with liquid cells for in operando studies, yet the information is limited by the spatial resolution \\((\\sim 200\\mathrm{nm})^{42,118,119}\\)."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.734,
+                0.492,
+                0.921
+            ],
+            "angle": 0,
+            "content": "Recently, micro-fabricated hermetic electrochemical liquid cells have been developed for in situ TEM investigations to monitor electrochemical dynamics and perform quantitative measurements at high spatial and temporal resolution (Fig. 6c)\\(^{120}\\). It was possible, for example, to observe the growth of SEI (Fig. 6d) and Li plating/stripping dynamics in commercial carbonate electrolyte (Fig. 6e) and to conclude that dendrites grow from the base point of SEI while dissolving from tip and kink points\\(^{121}\\); or, using chemically sensitive annular dark-field scanning transmission electron microscopy (STEM), to estimate the density of the SEI and identify Li-containing phases formed in the liquid cell over time\\(^{122}\\). Other representative works include the direct visualization of SEI inhomogeneity before dendrite formation\\(^{123}\\), and the study of current density and electron beam effects on Li deposition morphology\\(^{124}\\)."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.921,
+                0.492,
+                0.95
+            ],
+            "angle": 0,
+            "content": "X-ray-based techniques, such as transmission X-ray microscopy\\(^{125}\\), X-ray diffraction and X-ray absorption spectroscopy\\(^{126}\\),"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.503,
+                0.062,
+                0.931,
+                0.212
+            ],
+            "angle": 0,
+            "content": "can also provide important insights into the working dynamics of many battery chemistries. Yet only a few studies have specifically focused on Li metal. These include the investigation of the changes in anode composition at different cycling stages and various anode depths under multiple discharging-charging cycles in an operating Li-air cell using spatially and temporally resolved synchrotron X-ray diffraction (Fig. 6f)\\(^{127}\\); as well as the use of synchrotron hard X-ray microtomography, to image the early stage of dendrite development in symmetric Li-polymer-Li cells, and to detect the nucleation of subsurface dendritic structures located within the Li electrode (Fig. 6g)\\(^{128}\\)."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.504,
+                0.211,
+                0.931,
+                0.412
+            ],
+            "angle": 0,
+            "content": "In addition, in operando \\(^{7}\\mathrm{Li}\\)-NMR spectroscopy, \\(^{7}\\mathrm{Li}\\)-magnetic resonance imaging (MRI; Fig. 6h) and in operando electron paramagnetic resonance spectroscopy have been proposed as new analytical techniques for the semi-quantitative determination of Li nucleation and growth[129-131]. Moreover, the increasing research attention on artificial SEI necessitates characterization of the properties of the coating layer, and techniques including in situ electromechanical testing in TEM[132,133], matrix-assisted laser-desorption ionization time-of-flight (MALDI-TOF) mass spectrometry[18], AFM peak force tapping[56], and nanoindentation[60,91,96] can all be applied to obtain complementary information. Finally, electrochemical testing methods remain non-destructive, convenient and powerful techniques for evaluating battery materials and performances as a whole, and can be used, for example, to study the origin of overpotentials at different cycling stages[134]."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.504,
+                0.412,
+                0.93,
+                0.453
+            ],
+            "angle": 0,
+            "content": "We believe that a combination of characterization techniques, including both in operando and post-mortem analyses, is required to provide a holistic understanding of the dynamic behaviour of Li."
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.506,
+                0.464,
+                0.569,
+                0.478
+            ],
+            "angle": 0,
+            "content": "Outlook"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.504,
+                0.478,
+                0.931,
+                0.533
+            ],
+            "angle": 0,
+            "content": "Although valuable progress has been made on Li anode research, we believe that great advances still await discovery. Here, we outline several possible directions for future Li anode research, which may lead to pathways for effective practical solutions."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.504,
+                0.545,
+                0.931,
+                0.707
+            ],
+            "angle": 0,
+            "content": "2D and 3D forms of Li. Nearly all Li anode research in the past has been based on Li foil, so that Li plating or stripping took place on a 2D surface. There is a maximum current density that a planar foil can handle; understanding such a limit would be important for safe and stable battery operation. Issues such as large interfacial fluctuation also need to be tackled for planar foils. An exciting direction is to generate 3D forms of Li, consisting of Li embedded inside a matrix. The matrix could have additional attractive functions, including mechanical and chemical stability and Li-ion conductivity. The 3D form affords opportunities for handling high current density, diminishing volume change and strengthening the SEI."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.504,
+                0.72,
+                0.931,
+                0.856
+            ],
+            "angle": 0,
+            "content": "Characterization of metallic Li. Despite the various characterization techniques applied to metallic Li, we have not yet obtained a clear understanding of Li nucleation, growth, stripping, microstructure and chemical reactivity. It has been challenging to obtain a fresh Li surface in order to understand its initial reaction with the surrounding environment, and it is not yet possible to obtain an atomically resolved structure of Li and the SEI, owing to their instability under characterization conditions. Understanding the critical stable nuclei size in different environments would also guide us towards strategies for more effective dendrite prevention."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.504,
+                0.867,
+                0.931,
+                0.95
+            ],
+            "angle": 0,
+            "content": "Engineering the SEI and other interfaces. Research into electrolyte additives and artificial SEI is making important progress and should continue. We believe that introducing reactive gas/vapour is a promising alternative for obtaining homogenous surface layers (Fig. 7a). The gas-phase reactant should not be limited to simple molecules such as HF and \\(\\mathrm{N}_2\\), but include more complex"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.069,
+                0.962,
+                0.094,
+                0.972
+            ],
+            "angle": 0,
+            "content": "202"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.463,
+                0.962,
+                0.93,
+                0.973
+            ],
+            "angle": 0,
+            "content": "NATURE NANOTECHNOLOGY | VOL 12 | MARCH 2017 | www.nature.com/naturenanotechnology"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.3,
+                0.982,
+                0.698,
+                0.994
+            ],
+            "angle": 0,
+            "content": "© 2017 Macmillan Publishers Limited, part of Springer Nature. All rights reserved."
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.067,
+                0.028,
+                0.521,
+                0.044
+            ],
+            "angle": 0,
+            "content": "NATURE NANOTECHNOLOGY DOI: 10.1038/NNANO.2017.16"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.698,
+                0.025,
+                0.931,
+                0.046
+            ],
+            "angle": 0,
+            "content": "REVIEW ARTICLE"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.062,
+                0.493,
+                0.306
+            ],
+            "angle": 0,
+            "content": "compounds such as haloalkanes that exhibit more controllable reactions with Li. In addition to inorganic coatings, moreover, oligomers or polymers should also be explored. Lamination of pre-fabricated layers on the Li anode is another possible direction (Fig. 7b), which can not only greatly extend the choice of materials, synthetic techniques and nanostructure design, but also enable large-scale manufacturing by roll-to-roll process. It would also be interesting to incorporate the self-healing function into the SEI using materials such as encapsulated healing agent\\(^{135}\\) and polymers with non-covalent intermolecular bonding (Fig. 7c)\\(^{136}\\). Currently, most of the surface coatings are single-layer, single-component coatings with a single desired property (such as high modulus or ionic conductivity). However, a stable interface is far more demanding and requires composite or multi-layer configurations (Fig. 7d), in which various layers can serve different functions. For instance, it is possible to imagine a multilayer made of a flexible and mechanically strong support, a highly Li-ion-conductive layer and an electrolyte-proof film."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.317,
+                0.493,
+                0.575
+            ],
+            "angle": 0,
+            "content": "Solid electrolyte. We emphasize that composites that take advantage of both highly conductive inorganic ceramics and soft polymer electrolytes may be an ultimate solution for solid electrolytes. Ideally, the composites could be made of vertically aligned 1D or 2D inorganic materials within a polymeric matrix, which provide not only high mechanical strength and a vertical pathway for efficient Li-ion transport, but also greatly improved flexibility. Interfacial engineering between solid electrolytes and electrodes is crucial to improve their adhesion and to extend the electrochemical stability window. Multilayered solid electrolytes may be favourable, in which the interfacial layers can be designed to be electrochemically stable against the electrodes. Here, a semi-fluidic solid electrolyte interfacial layer can be helpful to accommodate the interfacial fluctuation at the anode side. Furthermore, in most of the studies, especially those on inorganic ceramics, the samples are relatively thick \\((>100\\mu \\mathrm{m})\\) and small in area \\((<5\\mathrm{cm}^2)\\). Economical approaches to fabricate thin \\((<30\\mu \\mathrm{m}\\); comparable to or thinner than commercial separators) and large-area \\((>30\\mathrm{cm}^2)\\) solid electrolytes need to be further developed for practical applications."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.586,
+                0.493,
+                0.95
+            ],
+            "angle": 0,
+            "content": "Full-cell design. Two main challenges exist in the design of the Li metal full cell, namely the significant volume variation at electrode and battery level (Fig. 7e, I-IV) and the unwanted shuttling of cathode species to the anode. For Li-S (II) and Li-air cells (III) that are commonly assembled in the fully charged state, volume contraction during discharge might lead to the detachment at interfaces. For Li-LMO cells assembled in the fully discharged state, volume expansion occurs during charging (IV). This might build up large internal stress and damage the cells, raising safety concerns and producing engineering challenges for battery packaging. Two approaches could be effective to tackle the volume fluctuation: matching volume changes of the two electrodes, or engineering electrodes with minimal volume fluctuations (V, VI). It is known that for Li-S and Li-air cells, the cathode expands while Li shrinks during discharge. This offers the opportunity to maintain a constant cell volume by matching the volume changes of the two electrodes. Nevertheless, such an approach still causes floating interfaces, which imposes extra challenges on electrolyte/ separators and SEI stability. Moreover, it cannot be applied to Li-LMO cells, because the volume of LMO remains nearly constant during cycling. Alternatively, stable hosts can be designed for both electrodes, a versatile strategy for all Li metal cells. In addition, the shuttling of cathode species (Li polysulfides, \\(\\mathrm{O}_2\\)) to the anode needs to be minimized, although it would be challenging to prevent this entirely. The environment change due to shuttling might alter the Li deposition behaviour and the SEI composition, another important aspect that needs to be explored."
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.51,
+                0.066,
+                0.641,
+                0.08
+            ],
+            "angle": 0,
+            "content": "a Reactive gas/vapour"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.517,
+                0.081,
+                0.667,
+                0.169
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.511,
+                0.172,
+                0.743,
+                0.285
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.768,
+                0.071,
+                0.78,
+                0.081
+            ],
+            "angle": 0,
+            "content": "b"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.821,
+                0.08,
+                0.878,
+                0.089
+            ],
+            "angle": 0,
+            "content": "Lamination"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.777,
+                0.098,
+                0.923,
+                0.168
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.768,
+                0.174,
+                0.78,
+                0.184
+            ],
+            "angle": 0,
+            "content": "d"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.821,
+                0.187,
+                0.876,
+                0.208
+            ],
+            "angle": 0,
+            "content": "Multi-layer coating"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.777,
+                0.212,
+                0.923,
+                0.284
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.511,
+                0.293,
+                0.522,
+                0.301
+            ],
+            "angle": 0,
+            "content": "e"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.52,
+                0.3,
+                0.925,
+                0.478
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.504,
+                0.506,
+                0.924,
+                0.613
+            ],
+            "angle": 0,
+            "content": "Figure 7 | Outlook for Li metal battery engineering and full-cell design. a-d, Multiple interfacial coating strategies including reactive gas/vapour coating (a), lamination (b), self-healing polymer coating (c) and multilayer coating (d). e, Problems and possible solutions for full cell design for Li metal batteries. Volume shrinkage can be expected for Li-S (II) and Li-air (III) cells, whereas volume expansion can be observed for Li-LMO (IV) cells. Matched cathode expansion (V) and stable host design for both electrodes (VI) could be solutions to the volume fluctuation."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.504,
+                0.625,
+                0.93,
+                0.775
+            ],
+            "angle": 0,
+            "content": "'Smart' designs for safe battery operation. In addition to solving the intrinsic safety issues, it is also meaningful to integrate extra 'smart' functions into Li batteries. Previously, Li dendrite detection\\(^{137,138}\\), thermoresponsive flame-retardant release\\(^{139}\\) and battery shut-down mechanisms\\(^{140}\\) have been demonstrated by means of engineering of separators and current collectors. Because temperature response is an efficient way to detect battery failure, materials such as thermoresponsive polymers and shape-memory alloys can be integrated into the system. Gas release and voltage fluctuation prior to battery failure are also indicators that would be worthwhile exploring."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.504,
+                0.774,
+                0.931,
+                0.908
+            ],
+            "angle": 0,
+            "content": "In all, it is unlikely that a single strategy can be applied universally to solve all the problems of Li anodes. Rather, it is the combination of various approaches that could ultimately make Li anodes a viable technology. Nanotechnologies have created new possibilities for solving these multifaceted problems, while advanced characterization techniques are offering more information that can guide materials design. The revival of Li metal chemistry is on its way, and it calls for more efforts in fundamental study, materials development and battery engineering to make it viable."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.505,
+                0.921,
+                0.868,
+                0.948
+            ],
+            "angle": 0,
+            "content": "Received 27 September 2016; accepted 25 January 2017; published online 7 March 2017"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.067,
+                0.962,
+                0.535,
+                0.973
+            ],
+            "angle": 0,
+            "content": "NATURE NANOTECHNOLOGY | VOL 12 | MARCH 2017 | www.nature.com/naturanotechnology"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.905,
+                0.962,
+                0.93,
+                0.972
+            ],
+            "angle": 0,
+            "content": "203"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.3,
+                0.982,
+                0.698,
+                0.993
+            ],
+            "angle": 0,
+            "content": "© 2017 Macmillan Publishers Limited, part of Springer Nature. All rights reserved."
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.068,
+                0.026,
+                0.302,
+                0.047
+            ],
+            "angle": 0,
+            "content": "REVIEW ARTICLE"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.477,
+                0.029,
+                0.93,
+                0.044
+            ],
+            "angle": 0,
+            "content": "NATURE NANOTECHNOLOGY DOI: 10.1038/NNANO.2017.16"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.068,
+                0.062,
+                0.151,
+                0.075
+            ],
+            "angle": 0,
+            "content": "References"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.068,
+                0.077,
+                0.486,
+                0.099
+            ],
+            "angle": 0,
+            "content": "1. Dunn, B., Kamath, H. & Tarascon, J.-M. Electrical energy storage for the grid: a battery of choices. Science 334, 928-935 (2011)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.069,
+                0.1,
+                0.489,
+                0.121
+            ],
+            "angle": 0,
+            "content": "2. Goodenough, J. B. & Park, K.-S. The Li-ion rechargeable battery: a perspective. J. Am. Chem. Soc. 135, 1167-1176 (2013)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.069,
+                0.122,
+                0.458,
+                0.145
+            ],
+            "angle": 0,
+            "content": "3. Tarascon, J.-M. & Armand, M. Issues and challenges facing rechargeable lithium batteries. Nature 414, 359-367 (2001)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.069,
+                0.146,
+                0.483,
+                0.168
+            ],
+            "angle": 0,
+            "content": "4. Xu, W. et al. Lithium metal anodes for rechargeable batteries. Energy Environ. Sci. 7, 513-537 (2014)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.069,
+                0.169,
+                0.475,
+                0.191
+            ],
+            "angle": 0,
+            "content": "5. Bruce, P. G., Freunberger, S. A., Hardwick, L. J. & Tarascon, J.-M. Li-O\\(_2\\) and Li-S batteries with high energy storage. Nat. Mater. 11, 19-29 (2012)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.069,
+                0.192,
+                0.425,
+                0.225
+            ],
+            "angle": 0,
+            "content": "6. Nikolic, Z. & Zivanovic, Z. in New Generation of Electric Vehicles (ed. Stevic, Z.) Ch. 2 (INTECH Open Access, 2012); http://dx.doi.org/10.5772/51771"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.226,
+                0.479,
+                0.248
+            ],
+            "angle": 0,
+            "content": "7. Brandt, K. Historical development of secondary lithium batteries. Solid State Ionics 69, 173-183 (1994)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.069,
+                0.249,
+                0.46,
+                0.271
+            ],
+            "angle": 0,
+            "content": "8. Whittingham, M. S. Lithium batteries and cathode materials. Chem. Rev. 104, 4271-4302 (2004)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.069,
+                0.272,
+                0.461,
+                0.306
+            ],
+            "angle": 0,
+            "content": "9. Peled, E. The electrochemical behavior of alkali and alkaline earth metals in nonaqueous battery systems — the solid electrolyte interphase model. J. Electrochem. Soc. 126, 2047-2051 (1979)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.093,
+                0.307,
+                0.488,
+                0.318
+            ],
+            "angle": 0,
+            "content": "This work introduces the concept of the solid electrolyte interphase, or SEI."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.319,
+                0.475,
+                0.351
+            ],
+            "angle": 0,
+            "content": "10. Peled, E., Golodnitsky, D. & Ardel, G. Advanced model for solid electrolyte interphase electrodes in liquid and polymer electrolytes. J. Electrochem. Soc. 144, L208-L210 (1997)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.352,
+                0.482,
+                0.386
+            ],
+            "angle": 0,
+            "content": "11. Aurbach, D., Daroux, M., Faguy, P. & Yeager, E. Identification of surface films formed on lithium in propylene carbonate solutions. J. Electrochem. Soc. 134, 1611-1620 (1987)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.387,
+                0.486,
+                0.409
+            ],
+            "angle": 0,
+            "content": "12. Aurbach, D., Ein-Ely, Y. & Zaban, A. The surface chemistry of lithium electrodes in alkyl carbonate solutions. J. Electrochem. Soc. 141, L1-L3 (1994)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.41,
+                0.442,
+                0.432
+            ],
+            "angle": 0,
+            "content": "13. Xu, K. Nonaqueous liquid electrolytes for lithium-based rechargeable batteries. Chem. Rev. 104, 4303-4418 (2004)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.433,
+                0.468,
+                0.465
+            ],
+            "angle": 0,
+            "content": "14. Fong, R., von Sacken, U. & Dahn, J. R. Studies of lithium intercalation into carbons using nonaqueous electrochemical cells. J. Electrochem. Soc. 137, 2009-2013 (1990)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.467,
+                0.445,
+                0.5
+            ],
+            "angle": 0,
+            "content": "15. Aurbach, D. Review of selected electrode-solution interactions which determine the performance of Li and Li ion batteries. J. Power Sources 89, 206-218 (2000)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.501,
+                0.484,
+                0.535
+            ],
+            "angle": 0,
+            "content": "16. Cohen, Y. S., Cohen, Y. & Aurbach, D. Micromorphological studies of lithium electrodes in alkyl carbonate solutions using in situ atomic force microscopy. J. Phys. Chem. B 104, 12282-12291 (2000)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.536,
+                0.447,
+                0.57
+            ],
+            "angle": 0,
+            "content": "17. Aurbach, D. et al. The study of electrolyte solutions based on ethylene and diethyl carbonates for rechargeable Li batteries I. Li metal anodes. J. Electrochem. Soc. 142, 2873-2882 (1995)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.571,
+                0.458,
+                0.604
+            ],
+            "angle": 0,
+            "content": "18. Huff, L. A. et al. Identification of Li-Ion battery SEI compounds through \\(^{7}\\mathrm{Li}\\) and \\(^{13}\\mathrm{C}\\) solid-state MAS NMR spectroscopy and MALDI-TOF mass spectrometry. ACS Appl. Mater. Interfaces 8, 371-380 (2015)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.605,
+                0.489,
+                0.627
+            ],
+            "angle": 0,
+            "content": "19. Gofer, Y., Ben-Zion, M. & Aurbach, D. Solutions of \\(\\mathrm{LiAsF}_6\\) in 1,3-dioxolane for secondary lithium batteries. J. Power Sources 39, 163-178 (1992)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.628,
+                0.478,
+                0.65
+            ],
+            "angle": 0,
+            "content": "20. Despić, A. R. & Popov, K. I. in Modern Aspects of Electrochemistry No. 7 (eds Conway, B. E. & Bockris, J. O'M.) 199-313 (Springer, 1972)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.651,
+                0.489,
+                0.673
+            ],
+            "angle": 0,
+            "content": "21. Chazalviel, J.-N. Electrochemical aspects of the generation of ramified metallic electrodeposits. Phys. Rev. A 42, 7355 (1990)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.674,
+                0.47,
+                0.696
+            ],
+            "angle": 0,
+            "content": "22. Brissot, C., Rosso, M., Chazalviel, J.-N. & Lascaud, S. Dendritic growth mechanisms in lithium/polymer cells. J. Power Sources 81, 925-929 (1999)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.697,
+                0.488,
+                0.719
+            ],
+            "angle": 0,
+            "content": "23. Rosso, M., Gobron, T., Brissot, C., Chazalviel, J.-N. & Lascaud, S. Onset of dendritic growth in lithium/polymer cells. J. Power Sources 97, 804-806 (2001)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.72,
+                0.472,
+                0.765
+            ],
+            "angle": 0,
+            "content": "24. Ding, F. et al. Dendrite-free lithium deposition via self-healing electrostatic shield mechanism. J. Am. Chem. Soc. 135, 4450-4456 (2013). This work reports on the self-healing electrostatic shield mechanism for suppressing Li dendrite deposition."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.766,
+                0.462,
+                0.799
+            ],
+            "angle": 0,
+            "content": "25. Monroe, C. & Newman, J. Dendrite growth in lithium/polymer systems: a propagation model for liquid electrolytes under galvanostatic conditions. J. Electrochem. Soc. 150, A1377-A1384 (2003)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.8,
+                0.478,
+                0.833
+            ],
+            "angle": 0,
+            "content": "26. Qi, Y., Guo, H., Hector, L. G. & Timmons, A. Threefold increase in the Young's modulus of graphite negative electrode during lithium intercalation. J. Electrochem. Soc. 157, A558-A566 (2010)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.835,
+                0.461,
+                0.856
+            ],
+            "angle": 0,
+            "content": "27. Chan, C. K. et al. High-performance lithium battery anodes using silicon nanowires. Nat. Nanotech. 3, 31-35 (2008)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.857,
+                0.481,
+                0.879
+            ],
+            "angle": 0,
+            "content": "28. Kim, H. et al. Metallic anodes for next generation secondary batteries. Chem. Soc. Rev. 42, 9011-9034 (2013)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.88,
+                0.481,
+                0.913
+            ],
+            "angle": 0,
+            "content": "29. Besenhard, J. et al. Inorganic film-forming electrolyte additives improving the cycling behaviour of metallic lithium electrodes and the self-discharge of carbon-lithium electrodes. J. Power Sources 44, 413-420 (1993)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.915,
+                0.487,
+                0.948
+            ],
+            "angle": 0,
+            "content": "30. Osaka, T., Momma, T., Matsumoto, Y. & Uchida, Y. Surface characterization of electrodeposited lithium anode with enhanced cycleability obtained by \\(\\mathrm{CO}_{2}\\) addition. J. Electrochem. Soc. 144, 1709-1713 (1997)."
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.068,
+                0.077,
+                0.489,
+                0.948
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.064,
+                0.928,
+                0.087
+            ],
+            "angle": 0,
+            "content": "31. Abraham, K. M., Foos, J. S. & Goldman, J. L. Long cycle-life secondary lithium cells utilizing tetrahydrofuran. J. Electrochem. Soc. 131, 2197-2199 (1984)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.088,
+                0.929,
+                0.121
+            ],
+            "angle": 0,
+            "content": "32. Morita, M., Aoki, S. & Matsuda, Y. AC impedance behaviour of lithium electrode in organic electrolyte solutions containing additives. Electrochim. Acta 37, 119-123 (1992)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.122,
+                0.896,
+                0.155
+            ],
+            "angle": 0,
+            "content": "33. Ota, H., Shima, K., Ue, M. & Yamaki, J.-i. Effect of vinylene carbonate as additive to electrolyte for lithium metal anode. Electrochim. Acta 49, 565-572 (2004)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.156,
+                0.918,
+                0.19
+            ],
+            "angle": 0,
+            "content": "34. Mori, M., Naruoka, Y., Naoi, K. & Fauteux, D. Modification of the lithium metal surface by nonionic polyether surfactants: quartz crystal microbalance studies. J. Electrochem. Soc. 145, 2340-2348 (1998)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.191,
+                0.916,
+                0.213
+            ],
+            "angle": 0,
+            "content": "35. Takehara, Z.-i. Future prospects of the lithium metal anode. J. Power Sources 68, 82-86 (1997)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.214,
+                0.904,
+                0.248
+            ],
+            "angle": 0,
+            "content": "36. Shiraishi, S., Kanamura, K. & Takehara, Z.-i. Surface condition changes in lithium metal deposited in nonaqueous electrolyte containing HF by dissolution-deposition cycles. J. Electrochem. Soc. 146, 1633-1639 (1999)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.249,
+                0.922,
+                0.281
+            ],
+            "angle": 0,
+            "content": "37. Kanamura, K., Shiraishi, S. & Takehara, Z.-i. Electrochemical deposition of lithium metal in nonaqueous electrolyte containing \\((\\mathrm{C}_2\\mathrm{H}_5)_4\\mathrm{NF}(\\mathrm{HF})_4\\) additive. J. Fluorine Chem. 87, 235-243 (1998)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.282,
+                0.908,
+                0.305
+            ],
+            "angle": 0,
+            "content": "38. Lu, Y., Tu, Z. & Archer, L. A. Stable lithium electrodeposition in liquid and nanoporous solid electrolytes. Nat. Mater. 13, 961-969 (2014)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.306,
+                0.896,
+                0.328
+            ],
+            "angle": 0,
+            "content": "39. Mogi, R. et al. Effects of some organic additives on lithium deposition in propylene carbonate. J. Electrochem. Soc. 149, A1578-A1583 (2002)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.329,
+                0.909,
+                0.351
+            ],
+            "angle": 0,
+            "content": "40. Zhang, Y. et al. Dendrite-free lithium deposition with self-aligned nanorod structure. Nano Lett. 14, 6889-6896 (2014)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.352,
+                0.926,
+                0.373
+            ],
+            "angle": 0,
+            "content": "41. Aurbach, D. et al. On the surface chemical aspects of very high energy density, rechargeable Li-sulfur batteries. J. Electrochem. Soc. 156, A694-A702 (2009)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.374,
+                0.917,
+                0.397
+            ],
+            "angle": 0,
+            "content": "42. Li, W. et al. The synergetic effect of lithium polysulfide and lithium nitrate to prevent lithium dendrite growth. Nat. Commun. 6, 7436 (2015)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.398,
+                0.927,
+                0.454
+            ],
+            "angle": 0,
+            "content": "43. Suo, L., Hu, Y.-S., Li, H., Armand, M. & Chen, L. A new class of solvent-in-salt electrolyte for high-energy rechargeable metallic lithium batteries. Nat. Commun. 4, 1481 (2013). This work describes an electrolyte system with Li salt concentration up to 7 M, which is also known as 'solvent-in-salt'."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.455,
+                0.926,
+                0.476
+            ],
+            "angle": 0,
+            "content": "44. Qian, J. et al. High rate and stable cycling of lithium metal anode. Nat. Commun. 6, 6362 (2015)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.477,
+                0.904,
+                0.499
+            ],
+            "angle": 0,
+            "content": "45. Qian, J. et al. Anode-free rechargeable lithium metal batteries. Adv. Funct. Mater. 26, 7094-7102 (2016)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.5,
+                0.92,
+                0.534
+            ],
+            "angle": 0,
+            "content": "46. Monroe, C. & Newman, J. The impact of elastic deformation on deposition kinetics at lithium/polymer interfaces. J. Electrochem. Soc. 152, A396-A404 (2005)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.535,
+                0.907,
+                0.568
+            ],
+            "angle": 0,
+            "content": "47. Tikekar, M. D., Choudhury, S., Tu, Z. & Archer, L. A. Design principles for electrolytes and interfaces for stable lithium-metal batteries. Nat. Energy 1, 16114 (2016)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.569,
+                0.912,
+                0.592
+            ],
+            "angle": 0,
+            "content": "48. Marchioni, F. et al. Protection of lithium metal surfaces using chlorosilanes. Langmuir 23, 11597-11602 (2007)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.593,
+                0.926,
+                0.626
+            ],
+            "angle": 0,
+            "content": "49. Thompson, R. S., Schroeder, D. J., López, C. M., Neuhold, S. & Vaughey, J. T. Stabilization of lithium metal anodes using silane-based coatings. Electrochem. Commun. 13, 1369-1372 (2011)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.627,
+                0.843,
+                0.649
+            ],
+            "angle": 0,
+            "content": "50. Umeda, G. A. et al. Protection of lithium metal surfaces using tetraethoxysilane. J. Mater. Chem. 21, 1593-1599 (2011)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.65,
+                0.92,
+                0.683
+            ],
+            "angle": 0,
+            "content": "51. Wu, M., Wen, Z., Liu, Y., Wang, X. & Huang, L. Electrochemical behaviors of a \\(\\mathrm{Li}_3\\mathrm{N}\\) modified Li metal electrode in secondary lithium batteries. J. Power Sources 196, 8091-8097 (2011)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.684,
+                0.919,
+                0.718
+            ],
+            "angle": 0,
+            "content": "52. Zhang, Y. et al. An ex-situ nitridation route to synthesize \\(\\mathrm{Li}_3\\mathrm{N}\\)-modified Li anodes for lithium secondary batteries. J. Power Sources 277, 304-311 (2015)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.719,
+                0.916,
+                0.741
+            ],
+            "angle": 0,
+            "content": "53. Belov, D., Yarmolenko, O., Peng, A. & Efimov, O. Lithium surface protection by polyacetylene in situ polymerization. Synth. Met. 156, 745-751 (2006)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.742,
+                0.923,
+                0.764
+            ],
+            "angle": 0,
+            "content": "54. Liu, Q. C. et al. Artificial protection film on lithium metal anode toward long-cycle-life lithium-oxygen batteries. Adv. Mater. 27, 5241-5247 (2015)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.765,
+                0.922,
+                0.787
+            ],
+            "angle": 0,
+            "content": "55. Basile, A., Bhatt, A. I. & O'Mullane, A. P. Stabilizing lithium metal using ionic liquids for long-lived batteries. Nat. Commun. 7, 11794 (2016)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.788,
+                0.909,
+                0.82
+            ],
+            "angle": 0,
+            "content": "56. Li, N. W., Yin, Y. X., Yang, C. P. & Guo, Y. G. An artificial solid electrolyte interphase layer for stable lithium metal anodes. Adv. Mater. 28, 1853-1858 (2016)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.822,
+                0.915,
+                0.855
+            ],
+            "angle": 0,
+            "content": "57. Dudney, N. J. Addition of a thin-film inorganic solid electrolyte (Lipon) as a protective film in lithium batteries with a liquid electrolyte. J. Power Sources 89, 176-179 (2000)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.856,
+                0.895,
+                0.878
+            ],
+            "angle": 0,
+            "content": "58. Kozen, A. C. et al. Next-generation lithium metal anode engineering via atomic layer deposition. ACS Nano 9, 5884-5892 (2015)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.879,
+                0.919,
+                0.913
+            ],
+            "angle": 0,
+            "content": "59. Cao, Y., Meng, X. & Elam, J. W. Atomic layer deposition of \\(\\mathrm{Li}_x\\mathrm{Al}_y\\mathrm{S}\\) solid-state electrolytes for stabilizing lithium-metal anodes. ChemElectroChem 3, 858-863 (2016)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.914,
+                0.907,
+                0.947
+            ],
+            "angle": 0,
+            "content": "60. Lee, H., Lee, D. J., Kim, Y.-J., Park, J.-K. & Kim, H.-T. A simple composite protective layer coating that enhances the cycling stability of lithium metal batteries. J. Power Sources 284, 103-108 (2015)."
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.509,
+                0.064,
+                0.929,
+                0.947
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.069,
+                0.962,
+                0.093,
+                0.972
+            ],
+            "angle": 0,
+            "content": "204"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.464,
+                0.962,
+                0.93,
+                0.973
+            ],
+            "angle": 0,
+            "content": "NATURE NANOTECHNOLOGY | VOL 12 | MARCH 2017 | www.nature.com/naturenanotechnology"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.3,
+                0.983,
+                0.698,
+                0.994
+            ],
+            "angle": 0,
+            "content": "© 2017 Macmillan Publishers Limited, part of Springer Nature. All rights reserved."
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.067,
+                0.028,
+                0.521,
+                0.045
+            ],
+            "angle": 0,
+            "content": "NATURE NANOTECHNOLOGY DOI: 10.1038/NNANO.2017.16"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.698,
+                0.026,
+                0.931,
+                0.047
+            ],
+            "angle": 0,
+            "content": "REVIEW ARTICLE"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.068,
+                0.064,
+                0.484,
+                0.088
+            ],
+            "angle": 0,
+            "content": "61. Park, K. et al. New battery strategies with a polymer/Al\\(_2\\)O\\(_3\\) separator. J. Power Sources 263, 52-58 (2014)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.068,
+                0.088,
+                0.482,
+                0.145
+            ],
+            "angle": 0,
+            "content": "62. Zheng, G. et al. Interconnected hollow carbon nanospheres for stable lithium metal anodes. Nat. Nanotech. 9, 618-623 (2014). This work demonstrates the efficacy of engineering a nanoscale interfacial layer for suppressing dendritic deposition and improving cycling efficiency."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.069,
+                0.145,
+                0.489,
+                0.167
+            ],
+            "angle": 0,
+            "content": "63. Yan, K. et al. Ultrathin two-dimensional atomic crystals as stable interfacial layer for improvement of lithium metal anode. Nano Lett. 14, 6016-6022 (2014)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.069,
+                0.168,
+                0.476,
+                0.202
+            ],
+            "angle": 0,
+            "content": "64. Kim, J.-S., Kim, D. W., Jung, H. T. & Choi, J. W. Controlled lithium dendrite growth by a synergistic effect of multilayered graphene coating and an electrolyte additive. Chem. Mater. 27, 2780-2787 (2015)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.203,
+                0.488,
+                0.236
+            ],
+            "angle": 0,
+            "content": "65. Yang, C.-P., Yin, Y.-X., Zhang, S.-F., Li, N.-W. & Guo, Y.-G. Accommodating lithium into 3D current collectors with a submicron skeleton towards long-life lithium metal anodes. Nat. Commun. 6, 8058 (2015)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.092,
+                0.237,
+                0.461,
+                0.26
+            ],
+            "angle": 0,
+            "content": "This work reports on a 3D current collector that is capable of homogenizing Li-ion flux and rendering Li deposition more uniform."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.26,
+                0.481,
+                0.282
+            ],
+            "angle": 0,
+            "content": "66. Yun, Q. et al. Chemical dealloying derived 3D porous current collector for Li metal anodes. Adv. Mater. 28, 6932-6939 (2016)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.283,
+                0.475,
+                0.305
+            ],
+            "angle": 0,
+            "content": "67. Lu, L.-L. et al. Free-standing copper nanowire network current collector for improving lithium anode performance. Nano Lett. 16, 4431-4437 (2016)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.306,
+                0.484,
+                0.339
+            ],
+            "angle": 0,
+            "content": "68. Zhamu, A. et al. Reviving rechargeable lithium metal batteries: enabling next-generation high-energy and high-power cells. Energy Environ. Sci. 5, 5701-5707 (2012)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.34,
+                0.49,
+                0.363
+            ],
+            "angle": 0,
+            "content": "69. Ji, X. et al. Spatially heterogeneous carbon-fiber papers as surface dendrite-free current collectors for lithium deposition. Nano Today 7, 10-20 (2012)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.364,
+                0.479,
+                0.397
+            ],
+            "angle": 0,
+            "content": "70. Ryou, M. H. et al. Excellent cycle life of lithium-metal anodes in lithium-ion batteries with mussel-inspired polydopamine-coated separators. Adv. Energy Mater. 2, 645-650 (2012)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.398,
+                0.475,
+                0.442
+            ],
+            "angle": 0,
+            "content": "71. Shin, W.-K., Kannan, A. G. & Kim, D.-W. Effective suppression of dendritic lithium growth using an ultrathin coating of nitrogen and sulfur codoped graphene nanosheets on polymer separator for lithium metal batteries. ACS Appl. Mater. Interfaces 7, 23700-23707 (2015)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.443,
+                0.461,
+                0.465
+            ],
+            "angle": 0,
+            "content": "72. Liang, Z. et al. Polymer nanofiber-guided uniform lithium deposition for battery electrodes. Nano Lett. 15, 2910-2916 (2015)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.466,
+                0.466,
+                0.499
+            ],
+            "angle": 0,
+            "content": "73. Cheng, X. B. et al. Dendrite-free lithium deposition induced by uniformly distributed lithium-ions for efficient lithium metal batteries. Adv. Mater. 28, 2888-2895 (2016)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.5,
+                0.486,
+                0.535
+            ],
+            "angle": 0,
+            "content": "74. Ryou, M. H., Lee, Y. M., Lee, Y., Winter, M. & Bieker, P. Mechanical surface modification of lithium metal: towards improved Li metal anode performance by directed Li plating. Adv. Funct. Mater. 25, 834-841 (2015)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.536,
+                0.473,
+                0.557
+            ],
+            "angle": 0,
+            "content": "75. Kim, J. S. & Yoon, W. Y. Improvement in lithium cycling efficiency by using lithium powder anode. Electrochim. Acta 50, 531-534 (2004)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.558,
+                0.467,
+                0.58
+            ],
+            "angle": 0,
+            "content": "76. Heine, J. et al. Coated lithium powder (CLiP) electrodes for lithium-metal batteries. Adv. Energy Mater. 4, 1300815 (2014)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.581,
+                0.49,
+                0.638
+            ],
+            "angle": 0,
+            "content": "77. Lin, D. et al. Layered reduced graphene oxide with nanoscale interlayer gaps as a stable host for lithium metal anodes. Nat. Nanotech. 11, 626-632 (2016). This work demonstrates a stable host for Li metal anodes to reduce volume change, stabilize interface, homogenize Li-ion flux and thus improve cycling stability."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.639,
+                0.482,
+                0.66
+            ],
+            "angle": 0,
+            "content": "78. Liu, Y. et al. Lithium-coated polymeric matrix as a minimum volume-change and dendrite-free lithium metal anode. Nat. Commun. 7, 10992 (2016)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.661,
+                0.473,
+                0.695
+            ],
+            "angle": 0,
+            "content": "79. Liang, Z. et al. Composite lithium metal anode by melt infusion of lithium into a 3D conducting scaffold with lithiophilic coating. Proc. Natl Acad. Sci. USA 113, 2862-2867 (2016)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.696,
+                0.484,
+                0.718
+            ],
+            "angle": 0,
+            "content": "80. Yan, K. et al. Selective deposition and stable encapsulation of lithium through heterogeneous seeded growth. Nat. Energy 1, 16010 (2016)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.719,
+                0.482,
+                0.741
+            ],
+            "angle": 0,
+            "content": "81. Kanno, R. & Murayama, M. Lithium ionic conductor thio-LISICON: the \\(\\mathrm{Li}_2\\mathrm{S}\\) \\(\\mathrm{GeS}_2\\mathrm{P}_2\\mathrm{S}_5\\) system. J. Electrochem. Soc. 148, A742-A746 (2001)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.741,
+                0.478,
+                0.775
+            ],
+            "angle": 0,
+            "content": "82. Hayashi, A., Hama, S., Morimoto, H., Tatsumisago, M. & Minami, T. Preparation of \\(\\mathrm{Li}_2\\mathrm{S} - \\mathrm{P}_2\\mathrm{S}_5\\) amorphous solid electrolytes by mechanical milling. J. Am. Ceram. Soc. 84, 477-479 (2001)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.776,
+                0.47,
+                0.809
+            ],
+            "angle": 0,
+            "content": "83. Mizuno, F., Hayashi, A., Tadanaga, K. & Tatsumisago, M. New, highly ion-conductive crystals precipitated from \\(\\mathrm{Li}_2\\mathrm{S} - \\mathrm{P}_2\\mathrm{S}_5\\) glasses. Adv. Mater. 17, 918-921 (2005)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.811,
+                0.405,
+                0.833
+            ],
+            "angle": 0,
+            "content": "84. Kamaya, N. et al. A lithium superionic conductor. Nat. Mater. 10, 682-686 (2011)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.092,
+                0.834,
+                0.458,
+                0.867
+            ],
+            "angle": 0,
+            "content": "This work describes an inorganic solid electrolyte, \\(\\mathrm{Li}_{10}\\mathrm{GeP}_2\\mathrm{S}_{12}\\), with ionic conductivity of \\(12\\mathrm{mScm^{-1}}\\) at room temperature, comparable to liquid electrolytes."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.868,
+                0.462,
+                0.901
+            ],
+            "angle": 0,
+            "content": "85. Sakuda, A., Hayashi, A. & Tatsumisago, M. Sulfide solid electrolyte with favorable mechanical property for all-solid-state lithium battery. Sci. Rep. 3, 2261 (2013)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.902,
+                0.464,
+                0.924
+            ],
+            "angle": 0,
+            "content": "86. Kato, Y. et al. High-power all-solid-state batteries using sulfide superionic conductors. Nat. Energy 1, 16030 (2016)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.925,
+                0.487,
+                0.947
+            ],
+            "angle": 0,
+            "content": "87. Inaguma, Y. et al. High ionic conductivity in lithium lanthanum titanate. Solid State Commun. 86, 689-693 (1993)."
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.068,
+                0.064,
+                0.49,
+                0.947
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.508,
+                0.064,
+                0.918,
+                0.087
+            ],
+            "angle": 0,
+            "content": "88. Murugan, R., Thangadurai, V. & Weppner, W. Fast lithium ion conduction in garnet-type \\(\\mathrm{Li}_7\\mathrm{La}_3\\mathrm{Zr}_2\\mathrm{O}_{12}\\). Angew. Chem. Int. Ed. 46, 7778-7781 (2007)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.088,
+                0.883,
+                0.11
+            ],
+            "angle": 0,
+            "content": "89. Cho, Y.-H. et al. Mechanical properties of the solid Li-ion conducting electrolyte: \\(\\mathrm{Li}_{0.33}\\mathrm{La}_{0.57}\\mathrm{TiO}_3\\). J. Mater. Sci. 47, 5970-5977 (2012)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.111,
+                0.926,
+                0.144
+            ],
+            "angle": 0,
+            "content": "90. Thangadurai, V., Narayanan, S. & Pinzaru, D. Garnet-type solid-state fast Li ion conductors for Li batteries: critical review. Chem. Soc. Rev. 43, 4714-4727 (2014)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.145,
+                0.903,
+                0.167
+            ],
+            "angle": 0,
+            "content": "91. Yu, S. et al. Elastic properties of the solid electrolyte \\(\\mathrm{Li}_7\\mathrm{La}_3\\mathrm{Zr}_2\\mathrm{O}_{12}\\) (LLZO). Chem. Mater. 28, 197-206 (2016)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.168,
+                0.923,
+                0.19
+            ],
+            "angle": 0,
+            "content": "92. Alpen, U.v., Rabenau, A. & Talat, G. Ionic conductivity in \\(\\mathrm{Li}_3\\mathrm{N}\\) single crystals. Appl. Phys. Lett. 30, 621-623 (1977)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.191,
+                0.915,
+                0.213
+            ],
+            "angle": 0,
+            "content": "93. Rabenau, A. Lithium nitride and related materials case study of the use of modern solid state research techniques. Solid State Ionics 6, 277-293 (1982)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.214,
+                0.89,
+                0.248
+            ],
+            "angle": 0,
+            "content": "94. Aono, H., Sugimoto, E., Sadaoka, Y., Imanaka, N. & Adachi, G.-y. Ionic conductivity of solid electrolytes based on lithium titanium phosphate. J. Electrochem. Soc. 137, 1023-1027 (1990)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.249,
+                0.926,
+                0.27
+            ],
+            "angle": 0,
+            "content": "95. Bates, J. et al. Electrical properties of amorphous lithium electrolyte thin films. Solid State Ionics 53, 647-654 (1992)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.271,
+                0.906,
+                0.304
+            ],
+            "angle": 0,
+            "content": "96. Herbert, E., Tenhaeff, W. E., Dudney, N. J. & Pharr, G. Mechanical characterization of LiPON films using nanoindentation. Thin Solid Films 520, 413-418 (2011)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.305,
+                0.901,
+                0.327
+            ],
+            "angle": 0,
+            "content": "97. Croce, F., Appetecchi, G., Persi, L. & Scrosati, B. Nanocomposite polymer electrolytes for lithium batteries. Nature 394, 456-458 (1998)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.329,
+                0.914,
+                0.362
+            ],
+            "angle": 0,
+            "content": "98. Edman, L., Ferry, A. & Doeff, M. M. Slow recrystallization in the polymer electrolyte system poly (ethylene oxide) n-LiN \\((\\mathrm{CF}_3\\mathrm{SO}_2)_2\\). J. Mater. Res. 15, 1950-1954 (2000)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.363,
+                0.919,
+                0.397
+            ],
+            "angle": 0,
+            "content": "99. Nishimoto, A., Watanabe, M., Ikeda, Y. & Kohjiya, S. High ionic conductivity of new polymer electrolytes based on high molecular weight polyether comb polymers. Electrochim. Acta 43, 1177-1184 (1998)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.398,
+                0.9,
+                0.431
+            ],
+            "angle": 0,
+            "content": "100. Deng, Z., Wang, Z., Chu, I.-H., Luo, J. & Ong, S. P. Elastic properties of alkali superionic conductor electrolytes from first principles calculations. J. Electrochem. Soc. 163, A67-A74 (2016)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.432,
+                0.914,
+                0.465
+            ],
+            "angle": 0,
+            "content": "101. Stone, G. et al. Resolution of the modulus versus adhesion dilemma in solid polymer electrolytes for rechargeable lithium metal batteries. J. Electrochem. Soc. 159, A222-A227 (2012)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.51,
+                0.466,
+                0.911,
+                0.5
+            ],
+            "angle": 0,
+            "content": "102. Zhu, Y., He, X. & Mo, Y. Origin of outstanding stability in the lithium solid electrolyte materials: insights from thermodynamic analyses based on first-principles calculations. ACS Appl. Mater. Interfaces 7, 23685-23693 (2015)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.501,
+                0.9,
+                0.522
+            ],
+            "angle": 0,
+            "content": "103. Meyer, W. H. Polymer electrolytes for lithium-ion batteries. Adv. Mater. 10, 439-448 (1998)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.523,
+                0.923,
+                0.546
+            ],
+            "angle": 0,
+            "content": "104. Manuel Stephan, A. & Nahm, K. S. Review on composite polymer electrolytes for lithium batteries. Polymer 47, 5952-5964 (2006)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.546,
+                0.907,
+                0.58
+            ],
+            "angle": 0,
+            "content": "105. Quartarone, E. & Mustarelli, P. Electrolytes for solid-state lithium rechargeable batteries: recent advances and perspectives. Chem. Soc. Rev. 40, 2525-2540 (2011)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.58,
+                0.917,
+                0.614
+            ],
+            "angle": 0,
+            "content": "106. Singh, M. et al. Effect of molecular weight on the mechanical and electrical properties of block copolymer electrolytes. Macromolecules 40, 4578-4585 (2007)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.615,
+                0.894,
+                0.638
+            ],
+            "angle": 0,
+            "content": "107. Bouchet, R. et al. Single-ion BAB triblock copolymers as highly efficient electrolytes for lithium-metal batteries. Nat. Mater. 12, 452-457 (2013)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.639,
+                0.908,
+                0.672
+            ],
+            "angle": 0,
+            "content": "108. Choudhury, S., Mangal, R., Agrawal, A. & Archer, L. A. A highly reversible room-temperature lithium metal battery based on crosslinked hairy nanoparticles. Nat. Commun. 6, 10101 (2015)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.673,
+                0.894,
+                0.695
+            ],
+            "angle": 0,
+            "content": "109. Aetukuri, N. B. et al. Flexible ion-conducting composite membranes for lithium batteries. Adv. Energy Mater. 5, 1500265 (2015)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.696,
+                0.924,
+                0.718
+            ],
+            "angle": 0,
+            "content": "110. Zhou, W. et al. Plating a dendrite-free lithium anode with a polymer/ceramic/polymer sandwich electrolyte. J. Am. Chem. Soc. 138, 9385-9388 (2016)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.719,
+                0.905,
+                0.74
+            ],
+            "angle": 0,
+            "content": "111. Liu, W. et al. Ionic conductivity enhancement of polymer electrolytes with ceramic nanowire fillers. Nano Lett. 15, 2740-2745 (2015)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.741,
+                0.908,
+                0.774
+            ],
+            "angle": 0,
+            "content": "112. Fu, K. K. et al. Flexible, solid-state, ion-conducting membrane with 3D garnet nanofiber networks for lithium batteries. Proc. Natl Acad. Sci. USA 113, 7094-7099 (2016)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.775,
+                0.922,
+                0.809
+            ],
+            "angle": 0,
+            "content": "113. Verma, P., Maire, P. & Novák, P. A review of the features and analyses of the solid electrolyte interphase in Li-ion batteries. Electrochim. Acta 55, 6332-6341 (2010)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.81,
+                0.9,
+                0.832
+            ],
+            "angle": 0,
+            "content": "114. Huang, J. Y. et al. In situ observation of the electrochemical lithiation of a single \\(\\mathrm{SnO}_2\\) nanowire electrode. Science 330, 1515 (2010)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.833,
+                0.921,
+                0.855
+            ],
+            "angle": 0,
+            "content": "115. Liu, X. H. et al. Anisotropic swelling and fracture of silicon nanowires during lithiation. Nano Lett. 11, 3312-3318 (2011)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.856,
+                0.918,
+                0.878
+            ],
+            "angle": 0,
+            "content": "116. Liu, X. H. et al. Lithium fiber growth on the anode in a nanowire lithium ion battery during charging. Appl. Phys. Lett. 98, 183107 (2011)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.879,
+                0.929,
+                0.923
+            ],
+            "angle": 0,
+            "content": "117. Sagane, F., Shimokawa, R., Sano, H., Sakaebi, H. & Iriyama, Y. In-situ scanning electron microscopy observations of Li plating and stripping reactions at the lithium phosphorus oxynitride glass electrolyte/Cu interface. J. Power Sources 225, 245-250 (2013)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.924,
+                0.923,
+                0.947
+            ],
+            "angle": 0,
+            "content": "118. Nishikawa, K. et al. In situ observation of dendrite growth of electrodeposited Li metal. J. Electrochem. Soc. 157, A1212-A1217 (2010)."
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.508,
+                0.064,
+                0.929,
+                0.947
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.067,
+                0.962,
+                0.534,
+                0.973
+            ],
+            "angle": 0,
+            "content": "NATURE NANOTECHNOLOGY | VOL 12 | MARCH 2017 | www.nature.com/naturenanotechnology"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.906,
+                0.963,
+                0.93,
+                0.972
+            ],
+            "angle": 0,
+            "content": "205"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.3,
+                0.983,
+                0.698,
+                0.994
+            ],
+            "angle": 0,
+            "content": "© 2017 Macmillan Publishers Limited, part of Springer Nature. All rights reserved."
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.068,
+                0.026,
+                0.302,
+                0.047
+            ],
+            "angle": 0,
+            "content": "REVIEW ARTICLE"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.477,
+                0.029,
+                0.93,
+                0.044
+            ],
+            "angle": 0,
+            "content": "NATURE NANOTECHNOLOGY DOI: 10.1038/NNANO.2017.16"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.069,
+                0.064,
+                0.442,
+                0.099
+            ],
+            "angle": 0,
+            "content": "119. Steiger, J., Kramer, D. & Monig, R. Mechanisms of dendritic growth investigated by in situ light microscopy during electrodeposition and dissolution of lithium. J. Power Sources 261, 112-119 (2014)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.1,
+                0.475,
+                0.133
+            ],
+            "angle": 0,
+            "content": "120. Unocic, R. R. et al. Direct visualization of solid electrolyte interphase formation in lithium-ion batteries with in situ electrochemical transmission electron microscopy. Microsc. Microanal. 20, 1029-1037 (2014)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.134,
+                0.476,
+                0.167
+            ],
+            "angle": 0,
+            "content": "121. Zeng, Z. et al. Visualization of electrode-electrolyte interfaces in \\(\\mathrm{LiPF}_6 / \\mathrm{EC} /\\) DEC electrolyte for lithium ion batteries via in situ TEM. Nano Lett. 14, 1745-1750 (2014)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.168,
+                0.464,
+                0.202
+            ],
+            "angle": 0,
+            "content": "122. Sacci, R. L. et al. Nanoscale imaging of fundamental Li battery chemistry: solid-electrolyte interphase formation and preferential growth of lithium metal nanoclusters. Nano Lett. 15, 2011-2018 (2015)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.203,
+                0.469,
+                0.237
+            ],
+            "angle": 0,
+            "content": "123. Sacci, R. L. et al. Direct visualization of initial SEI morphology and growth kinetics during lithium deposition by in situ electrochemical transmission electron microscopy. Chem. Commun. 50, 2104-2107 (2014)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.238,
+                0.484,
+                0.271
+            ],
+            "angle": 0,
+            "content": "124. Leenheer, A. J., Jungjohann, K. L., Zavadil, K. R., Sullivan, J. P. & Harris, C. T. Lithium electrodeposition dynamics in aprotic electrolyte observed in situ via transmission electron microscopy. ACS Nano 9, 4379-4389 (2015)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.272,
+                0.478,
+                0.304
+            ],
+            "angle": 0,
+            "content": "125. Li, Y. et al. Current-induced transition from particle-by-particle to concurrent intercalation in phase-separating battery electrodes. Nat. Mater. 13, 1149-1156 (2014)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.306,
+                0.474,
+                0.34
+            ],
+            "angle": 0,
+            "content": "126. Lim, L. Y., Fan, S., Hng, H. H. & Toney, M. F. Storage capacity and cycling stability in Ge anodes: relationship of anode structure and cycling rate. Adv. Energy Mater. 5, 1500599 (2015)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.341,
+                0.488,
+                0.362
+            ],
+            "angle": 0,
+            "content": "127. Shui, J.-L. et al. Reversibility of anodic lithium in rechargeable lithium-oxygen batteries. Nat. Commun. 4, 2255 (2013)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.363,
+                0.467,
+                0.397
+            ],
+            "angle": 0,
+            "content": "128. Harry, K. J., Hallinan, D. T., Parkinson, D. Y., MacDowell, A. A. & Balsara, N. P. Detection of subsurface structures underneath dendrites formed on cycled lithium metal electrodes. Nat. Mater. 13, 69-73 (2014)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.398,
+                0.45,
+                0.431
+            ],
+            "angle": 0,
+            "content": "129. Bhattacharyya, R. et al. In situ NMR observation of the formation of metallic lithium microstructures in lithium batteries. Nat. Mater. 9, 504-510 (2010)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.432,
+                0.466,
+                0.465
+            ],
+            "angle": 0,
+            "content": "130. Wandt, J. et al. Operando electron paramagnetic resonance spectroscopy formation of mossy lithium on lithium anodes during charge-discharge cycling. Energy Environ. Sci. 8, 1358-1367 (2015)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.07,
+                0.467,
+                0.423,
+                0.489
+            ],
+            "angle": 0,
+            "content": "131. Chandrashekar, S. et al. \\(^7\\)Li MRI of Li batteries reveals location of microstructural lithium. Nat. Mater. 11, 311-315 (2012)."
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.069,
+                0.064,
+                0.488,
+                0.489
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.064,
+                0.916,
+                0.099
+            ],
+            "angle": 0,
+            "content": "132. Xiang, B., Wang, L., Liu, G. & Minor, A. M. Electromechanical probing of \\(\\mathrm{Li} / \\mathrm{Li}_2\\mathrm{CO}_3\\) core/shell particles in a TEM. J. Electrochem. Soc. 160, A415-A419 (2013)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.1,
+                0.919,
+                0.122
+            ],
+            "angle": 0,
+            "content": "133. Li, Y. et al. Growth of conformal graphene cages on micrometre-sized silicon particles as stable battery anodes. Nat. Energy 1, 15029 (2016)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.123,
+                0.926,
+                0.156
+            ],
+            "angle": 0,
+            "content": "134. Bieker, G., Winter, M. & Bieker, P. Electrochemical in situ investigations of SEI and dendrite formation on the lithium metal anode. Phys. Chem. Chem. Phys. 17, 8670-8679 (2015)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.157,
+                0.878,
+                0.178
+            ],
+            "angle": 0,
+            "content": "135. White, S. R. et al. Autonomic healing of polymer composites. Nature 409, 794-797 (2001)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.18,
+                0.914,
+                0.213
+            ],
+            "angle": 0,
+            "content": "136. Wang, C. et al. Self-healing chemistry enables the stable operation of silicon microparticle anodes for high-energy lithium-ion batteries. Nat. Chem. 5, 1042-1048 (2013)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.215,
+                0.922,
+                0.237
+            ],
+            "angle": 0,
+            "content": "137. Wu, H., Zhuo, D., Kong, D. & Cui, Y. Improving battery safety by early detection of internal shorting with a bifunctional separator. Nat. Commun. 5, 5193 (2014)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.238,
+                0.922,
+                0.271
+            ],
+            "angle": 0,
+            "content": "138. Lin, D., Zhuo, D., Liu, Y. & Cui, Y. All-integrated bifunctional separator for Li dendrite detection via novel solution synthesis of a thermostable polyimide separator. J. Am. Chem. Soc. 138, 11044-11050 (2016)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.272,
+                0.926,
+                0.305
+            ],
+            "angle": 0,
+            "content": "139. Yim, T. et al. Self-extinguishing lithium ion batteries based on internally embedded fire-extinguishing microcapsules with temperature-responsiveness. Nano Lett. 15, 5059-5067 (2015)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.509,
+                0.306,
+                0.891,
+                0.328
+            ],
+            "angle": 0,
+            "content": "140. Chen, Z. et al. Fast and reversible thermoresponsive polymer switching materials for safer batteries. Nat. Energy 1, 15009 (2016)."
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.509,
+                0.064,
+                0.926,
+                0.328
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.509,
+                0.344,
+                0.651,
+                0.357
+            ],
+            "angle": 0,
+            "content": "Acknowledgements"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.506,
+                0.358,
+                0.901,
+                0.392
+            ],
+            "angle": 0,
+            "content": "Y.C. acknowledges support from the Assistant Secretary for Energy Efficiency and Renewable Energy, Office of Vehicle Technologies of the US Department of Energy, under the Battery Materials Research (BMR) program and Battery500 Consortium."
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.506,
+                0.411,
+                0.672,
+                0.424
+            ],
+            "angle": 0,
+            "content": "Additional information"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.506,
+                0.425,
+                0.913,
+                0.447
+            ],
+            "angle": 0,
+            "content": "Reprints and permissions information is available online at www.nature.com/reprints. Correspondence should be addressed to Y.C."
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.506,
+                0.465,
+                0.72,
+                0.478
+            ],
+            "angle": 0,
+            "content": "Competing financial interests"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.506,
+                0.478,
+                0.757,
+                0.489
+            ],
+            "angle": 0,
+            "content": "The authors declare no competing financial interests."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.069,
+                0.962,
+                0.093,
+                0.972
+            ],
+            "angle": 0,
+            "content": "206"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.464,
+                0.962,
+                0.93,
+                0.973
+            ],
+            "angle": 0,
+            "content": "NATURE NANOTECHNOLOGY | VOL 12 | MARCH 2017 | www.nature.com/naturenanotechnology"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.3,
+                0.982,
+                0.698,
+                0.993
+            ],
+            "angle": 0,
+            "content": "© 2017 Macmillan Publishers Limited, part of Springer Nature. All rights reserved."
+        }
+    ]
+]

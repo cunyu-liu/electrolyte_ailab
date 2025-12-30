@@ -1,0 +1,121 @@
+# 题目
+
+$NH_{4}HS$  是一种很不稳定的化合物，很容易分解为  $NH_{3}$  和  $H_{2}S$  。在一个容积可变的容器中放入  $30.00gNH_{4}HS$  和  $0.100molN_{2}$ ，再加热到  $308.0K$  并调节外压至  $P = 2.000 \times 10^{5}Pa$ ， $NH_{3}$  和  $H_{2}S$  的分解在此温度下可以忽略。本题中，假设气体分别服从各自的范德华状态方程，忽略混合引起的体积变化， $p^{\circ} = 101325Pa$ 。分析使用范德华方程和理想气体方程计算的偏差。选择正确的一项。
+
+<table><tr><td></td><td>ΔfH°298, kJ/mol</td><td>S°298, J/(mol·K)</td></tr><tr><td>NH4HS(s)</td><td>-156.9</td><td>113.4</td></tr><tr><td>NH3(g)</td><td>-46.11</td><td>192.45</td></tr><tr><td>H2S(g)</td><td>-20.63</td><td>205.79</td></tr></table>
+
+<table><tr><td></td><td>103a/(Pa·m6·mol-2)</td><td>106b/(m3·mol-1)</td></tr><tr><td>NH3(g)</td><td>422.5</td><td>37.07</td></tr><tr><td>H2S(g)</td><td>449.0</td><td>42.87</td></tr><tr><td>N2(g)</td><td>140.8</td><td>39.13</td></tr></table>
+
+A. 如果使用理想气体方程, 计算剩余固体质量的误差绝对值为  $10^{-1} g$  数量级  
+B. 如果使用理想气体方程, 计算剩余固体质量的误差绝对值为  $10^{-2} g$  数量级  
+C. 如果使用理想气体方程, 计算剩余固体质量的误差绝对值为  $10^{-3} g$  数量级
+
+D. 剩余固体质量  $25.55 g$  
+E. 剩余固体质量  $30.00 \mathrm{~g}$  
+F. 平衡时体积  $3.51 L$  
+G. 平衡时体积  $1.28 L$  
+H. 反应生成气体总物质的量  $0.0855 \mathrm{~mol}$
+
+I. 其他选项均不正确
+
+# 答案
+
+正确答案: B
+
+# 详细解析
+
+298K时，反应的焓变  $\Delta_r H_{298}^\circ = (-46.11) + (-20.63) - (-156.9) = 90.16 \, \text{kJ/mol}$ ，熵变  $\Delta_r S_{298}^\circ = 192.45 + 205.79 - 113.4 = 284.84 \, \text{J/(mol·K)}$
+
+# CHECKPOINT
+
+0.5 PTS
+
+$$
+\Delta_ {r} H _ {2 9 8} ^ {\circ} = 9 0. 1 6 k J / m o l, \Delta_ {r} S _ {2 9 8} ^ {\circ} = 2 8 4. 8 J / (m o l \cdot K)
+$$
+
+則應可預約以計算計算計算吳國馬布爾斯維格自由運動能動變
+
+$$
+\Delta_ {r} G _ {2 9 8} ^ {\circ} = \Delta_ {r} H _ {2 9 8} ^ {\circ} - T \Delta_ {r} S _ {2 9 8} ^ {\circ} = 9 0. 1 6 - 2 9 8. 0 \times 2 8 4. 8 4 \times 1 0 ^ {- 3} = 5. 2 7 7 6 8 k J / m o l
+$$
+
+# CHECKPOINT
+
+0.5 PTS
+
+$$
+\Delta_ {r} G _ {2 9 8} ^ {\circ} = 5. 2 7 8 k J / m o l
+$$
+
+由公式  $\Delta_r G_{298}^\circ = -RT\ln K_a^{298K}$  解出  $K_{a}^{298K} = 0.11881563281$
+
+假设  $\Delta_{r}H^{\circ}$  在298K和308K时的改变可以忽略不计，即  $\Delta_{r}H_{308}^{0} = \Delta_{r}H_{298}^{\circ} = 90.16\mathrm{kJ / mol}$
+
+# CHECKPOINT
+
+0.5 PTS
+
+$$
+\Delta_ {r} H _ {3 0 8} ^ {\circ} = 9 0. 1 6 k J / m o l
+$$
+
+为计算  $K_{p}$  先计算  $K_{a}$ ，由公式  $d\ln K_{a} = \frac{\Delta_{r}H^{\circ}}{RT^{2}}$  得到  $\ln \frac{K_a^{T_2}}{K_a^{T_1}} = -\frac{\Delta_rH^\circ}{R} (\frac{1}{T_2} -\frac{1}{T_1})$ ，解出  $K_{a}^{308K} = 0.38725431767$
+
+# CHECKPOINT
+
+0.5 PTS
+
+$$
+K _ {a} ^ {3 0 8 K} = 0. 3 8 7 3
+$$
+
+设总体积  $V$  ，反应转化物质的量  $n_{gas}$  。对三种气体分别代入范德华方程并整理有方程组
+
+$$
+\left\{ \begin{array}{l} (P (N _ {2}) + \frac {1 . 4 0 8 \times 1 0 ^ {- 3}}{V ^ {2}}) (V - 3. 9 1 3 \times 1 0 ^ {- 6}) = 2. 5 6 0 7 1 2 \times 1 0 ^ {2} \\ (P (N H _ {3}) + \frac {0 . 4 2 2 5 \times n _ {g a s} ^ {2}}{V ^ {2}}) (V - 3. 7 0 7 \times 1 0 ^ {- 5} \times n _ {g a s}) = n _ {g a s} \times 2. 5 6 0 7 1 2 \times 1 0 ^ {3} \\ (P (H _ {2} S) + \frac {0 . 4 4 9 0 \times n _ {g a s} ^ {2}}{V ^ {2}}) (V - 4. 2 8 7 \times 1 0 ^ {- 5} \times n _ {g a s}) = n _ {g a s} \times 2. 5 6 0 7 1 2 \times 1 0 ^ {3} \end{array} \right.
+$$
+
+且平衡常数满足  $K_{a}^{308K} = P(NH_{3}) \times P(H_{2}S) / p^{\circ 2}$ ，总压力满足  $P = P(N_{2}) + P(NH_{3}) + P(H_{2}S)$ 。
+
+解出  $\left\{ \begin{array}{l} P(N_2) = 7.39225036 \times 10^4 Pa \\ P(NH_3) = 6.30422915 \times 10^4 Pa \\ P(H_2S) = 6.30352049 \times 10^4 Pa \\ n_{gas} = 0.0855127459mol \\ V = 3.4624675L \end{array} \right.$
+
+# CHECKPOINT
+
+1 PTS
+
+平衡体积  $V = 3.46 L$ ，选项F和G错误
+
+生成气体总物质的量  $n = 2n_{gas} = 0.171mol$  。
+
+# CHECKPOINT
+
+1 PTS
+
+生成气体总物质的量  $n = 2n_{gas} = 0.171mol$  ，选项H错误
+
+剩下固体的质量  $m = 30.00 - 0.0855127459 \times 51.11244 = 25.62923490595g$
+
+# CHECKPOINT
+
+1 PTS
+
+剩下固体的质量  $m = 25.63 \mathrm{~g}$ , 选项D和E错误
+
+用理想气体得出方程组
+
+$$
+\left\{ \begin{array}{l} P (N _ {2}) = \frac {0 . 1 \times 8 . 3 1 4 \times 3 0 8}{V} \\ P (N H _ {3}) = \frac {n _ {g a s} \times 8 . 3 1 4 \times 3 0 8}{V} \\ P (H _ {2} S) = \frac {n _ {g a s} \times 8 . 3 1 4 \times 3 0 8}{V} \\ 2. 0 0 0 \times 1 0 ^ {5} = P (N _ {2}) + P (N H _ {3}) + P (H _ {2} S) \\ 0. 3 8 7 2 5 4 3 1 7 6 7 = P (N H _ {3}) \times P (H _ {2} S) / 1 0 1 3 2 5 ^ {2} \end{array} \right.
+$$
+
+解出  $\left\{ \begin{array}{l} P(N_2) = 7.39225038 \times 10^4 Pa \\ P(NH_3) = P(H_2S) = 6.30387481 \times 10^4 Pa \\ n_{gas} = 0.0852768018mol \\ V = 3.46404930L \end{array} \right.$
+
+剩下固体的质量  $m = 30.00 - 0.0852768018 \times 51.11244 = 25.64129799568g$
+
+偏差  $m_{ideal} - m_{Van} = 25.64129799568g - 25.62923490595g = 0.0120630897g$
+
+# CHECKPOINT
+
+1 PTS
+
+绝对误差约  $0.01g$  ，属于  $10^{-2}g$  数量级，选项B正确，选项A和C错误
