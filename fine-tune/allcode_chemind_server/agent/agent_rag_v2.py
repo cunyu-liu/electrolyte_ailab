@@ -24,12 +24,12 @@ if torch.cuda.is_available():
     dtype = torch.float16
 elif torch.backends.mps.is_available():
     DEVICE = "mps"
-    dtype = torch.float16
+    dtype = torch.float32
 else:
     DEVICE = "cpu"
     dtype = torch.float32
 
-# 模型路径
+# 模型路径 (请确认路径正确)
 LLM_MODEL_PATH = "/Users/liucunyu/.cache/modelscope/hub/models/Qwen/Qwen3-0.6B" 
 EMBEDDING_MODEL_NAME = "/Users/liucunyu/Documents/all_code/thu_2025/fine-tune/allcode_chemind_server/agent/vectordb/Xorbits/bge-m3"
 RERANKER_MODEL_NAME = "/Users/liucunyu/Documents/all_code/thu_2025/fine-tune/allcode_chemind_server/agent/vectordb/bge-reranker-v2-m3" 
@@ -41,22 +41,22 @@ MILVUS_COLLECTION_NAME = "electrolyte_papers"
 MILVUS_VECTOR_FIELD = "embeddings"
 MILVUS_TEXT_FIELD = "content" 
 
-# Metadata Keys
-MILVUS_META_YEAR = "year"      
-MILVUS_META_TITLE = "title"    
-MILVUS_META_SOURCE = "journal" 
+# Metadata Keys (对应您的 JSON 字段)
+MILVUS_META_YEAR = "year"          
+MILVUS_META_TITLE = "title"        
+MILVUS_META_AUTHORS = "authors"    
+MILVUS_META_CITATIONS = "citations"
+MILVUS_META_DOI = "doi"
 
 # Elasticsearch 配置
 ES_HOST = "http://localhost:9200"
 ES_INDEX = "electrolyte_papers_index"
 ES_TEXT_FIELD = "content"
 
-# 检索超参 (优化：减少召回数量以提升 Rerank 速度)
-SEARCH_TOP_K = 10  # 原50，降至20
+# 检索超参
+SEARCH_TOP_K = 15
 RERANK_TOP_K = 5   
-
-# 生成超参 (防止上下文溢出)
-MAX_CONTEXT_CHARS = 3000  # 限制参考资料的最大字符数
+MAX_CONTEXT_CHARS = 2500 
 
 # ==============================================================================
 # 2. RAG 服务核心类
@@ -69,17 +69,14 @@ class AdvancedRAGService:
     def __init__(self):
         logger.info(f"正在初始化服务，运行设备: {DEVICE}")
         
-        # 1. Embedding
         self.embed_model = SentenceTransformer(EMBEDDING_MODEL_NAME, device=DEVICE)
         
-        # 2. Reranker
         self.reranker_model = FlagReranker(
             RERANKER_MODEL_NAME, 
             use_fp16=(DEVICE == "cuda"),
             device=DEVICE
         )
         
-        # 3. LLM
         self.tokenizer = AutoTokenizer.from_pretrained(LLM_MODEL_PATH, trust_remote_code=True)
         self.model = AutoModelForCausalLM.from_pretrained(
             LLM_MODEL_PATH, 
@@ -88,7 +85,6 @@ class AdvancedRAGService:
             trust_remote_code=True
         )
 
-        # 4. DB Connections
         self._connect_milvus()
         self._connect_es()
 
@@ -97,6 +93,17 @@ class AdvancedRAGService:
             connections.connect("default", host=MILVUS_HOST, port=MILVUS_PORT)
             self.collection = Collection(MILVUS_COLLECTION_NAME)
             self.collection.load()
+            
+            # === 【核心修复】检测 Schema，看数据库里到底有哪些字段 ===
+            self.existing_fields = [field.name for field in self.collection.schema.fields]
+            logger.info(f"Milvus Schema 字段检测: {self.existing_fields}")
+            
+            # 判断关键字段是否存在，用于后续逻辑判断
+            self.has_title = MILVUS_META_TITLE in self.existing_fields
+            self.has_authors = MILVUS_META_AUTHORS in self.existing_fields
+            self.has_year = MILVUS_META_YEAR in self.existing_fields
+            self.has_citations = MILVUS_META_CITATIONS in self.existing_fields
+            
             logger.info(f"Milvus 就绪")
         except Exception as e:
             logger.error(f"Milvus 连接失败: {e}")
@@ -118,15 +125,16 @@ class AdvancedRAGService:
     def get_embedding(self, text: str) -> List[float]:
         return self.embed_model.encode(text, normalize_embeddings=True).tolist()
 
-    # === 1. Query 理解 (增加容错机制) ===
+    # === 1. Query 理解 ===
     def analyze_query(self, query: str) -> Dict[str, Any]:
-        """
-        LLM 提取年份 + 关键词。增加 Try-Except 防止 JSON 解析挂掉。
-        """
         prompt = (
-            f"分析查询：'{query}'。\n"
-            "提取：1.年份(year) 2.关键词(keywords)。\n"
-            "必须输出JSON：{\"year\": \"2023.0\", \"keywords\": \"锂电池 电解液\"}\n"
+            f"分析科研查询：'{query}'。\n"
+            "提取以下信息（如果不存在则为null）：\n"
+            "1. year (年份，如 '2023.0')\n"
+            "2. author (作者姓名)\n"
+            "3. keywords (核心技术词)\n"
+            "4. high_citation (bool, 用户是否暗示要找'经典'、'高引'、'核心'论文)\n"
+            "必须输出JSON格式: {{\"year\": ..., \"author\": ..., \"keywords\": ..., \"high_citation\": ...}}\n"
             "JSON:"
         )
         
@@ -136,119 +144,149 @@ class AdvancedRAGService:
         
         try:
             with torch.no_grad():
-                # 减少 max_new_tokens 加快速度
-                outputs = self.model.generate(**inputs, max_new_tokens=64, temperature=0.1)
+                outputs = self.model.generate(**inputs, max_new_tokens=128, temperature=0.1)
             output_text = self.tokenizer.decode(outputs[0][len(inputs.input_ids[0]):], skip_special_tokens=True)
             
-            # 尝试解析 JSON
             json_match = re.search(r'\{.*\}', output_text, re.DOTALL)
             if json_match:
                 result = json.loads(json_match.group())
-                
-                # 格式化年份
+                # 年份格式清洗
                 if result.get('year'):
-                    # 尝试清理非数字字符，保留 2000.0 格式
                     clean_year = re.sub(r'[^\d.]', '', str(result['year']))
                     if '.' not in clean_year and len(clean_year) == 4:
                         clean_year += ".0"
                     result['year'] = clean_year
-                
-                logger.info(f"Query分析成功: {result}")
                 return result
-                
-        except json.JSONDecodeError:
-            logger.warning("JSON解析失败，降级处理")
         except Exception as e:
             logger.warning(f"LLM分析异常: {e}")
         
-        # 降级策略：如果 LLM 失败，尝试简单的正则提取年份，关键词就是原句
-        year_match = re.search(r'(20\d{2})', query)
-        fallback_year = f"{year_match.group(1)}.0" if year_match else None
-        
-        return {"rewritten_query": query, "year": fallback_year, "keywords": query}
+        return {"year": None, "keywords": query, "author": None, "high_citation": False}
 
-    # === 2. Elasticsearch 关键词检索 ===
-    def _search_es_keyword(self, query: str, year_filter: str = None) -> List[str]:
+    # === 2. Elasticsearch 检索 ===
+    def _search_es_keyword(self, query: str, filters: Dict) -> List[Dict]:
         if not self.use_es: return []
             
         must_clauses = [{"match": {ES_TEXT_FIELD: query}}]
         filter_clauses = []
-        
-        if year_filter:
-            filter_clauses.append({"term": {"year": year_filter}})
-
+        if filters.get('year'):
+            filter_clauses.append({"term": {"year": filters['year']}})
+            
+        # ES 的 _source 可以容错，如果字段不存在它只会返回 None，不会报错
         body = {
             "size": SEARCH_TOP_K,
-            "query": {
-                "bool": {
-                    "must": must_clauses,
-                    "filter": filter_clauses
-                }
-            },
-            "_source": [ES_TEXT_FIELD]
+            "query": {"bool": {"must": must_clauses, "filter": filter_clauses}},
+            "_source": [ES_TEXT_FIELD, MILVUS_META_TITLE, MILVUS_META_AUTHORS, MILVUS_META_YEAR, MILVUS_META_CITATIONS]
         }
         
         try:
             resp = self.es_client.search(index=ES_INDEX, body=body)
-            return [hit["_source"][ES_TEXT_FIELD] for hit in resp["hits"]["hits"]]
+            results = []
+            for hit in resp["hits"]["hits"]:
+                src = hit["_source"]
+                results.append({
+                    "content": src.get(ES_TEXT_FIELD, ""),
+                    "meta": {
+                        "title": src.get(MILVUS_META_TITLE, "Unknown Title"),
+                        "authors": src.get(MILVUS_META_AUTHORS, "Unknown Authors"),
+                        "year": src.get(MILVUS_META_YEAR, "Unknown Year"),
+                        "citations": src.get(MILVUS_META_CITATIONS, "0")
+                    }
+                })
+            return results
         except Exception:
             return []
 
-    # === 3. 混合检索主逻辑 (核心修改：接受外部传入的 analysis) ===
-    def retrieve_and_rerank(self, query: str, analysis: Dict[str, Any]) -> List[str]:
-        # 直接使用传入的 analysis，不再重复调用 LLM
-        search_kw = analysis.get("rewritten_query", query)
-        
-        # 兜底：如果 JSON 解析里没有 rewritten_query 字段
-        if not search_kw: search_kw = query 
-        
+    # === 3. 混合检索主逻辑 (核心修复：动态 Output Fields) ===
+    def retrieve_and_rerank(self, query: str, analysis: Dict[str, Any]) -> List[Dict]:
+        search_kw = analysis.get("keywords", query) or query
         year_filter = analysis.get("year")
+        author_filter = analysis.get("author")
         
-        candidates = []
+        candidates = [] 
 
-        # B. Milvus 向量检索
+        # --- B. Milvus 向量检索 ---
         query_vec = self.get_embedding(search_kw)
         
-        expr = f'{MILVUS_META_YEAR} == "{year_filter}"' if year_filter else ""
+        # 1. 动态构建表达式 (只过滤存在的字段)
+        expr_list = []
+        if year_filter and self.has_year:
+            expr_list.append(f'{MILVUS_META_YEAR} == "{year_filter}"')
+        if author_filter and self.has_authors:
+            expr_list.append(f'{MILVUS_META_AUTHORS} like "%{author_filter}%"')
+            
+        expr = " && ".join(expr_list) if expr_list else ""
         
-        milvus_res = self.collection.search(
-            data=[query_vec],
-            anns_field=MILVUS_VECTOR_FIELD,
-            param={"metric_type": "COSINE", "params": {"nprobe": 10}},
-            limit=SEARCH_TOP_K,
-            expr=expr if expr else None,
-            output_fields=[MILVUS_TEXT_FIELD]
-        )
-        
-        if milvus_res and milvus_res[0]:
-            candidates.extend([hit.entity.get(MILVUS_TEXT_FIELD) for hit in milvus_res[0]])
+        # 2. 动态构建 Output Fields (只请求存在的字段)
+        target_output_fields = [MILVUS_TEXT_FIELD] # 正文是必须的
+        if self.has_title: target_output_fields.append(MILVUS_META_TITLE)
+        if self.has_authors: target_output_fields.append(MILVUS_META_AUTHORS)
+        if self.has_year: target_output_fields.append(MILVUS_META_YEAR)
+        if self.has_citations: target_output_fields.append(MILVUS_META_CITATIONS)
 
-        # C. ES 关键词检索
-        es_query_kw = analysis.get('keywords', query)
-        es_res = self._search_es_keyword(es_query_kw, year_filter)
+        try:
+            milvus_res = self.collection.search(
+                data=[query_vec],
+                anns_field=MILVUS_VECTOR_FIELD,
+                param={"metric_type": "COSINE", "params": {"nprobe": 10}},
+                limit=SEARCH_TOP_K,
+                expr=expr if expr else None,
+                output_fields=target_output_fields # <--- 只有存在的字段才会被传进去
+            )
+            
+            if milvus_res and milvus_res[0]:
+                for hit in milvus_res[0]:
+                    entity = hit.entity
+                    # 3. 结果构建：如果 Milvus 里没有该字段，手动填默认值
+                    candidates.append({
+                        "content": entity.get(MILVUS_TEXT_FIELD),
+                        "meta": {
+                            "title": entity.get(MILVUS_META_TITLE) if self.has_title else "Unknown Title",
+                            "authors": entity.get(MILVUS_META_AUTHORS) if self.has_authors else "Unknown Authors",
+                            "year": entity.get(MILVUS_META_YEAR) if self.has_year else "Unknown Year",
+                            "citations": entity.get(MILVUS_META_CITATIONS) if self.has_citations else "0"
+                        }
+                    })
+        except Exception as e:
+            logger.error(f"Milvus search error: {e}")
+            # 出错时不崩溃，尝试继续用 ES 结果
+
+        # --- C. ES 检索 ---
+        es_res = self._search_es_keyword(search_kw, {"year": year_filter})
         candidates.extend(es_res)
 
-        # D. 去重
-        unique_candidates = list(set(candidates))
-        if not unique_candidates:
-            return []
+        # --- D. 去重 ---
+        unique_map = {c["content"]: c for c in candidates}
+        unique_candidates = list(unique_map.values())
+        if not unique_candidates: return []
 
-        # E. Rerank 精排
-        rerank_pairs = [[query, doc] for doc in unique_candidates]
+        # --- E. Rerank ---
+        docs_text = [c["content"] for c in unique_candidates]
+        rerank_pairs = [[query, doc] for doc in docs_text]
         scores = self.reranker_model.compute_score(rerank_pairs, normalize=True)
-        
         if isinstance(scores, float): scores = [scores]
-        scored_docs = sorted(zip(unique_candidates, scores), key=lambda x: x[1], reverse=True)
         
-        return [doc for doc, score in scored_docs[:RERANK_TOP_K]]
+        ranked_results = []
+        for i, score in enumerate(scores):
+            final_score = score
+            # 只有当 citations 存在时才进行加权
+            meta = unique_candidates[i]["meta"]
+            if analysis.get("high_citation") and meta.get("citations") != "0":
+                try:
+                    cit_val = int(meta["citations"])
+                    final_score += min(cit_val / 10000.0, 0.1) 
+                except:
+                    pass
+            ranked_results.append((unique_candidates[i], final_score))
+            
+        ranked_results.sort(key=lambda x: x[1], reverse=True)
+        return [item[0] for item in ranked_results[:RERANK_TOP_K]]
 
     def verify_citations(self, answer: str, context_count: int) -> Dict:
         citations = re.findall(r'\[(\d+)\]', answer)
         citations = [int(c) for c in citations]
         valid = True
         warnings = []
-        if not citations:
-            warnings.append("警告：回答中未检测到引用。")
+        if not citations: warnings.append("警告：回答中未检测到引用。")
         for c in citations:
             if c < 1 or c > context_count:
                 valid = False
@@ -272,7 +310,7 @@ class QueryRequest(BaseModel):
     
 class QueryResponse(BaseModel):
     answer: str
-    context_used: List[str]
+    context_used: List[Dict] 
     verification: Dict
     analysis_debug: Dict
 
@@ -280,59 +318,74 @@ class QueryResponse(BaseModel):
 def chat_endpoint(request: QueryRequest):
     if not rag_service: raise HTTPException(500, "Service initializing")
 
-    # 1. 分析 Query (只执行一次！)
     analysis_result = rag_service.analyze_query(request.question)
-    
-    # 2. 执行检索 (传入分析结果)
     top_docs = rag_service.retrieve_and_rerank(request.question, analysis_result)
     
     if not top_docs:
-        return QueryResponse(
-            answer="未找到相关论文数据（请检查年份或关键词）。",
+         return QueryResponse(
+            answer="未检索到相关文献。",
             context_used=[],
             verification={},
             analysis_debug=analysis_result
         )
 
-    # 3. 生成 Prompt (增加长度安全截断)
     context_list = []
     current_len = 0
     
-    for i, doc in enumerate(top_docs):
-        # 如果单篇太长，稍微截断一下，避免单篇霸占所有窗口
-        doc_snippet = doc[:800] + "..." if len(doc) > 800 else doc
-        entry = f"[{i+1}] {doc_snippet}"
+    for i, item in enumerate(top_docs):
+        meta = item["meta"]
+        content = item["content"]
+        content_snippet = content[:600] + "..." if len(content) > 600 else content
         
-        # 检查是否超过总字符限制
+        # 即使是 Unknown，也填入 XML，保持格式一致
+        entry = (
+            f"<doc id='{i+1}'>\n"
+            f"  <title>{meta.get('title')}</title>\n"
+            f"  <authors>{meta.get('authors')}</authors>\n"
+            f"  <year>{meta.get('year')}</year>\n"
+            f"  <citations>{meta.get('citations')}</citations>\n"
+            f"  <text>{content_snippet}</text>\n"
+            f"</doc>"
+        )
         if current_len + len(entry) < MAX_CONTEXT_CHARS:
             context_list.append(entry)
             current_len += len(entry)
         else:
             break
+            
+    context_str = "\n".join(context_list)
 
-    context_str = "\n\n".join(context_list)
-    
-    system_prompt = "你是一个科研助手。基于【参考信息】回答问题，并在句尾标注引用 [x]。若无答案则说明未找到。"
-    user_prompt = f"【参考信息】\n{context_str}\n\n【问题】\n{request.question}"
+    system_prompt = (
+        "你是一位科研专家。请基于【参考文献】回答问题。\n"
+        "1. **利用元数据**：如参考文献包含有效作者/年份，请在引用时提及（例如：“Wang 等人(2023)指出...”）。\n"
+        "2. **准确引用**：句尾使用 [x] 标注来源。\n"
+        "3. **处理缺失**：如果元数据显示为 'Unknown'，则只引用内容，不要编造作者或年份。"
+    )
+
+    user_prompt = f"【参考文献】\n{context_str}\n\n【用户问题】\n{request.question}"
     
     messages = [
         {"role": "system", "content": system_prompt},
         {"role": "user", "content": user_prompt}
     ]
     
-    # 4. LLM 生成
     text_input = rag_service.tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
     inputs = rag_service.tokenizer([text_input], return_tensors="pt").to(rag_service.model.device)
     
     with torch.no_grad():
-        outputs = rag_service.model.generate(**inputs, max_new_tokens=256, temperature=0.3, top_p=0.9)
+        outputs = rag_service.model.generate(
+            **inputs, 
+            max_new_tokens=1024,
+            temperature=0.7, 
+            top_p=0.9
+        )
     
     answer = rag_service.tokenizer.decode(outputs[0][len(inputs.input_ids[0]):], skip_special_tokens=True)
     verification = rag_service.verify_citations(answer, len(top_docs))
 
     return QueryResponse(
         answer=answer, 
-        context_used=top_docs,
+        context_used=top_docs, 
         verification=verification,
         analysis_debug=analysis_result
     )
