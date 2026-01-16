@@ -139,7 +139,7 @@ def build_sft_entry(file_id, sections):
 
     # 构造 JSON
     entry = {
-        "custom_id": file_id, # 方便后续追踪是哪个文件的数据
+        # "custom_id": file_id, # 方便后续追踪是哪个文件的数据
         "messages": [
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user", "content": question},

@@ -16,7 +16,7 @@ class MineruConverter:
 
     def process_files(self, file_paths, output_dir="output", model_version="vlm"):
         """
-        [修改] 增加分批处理逻辑，解决文件数量过多导致的 API 限制问题
+        主流程：上传 -> 轮询 -> 下载
         """
         if not file_paths:
             print("[!] 没有检测到需要处理的文件，任务终止。")
@@ -25,47 +25,27 @@ class MineruConverter:
         if not os.path.exists(output_dir):
             os.makedirs(output_dir)
 
-        # --- 配置区 ---
-        BATCH_SIZE = 50  # 建议设为 50，防止超过 API 单次限制
-        total_files = len(file_paths)
-        # -------------
-
-        print(f"[-] 总任务数: {total_files} 个文件，将分为 {(total_files + BATCH_SIZE - 1) // BATCH_SIZE} 个批次依次执行。")
-
-        # 按批次循环处理
-        for i in range(0, total_files, BATCH_SIZE):
-            # 切片获取当前批次的文件列表
-            current_batch_files = file_paths[i : i + BATCH_SIZE]
-            batch_num = i // BATCH_SIZE + 1
-            print(f"\n>>> 正在执行第 {batch_num} 批次 (本批 {len(current_batch_files)} 个文件，进度: {i+1}~{min(i+BATCH_SIZE, total_files)}/{total_files}) <<<")
-
-            # 1. 获取当前批次的上传链接
-            print(f"[-] [批次 {batch_num}] 正在申请上传链接...")
-            batch_id, upload_urls = self._get_batch_upload_urls(current_batch_files, model_version)
-            
-            if not batch_id:
-                print(f"[!] [批次 {batch_num}] 获取上传链接失败，跳过本批次。")
-                continue
-
-            # 2. 上传当前批次文件
-            print(f"[-] [批次 {batch_num}] 开始上传文件...")
-            for idx, file_path in enumerate(current_batch_files):
-                if idx < len(upload_urls):
-                    self._upload_file(file_path, upload_urls[idx])
-                else:
-                    print(f"[!] 错误：文件 {file_path} 没有对应的上传链接")
-
-            print(f"[-] [批次 {batch_num}] 上传完成，Batch ID: {batch_id}")
-            print(f"[-] [批次 {batch_num}] 等待解析结果...")
-
-            # 3. 轮询当前批次状态直至下载完成
-            # 注意：这会阻塞直到当前批次全部处理完，才进入下一批，非常安全
-            self._poll_and_download(batch_id, output_dir)
-            
-            # 批次间稍微暂停一下，避免请求过于密集
-            time.sleep(2)
+        # 1. 获取批量上传链接
+        print(f"[-] 正在申请 {len(file_paths)} 个文件的上传链接...")
+        batch_id, upload_urls = self._get_batch_upload_urls(file_paths, model_version)
         
-        print("\n[=] 所有批次任务均已执行完毕。")
+        if not batch_id:
+            print("[!] 获取上传链接失败，请检查 Token 或 网络。")
+            return
+
+        # 2. 上传文件
+        print("[-] 开始上传文件...")
+        for i, file_path in enumerate(file_paths):
+            if i < len(upload_urls):
+                self._upload_file(file_path, upload_urls[i])
+            else:
+                print(f"[!] 错误：文件 {file_path} 没有对应的上传链接")
+
+        print(f"[-] 上传完成，任务 Batch ID: {batch_id}")
+        print("[-] 系统已自动开始解析，正在等待结果（每5秒轮询一次）...")
+
+        # 3. 轮询任务状态直至完成
+        self._poll_and_download(batch_id, output_dir)
 
     def _get_batch_upload_urls(self, file_paths, model_version):
         url = f"{self.base_url}/file-urls/batch"
@@ -213,8 +193,8 @@ def scan_directory(folder_path):
 if __name__ == "__main__":
     MY_TOKEN = "eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFM1MTIifQ.eyJqdGkiOiI3OTIwMDU3NyIsInJvbCI6IlJPTEVfUkVHSVNURVIiLCJpc3MiOiJPcGVuWExhYiIsImlhdCI6MTc2NTk1Njk4NSwiY2xpZW50SWQiOiJsa3pkeDU3bnZ5MjJqa3BxOXgydyIsInBob25lIjoiIiwib3BlbklkIjpudWxsLCJ1dWlkIjoiM2Y3NTYyMGYtODQ0Ni00YzQ4LWE3NGEtZjc4MDljNjM2MjIwIiwiZW1haWwiOiIiLCJleHAiOjE3NjcxNjY1ODV9.dITk-cI9xQSZpf0w4TWH-FMUvp9OUTzLmqDDURWWUhLKnFPpNNXg1x-c88KlP2oiX8PaxGMg7mTaYZHSJ6sq7w"
     
-    INPUT_FOLDER = '/Users/liucunyu/Documents/课题idea 数据 结论/Thu化工院张强课题组25实习/Qwen3微调数据/SUPERChem-500-benchmark/pdf'
-    OUTPUT_FOLDER = "./mineru_superchem_output" 
+    INPUT_FOLDER = '/Users/liucunyu/Documents/课题idea 数据 结论/Thu化工院张强课题组25实习/Qwen3微调数据/电池综述'
+    OUTPUT_FOLDER = "./mineru_output" 
 
     print(f"正在扫描文件夹: {INPUT_FOLDER} ...")
     files_to_process = scan_directory(INPUT_FOLDER)

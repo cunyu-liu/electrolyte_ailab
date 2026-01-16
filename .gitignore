@@ -1,0 +1,60 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Model files (very large)
+*.bin
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+
+# Data files
+fine-tune/wikidata/*.jsonl
+fine-tune/allcode_chemind_server/CPTdata/*.jsonl
+fine-tune/allcode_chemind_server/SFTdata/*.jsonl
+
+# PDF processing outputs
+fine-tune/pdf-md/mineru_output/
+fine-tune/pdf-md/mineru_review_output/
+fine-tune/pdf-md/mineru_superchem_output/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environment
+environment.yml
+*.env

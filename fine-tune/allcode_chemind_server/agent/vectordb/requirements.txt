@@ -1,0 +1,11 @@
+# Milvus 客户端
+pymilvus>=2.3.0
+
+# 向量模型库 (会自动安装 torch)
+sentence-transformers>=2.2.2
+
+# 进度条
+tqdm
+
+# 显式声明 torch (虽然 sentence-transformers 会装，但为了确保版本够新以支持 MPS)
+torch>=2.0.0

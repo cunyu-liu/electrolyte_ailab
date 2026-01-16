@@ -1,0 +1,86 @@
+根据 `sinfo` 的输出，`gpu1` 节点属于 `gpu` 分区，且目前处于 `idle`（空闲）状态，非常适合提交作业。
+
+考虑到你的环境是 `qwen_finetune`，且之前的目标是在 **RTX 5090** 上进行带 **NEFTune** 的微调，以下是一个标准的 Slurm 提交脚本模板。
+
+### 1. 编写作业脚本 (`run_qwen.slurm`)
+
+新建一个文件 `run_qwen.slurm`，内容如下：
+
+```bash
+#!/bin/bash
+#SBATCH --job-name=qwen_5090_ft   # 作业名称
+#SBATCH --partition=gpu           # 指定分区 (对应 sinfo 的 gpu)
+#SBATCH --nodelist=gpu1           # 【关键】指定特定节点 gpu1
+#SBATCH --nodes=1                 # 节点数量
+#SBATCH --ntasks-per-node=1       # 每个节点的任务数
+#SBATCH --cpus-per-task=16        # 每个任务分配的 CPU 核数 (根据 gpu1 的配置适当调整)
+#SBATCH --gres=gpu:1              # 申请 1 张 GPU (对应你的 5090)
+#SBATCH --output=logs/%j.out      # 标准输出日志 (%j 会替换为作业ID)
+#SBATCH --error=logs/%j.err       # 错误日志
+#SBATCH --time=24:00:00           # 运行时间限制 (根据需要调整)
+
+# 0. 准备日志目录 (防止报错)
+mkdir -p logs
+
+# 1. 加载必要的环境变量 (如果有 module 系统)
+# module load cuda/12.x  # 根据服务器情况取消注释
+
+# 2. 激活你的 Conda 环境
+source ~/.bashrc  # 或者 source /path/to/miniconda/bin/activate
+conda activate qwen_finetune
+
+# 3. 打印调试信息 (确认跑在 gpu1 上)
+echo "Running on host: $(hostname)"
+echo "GPU Info:"
+nvidia-smi
+
+# 4. 执行训练脚本
+# 这里填入你具体的训练命令，结合之前的 NEFTune 和 Loss Masking 逻辑
+echo "Starting Training..."
+
+# 示例命令 (请替换为你实际的 python 命令)
+# python train.py \
+#   --model_name_or_path "Qwen/Qwen2.5-..." \
+#   --neftune_noise_alpha 5 \
+#   --use_loss_masking True \
+#   ...
+
+echo "Job finished."
+
+```
+
+### 2. 关键参数解释
+
+* **`#SBATCH --partition=gpu`**: 必须填 `gpu`，因为 `gpu1` 属于这个分区。
+* **`#SBATCH --nodelist=gpu1`**: 这是你要求的核心。使用 `-w` 或 `--nodelist` 强制 Slurm 将作业调度到 `gpu1`，而不是让系统自动选择。
+* **`#SBATCH --gres=gpu:1`**: 申请通用资源（Generic Resource），这里指 1 张 GPU 卡。
+
+### 3. 提交与查看
+
+**提交作业：**
+
+```bash
+sbatch run_qwen.slurm
+
+```
+
+**查看作业状态：**
+
+```bash
+squeue
+# 或者只看你自己的
+squeue -u ChemMind
+
+```
+
+**查看实时输出 (假设作业 ID 是 1234)：**
+
+```bash
+tail -f logs/1234.out
+
+```
+
+---
+
+**下一步建议：**
+如果你需要我根据之前的上下文，帮你把 **NEFTune (noise_alpha=5) + Loss Masking** 的具体 `python train.py ...` 命令也写进这个脚本里，请把你的训练代码入口文件名（比如是 `train.py` 还是用 `llama_factory`）告诉我。

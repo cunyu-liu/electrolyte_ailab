@@ -1,0 +1,13 @@
+### Note: DO NOT use quantized model or quantization_bit when merging lora adapters
+
+### model
+model_name_or_path: Qwen/Qwen3-8B 
+adapter_name_or_path: /home/ChemMind/Allcode/output/qwen3-8b-sft
+template: qwen
+trust_remote_code: true
+
+### export
+export_dir: /home/ChemMind/Allcode/output/qwen3-8b-sft/merged
+export_size: 5
+export_device: cpu  # choices: [cpu, auto]
+export_legacy_format: false
