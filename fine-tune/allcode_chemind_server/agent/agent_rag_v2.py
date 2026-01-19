@@ -29,24 +29,19 @@ else:
     DEVICE = "cpu"
     dtype = torch.float32
 
-# 模型路径 (请确认路径正确)
+# 模型路径 (保持不变)
 LLM_MODEL_PATH = "/Users/liucunyu/.cache/modelscope/hub/models/Qwen/Qwen3-0.6B" 
 EMBEDDING_MODEL_NAME = "/Users/liucunyu/Documents/all_code/thu_2025/fine-tune/allcode_chemind_server/agent/vectordb/Xorbits/bge-m3"
 RERANKER_MODEL_NAME = "/Users/liucunyu/Documents/all_code/thu_2025/fine-tune/allcode_chemind_server/agent/vectordb/bge-reranker-v2-m3" 
 
 # Milvus 配置
-MILVUS_HOST = "127.0.0.1"
+MILVUS_HOST = "localhost"
 MILVUS_PORT = "19530"
-MILVUS_COLLECTION_NAME = "electrolyte_papers"
+# [修改点]：更新为新的集合名称
+MILVUS_COLLECTION_NAME = "electrolyte_papers_chunked"
 MILVUS_VECTOR_FIELD = "embeddings"
+# [修改点]：确保与入库代码一致，字段名为 content
 MILVUS_TEXT_FIELD = "content" 
-
-# Metadata Keys (对应您的 JSON 字段)
-MILVUS_META_YEAR = "year"          
-MILVUS_META_TITLE = "title"        
-MILVUS_META_AUTHORS = "authors"    
-MILVUS_META_CITATIONS = "citations"
-MILVUS_META_DOI = "doi"
 
 # Elasticsearch 配置
 ES_HOST = "http://localhost:9200"
@@ -94,17 +89,15 @@ class AdvancedRAGService:
             self.collection = Collection(MILVUS_COLLECTION_NAME)
             self.collection.load()
             
-            # === 【核心修复】检测 Schema，看数据库里到底有哪些字段 ===
+            # 检测 Schema 字段
             self.existing_fields = [field.name for field in self.collection.schema.fields]
             logger.info(f"Milvus Schema 字段检测: {self.existing_fields}")
             
-            # 判断关键字段是否存在，用于后续逻辑判断
-            self.has_title = MILVUS_META_TITLE in self.existing_fields
-            self.has_authors = MILVUS_META_AUTHORS in self.existing_fields
-            self.has_year = MILVUS_META_YEAR in self.existing_fields
-            self.has_citations = MILVUS_META_CITATIONS in self.existing_fields
+            # [修改点]：入库代码中，Year是标量字段，其他(Title, Authors)都在 Metadata JSON 中
+            self.has_year_scalar = "year" in self.existing_fields
+            self.has_metadata_json = "metadata" in self.existing_fields
             
-            logger.info(f"Milvus 就绪")
+            logger.info(f"Milvus 就绪 (Year Scalar: {self.has_year_scalar}, Metadata JSON: {self.has_metadata_json})")
         except Exception as e:
             logger.error(f"Milvus 连接失败: {e}")
             raise e
@@ -171,11 +164,12 @@ class AdvancedRAGService:
         if filters.get('year'):
             filter_clauses.append({"term": {"year": filters['year']}})
             
-        # ES 的 _source 可以容错，如果字段不存在它只会返回 None，不会报错
+        # 注意：ES 里的字段名需要和你 ES 入库时的 mapping 一致
+        # 这里假设 ES 入库逻辑与 Milvus 类似，meta 信息也可能存储在 metadata 字段或展平
         body = {
             "size": SEARCH_TOP_K,
             "query": {"bool": {"must": must_clauses, "filter": filter_clauses}},
-            "_source": [ES_TEXT_FIELD, MILVUS_META_TITLE, MILVUS_META_AUTHORS, MILVUS_META_YEAR, MILVUS_META_CITATIONS]
+            "_source": [ES_TEXT_FIELD, "title", "authors", "year", "citations", "metadata"] 
         }
         
         try:
@@ -183,45 +177,45 @@ class AdvancedRAGService:
             results = []
             for hit in resp["hits"]["hits"]:
                 src = hit["_source"]
+                # 兼容处理：尝试直接获取字段，或者从 metadata 中获取
+                meta = src.get("metadata", {}) or {}
                 results.append({
                     "content": src.get(ES_TEXT_FIELD, ""),
                     "meta": {
-                        "title": src.get(MILVUS_META_TITLE, "Unknown Title"),
-                        "authors": src.get(MILVUS_META_AUTHORS, "Unknown Authors"),
-                        "year": src.get(MILVUS_META_YEAR, "Unknown Year"),
-                        "citations": src.get(MILVUS_META_CITATIONS, "0")
+                        "title": src.get("title") or meta.get("title", "Unknown Title"),
+                        "authors": src.get("authors") or meta.get("authors", "Unknown Authors"),
+                        "year": src.get("year") or meta.get("year", "Unknown Year"),
+                        "citations": src.get("citations") or meta.get("citations", "0")
                     }
                 })
             return results
         except Exception:
             return []
 
-    # === 3. 混合检索主逻辑 (核心修复：动态 Output Fields) ===
+    # === 3. 混合检索主逻辑 ===
     def retrieve_and_rerank(self, query: str, analysis: Dict[str, Any]) -> List[Dict]:
         search_kw = analysis.get("keywords", query) or query
         year_filter = analysis.get("year")
-        author_filter = analysis.get("author")
+        # author_filter 在 Milvus JSON 中过滤比较复杂，暂时只在 Rerank 阶段或 Python 层处理
         
         candidates = [] 
 
         # --- B. Milvus 向量检索 ---
         query_vec = self.get_embedding(search_kw)
         
-        # 1. 动态构建表达式 (只过滤存在的字段)
+        # 1. 动态构建表达式 (基于入库代码的 Schema)
         expr_list = []
-        if year_filter and self.has_year:
-            expr_list.append(f'{MILVUS_META_YEAR} == "{year_filter}"')
-        if author_filter and self.has_authors:
-            expr_list.append(f'{MILVUS_META_AUTHORS} like "%{author_filter}%"')
+        # 'year' 是标量字段，可以直接过滤
+        if year_filter and self.has_year_scalar:
+            expr_list.append(f'year == "{year_filter}"')
             
         expr = " && ".join(expr_list) if expr_list else ""
         
-        # 2. 动态构建 Output Fields (只请求存在的字段)
-        target_output_fields = [MILVUS_TEXT_FIELD] # 正文是必须的
-        if self.has_title: target_output_fields.append(MILVUS_META_TITLE)
-        if self.has_authors: target_output_fields.append(MILVUS_META_AUTHORS)
-        if self.has_year: target_output_fields.append(MILVUS_META_YEAR)
-        if self.has_citations: target_output_fields.append(MILVUS_META_CITATIONS)
+        # 2. 动态构建 Output Fields 
+        # [核心修改]：必须获取 metadata 才能拿到 title/authors，因为它们不在顶层标量里
+        target_output_fields = [MILVUS_TEXT_FIELD, "doc_id"] 
+        if self.has_year_scalar: target_output_fields.append("year")
+        if self.has_metadata_json: target_output_fields.append("metadata")
 
         try:
             milvus_res = self.collection.search(
@@ -230,56 +224,76 @@ class AdvancedRAGService:
                 param={"metric_type": "COSINE", "params": {"nprobe": 10}},
                 limit=SEARCH_TOP_K,
                 expr=expr if expr else None,
-                output_fields=target_output_fields # <--- 只有存在的字段才会被传进去
+                output_fields=target_output_fields
             )
             
             if milvus_res and milvus_res[0]:
                 for hit in milvus_res[0]:
                     entity = hit.entity
-                    # 3. 结果构建：如果 Milvus 里没有该字段，手动填默认值
+                    
+                    # [核心修改]：从 metadata JSON 中解包数据
+                    meta_json = entity.get("metadata") if self.has_metadata_json else {}
+                    if not isinstance(meta_json, dict): meta_json = {} # 防御性编程
+
                     candidates.append({
                         "content": entity.get(MILVUS_TEXT_FIELD),
                         "meta": {
-                            "title": entity.get(MILVUS_META_TITLE) if self.has_title else "Unknown Title",
-                            "authors": entity.get(MILVUS_META_AUTHORS) if self.has_authors else "Unknown Authors",
-                            "year": entity.get(MILVUS_META_YEAR) if self.has_year else "Unknown Year",
-                            "citations": entity.get(MILVUS_META_CITATIONS) if self.has_citations else "0"
+                            "title": meta_json.get("title", "Unknown Title"),
+                            "authors": meta_json.get("authors", "Unknown Authors"),
+                            # 优先用标量 year，没有则找 json 里的
+                            "year": entity.get("year") or meta_json.get("year", "Unknown Year"),
+                            "citations": meta_json.get("citations", "0")
                         }
                     })
         except Exception as e:
             logger.error(f"Milvus search error: {e}")
-            # 出错时不崩溃，尝试继续用 ES 结果
 
-        # --- C. ES 检索 ---
+        # --- C. ES 检索 (如有) ---
         es_res = self._search_es_keyword(search_kw, {"year": year_filter})
         candidates.extend(es_res)
 
         # --- D. 去重 ---
-        unique_map = {c["content"]: c for c in candidates}
+        # 使用内容哈希或 content 字符串本身去重
+        unique_map = {}
+        for c in candidates:
+            # 简单去重，保留第一个遇到的（通常向量检索排名靠前的优先）
+            if c["content"] not in unique_map:
+                unique_map[c["content"]] = c
         unique_candidates = list(unique_map.values())
+        
         if not unique_candidates: return []
 
         # --- E. Rerank ---
         docs_text = [c["content"] for c in unique_candidates]
         rerank_pairs = [[query, doc] for doc in docs_text]
-        scores = self.reranker_model.compute_score(rerank_pairs, normalize=True)
-        if isinstance(scores, float): scores = [scores]
         
-        ranked_results = []
-        for i, score in enumerate(scores):
-            final_score = score
-            # 只有当 citations 存在时才进行加权
-            meta = unique_candidates[i]["meta"]
-            if analysis.get("high_citation") and meta.get("citations") != "0":
-                try:
-                    cit_val = int(meta["citations"])
-                    final_score += min(cit_val / 10000.0, 0.1) 
-                except:
-                    pass
-            ranked_results.append((unique_candidates[i], final_score))
+        try:
+            scores = self.reranker_model.compute_score(rerank_pairs, normalize=True)
+            if isinstance(scores, float): scores = [scores]
             
-        ranked_results.sort(key=lambda x: x[1], reverse=True)
-        return [item[0] for item in ranked_results[:RERANK_TOP_K]]
+            ranked_results = []
+            for i, score in enumerate(scores):
+                final_score = score
+                meta = unique_candidates[i]["meta"]
+                
+                # 引用加权逻辑 (解析 citations 字符串)
+                if analysis.get("high_citation"):
+                    cit_str = str(meta.get("citations", "0"))
+                    # 简单提取数字
+                    cit_nums = re.findall(r'\d+', cit_str)
+                    if cit_nums:
+                        # 假设 citations 可能是列表字符串，取最大值或者第一个
+                        cit_val = int(max(cit_nums, key=lambda x: int(x)))
+                        final_score += min(cit_val / 10000.0, 0.1) 
+                
+                ranked_results.append((unique_candidates[i], final_score))
+                
+            ranked_results.sort(key=lambda x: x[1], reverse=True)
+            return [item[0] for item in ranked_results[:RERANK_TOP_K]]
+            
+        except Exception as e:
+            logger.error(f"Rerank failed: {e}, returning unranked results")
+            return unique_candidates[:RERANK_TOP_K]
 
     def verify_citations(self, answer: str, context_count: int) -> Dict:
         citations = re.findall(r'\[(\d+)\]', answer)
@@ -335,9 +349,9 @@ def chat_endpoint(request: QueryRequest):
     for i, item in enumerate(top_docs):
         meta = item["meta"]
         content = item["content"]
-        content_snippet = content[:600] + "..." if len(content) > 600 else content
+        # 稍微截断一下单片段，防止上下文超长
+        content_snippet = content[:800] + "..." if len(content) > 800 else content
         
-        # 即使是 Unknown，也填入 XML，保持格式一致
         entry = (
             f"<doc id='{i+1}'>\n"
             f"  <title>{meta.get('title')}</title>\n"

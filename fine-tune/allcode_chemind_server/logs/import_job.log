@@ -1,0 +1,91 @@
+2026-01-19 10:34:10,725 - INFO - 🍎 Apple Silicon (MPS) Detected.
+2026-01-19 10:34:10,744 - INFO - ✅ Milvus Connected: localhost
+2026-01-19 10:34:10,746 - INFO - 🚀 Creating new collection: electrolyte_papers_chunked
+2026-01-19 10:34:11,618 - INFO - ✅ Index created.
+2026-01-19 10:34:11,618 - INFO - Loading Model on mps...
+2026-01-19 10:34:11,621 - INFO - Load pretrained SentenceTransformer: /Users/liucunyu/Documents/all_code/thu_2025/fine-tune/allcode_chemind_server/agent/vectordb/Xorbits/bge-m3
+2026-01-19 10:34:14,150 - INFO - Total Files: 525, Pending: 525
+2026-01-19 10:34:14,463 - ERROR - ⚠️ Batch Insert Error: Invalid buffer size: 15.06 GiB
+2026-01-19 10:35:09,647 - INFO - 🍎 Apple Silicon (MPS) Detected.
+2026-01-19 10:35:09,658 - INFO - ✅ Milvus Connected: localhost
+2026-01-19 10:35:09,661 - INFO - ✅ Loaded existing collection: electrolyte_papers_chunked
+2026-01-19 10:35:09,661 - INFO - Loading Model on mps...
+2026-01-19 10:35:09,662 - INFO - Load pretrained SentenceTransformer: /Users/liucunyu/Documents/all_code/thu_2025/fine-tune/allcode_chemind_server/agent/vectordb/Xorbits/bge-m3
+2026-01-19 10:35:11,607 - INFO - Total Files: 525, Pending: 524
+2026-01-19 10:35:16,077 - ERROR - ⚠️ Batch Insert Error: <ParamError: (code=1, message=invalid input of field (content), length of string exceeds max length. length: 10514, max length: 8192)>
+2026-01-19 10:35:32,198 - ERROR - ⚠️ Batch Insert Error: <ParamError: (code=1, message=invalid input of field (content), length of string exceeds max length. length: 11927, max length: 8192)>
+2026-01-19 10:35:44,767 - ERROR - ⚠️ Batch Insert Error: <ParamError: (code=1, message=invalid input of field (content), length of string exceeds max length. length: 9324, max length: 8192)>
+2026-01-19 10:36:06,066 - ERROR - ⚠️ Batch Insert Error: <ParamError: (code=1, message=invalid input of field (content), length of string exceeds max length. length: 14779, max length: 8192)>
+2026-01-19 10:36:10,864 - ERROR - ⚠️ Batch Insert Error: <MilvusException: (code=1100, message=length of varchar field content exceeds max length, row number: 1, length: 8212, max length: 8192: invalid parameter)>
+2026-01-19 10:36:19,792 - ERROR - ⚠️ Batch Insert Error: <ParamError: (code=1, message=invalid input of field (content), length of string exceeds max length. length: 11396, max length: 8192)>
+2026-01-19 10:36:38,821 - ERROR - ⚠️ Batch Insert Error: <ParamError: (code=1, message=invalid input of field (content), length of string exceeds max length. length: 9331, max length: 8192)>
+2026-01-19 10:36:56,151 - ERROR - ⚠️ Batch Insert Error: <ParamError: (code=1, message=invalid input of field (content), length of string exceeds max length. length: 11856, max length: 8192)>
+2026-01-19 10:37:08,698 - ERROR - ⚠️ Batch Insert Error: <ParamError: (code=1, message=invalid input of field (content), length of string exceeds max length. length: 12045, max length: 8192)>
+2026-01-19 10:37:17,138 - ERROR - ⚠️ Batch Insert Error: <ParamError: (code=1, message=invalid input of field (content), length of string exceeds max length. length: 11908, max length: 8192)>
+2026-01-19 10:37:27,541 - ERROR - ⚠️ Batch Insert Error: <ParamError: (code=1, message=invalid input of field (content), length of string exceeds max length. length: 10869, max length: 8192)>
+2026-01-19 10:37:41,256 - ERROR - ⚠️ Batch Insert Error: <ParamError: (code=1, message=invalid input of field (content), length of string exceeds max length. length: 10981, max length: 8192)>
+2026-01-19 10:37:50,242 - ERROR - ⚠️ Batch Insert Error: <ParamError: (code=1, message=invalid input of field (content), length of string exceeds max length. length: 8574, max length: 8192)>
+2026-01-19 10:37:55,932 - ERROR - ⚠️ Batch Insert Error: <ParamError: (code=1, message=invalid input of field (content), length of string exceeds max length. length: 8892, max length: 8192)>
+2026-01-19 10:38:07,477 - ERROR - ⚠️ Batch Insert Error: <ParamError: (code=1, message=invalid input of field (content), length of string exceeds max length. length: 10358, max length: 8192)>
+2026-01-19 10:38:18,091 - ERROR - ⚠️ Batch Insert Error: <ParamError: (code=1, message=invalid input of field (content), length of string exceeds max length. length: 10851, max length: 8192)>
+2026-01-19 10:38:26,688 - ERROR - ⚠️ Batch Insert Error: <ParamError: (code=1, message=invalid input of field (content), length of string exceeds max length. length: 9535, max length: 8192)>
+2026-01-19 10:38:47,803 - ERROR - ⚠️ Batch Insert Error: <ParamError: (code=1, message=invalid input of field (content), length of string exceeds max length. length: 9371, max length: 8192)>
+2026-01-19 10:39:03,091 - ERROR - ⚠️ Batch Insert Error: <ParamError: (code=1, message=invalid input of field (content), length of string exceeds max length. length: 11940, max length: 8192)>
+2026-01-19 10:39:16,575 - ERROR - ⚠️ Batch Insert Error: <ParamError: (code=1, message=invalid input of field (content), length of string exceeds max length. length: 13399, max length: 8192)>
+2026-01-19 10:39:23,331 - ERROR - ⚠️ Batch Insert Error: <ParamError: (code=1, message=invalid input of field (content), length of string exceeds max length. length: 11906, max length: 8192)>
+2026-01-19 10:39:31,496 - ERROR - ⚠️ Batch Insert Error: <ParamError: (code=1, message=invalid input of field (content), length of string exceeds max length. length: 8316, max length: 8192)>
+2026-01-19 10:39:38,575 - ERROR - ⚠️ Batch Insert Error: <ParamError: (code=1, message=invalid input of field (content), length of string exceeds max length. length: 9392, max length: 8192)>
+2026-01-19 10:39:47,813 - ERROR - ⚠️ Batch Insert Error: <ParamError: (code=1, message=invalid input of field (content), length of string exceeds max length. length: 13054, max length: 8192)>
+2026-01-19 10:39:58,896 - ERROR - ⚠️ Batch Insert Error: <ParamError: (code=1, message=invalid input of field (content), length of string exceeds max length. length: 11837, max length: 8192)>
+2026-01-19 10:40:10,154 - ERROR - ⚠️ Batch Insert Error: <ParamError: (code=1, message=invalid input of field (content), length of string exceeds max length. length: 13027, max length: 8192)>
+2026-01-19 10:40:19,830 - ERROR - ⚠️ Batch Insert Error: <ParamError: (code=1, message=invalid input of field (content), length of string exceeds max length. length: 11071, max length: 8192)>
+2026-01-19 10:46:52,905 - INFO - 🍎 Apple Silicon (MPS) Detected.
+2026-01-19 10:46:52,915 - INFO - ✅ Milvus Connected: localhost
+2026-01-19 10:46:52,917 - INFO - ✅ Loaded existing collection: electrolyte_papers_chunked
+2026-01-19 10:46:52,917 - INFO - Loading Model on mps...
+2026-01-19 10:46:52,918 - INFO - Load pretrained SentenceTransformer: /Users/liucunyu/Documents/all_code/thu_2025/fine-tune/allcode_chemind_server/agent/vectordb/Xorbits/bge-m3
+2026-01-19 10:46:54,882 - INFO - Total Files: 525, Pending: 494
+2026-01-19 10:46:59,029 - ERROR - ⚠️ Batch Insert Error: <MilvusException: (code=1100, message=length of varchar field content exceeds max length, row number: 0, length: 8208, max length: 8192: invalid parameter)>
+2026-01-19 10:47:10,445 - ERROR - ⚠️ Batch Insert Error: <MilvusException: (code=1100, message=length of varchar field content exceeds max length, row number: 0, length: 8217, max length: 8192: invalid parameter)>
+2026-01-19 10:47:21,287 - ERROR - ⚠️ Batch Insert Error: <MilvusException: (code=1100, message=length of varchar field content exceeds max length, row number: 0, length: 8227, max length: 8192: invalid parameter)>
+2026-01-19 10:47:33,903 - ERROR - ⚠️ Batch Insert Error: <MilvusException: (code=1100, message=length of varchar field content exceeds max length, row number: 0, length: 8226, max length: 8192: invalid parameter)>
+2026-01-19 10:47:56,170 - ERROR - ⚠️ Batch Insert Error: <MilvusException: (code=1100, message=length of varchar field content exceeds max length, row number: 0, length: 8224, max length: 8192: invalid parameter)>
+2026-01-19 10:48:09,384 - ERROR - ⚠️ Batch Insert Error: <MilvusException: (code=1100, message=length of varchar field content exceeds max length, row number: 1, length: 8230, max length: 8192: invalid parameter)>
+2026-01-19 10:48:22,582 - ERROR - ⚠️ Batch Insert Error: <MilvusException: (code=1100, message=length of varchar field content exceeds max length, row number: 1, length: 8250, max length: 8192: invalid parameter)>
+2026-01-19 10:48:40,083 - ERROR - ⚠️ Batch Insert Error: <MilvusException: (code=1100, message=length of varchar field content exceeds max length, row number: 0, length: 8201, max length: 8192: invalid parameter)>
+2026-01-19 10:48:52,610 - ERROR - ⚠️ Batch Insert Error: <MilvusException: (code=1100, message=length of varchar field content exceeds max length, row number: 0, length: 8264, max length: 8192: invalid parameter)>
+2026-01-19 10:49:06,300 - ERROR - ⚠️ Batch Insert Error: <MilvusException: (code=1100, message=length of varchar field content exceeds max length, row number: 1, length: 8194, max length: 8192: invalid parameter)>
+2026-01-19 10:49:15,535 - ERROR - ⚠️ Batch Insert Error: <MilvusException: (code=1100, message=length of varchar field content exceeds max length, row number: 0, length: 8206, max length: 8192: invalid parameter)>
+2026-01-19 10:57:52,861 - INFO - 🍎 Apple Silicon (MPS) Detected.
+2026-01-19 10:57:52,868 - INFO - ✅ Milvus Connected: localhost
+2026-01-19 10:57:52,870 - INFO - ✅ Loaded existing collection: electrolyte_papers_chunked
+2026-01-19 10:57:52,870 - INFO - Loading Model on mps...
+2026-01-19 10:57:52,871 - INFO - Load pretrained SentenceTransformer: /Users/liucunyu/Documents/all_code/thu_2025/fine-tune/allcode_chemind_server/agent/vectordb/Xorbits/bge-m3
+2026-01-19 10:57:54,859 - INFO - Total Files: 525, Pending: 483
+2026-01-19 11:00:17,711 - INFO - 🍎 Apple Silicon (MPS) Detected.
+2026-01-19 11:00:17,718 - INFO - ✅ Milvus Connected: localhost
+2026-01-19 11:00:17,720 - INFO - 🚀 Creating new collection: electrolyte_papers_chunked
+2026-01-19 11:00:18,566 - INFO - ✅ Index created.
+2026-01-19 11:00:18,566 - INFO - Loading Model on mps...
+2026-01-19 11:00:18,570 - INFO - Load pretrained SentenceTransformer: /Users/liucunyu/Documents/all_code/thu_2025/fine-tune/allcode_chemind_server/agent/vectordb/Xorbits/bge-m3
+2026-01-19 11:00:19,265 - INFO - Total Files: 525, Pending: 483
+2026-01-19 11:02:11,353 - WARNING - 🗑️ Deleted checkpoint file: ./logs/step2_processed.log
+2026-01-19 11:02:11,362 - INFO - 🍎 Apple Silicon (MPS) Detected.
+2026-01-19 11:02:11,369 - INFO - ✅ Milvus Connected: localhost
+2026-01-19 11:02:11,567 - WARNING - 🗑️ Dropped existing collection: electrolyte_papers_chunked
+2026-01-19 11:02:11,567 - INFO - 🚀 Creating new collection: electrolyte_papers_chunked
+2026-01-19 11:02:12,364 - INFO - ✅ Index created.
+2026-01-19 11:02:12,364 - INFO - Loading Model on mps...
+2026-01-19 11:02:12,368 - INFO - Load pretrained SentenceTransformer: /Users/liucunyu/Documents/all_code/thu_2025/fine-tune/allcode_chemind_server/agent/vectordb/Xorbits/bge-m3
+2026-01-19 11:02:13,096 - INFO - Total Files: 525, Pending: 525
+2026-01-19 12:46:20,312 - INFO - 🎉 Job Done. Total Entities: 24930
+2026-01-19 13:41:28,202 - WARNING - 🗑️ Deleted checkpoint file: ./logs/step2_processed.log
+2026-01-19 13:41:28,213 - INFO - 🍎 Apple Silicon (MPS) Detected.
+2026-01-19 13:41:28,224 - INFO - ✅ Milvus Connected: localhost
+2026-01-19 13:41:29,099 - WARNING - 🗑️ Dropped existing collection: electrolyte_papers_chunked
+2026-01-19 13:41:29,099 - INFO - 🚀 Creating new collection: electrolyte_papers_chunked
+2026-01-19 13:41:30,002 - INFO - ✅ Index created.
+2026-01-19 13:41:30,002 - INFO - Loading Model on mps...
+2026-01-19 13:41:30,005 - INFO - Load pretrained SentenceTransformer: /Users/liucunyu/Documents/all_code/thu_2025/fine-tune/allcode_chemind_server/agent/vectordb/Xorbits/bge-m3
+2026-01-19 13:41:32,113 - INFO - Total Files: 525, Pending: 525
+2026-01-19 15:27:17,638 - INFO - 🎉 Job Done. Total Entities: 24930
