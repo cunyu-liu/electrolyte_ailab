@@ -7,7 +7,7 @@ url = "http://127.0.0.1:8000/chat"
 
 # 测试问题
 payload = {
-    "question": "作者包括Aschi、Brönstrup的论文有哪些？"
+    "question": "作者是Dieter M. Kolb的论文有哪些？"
 }
 
 print(f"[{time.strftime('%H:%M:%S')}] 1. 正在尝试连接服务器...")

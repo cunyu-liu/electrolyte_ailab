@@ -53,7 +53,7 @@ ES_TEXT_FIELD = "content"
 
 # 检索超参
 SEARCH_TOP_K = 15
-RERANK_TOP_K = 5   
+RERANK_TOP_K = 2  
 MAX_CONTEXT_CHARS = 2500 
 
 # ==============================================================================
@@ -106,23 +106,21 @@ class AdvancedRAGService:
             raise e
 
     def _connect_es(self):
-        self.use_es = False
+        self.use_es = False  # 初始化为 False
         self.es_client = None
         
         try:
-            logger.info(f"正在尝试连接 ES: {ES_HOST} ...")
-            # 显式指定 max_retries 为 0，避免卡顿
-            self.es_client = Elasticsearch(ES_HOST, request_timeout=2, max_retries=0)
+            # 设置较短的超时时间，防止无服务时启动卡顿
+            self.es_client = Elasticsearch(ES_HOST, request_timeout=2)
             
-            # [关键修改]：不直接用 ping，先尝试 info()，因为它会抛出具体错误而不是只返回 False
-            info = self.es_client.info()
-            logger.info(f"ES 连接成功! 版本: {info['version']['number']}")
-            self.use_es = True
-            
+            if self.es_client.ping():
+                self.use_es = True
+                logger.info(f"Elasticsearch 就绪")
+            else:
+                logger.warning(f"Elasticsearch Ping 失败: 服务未响应 ({ES_HOST})。已自动降级为纯向量检索模式。")
         except Exception as e:
-            # 这样我们就能看到是 ConnectionRefused 还是 AuthenticationError
-            logger.warning(f"Elasticsearch 最终连接失败。原因: {e}")
-            logger.warning("已降级为纯向量检索模式。")
+            self.use_es = False
+            logger.warning(f"Elasticsearch 初始化异常: {e}。已自动降级为纯向量检索模式。")
 
     def get_embedding(self, text: str) -> List[float]:
         return self.embed_model.encode(text, normalize_embeddings=True).tolist()
@@ -450,7 +448,7 @@ def chat_endpoint(request: QueryRequest):
     context_str = "\n".join(context_list)
 
     system_prompt = (
-        "你是一位科研专家。请基于【参考文献】回答问题。\n"
+        "你是一位科研专家。请基于自己的知识和【参考文献】回答问题。\n"
         "1. **利用元数据**：如参考文献包含有效作者/年份，请在引用时提及（例如：“Wang 等人(2023)指出...”）。\n"
         "2. **准确引用**：句尾使用 [x] 标注来源。\n"
         "3. **处理缺失**：如果元数据显示为 'Unknown'，则只引用内容，不要编造作者或年份。"
