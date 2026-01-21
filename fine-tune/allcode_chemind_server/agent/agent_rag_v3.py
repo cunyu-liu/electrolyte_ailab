@@ -120,12 +120,12 @@ class AdvancedRAGService:
     # === 1. Query 理解 ===
     def analyze_query(self, query: str) -> Dict[str, Any]:
         prompt = (
-            f"分析科研查询：'{query}'。\n"
+            f"分析查询（涉及科研文献或硬件设施）：'{query}'。\n"
             "提取以下信息（如果不存在则为null）：\n"
             "1. year (年份，如 '2023.0')\n"
             "2. author (作者姓名)\n"
-            "3. keywords (核心技术词)\n"
-            "4. high_citation (bool, 用户是否暗示要找'经典'、'高引'、'核心'论文)\n"
+            "3. keywords (核心技术词、设备名称或型号)\n"
+            "4. high_citation (bool, 用户是否暗示要找'经典'论文或'核心'设备参数)\n"
             "必须输出JSON格式: {{\"year\": ..., \"author\": ..., \"keywords\": ..., \"high_citation\": ...}}\n"
             "JSON:"
         )
@@ -470,8 +470,10 @@ def chat_endpoint(request: QueryRequest):
     context_str = "\n".join(context_list)
 
     system_prompt = (
-        "你是一位科研专家。请基于自己的知识和【参考文献】回答问题。\n"
-        "1. **利用元数据**：如参考文献包含有效作者/年份，请在引用时提及（例如：“Wang 等人(2023)指出...”）。\n"
+        "你是一位科研及硬件设施专家。请基于自己的知识和【参考文献】回答问题。\n"
+        "1. **利用元数据**：\n"
+        "   - 若引用**科研论文**，请提及作者/年份（例如：“Wang 等人(2023)指出...”）。\n"
+        "   - 若引用**硬件/设施文档**，请提及设备名称、型号或文档标题（例如：“根据《离心机操作手册》...”）。\n"
         "2. **准确引用**：句尾使用 [x] 标注来源。\n"
         "3. **处理缺失**：如果元数据显示为 'Unknown'，则只引用内容，不要编造作者或年份。"
     )
