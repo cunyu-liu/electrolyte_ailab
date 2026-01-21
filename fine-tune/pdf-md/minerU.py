@@ -184,17 +184,17 @@ def scan_directory(folder_path):
     pdf_list = []
     for root, dirs, files in os.walk(folder_path):
         for file in files:
-            if file.lower().endswith('.pdf'):
+            if file.lower().endswith('.docx'):
                 full_path = os.path.join(root, file)
                 pdf_list.append(full_path)
     
     return pdf_list
 
 if __name__ == "__main__":
-    MY_TOKEN = "eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFM1MTIifQ.eyJqdGkiOiI3OTIwMDU3NyIsInJvbCI6IlJPTEVfUkVHSVNURVIiLCJpc3MiOiJPcGVuWExhYiIsImlhdCI6MTc2NTk1Njk4NSwiY2xpZW50SWQiOiJsa3pkeDU3bnZ5MjJqa3BxOXgydyIsInBob25lIjoiIiwib3BlbklkIjpudWxsLCJ1dWlkIjoiM2Y3NTYyMGYtODQ0Ni00YzQ4LWE3NGEtZjc4MDljNjM2MjIwIiwiZW1haWwiOiIiLCJleHAiOjE3NjcxNjY1ODV9.dITk-cI9xQSZpf0w4TWH-FMUvp9OUTzLmqDDURWWUhLKnFPpNNXg1x-c88KlP2oiX8PaxGMg7mTaYZHSJ6sq7w"
+    MY_TOKEN = "eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFM1MTIifQ.eyJqdGkiOiI3OTIwMDU3NyIsInJvbCI6IlJPTEVfUkVHSVNURVIiLCJpc3MiOiJPcGVuWExhYiIsImlhdCI6MTc2ODk2NzE4NiwiY2xpZW50SWQiOiJsa3pkeDU3bnZ5MjJqa3BxOXgydyIsInBob25lIjoiIiwib3BlbklkIjpudWxsLCJ1dWlkIjoiNDcxZDViY2MtMTBlNy00NjQ3LTg3NzUtNjA0MDM2M2QwZmM0IiwiZW1haWwiOiIiLCJleHAiOjE3NzAxNzY3ODZ9.JpUilYN5yEFKACuna4RoUfbCmObVC3p2dQOXbGte7aJmuJoJTY0RCq1vmjthaoplzlWarecy0BO-ou2Vl4ebZg"
     
-    INPUT_FOLDER = '/Users/liucunyu/Documents/课题idea 数据 结论/Thu化工院张强课题组25实习/Qwen3微调数据/电池综述'
-    OUTPUT_FOLDER = "./mineru_output" 
+    INPUT_FOLDER = '/Users/liucunyu/Documents/课题idea 数据 结论/Thu化工院张强课题组25实习/Qwen3微调数据/rag 硬件数据'
+    OUTPUT_FOLDER = "./rag_hardware_mineru_output" 
 
     print(f"正在扫描文件夹: {INPUT_FOLDER} ...")
     files_to_process = scan_directory(INPUT_FOLDER)
