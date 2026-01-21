@@ -3,8 +3,8 @@ import random
 import os
 
 # ================= 配置区域 =================
-INPUT_FILE = "/home/ChemMind/Allcode/SFTdata/allsftdata.jsonl"      # 已经汇总好的输入文件
-OUTPUT_FILE = "/home/ChemMind/Allcode/SFTdata/allsftdata_shuffled.jsonl"
+INPUT_FILE = "/home/chemind/allcode_chemind_server/SFTdata/md_mixQA_data.jsonl"      # 已经汇总好的输入文件
+OUTPUT_FILE = "/home/chemind/allcode_chemind_server/SFTdata/md_mixQA_data.jsonl"
 RANDOM_SEED = 42
 # ===========================================
 

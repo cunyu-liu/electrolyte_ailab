@@ -3,9 +3,9 @@ import os
 import random
 
 # ================= 配置区域 =================
-INPUT_FILE = "/home/ChemMind/Allcode/SFTdata/allsftdata_shuffled.jsonl"
-OUTPUT_TRAIN = "/home/ChemMind/Allcode/SFTdata/allsftdata_shuffled_train.jsonl"
-OUTPUT_TEST = "/home/ChemMind/Allcode/SFTdata/allsftdata_shuffled_test.jsonl"
+INPUT_FILE = "/home/chemind/allcode_chemind_server/SFTdata/superchem_sft_data.jsonl"
+OUTPUT_TRAIN = "/home/chemind/allcode_chemind_server/SFTdata/superchem_sft_data_train.jsonl"
+OUTPUT_TEST = "/home/chemind/allcode_chemind_server/SFTdata/superchem_sft_data_test.jsonl"
 
 TRAIN_RATIO = 0.95     # 训练集比例
 RANDOM_SEED = 42
