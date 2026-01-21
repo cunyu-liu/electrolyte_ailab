@@ -7,9 +7,6 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import List, Dict, Optional, Any
 
-# 对chunk后的数据库做small to big
-
-
 # === 核心库 ===
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from sentence_transformers import SentenceTransformer 
@@ -32,7 +29,7 @@ else:
     DEVICE = "cpu"
     dtype = torch.float32
 
-# 模型路径 (保持不变)
+# 模型路径
 LLM_MODEL_PATH = "/Users/liucunyu/.cache/modelscope/hub/models/Qwen/Qwen3-0.6B" 
 EMBEDDING_MODEL_NAME = "/Users/liucunyu/Documents/all_code/thu_2025/fine-tune/allcode_chemind_server/agent/vectordb/Xorbits/bge-m3"
 RERANKER_MODEL_NAME = "/Users/liucunyu/Documents/all_code/thu_2025/fine-tune/allcode_chemind_server/agent/vectordb/bge-reranker-v2-m3" 
@@ -40,10 +37,8 @@ RERANKER_MODEL_NAME = "/Users/liucunyu/Documents/all_code/thu_2025/fine-tune/all
 # Milvus 配置
 MILVUS_HOST = "localhost"
 MILVUS_PORT = "19530"
-# [修改点]：更新为新的集合名称
 MILVUS_COLLECTION_NAME = "electrolyte_papers_chunked"
 MILVUS_VECTOR_FIELD = "embeddings"
-# [修改点]：确保与入库代码一致，字段名为 content
 MILVUS_TEXT_FIELD = "content" 
 
 # Elasticsearch 配置
@@ -52,8 +47,8 @@ ES_INDEX = "electrolyte_papers_index"
 ES_TEXT_FIELD = "content"
 
 # 检索超参
-SEARCH_TOP_K = 15
-RERANK_TOP_K = 2  
+SEARCH_TOP_K = 50
+RERANK_TOP_K = 5  
 MAX_CONTEXT_CHARS = 2500 
 
 # ==============================================================================
@@ -92,11 +87,9 @@ class AdvancedRAGService:
             self.collection = Collection(MILVUS_COLLECTION_NAME)
             self.collection.load()
             
-            # 检测 Schema 字段
             self.existing_fields = [field.name for field in self.collection.schema.fields]
             logger.info(f"Milvus Schema 字段检测: {self.existing_fields}")
             
-            # [修改点]：入库代码中，Year是标量字段，其他(Title, Authors)都在 Metadata JSON 中
             self.has_year_scalar = "year" in self.existing_fields
             self.has_metadata_json = "metadata" in self.existing_fields
             
@@ -106,11 +99,10 @@ class AdvancedRAGService:
             raise e
 
     def _connect_es(self):
-        self.use_es = False  # 初始化为 False
+        self.use_es = False
         self.es_client = None
         
         try:
-            # 设置较短的超时时间，防止无服务时启动卡顿
             self.es_client = Elasticsearch(ES_HOST, request_timeout=2)
             
             if self.es_client.ping():
@@ -150,7 +142,6 @@ class AdvancedRAGService:
             json_match = re.search(r'\{.*\}', output_text, re.DOTALL)
             if json_match:
                 result = json.loads(json_match.group())
-                # 年份格式清洗
                 if result.get('year'):
                     clean_year = re.sub(r'[^\d.]', '', str(result['year']))
                     if '.' not in clean_year and len(clean_year) == 4:
@@ -171,8 +162,6 @@ class AdvancedRAGService:
         if filters.get('year'):
             filter_clauses.append({"term": {"year": filters['year']}})
             
-        # 注意：ES 里的字段名需要和你 ES 入库时的 mapping 一致
-        # 这里假设 ES 入库逻辑与 Milvus 类似，meta 信息也可能存储在 metadata 字段或展平
         body = {
             "size": SEARCH_TOP_K,
             "query": {"bool": {"must": must_clauses, "filter": filter_clauses}},
@@ -184,7 +173,6 @@ class AdvancedRAGService:
             results = []
             for hit in resp["hits"]["hits"]:
                 src = hit["_source"]
-                # 兼容处理：尝试直接获取字段，或者从 metadata 中获取
                 meta = src.get("metadata", {}) or {}
                 results.append({
                     "content": src.get(ES_TEXT_FIELD, ""),
@@ -199,67 +187,96 @@ class AdvancedRAGService:
         except Exception:
             return []
         
-# [新增功能]：上下文扩展 (Parent Retrieval / Window Expansion)
+    # [修改点]：批量查询优化的上下文扩展
     def _expand_context(self, hits: List[Dict], window_size: int = 1) -> List[Dict]:
         """
-        对 Rerank 后的结果进行上下文扩展。
-        逻辑：根据 doc_id 和 chunk_id，在 Milvus 中查询前后相邻的切片并合并。
-        前提：Milvus Schema 中需包含 doc_id (int/str) 和 chunk_id (int)。
+        对 Rerank 后的结果进行上下文扩展 (Batch Query 优化版)。
         """
         if not hits:
             return []
 
-        expanded_hits = []
-        for hit in hits:
-            # 1. 获取必要的 ID 信息
-            # 尝试从顶层字段或 metadata 中获取
+        # 1. 收集需要查询的条件
+        query_specs = [] # List of (doc_id, list_of_chunk_ids)
+        expanded_hits_map = {} # 用于按顺序映射回原结果
+
+        for idx, hit in enumerate(hits):
             meta = hit.get("meta", {})
-            doc_id = hit.get("doc_id") # 假设 retrieve 阶段已经提取到这里
-            
-            # 尝试获取 chunk_id，通常在 metadata 中
+            doc_id = hit.get("doc_id")
             chunk_id = meta.get("chunk_id")
             
-            # 如果缺少关键 ID，无法扩展，直接返回原切片
-            if doc_id is None or chunk_id is None:
-                expanded_hits.append(hit)
-                continue
+            # 只有当 doc_id 和 chunk_id 都存在时才尝试扩展
+            if doc_id is not None and chunk_id is not None:
+                try:
+                    c_id = int(chunk_id)
+                    target_ids = list(range(c_id - window_size, c_id + window_size + 1))
+                    query_specs.append((doc_id, target_ids))
+                except ValueError:
+                    pass
+            
+            expanded_hits_map[idx] = hit # 默认保留原样
 
-            try:
-                # 2. 构建窗口查询表达式
-                # 假设 chunk_id 是连续整数
-                target_ids = list(range(int(chunk_id) - window_size, int(chunk_id) + window_size + 1))
-                id_str = ",".join(str(i) for i in target_ids)
+        if not query_specs:
+            return hits
+
+        # 2. 构建批量查询表达式 (使用 OR 连接)
+        # expr: (doc_id == "A" && chunk_id in [1,2,3]) || (doc_id == "B" && chunk_id in [4,5,6])
+        expr_parts = []
+        for doc_id, t_ids in query_specs:
+            ids_str = ",".join(str(i) for i in t_ids)
+            # 注意：此处假设 doc_id 为字符串类型，需加引号
+            expr_parts.append(f'(doc_id == "{doc_id}" && chunk_id in [{ids_str}])')
+        
+        full_expr = " || ".join(expr_parts)
+
+        try:
+            # 3. 执行一次性查询
+            res = self.collection.query(
+                expr=full_expr,
+                output_fields=[MILVUS_TEXT_FIELD, "doc_id", "chunk_id"],
+                limit=len(query_specs) * (window_size * 2 + 1)
+            )
+
+            # 4. 将结果构建为字典索引: {(doc_id, chunk_id): content}
+            content_map = {}
+            for item in res:
+                d_id = item.get("doc_id")
+                c_id = item.get("chunk_id")
+                txt = item.get(MILVUS_TEXT_FIELD, "")
+                content_map[(d_id, c_id)] = txt
+
+            # 5. 组装结果
+            final_hits = []
+            for idx, hit in enumerate(hits):
+                meta = hit.get("meta", {})
+                doc_id = hit.get("doc_id")
+                chunk_id = meta.get("chunk_id")
+
+                if doc_id is not None and chunk_id is not None:
+                    try:
+                        c_id = int(chunk_id)
+                        target_ids = list(range(c_id - window_size, c_id + window_size + 1))
+                        
+                        # 按顺序收集文本
+                        merged_parts = []
+                        for tid in target_ids:
+                            # 如果 map 里有就取，没有就算了 (可能越界)
+                            part = content_map.get((doc_id, tid))
+                            if part:
+                                merged_parts.append(part)
+                        
+                        if merged_parts:
+                            hit["content"] = "\n".join(merged_parts)
+                            hit["meta"]["is_expanded"] = True
+                    except Exception as e:
+                        logger.warning(f"组装扩展内容失败: {e}")
                 
-                # 注意：这里的 expr 写法取决于 doc_id 是字符串还是数字，这里假设 doc_id 是字符串
-                # 如果 doc_id 是 int，请去掉单引号: doc_id == {doc_id}
-                expr = f'doc_id == "{doc_id}" && chunk_id in [{id_str}]'
-                
-                # 3. 查询相邻切片
-                res = self.collection.query(
-                    expr=expr,
-                    output_fields=[MILVUS_TEXT_FIELD, "chunk_id"],
-                    limit=window_size * 2 + 1
-                )
-                
-                # 4. 排序并合并文本
-                if res:
-                    # 按 chunk_id 排序确保文本顺序正确
-                    sorted_res = sorted(res, key=lambda x: x.get("chunk_id", 0))
-                    merged_content = "\n".join([item.get(MILVUS_TEXT_FIELD, "") for item in sorted_res])
-                    
-                    # 更新内容，保留原有元数据
-                    hit["content"] = merged_content
-                    # 可以在 meta 中标记已扩展
-                    hit["meta"]["is_expanded"] = True
-                    expanded_hits.append(hit)
-                else:
-                    expanded_hits.append(hit)
-                    
-            except Exception as e:
-                logger.warning(f"上下文扩展失败 doc_id={doc_id}: {e}")
-                expanded_hits.append(hit) # 失败降级
-                
-        return expanded_hits
+                final_hits.append(hit)
+            
+            return final_hits
+
+        except Exception as e:
+            logger.error(f"批量上下文扩展查询失败: {e}")
+            return hits
 
     # === 3. 混合检索主逻辑 ===
     def retrieve_and_rerank(self, query: str, analysis: Dict[str, Any]) -> List[Dict]:
@@ -276,12 +293,9 @@ class AdvancedRAGService:
             expr_list.append(f'year == "{year_filter}"')
         expr = " && ".join(expr_list) if expr_list else ""
         
-        # [修改点]：增加 chunk_id 用于后续上下文扩展
         target_output_fields = [MILVUS_TEXT_FIELD, "doc_id"] 
         if self.has_year_scalar: target_output_fields.append("year")
         if self.has_metadata_json: target_output_fields.append("metadata")
-        # 尝试请求 chunk_id，假设它可能是标量，如果不在 Schema 里 Milvus 会忽略或报错，
-        # 稳妥做法：检查字段是否存在，或者假设它在 metadata json 里
         if "chunk_id" in self.existing_fields:
             target_output_fields.append("chunk_id")
 
@@ -301,19 +315,17 @@ class AdvancedRAGService:
                     meta_json = entity.get("metadata") if self.has_metadata_json else {}
                     if not isinstance(meta_json, dict): meta_json = {}
 
-                    # [修改点]：捕获 chunk_id (优先标量，其次 metadata)
                     c_id = entity.get("chunk_id") or meta_json.get("chunk_id")
 
                     candidates.append({
                         "content": entity.get(MILVUS_TEXT_FIELD),
-                        # [修改点]：保存 doc_id 和 chunk_id 供扩展使用
                         "doc_id": entity.get("doc_id"), 
                         "meta": {
                             "title": meta_json.get("title", "Unknown Title"),
                             "authors": meta_json.get("authors", "Unknown Authors"),
                             "year": entity.get("year") or meta_json.get("year", "Unknown Year"),
                             "citations": meta_json.get("citations", "0"),
-                            "chunk_id": c_id  # 存入 meta
+                            "chunk_id": c_id 
                         }
                     })
         except Exception as e:
@@ -323,13 +335,22 @@ class AdvancedRAGService:
         es_res = self._search_es_keyword(search_kw, {"year": year_filter})
         candidates.extend(es_res)
 
-        # --- D. 去重 ---
-        # 使用内容哈希或 content 字符串本身去重
+        # --- D. 去重 (优化版) ---
+        # [修改点]：优先保留含有 chunk_id 的记录，以便后续上下文扩展
         unique_map = {}
         for c in candidates:
-            # 简单去重，保留第一个遇到的（通常向量检索排名靠前的优先）
-            if c["content"] not in unique_map:
-                unique_map[c["content"]] = c
+            content_key = c["content"]
+            # 检查当前候选是否包含 chunk_id
+            has_chunk_info = c.get("meta", {}).get("chunk_id") is not None
+            
+            if content_key not in unique_map:
+                unique_map[content_key] = c
+            else:
+                # 如果已存在的记录没有 chunk_id，而当前记录有，则替换为当前记录
+                existing_has_chunk = unique_map[content_key].get("meta", {}).get("chunk_id") is not None
+                if has_chunk_info and not existing_has_chunk:
+                    unique_map[content_key] = c
+
         unique_candidates = list(unique_map.values())
         
         if not unique_candidates: return []
@@ -347,13 +368,10 @@ class AdvancedRAGService:
                 final_score = score
                 meta = unique_candidates[i]["meta"]
                 
-                # 引用加权逻辑 (解析 citations 字符串)
                 if analysis.get("high_citation"):
                     cit_str = str(meta.get("citations", "0"))
-                    # 简单提取数字
                     cit_nums = re.findall(r'\d+', cit_str)
                     if cit_nums:
-                        # 假设 citations 可能是列表字符串，取最大值或者第一个
                         cit_val = int(max(cit_nums, key=lambda x: int(x)))
                         final_score += min(cit_val / 10000.0, 0.1) 
                 
@@ -366,16 +384,21 @@ class AdvancedRAGService:
             logger.error(f"Rerank failed: {e}")
             final_results = unique_candidates[:RERANK_TOP_K]
 
-        # [修改点]：在返回最终结果前，执行上下文扩展
-        # 仅对 Top-K (如 Top 5) 进行扩展，避免大量查询开销
         logger.info("正在执行上下文窗口扩展...")
-        expanded_results = self._expand_context(final_results, window_size=1) # 前后各取1个chunk
+        expanded_results = self._expand_context(final_results, window_size=1) 
         
         return expanded_results
 
+    # [修改点]：正则优化，支持 [1, 2] 格式
     def verify_citations(self, answer: str, context_count: int) -> Dict:
-        citations = re.findall(r'\[(\d+)\]', answer)
-        citations = [int(c) for c in citations]
+        # 匹配 [1], [1, 2], [1, 2, 3] 等格式
+        raw_matches = re.findall(r'\[([\d,\s]+)\]', answer)
+        citations = []
+        for m in raw_matches:
+            # 分割逗号，去除空格，转为整数
+            nums = [int(n.strip()) for n in m.split(',') if n.strip().isdigit()]
+            citations.extend(nums)
+            
         valid = True
         warnings = []
         if not citations: warnings.append("警告：回答中未检测到引用。")
@@ -427,7 +450,6 @@ def chat_endpoint(request: QueryRequest):
     for i, item in enumerate(top_docs):
         meta = item["meta"]
         content = item["content"]
-        # 稍微截断一下单片段，防止上下文超长
         content_snippet = content[:800] + "..." if len(content) > 800 else content
         
         entry = (
