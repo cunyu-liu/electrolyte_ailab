@@ -7,6 +7,8 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import List, Dict, Optional, Any
 
+#v3 是做了数据 chunk，加了硬件文档
+
 # === 核心库 ===
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from sentence_transformers import SentenceTransformer 

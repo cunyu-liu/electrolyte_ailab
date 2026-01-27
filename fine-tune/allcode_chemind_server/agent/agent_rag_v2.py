@@ -7,6 +7,9 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import List, Dict, Optional, Any
 
+
+# V2做了混合检索
+
 # === 核心库 ===
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from sentence_transformers import SentenceTransformer 
