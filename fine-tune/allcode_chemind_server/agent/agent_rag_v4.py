@@ -118,6 +118,32 @@ class AdvancedRAGService:
             self.use_es = False
             logger.warning(f"Elasticsearch 初始化异常: {e}")
 
+    # === 辅助：标准化 Milvus 实体输出 ===
+    def _standardize_milvus(self, hit: Any) -> Dict:
+        """
+        将 Milvus 的 Hit 对象转换为统一的字典格式。
+        """
+        entity = hit.entity
+        # 提取 metadata，增加防御性处理
+        meta_json = entity.get("metadata")
+        if not isinstance(meta_json, dict):
+            meta_json = {}
+
+        return {
+            "content": entity.get(MILVUS_TEXT_FIELD, ""),
+            "doc_id": meta_json.get("doc_id"), 
+            "meta": {
+                "title": meta_json.get("title", "Unknown Title"),
+                "authors": meta_json.get("authors", "Unknown Authors"),
+                "year": meta_json.get("year", "Unknown Year"),
+                "citations": str(meta_json.get("citations", "0")), # 统一转为 String
+                "chunk_id": meta_json.get("chunk_index"),          # 映射为统一的 chunk_id
+                "source_pdf": meta_json.get("source_pdf"),
+                "source": "Milvus",
+                "score": hit.score # 保留原始距离分数，调试用
+            }
+        }
+
     def get_embedding(self, text: str) -> List[float]:
         return self.embed_model.encode(text, normalize_embeddings=True).tolist()
 
@@ -129,12 +155,10 @@ class AdvancedRAGService:
         """
         prompt = (
             f"分析查询（涉及科研文献或硬件设施）：'{query}'。\n"
-            "提取以下信息（如果不存在则为null）：\n"
-            "1. year (年份，如 '2023')\n"
-            "2. author (作者姓名，仅提取姓氏或全名)\n"
-            "3. keywords (核心技术词、设备名称或型号)\n"
-            "4. high_citation (bool, 用户是否暗示要找'经典'、'高引'、'核心'论文)\n"
-            "必须输出严格的JSON格式: {{\"year\": ..., \"author\": ..., \"keywords\": ..., \"high_citation\": ...}}\n"
+            "提取以下信息：\n"
+            "1. year, 2. author, 3. keywords, 4. high_citation\n"
+            "5. query_type: 如果查询包含具体化学式、型号或特定术语，设为 'lexical'；如果是描述性问题，设为 'semantic'。\n"
+            "必须输出严格的JSON格式: {{\"year\": ..., \"author\": ..., \"keywords\": ..., \"high_citation\": ..., \"query_type\": ...}}\n"
             "JSON:"
         )
         
@@ -313,73 +337,55 @@ class AdvancedRAGService:
             logger.error(f"批量上下文扩展查询失败: {e}")
             return hits
 
-    # === 3. 混合检索主逻辑 ===
+    # === 3. 混合检索主逻辑 (优化版) ===
     def retrieve_and_rerank(self, query: str, analysis: Dict[str, Any]) -> List[Dict]:
         search_kw = analysis.get("keywords", query) or query
-        candidates = [] 
-
-        # --- B. Milvus 向量检索 ---
-        query_vec = self.get_embedding(search_kw)
-        expr = self._build_milvus_expr(analysis)
-        logger.info(f"Milvus Query Expr: {expr}")
         
-        target_output_fields = [MILVUS_TEXT_FIELD, "metadata"] 
-
+        # 1. 设置权重
+        q_type = analysis.get("query_type", "semantic")
+        w_sparse = 0.7 if q_type == "lexical" else 0.3
+        w_dense = 1.0 - w_sparse
+        k = 60  # RRF 常数
+        
+        # 2. 并行获取原始排名
+        # --- Milvus 稠密检索 ---
+        milvus_hits = []
         try:
-            milvus_res = self.collection.search(
-                data=[query_vec],
-                anns_field=MILVUS_VECTOR_FIELD,
+            query_vec = self.get_embedding(search_kw)
+            expr = self._build_milvus_expr(analysis)
+            res = self.collection.search(
+                data=[query_vec], anns_field=MILVUS_VECTOR_FIELD,
                 param={"metric_type": "COSINE", "params": {"nprobe": 10}},
-                limit=SEARCH_TOP_K,
-                expr=expr if expr else None,
-                output_fields=target_output_fields
+                limit=SEARCH_TOP_K, expr=expr if expr else None,
+                output_fields=[MILVUS_TEXT_FIELD, "metadata"]
             )
-            
-            if milvus_res and milvus_res[0]:
-                for hit in milvus_res[0]:
-                    entity = hit.entity
-                    # 核心改动：从 metadata 中提取所有字段
-                    meta_json = entity.get("metadata")
-                    if not isinstance(meta_json, dict): meta_json = {}
+            if res: milvus_hits = res[0]
+        except Exception as e: logger.error(f"Milvus error: {e}")
 
-                    candidates.append({
-                        "content": entity.get(MILVUS_TEXT_FIELD),
-                        "doc_id": meta_json.get("doc_id"), 
-                        "meta": {
-                            "title": meta_json.get("title", "Unknown Title"),
-                            "authors": meta_json.get("authors", "Unknown Authors"),
-                            "year": meta_json.get("year", "Unknown Year"),
-                            "citations": meta_json.get("citations", "0"), # String
-                            "chunk_id": meta_json.get("chunk_index"),
-                            "source_pdf": meta_json.get("source_pdf")
-                        }
-                    })
-        except Exception as e:
-            logger.error(f"Milvus search error: {e}")
+        # --- ES 稀疏检索 ---
+        es_hits = self._search_es_keyword(search_kw, analysis) # 确保传参正确
 
-        # --- C. ES 检索 (如有) ---
-        es_res = self._search_es_keyword(search_kw, {"year": year_filter})
-        candidates.extend(es_res)
+        # 3. 执行自适应 RRF 融合
+        # 使用 content 作为唯一键，计算融合得分
+        score_map = {} # {content_key: {"score": float, "hit": dict}}
+        
+        for rank, hit in enumerate(milvus_hits):
+            content = hit.entity.get(MILVUS_TEXT_FIELD)
+            if content not in score_map:
+                score_map[content] = {"score": 0.0, "hit": self._standardize_milvus(hit)}
+            score_map[content]["score"] += w_dense * (1.0 / (k + rank + 1))
 
-        # --- D. 去重 (优化版) ---
-        # [修改点]：优先保留含有 chunk_id 的记录，以便后续上下文扩展
-        unique_map = {}
-        for c in candidates:
-            content_key = c["content"]
-            # 检查当前候选是否包含 chunk_id
-            has_chunk_info = c.get("meta", {}).get("chunk_id") is not None
-            
-            if content_key not in unique_map:
-                unique_map[content_key] = c
-            else:
-                # 如果已存在的记录没有 chunk_id，而当前记录有，则替换为当前记录
-                existing_has_chunk = unique_map[content_key].get("meta", {}).get("chunk_id") is not None
-                if has_chunk_info and not existing_has_chunk:
-                    unique_map[content_key] = c
+        for rank, hit in enumerate(es_hits):
+            content = hit["content"]
+            if content not in score_map:
+                score_map[content] = {"score": 0.0, "hit": hit}
+            score_map[content]["score"] += w_sparse * (1.0 / (k + rank + 1))
 
-        unique_candidates = list(unique_map.values())
+        # 4. 转换为候选列表并排序
+        unique_candidates = [v["hit"] for k, v in sorted(score_map.items(), key=lambda x: x[1]["score"], reverse=True)]
         
         if not unique_candidates: return []
+
 
         # --- E. Rerank ---
         docs_text = [c["content"] for c in unique_candidates]
