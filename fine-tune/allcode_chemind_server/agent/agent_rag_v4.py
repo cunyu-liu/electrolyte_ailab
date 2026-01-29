@@ -14,7 +14,7 @@ from dataclasses import dataclass, field
 import numpy as np
 from contextlib import asynccontextmanager
 
-#v5 是完整的自动化闭环系统
+#v4 是function calling
 
 # === 核心库 ===
 from transformers import AutoModelForCausalLM, AutoTokenizer
