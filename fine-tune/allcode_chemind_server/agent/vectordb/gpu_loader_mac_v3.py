@@ -29,11 +29,11 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 class Config:
     INPUT_DIR = "/Users/liucunyu/Documents/all_code/thu_2025/fine-tune/allcode_chemind_server/agent/vectordb/paper_text_clean"
     LOG_DIR = "./logs"
-    CHECKPOINT_FILE = os.path.join(LOG_DIR, "step2_processed_v2.log")
+    CHECKPOINT_FILE = os.path.join(LOG_DIR, "step2_processed_v3.log")
     
     MILVUS_HOST = "localhost"
     MILVUS_PORT = "19530"
-    COLLECTION_NAME = "electrolyte_papers_chunked_v2"  # 建议新版本号避免冲突
+    COLLECTION_NAME = "electrolyte_papers_chunked_v3"  # 建议新版本号避免冲突
     
     EMBEDDING_MODEL = "/Users/liucunyu/Documents/all_code/thu_2025/fine-tune/allcode_chemind_server/agent/vectordb/Xorbits/bge-m3"
     

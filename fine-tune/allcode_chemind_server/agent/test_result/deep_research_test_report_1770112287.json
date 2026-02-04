@@ -1,0 +1,959 @@
+[
+  {
+    "name": "标准深度研究",
+    "description": "标准参数的深度研究请求",
+    "expected_status": 200,
+    "actual_status": 200,
+    "elapsed_time": 205.04910802841187,
+    "success": true,
+    "checks": {
+      "status_code": true,
+      "has_field_status": true,
+      "has_field_findings": true,
+      "has_field_findings_id": true,
+      "has_field_formatted_report": true,
+      "findings_count": 3,
+      "has_findings": true,
+      "finding_has_content": true,
+      "finding_has_confidence": true,
+      "findings_id_valid": true
+    },
+    "response_preview": "{\n  \"status\": \"success\",\n  \"query\": \"高电压电解液中LiPF6的分解机理及其抑制策略\",\n  \"findings\": [\n    {\n      \"content\": \"Title: Efficient Charge Separation in Porphyrin-Fullerene-Ligand Complexes\\nSection: Abstract\\nContent: Efficient Charge Separation in Porphyrin-Fullerene-Ligand Complexes\\nTatiana Da Ros,[a] Maurizio Prato,*[a] Dirk M. Guldi,*[b]\\nMarco Ruzzi,[c] and Luigi Pasimeni*[c]\\nDedicated to Professor Fred Wudl \",\n      \"source_locations\": [\n        {\n          \"doc_id\": \"463958624712022380\",\n         ",
+    "response_data": {
+      "status": "success",
+      "query": "高电压电解液中LiPF6的分解机理及其抑制策略",
+      "findings": [
+        {
+          "content": "Title: Efficient Charge Separation in Porphyrin-Fullerene-Ligand Complexes\nSection: Abstract\nContent: Efficient Charge Separation in Porphyrin-Fullerene-Ligand Complexes\nTatiana Da Ros,[a] Maurizio Prato,*[a] Dirk M. Guldi,*[b]\nMarco Ruzzi,[c] and Luigi Pasimeni*[c]\nDedicated to Professor Fred Wudl ",
+          "source_locations": [
+            {
+              "doc_id": "463958624712022380",
+              "doc_name": "Efficient Charge Separation in Porphyrin-Fullerene-Ligand Complexes",
+              "page": 0,
+              "paragraph": 0,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": null
+            }
+          ],
+          "confidence": 0.5480724573135376,
+          "exploration_depth": 2,
+          "query_path": [
+            "高电压电解液中LiPF6的分解机理及其抑制策略"
+          ],
+          "chunk_ids": [
+            "463958624712022380"
+          ]
+        },
+        {
+          "content": "Title: 6Li and15N NMR Data as a Probe for the Influence of Solvent and Intramolecular Solvation on the Solution-State Structures of Chiral Lithium Amides\nContent: 0.98 Hz (d  2.15), 2.5 s and 2.33 Hz (d  2.32). These varia-\ntions in T1 and linewidth are in accordance with previous\nstudies of chira",
+          "source_locations": [
+            {
+              "doc_id": "463958624712014064",
+              "doc_name": "6Li and15N NMR Data as a Probe for the Influence of Solvent and Intramolecular Solvation on the Solution-State Structures of Chiral Lithium Amides",
+              "page": 1,
+              "paragraph": 3,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": null
+            }
+          ],
+          "confidence": 0.5477900505065918,
+          "exploration_depth": 2,
+          "query_path": [
+            "高电压电解液中LiPF6的分解机理及其抑制策略"
+          ],
+          "chunk_ids": [
+            "463958624712014064"
+          ]
+        },
+        {
+          "content": "Title: Sterically stressed amino- and PH-functional di-t-butyl-o-phosphinophenols?Intramolecular interaction and formation of benzoxadiphospholes\nSection: Abstract\nContent: 183\nHeteroatom Chemistry\nVolume 9, Number 2, 1998\nSterically Stressed Amino- and PH-Functional\nDi-t-butyl-o-phosphinophenols—\nI",
+          "source_locations": [
+            {
+              "doc_id": "463958624712010838",
+              "doc_name": "Sterically stressed amino- and PH-functional di-t-butyl-o-phosphinophenols?Intramolecular interaction and formation of benzoxadiphospholes",
+              "page": 0,
+              "paragraph": 0,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": null
+            }
+          ],
+          "confidence": 0.5471243858337402,
+          "exploration_depth": 2,
+          "query_path": [
+            "高电压电解液中LiPF6的分解机理及其抑制策略"
+          ],
+          "chunk_ids": [
+            "463958624712010838"
+          ]
+        }
+      ],
+      "formatted_report": "### 1. Title: Efficient Charge Separation in Porphyrin-Fullerene-Ligand Complexes\nSection: Abstract\nContent...\n\nTitle: Efficient Charge Separation in Porphyrin-Fullerene-Ligand Complexes\nSection: Abstract\nContent: Efficient Charge Separation in Porphyrin-Fullerene-Ligand Complexes\nTatiana Da Ros,[a] Maurizio Prato,*[a] Dirk M. Guldi,*[b]\nMarco Ruzzi,[c] and Luigi Pasimeni*[c]\nDedicated to Professor Fred Wudl \n\n**来源**: [1.1] | **置信度**: 0.55\n\n\n---\n\n### 2. Title: 6Li and15N NMR Data as a Probe for the Influence of Solvent and Intramolecular Solvation on t...\n\nTitle: 6Li and15N NMR Data as a Probe for the Influence of Solvent and Intramolecular Solvation on the Solution-State Structures of Chiral Lithium Amides\nContent: 0.98 Hz (d  2.15), 2.5 s and 2.33 Hz (d  2.32). These varia-\ntions in T1 and linewidth are in accordance with previous\nstudies of chira\n\n**来源**: [2.1] | **置信度**: 0.55\n\n\n---\n\n### 3. Title: Sterically stressed amino- and PH-functional di-t-butyl-o-phosphinophenols?Intramolecular int...\n\nTitle: Sterically stressed amino- and PH-functional di-t-butyl-o-phosphinophenols?Intramolecular interaction and formation of benzoxadiphospholes\nSection: Abstract\nContent: 183\nHeteroatom Chemistry\nVolume 9, Number 2, 1998\nSterically Stressed Amino- and PH-Functional\nDi-t-butyl-o-phosphinophenols—\nI\n\n**来源**: [3.1] | **置信度**: 0.55\n",
+      "findings_id": "deep_research_session_cffa74621c45"
+    }
+  },
+  {
+    "name": "最大深度探索",
+    "success": false,
+    "error": "Timeout (>300s)",
+    "elapsed_time": 300.0066249370575
+  },
+  {
+    "name": "浅层快速探索",
+    "description": "最小参数的快速响应测试",
+    "expected_status": 200,
+    "actual_status": 200,
+    "elapsed_time": 228.9721291065216,
+    "success": true,
+    "checks": {
+      "status_code": true,
+      "has_field_findings": true,
+      "findings_count": 3,
+      "has_findings": true,
+      "finding_has_content": true,
+      "finding_has_confidence": true,
+      "findings_id_valid": true
+    },
+    "response_preview": "{\n  \"status\": \"success\",\n  \"query\": \"锂电池电解液导电性优化\",\n  \"findings\": [\n    {\n      \"content\": \"Title: Partial hydrogenation of unsaturated polyethers: A convenient route to curable terpolymers for lithium batteries\\nContent: over a neat improvement of conductivity, in the\\nwhole temperature range, has been observed by\\nincreasing the degree of hydrogenation and these\\npolymer electrolytes range b\",\n      \"source_locations\": [\n        {\n          \"doc_id\": \"463958624712019863\",\n          \"doc_name\": ",
+    "response_data": {
+      "status": "success",
+      "query": "锂电池电解液导电性优化",
+      "findings": [
+        {
+          "content": "Title: Partial hydrogenation of unsaturated polyethers: A convenient route to curable terpolymers for lithium batteries\nContent: over a neat improvement of conductivity, in the\nwhole temperature range, has been observed by\nincreasing the degree of hydrogenation and these\npolymer electrolytes range b",
+          "source_locations": [
+            {
+              "doc_id": "463958624712019863",
+              "doc_name": "Partial hydrogenation of unsaturated polyethers: A convenient route to curable terpolymers for lithium batteries",
+              "page": 1,
+              "paragraph": 38,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": null
+            }
+          ],
+          "confidence": 0.5965766310691833,
+          "exploration_depth": 3,
+          "query_path": [
+            "锂电池电解液导电性优化"
+          ],
+          "chunk_ids": [
+            "463958624712019863"
+          ]
+        },
+        {
+          "content": "Title: Conducting polymers: advanced materials for new design, rechargeable lithium batteries\nContent: solution but di†ering in the type of\nimmobilizing solvent and in the addition of zeolite\napproaches cited. However, the improvements, although\nof interest, are not to the level of being totally sat",
+          "source_locations": [
+            {
+              "doc_id": "463958624712007318",
+              "doc_name": "Conducting polymers: advanced materials for new design, rechargeable lithium batteries",
+              "page": 1,
+              "paragraph": 21,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": null
+            }
+          ],
+          "confidence": 0.5927504897117615,
+          "exploration_depth": 3,
+          "query_path": [
+            "锂电池电解液导电性优化"
+          ],
+          "chunk_ids": [
+            "463958624712007318"
+          ]
+        },
+        {
+          "content": "Title: Insertion Electrode Materials for Rechargeable Lithium Batteries\nContent: rechargeability and reliability of the metallic lithium elec-\ntrode: i) by using liquid electrolytes that are less reactive\ntoward lithium (e.g., highly purified or ªadditive-stabilizedº\nelectrolytes);[96,153,157,158,16",
+          "source_locations": [
+            {
+              "doc_id": "463958624712016315",
+              "doc_name": "Insertion Electrode Materials for Rechargeable Lithium Batteries",
+              "page": 1,
+              "paragraph": 30,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": null
+            }
+          ],
+          "confidence": 0.5914983749389648,
+          "exploration_depth": 3,
+          "query_path": [
+            "锂电池电解液导电性优化"
+          ],
+          "chunk_ids": [
+            "463958624712016315"
+          ]
+        }
+      ],
+      "formatted_report": "### 1. Title: Partial hydrogenation of unsaturated polyethers: A convenient route to curable terpolymers fo...\n\nTitle: Partial hydrogenation of unsaturated polyethers: A convenient route to curable terpolymers for lithium batteries\nContent: over a neat improvement of conductivity, in the\nwhole temperature range, has been observed by\nincreasing the degree of hydrogenation and these\npolymer electrolytes range b\n\n**来源**: [1.1] | **置信度**: 0.60\n\n\n---\n\n### 2. Title: Conducting polymers: advanced materials for new design, rechargeable lithium batteries\nConten...\n\nTitle: Conducting polymers: advanced materials for new design, rechargeable lithium batteries\nContent: solution but di†ering in the type of\nimmobilizing solvent and in the addition of zeolite\napproaches cited. However, the improvements, although\nof interest, are not to the level of being totally sat\n\n**来源**: [2.1] | **置信度**: 0.59\n\n\n---\n\n### 3. Title: Insertion Electrode Materials for Rechargeable Lithium Batteries\nContent: rechargeability and...\n\nTitle: Insertion Electrode Materials for Rechargeable Lithium Batteries\nContent: rechargeability and reliability of the metallic lithium elec-\ntrode: i) by using liquid electrolytes that are less reactive\ntoward lithium (e.g., highly purified or ªadditive-stabilizedº\nelectrolytes);[96,153,157,158,16\n\n**来源**: [3.1] | **置信度**: 0.59\n",
+      "findings_id": "deep_research_session_7f94ba4239d7"
+    }
+  },
+  {
+    "name": "带上下文的精准搜索",
+    "description": "测试上下文对搜索质量的提升",
+    "expected_status": 200,
+    "actual_status": 200,
+    "elapsed_time": 176.14251589775085,
+    "success": true,
+    "checks": {
+      "status_code": true,
+      "has_field_findings": true,
+      "findings_count": 4,
+      "has_findings": true,
+      "finding_has_content": true,
+      "finding_has_confidence": true,
+      "findings_id_valid": true
+    },
+    "response_preview": "{\n  \"status\": \"success\",\n  \"query\": \"溶剂化结构\",\n  \"findings\": [\n    {\n      \"content\": \"Title: Self-Assembly, Characterisation, and Crystal Structure of Multinuclear Metal Complexes of the [2×3] and [3×3] Grid-Type\\nContent: demand of the substituents are all fac-\\ntors contributing to the reluctance to\\nproduce the [3 \\u0001 3] structure. A subtle\\ninterplay between the nature of the\\nmetal, th\",\n      \"source_locations\": [\n        {\n          \"doc_id\": \"463958624712023394\",\n          \"doc_name\": ",
+    "response_data": {
+      "status": "success",
+      "query": "溶剂化结构",
+      "findings": [
+        {
+          "content": "Title: Self-Assembly, Characterisation, and Crystal Structure of Multinuclear Metal Complexes of the [2×3] and [3×3] Grid-Type\nContent: demand of the substituents are all fac-\ntors contributing to the reluctance to\nproduce the [3 \u0001 3] structure. A subtle\ninterplay between the nature of the\nmetal, th",
+          "source_locations": [
+            {
+              "doc_id": "463958624712023394",
+              "doc_name": "Self-Assembly, Characterisation, and Crystal Structure of Multinuclear Metal Complexes of the [2×3] and [3×3] Grid-Type",
+              "page": 1,
+              "paragraph": 2,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": null
+            }
+          ],
+          "confidence": 0.6430402994155884,
+          "exploration_depth": 3,
+          "query_path": [
+            "溶剂化结构",
+            "结合不同金属配合物的溶剂化结构特征，分析其配体形状、磁性与晶体结构的关联性"
+          ],
+          "chunk_ids": [
+            "463958624712023394"
+          ]
+        },
+        {
+          "content": "Title: Dinitrogen-Bond Cleavage in a Niobium Complex Supported by a Tridentate Aryloxide Ligand\nContent: diamagnetic, and its formulation was confirmed by spectro-\nscopic data and X-ray analysis. Figure 2 presents the solid\nFigure 2. Structure of 4. Methyl and tert-butyl groups of Me-L3\u0002 ligands\nand",
+          "source_locations": [
+            {
+              "doc_id": "463958624712025022",
+              "doc_name": "Dinitrogen-Bond Cleavage in a Niobium Complex Supported by a Tridentate Aryloxide Ligand",
+              "page": 1,
+              "paragraph": 12,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": null
+            }
+          ],
+          "confidence": 0.5712689757347107,
+          "exploration_depth": 2,
+          "query_path": [
+            "溶剂化结构"
+          ],
+          "chunk_ids": [
+            "463958624712025022"
+          ]
+        },
+        {
+          "content": "Title: Supramolecular Architecture and a New Mode of Pyrazolate Coordination (η3) in the First Homoleptic Lanthanide Pyrazolate Complexes\nContent: non-hydrogen atoms, H atoms constrained (x, y, z, Uiso)) after\nstructure solution and expansion by Patterson and Fourier techniques.\nCrystallographic dat",
+          "source_locations": [
+            {
+              "doc_id": "463958624712015256",
+              "doc_name": "Supramolecular Architecture and a New Mode of Pyrazolate Coordination (η3) in the First Homoleptic Lanthanide Pyrazolate Complexes",
+              "page": 1,
+              "paragraph": 16,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": null
+            }
+          ],
+          "confidence": 0.5675939321517944,
+          "exploration_depth": 2,
+          "query_path": [
+            "溶剂化结构"
+          ],
+          "chunk_ids": [
+            "463958624712015256"
+          ]
+        },
+        {
+          "content": "Title: Solution Study, Crystal Structure and Relaxivity Properties of a Gd3+ Complex with an Uncharged Macrocyclic Ligand Bearing Four Amidic Side Arms\nSection: Abstract\nContent: SHORT COMMUNICATION\nSolution Study, Crystal Structure and Relaxivity Properties of a Gd31\nComplex with an Uncharged Macro",
+          "source_locations": [
+            {
+              "doc_id": "463958624712012185",
+              "doc_name": "Solution Study, Crystal Structure and Relaxivity Properties of a Gd3+ Complex with an Uncharged Macrocyclic Ligand Bearing Four Amidic Side Arms",
+              "page": 0,
+              "paragraph": 0,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": null
+            }
+          ],
+          "confidence": 0.5673338770866394,
+          "exploration_depth": 2,
+          "query_path": [
+            "溶剂化结构"
+          ],
+          "chunk_ids": [
+            "463958624712012185"
+          ]
+        }
+      ],
+      "formatted_report": "### 1. Title: Self-Assembly, Characterisation, and Crystal Structure of Multinuclear Metal Complexes of the...\n\nTitle: Self-Assembly, Characterisation, and Crystal Structure of Multinuclear Metal Complexes of the [2×3] and [3×3] Grid-Type\nContent: demand of the substituents are all fac-\ntors contributing to the reluctance to\nproduce the [3 \u0001 3] structure. A subtle\ninterplay between the nature of the\nmetal, th\n\n**来源**: [1.1] | **置信度**: 0.64\n\n\n---\n\n### 2. Title: Dinitrogen-Bond Cleavage in a Niobium Complex Supported by a Tridentate Aryloxide Ligand\nCont...\n\nTitle: Dinitrogen-Bond Cleavage in a Niobium Complex Supported by a Tridentate Aryloxide Ligand\nContent: diamagnetic, and its formulation was confirmed by spectro-\nscopic data and X-ray analysis. Figure 2 presents the solid\nFigure 2. Structure of 4. Methyl and tert-butyl groups of Me-L3\u0002 ligands\nand\n\n**来源**: [2.1] | **置信度**: 0.57\n\n\n---\n\n### 3. Title: Supramolecular Architecture and a New Mode of Pyrazolate Coordination (η3) in the First Homol...\n\nTitle: Supramolecular Architecture and a New Mode of Pyrazolate Coordination (η3) in the First Homoleptic Lanthanide Pyrazolate Complexes\nContent: non-hydrogen atoms, H atoms constrained (x, y, z, Uiso)) after\nstructure solution and expansion by Patterson and Fourier techniques.\nCrystallographic dat\n\n**来源**: [3.1] | **置信度**: 0.57\n\n\n---\n\n### 4. Title: Solution Study, Crystal Structure and Relaxivity Properties of a Gd3+ Complex with an Uncharg...\n\nTitle: Solution Study, Crystal Structure and Relaxivity Properties of a Gd3+ Complex with an Uncharged Macrocyclic Ligand Bearing Four Amidic Side Arms\nSection: Abstract\nContent: SHORT COMMUNICATION\nSolution Study, Crystal Structure and Relaxivity Properties of a Gd31\nComplex with an Uncharged Macro\n\n**来源**: [4.1] | **置信度**: 0.57\n",
+      "findings_id": "deep_research_session_ed1c4d101e7d"
+    }
+  },
+  {
+    "name": "英文查询",
+    "description": "测试英文查询的支持",
+    "expected_status": 200,
+    "actual_status": 200,
+    "elapsed_time": 157.4219069480896,
+    "success": true,
+    "checks": {
+      "status_code": true,
+      "has_field_status": true,
+      "findings_count": 4,
+      "has_findings": true,
+      "finding_has_content": true,
+      "finding_has_confidence": true,
+      "findings_id_valid": true
+    },
+    "response_preview": "{\n  \"status\": \"success\",\n  \"query\": \"Mechanism of SEI formation in carbonate-based electrolytes\",\n  \"findings\": [\n    {\n      \"content\": \"Title: Advances in Battery Technology: Rechargeable Magnesium Batteries and Novel Negative-Electrode Materials for Lithium Ion Batteries\\nContent: reaction.[*] The film formation is asso-\\nFigure 1. a) Schematic representation of a lithium ion cell and the charge/discharge reactions at the\\nelectrodes.\",\n      \"source_locations\": [\n        {\n          \"doc_id\"",
+    "response_data": {
+      "status": "success",
+      "query": "Mechanism of SEI formation in carbonate-based electrolytes",
+      "findings": [
+        {
+          "content": "Title: Advances in Battery Technology: Rechargeable Magnesium Batteries and Novel Negative-Electrode Materials for Lithium Ion Batteries\nContent: reaction.[*] The film formation is asso-\nFigure 1. a) Schematic representation of a lithium ion cell and the charge/discharge reactions at the\nelectrodes.",
+          "source_locations": [
+            {
+              "doc_id": "463958624712021505",
+              "doc_name": "Advances in Battery Technology: Rechargeable Magnesium Batteries and Novel Negative-Electrode Materials for Lithium Ion Batteries",
+              "page": 1,
+              "paragraph": 11,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": null
+            }
+          ],
+          "confidence": 0.6031330823898315,
+          "exploration_depth": 2,
+          "query_path": [
+            "Mechanism of SEI formation in carbonate-based electrolytes"
+          ],
+          "chunk_ids": [
+            "463958624712021505"
+          ]
+        },
+        {
+          "content": "Title: Activation of C−H⋅⋅⋅Halogen (Cl, Br, and I) Hydrogen Bonds at the Organic/Inorganic Interface in Fluorinated Tetrathiafulvalenes Salts\nContent: Csp2ÿH ´´´ Cl et Csp3ÿH ´´´ Cl stabilisent ensemble l\u001dinterface\norganique/inorganique et la preÂsence des plans organiques\nTable 1. Geometrical chara",
+          "source_locations": [
+            {
+              "doc_id": "463958624712022623",
+              "doc_name": "Activation of C−H⋅⋅⋅Halogen (Cl, Br, and I) Hydrogen Bonds at the Organic/Inorganic Interface in Fluorinated Tetrathiafulvalenes Salts",
+              "page": 1,
+              "paragraph": 14,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": null
+            }
+          ],
+          "confidence": 0.5382885336875916,
+          "exploration_depth": 3,
+          "query_path": [
+            "Mechanism of SEI formation in carbonate-based electrolytes",
+            "碳酸盐基电解质中SEI形成机制与操作条件关联性研究"
+          ],
+          "chunk_ids": [
+            "463958624712022623"
+          ]
+        },
+        {
+          "content": "Title: Salt bridge interactions: Stability of the ionic and neutral complexes in the gas phase, in solution, and in proteins\nContent: 36. Warshel, A. Electrostatic basis of structure–function corre-\nlation in proteins. Acc. Chem. Res. 14:284–290, 1981.\n37. Warshel, A. Calculations of enzymatic react",
+          "source_locations": [
+            {
+              "doc_id": "463958624712007524",
+              "doc_name": "Salt bridge interactions: Stability of the ionic and neutral complexes in the gas phase, in solution, and in proteins",
+              "page": 1,
+              "paragraph": 72,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": null
+            }
+          ],
+          "confidence": 0.5342259407043457,
+          "exploration_depth": 3,
+          "query_path": [
+            "Mechanism of SEI formation in carbonate-based electrolytes",
+            "碳酸盐基电解质中SEI形成机制与操作条件关联性研究"
+          ],
+          "chunk_ids": [
+            "463958624712007524"
+          ]
+        },
+        {
+          "content": "Title: Basic Concepts of “Cation Pool” and “Cation Flow” Methods and Their Applications in Conventional and Combinatorial Organic Synthesis\nContent: potential of dialkyl ethers by virtue of orbital interaction. The\ninteraction of the nonbonding p orbital (lone pair) of the\noxygen with the C\u0002Si \u0001 orb",
+          "source_locations": [
+            {
+              "doc_id": "463958624712023362",
+              "doc_name": "Basic Concepts of “Cation Pool” and “Cation Flow” Methods and Their Applications in Conventional and Combinatorial Organic Synthesis",
+              "page": 1,
+              "paragraph": 16,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": null
+            }
+          ],
+          "confidence": 0.532447874546051,
+          "exploration_depth": 3,
+          "query_path": [
+            "Mechanism of SEI formation in carbonate-based electrolytes",
+            "碳酸盐基电解质中SEI形成机制与操作条件关联性研究"
+          ],
+          "chunk_ids": [
+            "463958624712023362"
+          ]
+        }
+      ],
+      "formatted_report": "### 1. Title: Advances in Battery Technology: Rechargeable Magnesium Batteries and Novel Negative-Electrode...\n\nTitle: Advances in Battery Technology: Rechargeable Magnesium Batteries and Novel Negative-Electrode Materials for Lithium Ion Batteries\nContent: reaction.[*] The film formation is asso-\nFigure 1. a) Schematic representation of a lithium ion cell and the charge/discharge reactions at the\nelectrodes.\n\n**来源**: [1.1] | **置信度**: 0.60\n\n\n---\n\n### 2. Title: Activation of C−H⋅⋅⋅Halogen (Cl, Br, and I) Hydrogen Bonds at the Organic/Inorganic Interface...\n\nTitle: Activation of C−H⋅⋅⋅Halogen (Cl, Br, and I) Hydrogen Bonds at the Organic/Inorganic Interface in Fluorinated Tetrathiafulvalenes Salts\nContent: Csp2ÿH ´´´ Cl et Csp3ÿH ´´´ Cl stabilisent ensemble l\u001dinterface\norganique/inorganique et la preÂsence des plans organiques\nTable 1. Geometrical chara\n\n**来源**: [2.1] | **置信度**: 0.54\n\n\n---\n\n### 3. Title: Salt bridge interactions: Stability of the ionic and neutral complexes in the gas phase, in s...\n\nTitle: Salt bridge interactions: Stability of the ionic and neutral complexes in the gas phase, in solution, and in proteins\nContent: 36. Warshel, A. Electrostatic basis of structure–function corre-\nlation in proteins. Acc. Chem. Res. 14:284–290, 1981.\n37. Warshel, A. Calculations of enzymatic react\n\n**来源**: [3.1] | **置信度**: 0.53\n\n\n---\n\n### 4. Title: Basic Concepts of “Cation Pool” and “Cation Flow” Methods and Their Applications in Conventio...\n\nTitle: Basic Concepts of “Cation Pool” and “Cation Flow” Methods and Their Applications in Conventional and Combinatorial Organic Synthesis\nContent: potential of dialkyl ethers by virtue of orbital interaction. The\ninteraction of the nonbonding p orbital (lone pair) of the\noxygen with the C\u0002Si \u0001 orb\n\n**来源**: [4.1] | **置信度**: 0.53\n",
+      "findings_id": "deep_research_session_3cf0494adf63"
+    }
+  },
+  {
+    "name": "中英混合查询",
+    "description": "测试中英文混合查询",
+    "expected_status": 200,
+    "actual_status": 200,
+    "elapsed_time": 171.27878403663635,
+    "success": true,
+    "checks": {
+      "status_code": true,
+      "has_field_status": true,
+      "findings_count": 3,
+      "has_findings": true,
+      "finding_has_content": true,
+      "finding_has_confidence": true,
+      "findings_id_valid": true
+    },
+    "response_preview": "{\n  \"status\": \"success\",\n  \"query\": \"高电压下EC/DMC溶剂体系的oxidation stability研究\",\n  \"findings\": [\n    {\n      \"content\": \"Title: Light-emitting devices based on solid electrolytes and polyelectrolytes\\nContent: the oxidation at 0.7V (versus Ag/AgCl) corre-\\nsponding to a HOMO position of 5.5eV [20]. In\\ncontrast VEH calculations give an ionization energy\\nfor the same compound of 4.72eV which agrees\\nquite well with the val\",\n      \"source_locations\": [\n        {\n          \"doc_id\": \"46395862471201351",
+    "response_data": {
+      "status": "success",
+      "query": "高电压下EC/DMC溶剂体系的oxidation stability研究",
+      "findings": [
+        {
+          "content": "Title: Light-emitting devices based on solid electrolytes and polyelectrolytes\nContent: the oxidation at 0.7V (versus Ag/AgCl) corre-\nsponding to a HOMO position of 5.5eV [20]. In\ncontrast VEH calculations give an ionization energy\nfor the same compound of 4.72eV which agrees\nquite well with the val",
+          "source_locations": [
+            {
+              "doc_id": "463958624712013512",
+              "doc_name": "Light-emitting devices based on solid electrolytes and polyelectrolytes",
+              "page": 1,
+              "paragraph": 51,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": null
+            }
+          ],
+          "confidence": 0.6403934955596924,
+          "exploration_depth": 3,
+          "query_path": [
+            "高电压下EC/DMC溶剂体系的oxidation stability研究",
+            "高电压下EC/DMC溶剂体系中不同混合聚合物的氧化稳定性比较研究"
+          ],
+          "chunk_ids": [
+            "463958624712013512"
+          ]
+        },
+        {
+          "content": "Title: New electrochemically synthesized mixed polymers with very high electrochemical stability\nContent: centration[ Furthermore\\ recurrent sweeps on this\nsecond wave show a regular decrease of its intensity\nwhen oxidation is performed on a platinum elec!\ntrode^ this is not the case with the modi_e",
+          "source_locations": [
+            {
+              "doc_id": "463958624712020992",
+              "doc_name": "New electrochemically synthesized mixed polymers with very high electrochemical stability",
+              "page": 1,
+              "paragraph": 16,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": null
+            }
+          ],
+          "confidence": 0.6379235982894897,
+          "exploration_depth": 2,
+          "query_path": [
+            "高电压下EC/DMC溶剂体系的oxidation stability研究"
+          ],
+          "chunk_ids": [
+            "463958624712020992"
+          ]
+        },
+        {
+          "content": "Title: Enhanced Contrast Ratios and Rapid Switching in Electrochromics Based on Poly(3,4-propylenedioxythiophene) Derivatives\nContent: be noted that EC metal oxides typically exhibit CEs rang-\ning from 10 to 100 cm2/C, while values observed for EC\npolymers tend to be higher. Although the CE value of",
+          "source_locations": [
+            {
+              "doc_id": "463958624712017277",
+              "doc_name": "Enhanced Contrast Ratios and Rapid Switching in Electrochromics Based on Poly(3,4-propylenedioxythiophene) Derivatives",
+              "page": 1,
+              "paragraph": 15,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": null
+            }
+          ],
+          "confidence": 0.6190748810768127,
+          "exploration_depth": 3,
+          "query_path": [
+            "高电压下EC/DMC溶剂体系的oxidation stability研究",
+            "高电压下EC/DMC溶剂体系中不同混合聚合物的氧化稳定性比较研究"
+          ],
+          "chunk_ids": [
+            "463958624712017277"
+          ]
+        }
+      ],
+      "formatted_report": "### 1. Title: Light-emitting devices based on solid electrolytes and polyelectrolytes\nContent: the oxidatio...\n\nTitle: Light-emitting devices based on solid electrolytes and polyelectrolytes\nContent: the oxidation at 0.7V (versus Ag/AgCl) corre-\nsponding to a HOMO position of 5.5eV [20]. In\ncontrast VEH calculations give an ionization energy\nfor the same compound of 4.72eV which agrees\nquite well with the val\n\n**来源**: [1.1] | **置信度**: 0.64\n\n\n---\n\n### 2. Title: New electrochemically synthesized mixed polymers with very high electrochemical stability\nCon...\n\nTitle: New electrochemically synthesized mixed polymers with very high electrochemical stability\nContent: centration[ Furthermore\\ recurrent sweeps on this\nsecond wave show a regular decrease of its intensity\nwhen oxidation is performed on a platinum elec!\ntrode^ this is not the case with the modi_e\n\n**来源**: [2.1] | **置信度**: 0.64\n\n\n---\n\n### 3. Title: Enhanced Contrast Ratios and Rapid Switching in Electrochromics Based on Poly(3,4-propylenedi...\n\nTitle: Enhanced Contrast Ratios and Rapid Switching in Electrochromics Based on Poly(3,4-propylenedioxythiophene) Derivatives\nContent: be noted that EC metal oxides typically exhibit CEs rang-\ning from 10 to 100 cm2/C, while values observed for EC\npolymers tend to be higher. Although the CE value of\n\n**来源**: [3.1] | **置信度**: 0.62\n",
+      "findings_id": "deep_research_session_0fdd4fc8fbe0"
+    }
+  },
+  {
+    "name": "空查询（边界）",
+    "description": "测试空查询的处理",
+    "expected_status": 422,
+    "actual_status": 200,
+    "elapsed_time": 234.5987992286682,
+    "success": false,
+    "checks": {
+      "status_code": false,
+      "findings_count": 4,
+      "has_findings": true,
+      "finding_has_content": true,
+      "finding_has_confidence": true,
+      "findings_id_valid": true
+    },
+    "response_preview": "{\n  \"status\": \"success\",\n  \"query\": \"\",\n  \"findings\": [\n    {\n      \"content\": \"Title: A Click Chemistry Approach to Tetrazoles by Huisgen 1,3-Dipolar Cycloaddition: Synthesis of 5-Acyltetrazoles from Azides and Acyl Cyanides We thank the National Institute of General Medical Sciences, National Institutes of Health (GM-28384), the National Science Foundation (CHE-9985553), the \",\n      \"source_locations\": [\n        {\n          \"doc_id\": \"463958624712024863\",\n          \"doc_name\": \"A Click Chemis",
+    "response_data": {
+      "status": "success",
+      "query": "",
+      "findings": [
+        {
+          "content": "Title: A Click Chemistry Approach to Tetrazoles by Huisgen 1,3-Dipolar Cycloaddition: Synthesis of 5-Acyltetrazoles from Azides and Acyl Cyanides We thank the National Institute of General Medical Sciences, National Institutes of Health (GM-28384), the National Science Foundation (CHE-9985553), the ",
+          "source_locations": [
+            {
+              "doc_id": "463958624712024863",
+              "doc_name": "A Click Chemistry Approach to Tetrazoles by Huisgen 1,3-Dipolar Cycloaddition: Synthesis of 5-Acyltetrazoles from Azides and Acyl Cyanides We thank the National Institute of General Medical Sciences, National Institutes of Health (GM-28384), the National Science Foundation (CHE-9985553), the Skaggs Institute for Chemical Biology for a Predoctoral Fellowship (Z.D.), and the W. M. Keck Foundation for financial support.",
+              "page": 0,
+              "paragraph": 0,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": null
+            }
+          ],
+          "confidence": 0.6254822611808777,
+          "exploration_depth": 2,
+          "query_path": [
+            ""
+          ],
+          "chunk_ids": [
+            "463958624712024863"
+          ]
+        },
+        {
+          "content": "Title: Synthesis of Enantioenriched 5-Alkylidene-2-cyclopentenones from Chiral Allenyl Carbamates: Generation of a Chiral Lithium Allenolate and Allylic Activation for a Conrotatory 4π-Electrocyclization\nSection: Abstract\nContent: COMMUNICATIONS\n1532\n¹ WILEY-VCH Verlag GmbH, 69451 Weinheim, Germany,",
+          "source_locations": [
+            {
+              "doc_id": "463958624712024766",
+              "doc_name": "Synthesis of Enantioenriched 5-Alkylidene-2-cyclopentenones from Chiral Allenyl Carbamates: Generation of a Chiral Lithium Allenolate and Allylic Activation for a Conrotatory 4π-Electrocyclization",
+              "page": 0,
+              "paragraph": 0,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": null
+            }
+          ],
+          "confidence": 0.6166212558746338,
+          "exploration_depth": 2,
+          "query_path": [
+            ""
+          ],
+          "chunk_ids": [
+            "463958624712024766"
+          ]
+        },
+        {
+          "content": "Title: Total Synthesis of Leucascandrolide A\nSection: Abstract\nContent: Total Synthesis of Leucascandrolide A**\nAlec Fettes and Erick M. Carreira*\nLeucascandrolide A (1), a polyoxygenated marine macro-\nlide of a new genus, was isolated in 1996 by Pietra and co-\nMe\nO\nO\nO\nO\nOMe\nO\nMe\nMe\nO\nN\nO\nN\nO\nMeO\nH",
+          "source_locations": [
+            {
+              "doc_id": "463958624712025182",
+              "doc_name": "Total Synthesis of Leucascandrolide A",
+              "page": 0,
+              "paragraph": 0,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": null
+            }
+          ],
+          "confidence": 0.6145616769790649,
+          "exploration_depth": 2,
+          "query_path": [
+            ""
+          ],
+          "chunk_ids": [
+            "463958624712025182"
+          ]
+        },
+        {
+          "content": "Title: Total Synthesis of Leucascandrolide A\nContent: [Zn(1\u0002)2] was prepared by dissolving Zn(NO3)2 (0.788 g, 2.65 mmol) in hot\nethanol (100 mL), followed by the addition of PCA (5.30 mmol), and\nbenzoic hydrazide (0.721 g, 5.30 mol). Triethylamine (5.30 mmol) was\nadded and the solution was heated to",
+          "source_locations": [
+            {
+              "doc_id": "463958624712025188",
+              "doc_name": "Total Synthesis of Leucascandrolide A",
+              "page": 1,
+              "paragraph": 5,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": null
+            }
+          ],
+          "confidence": 0.583888590335846,
+          "exploration_depth": 3,
+          "query_path": [
+            "",
+            "如何通过Huisgen1,3-二芳基加成法合成具有手性的5-烷基二环戊烯化合物，并利用其作为合成Leucascandrolide A的前体"
+          ],
+          "chunk_ids": [
+            "463958624712025188"
+          ]
+        }
+      ],
+      "formatted_report": "### 1. Title: A Click Chemistry Approach to Tetrazoles by Huisgen 1,3-Dipolar Cycloaddition: Synthesis of 5...\n\nTitle: A Click Chemistry Approach to Tetrazoles by Huisgen 1,3-Dipolar Cycloaddition: Synthesis of 5-Acyltetrazoles from Azides and Acyl Cyanides We thank the National Institute of General Medical Sciences, National Institutes of Health (GM-28384), the National Science Foundation (CHE-9985553), the \n\n**来源**: [1.1] | **置信度**: 0.63\n\n\n---\n\n### 2. Title: Synthesis of Enantioenriched 5-Alkylidene-2-cyclopentenones from Chiral Allenyl Carbamates: G...\n\nTitle: Synthesis of Enantioenriched 5-Alkylidene-2-cyclopentenones from Chiral Allenyl Carbamates: Generation of a Chiral Lithium Allenolate and Allylic Activation for a Conrotatory 4π-Electrocyclization\nSection: Abstract\nContent: COMMUNICATIONS\n1532\n¹ WILEY-VCH Verlag GmbH, 69451 Weinheim, Germany,\n\n**来源**: [2.1] | **置信度**: 0.62\n\n\n---\n\n### 3. Title: Total Synthesis of Leucascandrolide A\nSection: Abstract\nContent: Total Synthesis of Leucascan...\n\nTitle: Total Synthesis of Leucascandrolide A\nSection: Abstract\nContent: Total Synthesis of Leucascandrolide A**\nAlec Fettes and Erick M. Carreira*\nLeucascandrolide A (1), a polyoxygenated marine macro-\nlide of a new genus, was isolated in 1996 by Pietra and co-\nMe\nO\nO\nO\nO\nOMe\nO\nMe\nMe\nO\nN\nO\nN\nO\nMeO\nH\n\n**来源**: [3.1] | **置信度**: 0.61\n\n\n---\n\n### 4. Title: Total Synthesis of Leucascandrolide A\nContent: [Zn(1\u0002)2] was prepared by dissolving Zn(NO3)2 ...\n\nTitle: Total Synthesis of Leucascandrolide A\nContent: [Zn(1\u0002)2] was prepared by dissolving Zn(NO3)2 (0.788 g, 2.65 mmol) in hot\nethanol (100 mL), followed by the addition of PCA (5.30 mmol), and\nbenzoic hydrazide (0.721 g, 5.30 mol). Triethylamine (5.30 mmol) was\nadded and the solution was heated to\n\n**来源**: [4.1] | **置信度**: 0.58\n",
+      "findings_id": "deep_research_session_2455e4318980"
+    }
+  },
+  {
+    "name": "超长查询（边界）",
+    "description": "测试超长查询的截断或处理",
+    "expected_status": 200,
+    "actual_status": 200,
+    "elapsed_time": 114.12720894813538,
+    "success": true,
+    "checks": {
+      "status_code": true,
+      "has_field_status": true,
+      "findings_count": 1,
+      "has_findings": true,
+      "finding_has_content": true,
+      "finding_has_confidence": true,
+      "findings_id_valid": true
+    },
+    "response_preview": "{\n  \"status\": \"success\",\n  \"query\": \"LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiP",
+    "response_data": {
+      "status": "success",
+      "query": "LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6",
+      "findings": [
+        {
+          "content": "Title: 6Li and 15N NMR Data as a Probe for the Influence of Solvent and Intramolecular Solvation on the Solution-State Structures of Chiral Lithium Amides\nContent: \u0013\u001f5 \u001046\u0010\u001f6H,2\u00117\u0011\u001e,\u001e\u001f\u0014\u00125\u0001 \u001f\u0003 \u0016\u0003\u001f\u0003\u0016\u0010\u0011, =\u0010\u0011\u0010 3\u0003\u0011\u0016\u0010+\u0004 0\u001e6\u0011\u0013\n8/9 \u0018\u0011\u0004 -\u0004 \u0018\u0013*\u001e+,,\u0003\u001f\u0001 \u0018\u0011\u0004 (\u0004 \b\u0004 )\u0011*\u001e+,,\u0003\n\u0018\u00107\u0013\u00116\u0016\u0010\u001f6 \u00033 I\u0011\u0014\u0013\u001f\u001e1 \u000e \u0010\u0016\u001e,6\u00115\n\u0015J6\u0010\u0017\u0003\u0011",
+          "source_locations": [
+            {
+              "doc_id": "463958624712015487",
+              "doc_name": "6Li and 15N NMR Data as a Probe for the Influence of Solvent and Intramolecular Solvation on the Solution-State Structures of Chiral Lithium Amides",
+              "page": 1,
+              "paragraph": 6,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": null
+            }
+          ],
+          "confidence": 0.5553093552589417,
+          "exploration_depth": 3,
+          "query_path": [
+            "LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6"
+          ],
+          "chunk_ids": [
+            "463958624712015487"
+          ]
+        }
+      ],
+      "formatted_report": "### 1. Title: 6Li and 15N NMR Data as a Probe for the Influence of Solvent and Intramolecular Solvation on ...\n\nTitle: 6Li and 15N NMR Data as a Probe for the Influence of Solvent and Intramolecular Solvation on the Solution-State Structures of Chiral Lithium Amides\nContent: \u0013\u001f5 \u001046\u0010\u001f6H,2\u00117\u0011\u001e,\u001e\u001f\u0014\u00125\u0001 \u001f\u0003 \u0016\u0003\u001f\u0003\u0016\u0010\u0011, =\u0010\u0011\u0010 3\u0003\u0011\u0016\u0010+\u0004 0\u001e6\u0011\u0013\n8/9 \u0018\u0011\u0004 -\u0004 \u0018\u0013*\u001e+,,\u0003\u001f\u0001 \u0018\u0011\u0004 (\u0004 \b\u0004 )\u0011*\u001e+,,\u0003\n\u0018\u00107\u0013\u00116\u0016\u0010\u001f6 \u00033 I\u0011\u0014\u0013\u001f\u001e1 \u000e \u0010\u0016\u001e,6\u00115\n\u0015J6\u0010\u0017\u0003\u0011\n\n**来源**: [1.1] | **置信度**: 0.56\n",
+      "findings_id": "deep_research_session_9ed5a385e0ef"
+    }
+  },
+  {
+    "name": "特殊字符（安全）",
+    "description": "测试特殊字符的XSS防护",
+    "expected_status": 200,
+    "actual_status": 200,
+    "elapsed_time": 209.74037981033325,
+    "success": true,
+    "checks": {
+      "status_code": true,
+      "has_field_status": true,
+      "findings_count": 3,
+      "has_findings": true,
+      "finding_has_content": true,
+      "finding_has_confidence": true,
+      "findings_id_valid": true
+    },
+    "response_preview": "{\n  \"status\": \"success\",\n  \"query\": \"电解液<script>alert('xss')</script>安全性\",\n  \"findings\": [\n    {\n      \"content\": \"Title: Electrochemical sample pretreatment coupled on-line with electrospray mass spectrometry for enhanced elemental analysis\\nContent: lines, some small amount of H2O and an acid must be\\npresent in the solvent system, as well as an electrolyte to\\nprovide sufficient solvent conductivity. Particularl\",\n      \"source_locations\": [\n        {\n          \"doc_id\": \"463958624712007862\",",
+    "response_data": {
+      "status": "success",
+      "query": "电解液<script>alert('xss')</script>安全性",
+      "findings": [
+        {
+          "content": "Title: Electrochemical sample pretreatment coupled on-line with electrospray mass spectrometry for enhanced elemental analysis\nContent: lines, some small amount of H2O and an acid must be\npresent in the solvent system, as well as an electrolyte to\nprovide sufficient solvent conductivity. Particularl",
+          "source_locations": [
+            {
+              "doc_id": "463958624712007862",
+              "doc_name": "Electrochemical sample pretreatment coupled on-line with electrospray mass spectrometry for enhanced elemental analysis",
+              "page": 1,
+              "paragraph": 32,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": null
+            }
+          ],
+          "confidence": 0.5865644216537476,
+          "exploration_depth": 2,
+          "query_path": [
+            "电解液<script>alert('xss')</script>安全性"
+          ],
+          "chunk_ids": [
+            "463958624712007862"
+          ]
+        },
+        {
+          "content": "Title: Electrosurgical Burn Injuries and Their Prevention\nContent: within the ground-monitoring circuit itself. The\ncautery current passes this capacitor with little at¬\ntenuation so that the operation of the machine is\nSome form of electrolyte is recommended to lower\nskin resistance and provide a m",
+          "source_locations": [
+            {
+              "doc_id": "463958624712003816",
+              "doc_name": "Electrosurgical Burn Injuries and Their Prevention",
+              "page": 1,
+              "paragraph": 20,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": null
+            }
+          ],
+          "confidence": 0.5861281156539917,
+          "exploration_depth": 2,
+          "query_path": [
+            "电解液<script>alert('xss')</script>安全性"
+          ],
+          "chunk_ids": [
+            "463958624712003816"
+          ]
+        },
+        {
+          "content": "Title: Hydrophobic Membranes as Liquid Junction-Free Reference Electrodes\nContent: support [1]. While the hydrogel provides some protection against\nlarge biomolecules, it is well established that the silver=silver\nchloride element will be sensitive to concentration ¯uctuations of\nchloride, thiocyana",
+          "source_locations": [
+            {
+              "doc_id": "463958624712018026",
+              "doc_name": "Hydrophobic Membranes as Liquid Junction-Free Reference Electrodes",
+              "page": 1,
+              "paragraph": 5,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": null
+            }
+          ],
+          "confidence": 0.5852422118186951,
+          "exploration_depth": 2,
+          "query_path": [
+            "电解液<script>alert('xss')</script>安全性"
+          ],
+          "chunk_ids": [
+            "463958624712018026"
+          ]
+        }
+      ],
+      "formatted_report": "### 1. Title: Electrochemical sample pretreatment coupled on-line with electrospray mass spectrometry for e...\n\nTitle: Electrochemical sample pretreatment coupled on-line with electrospray mass spectrometry for enhanced elemental analysis\nContent: lines, some small amount of H2O and an acid must be\npresent in the solvent system, as well as an electrolyte to\nprovide sufficient solvent conductivity. Particularl\n\n**来源**: [1.1] | **置信度**: 0.59\n\n\n---\n\n### 2. Title: Electrosurgical Burn Injuries and Their Prevention\nContent: within the ground-monitoring circ...\n\nTitle: Electrosurgical Burn Injuries and Their Prevention\nContent: within the ground-monitoring circuit itself. The\ncautery current passes this capacitor with little at¬\ntenuation so that the operation of the machine is\nSome form of electrolyte is recommended to lower\nskin resistance and provide a m\n\n**来源**: [2.1] | **置信度**: 0.59\n\n\n---\n\n### 3. Title: Hydrophobic Membranes as Liquid Junction-Free Reference Electrodes\nContent: support [1]. Whil...\n\nTitle: Hydrophobic Membranes as Liquid Junction-Free Reference Electrodes\nContent: support [1]. While the hydrogel provides some protection against\nlarge biomolecules, it is well established that the silver=silver\nchloride element will be sensitive to concentration ¯uctuations of\nchloride, thiocyana\n\n**来源**: [3.1] | **置信度**: 0.59\n",
+      "findings_id": "deep_research_session_02e3a206bc13"
+    }
+  },
+  {
+    "name": "超范围深度",
+    "description": "测试超出范围的 depth 参数验证",
+    "expected_status": 422,
+    "actual_status": 422,
+    "elapsed_time": 0.011499166488647461,
+    "success": true,
+    "checks": {
+      "status_code": true,
+      "error_handling": true
+    },
+    "response_preview": "{\"detail\":[{\"type\":\"less_than_equal\",\"loc\":[\"body\",\"depth\"],\"msg\":\"Input should be less than or equal to 3\",\"input\":10,\"ctx\":{\"le\":3},\"url\":\"https://errors.pydantic.dev/2.10/v/less_than_equal\"}]}"
+  },
+  {
+    "name": "超范围广度",
+    "description": "测试超出范围的 breadth 参数验证",
+    "expected_status": 422,
+    "actual_status": 422,
+    "elapsed_time": 0.0028100013732910156,
+    "success": true,
+    "checks": {
+      "status_code": true,
+      "error_handling": true
+    },
+    "response_preview": "{\"detail\":[{\"type\":\"less_than_equal\",\"loc\":[\"body\",\"breadth\"],\"msg\":\"Input should be less than or equal to 5\",\"input\":100,\"ctx\":{\"le\":5},\"url\":\"https://errors.pydantic.dev/2.10/v/less_than_equal\"}]}"
+  },
+  {
+    "name": "缺失可选参数",
+    "description": "测试使用默认值",
+    "expected_status": 200,
+    "actual_status": 200,
+    "elapsed_time": 192.1035931110382,
+    "success": true,
+    "checks": {
+      "status_code": true,
+      "has_field_status": true,
+      "findings_count": 4,
+      "has_findings": true,
+      "finding_has_content": true,
+      "finding_has_confidence": true,
+      "findings_id_valid": true
+    },
+    "response_preview": "{\n  \"status\": \"success\",\n  \"query\": \"电解液添加剂\",\n  \"findings\": [\n    {\n      \"content\": \"Title: Synthesis and Application of Chiral Phosphorus Ligands Derived from TADDOL for the Asymmetric Conjugate Addition of Diethyl Zinc to Enones\\nContent: 2,2,6,6-tetraphenyl-3,5,8,10-tetraoxa-4-phosphabicyclo[5.3.0]decane\\n(15); Method B: To a stirred solution of (1R,2S)-1-naphthylcyc-\\nlohexanol (ee\",\n      \"source_locations\": [\n        {\n          \"doc_id\": \"463958624712020715\",\n          \"doc_name\": \"Synth",
+    "response_data": {
+      "status": "success",
+      "query": "电解液添加剂",
+      "findings": [
+        {
+          "content": "Title: Synthesis and Application of Chiral Phosphorus Ligands Derived from TADDOL for the Asymmetric Conjugate Addition of Diethyl Zinc to Enones\nContent: 2,2,6,6-tetraphenyl-3,5,8,10-tetraoxa-4-phosphabicyclo[5.3.0]decane\n(15); Method B: To a stirred solution of (1R,2S)-1-naphthylcyc-\nlohexanol (ee",
+          "source_locations": [
+            {
+              "doc_id": "463958624712020715",
+              "doc_name": "Synthesis and Application of Chiral Phosphorus Ligands Derived from TADDOL for the Asymmetric Conjugate Addition of Diethyl Zinc to Enones",
+              "page": 1,
+              "paragraph": 77,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": null
+            }
+          ],
+          "confidence": 0.5847588181495667,
+          "exploration_depth": 2,
+          "query_path": [
+            "电解液添加剂"
+          ],
+          "chunk_ids": [
+            "463958624712020715"
+          ]
+        },
+        {
+          "content": "Title: Electrochemical sample pretreatment coupled on-line with electrospray mass spectrometry for enhanced elemental analysis\nContent: dilution of an aqueous sample with CH3OH/electrolyte prior\nto analysis. This standard addition plot is fairly linear\n(r = 0.99152), but a wide 95% confidence interv",
+          "source_locations": [
+            {
+              "doc_id": "463958624712007886",
+              "doc_name": "Electrochemical sample pretreatment coupled on-line with electrospray mass spectrometry for enhanced elemental analysis",
+              "page": 1,
+              "paragraph": 56,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": null
+            }
+          ],
+          "confidence": 0.578052282333374,
+          "exploration_depth": 2,
+          "query_path": [
+            "电解液添加剂"
+          ],
+          "chunk_ids": [
+            "463958624712007886"
+          ]
+        },
+        {
+          "content": "Title: Synthesis of a Family of Triarylphosphanes with Fluorous Phase Affinity\nContent: (FBS),[4212] and ionic liquids.[13215]\nSince the initial reports of Vogt[16] and Ra`baı¨,[17] there\nhas been an increasing interest in the use of fluorous bi-\nphasic systems in catalysis. This technique is based ",
+          "source_locations": [
+            {
+              "doc_id": "463958624712020896",
+              "doc_name": "Synthesis of a Family of Triarylphosphanes with Fluorous Phase Affinity",
+              "page": 1,
+              "paragraph": 2,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": null
+            }
+          ],
+          "confidence": 0.5672032833099365,
+          "exploration_depth": 3,
+          "query_path": [
+            "电解液添加剂",
+            "基于手性磷配体在电解液中的应用，探讨其在异构化反应中的催化效率与选择性"
+          ],
+          "chunk_ids": [
+            "463958624712020896"
+          ]
+        },
+        {
+          "content": "Title: New Methodologies Based on Arene-Catalyzed Lithiation Reactions and Their Application to Synthetic Organic Chemistry\nContent: functionalized organolithium intermediates. Thus, reaction\nof 3-phenyl α,β-unsaturated ketones 66 with an excess of\nlithium powder and a catalytic amount of naphthalen",
+          "source_locations": [
+            {
+              "doc_id": "463958624712012803",
+              "doc_name": "New Methodologies Based on Arene-Catalyzed Lithiation Reactions and Their Application to Synthetic Organic Chemistry",
+              "page": 1,
+              "paragraph": 54,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": null
+            }
+          ],
+          "confidence": 0.5641717314720154,
+          "exploration_depth": 3,
+          "query_path": [
+            "电解液添加剂",
+            "基于手性磷配体在电解液中的应用，探讨其在异构化反应中的催化效率与选择性"
+          ],
+          "chunk_ids": [
+            "463958624712012803"
+          ]
+        }
+      ],
+      "formatted_report": "### 1. Title: Synthesis and Application of Chiral Phosphorus Ligands Derived from TADDOL for the Asymmetric...\n\nTitle: Synthesis and Application of Chiral Phosphorus Ligands Derived from TADDOL for the Asymmetric Conjugate Addition of Diethyl Zinc to Enones\nContent: 2,2,6,6-tetraphenyl-3,5,8,10-tetraoxa-4-phosphabicyclo[5.3.0]decane\n(15); Method B: To a stirred solution of (1R,2S)-1-naphthylcyc-\nlohexanol (ee\n\n**来源**: [1.1] | **置信度**: 0.58\n\n\n---\n\n### 2. Title: Electrochemical sample pretreatment coupled on-line with electrospray mass spectrometry for e...\n\nTitle: Electrochemical sample pretreatment coupled on-line with electrospray mass spectrometry for enhanced elemental analysis\nContent: dilution of an aqueous sample with CH3OH/electrolyte prior\nto analysis. This standard addition plot is fairly linear\n(r = 0.99152), but a wide 95% confidence interv\n\n**来源**: [2.1] | **置信度**: 0.58\n\n\n---\n\n### 3. Title: Synthesis of a Family of Triarylphosphanes with Fluorous Phase Affinity\nContent: (FBS),[4212]...\n\nTitle: Synthesis of a Family of Triarylphosphanes with Fluorous Phase Affinity\nContent: (FBS),[4212] and ionic liquids.[13215]\nSince the initial reports of Vogt[16] and Ra`baı¨,[17] there\nhas been an increasing interest in the use of fluorous bi-\nphasic systems in catalysis. This technique is based \n\n**来源**: [3.1] | **置信度**: 0.57\n\n\n---\n\n### 4. Title: New Methodologies Based on Arene-Catalyzed Lithiation Reactions and Their Application to Synt...\n\nTitle: New Methodologies Based on Arene-Catalyzed Lithiation Reactions and Their Application to Synthetic Organic Chemistry\nContent: functionalized organolithium intermediates. Thus, reaction\nof 3-phenyl α,β-unsaturated ketones 66 with an excess of\nlithium powder and a catalytic amount of naphthalen\n\n**来源**: [4.1] | **置信度**: 0.56\n",
+      "findings_id": "deep_research_session_57184d954a1e"
+    }
+  },
+  {
+    "name": "缺失必填参数",
+    "description": "测试缺少必填参数的处理",
+    "expected_status": 422,
+    "actual_status": 422,
+    "elapsed_time": 0.007668972015380859,
+    "success": true,
+    "checks": {
+      "status_code": true,
+      "error_handling": true
+    },
+    "response_preview": "{\"detail\":[{\"type\":\"missing\",\"loc\":[\"body\",\"query\"],\"msg\":\"Field required\",\"input\":{\"depth\":2,\"breadth\":3},\"url\":\"https://errors.pydantic.dev/2.10/v/missing\"}]}"
+  }
+]

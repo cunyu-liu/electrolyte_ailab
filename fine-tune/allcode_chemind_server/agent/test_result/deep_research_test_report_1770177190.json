@@ -1,0 +1,929 @@
+[
+  {
+    "name": "标准深度研究",
+    "description": "标准参数的深度研究请求",
+    "expected_status": 200,
+    "actual_status": 200,
+    "elapsed_time": 218.78953313827515,
+    "success": true,
+    "checks": {
+      "status_code": true,
+      "has_field_status": true,
+      "has_field_findings": true,
+      "has_field_findings_id": true,
+      "has_field_formatted_report": true,
+      "findings_count": 5,
+      "has_findings": true,
+      "finding_has_content": true,
+      "finding_has_confidence": true,
+      "findings_id_valid": true
+    },
+    "response_preview": "{\n  \"status\": \"success\",\n  \"query\": \"高电压电解液中LiPF6的分解机理及其抑制策略\",\n  \"findings\": [\n    {\n      \"content\": \"相关片段: Title: Structural Chemistry of Lithium Tetrahydroborate Ether Solvates\\nContent: in various ways. One method is to dissolve LiBH4 in the\\nLiBH4·nOEt2 (n 5 0.5, 1, 2)[7][8], LiBH4·nTHF (n 5 1,\\nrespective...\",\n      \"source_locations\": [\n        {\n          \"doc_id\": \"463958624712012058\",\n          \"doc_name\": \"Structural Chemistry of Lithium Tetrahydroborate Ether Solvates\",\n          \"pa",
+    "response_data": {
+      "status": "success",
+      "query": "高电压电解液中LiPF6的分解机理及其抑制策略",
+      "findings": [
+        {
+          "content": "相关片段: Title: Structural Chemistry of Lithium Tetrahydroborate Ether Solvates\nContent: in various ways. One method is to dissolve LiBH4 in the\nLiBH4·nOEt2 (n 5 0.5, 1, 2)[7][8], LiBH4·nTHF (n 5 1,\nrespective...",
+          "source_locations": [
+            {
+              "doc_id": "463958624712012058",
+              "doc_name": "Structural Chemistry of Lithium Tetrahydroborate Ether Solvates",
+              "page": 1,
+              "paragraph": 5,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": "Title: Structural Chemistry of Lithium Tetrahydroborate Ether Solvates\nContent: in various ways. One method is to dissolve LiBH4 in the\nLiBH4·nOEt2 (n..."
+            }
+          ],
+          "confidence": 0.4795301914215088,
+          "exploration_depth": 3,
+          "query_path": [
+            "高电压电解液中LiPF6的分解机理及其抑制策略",
+            "如何通过分析溶剂结构与氢键相互作用来理解高电压电解液中LiPF6的分解机理，并探讨其抑制策略？"
+          ],
+          "chunk_ids": [
+            "463958624712012058"
+          ]
+        },
+        {
+          "content": "相关片段: Title: The Relation between Ion Pair Structures and Reactivities of Lithium Cuprates\nContent: \u0019\u0006\u0012\u0004\u0005 .\u0002\u0006\u0005\u0007\u0004\b\u0012\f\u0019 2\b\u000f\r 0 \"-\u0014\u001f1 0\u001f &4\u0007\r\u0002\u0011$\u0019 A\u0006\t\b%\n'\u000f\u000e\b\u0002\u000b\u0011\u0006\b\u000f\u0011\b\u0019 /\b\u0007 .\u0003\u00028\u0019 *8/2\u0019 \u0012\u001f EC6 \u0011$ \u0017\u001f -\u001f \u0018\u0003\u0010\b\u000f\n\u0018\u001c\r \u001b\u0013...",
+          "source_locations": [
+            {
+              "doc_id": "463958624712022111",
+              "doc_name": "The Relation between Ion Pair Structures and Reactivities of Lithium Cuprates",
+              "page": 1,
+              "paragraph": 49,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": "Title: The Relation between Ion Pair Structures and Reactivities of Lithium Cuprates\nContent: \u0019\u0006\u0012\u0004\u0005 .\u0002\u0006\u0005\u0007\u0004\b\u0012\f\u0019 2\b\u000f\r 0 \"-\u0014\u001f1 0\u001f &4\u0007\r\u0002\u0011$\u0019 A\u0006\t\b%\n'\u000f\u000e\b\u0002\u000b\u0011\u0006..."
+            }
+          ],
+          "confidence": 0.47288475036621097,
+          "exploration_depth": 3,
+          "query_path": [
+            "高电压电解液中LiPF6的分解机理及其抑制策略",
+            "如何通过分析溶剂结构与氢键相互作用来理解高电压电解液中LiPF6的分解机理，并探讨其抑制策略？"
+          ],
+          "chunk_ids": [
+            "463958624712022111"
+          ]
+        },
+        {
+          "content": "相关片段: Title: Efficient Charge Separation in Porphyrin-Fullerene-Ligand Complexes\nSection: Abstract\nContent: Efficient Charge Separation in Porphyrin-Fullerene-Ligand Complexes\nTatiana Da Ros,[a] Maurizio Pr...",
+          "source_locations": [
+            {
+              "doc_id": "463958624712022380",
+              "doc_name": "Efficient Charge Separation in Porphyrin-Fullerene-Ligand Complexes",
+              "page": 0,
+              "paragraph": 0,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": "Title: Efficient Charge Separation in Porphyrin-Fullerene-Ligand Complexes\nSection: Abstract\nContent: Efficient Charge Separation in Porphyrin-Fullere..."
+            }
+          ],
+          "confidence": 0.4384579658508301,
+          "exploration_depth": 2,
+          "query_path": [
+            "高电压电解液中LiPF6的分解机理及其抑制策略"
+          ],
+          "chunk_ids": [
+            "463958624712022380"
+          ]
+        },
+        {
+          "content": "相关片段: Title: 6Li and15N NMR Data as a Probe for the Influence of Solvent and Intramolecular Solvation on the Solution-State Structures of Chiral Lithium Amides\nContent: 0.98 Hz (d  2.15), 2.5 s and 2.33 Hz...",
+          "source_locations": [
+            {
+              "doc_id": "463958624712014064",
+              "doc_name": "6Li and15N NMR Data as a Probe for the Influence of Solvent and Intramolecular Solvation on the Solution-State Structures of Chiral Lithium Amides",
+              "page": 1,
+              "paragraph": 3,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": "Title: 6Li and15N NMR Data as a Probe for the Influence of Solvent and Intramolecular Solvation on the Solution-State Structures of Chiral Lithium Ami..."
+            }
+          ],
+          "confidence": 0.43823204040527347,
+          "exploration_depth": 2,
+          "query_path": [
+            "高电压电解液中LiPF6的分解机理及其抑制策略"
+          ],
+          "chunk_ids": [
+            "463958624712014064"
+          ]
+        },
+        {
+          "content": "相关片段: Title: Sterically stressed amino- and PH-functional di-t-butyl-o-phosphinophenols?Intramolecular interaction and formation of benzoxadiphospholes\nSection: Abstract\nContent: 183\nHeteroatom Chemistry\nVo...",
+          "source_locations": [
+            {
+              "doc_id": "463958624712010838",
+              "doc_name": "Sterically stressed amino- and PH-functional di-t-butyl-o-phosphinophenols?Intramolecular interaction and formation of benzoxadiphospholes",
+              "page": 0,
+              "paragraph": 0,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": "Title: Sterically stressed amino- and PH-functional di-t-butyl-o-phosphinophenols?Intramolecular interaction and formation of benzoxadiphospholes\nSect..."
+            }
+          ],
+          "confidence": 0.4376995086669922,
+          "exploration_depth": 2,
+          "query_path": [
+            "高电压电解液中LiPF6的分解机理及其抑制策略"
+          ],
+          "chunk_ids": [
+            "463958624712010838"
+          ]
+        }
+      ],
+      "formatted_report": "### 1. 相关片段: Title: Structural Chemistry of Lithium Tetrahydroborate Ether Solvates\nContent: in various way...\n\n相关片段: Title: Structural Chemistry of Lithium Tetrahydroborate Ether Solvates\nContent: in various ways. One method is to dissolve LiBH4 in the\nLiBH4·nOEt2 (n 5 0.5, 1, 2)[7][8], LiBH4·nTHF (n 5 1,\nrespective...\n\n**来源**: [1.1] | **置信度**: 0.48\n\n\n---\n\n### 2. 相关片段: Title: The Relation between Ion Pair Structures and Reactivities of Lithium Cuprates\nContent: ...\n\n相关片段: Title: The Relation between Ion Pair Structures and Reactivities of Lithium Cuprates\nContent: \u0019\u0006\u0012\u0004\u0005 .\u0002\u0006\u0005\u0007\u0004\b\u0012\f\u0019 2\b\u000f\r 0 \"-\u0014\u001f1 0\u001f &4\u0007\r\u0002\u0011$\u0019 A\u0006\t\b%\n'\u000f\u000e\b\u0002\u000b\u0011\u0006\b\u000f\u0011\b\u0019 /\b\u0007 .\u0003\u00028\u0019 *8/2\u0019 \u0012\u001f EC6 \u0011$ \u0017\u001f -\u001f \u0018\u0003\u0010\b\u000f\n\u0018\u001c\r \u001b\u0013...\n\n**来源**: [2.1] | **置信度**: 0.47\n\n\n---\n\n### 3. 相关片段: Title: Efficient Charge Separation in Porphyrin-Fullerene-Ligand Complexes\nSection: Abstract\nC...\n\n相关片段: Title: Efficient Charge Separation in Porphyrin-Fullerene-Ligand Complexes\nSection: Abstract\nContent: Efficient Charge Separation in Porphyrin-Fullerene-Ligand Complexes\nTatiana Da Ros,[a] Maurizio Pr...\n\n**来源**: [3.1] | **置信度**: 0.44\n\n\n---\n\n### 4. 相关片段: Title: 6Li and15N NMR Data as a Probe for the Influence of Solvent and Intramolecular Solvatio...\n\n相关片段: Title: 6Li and15N NMR Data as a Probe for the Influence of Solvent and Intramolecular Solvation on the Solution-State Structures of Chiral Lithium Amides\nContent: 0.98 Hz (d  2.15), 2.5 s and 2.33 Hz...\n\n**来源**: [4.1] | **置信度**: 0.44\n\n\n---\n\n### 5. 相关片段: Title: Sterically stressed amino- and PH-functional di-t-butyl-o-phosphinophenols?Intramolecul...\n\n相关片段: Title: Sterically stressed amino- and PH-functional di-t-butyl-o-phosphinophenols?Intramolecular interaction and formation of benzoxadiphospholes\nSection: Abstract\nContent: 183\nHeteroatom Chemistry\nVo...\n\n**来源**: [5.1] | **置信度**: 0.44\n",
+      "findings_id": "deep_research_session_a5972223fd04"
+    }
+  },
+  {
+    "name": "最大深度探索",
+    "success": false,
+    "error": "Timeout (>300s)",
+    "elapsed_time": 300.0219461917877
+  },
+  {
+    "name": "浅层快速探索",
+    "description": "最小参数的快速响应测试",
+    "expected_status": 200,
+    "actual_status": 200,
+    "elapsed_time": 156.06504702568054,
+    "success": true,
+    "checks": {
+      "status_code": true,
+      "has_field_findings": true,
+      "findings_count": 3,
+      "has_findings": true,
+      "finding_has_content": true,
+      "finding_has_confidence": true,
+      "findings_id_valid": true
+    },
+    "response_preview": "{\n  \"status\": \"success\",\n  \"query\": \"锂电池电解液导电性优化\",\n  \"findings\": [\n    {\n      \"content\": \"相关片段: Title: Partial hydrogenation of unsaturated polyethers: A convenient route to curable terpolymers for lithium batteries\\nContent: over a neat improvement of conductivity, in the\\nwhole temperature range...\",\n      \"source_locations\": [\n        {\n          \"doc_id\": \"463958624712019863\",\n          \"doc_name\": \"Partial hydrogenation of unsaturated polyethers: A convenient route to curable terpolymers f",
+    "response_data": {
+      "status": "success",
+      "query": "锂电池电解液导电性优化",
+      "findings": [
+        {
+          "content": "相关片段: Title: Partial hydrogenation of unsaturated polyethers: A convenient route to curable terpolymers for lithium batteries\nContent: over a neat improvement of conductivity, in the\nwhole temperature range...",
+          "source_locations": [
+            {
+              "doc_id": "463958624712019863",
+              "doc_name": "Partial hydrogenation of unsaturated polyethers: A convenient route to curable terpolymers for lithium batteries",
+              "page": 1,
+              "paragraph": 38,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": "Title: Partial hydrogenation of unsaturated polyethers: A convenient route to curable terpolymers for lithium batteries\nContent: over a neat improveme..."
+            }
+          ],
+          "confidence": 0.4772613048553467,
+          "exploration_depth": 3,
+          "query_path": [
+            "锂电池电解液导电性优化"
+          ],
+          "chunk_ids": [
+            "463958624712019863"
+          ]
+        },
+        {
+          "content": "相关片段: Title: Conducting polymers: advanced materials for new design, rechargeable lithium batteries\nContent: solution but di†ering in the type of\nimmobilizing solvent and in the addition of zeolite\napproach...",
+          "source_locations": [
+            {
+              "doc_id": "463958624712007318",
+              "doc_name": "Conducting polymers: advanced materials for new design, rechargeable lithium batteries",
+              "page": 1,
+              "paragraph": 21,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": "Title: Conducting polymers: advanced materials for new design, rechargeable lithium batteries\nContent: solution but di†ering in the type of\nimmobilizi..."
+            }
+          ],
+          "confidence": 0.4742003917694092,
+          "exploration_depth": 3,
+          "query_path": [
+            "锂电池电解液导电性优化"
+          ],
+          "chunk_ids": [
+            "463958624712007318"
+          ]
+        },
+        {
+          "content": "相关片段: Title: Insertion Electrode Materials for Rechargeable Lithium Batteries\nContent: rechargeability and reliability of the metallic lithium elec-\ntrode: i) by using liquid electrolytes that are less reac...",
+          "source_locations": [
+            {
+              "doc_id": "463958624712016315",
+              "doc_name": "Insertion Electrode Materials for Rechargeable Lithium Batteries",
+              "page": 1,
+              "paragraph": 30,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": "Title: Insertion Electrode Materials for Rechargeable Lithium Batteries\nContent: rechargeability and reliability of the metallic lithium elec-\ntrode: ..."
+            }
+          ],
+          "confidence": 0.4731986999511719,
+          "exploration_depth": 3,
+          "query_path": [
+            "锂电池电解液导电性优化"
+          ],
+          "chunk_ids": [
+            "463958624712016315"
+          ]
+        }
+      ],
+      "formatted_report": "### 1. 相关片段: Title: Partial hydrogenation of unsaturated polyethers: A convenient route to curable terpolym...\n\n相关片段: Title: Partial hydrogenation of unsaturated polyethers: A convenient route to curable terpolymers for lithium batteries\nContent: over a neat improvement of conductivity, in the\nwhole temperature range...\n\n**来源**: [1.1] | **置信度**: 0.48\n\n\n---\n\n### 2. 相关片段: Title: Conducting polymers: advanced materials for new design, rechargeable lithium batteries\n...\n\n相关片段: Title: Conducting polymers: advanced materials for new design, rechargeable lithium batteries\nContent: solution but di†ering in the type of\nimmobilizing solvent and in the addition of zeolite\napproach...\n\n**来源**: [2.1] | **置信度**: 0.47\n\n\n---\n\n### 3. 相关片段: Title: Insertion Electrode Materials for Rechargeable Lithium Batteries\nContent: rechargeabili...\n\n相关片段: Title: Insertion Electrode Materials for Rechargeable Lithium Batteries\nContent: rechargeability and reliability of the metallic lithium elec-\ntrode: i) by using liquid electrolytes that are less reac...\n\n**来源**: [3.1] | **置信度**: 0.47\n",
+      "findings_id": "deep_research_session_bf3ecc701fa4"
+    }
+  },
+  {
+    "name": "带上下文的精准搜索",
+    "description": "测试上下文对搜索质量的提升",
+    "expected_status": 200,
+    "actual_status": 200,
+    "elapsed_time": 159.90695190429688,
+    "success": true,
+    "checks": {
+      "status_code": true,
+      "has_field_findings": true,
+      "findings_count": 3,
+      "has_findings": true,
+      "finding_has_content": true,
+      "finding_has_confidence": true,
+      "findings_id_valid": true
+    },
+    "response_preview": "{\n  \"status\": \"success\",\n  \"query\": \"溶剂化结构\",\n  \"findings\": [\n    {\n      \"content\": \"相关片段: Title: Dinitrogen-Bond Cleavage in a Niobium Complex Supported by a Tridentate Aryloxide Ligand\\nContent: diamagnetic, and its formulation was confirmed by spectro-\\nscopic data and X-ray analysis. Figu...\",\n      \"source_locations\": [\n        {\n          \"doc_id\": \"463958624712025022\",\n          \"doc_name\": \"Dinitrogen-Bond Cleavage in a Niobium Complex Supported by a Tridentate Aryloxide Ligand\",\n       ",
+    "response_data": {
+      "status": "success",
+      "query": "溶剂化结构",
+      "findings": [
+        {
+          "content": "相关片段: Title: Dinitrogen-Bond Cleavage in a Niobium Complex Supported by a Tridentate Aryloxide Ligand\nContent: diamagnetic, and its formulation was confirmed by spectro-\nscopic data and X-ray analysis. Figu...",
+          "source_locations": [
+            {
+              "doc_id": "463958624712025022",
+              "doc_name": "Dinitrogen-Bond Cleavage in a Niobium Complex Supported by a Tridentate Aryloxide Ligand",
+              "page": 1,
+              "paragraph": 12,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": "Title: Dinitrogen-Bond Cleavage in a Niobium Complex Supported by a Tridentate Aryloxide Ligand\nContent: diamagnetic, and its formulation was confirme..."
+            }
+          ],
+          "confidence": 0.4570151805877686,
+          "exploration_depth": 2,
+          "query_path": [
+            "溶剂化结构"
+          ],
+          "chunk_ids": [
+            "463958624712025022"
+          ]
+        },
+        {
+          "content": "相关片段: Title: Supramolecular Architecture and a New Mode of Pyrazolate Coordination (η3) in the First Homoleptic Lanthanide Pyrazolate Complexes\nContent: non-hydrogen atoms, H atoms constrained (x, y, z, Uis...",
+          "source_locations": [
+            {
+              "doc_id": "463958624712015256",
+              "doc_name": "Supramolecular Architecture and a New Mode of Pyrazolate Coordination (η3) in the First Homoleptic Lanthanide Pyrazolate Complexes",
+              "page": 1,
+              "paragraph": 16,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": "Title: Supramolecular Architecture and a New Mode of Pyrazolate Coordination (η3) in the First Homoleptic Lanthanide Pyrazolate Complexes\nContent: non..."
+            }
+          ],
+          "confidence": 0.4540751457214356,
+          "exploration_depth": 2,
+          "query_path": [
+            "溶剂化结构"
+          ],
+          "chunk_ids": [
+            "463958624712015256"
+          ]
+        },
+        {
+          "content": "相关片段: Title: Solution Study, Crystal Structure and Relaxivity Properties of a Gd3+ Complex with an Uncharged Macrocyclic Ligand Bearing Four Amidic Side Arms\nSection: Abstract\nContent: SHORT COMMUNICATION\nS...",
+          "source_locations": [
+            {
+              "doc_id": "463958624712012185",
+              "doc_name": "Solution Study, Crystal Structure and Relaxivity Properties of a Gd3+ Complex with an Uncharged Macrocyclic Ligand Bearing Four Amidic Side Arms",
+              "page": 0,
+              "paragraph": 0,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": "Title: Solution Study, Crystal Structure and Relaxivity Properties of a Gd3+ Complex with an Uncharged Macrocyclic Ligand Bearing Four Amidic Side Arm..."
+            }
+          ],
+          "confidence": 0.45386710166931155,
+          "exploration_depth": 2,
+          "query_path": [
+            "溶剂化结构"
+          ],
+          "chunk_ids": [
+            "463958624712012185"
+          ]
+        }
+      ],
+      "formatted_report": "### 1. 相关片段: Title: Dinitrogen-Bond Cleavage in a Niobium Complex Supported by a Tridentate Aryloxide Ligan...\n\n相关片段: Title: Dinitrogen-Bond Cleavage in a Niobium Complex Supported by a Tridentate Aryloxide Ligand\nContent: diamagnetic, and its formulation was confirmed by spectro-\nscopic data and X-ray analysis. Figu...\n\n**来源**: [1.1] | **置信度**: 0.46\n\n\n---\n\n### 2. 相关片段: Title: Supramolecular Architecture and a New Mode of Pyrazolate Coordination (η3) in the First...\n\n相关片段: Title: Supramolecular Architecture and a New Mode of Pyrazolate Coordination (η3) in the First Homoleptic Lanthanide Pyrazolate Complexes\nContent: non-hydrogen atoms, H atoms constrained (x, y, z, Uis...\n\n**来源**: [2.1] | **置信度**: 0.45\n\n\n---\n\n### 3. 相关片段: Title: Solution Study, Crystal Structure and Relaxivity Properties of a Gd3+ Complex with an U...\n\n相关片段: Title: Solution Study, Crystal Structure and Relaxivity Properties of a Gd3+ Complex with an Uncharged Macrocyclic Ligand Bearing Four Amidic Side Arms\nSection: Abstract\nContent: SHORT COMMUNICATION\nS...\n\n**来源**: [3.1] | **置信度**: 0.45\n",
+      "findings_id": "deep_research_session_bf85449ff8d3"
+    }
+  },
+  {
+    "name": "英文查询",
+    "description": "测试英文查询的支持",
+    "expected_status": 200,
+    "actual_status": 200,
+    "elapsed_time": 170.98468828201294,
+    "success": true,
+    "checks": {
+      "status_code": true,
+      "has_field_status": true,
+      "findings_count": 2,
+      "has_findings": true,
+      "finding_has_content": true,
+      "finding_has_confidence": true,
+      "findings_id_valid": true
+    },
+    "response_preview": "{\n  \"status\": \"success\",\n  \"query\": \"Mechanism of SEI formation in carbonate-based electrolytes\",\n  \"findings\": [\n    {\n      \"content\": \"SEI形成机制与锂金属电解质不同，碳酸盐电解质中SEI主要由锂的插入和电解质分解产物组成，而锂金属电解质中SEI覆盖导致电池寿命缩短。\",\n      \"source_locations\": [\n        {\n          \"doc_id\": \"10.1002/(sici)1521-4095(199807)10:10<725::aid-adma725>3.0.co;2-z\",\n          \"doc_name\": \"Insertion Electrode Materials for Rechargeable Lithium Batteries\",\n          \"page\": 1,\n          \"paragraph\": 61,\n          \"char_start\": 0,\n ",
+    "response_data": {
+      "status": "success",
+      "query": "Mechanism of SEI formation in carbonate-based electrolytes",
+      "findings": [
+        {
+          "content": "SEI形成机制与锂金属电解质不同，碳酸盐电解质中SEI主要由锂的插入和电解质分解产物组成，而锂金属电解质中SEI覆盖导致电池寿命缩短。",
+          "source_locations": [
+            {
+              "doc_id": "10.1002/(sici)1521-4095(199807)10:10<725::aid-adma725>3.0.co;2-z",
+              "doc_name": "Insertion Electrode Materials for Rechargeable Lithium Batteries",
+              "page": 1,
+              "paragraph": 61,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": "Title: Insertion Electrode Materials for Rechargeable Lithium Batteries\nContent: with a higher portion of rhombohedrally structured graph-\nene planes as lithium intercalation host is claimed to be ad-..."
+            },
+            {
+              "doc_id": "10.1002/(sici)1521-4095(199807)10:10<725::aid-adma725>3.0.co;2-z",
+              "doc_name": "Insertion Electrode Materials for Rechargeable Lithium Batteries",
+              "page": 1,
+              "paragraph": 26,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": "Title: Insertion Electrode Materials for Rechargeable Lithium Batteries\nContent: SEI) on Li act as a ªsieveº permeable only to the charge\ncarrier Li+ but impermeable to other electrolyte compo-\nnents...."
+            },
+            {
+              "doc_id": "10.1002/(sici)1521-4095(199807)10:10<725::aid-adma725>3.0.co;2-z",
+              "doc_name": "Insertion Electrode Materials for Rechargeable Lithium Batteries",
+              "page": 1,
+              "paragraph": 29,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": "Title: Insertion Electrode Materials for Rechargeable Lithium Batteries\nContent: breakthrough of rechargeable batteries based on metallic\nlithium failed. Upon recharge in liquid electrolytes lithium\np..."
+            },
+            {
+              "doc_id": "10.1002/(sici)1521-4095(199807)10:10<725::aid-adma725>3.0.co;2-z",
+              "doc_name": "Insertion Electrode Materials for Rechargeable Lithium Batteries",
+              "page": 1,
+              "paragraph": 25,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": "Title: Insertion Electrode Materials for Rechargeable Lithium Batteries\nContent: known battery electrolytes. Fortunately, in suitable electro-\nlytes, films of electrolyte decomposition products sponta..."
+            },
+            {
+              "doc_id": "10.1002/(sici)1521-4095(199807)10:10<725::aid-adma725>3.0.co;2-z",
+              "doc_name": "Insertion Electrode Materials for Rechargeable Lithium Batteries",
+              "page": 1,
+              "paragraph": 27,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": "Title: Insertion Electrode Materials for Rechargeable Lithium Batteries\nContent: (polymeric and oligomeric) decomposition products; and\nii) thin, compact, electrolyte impermeable films of inorgan-\nic ..."
+            },
+            {
+              "doc_id": "10.1002/(sici)1521-4095(199807)10:10<725::aid-adma725>3.0.co;2-z",
+              "doc_name": "Insertion Electrode Materials for Rechargeable Lithium Batteries",
+              "page": 1,
+              "paragraph": 70,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": "Title: Insertion Electrode Materials for Rechargeable Lithium Batteries\nContent: Fig. 10. Schematic model of the film-forming mechanism on/in graphite.\na) Before reaction. b) Formation of ternary solv..."
+            }
+          ],
+          "confidence": 0.540892231464386,
+          "exploration_depth": 3,
+          "query_path": [
+            "Mechanism of SEI formation in carbonate-based electrolytes",
+            "SEI formation mechanism in carbonate electrolytes: comparing with lithium metal electrolyte"
+          ],
+          "chunk_ids": [
+            "463958624712016346",
+            "463958624712016311",
+            "463958624712016314",
+            "463958624712016310",
+            "463958624712016312",
+            "463958624712016355"
+          ]
+        },
+        {
+          "content": "发现的具体内容，简明扼要：碳酸盐电解质中的SEI形成机制与金属锂类似，即电子绝缘层的形成。",
+          "source_locations": [
+            {
+              "doc_id": "10.1002/1439-7641(20020215)3:2<155::aid-cphc155>3.0.co;2-s",
+              "doc_name": "Advances in Battery Technology: Rechargeable Magnesium Batteries and Novel Negative-Electrode Materials for Lithium Ion Batteries",
+              "page": 1,
+              "paragraph": 9,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": "Title: Advances in Battery Technology: Rechargeable Magnesium Batteries and Novel Negative-Electrode Materials for Lithium Ion Batteries\nContent: correspond also to operation conditions\nwhich are beyo..."
+            },
+            {
+              "doc_id": "10.1002/1439-7641(20020215)3:2<155::aid-cphc155>3.0.co;2-s",
+              "doc_name": "Advances in Battery Technology: Rechargeable Magnesium Batteries and Novel Negative-Electrode Materials for Lithium Ion Batteries",
+              "page": 1,
+              "paragraph": 12,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": "Title: Advances in Battery Technology: Rechargeable Magnesium Batteries and Novel Negative-Electrode Materials for Lithium Ion Batteries\nContent: in such cells in a very basic and general way.\nThough ..."
+            }
+          ],
+          "confidence": 0.5121942579746247,
+          "exploration_depth": 2,
+          "query_path": [
+            "Mechanism of SEI formation in carbonate-based electrolytes"
+          ],
+          "chunk_ids": [
+            "463958624712021503",
+            "463958624712021506"
+          ]
+        }
+      ],
+      "formatted_report": "### 1. SEI形成机制与锂金属电解质不同，碳酸盐电解质中SEI主要由锂的插入和电解质分解产物组成，而锂金属电解质中SEI覆盖导致电池寿命缩短。...\n\nSEI形成机制与锂金属电解质不同，碳酸盐电解质中SEI主要由锂的插入和电解质分解产物组成，而锂金属电解质中SEI覆盖导致电池寿命缩短。\n\n**来源**: [1.1], [1.2], [1.3], [1.4], [1.5], [1.6] | **置信度**: 0.54\n\n\n---\n\n### 2. 发现的具体内容，简明扼要：碳酸盐电解质中的SEI形成机制与金属锂类似，即电子绝缘层的形成。...\n\n发现的具体内容，简明扼要：碳酸盐电解质中的SEI形成机制与金属锂类似，即电子绝缘层的形成。\n\n**来源**: [2.1], [2.2] | **置信度**: 0.51\n",
+      "findings_id": "deep_research_session_a67d4fbafe43"
+    }
+  },
+  {
+    "name": "中英混合查询",
+    "description": "测试中英文混合查询",
+    "expected_status": 200,
+    "actual_status": 200,
+    "elapsed_time": 122.40469288825989,
+    "success": true,
+    "checks": {
+      "status_code": true,
+      "has_field_status": true,
+      "findings_count": 2,
+      "has_findings": true,
+      "finding_has_content": true,
+      "finding_has_confidence": true,
+      "findings_id_valid": true
+    },
+    "response_preview": "{\n  \"status\": \"success\",\n  \"query\": \"高电压下EC/DMC溶剂体系的oxidation stability研究\",\n  \"findings\": [\n    {\n      \"content\": \"发现的具体内容：新型电化学合成的混合聚合物在高电压下表现出优异的氧化稳定性，且其CV数据与反应机制密切相关。\",\n      \"source_locations\": [\n        {\n          \"doc_id\": \"10.1002/1099-0712(200011/12)10:6<267::aid-amo425>3.0.co;2-7\",\n          \"doc_name\": \"New electrochemically synthesized mixed polymers with very high electrochemical stability\",\n          \"page\": 1,\n          \"paragraph\": 22,\n          \"char_start\": 0,\n          \"char_",
+    "response_data": {
+      "status": "success",
+      "query": "高电压下EC/DMC溶剂体系的oxidation stability研究",
+      "findings": [
+        {
+          "content": "发现的具体内容：新型电化学合成的混合聚合物在高电压下表现出优异的氧化稳定性，且其CV数据与反应机制密切相关。",
+          "source_locations": [
+            {
+              "doc_id": "10.1002/1099-0712(200011/12)10:6<267::aid-amo425>3.0.co;2-7",
+              "doc_name": "New electrochemically synthesized mixed polymers with very high electrochemical stability",
+              "page": 1,
+              "paragraph": 22,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": "Title: New electrochemically synthesized mixed polymers with very high electrochemical stability\nContent: trode modi_er in a large potential range[ Actually\\\nthe exact structure of the mixed polymer i..."
+            },
+            {
+              "doc_id": "10.1002/1521-3935(20020101)203:2<354::aid-macp354>3.0.co;2-b",
+              "doc_name": "Conductivity, Thermal Stability and Morphology of a New Z-IOPE Inorganic-Organic Network with the Formula [FexSny(CH3)2y(CN)zClv(C2nH4n+2On+1)Kl]",
+              "page": 1,
+              "paragraph": 1,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": "Title: Conductivity, Thermal Stability and Morphology of a New Z-IOPE Inorganic-Organic Network with the Formula [FexSny(CH3)2y(CN)zClv(C2nH4n+2On+1)Kl]\nContent: their tremendous potential application..."
+            }
+          ],
+          "confidence": 0.5421907424926758,
+          "exploration_depth": 3,
+          "query_path": [
+            "高电压下EC/DMC溶剂体系的oxidation stability研究",
+            "探讨新型电化学合成的混合聚合物在高电压下的氧化稳定性及其CV数据对反应机制的影响"
+          ],
+          "chunk_ids": [
+            "463958624712020998",
+            "463958624712025607"
+          ]
+        },
+        {
+          "content": "相关片段: Title: New electrochemically synthesized mixed polymers with very high electrochemical stability\nContent: centration[ Furthermore\\ recurrent sweeps on this\nsecond wave show a regular decrease of its i...",
+          "source_locations": [
+            {
+              "doc_id": "463958624712020992",
+              "doc_name": "New electrochemically synthesized mixed polymers with very high electrochemical stability",
+              "page": 1,
+              "paragraph": 16,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": "Title: New electrochemically synthesized mixed polymers with very high electrochemical stability\nContent: centration[ Furthermore\\ recurrent sweeps on..."
+            }
+          ],
+          "confidence": 0.5103388786315918,
+          "exploration_depth": 2,
+          "query_path": [
+            "高电压下EC/DMC溶剂体系的oxidation stability研究"
+          ],
+          "chunk_ids": [
+            "463958624712020992"
+          ]
+        }
+      ],
+      "formatted_report": "### 1. 发现的具体内容：新型电化学合成的混合聚合物在高电压下表现出优异的氧化稳定性，且其CV数据与反应机制密切相关。...\n\n发现的具体内容：新型电化学合成的混合聚合物在高电压下表现出优异的氧化稳定性，且其CV数据与反应机制密切相关。\n\n**来源**: [1.1], [1.2] | **置信度**: 0.54\n\n\n---\n\n### 2. 相关片段: Title: New electrochemically synthesized mixed polymers with very high electrochemical stabili...\n\n相关片段: Title: New electrochemically synthesized mixed polymers with very high electrochemical stability\nContent: centration[ Furthermore\\ recurrent sweeps on this\nsecond wave show a regular decrease of its i...\n\n**来源**: [2.1] | **置信度**: 0.51\n",
+      "findings_id": "deep_research_session_f9baa196041f"
+    }
+  },
+  {
+    "name": "空查询（边界）",
+    "description": "测试空查询的处理",
+    "expected_status": 422,
+    "actual_status": 200,
+    "elapsed_time": 127.69021391868591,
+    "success": false,
+    "checks": {
+      "status_code": false,
+      "findings_count": 2,
+      "has_findings": true,
+      "finding_has_content": true,
+      "finding_has_confidence": true,
+      "findings_id_valid": true
+    },
+    "response_preview": "{\n  \"status\": \"success\",\n  \"query\": \"\",\n  \"findings\": [\n    {\n      \"content\": \"发现的具体内容，简明扼要\",\n      \"source_locations\": [\n        {\n          \"doc_id\": \"10.1002/1521-3773(20020617)41:12<2113::aid-anie2113>3.0.co;2-q\",\n          \"doc_name\": \"A Click Chemistry Approach to Tetrazoles by Huisgen 1,3-Dipolar Cycloaddition: Synthesis of 5-Acyltetrazoles from Azides and Acyl Cyanides We thank the National Institute of General Medical Sciences, National Institutes of Health (GM-28384), the National Sci",
+    "response_data": {
+      "status": "success",
+      "query": "",
+      "findings": [
+        {
+          "content": "发现的具体内容，简明扼要",
+          "source_locations": [
+            {
+              "doc_id": "10.1002/1521-3773(20020617)41:12<2113::aid-anie2113>3.0.co;2-q",
+              "doc_name": "A Click Chemistry Approach to Tetrazoles by Huisgen 1,3-Dipolar Cycloaddition: Synthesis of 5-Acyltetrazoles from Azides and Acyl Cyanides We thank the National Institute of General Medical Sciences, National Institutes of Health (GM-28384), the National Science Foundation (CHE-9985553), the Skaggs Institute for Chemical Biology for a Predoctoral Fellowship (Z.D.), and the W. M. Keck Foundation for financial support.",
+              "page": 0,
+              "paragraph": 0,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": "Title: A Click Chemistry Approach to Tetrazoles by Huisgen 1,3-Dipolar Cycloaddition: Synthesis of 5-Acyltetrazoles from Azides and Acyl Cyanides We thank the National Institute of General Medical Sci..."
+            },
+            {
+              "doc_id": "10.1002/1521-3773(20020503)41:9<1532::aid-anie1532>3.0.co;2-j",
+              "doc_name": "Synthesis of Enantioenriched 5-Alkylidene-2-cyclopentenones from Chiral Allenyl Carbamates: Generation of a Chiral Lithium Allenolate and Allylic Activation for a Conrotatory 4π-Electrocyclization",
+              "page": 0,
+              "paragraph": 0,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": "Title: Synthesis of Enantioenriched 5-Alkylidene-2-cyclopentenones from Chiral Allenyl Carbamates: Generation of a Chiral Lithium Allenolate and Allylic Activation for a Conrotatory 4π-Electrocyclizat..."
+            }
+          ],
+          "confidence": 0.5549591302871705,
+          "exploration_depth": 2,
+          "query_path": [
+            ""
+          ],
+          "chunk_ids": [
+            "463958624712024863",
+            "463958624712024766"
+          ]
+        },
+        {
+          "content": "发现的具体内容：文献中通过优化计算步骤（如Q-M-M循环）和减少计算时间（如减少MM步骤数）来提高效率，但未明确提及量子纠缠技术。",
+          "source_locations": [
+            {
+              "doc_id": "10.1002/1096-987x(200012)21:16<1442::aid-jcc3>3.0.co;2-o",
+              "doc_name": "A mixed quantum mechanics/molecular mechanics (QM/MM) method for large-scale modeling of chemistry in protein environments",
+              "page": 1,
+              "paragraph": 73,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": "Title: A mixed quantum mechanics/molecular mechanics (QM/MM) method for large-scale modeling of chemistry in protein environments\nContent: The P-450 optimization was run on 6 SGI-R10k\nnodes in ∼1 week..."
+            },
+            {
+              "doc_id": "10.1002/1096-987x(200012)21:16<1442::aid-jcc3>3.0.co;2-o",
+              "doc_name": "A mixed quantum mechanics/molecular mechanics (QM/MM) method for large-scale modeling of chemistry in protein environments",
+              "page": 1,
+              "paragraph": 65,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": "Title: A mixed quantum mechanics/molecular mechanics (QM/MM) method for large-scale modeling of chemistry in protein environments\nContent: that the adiabatic procedure is within a factor of 2\nas efﬁci..."
+            }
+          ],
+          "confidence": 0.5032958686351776,
+          "exploration_depth": 3,
+          "query_path": [
+            "",
+            "如何通过量子纠缠技术优化信息传递效率？"
+          ],
+          "chunk_ids": [
+            "463958624712018486",
+            "463958624712018478"
+          ]
+        }
+      ],
+      "formatted_report": "### 1. 发现的具体内容，简明扼要...\n\n发现的具体内容，简明扼要\n\n**来源**: [1.1], [1.2] | **置信度**: 0.55\n\n\n---\n\n### 2. 发现的具体内容：文献中通过优化计算步骤（如Q-M-M循环）和减少计算时间（如减少MM步骤数）来提高效率，但未明确提及量子纠缠技术。...\n\n发现的具体内容：文献中通过优化计算步骤（如Q-M-M循环）和减少计算时间（如减少MM步骤数）来提高效率，但未明确提及量子纠缠技术。\n\n**来源**: [2.1], [2.2] | **置信度**: 0.50\n",
+      "findings_id": "deep_research_session_388fef33fc4d"
+    }
+  },
+  {
+    "name": "超长查询（边界）",
+    "description": "测试超长查询的截断或处理",
+    "expected_status": 200,
+    "actual_status": 200,
+    "elapsed_time": 126.19371390342712,
+    "success": true,
+    "checks": {
+      "status_code": true,
+      "has_field_status": true,
+      "findings_count": 1,
+      "has_findings": true,
+      "finding_has_content": true,
+      "finding_has_confidence": true,
+      "findings_id_valid": true
+    },
+    "response_preview": "{\n  \"status\": \"success\",\n  \"query\": \"LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiP",
+    "response_data": {
+      "status": "success",
+      "query": "LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6",
+      "findings": [
+        {
+          "content": "相关片段: Title: 6Li and 15N NMR Data as a Probe for the Influence of Solvent and Intramolecular Solvation on the Solution-State Structures of Chiral Lithium Amides\nContent: \u0013\u001f5 \u001046\u0010\u001f6H,2\u00117\u0011\u001e,\u001e\u001f\u0014\u00125\u0001 \u001f\u0003 \u0016\u0003\u001f\u0003\u0016\u0010\u0011,...",
+          "source_locations": [
+            {
+              "doc_id": "463958624712015487",
+              "doc_name": "6Li and 15N NMR Data as a Probe for the Influence of Solvent and Intramolecular Solvation on the Solution-State Structures of Chiral Lithium Amides",
+              "page": 1,
+              "paragraph": 6,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": "Title: 6Li and 15N NMR Data as a Probe for the Influence of Solvent and Intramolecular Solvation on the Solution-State Structures of Chiral Lithium Am..."
+            }
+          ],
+          "confidence": 0.4442474842071533,
+          "exploration_depth": 3,
+          "query_path": [
+            "LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6LiPF6"
+          ],
+          "chunk_ids": [
+            "463958624712015487"
+          ]
+        }
+      ],
+      "formatted_report": "### 1. 相关片段: Title: 6Li and 15N NMR Data as a Probe for the Influence of Solvent and Intramolecular Solvati...\n\n相关片段: Title: 6Li and 15N NMR Data as a Probe for the Influence of Solvent and Intramolecular Solvation on the Solution-State Structures of Chiral Lithium Amides\nContent: \u0013\u001f5 \u001046\u0010\u001f6H,2\u00117\u0011\u001e,\u001e\u001f\u0014\u00125\u0001 \u001f\u0003 \u0016\u0003\u001f\u0003\u0016\u0010\u0011,...\n\n**来源**: [1.1] | **置信度**: 0.44\n",
+      "findings_id": "deep_research_session_bbc19e644c60"
+    }
+  },
+  {
+    "name": "特殊字符（安全）",
+    "description": "测试特殊字符的XSS防护",
+    "expected_status": 200,
+    "actual_status": 200,
+    "elapsed_time": 132.92085981369019,
+    "success": true,
+    "checks": {
+      "status_code": true,
+      "has_field_status": true,
+      "findings_count": 2,
+      "has_findings": true,
+      "finding_has_content": true,
+      "finding_has_confidence": true,
+      "findings_id_valid": true
+    },
+    "response_preview": "{\n  \"status\": \"success\",\n  \"query\": \"电解液<script>alert('xss')</script>安全性\",\n  \"findings\": [\n    {\n      \"content\": \"文献[1]指出电解液中酸和电解质的浓度在安全范围内，且不会对皮肤造成问题。\",\n      \"source_locations\": [\n        {\n          \"doc_id\": \"10.1002/(sici)1097-0231(19981115)12:21<1644::aid-rcm377>3.0.co;2-7\",\n          \"doc_name\": \"Electrochemical sample pretreatment coupled on-line with electrospray mass spectrometry for enhanced elemental analysis\",\n          \"page\": 1,\n          \"paragraph\": 32,\n          \"char_start\": ",
+    "response_data": {
+      "status": "success",
+      "query": "电解液<script>alert('xss')</script>安全性",
+      "findings": [
+        {
+          "content": "文献[1]指出电解液中酸和电解质的浓度在安全范围内，且不会对皮肤造成问题。",
+          "source_locations": [
+            {
+              "doc_id": "10.1002/(sici)1097-0231(19981115)12:21<1644::aid-rcm377>3.0.co;2-7",
+              "doc_name": "Electrochemical sample pretreatment coupled on-line with electrospray mass spectrometry for enhanced elemental analysis",
+              "page": 1,
+              "paragraph": 32,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": "Title: Electrochemical sample pretreatment coupled on-line with electrospray mass spectrometry for enhanced elemental analysis\nContent: lines, some small amount of H2O and an acid must be\npresent in t..."
+            }
+          ],
+          "confidence": 0.5279079794883729,
+          "exploration_depth": 2,
+          "query_path": [
+            "电解液<script>alert('xss')</script>安全性"
+          ],
+          "chunk_ids": [
+            "463958624712007862"
+          ]
+        },
+        {
+          "content": "文献[4]指出商业HT-Na/S电池在EV运输应用中被认为是不安全的，这可能与电解液的稳定性有关。",
+          "source_locations": [
+            {
+              "doc_id": "10.1002/(issn)1614-6840",
+              "doc_name": "Advanced Energy Materials",
+              "page": 1,
+              "paragraph": 15,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": "Title: Advanced Energy Materials\nContent: safety reasons, the commercial HT-Na/S batteries are considered to be unfavourable for\ntransportation application in EVs, and they are exploited predominantly..."
+            }
+          ],
+          "confidence": 0.5141775906085968,
+          "exploration_depth": 3,
+          "query_path": [
+            "电解液<script>alert('xss')</script>安全性",
+            "电解液<script>alert('xss')</script>安全性 详细机制"
+          ],
+          "chunk_ids": [
+            "463958624712005841"
+          ]
+        }
+      ],
+      "formatted_report": "### 1. 文献[1]指出电解液中酸和电解质的浓度在安全范围内，且不会对皮肤造成问题。...\n\n文献[1]指出电解液中酸和电解质的浓度在安全范围内，且不会对皮肤造成问题。\n\n**来源**: [1.1] | **置信度**: 0.53\n\n\n---\n\n### 2. 文献[4]指出商业HT-Na/S电池在EV运输应用中被认为是不安全的，这可能与电解液的稳定性有关。...\n\n文献[4]指出商业HT-Na/S电池在EV运输应用中被认为是不安全的，这可能与电解液的稳定性有关。\n\n**来源**: [2.1] | **置信度**: 0.51\n",
+      "findings_id": "deep_research_session_0964e6bfa004"
+    }
+  },
+  {
+    "name": "超范围深度",
+    "description": "测试超出范围的 depth 参数验证",
+    "expected_status": 422,
+    "actual_status": 422,
+    "elapsed_time": 0.013387918472290039,
+    "success": true,
+    "checks": {
+      "status_code": true,
+      "error_handling": true
+    },
+    "response_preview": "{\"detail\":[{\"type\":\"less_than_equal\",\"loc\":[\"body\",\"depth\"],\"msg\":\"Input should be less than or equal to 3\",\"input\":10,\"ctx\":{\"le\":3},\"url\":\"https://errors.pydantic.dev/2.10/v/less_than_equal\"}]}"
+  },
+  {
+    "name": "超范围广度",
+    "description": "测试超出范围的 breadth 参数验证",
+    "expected_status": 422,
+    "actual_status": 422,
+    "elapsed_time": 0.0010998249053955078,
+    "success": true,
+    "checks": {
+      "status_code": true,
+      "error_handling": true
+    },
+    "response_preview": "{\"detail\":[{\"type\":\"less_than_equal\",\"loc\":[\"body\",\"breadth\"],\"msg\":\"Input should be less than or equal to 5\",\"input\":100,\"ctx\":{\"le\":5},\"url\":\"https://errors.pydantic.dev/2.10/v/less_than_equal\"}]}"
+  },
+  {
+    "name": "缺失可选参数",
+    "description": "测试使用默认值",
+    "expected_status": 200,
+    "actual_status": 200,
+    "elapsed_time": 171.98491978645325,
+    "success": true,
+    "checks": {
+      "status_code": true,
+      "has_field_status": true,
+      "findings_count": 3,
+      "has_findings": true,
+      "finding_has_content": true,
+      "finding_has_confidence": true,
+      "findings_id_valid": true
+    },
+    "response_preview": "{\n  \"status\": \"success\",\n  \"query\": \"电解液添加剂\",\n  \"findings\": [\n    {\n      \"content\": \"发现的具体内容：文献[2]和[3]通过电化学预处理优化电解液中的手性磷配体合成，具体表现为通过电极修饰和配体结构调控提高合成效率。\",\n      \"source_locations\": [\n        {\n          \"doc_id\": \"10.1002/(sici)1521-4109(199906)11:8<565::aid-elan565>3.0.co;2-v\",\n          \"doc_name\": \"Electropolymerization of Tetrakis(o-aminophenyl)porphyrin and Relevant Transition Metal Complexes from Aqueous Solution. The Resulting Modified Electrodes as Potentiometric Sensors\",\n          \"page",
+    "response_data": {
+      "status": "success",
+      "query": "电解液添加剂",
+      "findings": [
+        {
+          "content": "发现的具体内容：文献[2]和[3]通过电化学预处理优化电解液中的手性磷配体合成，具体表现为通过电极修饰和配体结构调控提高合成效率。",
+          "source_locations": [
+            {
+              "doc_id": "10.1002/(sici)1521-4109(199906)11:8<565::aid-elan565>3.0.co;2-v",
+              "doc_name": "Electropolymerization of Tetrakis(o-aminophenyl)porphyrin and Relevant Transition Metal Complexes from Aqueous Solution. The Resulting Modified Electrodes as Potentiometric Sensors",
+              "page": 1,
+              "paragraph": 5,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": "Title: Electropolymerization of Tetrakis(o-aminophenyl)porphyrin and Relevant Transition Metal Complexes from Aqueous Solution. The Resulting Modified Electrodes as Potentiometric Sensors\nContent: tet..."
+            },
+            {
+              "doc_id": "10.1002/1521-3765(20010119)7:2<490::aid-chem490>3.0.co;2-i",
+              "doc_name": "The Facile Preparation of Weakly Coordinating Anions: Structure and Characterisation of Silverpolyfluoroalkoxyaluminates AgAl(ORF)4, Calculation of the Alkoxide Ion Affinity",
+              "page": 0,
+              "paragraph": 0,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": "Title: The Facile Preparation of Weakly Coordinating Anions: Structure and Characterisation of Silverpolyfluoroalkoxyaluminates AgAl(ORF)4, Calculation of the Alkoxide Ion Affinity\nSection: Abstract\nC..."
+            }
+          ],
+          "confidence": 0.5190320134162903,
+          "exploration_depth": 3,
+          "query_path": [
+            "电解液添加剂",
+            "如何通过电化学预处理优化电解液中的手性磷配体合成"
+          ],
+          "chunk_ids": [
+            "463958624712017976",
+            "463958624712022216"
+          ]
+        },
+        {
+          "content": "相关片段: Title: Synthesis and Application of Chiral Phosphorus Ligands Derived from TADDOL for the Asymmetric Conjugate Addition of Diethyl Zinc to Enones\nContent: 2,2,6,6-tetraphenyl-3,5,8,10-tetraoxa-4-phosp...",
+          "source_locations": [
+            {
+              "doc_id": "463958624712020715",
+              "doc_name": "Synthesis and Application of Chiral Phosphorus Ligands Derived from TADDOL for the Asymmetric Conjugate Addition of Diethyl Zinc to Enones",
+              "page": 1,
+              "paragraph": 77,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": "Title: Synthesis and Application of Chiral Phosphorus Ligands Derived from TADDOL for the Asymmetric Conjugate Addition of Diethyl Zinc to Enones\nCont..."
+            }
+          ],
+          "confidence": 0.4678070545196533,
+          "exploration_depth": 2,
+          "query_path": [
+            "电解液添加剂"
+          ],
+          "chunk_ids": [
+            "463958624712020715"
+          ]
+        },
+        {
+          "content": "相关片段: Title: Electrochemical sample pretreatment coupled on-line with electrospray mass spectrometry for enhanced elemental analysis\nContent: dilution of an aqueous sample with CH3OH/electrolyte prior\nto an...",
+          "source_locations": [
+            {
+              "doc_id": "463958624712007886",
+              "doc_name": "Electrochemical sample pretreatment coupled on-line with electrospray mass spectrometry for enhanced elemental analysis",
+              "page": 1,
+              "paragraph": 56,
+              "char_start": 0,
+              "char_end": 0,
+              "section_title": null,
+              "surrounding_context": "Title: Electrochemical sample pretreatment coupled on-line with electrospray mass spectrometry for enhanced elemental analysis\nContent: dilution of an..."
+            }
+          ],
+          "confidence": 0.46244182586669924,
+          "exploration_depth": 2,
+          "query_path": [
+            "电解液添加剂"
+          ],
+          "chunk_ids": [
+            "463958624712007886"
+          ]
+        }
+      ],
+      "formatted_report": "### 1. 发现的具体内容：文献[2]和[3]通过电化学预处理优化电解液中的手性磷配体合成，具体表现为通过电极修饰和配体结构调控提高合成效率。...\n\n发现的具体内容：文献[2]和[3]通过电化学预处理优化电解液中的手性磷配体合成，具体表现为通过电极修饰和配体结构调控提高合成效率。\n\n**来源**: [1.1], [1.2] | **置信度**: 0.52\n\n\n---\n\n### 2. 相关片段: Title: Synthesis and Application of Chiral Phosphorus Ligands Derived from TADDOL for the Asym...\n\n相关片段: Title: Synthesis and Application of Chiral Phosphorus Ligands Derived from TADDOL for the Asymmetric Conjugate Addition of Diethyl Zinc to Enones\nContent: 2,2,6,6-tetraphenyl-3,5,8,10-tetraoxa-4-phosp...\n\n**来源**: [2.1] | **置信度**: 0.47\n\n\n---\n\n### 3. 相关片段: Title: Electrochemical sample pretreatment coupled on-line with electrospray mass spectrometry...\n\n相关片段: Title: Electrochemical sample pretreatment coupled on-line with electrospray mass spectrometry for enhanced elemental analysis\nContent: dilution of an aqueous sample with CH3OH/electrolyte prior\nto an...\n\n**来源**: [3.1] | **置信度**: 0.46\n",
+      "findings_id": "deep_research_session_00b40093c1c0"
+    }
+  },
+  {
+    "name": "缺失必填参数",
+    "description": "测试缺少必填参数的处理",
+    "expected_status": 422,
+    "actual_status": 422,
+    "elapsed_time": 0.0035562515258789062,
+    "success": true,
+    "checks": {
+      "status_code": true,
+      "error_handling": true
+    },
+    "response_preview": "{\"detail\":[{\"type\":\"missing\",\"loc\":[\"body\",\"query\"],\"msg\":\"Field required\",\"input\":{\"depth\":2,\"breadth\":3},\"url\":\"https://errors.pydantic.dev/2.10/v/missing\"}]}"
+  }
+]

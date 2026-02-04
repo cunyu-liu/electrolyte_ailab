@@ -16,7 +16,7 @@ import sys
 
 # ================= 配置区 =================
 # Agent 服务地址
-API_URL = "http://127.0.0.1:8000/agent/run"
+API_URL = "http://127.0.0.1:8000/run"
 
 # 模拟一个复杂的科研需求，触发完整的“设计-实验-优化”闭环
 TEST_REQUIREMENT = (
@@ -86,7 +86,7 @@ def main():
             print(f"❌ 服务器错误: {response.status_code}")
             try:
                 # 将 timeout 设置为 300 秒（5分钟），因为闭环实验涉及多轮推理
-                response = requests.post(url, json=payload, timeout=300) 
+                response = requests.post(API_URL, json=payload, timeout=300) 
                 print(response.json())
             except requests.exceptions.Timeout:
                 print("❌ 测试端超时：Agent 仍在后台运行，但 HTTP 连接已中断。")

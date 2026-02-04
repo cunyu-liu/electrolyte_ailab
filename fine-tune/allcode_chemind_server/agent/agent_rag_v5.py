@@ -15,7 +15,7 @@ import numpy as np
 from contextlib import asynccontextmanager
 from collections import defaultdict
 
-#v5 是function calling（只有框架） + Deep Research。支持单独运行 chat功能。
+#v5 是function calling（只有框架） + Deep Research + 对应更细粒度的 chunk 入库。支持单独运行 chat功能。
 
 # === 核心库 ===
 from transformers import AutoModelForCausalLM, AutoTokenizer
