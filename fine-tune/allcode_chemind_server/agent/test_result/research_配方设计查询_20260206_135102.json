@@ -1,0 +1,125 @@
+{
+  "test_name": "配方设计查询",
+  "timestamp": "2026-02-06T13:50:22.474335",
+  "request": {
+    "url": "http://localhost:8000/research/deep",
+    "method": "POST",
+    "payload": {
+      "query": "高电压电解液添加剂设计策略，要求电压>4.5V",
+      "depth": 3,
+      "breadth": 3
+    }
+  },
+  "response": {
+    "status": "success",
+    "query": "高电压电解液添加剂设计策略，要求电压>4.5V",
+    "results_count": 10,
+    "results": [
+      {
+        "id": "463958624712024994",
+        "content": "Title: A Stepwise Huisgen Cycloaddition Process: Copper(I)-Catalyzed Regioselective “Ligation” of Azides and Terminal Alkynes\nSection: Abstract\nContent: 1\nSupporting information\nConcentrated Mixed Cation Acetate “Water-in-Salt” Solutions as Green and Low Cost \nHigh Voltage Electrolytes for Aqueous Batteries\nMaria R. Lukatskaya1, Jeremy I. Feldblyum1,2, David G. Mackanic1, Franziska Lissel3, \nDominik L. Michels4, Yi Cui5, Zhenan Bao1,*\nContents\n1. Supplementary figures S1-S7 and table S1\n2. Supplementary text\n3. Supplementary references\n1. Supplementary figures\nElectronic Supplementary Material (ESI) for Energy & Environmental Science.\nThis journal is © The Royal Society of Chemistry 2018\n 2\nFigure S1. Walden plot for 27 m KOAc (pink closed circle), 27 m KOAc − 6 m LiOAc (green closed circles), 32 m \nKOAc − 8 m LiOAc (yellow closed circles) and 22 m LiTFSI (violet closed circle) at various concentrations at 25 °C. \nThe Walden plot was generated from the molar conductivities (Λ) and viscosities (η) of the electrolyte solutions.\n-60\n-40\n-20\n0\n20\n40\n60\n-0.06\n-0.05\n-0.04\n-0.03\n-0.02\n-0.01\n0.00\nHeat Flow (W/g)\nTemperature (C)\n 32 m KOAc + 8 m LiOAc, 1C/min heating\nExo\n-60\n-40\n-20\n0\n20\n40\n60\n-0.6\n-0.4\n-0.2\n0.0\nHeat Flow (W/g)\nTemperature (C)\n 1 M KOAc, 1C/min heating\nExo\n-60\n-40\n-20\n0\n20\n40\n60\n-0.6\n-0.4\n-0.2\n0.0\nHeat Flow (W/g)\nTemperature (C)\n 1 M LiOAc, 1C/min heating\nExo\n-60\n-40\n-20\n0\n20\n40\n60\n0.00\n0.01\n0.02\n0.03\n0.04\n0.05\n0.06\nHeat Flow (W/g)\nTemperature (°C)\n Saturated KOAc, 1C/min cooling\nExo\na)\nb)\nc)\nd)\nFigure S2. Differential scanning thermograms of a) 1 m LiOAc, b) 1 m KOAc, c) saturated aqueous KOAc, and d) the \nWIS solution of 32 m KOAc – 8 m LiOAc.",
+        "score": 0.5600923895835876,
+        "metadata": {
+          "title": "A Stepwise Huisgen Cycloaddition Process: Copper(I)-Catalyzed Regioselective “Ligation” of Azides and Terminal Alkynes",
+          "doi": "10.1002/1521-3773(20020715)41:14<2596::aid-anie2596>3.0.co;2-4",
+          "authors": "Vsevolod V. Rostovtsev; Luke G. Green; Valery V. Fokin; K. Barry Sharpless",
+          "journal": "",
+          "source_pdf": "D:/Papers\\Authors-Exp\\Zhenan Bao\\EES-2018-Concentrated mixed cation acetate “water-in-salt” solutions as green and low-cost high voltage electrolytes for aqueous batteries-SI.pdf",
+          "citations": "11018",
+          "chunk_type": "Abstract",
+          "chunk_index": 0,
+          "paragraph_idx": 0,
+          "char_length": 1539
+        },
+        "doc_id": "10.1002/1521-3773(20020715)41:14<2596::aid-anie2596>3.0.co;2-4",
+        "page": 0,
+        "rerank_score": 0.12227389686948156
+      },
+      {
+        "id": "463958624712016422",
+        "content": "Title: Insertion Electrode Materials for Rechargeable Lithium Batteries\nContent: impurities, and to adjust the correct oxygen stoichiome-\ntry.[799±821] By introducing a new electrolyte system compat-\nible up to +5 V vs. Li/Li+ with the LiMn2O4 positive elec-\ntrode, Tarascon and Guyomard made a decisive step\ncells.[471,473,476,780] However, on long term cycling, even opti-\nmized cells have turned out to show a slight capacity fad-\ning.[809] This fading is attributed to the instability of the or-\nganic-based electrolyte at the very high voltages reached\nwhen charging the cells, resulting in the slow dissolution of\nthe LixMn2O4 electrode in the electrolyte (Mn2+ is a solu-\nble species that is produced from Mn3+ by the dispropor-\ntionation reaction to Mn2+ and Mn4+), as well as to an onset\nof the Jahn±Teller effect in deeply discharged LixMn2O4",
+        "score": 0.5794685482978821,
+        "metadata": {
+          "title": "Insertion Electrode Materials for Rechargeable Lithium Batteries",
+          "doi": "10.1002/(sici)1521-4095(199807)10:10<725::aid-adma725>3.0.co;2-z",
+          "authors": "Martin Winter; Jürgen Besenhard; Michael E. Spahr; Petr Novák",
+          "journal": "None",
+          "source_pdf": "C:\\Users\\54226\\project\\electrolyte_project\\create_LLM_evluation_set\\paper_download\\downloads\\Insertion Electrode Materials for Rechargeable Lithium Batteries.pdf",
+          "citations": "2876",
+          "chunk_type": "MainBody",
+          "chunk_index": 137,
+          "paragraph_idx": 137,
+          "char_length": 771
+        },
+        "doc_id": "10.1002/(sici)1521-4095(199807)10:10<725::aid-adma725>3.0.co;2-z",
+        "page": 1,
+        "rerank_score": 0.10223273630648647
+      },
+      {
+        "id": "463958624712016392",
+        "content": "Title: Insertion Electrode Materials for Rechargeable Lithium Batteries\nContent: trode surface,[671] and corrosion of the underlying current\ncollector. Therefore, charging has to be restricted, for ex-\nample, in the case of PC-based electrolytes, to x > 0.35.[129]\nMicrocalorimetry on Li/LiCoO2 cells with this electrolyte\nrevealed reversible electrode reactions in the voltage range\nfrom 4.0 V to 1.2 V.[269] Above 4.0 V, however, heat is\nproduced, indicating solvent oxidation.\nThe corrosion and solvent decomposition problems at\nhigh potentials triggered an intensive search for stable elec-\ntrolytes, as well as for electrolytes or electrolyte additives\nthat could form protective ion-permeable films on the elec-\ntrode surface. Hambitzer's group presented Li/LiCoO2\ncells with a stable liquid inorganic electrolyte consisting of",
+        "score": 0.5726671814918518,
+        "metadata": {
+          "title": "Insertion Electrode Materials for Rechargeable Lithium Batteries",
+          "doi": "10.1002/(sici)1521-4095(199807)10:10<725::aid-adma725>3.0.co;2-z",
+          "authors": "Martin Winter; Jürgen Besenhard; Michael E. Spahr; Petr Novák",
+          "journal": "None",
+          "source_pdf": "C:\\Users\\54226\\project\\electrolyte_project\\create_LLM_evluation_set\\paper_download\\downloads\\Insertion Electrode Materials for Rechargeable Lithium Batteries.pdf",
+          "citations": "2876",
+          "chunk_type": "MainBody",
+          "chunk_index": 107,
+          "paragraph_idx": 107,
+          "char_length": 752
+        },
+        "doc_id": "10.1002/(sici)1521-4095(199807)10:10<725::aid-adma725>3.0.co;2-z",
+        "page": 1,
+        "rerank_score": 0.06495762191121154
+      },
+      {
+        "id": "463958624712024995",
+        "content": "Title: A Stepwise Huisgen Cycloaddition Process: Copper(I)-Catalyzed Regioselective “Ligation” of Azides and Terminal Alkynes\nContent: Concentrated Mixed Cation Acetate “Water-in-Salt” Solutions as Green and Low Cost\nHigh Voltage Electrolytes for Aqueous Batteries\nMaria R. Lukatskaya1, Jeremy I. Feldblyum1,2, David G. Mackanic1, Franziska Lissel3,\nDominik L. Michels4, Yi Cui5, Zhenan Bao1,*\n1. Supplementary figures S1-S7 and table S1\nElectronic Supplementary Material (ESI) for Energy & Environmental Science.\nThis journal is © The Royal Society of Chemistry 2018\nFigure S1. Walden plot for 27 m KOAc (pink closed circle), 27 m KOAc − 6 m LiOAc (green closed circles), 32 m\nKOAc − 8 m LiOAc (yellow closed circles) and 22 m LiTFSI (violet closed circle) at various concentrations at 25 °C.\nThe Walden plot was generated from the molar conductivities (Λ) and viscosities (η) of the electrolyte solutions.",
+        "score": 0.5554095506668091,
+        "metadata": {
+          "title": "A Stepwise Huisgen Cycloaddition Process: Copper(I)-Catalyzed Regioselective “Ligation” of Azides and Terminal Alkynes",
+          "doi": "10.1002/1521-3773(20020715)41:14<2596::aid-anie2596>3.0.co;2-4",
+          "authors": "Vsevolod V. Rostovtsev; Luke G. Green; Valery V. Fokin; K. Barry Sharpless",
+          "journal": "",
+          "source_pdf": "D:/Papers\\Authors-Exp\\Zhenan Bao\\EES-2018-Concentrated mixed cation acetate “water-in-salt” solutions as green and low-cost high voltage electrolytes for aqueous batteries-SI.pdf",
+          "citations": "11018",
+          "chunk_type": "MainBody",
+          "chunk_index": 0,
+          "paragraph_idx": 0,
+          "char_length": 772
+        },
+        "doc_id": "10.1002/1521-3773(20020715)41:14<2596::aid-anie2596>3.0.co;2-4",
+        "page": 1,
+        "rerank_score": 0.06068787141712675
+      },
+      {
+        "id": "463958624712016303",
+        "content": "Title: Insertion Electrode Materials for Rechargeable Lithium Batteries\nContent: changes £ ~10 %, for example, carbons (negative electrode)\nand transition-metal oxides (positive electrode), show good\ncycling behavior. At the present time research and devel-\nopment activities are mainly focused on such highly revers-\n1.2. Electrode/Electrolyte Compatibility\nThe voltage of rechargeable lithium cells may be as high\nas ~5 V. Hence, a wide electrochemical stability window of\nthe electrolyte is crucial for the shelf and cycle life of the\ncells. Aqueous as well as many non-aqueous electrolytes\ncannot be used because their thermodynamic and/or ki-\nnetic potential windows of electrochemical stability are not\nwide enough.[85] Only some aprotic electrolytes can be em-\nployed. However, compared with aqueous electrolytes,",
+        "score": 0.5574297308921814,
+        "metadata": {
+          "title": "Insertion Electrode Materials for Rechargeable Lithium Batteries",
+          "doi": "10.1002/(sici)1521-4095(199807)10:10<725::aid-adma725>3.0.co;2-z",
+          "authors": "Martin Winter; Jürgen Besenhard; Michael E. Spahr; Petr Novák",
+          "journal": "None",
+          "source_pdf": "C:\\Users\\54226\\project\\electrolyte_project\\create_LLM_evluation_set\\paper_download\\downloads\\Insertion Electrode Materials for Rechargeable Lithium Batteries.pdf",
+          "citations": "2876",
+          "chunk_type": "MainBody",
+          "chunk_index": 18,
+          "paragraph_idx": 18,
+          "char_length": 739
+        },
+        "doc_id": "10.1002/(sici)1521-4095(199807)10:10<725::aid-adma725>3.0.co;2-z",
+        "page": 1,
+        "rerank_score": 0.04778178027588032
+      }
+    ]
+  },
+  "error": null,
+  "metadata": {
+    "elapsed_seconds": 40.448508739471436,
+    "status_code": 200
+  }
+}

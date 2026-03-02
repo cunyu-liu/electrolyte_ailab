@@ -1,0 +1,128 @@
+{
+  "test_name": "性能优化查询",
+  "timestamp": "2026-02-06T13:51:03.929878",
+  "request": {
+    "url": "http://localhost:8000/research/deep",
+    "method": "POST",
+    "payload": {
+      "query": "如何提升电解液低温电导率至-20℃>5mS/cm",
+      "depth": 2,
+      "breadth": 2,
+      "context": {
+        "temperature": "-20℃"
+      }
+    }
+  },
+  "response": {
+    "status": "success",
+    "query": "如何提升电解液低温电导率至-20℃>5mS/cm",
+    "results_count": 10,
+    "results": [
+      {
+        "id": "463958624712021596",
+        "content": "Title: NMR and Conductivity Study of Polymer Electrolytes in the Imide Family: P(EO)/Li[N(SO2CnF2n+1)(SO2CmF2m+1)]\nContent: similarity to aqueous and other salt solutions, PEO and its\ncomplexes form eutectics,[6] which are amorphous elastomers\nabove the liquidus point. Since it was shown by NMR that\nconduction is restricted to the amorphous phase[7] of the\npoly(ethylene oxide), this is a serious limiting factor for the\nconductivity at room temperature. The strategies, which can be\ncombined to overcome the problem of low conductivity at\ntemperatures below the melting point of the eutectic in PEO\nhave been two-pronged: 1) modification of the polymer to\nhinder crystallization through either copolymerization or struc-\ntural changes such as comb branches; 2) design of new solutes\n(salts) which feature favorable phase diagrams with PEO\n(™plasticizing salts∫),[8] and promote a high degree of dissociation",
+        "score": 0.5938737988471985,
+        "metadata": {
+          "title": "NMR and Conductivity Study of Polymer Electrolytes in the Imide Family: P(EO)/Li[N(SO2CnF2n+1)(SO2CmF2m+1)]",
+          "doi": "10.1002/1439-7641(20020715)3:7<620::aid-cphc620>3.0.co;2-u",
+          "authors": "W. Gorecki; Christel Roux; Martin Clémancey; Michel Armand; E. Bélorizky",
+          "journal": "None",
+          "source_pdf": "C:\\Users\\54226\\project\\electrolyte_project\\create_LLM_evluation_set\\paper_download\\downloads\\NMR and Conductivity Study of Polymer Electrolytes in the Imide Family_ P_EO__Li.pdf",
+          "citations": "54",
+          "chunk_type": "MainBody",
+          "chunk_index": 2,
+          "paragraph_idx": 2,
+          "char_length": 786
+        },
+        "doc_id": "10.1002/1439-7641(20020715)3:7<620::aid-cphc620>3.0.co;2-u",
+        "page": 1,
+        "rerank_score": 0.32255463607378504
+      },
+      {
+        "id": "463958624712019856",
+        "content": "Title: Partial hydrogenation of unsaturated polyethers: A convenient route to curable terpolymers for lithium batteries\nContent: temperature is close to 20 °C, leading therefore to\namorphous polymer electrolytes at room temper-\nversus polymer electrolyte composition shows, in\na wide salt concentration range, the conductivity\ngain provided by hydrogenation (Fig. 4). Figure 5\ncompares the conductivity maxima obtained for\nthe different networks, NVan, NVanH50, and\nNVanH75 results in a conductivity gain ranging\nbetween 4 and 10 in the whole temperature\nrange. Thus NVanH75 electrolyte reaches 1 mil-\nlisiemens at # 70 °C, while NVanH50 one exhibits\nconductivities close to those obtained with NVan/\nLiTFSI. Such a gain is a deciding asset as it\nallows the ohmic drop in the electrolyte to be\ndecreased by a factor 4 to 10 at the battery oper-\nating temperature, as compared to most of the",
+        "score": 0.6058919429779053,
+        "metadata": {
+          "title": "Partial hydrogenation of unsaturated polyethers: A convenient route to curable terpolymers for lithium batteries",
+          "doi": "10.1002/1099-0518(20000815)38:16<2900::aid-pola70>3.0.co;2-2",
+          "authors": "Fannie Alloin; Jean‐Yves Sanchez",
+          "journal": "None",
+          "source_pdf": "C:\\Users\\54226\\project\\electrolyte_project\\create_LLM_evluation_set\\paper_download\\downloads\\Partial hydrogenation of unsaturated polyethers_ A convenient route to curable t.pdf",
+          "citations": "4",
+          "chunk_type": "MainBody",
+          "chunk_index": 31,
+          "paragraph_idx": 31,
+          "char_length": 761
+        },
+        "doc_id": "10.1002/1099-0518(20000815)38:16<2900::aid-pola70>3.0.co;2-2",
+        "page": 1,
+        "rerank_score": 0.2218641125796578
+      },
+      {
+        "id": "463958624712011518",
+        "content": "Title: Ionic conduction in composite polymer electrolytes at subambient temperatures\nContent: phase” (T,) and the high conductivity for these\nsemicrystalline electrolytes below T, was associated\nwith low E,, low Tgr and high T D  values.\nAs can be seen from Table I, the addition of var-\nious fillers plasticizes the amorphous polyether\nphase thus leading to higher subambient and am-\nbient temperature conductivities than for the basic\nmodified the amorphous phase, which for samples\ncontaining PAAM and NNPAAM is manifested by\nthe presence of a second Tg close to the Tg of undoped\nOMPEO = 215 K, the larger the difference between\nT D  and Tg observed in Table I and the higher the\nThe increase in the subambient temperature\nconductivity observed for composite polyether elec-\ntrolytes in comparison with the OMPEO-alkali\nmetal salt systems was noticed in the temperature",
+        "score": 0.5838171243667603,
+        "metadata": {
+          "title": "Ionic conduction in composite polymer electrolytes at subambient temperatures",
+          "doi": "10.1002/(sici)1099-0488(199612)34:17<2911::aid-polb5>3.0.co;2-t",
+          "authors": "W. Wieczorek; S. H. Chung; J. R. Stevens",
+          "journal": "None",
+          "source_pdf": "C:\\Users\\54226\\project\\electrolyte_project\\create_LLM_evluation_set\\paper_download\\downloads\\Ionic conduction in composite polymer electrolytes at subambient temperatures.pdf",
+          "citations": "8",
+          "chunk_type": "MainBody",
+          "chunk_index": 21,
+          "paragraph_idx": 21,
+          "char_length": 779
+        },
+        "doc_id": "10.1002/(sici)1099-0488(199612)34:17<2911::aid-polb5>3.0.co;2-t",
+        "page": 1,
+        "rerank_score": 0.1572359369145698
+      },
+      {
+        "id": "463958624712007278",
+        "content": "Title: Supramolecular order in new polymer electrolytes\nContent: from ambient temperatures to give high conductivities\nabove 60¡C, but the conductivities at the higher tem-\nperatures are particularly dependent on the degree of\ntion scan at 20¡C (crystal); È È È È, di†raction scan at 55¡C\n(liquid crystal); É É É É É É É, di†raction scan at 143¡C (optically\nFig. 10. Conductivity data for two-component complexes\norganization brought about by mechanical shear of the\nsample and/or extended heat treatment. Heat treatment\npresumably organizes the system by reducing the inter-\nnal viscosity and allowing the polar and non-polar\ncomponents of the complexed molecules to segregate to\nmaximum e†ect. The plots rise steeply as the side chains\nmelt over the range 30È45¡C but continue to rise after\nthis stage, suggesting a further transition. Also shown in",
+        "score": 0.5979551672935486,
+        "metadata": {
+          "title": "Supramolecular order in new polymer electrolytes",
+          "doi": "10.1002/(sici)1097-0126(199809)47:1<34::aid-pi2>3.0.co;2-g",
+          "authors": "Peter V. Wright; Yijia Zheng; D. Bhatt; T. Richardson; Goran Ungar",
+          "journal": "None",
+          "source_pdf": "C:\\Users\\54226\\project\\electrolyte_project\\create_LLM_evluation_set\\paper_download\\downloads\\Supramolecular order in new polymer electrolytes.pdf",
+          "citations": "64",
+          "chunk_type": "MainBody",
+          "chunk_index": 25,
+          "paragraph_idx": 25,
+          "char_length": 786
+        },
+        "doc_id": "10.1002/(sici)1097-0126(199809)47:1<34::aid-pi2>3.0.co;2-g",
+        "page": 1,
+        "rerank_score": 0.13722842185616202
+      },
+      {
+        "id": "463958624712007237",
+        "content": "Title: Conducting polymer-based electrochemical redox supercapacitors using proton and lithium ion conducting polymer electrolytes\nContent: polymer electrolyte selected was the\npreviously reported by Petty-Weeks and Polak [19]\nand a weight ratio of 60 : 40 of PVA and\nchosen for the present study. Studies on the conductivi-\nty variation of these electrolytes as a function of tem-\nperature have been published by us elsewhere.8 The\npolymer electrolytes show conductivities of the order of\nabout 10~4 to 10~3 S cm~1 at room temperature (25¡C).\nThis order of conductivity is acceptable for these appli-\ncations because it o†ers low resistance when a thin Ðlm\nform (say 100È200 lm cm~2) of the polymer electrolyte\nis used in electrochemical capacitors.\nDi†erent capacitor cells were constructed using two\ntypes of electrolytes with the electrochemically depos-\nited polypyrrole on two di†erent substrates (ITO con-",
+        "score": 0.5867051482200623,
+        "metadata": {
+          "title": "Conducting polymer-based electrochemical redox supercapacitors using proton and lithium ion conducting polymer electrolytes",
+          "doi": "10.1002/(sici)1097-0126(199809)47:1<28::aid-pi3>3.0.co;2-c",
+          "authors": "S.A. Hashmi; R.J. Latham; Roger G. Linford; Walkiria Schlindwein",
+          "journal": "None",
+          "source_pdf": "C:\\Users\\54226\\project\\electrolyte_project\\create_LLM_evluation_set\\paper_download\\downloads\\Conducting polymer-based electrochemical redox supercapacitors using proton and .pdf",
+          "citations": "97",
+          "chunk_type": "MainBody",
+          "chunk_index": 13,
+          "paragraph_idx": 13,
+          "char_length": 772
+        },
+        "doc_id": "10.1002/(sici)1097-0126(199809)47:1<28::aid-pi3>3.0.co;2-c",
+        "page": 1,
+        "rerank_score": 0.12972678931921217
+      }
+    ]
+  },
+  "error": null,
+  "metadata": {
+    "elapsed_seconds": 42.23944926261902,
+    "status_code": 200
+  }
+}

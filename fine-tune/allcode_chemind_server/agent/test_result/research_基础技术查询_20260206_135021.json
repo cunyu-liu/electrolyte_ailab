@@ -1,0 +1,125 @@
+{
+  "test_name": "基础技术查询",
+  "timestamp": "2026-02-06T13:49:39.745237",
+  "request": {
+    "url": "http://localhost:8000/research/deep",
+    "method": "POST",
+    "payload": {
+      "query": "锂离子电池电解液中LiPF6的作用机理",
+      "depth": 2,
+      "breadth": 2
+    }
+  },
+  "response": {
+    "status": "success",
+    "query": "锂离子电池电解液中LiPF6的作用机理",
+    "results_count": 10,
+    "results": [
+      {
+        "id": "463958624712016367",
+        "content": "Title: Insertion Electrode Materials for Rechargeable Lithium Batteries\nContent: als as proposed in: a) [545], b) [287],\nFig. 13. Constant current charge/discharge curves (1st and 2nd cycle) of a\nhigh specific charge carbonaceous material (poly(p-phenylene), heat treated\nat 700 \u001eC) in the electrolyte LiPF6/ethylene carbonate/dimethyl carbonate\n(Cirr is the irreversible specific charge, Crev the reversible specific charge).\nÓ WILEY-VCH Verlag GmbH, D-69469 Weinheim, 1998\n0935-9648/98/1007-0738 $ 17.50+.50/0\nthis behavior Dahn et al.[380,563,575,577±579] suggested that\nlithium is ªadsorbedº on both sides of single-layer sheets\nthat are arranged like a ªhouse of cardsº or like ªfalling\ncardsº (Fig. 12d). The ªfalling cardsº model is the ad-\nvanced form of the ªhouse of cardsº model and also re-\ngards the storage of lithium in micropores. Both the pore",
+        "score": 0.49616044759750366,
+        "metadata": {
+          "title": "Insertion Electrode Materials for Rechargeable Lithium Batteries",
+          "doi": "10.1002/(sici)1521-4095(199807)10:10<725::aid-adma725>3.0.co;2-z",
+          "authors": "Martin Winter; Jürgen Besenhard; Michael E. Spahr; Petr Novák",
+          "journal": "None",
+          "source_pdf": "C:\\Users\\54226\\project\\electrolyte_project\\create_LLM_evluation_set\\paper_download\\downloads\\Insertion Electrode Materials for Rechargeable Lithium Batteries.pdf",
+          "citations": "2876",
+          "chunk_type": "MainBody",
+          "chunk_index": 82,
+          "paragraph_idx": 82,
+          "char_length": 779
+        },
+        "doc_id": "10.1002/(sici)1521-4095(199807)10:10<725::aid-adma725>3.0.co;2-z",
+        "page": 1,
+        "rerank_score": 0.7324465283502396
+      },
+      {
+        "id": "463958624712016347",
+        "content": "Title: Insertion Electrode Materials for Rechargeable Lithium Batteries\nContent: contact with electrolyte, the film formation on LixC6 sur-\nfaces takes place as a charge-consuming side reaction in\nthe first few Li+ intercalation/deintercalation cycles, espe-\ncially during the first reduction of the carbon host material.\nEven after film formation, the self-discharge rate of LixC6\nelectrodes is considerable due to the reactivity of LixC6\nwith the organic electrolyte. Some authors account addi-\ntional effects to the poor charge recovery in the first cy-\nBecause of the irreversible consumption of material\n(lithium and electrolyte), the corresponding charge loss is\nfrequently called ªirreversible specific chargeº. The revers-\nible lithium intercalation is called ªreversible specific\nchargeº. Since the positive electrode is the lithium source",
+        "score": 0.5431407690048218,
+        "metadata": {
+          "title": "Insertion Electrode Materials for Rechargeable Lithium Batteries",
+          "doi": "10.1002/(sici)1521-4095(199807)10:10<725::aid-adma725>3.0.co;2-z",
+          "authors": "Martin Winter; Jürgen Besenhard; Michael E. Spahr; Petr Novák",
+          "journal": "None",
+          "source_pdf": "C:\\Users\\54226\\project\\electrolyte_project\\create_LLM_evluation_set\\paper_download\\downloads\\Insertion Electrode Materials for Rechargeable Lithium Batteries.pdf",
+          "citations": "2876",
+          "chunk_type": "MainBody",
+          "chunk_index": 62,
+          "paragraph_idx": 62,
+          "char_length": 767
+        },
+        "doc_id": "10.1002/(sici)1521-4095(199807)10:10<725::aid-adma725>3.0.co;2-z",
+        "page": 1,
+        "rerank_score": 0.7053692599909455
+      },
+      {
+        "id": "463958624712021501",
+        "content": "Title: Advances in Battery Technology: Rechargeable Magnesium Batteries and Novel Negative-Electrode Materials for Lithium Ion Batteries\nContent: delithiated LiCoO2. Because of the large\ndifference of the chemical potential of\nlithium in the two electrodes, which\ncorresponds to cell voltages of more than\n3.5 V, the transfer of lithium ions from the\nnegative electrode through the electro-\nlyte to the positive electrode (discharge)\ndelivers energy whereas the reverse lith-\nium transfer (charge) consumes energy. In\nview of electrochemical performance, Li-\nCoO2 cathodes and graphitic anodes\nseem to be the preferred electrode mate-\nrials for present lithium ion batteries.\nTypically, Li\u0001X\u0003 salts (LiBF4, LiPF6, LiN-\n(SO2CF3)2, among others) dissolved in\naprotic, nonaqueous solvents are used\nThe high cell voltages, high specific\nong cycle life (500 ± 1000 charge/dis-\ncharge cycles) of standard lithium ion",
+        "score": 0.5159304738044739,
+        "metadata": {
+          "title": "Advances in Battery Technology: Rechargeable Magnesium Batteries and Novel Negative-Electrode Materials for Lithium Ion Batteries",
+          "doi": "10.1002/1439-7641(20020215)3:2<155::aid-cphc155>3.0.co;2-s",
+          "authors": "Jürgen Besenhard; Martin Winter",
+          "journal": "None",
+          "source_pdf": "C:\\Users\\54226\\project\\LLM_DATA\\downloads\\Advances in Battery Technology_ Rechargeable Magnesium Batteries and Novel Negat.pdf",
+          "citations": "196",
+          "chunk_type": "MainBody",
+          "chunk_index": 7,
+          "paragraph_idx": 7,
+          "char_length": 764
+        },
+        "doc_id": "10.1002/1439-7641(20020215)3:2<155::aid-cphc155>3.0.co;2-s",
+        "page": 1,
+        "rerank_score": 0.6781745840099372
+      },
+      {
+        "id": "463958624712021512",
+        "content": "Title: Advances in Battery Technology: Rechargeable Magnesium Batteries and Novel Negative-Electrode Materials for Lithium Ion Batteries\nContent: Aurbach considers the rechargeable Mg\nsystem not as a competitor for lithium ion\ncells but as rival for the above aqueous\nThis prognosis asks for a comparison of\nthe Mg battery with commercialized re-\nchargeable battery systems with aqueous\nelectrolytes, namely lead ± acid, nickel ±\ncadmium, and nickel ± metal hydride (see\nTable 2 for details). Preliminary results\nindicate that the charge/discharge reac-\nTable 2. Comparison of rechargeable batteries.\nLiPF6 in aprotic organic solvents\nSpecific energy (theory) [Whkg\u00031]\nSpecific energy (practise) [Whkg\u00031]\nChemical overcharge protection\nChemical overdischarge protection\n[a] Electronic control of state of charge/discharge. [b] DOD: depth of discharge.\nCHEMPHYSCHEM 2002, 3, 155 ±159\ntion of the Mg cell is quite fast, equiv-",
+        "score": 0.5437228679656982,
+        "metadata": {
+          "title": "Advances in Battery Technology: Rechargeable Magnesium Batteries and Novel Negative-Electrode Materials for Lithium Ion Batteries",
+          "doi": "10.1002/1439-7641(20020215)3:2<155::aid-cphc155>3.0.co;2-s",
+          "authors": "Jürgen Besenhard; Martin Winter",
+          "journal": "None",
+          "source_pdf": "C:\\Users\\54226\\project\\LLM_DATA\\downloads\\Advances in Battery Technology_ Rechargeable Magnesium Batteries and Novel Negat.pdf",
+          "citations": "196",
+          "chunk_type": "MainBody",
+          "chunk_index": 18,
+          "paragraph_idx": 18,
+          "char_length": 778
+        },
+        "doc_id": "10.1002/1439-7641(20020215)3:2<155::aid-cphc155>3.0.co;2-s",
+        "page": 1,
+        "rerank_score": 0.6271794692543692
+      },
+      {
+        "id": "463958624712016305",
+        "content": "Title: Insertion Electrode Materials for Rechargeable Lithium Batteries\nContent: sponding bigger anion X±, for example PF6\n±.[90,96] The Stokes' radius of solvated anions\nis considerably lower and, thus, the anion mobility is higher\nthan that of solvated Li+ cations. This limits the power den-\nsity of a lithium cell, the electrochemistry of which strongly\ndepends on Li+ transport in the electrolyte. A main concept\nto partly counterbalance the high internal resistance in-\nduced by the low electrolyte conductivity is to make the\nelectrolyte film as thin as possible, so that the Li+ transport\nlithium cells employing insertion electrodes can be roughly\ndivided into three groups: i) liquid, ii) solid, and iii) poly-\nmer. i) Typical liquid electrolytes consist of a lithium salt\nLi+X± dissolved in an aprotic organic solvent or a mixture",
+        "score": 0.5067453980445862,
+        "metadata": {
+          "title": "Insertion Electrode Materials for Rechargeable Lithium Batteries",
+          "doi": "10.1002/(sici)1521-4095(199807)10:10<725::aid-adma725>3.0.co;2-z",
+          "authors": "Martin Winter; Jürgen Besenhard; Michael E. Spahr; Petr Novák",
+          "journal": "None",
+          "source_pdf": "C:\\Users\\54226\\project\\electrolyte_project\\create_LLM_evluation_set\\paper_download\\downloads\\Insertion Electrode Materials for Rechargeable Lithium Batteries.pdf",
+          "citations": "2876",
+          "chunk_type": "MainBody",
+          "chunk_index": 20,
+          "paragraph_idx": 20,
+          "char_length": 760
+        },
+        "doc_id": "10.1002/(sici)1521-4095(199807)10:10<725::aid-adma725>3.0.co;2-z",
+        "page": 1,
+        "rerank_score": 0.5994356996449244
+      }
+    ]
+  },
+  "error": null,
+  "metadata": {
+    "elapsed_seconds": 41.72070121765137,
+    "status_code": 200
+  }
+}

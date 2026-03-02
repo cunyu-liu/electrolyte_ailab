@@ -5,6 +5,7 @@ import time
 import re
 import gc
 import logging
+import random
 import torch
 import concurrent.futures
 import pandas as pd
@@ -15,7 +16,7 @@ from collections import Counter
 from tqdm import tqdm
 from more_itertools import collapse, chunked
 from transformers import AutoModelForCausalLM, AutoTokenizer
-from openai import OpenAI
+from openai import OpenAI, APIConnectionError, RateLimitError, APIStatusError
 
 # =================配置区域=================   完全支持断点续评
 class Config:
@@ -26,7 +27,7 @@ class Config:
     # API配置 (根据实际情况修改)
     API_KEYS = {
         "deepseek": "sk-e387e1a310824ad7ac7b84f6f82cd284",
-        "wwxq": "sk-2xoohlqxvrqwv6fq" # 无问芯穹
+        "wwxq": "sk-2xoohlqxvrqwv6fq"   # 无问芯穹
     }
     API_URLS = {
         "deepseek": "https://api.deepseek.com/v1",
@@ -36,20 +37,28 @@ class Config:
     # 待测模型列表
     # 格式: (模型名称或路径, 类型 'local' 或 'api')
     MODELS_TO_EVAL = [
-        ("deepseek-chat", "api"),
-        ("deepseek-reasoner", "api"),
-        ("qwen3-next-80b-a3b-instruct", "api"),
-        ("qwen3-next-80b-a3b-thinking", "api"),
-        ("qwen3-235b-a22b-instruct-2507t", "api"), 
-        ("qwen3-8b", "api"),
+        # ("deepseek-chat", "api"),
+        # ("deepseek-reasoner", "api"),
+        # ("qwen3-next-80b-a3b-instruct", "api"),
+        # ("qwen3-next-80b-a3b-thinking", "api"),
+        ("glm-4.6", "api"), 
+        # ("qwen3-8b", "api"),
+        ("kimi-k2-instruct", "api"),
+        # ("kimi-k2-thinking", "api"),   
+        # ("qwen3-235b-a22b-instruct-2507", "api"),
+        #("qwen3-8b", "api"),
     ]
 
     # 推理参数
     MAX_TOKENS = 4096
     TEMPERATURE = 0.7
-    BATCH_SIZE = 20  # 每个文件块的大小
-    API_WORKERS = 5  # API并发数
+    BATCH_SIZE = 10  # 每个文件块的大小
+    API_WORKERS = 2  # API并发数
     LOCAL_WORKERS = 1 # 本地模型强制串行
+
+    # [新增] API 限制保护
+    API_RETRY_MAX = 5       # API 网络层面的重试次数
+    TPM_SLEEP_BASE = 2.0    # 每次请求后的基础等待时间（秒）
 
 # =================日志设置=================
 logging.basicConfig(
@@ -274,16 +283,52 @@ class APIModel(BaseModel):
             self.client = OpenAI(api_key=Config.API_KEYS["wwxq"], base_url=Config.API_URLS["wwxq"])
             
     def generate(self, input_json_str: str) -> str:
-        response = self.client.chat.completions.create(
-            model=self.model_name,
-            messages=[
-                {"role": "system", "content": self.sys_prompt},
-                {"role": "user", "content": input_json_str}
-            ],
-            temperature=Config.TEMPERATURE,
-            stream=False
-        )
-        return response.choices[0].message.content
+        # [核心修改] 增加 API 层面的指数退避重试逻辑
+        retries = 0
+        while retries <= Config.API_RETRY_MAX:
+            try:
+                # 增加随机等待，防止多线程并发打满
+                time.sleep(Config.TPM_SLEEP_BASE + random.random() * 2)
+                
+                response = self.client.chat.completions.create(
+                    model=self.model_name,
+                    messages=[
+                        {"role": "system", "content": self.sys_prompt},
+                        {"role": "user", "content": input_json_str}
+                    ],
+                    temperature=Config.TEMPERATURE,
+                    stream=False
+                )
+                return response.choices[0].message.content
+            
+            except APIStatusError as e:
+                # [关键] 402 余额不足，直接报错退出，不重试
+                if e.status_code == 402:
+                    logging.critical(f"🛑 CRITICAL: API Payment Required (Balance exhausted). Stopping task. Msg: {e}")
+                    raise e 
+                
+                # [关键] 429 限流，指数退避
+                if e.status_code == 429:
+                    wait_time = (2 ** retries) * 2 + random.uniform(1, 3)
+                    logging.warning(f"⚠️ API Rate Limit (429). Retrying in {wait_time:.1f}s... (Attempt {retries+1}/{Config.API_RETRY_MAX})")
+                    time.sleep(wait_time)
+                    retries += 1
+                elif e.status_code >= 500:
+                    logging.warning(f"Server Error {e.status_code}. Retrying...")
+                    time.sleep(5)
+                    retries += 1
+                else:
+                    logging.error(f"API Error {e.status_code}: {e}")
+                    raise e
+            except APIConnectionError:
+                logging.warning("Connection lost. Retrying...")
+                time.sleep(5)
+                retries += 1
+            except Exception as e:
+                logging.error(f"Unexpected API error: {e}")
+                raise e
+        
+        raise Exception("Max API retries exceeded")
 
 # =================核心处理逻辑=================
 class Pipeline:
@@ -600,5 +645,5 @@ if __name__ == "__main__":
     df = pd.DataFrame.from_dict(final_results, orient="index")
     # 按照你的需求保存为 UTF-8 BOM 格式
     
-    df.to_csv("/Users/liucunyu/Documents/all_code/thu_2025/fine-tune/allcode_chemind_server/testoutput/api_final_model_comparison.csv", encoding="utf-8-sig")
+    df.to_csv("/Users/liucunyu/Documents/all_code/thu_2025/fine-tune/allcode_chemind_server/testoutput/api_final_model_comparison2.csv", encoding="utf-8-sig")
     print("\n✅ All tasks completed. Results saved to final_model_comparison.csv")
