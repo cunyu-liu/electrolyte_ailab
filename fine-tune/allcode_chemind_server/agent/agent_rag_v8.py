@@ -191,19 +191,19 @@ class MessageType(Enum):
     SYSTEM_EVENT = "system_event"         # 系统事件
 
 
-@dataclass
+@dataclass(order=True)
 class AgentMessage:
     """Agent间通信消息标准格式"""
-    sender: str
-    receiver: Optional[str]               # None表示广播
-    message_type: MessageType
-    payload: Dict[str, Any]
-    timestamp: str = field(default_factory=lambda: datetime.now().isoformat())
-    message_id: str = field(default_factory=lambda: str(uuid.uuid4()))
-    correlation_id: Optional[str] = None  # 关联的任务ID
-    parent_message_id: Optional[str] = None  # 父消息ID，用于追溯
-    requires_response: bool = False
-    priority: int = 5                     # 消息优先级 1-10
+    priority: int = 5                     # 消息优先级 1-10（必须放在第一位用于比较）
+    timestamp: str = field(default_factory=lambda: datetime.now().isoformat(), compare=False)
+    sender: str = field(default="", compare=False)
+    receiver: Optional[str] = field(default=None, compare=False)  # None表示广播
+    message_type: MessageType = field(default=MessageType.SYSTEM_EVENT, compare=False)
+    payload: Dict[str, Any] = field(default_factory=dict, compare=False)
+    message_id: str = field(default_factory=lambda: str(uuid.uuid4()), compare=False)
+    correlation_id: Optional[str] = field(default=None, compare=False)  # 关联的任务ID
+    parent_message_id: Optional[str] = field(default=None, compare=False)  # 父消息ID，用于追溯
+    requires_response: bool = field(default=False, compare=False)
 
 
 @dataclass
@@ -326,6 +326,7 @@ class MessageBus:
         self._message_history: List[AgentMessage] = []
         self._lock = asyncio.Lock()
         self._logger = logging.getLogger("MessageBus")
+        self._counter = 0  # 用于确保优先级队列中的唯一顺序
     
     def register_agent(self, agent_id: str):
         """注册Agent到消息总线"""
@@ -348,22 +349,25 @@ class MessageBus:
         for callback in self._subscribers.get(message.message_type.value, []):
             asyncio.create_task(callback(message))
         
+        # 使用计数器确保优先级相同时的顺序
+        self._counter += 1
+        
         # 发送给目标Agent
         if message.receiver:
             if message.receiver in self._queues:
-                await self._queues[message.receiver].put((message.priority, message))
+                await self._queues[message.receiver].put((message.priority, self._counter, message))
         else:
             # 广播（排除发送者）
             for agent_id, queue in self._queues.items():
                 if agent_id != message.sender:
-                    await queue.put((message.priority, message))
+                    await queue.put((message.priority, self._counter, message))
     
     async def get_message(self, agent_id: str, timeout: Optional[float] = None) -> Optional[AgentMessage]:
         """获取消息"""
         if agent_id not in self._queues:
             return None
         try:
-            _, message = await asyncio.wait_for(self._queues[agent_id].get(), timeout=timeout)
+            _, _, message = await asyncio.wait_for(self._queues[agent_id].get(), timeout=timeout)
             return message
         except asyncio.TimeoutError:
             return None
@@ -697,13 +701,28 @@ class RAGService:
         # 1. 向量检索
         if self.milvus_collection:
             try:
-                milvus_results = self.milvus_collection.search(
-                    data=[query_vec],
-                    anns_field=MILVUS_VECTOR_FIELD,
-                    param={"metric_type": "COSINE", "params": {"nprobe": 32}},
-                    limit=top_k,
-                    output_fields=[MILVUS_TEXT_FIELD, "metadata", "doc_id", "page_num", "chunk_id"]
-                )[0]
+                # 尝试获取所有可能的字段，如果字段不存在会抛出异常
+                try:
+                    milvus_results = self.milvus_collection.search(
+                        data=[query_vec],
+                        anns_field=MILVUS_VECTOR_FIELD,
+                        param={"metric_type": "COSINE", "params": {"nprobe": 32}},
+                        limit=top_k,
+                        output_fields=[MILVUS_TEXT_FIELD, "metadata", "doc_id", "page_num", "chunk_id"]
+                    )[0]
+                except Exception as field_error:
+                    # 如果chunk_id字段不存在，尝试不包含它的查询
+                    if "chunk_id" in str(field_error):
+                        self._logger.debug("chunk_id字段不存在，使用备选字段列表")
+                        milvus_results = self.milvus_collection.search(
+                            data=[query_vec],
+                            anns_field=MILVUS_VECTOR_FIELD,
+                            param={"metric_type": "COSINE", "params": {"nprobe": 32}},
+                            limit=top_k,
+                            output_fields=[MILVUS_TEXT_FIELD, "metadata", "doc_id", "page_num"]
+                        )[0]
+                    else:
+                        raise
                 
                 for hit in milvus_results:
                     entity = hit.entity
@@ -720,7 +739,7 @@ class RAGService:
                         "authors": meta.get("authors", []),
                         "year": meta.get("year"),
                         "page": entity.get("page_num") or meta.get("page", 0),
-                        "chunk_id": entity.get("chunk_id", "")
+                        "chunk_id": entity.get("chunk_id", str(hit.id))  # 使用hit.id作为备选
                     })
             except Exception as e:
                 self._logger.error(f"向量检索错误: {e}")
@@ -1760,21 +1779,28 @@ class CentralOrchestratorAgent(BaseAgent):
     CLASSIFICATION_PROMPT = """你是一个任务分类专家。请分析用户的查询，确定最合适的处理方式。
 
 可分类的任务类型：
-1. literature_research - 文献调研/知识挖掘（需要查找和综合多篇文献）
-2. molecular_property - 分子性质预测（需要预测化学物质的性质）
-3. experiment_design - 实验方案设计（需要设计实验或配方）
-4. general_knowledge - 常识问答（简单的知识性问题）
+1. literature_research - 文献调研/知识挖掘（需要查找和综合多篇文献，如"最新研究进展"、"综述"）
+2. molecular_property - 分子性质预测（需要预测化学物质的性质，如"预测XX的离子电导率"）
+3. experiment_design - 实验方案设计（需要设计实验或配方，如"设计电解液配方"）
+4. general_knowledge - 常识问答（简单的知识性问题，如"什么是SEI膜"、"EC和DEC的区别"、基础概念解释）
 5. multi_domain - 跨领域综合任务（涉及多个方面）
 6. unclear - 需要澄清（信息不足）
 7. sensitive - 敏感内容（可能涉及不当内容）
 
 可用Agent ID（必须严格使用以下值）：
-- agent2_literature: 文献调研Agent（处理文献研究、知识查询）
+- agent2_literature: 文献调研Agent（处理文献研究、知识查询、需要检索论文的任务）
 - agent3_property: 分子性质预测Agent（处理分子性质预测）
 - agent4_design: 实验设计Agent（处理实验方案设计）
+- agent6_general: 常识问答Agent（处理基础概念解释、简单知识问答、不需要文献检索的问题）
+
+路由规则：
+- 如果是基础概念、定义解释、简单事实问答 → 使用 agent6_general
+- 如果需要查文献、最新研究进展 → 使用 agent2_literature
+- 如果需要预测分子性质 → 使用 agent3_property
+- 如果需要设计实验/配方 → 使用 agent4_design
 
 复杂度评估：
-- simple: 简单直接的问题
+- simple: 简单直接的问题（如概念定义、简单对比）
 - moderate: 需要一些推理
 - complex: 复杂的多步骤任务
 - research: 研究级别的深度任务
@@ -1783,7 +1809,7 @@ class CentralOrchestratorAgent(BaseAgent):
 {
     "task_type": "任务类型",
     "complexity": "simple/moderate/complex/research",
-    "primary_agent": "主要Agent ID（必须是agent2_literature/agent3_property/agent4_design之一）",
+    "primary_agent": "主要Agent ID（必须是agent2_literature/agent3_property/agent4_design/agent6_general之一）",
     "supporting_agents": ["辅助Agent ID列表"],
     "requires_qc": true/false,
     "estimated_steps": 预估步骤数,
@@ -1873,27 +1899,33 @@ class CentralOrchestratorAgent(BaseAgent):
         
         parsed = self.llm.extract_json(response)
         if parsed:
+            # 验证primary_agent是否合法
+            valid_agents = ["agent2_literature", "agent3_property", "agent4_design", "agent6_general"]
+            primary = parsed.get("primary_agent", "agent6_general")
+            if primary not in valid_agents:
+                primary = "agent6_general"  # 默认为常识问答Agent
+            
             return TaskClassification(
                 task_type=TaskType(parsed.get("task_type", "general_knowledge")),
-                complexity=TaskComplexity[parsed.get("complexity", "MODERATE").upper()],
-                primary_agent=parsed.get("primary_agent", "agent2_literature"),
+                complexity=TaskComplexity[parsed.get("complexity", "SIMPLE").upper()],
+                primary_agent=primary,
                 supporting_agents=parsed.get("supporting_agents", []),
-                requires_qc=parsed.get("requires_qc", True),
-                estimated_steps=parsed.get("estimated_steps", 5),
-                confidence=parsed.get("confidence", 0.7),
+                requires_qc=parsed.get("requires_qc", False),  # 常识问答通常不需要QC
+                estimated_steps=parsed.get("estimated_steps", 2),
+                confidence=parsed.get("confidence", 0.8),
                 reasoning=parsed.get("reasoning", "")
             )
         
-        # 默认分类
+        # 默认分类 - 常识问答
         return TaskClassification(
             task_type=TaskType.GENERAL_KNOWLEDGE,
-            complexity=TaskComplexity.MODERATE,
-            primary_agent="agent2_literature",
+            complexity=TaskComplexity.SIMPLE,
+            primary_agent="agent6_general",
             supporting_agents=[],
-            requires_qc=True,
-            estimated_steps=3,
-            confidence=0.5,
-            reasoning="默认分类"
+            requires_qc=False,
+            estimated_steps=1,
+            confidence=0.6,
+            reasoning="默认分类为常识问答"
         )
     
     async def _dispatch_to_agents(
@@ -1956,8 +1988,8 @@ class CentralOrchestratorAgent(BaseAgent):
         workflow["results"][agent_id] = result
         self._logger.info(f"[_handle_agent_result] 已存储结果, 当前results: {list(workflow['results'].keys())}")
         
-        # 检查是否是主Agent（agent2, agent3, agent4）的结果
-        is_primary = any(x in agent_id for x in ["agent2", "agent3", "agent4"])
+        # 检查是否是主Agent（agent2, agent3, agent4, agent6）的结果
+        is_primary = any(x in agent_id for x in ["agent2", "agent3", "agent4", "agent6"])
         is_qc = "agent5" in agent_id
         
         if is_primary:
@@ -3078,7 +3110,248 @@ class QualityControlAgent(BaseAgent):
 
 
 # ==============================================================================
-# 14. ToolExecutor - 工具执行器
+# 14. Agent6: GeneralKnowledgeAgent - 常识问答Agent
+# ==============================================================================
+
+class GeneralKnowledgeAgent(BaseAgent):
+    """
+    Agent6: 基础常识问答Agent
+    
+    职责：
+    1. 处理基础化学知识问答
+    2. 概念解释和定义
+    3. 简单的计算和问题解答
+    4. 不需要深度文献检索的事实性问题
+    
+    处理范围：
+    - 化学概念解释（如：什么是SEI膜？）
+    - 基础理论知识（如：锂离子电池的充放电原理）
+    - 简单的事实性问答（如：锂的原子量是多少？）
+    - 术语定义和说明
+    - 基础计算问题
+    
+    特点：
+    - 直接调用LLM回答，无需复杂工具
+    - 响应速度快
+    - 适合简单直接的问答
+    """
+    
+    # 常识知识库 - 预定义的高频知识点
+    KNOWLEDGE_BASE = {
+        "battery_types": {
+            "锂离子电池": "使用锂离子作为电荷载体，具有能量密度高、循环寿命长的特点",
+            "钠离子电池": "使用钠离子作为电荷载体，成本低、资源丰富，但能量密度较低",
+            "固态电池": "使用固态电解质替代液态电解液，安全性更高",
+        },
+        "electrolyte_components": {
+            "溶剂": ["EC (碳酸乙烯酯)", "DEC (碳酸二乙酯)", "DMC (碳酸二甲酯)", "EMC (碳酸甲乙酯)"],
+            "锂盐": ["LiPF6 (六氟磷酸锂)", "LiFSI (双氟磺酰亚胺锂)", "LiTFSI (双三氟甲烷磺酰亚胺锂)"],
+            "添加剂": ["VC (碳酸亚乙烯酯)", "FEC (氟代碳酸乙烯酯)", "LiBOB (双草酸硼酸锂)"],
+        },
+        "key_concepts": {
+            "SEI": "Solid Electrolyte Interphase，固态电解质界面，是电极表面与电解液之间形成的钝化层",
+            "CEI": "Cathode Electrolyte Interphase，正极电解质界面",
+            "离子电导率": "电解质传导离子的能力，单位通常是mS/cm",
+            "氧化电位": "电解液开始氧化的电压，决定了电池的上限电压",
+        }
+    }
+    
+    def __init__(self, **kwargs):
+        super().__init__(
+            agent_id="agent6_general",
+            system_prompt="""你是General Knowledge Agent，化学领域的常识问答专家。
+
+职责：
+1. 回答基础化学知识问题
+2. 解释化学概念和术语
+3. 提供简单的事实性信息
+4. 进行基础的化学计算
+5. 澄清常见误区
+
+回答原则：
+- 简洁明了，直接回答核心问题
+- 对于概念性问题，提供清晰的定义和解释
+- 适当举例说明，帮助理解
+- 如果问题超出常识范围，明确告知并建议咨询专业Agent
+- 保持回答的准确性和权威性
+
+不需要：
+- 不需要检索外部文献
+- 不需要复杂的多步骤推理
+- 不需要引用具体研究论文
+
+适合回答的问题类型：
+- "什么是SEI膜？"
+- "锂离子电池的工作原理是什么？"
+- "EC和DEC有什么区别？"
+- "LiPF6和LiFSI哪个更好？"
+- "电解液的组成成分有哪些？""",
+            available_tools=[
+                "ask_user",
+                "finish"
+            ],
+            **kwargs
+        )
+        self._logger.info("✓ 常识知识库已加载")
+    
+    async def _handle_task(self, message: AgentMessage):
+        """处理常识问答任务"""
+        query = message.payload.get("query", "")
+        correlation_id = message.correlation_id
+        
+        self._logger.info(f"[{self.agent_id}] 处理常识问题: {query[:50]}...")
+        
+        try:
+            # 1. 分析查询类型
+            query_type = self._analyze_query_type(query)
+            self._logger.info(f"[{self.agent_id}] 查询类型: {query_type}")
+            
+            # 2. 生成回答
+            answer = await self._generate_answer(query, query_type)
+            
+            # 3. 格式化输出
+            formatted_answer = self._format_answer(answer, query_type)
+            
+            self._logger.info(f"[{self.agent_id}] 回答生成完成，长度: {len(formatted_answer)}")
+            
+            await self._send_result(correlation_id, {
+                "status": "success",
+                "answer": formatted_answer,
+                "citations": [],  # 常识问答不需要引用
+                "query_type": query_type,
+                "agent_type": "general_knowledge"
+            })
+            
+        except Exception as e:
+            self._logger.error(f"[{self.agent_id}] 处理常识问题时出错: {e}", exc_info=True)
+            await self._send_result(correlation_id, {
+                "status": "error",
+                "answer": f"处理您的问题时发生错误: {str(e)}",
+                "citations": [],
+                "query_type": "error"
+            })
+    
+    def _analyze_query_type(self, query: str) -> str:
+        """分析查询类型"""
+        query_lower = query.lower()
+        
+        # 定义关键词模式
+        patterns = {
+            "concept_explanation": ["什么是", "什么是", "定义", "概念", "什么意思", "如何理解"],
+            "comparison": ["区别", "差异", "比较", "vs", "versus", "哪个好", "优劣"],
+            "mechanism": ["原理", "机制", "过程", "怎样工作", "如何形成"],
+            "factual": ["多少", "是什么", "有哪些", "列举", "介绍"],
+            "calculation": ["计算", "等于", "换算", "mol", "浓度"],
+        }
+        
+        for qtype, keywords in patterns.items():
+            if any(kw in query_lower for kw in keywords):
+                return qtype
+        
+        return "general"
+    
+    async def _generate_answer(self, query: str, query_type: str) -> str:
+        """使用LLM生成回答"""
+        
+        # 构建提示词
+        prompt_templates = {
+            "concept_explanation": """请解释以下化学概念，要求：
+1. 提供清晰的定义
+2. 说明其重要性或作用
+3. 举例说明
+
+问题：{query}
+
+回答：""",
+            "comparison": """请对比以下化学概念或物质，要求：
+1. 分别说明各自的特点
+2. 列出主要区别
+3. 说明各自的适用场景
+
+问题：{query}
+
+回答：""",
+            "mechanism": """请解释以下化学原理或机制，要求：
+1. 说明基本原理
+2. 描述关键步骤
+3. 解释影响因素
+
+问题：{query}
+
+回答：""",
+            "factual": """请回答以下化学问题，要求：
+1. 提供准确的事实信息
+2. 如有多个答案，请列举
+3. 简要说明相关背景
+
+问题：{query}
+
+回答：""",
+            "calculation": """请解决以下化学计算问题，要求：
+1. 列出计算公式
+2. 展示计算步骤
+3. 给出最终结果和单位
+
+问题：{query}
+
+回答：""",
+            "general": """请回答以下化学相关问题：
+
+问题：{query}
+
+回答："""
+        }
+        
+        template = prompt_templates.get(query_type, prompt_templates["general"])
+        prompt = template.format(query=query)
+        
+        messages = [{"role": "user", "content": prompt}]
+        response = self.llm.generate(messages, max_new_tokens=1024, temperature=0.3)
+        
+        return response.strip()
+    
+    def _format_answer(self, answer: str, query_type: str) -> str:
+        """格式化回答输出"""
+        
+        type_names = {
+            "concept_explanation": "概念解释",
+            "comparison": "对比分析",
+            "mechanism": "原理解析",
+            "factual": "知识问答",
+            "calculation": "计算解答",
+            "general": "综合回答"
+        }
+        
+        lines = [
+            "# 化学知识问答\n",
+            f"**问题类型**: {type_names.get(query_type, '综合回答')}\n",
+            "## 回答\n",
+            answer,
+            "\n---",
+            "\n*本回答由ChemMind常识问答Agent生成，基于化学领域通用知识。*"
+        ]
+        
+        return "\n".join(lines)
+    
+    async def _check_if_needs_deep_research(self, query: str) -> bool:
+        """检查是否需要转交给文献调研Agent"""
+        # 如果查询涉及前沿研究、具体实验数据等，建议转交
+        deep_research_keywords = [
+            "最新研究", "最近进展", "文献", "论文", "研究表明",
+            "实验数据", "性能参数", "具体数值", "综述"
+        ]
+        
+        query_lower = query.lower()
+        needs_deep = any(kw in query_lower for kw in deep_research_keywords)
+        
+        if needs_deep:
+            self._logger.info(f"[{self.agent_id}] 检测到需要深度研究的问题，建议转交Agent2")
+        
+        return needs_deep
+
+
+# ==============================================================================
+# 15. ToolExecutor - 工具执行器
 # ==============================================================================
 
 class ToolExecutorAgent(BaseAgent):
@@ -3359,6 +3632,19 @@ async def lifespan(app: FastAPI):
     )
     await agent5.start()
     agents["agent5_qc"] = agent5
+    print("  ✓ Agent5 (QualityControl) 启动完成")
+    
+    # Agent6: 常识问答Agent
+    print("  🤖 启动Agent6: GeneralKnowledge...")
+    agent6 = GeneralKnowledgeAgent(
+        message_bus=message_bus,
+        shared_memory=shared_memory,
+        llm_service=llm_service,
+        rag_service=rag_service
+    )
+    await agent6.start()
+    agents["agent6_general"] = agent6
+    print("  ✓ Agent6 (GeneralKnowledge) 启动完成")
     
     # 工具执行器
     tool_executor = ToolExecutorAgent(
