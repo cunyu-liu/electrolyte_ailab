@@ -3409,76 +3409,91 @@ class ExperimentDesignAgent(BaseAgent):
         request: Dict, 
         literature_refs: List[ResearchFinding]
     ) -> ExperimentProtocol:
-        """设计实验方案"""
+        """设计实验方案 - 改进版，确保根据用户需求生成定制方案"""
+        
+        objective = request.get('objective', '设计电解液配方')
+        battery_type = request.get('battery_type', 'lithium_ion')
+        constraints = request.get('constraints', {})
+        target_performance = request.get('target_performance', {})
         
         # 基于文献和LLM生成方案
         literature_summary = "\n".join([
             f"- {f.content[:200]}..." for f in literature_refs[:3]
         ]) if literature_refs else "未找到相关文献参考，将基于领域知识设计。"
         
-        objective = request.get('objective', '设计电解液配方')
-        battery_type = request.get('battery_type', 'lithium_ion')
-        
-        prompt = f"""基于以下需求和文献参考，设计电池电解液实验方案。
+        # 改进的提示词 - 更具体地指导LLM
+        prompt = f"""你是一位专业的电池电解液设计专家。请根据用户的具体需求设计定制化的实验方案。
 
+【用户需求】
 实验目标: {objective}
 电池类型: {battery_type}
-目标性能: {request.get('target_performance', {})}
-约束条件: {request.get('constraints', {})}
+目标性能: {target_performance if target_performance else '根据实验目标自动确定'}
+约束条件: {constraints if constraints else '无特殊约束'}
 
-文献参考:
+【设计要求】
+1. 必须根据"实验目标"定制材料选择和配方设计，不要给出通用方案
+2. 如果目标涉及高电压(>4.3V)，需要选择高电压稳定的溶剂和添加剂
+3. 如果目标涉及快充，需要考虑低粘度溶剂和高电导率锂盐
+4. 如果目标涉及宽温度范围，需要选择低凝固点溶剂
+5. 材料清单必须具体到可购买的化学品名称和规格
+6. 实验步骤必须是可执行的具体操作
+
+【文献参考】
 {literature_summary}
 
-请以JSON格式输出实验方案：
+请以JSON格式输出实验方案，确保包含所有必需字段：
 {{
-    "title": "方案标题",
-    "objective": "实验目标",
+    "title": "具体描述实验目标的标题（包含关键参数如电压、材料类型等）",
+    "objective": "详细描述实验目标（至少20字）",
     "materials": [
-        {{"name": "材料名称", "purity": "纯度", "amount": "用量", "note": "备注"}}
+        {{"name": "化学试剂名称（中英文）", "purity": "纯度等级", "amount": "具体用量（含单位）", "note": "用途说明"}}
     ],
     "procedures": [
-        {{"step": 1, "action": "操作", "details": "详细说明", "caution": "注意事项"}}
+        {{"step": 1, "action": "操作名称", "details": "详细操作说明", "caution": "安全注意事项"}}
     ],
-    "expected_outcomes": {{"conductivity": "预期电导率", "cycle_life": "预期循环寿命"}},
-    "optimization_suggestions": ["优化建议"]
-}}"""
+    "expected_outcomes": {{"具体指标名": "预期数值范围"}},
+    "optimization_suggestions": ["针对该具体目标的优化建议"]
+}}
 
+重要：JSON必须是有效的，不能包含注释，字符串必须用双引号。"""
+
+        protocol_data = {}
+        llm_success = False
+        
         try:
             messages = [{"role": "user", "content": prompt}]
-            self._logger.info(f"[{self.agent_id}] 调用LLM生成实验方案...")
-            response = self.llm.generate(messages, max_new_tokens=1024, temperature=0.4, json_mode=True)
+            self._logger.info(f"[{self.agent_id}] 调用LLM生成实验方案，目标: {objective[:50]}...")
+            
+            # 不使用json_mode，让LLM自由生成，然后提取JSON
+            response = self.llm.generate(messages, max_new_tokens=2048, temperature=0.7)
+            
             self._logger.info(f"[{self.agent_id}] LLM响应长度: {len(response)}")
-        except Exception as e:
-            self._logger.error(f"[{self.agent_id}] LLM调用失败: {e}")
-            response = "{}"
-        
-        try:
+            self._logger.debug(f"[{self.agent_id}] LLM原始响应:\n{response[:500]}...")
+            
+            # 尝试解析JSON
             protocol_data = self.llm.extract_json(response) or {}
-            self._logger.info(f"[{self.agent_id}] 解析到protocol_data字段: {list(protocol_data.keys())}")
+            
+            if protocol_data:
+                llm_success = True
+                self._logger.info(f"[{self.agent_id}] 成功解析JSON，字段: {list(protocol_data.keys())}")
+            else:
+                self._logger.warning(f"[{self.agent_id}] 未能从响应中提取JSON")
+                
         except Exception as e:
-            self._logger.error(f"[{self.agent_id}] JSON解析失败: {e}")
+            self._logger.error(f"[{self.agent_id}] LLM调用或解析失败: {e}")
             protocol_data = {}
         
-        # 如果没有解析到数据，使用默认值
-        if not protocol_data:
-            self._logger.warning(f"[{self.agent_id}] 未解析到有效数据，使用默认方案")
-            protocol_data = {
-                "title": f"{battery_type}电解液实验方案",
-                "objective": objective,
-                "materials": [
-                    {"name": "LiPF6", "purity": "99.9%", "amount": "1.0 M", "note": "锂盐"},
-                    {"name": "EC", "purity": "99.9%", "amount": "30 wt%", "note": "溶剂"},
-                    {"name": "DEC", "purity": "99.9%", "amount": "70 wt%", "note": "溶剂"}
-                ],
-                "procedures": [
-                    {"step": 1, "action": "准备溶剂", "details": "在手套箱中称量EC和DEC", "caution": "保持无水环境"},
-                    {"step": 2, "action": "溶解锂盐", "details": "将LiPF6加入溶剂中搅拌溶解", "caution": "避免接触皮肤"},
-                    {"step": 3, "action": "混合均匀", "details": "搅拌30分钟至完全溶解", "caution": "注意通风"}
-                ],
-                "expected_outcomes": {"conductivity": "6-8 mS/cm", "voltage_window": "0-4.3V"},
-                "optimization_suggestions": ["可添加FEC提高循环稳定性"]
-            }
+        # 确保关键字段存在（如果LLM返回了部分数据，补充缺失字段；如果完全失败，基于目标生成基础方案）
+        if not protocol_data.get("materials") or not protocol_data.get("procedures"):
+            self._logger.warning(f"[{self.agent_id}] LLM返回数据不完整，生成补充方案")
+            protocol_data = self._generate_fallback_protocol(objective, battery_type, protocol_data)
         
+        # 确保title和objective反映用户输入
+        if not protocol_data.get("title") or protocol_data.get("title") == "电解液实验方案":
+            protocol_data["title"] = f"{battery_type}-{objective[:30]}方案"
+        if not protocol_data.get("objective"):
+            protocol_data["objective"] = objective
+            
         # 构建协议对象
         try:
             protocol = ExperimentProtocol(
@@ -3492,22 +3507,142 @@ class ExperimentDesignAgent(BaseAgent):
                 references=[],
                 optimization_suggestions=protocol_data.get("optimization_suggestions", [])
             )
-            self._logger.info(f"[{self.agent_id}] ExperimentProtocol对象创建成功")
+            self._logger.info(f"[{self.agent_id}] ExperimentProtocol创建成功: {protocol.title}")
             return protocol
         except Exception as e:
             self._logger.error(f"[{self.agent_id}] 创建ExperimentProtocol失败: {e}")
-            # 返回一个基本的协议对象
-            return ExperimentProtocol(
-                protocol_id=str(uuid.uuid4()),
-                title="电解液实验方案（默认）",
-                objective=objective,
-                materials=[{"name": "LiPF6", "purity": "99.9%", "amount": "1.0M"}],
-                procedures=[{"step": 1, "action": "准备", "details": "准备材料", "caution": "注意安全"}],
-                safety_notes=["佩戴防护装备"],
-                expected_outcomes={},
-                references=[],
-                optimization_suggestions=[]
-            )
+            # 紧急回退方案
+            return self._create_emergency_protocol(objective, battery_type)
+    
+    def _generate_fallback_protocol(self, objective: str, battery_type: str, partial_data: Dict) -> Dict:
+        """基于目标生成补充方案（当LLM返回不完整时使用）"""
+        
+        objective_lower = objective.lower()
+        
+        # 分析目标关键词来确定配方
+        is_high_voltage = any(kw in objective_lower for kw in ["高压", "高电压", "4.5", "4.6", "5v", "high voltage"])
+        is_fast_charge = any(kw in objective_lower for kw in ["快充", "快速", "fast charge", "high rate"])
+        is_wide_temp = any(kw in objective_lower for kw in ["宽温", "低温", "高温", "wide temp", "low temp"])
+        is_solid = any(kw in objective_lower for kw in ["固态", "solid", "聚合物"])
+        
+        # 根据目标定制材料
+        if is_high_voltage:
+            materials = [
+                {"name": "LiPF6", "purity": "电池级99.9%", "amount": "1.0 M", "note": "主锂盐"},
+                {"name": "氟代碳酸乙烯酯(FEC)", "purity": "99.95%", "amount": "5 wt%", "note": "正极成膜添加剂，提高高压稳定性"},
+                {"name": "碳酸乙烯酯(EC)", "purity": "电池级99.9%", "amount": "25 wt%", "note": "主溶剂"},
+                {"name": "碳酸甲乙酯(EMC)", "purity": "电池级99.9%", "amount": "40 wt%", "note": "低粘度溶剂"},
+                {"name": "碳酸二乙酯(DEC)", "purity": "电池级99.9%", "amount": "25 wt%", "note": "共溶剂"},
+                {"name": "LiBOB", "purity": "99.5%", "amount": "0.5 wt%", "note": "高压稳定添加剂"}
+            ]
+            procedures = [
+                {"step": 1, "action": "配制溶剂混合物", "details": "在手套箱中按质量比EC:EMC:DEC=25:40:25配制混合溶剂，氩气氛围", "caution": "严格无水环境，水分<20ppm"},
+                {"step": 2, "action": "添加FEC", "details": "向混合溶剂中加入5 wt% FEC，搅拌10分钟", "caution": "FEC对水分敏感，需快速操作"},
+                {"step": 3, "action": "溶解LiPF6", "details": "加入LiPF6至1.0 M浓度，25°C搅拌2小时至完全溶解", "caution": "LiPF6水解产生HF，避免接触水分"},
+                {"step": 4, "action": "添加LiBOB", "details": "加入0.5 wt% LiBOB，搅拌30分钟", "caution": "LiBOB溶解较慢，可适当加热至40°C"},
+                {"step": 5, "action": "过滤除杂", "details": "使用0.22μm PTFE滤膜过滤电解液", "caution": "避免引入水分"}
+            ]
+            expected_outcomes = {
+                "ionic_conductivity": "8-10 mS/cm (25°C)",
+                "electrochemical_window": "0-5.0V vs Li/Li+",
+                "water_content": "<20 ppm",
+                " Cycling_4.5V_200cycles": "容量保持率>80%"
+            }
+            suggestions = ["可添加1-2% VC进一步改善SEI膜稳定性", "测试4.6V循环性能评估极限电压", "评估高温(60°C)存储性能"]
+            
+        elif is_fast_charge:
+            materials = [
+                {"name": "LiFSI", "purity": "99.9%", "amount": "1.2 M", "note": "高电导率锂盐"},
+                {"name": "碳酸二甲酯(DMC)", "purity": "电池级99.9%", "amount": "50 wt%", "note": "低粘度主溶剂"},
+                {"name": "碳酸甲乙酯(EMC)", "purity": "电池级99.9%", "amount": "30 wt%", "note": "溶剂"},
+                {"name": "碳酸乙烯酯(EC)", "purity": "电池级99.9%", "amount": "15 wt%", "note": "成膜溶剂"},
+                {"name": "氟代碳酸乙烯酯(FEC)", "purity": "99.95%", "amount": "5 wt%", "note": "添加剂"}
+            ]
+            procedures = [
+                {"step": 1, "action": "溶剂预处理", "details": "DMC、EMC、EC经分子筛干燥24小时，水分<10ppm", "caution": "在手套箱中操作"},
+                {"step": 2, "action": "混合溶剂", "details": "按DMC:EMC:EC:FEC=50:30:15:5混合", "caution": "确保比例准确"},
+                {"step": 3, "action": "溶解LiFSI", "details": "加入LiFSI至1.2 M，25°C搅拌至完全溶解", "caution": "LiFSI吸湿性强，操作需迅速"}
+            ]
+            expected_outcomes = {
+                "ionic_conductivity": "12-15 mS/cm (25°C)",
+                "viscosity": "<2 mPa·s",
+                "fast_charge_3C": "可接受倍率性能"
+            }
+            suggestions = ["评估不同LiFSI浓度(1.0-1.5M)对快充性能的影响", "测试低温(-20°C)下的快充能力"]
+            
+        elif is_solid:
+            materials = [
+                {"name": "PEO", "purity": "Mw=600,000", "amount": "3 g", "note": "聚环氧乙烷主链"},
+                {"name": "LiTFSI", "purity": "99.9%", "amount": "EO:Li=18:1", "note": "锂盐"},
+                {"name": "乙腈", "purity": "无水级", "amount": "50 mL", "note": "溶剂（最终需除去）"},
+                {"name": "Al₂O₃纳米颗粒", "purity": "99.9%", "amount": "5 wt%", "note": "无机填料增强机械性能"}
+            ]
+            procedures = [
+                {"step": 1, "action": "配制溶液", "details": "将PEO溶解于乙腈中，60°C搅拌4小时", "caution": "乙腈易燃，通风橱操作"},
+                {"step": 2, "action": "加入锂盐", "details": "加入LiTFSI，继续搅拌2小时至均匀", "caution": "确保完全溶解"},
+                {"step": 3, "action": "添加填料", "details": "加入Al₂O₃纳米颗粒，超声分散30分钟", "caution": "避免颗粒团聚"},
+                {"step": 4, "action": "浇铸成膜", "details": "将溶液倒入PTFE模具，60°C挥发溶剂24小时", "caution": "溶剂完全挥发，膜厚均匀"},
+                {"step": 5, "action": "真空干燥", "details": "80°C真空干燥12小时除去残留溶剂", "caution": "真空度<10 Pa"}
+            ]
+            expected_outcomes = {
+                "ionic_conductivity": "10⁻⁴-10⁻³ S/cm (60°C)",
+                "transference_number": ">0.2",
+                "mechanical_strength": "可弯曲自支撑"
+            }
+            suggestions = ["可尝试添加离子液体提高室温电导率", "评估不同PEO分子量的影响"]
+            
+        else:
+            # 标准锂离子电池电解液
+            materials = [
+                {"name": "LiPF6", "purity": "电池级99.9%", "amount": "1.0 M", "note": "锂盐"},
+                {"name": "碳酸乙烯酯(EC)", "purity": "电池级99.9%", "amount": "30 wt%", "note": "溶剂"},
+                {"name": "碳酸二乙酯(DEC)", "purity": "电池级99.9%", "amount": "35 wt%", "note": "溶剂"},
+                {"name": "碳酸甲乙酯(EMC)", "purity": "电池级99.9%", "amount": "30 wt%", "note": "溶剂"},
+                {"name": "碳酸亚乙烯酯(VC)", "purity": "99.9%", "amount": "2 wt%", "note": "SEI成膜添加剂"}
+            ]
+            procedures = [
+                {"step": 1, "action": "溶剂预处理", "details": "EC、DEC、EMC经分子筛干燥，水分<20ppm", "caution": "手套箱操作"},
+                {"step": 2, "action": "混合溶剂", "details": "按EC:DEC:EMC=30:35:30质量比混合，加入2% VC", "caution": "精确称量"},
+                {"step": 3, "action": "溶解锂盐", "details": "加入LiPF6至1.0 M，25°C搅拌2小时", "caution": "避免水分接触"},
+                {"step": 4, "action": "过滤", "details": "0.22μm PTFE滤膜过滤", "caution": "无菌操作"}
+            ]
+            expected_outcomes = {
+                "ionic_conductivity": "7-9 mS/cm (25°C)",
+                "electrochemical_window": "0-4.3V vs Li/Li+",
+                "water_content": "<20 ppm"
+            }
+            suggestions = ["可根据正极材料调整VC含量(1-3%)", "评估不同锂盐(LiFSI)的效果"]
+        
+        # 合并LLM返回的部分数据和补充数据
+        result = {
+            "title": partial_data.get("title") or f"{battery_type}-{'高压' if is_high_voltage else '快充' if is_fast_charge else '固态' if is_solid else '标准'}电解液方案",
+            "objective": partial_data.get("objective") or objective,
+            "materials": partial_data.get("materials") or materials,
+            "procedures": partial_data.get("procedures") or procedures,
+            "expected_outcomes": partial_data.get("expected_outcomes") or expected_outcomes,
+            "optimization_suggestions": partial_data.get("optimization_suggestions") or suggestions
+        }
+        
+        return result
+    
+    def _create_emergency_protocol(self, objective: str, battery_type: str) -> ExperimentProtocol:
+        """创建紧急回退方案"""
+        return ExperimentProtocol(
+            protocol_id=str(uuid.uuid4()),
+            title=f"{battery_type}-{objective[:30]}方案",
+            objective=objective,
+            materials=[
+                {"name": "LiPF6", "purity": "99.9%", "amount": "1.0M", "note": "锂盐"},
+                {"name": "EC/DEC", "purity": "99.9%", "amount": "1:1", "note": "溶剂"}
+            ],
+            procedures=[
+                {"step": 1, "action": "准备", "details": "准备材料", "caution": "注意安全"}
+            ],
+            safety_notes=["佩戴防护装备"],
+            expected_outcomes={},
+            references=[],
+            optimization_suggestions=[]
+        )
     
     async def _assess_safety(self, protocol: ExperimentProtocol) -> Dict:
         """安全评估"""
