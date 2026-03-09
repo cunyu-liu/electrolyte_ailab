@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Format-Table:*)",
+      "Bash(python:*)",
+      "Bash(dir:*)",
+      "Bash(findstr /R \".*\")",
+      "Bash(\"D:\\surge\\surge-windows-v1.0.exe\" -help)",
+      "Bash(npm run type-check:*)",
+      "Bash(npx tsc:*)",
+      "Bash(findstr:*)",
+      "Bash(powershell:*)",
+      "Bash(pip install:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

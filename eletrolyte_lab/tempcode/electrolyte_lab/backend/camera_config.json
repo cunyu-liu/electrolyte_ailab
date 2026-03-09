@@ -1,0 +1,46 @@
+{
+  "camera_settings": {
+    "ip": "192.168.80.44",
+    "port": 554,
+    "username": "admin",
+    "password": "SZKJ2025",
+    "use_simulation": false
+  },
+  "channels": [
+    {
+      "camera_id": "camera_1",
+      "name": "配液监控摄像头",
+      "channel": 102,
+      "description": "监控电解液配制过程"
+    },
+    {
+      "camera_id": "camera_2",
+      "name": "注液封口监控",
+      "channel": 202,
+      "description": "监控注液和封口过程"
+    },
+    {
+      "camera_id": "camera_3",
+      "name": "性能测试监控",
+      "channel": 302,
+      "description": "监控电池性能测试过程"
+    },
+    {
+      "camera_id": "camera_4",
+      "name": "环境监控摄像头",
+      "channel": 402,
+      "description": "监控实验室环境状态"
+    }
+  ],
+  "rtsp_url_formats": {
+    "hikvision_main": "rtsp://{username}:{password}@{ip}:{port}/Streaming/Channels/{channel}",
+    "hikvision_sub": "rtsp://{username}:{password}@{ip}:{port}/Streaming/Channels/{channel}",
+    "hikvision_mobile": "rtsp://{username}:{password}@{ip}:{port}/Streaming/Channels/{channel}"
+  },
+  "connection_settings": {
+    "timeout_ms": 30000,
+    "retry_count": 3,
+    "buffer_size": 1,
+    "fps": 20
+  }
+}

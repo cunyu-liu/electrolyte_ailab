@@ -1,0 +1,316 @@
+/* 性能预测 配方生成部分样式 */
+
+.moleculeTable{
+	width: 100%;
+	border: 1px solid #e8e8e8;
+	margin-top: 20px;
+
+}
+
+/* 筛选项卡片样式，支持 hover 激活效果 */
+.propertyItem{
+	display: flex;
+	flex-direction: column;
+	height: 120px;
+	justify-content: space-between;
+	background: #ffffff;
+	padding: 20px;
+	border-radius: 8px;
+    border: 1px solid #d5d5d5;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+	will-change: transform;
+	margin: 5px 0;
+}
+
+.propertyItem:hover{
+	border-color: rgba(102, 8, 116);
+	box-shadow: 0 10px 30px rgba(10,163,155,0.12);
+	z-index: 3;
+}
+
+
+
+/* 禁用特定表格行 hover 效果，仅保留操作按钮可点击 */
+.noRowHover .ant-table-tbody > tr:hover {
+	background: transparent !important;
+}
+.noRowHover .ant-table-tbody > tr {
+	cursor: default !important;
+}
+.noRowHover .ant-table-tbody > tr > td {
+	background: transparent !important;
+}
+
+
+
+/* 新增模块化类，配合 JSX -> styles.* 映射 */
+.moduleContent{
+	width:100%;
+}
+
+.moduleTitle{
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+	margin-bottom:12px;
+}
+.moduleBadge{
+	background: #52c41a;
+	color: #ffffff;
+	padding:4px 8px;
+	border-radius:12px;
+	font-size:12px;
+	box-shadow: none;
+}
+.filterPanel{
+	background: #f9fafc;
+	padding:16px;
+	border-radius:8px;
+	border:1px solid #eef6f5;
+}
+.filterTitle{
+	display:flex;
+  justify-content: space-between;
+	align-items:center;
+	gap:8px;
+	margin-bottom:12px;
+}
+.filterIcon{font-size:18px;color:#52c41a}
+.propertiesGrid{
+	display:grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap:12px;
+}
+.propertyDesc{margin-bottom:8px}
+.propertyTag{background:linear-gradient(90deg,#f0f2ff,#efe6ff);padding:4px 8px;border-radius:12px;color:#5e3fff;font-size:12px}
+.propertyExamples{display:flex;gap:8px;align-items:center;margin-top:8px}
+.propertyHeader{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:8px
+}
+.propertyName{
+  font-weight:600
+}
+.propertyUnit{
+  color:#888;
+  font-size:12px
+}
+.rangeInputs{
+  display:flex;
+  align-items:center;
+  gap:8px
+}
+.rangeInputs input{
+	width:100px;
+	padding:6px 8px;
+	border:1px solid #e6eef0;
+	border-radius:6px;
+	background:#fff
+}
+.filterActions{
+	margin-top: 10px;
+	display:flex;
+	gap:8px;
+	justify-content:flex-end;
+	align-items: center;
+}
+.btn{
+	padding:8px 12px;
+	border-radius:6px;
+	border:none;
+	cursor:pointer;
+	font-weight:600
+}
+.btnPrimary{
+	background:#0aa39b;
+	color:#fff
+}
+.btnSecondary{
+	background:#f5f7f6;
+	color:#333;
+	border:1px solid #e6eef0
+}
+.btnWarning{
+	background:#faad14;
+	color:#fff
+}
+.btnSuccess{
+	background:#52c41a;
+	color:#fff
+}
+
+.tableContainer{
+  margin-top:14px;
+  overflow:auto;
+  -ms-overflow-style: none; 
+  scrollbar-width: none;
+  padding:10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.tableContainer::-webkit-scrollbar{
+	display: none;
+	height: 0; 
+	width: 0;
+}
+
+/* Hide internal AntD table body scrollbars while preserving scroll behavior */
+.tableContainer .ant-table-body { -ms-overflow-style: none; scrollbar-width: none; }
+.tableContainer .ant-table-body::-webkit-scrollbar { display: none; height: 0; width: 0 }
+.tableContainer table{width:100%;border-collapse:collapse}
+.tableContainer th,.tableContainer td{padding:8px 10px;border-bottom:1px solid #f0f2f5;text-align:left}
+.actionBtn{background:transparent;border:1px solid #e6eef0;padding:3px 4px;border-radius:6px;cursor:pointer;margin-right:8px }
+
+/* 紫色渐变表格主题（AntD Table 覆盖） */
+.tableContainer .ant-table-thead > tr > th {
+	background: linear-gradient(90deg, #7b61ff 0%, #a86bff 100%);
+	color: #fff !important;
+	border-bottom: 2px solid rgba(255,255,255,0.06);
+}
+.tableContainer .ant-table-thead > tr > th .ant-table-cell-scrollbar {
+	background: transparent;
+}
+.tableContainer .ant-table-tbody > tr:hover > td {
+	background: linear-gradient(90deg, rgba(168,107,255,0.06), rgba(123,97,255,0.04));
+}
+.tableContainer .ant-table-tbody > tr {
+	transition: background 0.18s ease;
+}
+.tableContainer .ant-table-tbody > tr:nth-child(odd) > td {
+	background: linear-gradient(180deg, rgba(123,97,255,0.02), rgba(168,107,255,0.01));
+}
+.tableContainer .ant-table-tbody > tr > td {
+	border-bottom: 1px solid rgba(123,97,255,0.06);
+}
+.tableContainer .ant-table-placeholder {
+	color: #6e5bd6;
+}
+.actionBtn{
+	background: transparent;
+	border: 1px solid rgba(125,95,255,0.25);
+	color: #5e3fff;
+	padding:6px 8px;border-radius:6px;cursor:pointer;
+}
+.actionBtn:hover{background:linear-gradient(90deg,#8f74ff,#c08bff);color:#fff;border-color:transparent}
+
+/* 小型按钮（表格内）统一紫色风格 */
+.tableContainer .ant-btn {
+	border-radius: 6px;
+}
+
+.formulaDesignPanel{background:#fff;padding:16px;border-radius:8px;border:1px solid #eef6f5;margin-top:16px;border-top:2px solid #b8baba}
+.formulaSection{margin-bottom:12px;padding:10px;border-radius:6px;background:#fafcfc;border:1px solid #f1f7f6}
+.formulaSectionTitle{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.sectionIcon{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#52c41a;color:#ffffff;font-weight:700}
+.sectionTitleText{font-weight:600}
+.ingredientControls{display:flex;gap:8px;flex-wrap:wrap}
+.ingredientInput{display:flex;flex-direction:column;gap:6px;flex:1;min-width:160px}
+.ingredientInput input{padding:6px 8px;border:1px solid #e6eef0;border-radius:6px}
+.selectedIngredients{margin-top:8px;display:flex;gap:8px;flex-wrap:wrap}
+.ingredientTag{display:inline-flex;align-items:center;gap:8px;padding:6px 8px;background:#f0fffb;border:1px solid #e6fff8;border-radius:16px}
+.ingredientTag .name{font-weight:600}
+.ingredientTag .ratio{color:#666;font-size:13px}
+.removeTag{background:transparent;border:none;color:#999;cursor:pointer}
+.formulaActions{display:flex;gap:8px;justify-content:flex-end;margin-top:12px}
+
+/* 响应式 */
+@media (max-width: 900px){
+	.propertiesGrid{grid-template-columns: repeat(2,1fr)}
+}
+@media (max-width: 600px){
+	.propertiesGrid{grid-template-columns: 1fr}
+	.ingredientControls{flex-direction:column}
+}
+
+/* 配方库卡片（对应 JSX 中的 camelCase 类名） */
+.formulaList{
+	display: grid; 
+	grid-template-columns: repeat(4, 1fr); 
+	gap: 16px;
+	min-height: 680px;
+}
+.formulaLibraryCard1{
+	background: #ffffff;
+	border-radius: 8px;
+	padding:10px 20px;
+	border: 1px solid #eaeff5;
+	transition: all 0.18s ease;
+	position: relative;
+	max-height: 300px;
+	overflow: hidden;
+}
+.formulaLibraryCard{
+	background: #ffffff;
+	border-radius: 8px;
+	padding:10px 20px;
+	border: 1px solid #eaeff5;
+	transition: all 0.18s ease;
+	position: relative;
+	max-height: 470px;
+	overflow: hidden;
+}
+.formulaLibraryCard:hover{
+	transform: translateY(-6px);
+	box-shadow: 0 10px 30px rgba(16,24,40,0.08);
+	border-color: rgba(125,95,255,0.18);
+}
+.formulaLibraryHeader{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px}
+.formulaLibraryId{font-weight:700;color:#1a1a1a;font-size:20px}
+.formulaLibraryConfidence{background: linear-gradient(135deg, #52c41a 0%, #a0d911 100%); color:#fff; padding:4px 10px; border-radius:4px; font-weight:600; display:inline-block}
+.formulaLibraryComponents{
+	margin-bottom:4px;
+	max-height: 280px;
+	min-height: 280px;
+	overflow-y: auto;
+	scrollbar-width: thin;
+}
+.formulaLibraryComponents1{
+	margin-bottom:4px;
+	overflow-y: auto;
+	max-height: 150px;
+	min-height: 150px;
+	scrollbar-width: thin;
+}
+.formulaLibraryComponent1{
+	margin-bottom:2px;
+	font-size:15px;
+	line-height:1.6;
+	color: #333333;
+	padding:6px 8px;
+	font-size: 14px;
+}
+.formulaLibraryComponent{
+	margin-bottom:2px;
+	font-size:15px;
+	line-height:1.6;
+	color: #333333;
+	padding:6px 8px;
+	font-size: 14px;
+}
+
+.formulaLibraryComponentName{color:#333}
+.formulaLibraryComponentRatio{font-weight:700;color:#1a1a1a;margin-left:6px}
+.formulaLibraryDivider{height:1px;background-color:#eaeff5;margin:12px 0;border:none}
+.formulaLibraryProperties{margin-bottom:12px}
+.formulaLibraryProperty{margin-bottom:8px;font-size:14px}
+.formulaLibraryPropertyTitle{color:#666;margin-bottom:2px}
+.formulaLibraryPropertyValue{font-weight:500;color:#1a1a1a}
+.formulaLibraryActions{display:flex;gap:10px;margin-top:20px}
+.formulaLibraryBtn{flex:1;padding:4px 6px;border-radius:6px;font-weight:600;cursor:pointer;border:none}
+.formulaLibraryCard.custom{border-left:4px solid #faad14}
+.formulaLibraryCard.custom .formulaLibraryConfidence{background: linear-gradient(135deg, #faad14 0%, #ffc53d 100%)}
+
+/* 紫色选中卡片样式 */
+.formulaLibraryCardSelected {
+  background: #ffffff;
+  border-radius: 8px;
+  padding:10px 20px;
+  border: 1px solid #eaeff5;
+  transition: all 0.18s ease;
+  position: relative;
+  border: 1px solid #46f079 !important;
+}

@@ -1,0 +1,445 @@
+import React, { useState, useEffect } from 'react';
+import {
+  Card,
+  Row,
+  Col,
+  Select,
+  Button,
+  Spin,
+  Alert,
+  Typography,
+  Statistic,
+  Tag,
+  Space,
+  Image,
+  Table,
+  Descriptions,
+  message
+} from 'antd';
+import ReactECharts from 'echarts-for-react';
+import { aiExperimenterApi, landianApi } from '../services/api';
+
+const { Title, Text, Paragraph } = Typography;
+const { Option } = Select;
+
+interface MainIdOption {
+  value: string;
+  label: string;
+}
+
+interface CycleCurveData {
+  main_id: string;
+  total_cycles: number;
+  cycle_data: any[];
+  plotting_data: {
+    cycles: number[];
+    discharge_capacities: number[];
+    charge_capacities: number[];
+  };
+  summary: {
+    max_discharge_capacity: number;
+    final_discharge_capacity: number;
+    capacity_retention: number;
+  };
+}
+
+interface BatterySummary {
+  main_id: string;
+  summary: {
+    max_discharge_capacity: number;
+    final_discharge_capacity: number;
+    capacity_retention: number;
+  };
+  total_cycles: number;
+  first_cycle_details?: any;
+  last_cycle_details?: any;
+  data_source: string;
+}
+
+const ChargeDischargeChart: React.FC = () => {
+  const [loading, setLoading] = useState(false);
+  const [mainIds, setMainIds] = useState<MainIdOption[]>([]);
+  const [selectedMainId, setSelectedMainId] = useState<string>('');
+  const [cycleCurveData, setCycleCurveData] = useState<CycleCurveData | null>(null);
+  const [batterySummary, setBatterySummary] = useState<BatterySummary | null>(null);
+  const [capacityFadePlot, setCapacityFadePlot] = useState<string>('');
+  const [error, setError] = useState<string>('');
+
+  // 获取MainId列表
+  const fetchMainIds = async () => {
+    try {
+      setLoading(true);
+      const response = await landianApi.getMainIds(50);
+
+      if (response.success) {
+        const options = response.data.data.map((id: string) => ({
+          value: id,
+          label: `MainId: ${id}`
+        }));
+        setMainIds(options);
+      } else {
+        setError(response.error || '获取MainId列表失败');
+      }
+    } catch (err) {
+      const errorMsg = '获取MainId列表失败';
+      setError(errorMsg);
+      message.error(errorMsg);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // 获取循环曲线数据
+  const fetchCycleCurveData = async (mainId: string) => {
+    try {
+      setLoading(true);
+      setError('');
+
+    const curveResponse = await landianApi.getCycleCurveData(mainId);
+
+  if (curveResponse.success) {
+        const formattedData: CycleCurveData = {
+          main_id: mainId,
+          total_cycles: curveResponse.data.data.length,
+          cycle_data: curveResponse.data.data,
+          plotting_data: {
+            cycles: curveResponse.data.data.map(item => item.cycle_number),
+            discharge_capacities: curveResponse.data.data.map(item => item.discharge_capacity),
+          summary: {            max_discharge_capacity: Math.max(...curveResponse.data.data.map(item => item.discharge_capacity)),            final_discharge_capacity: curveResponse.data.data[curveResponse.data.data.length - 1]?.discharge_capacity || 0,            capacity_retention: ((curveResponse.data.data[curveResponse.data.data.length - 1]?.discharge_capacity || 0) / Math.max(...curveResponse.data.data.map(item => item.discharge_capacity))) * 100          }
+            avg_charge_efficiency: curveResponse.data.data.reduce((sum, item) => sum + item.charge_efficiency, 0) / curveResponse.data.data.length
+          }
+        };
+        setCycleCurveData(formattedData);
+
+        // 使用曲线数据生成简单的汇总信息
+        const summary = {
+        const summary: BatterySummary = {          main_id: mainId,          total_cycles: curveResponse.data.data.length,          summary: {            max_discharge_capacity: Math.max(...curveResponse.data.data.map(item => item.discharge_capacity)),            final_discharge_capacity: curveResponse.data.data[curveResponse.data.data.length - 1]?.discharge_capacity || 0,            capacity_retention: ((curveResponse.data.data[curveResponse.data.data.length - 1]?.discharge_capacity || 0) / Math.max(...curveResponse.data.data.map(item => item.discharge_capacity))) * 100          },          data_source: "landian_database"        };
+        setCapacityFadePlot(null); // 暂时设为null，因为API中没有对应方法
+      } else {
+        setError(curveResponse.error || '获取数据失败');
+      }
+    } catch (err) {
+      const errorMsg = '获取充放电曲线数据失败';
+      setError(errorMsg);
+      message.error(errorMsg);    } finally {
+      setLoading(false);
+    }
+  };
+
+  // 处理MainId选择
+  const handleMainIdChange = (value: string) => {
+    setSelectedMainId(value);
+    if (value) {
+      fetchCycleCurveData(value);
+    }
+  };
+
+  // 容量衰减曲线配置
+  const capacityFadeOption = {
+    title: {
+      text: '容量衰减曲线',
+      left: 'center'
+    },
+    tooltip: {
+      trigger: 'axis',
+      formatter: (params: any) => {
+        let result = `第${params[0].axisValue}次循环<br/>`;
+        params.forEach((param: any) => {
+          result += `${param.marker}${param.seriesName}: ${param.value?.toFixed(3) || 0} Ah<br/>`;
+        });
+        return result;
+      }
+    },
+    legend: {
+      data: ['放电容量', '充电容量'],
+      top: 30
+    },
+    grid: {
+      left: '3%',
+      right: '4%',
+      bottom: '3%',
+      containLabel: true
+    },
+    xAxis: {
+      type: 'category',
+      name: '循环次数',
+      data: cycleCurveData?.plotting_data.cycles || [],
+      axisLabel: {
+        formatter: (value: number) => value.toString()
+      }
+    },
+    yAxis: {
+      type: 'value',
+      name: '容量 (Ah)',
+      axisLabel: {
+        formatter: (value: number) => value.toFixed(2)
+      }
+    },
+    series: [
+      {
+        name: '放电容量',
+        type: 'line',
+        data: cycleCurveData?.plotting_data.discharge_capacities.map((val: number) => val?.toFixed(3) || 0) || [],
+        smooth: true,
+        symbol: 'circle',
+        symbolSize: 6,
+        lineStyle: {
+          color: '#1890ff'
+        },
+        itemStyle: {
+          color: '#1890ff'
+        }
+      },
+      {
+        name: '充电容量',
+        type: 'line',
+        data: cycleCurveData?.plotting_data.charge_capacities.map((val: number) => val?.toFixed(3) || 0) || [],
+        smooth: true,
+        symbol: 'circle',
+        symbolSize: 6,
+        lineStyle: {
+          color: '#52c41a'
+        },
+        itemStyle: {
+          color: '#52c41a'
+        }
+      }
+    ]
+  };
+
+  useEffect(() => {
+    fetchMainIds();
+  }, []);
+
+  return (
+    <div style={{ padding: '24px' }}>
+      <Title level={2}>电池充放电曲线分析</Title>
+      <Paragraph type="secondary">
+        从真实数据库获取电池充放电测试数据，分析容量衰减规律和性能表现。
+      </Paragraph>
+
+      <Card style={{ marginBottom: '24px' }}>
+        <Row gutter={16} align="middle">
+          <Col>
+            <Text strong>选择电池ID：</Text>
+          </Col>
+          <Col flex="auto">
+            <Select
+              style={{ width: '100%', minWidth: 200 }}
+              placeholder="请选择MainId"
+              loading={loading}
+              value={selectedMainId}
+              onChange={handleMainIdChange}
+              showSearch
+              filterOption={(input, option) =>
+                String(option?.label ?? '').toLowerCase().includes(input.toLowerCase())
+              }
+            >
+              {mainIds.map(option => (
+                <Option key={option.value} value={option.value}>
+                  {option.label}
+                </Option>
+              ))}
+            </Select>
+          </Col>
+          <Col>
+            <Button
+              onClick={fetchMainIds}
+              loading={loading}
+              type="primary"
+              ghost
+            >
+              刷新列表
+            </Button>
+          </Col>
+        </Row>
+      </Card>
+
+      {error && (
+        <Alert
+          message="错误"
+          description={error}
+          type="error"
+          showIcon
+          closable
+          onClose={() => setError('')}
+          style={{ marginBottom: '24px' }}
+        />
+      )}
+
+      {loading && (
+        <Card>
+          <Spin size="large" tip="正在加载数据..." />
+        </Card>
+      )}
+
+      {!loading && selectedMainId && cycleCurveData && batterySummary && (
+        <>
+          {/* 统计信息 */}
+          <Row gutter={16} style={{ marginBottom: '24px' }}>
+            <Col span={6}>
+              <Card>
+                <Statistic
+                  title="总循环次数"
+                  value={batterySummary.total_cycles}
+                  precision={0}
+                  valueStyle={{ color: '#1890ff' }}
+                />
+              </Card>
+            </Col>
+            <Col span={6}>
+              <Card>
+                <Statistic
+                  title="初始放电容量"
+                  value={batterySummary.summary.max_discharge_capacity}
+                  precision={3}
+                  suffix="Ah"
+                  valueStyle={{ color: '#52c41a' }}
+                />
+              </Card>
+            </Col>
+            <Col span={6}>
+              <Card>
+                <Statistic
+                  title="最终放电容量"
+                  value={batterySummary.summary.final_discharge_capacity}
+                  precision={3}
+                  suffix="Ah"
+                  valueStyle={{ color: '#fa8c16' }}
+                />
+              </Card>
+            </Col>
+            <Col span={6}>
+              <Card>
+                <Statistic
+                  title="容量保持率"
+                  value={batterySummary.summary.capacity_retention}
+                  precision={1}
+                  suffix="%"
+                  valueStyle={{
+                    color: batterySummary.summary.capacity_retention > 80 ? '#52c41a' : '#ff4d4f'
+                  }}
+                />
+              </Card>
+            </Col>
+          </Row>
+
+          {/* 图表展示 */}
+          <Row gutter={16} style={{ marginBottom: '24px' }}>
+            <Col span={12}>
+              <Card title="容量衰减曲线 (ECharts)" extra={<Tag color="blue">实时数据</Tag>}>
+                <ReactECharts
+                  option={capacityFadeOption}
+                  style={{ height: 400 }}
+                  notMerge={false}
+                  lazyUpdate={true}
+                />
+              </Card>
+            </Col>
+            <Col span={12}>
+              <Card title="容量衰减曲线 (Matplotlib)" extra={<Tag color="green">高清图表</Tag>}>
+                {capacityFadePlot ? (
+                  <Image
+                    src={`data:image/png;base64,${capacityFadePlot}`}
+                    alt="容量衰减曲线"
+                    style={{ width: '100%', height: 'auto' }}
+                    placeholder={
+                      <div style={{ height: 400, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <Spin size="large" />
+                      </div>
+                    }
+                  />
+                ) : (
+                  <div style={{ height: 400, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <Text type="secondary">暂无图表数据</Text>
+                  </div>
+                )}
+              </Card>
+            </Col>
+          </Row>
+
+          {/* 详细数据表格 */}
+          <Card title="循环数据详情" extra={<Tag color="purple">{cycleCurveData.total_cycles} 条记录</Tag>}>
+            <Table
+              dataSource={cycleCurveData.cycle_data}
+              rowKey="循环号"
+              pagination={{
+                pageSize: 10,
+                showSizeChanger: true,
+                showQuickJumper: true,
+                showTotal: (total) => `共 ${total} 条记录`,
+              }}
+              scroll={{ x: 'max-content' }}
+              columns={[
+                {
+                  title: '循环号',
+                  dataIndex: '循环号',
+                  key: 'cycle_number',
+                  width: 80,
+                  fixed: 'left',
+                },
+                {
+                  title: '放电容量 (Ah)',
+                  dataIndex: '放电容量(Ah)',
+                  key: 'discharge_capacity',
+                  width: 120,
+                  render: (value) => value?.toFixed(3) || '-',
+                  sorter: (a, b) => (a['放电容量(Ah)'] || 0) - (b['放电容量(Ah)'] || 0),
+                },
+                {
+                  title: '充电容量 (Ah)',
+                  dataIndex: '充电容量(Ah)',
+                  key: 'charge_capacity',
+                  width: 120,
+                  render: (value) => value?.toFixed(3) || '-',
+                  sorter: (a, b) => (a['充电容量(Ah)'] || 0) - (b['充电容量(Ah)'] || 0),
+                },
+                {
+                  title: '库伦效率 (%)',
+                  key: 'coulombic_efficiency',
+                  width: 120,
+                  render: (record) => {
+                    const discharge = record['放电容量(Ah)'] || 0;
+                    const charge = record['充电容量(Ah)'] || 0;
+                    return charge > 0 ? ((discharge / charge) * 100).toFixed(2) : '-';
+                  },
+                },
+                {
+                  title: '容量保持率 (%)',
+                  key: 'capacity_retention',
+                  width: 120,
+                  render: (record) => {
+                    const discharge = record['放电容量(Ah)'] || 0;
+                    const maxCapacity = batterySummary.summary.max_discharge_capacity;
+                    return maxCapacity > 0 ? ((discharge / maxCapacity) * 100).toFixed(2) : '-';
+                  },
+                },
+                {
+                  title: '测试时间',
+                  dataIndex: '测试时间',
+                  key: 'test_time',
+                  width: 160,
+                  render: (value) => value || '-',
+                },
+              ]}
+            />
+          </Card>
+
+          {/* 数据源信息 */}
+          <Card title="数据源信息" style={{ marginTop: '24px' }}>
+            <Descriptions bordered column={2}>
+              <Descriptions.Item label="MainId">{batterySummary.main_id}</Descriptions.Item>
+              <Descriptions.Item label="数据来源">{batterySummary.data_source}</Descriptions.Item>
+              <Descriptions.Item label="总循环次数">{batterySummary.total_cycles}</Descriptions.Item>
+              <Descriptions.Item label="容量保持率">{batterySummary.summary.capacity_retention.toFixed(2)}%</Descriptions.Item>
+              <Descriptions.Item label="初始容量">{batterySummary.summary.max_discharge_capacity.toFixed(3)} Ah</Descriptions.Item>
+              <Descriptions.Item label="最终容量">{batterySummary.summary.final_discharge_capacity.toFixed(3)} Ah</Descriptions.Item>
+            </Descriptions>
+          </Card>
+        </>
+      )}
+    </div>
+  );
+};
+
+export default ChargeDischargeChart;

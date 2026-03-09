@@ -1,0 +1,1222 @@
+{
+  "experiments": [
+    {
+      "id": "AI设计员生成的初始配方",
+      "components": {
+        "solvent_1": 0.39999999999999997,
+        "solvent_2": 0.3333333333333333,
+        "solvent_3": 0.26666666666666666
+      },
+      "metrics": {
+        "retention": 0.85,
+        "capacity": 250.0,
+        "impedance": 57.5
+      },
+      "original_metrics": {
+        "energy_density": 250.0,
+        "power_density": 1500.0,
+        "cycle_life": 800.0,
+        "safety_score": 0.85,
+        "stability_score": 0.8
+      },
+      "notes": "基于用户需求生成的电解液配方",
+      "source": "ai_designer",
+      "user_requirements": {
+        "energy_density": 300,
+        "power_density": 2000,
+        "cycle_life": 1500,
+        "safety_score": 0.9,
+        "working_temperature": "-20~60°C",
+        "application_scenario": "3C",
+        "cost_per_kwh": 100
+      },
+      "created_at": "2025-11-21T12:49:13.592021"
+    },
+    {
+      "id": "AI设计员生成的初始配方",
+      "components": {
+        "solvent_1": 0.39999999999999997,
+        "solvent_2": 0.3333333333333333,
+        "solvent_3": 0.26666666666666666
+      },
+      "metrics": {
+        "retention": 0.85,
+        "capacity": 250.0,
+        "impedance": 57.5
+      },
+      "original_metrics": {
+        "energy_density": 250.0,
+        "power_density": 1500.0,
+        "cycle_life": 800.0,
+        "safety_score": 0.85,
+        "stability_score": 0.8
+      },
+      "notes": "基于用户需求生成的电解液配方",
+      "source": "ai_designer",
+      "user_requirements": {
+        "energy_density": 300,
+        "power_density": 2000,
+        "cycle_life": 1500,
+        "safety_score": 0.9,
+        "working_temperature": "-20~60°C",
+        "application_scenario": "3C",
+        "cost_per_kwh": 100
+      },
+      "created_at": "2025-11-21T12:50:05.797903"
+    },
+    {
+      "id": "测试配方",
+      "components": {
+        "solvent_1": 0.5454545454545454,
+        "solvent_2": 0.45454545454545453
+      },
+      "metrics": {
+        "retention": 0.8,
+        "capacity": 280.0,
+        "impedance": 60.0
+      },
+      "original_metrics": {
+        "energy_density": 280.0,
+        "power_density": 1000.0,
+        "cycle_life": 900.0,
+        "safety_score": 0.8,
+        "stability_score": 0.8
+      },
+      "notes": "",
+      "source": "ai_designer",
+      "user_requirements": {
+        "energy_density": 350,
+        "power_density": 2000,
+        "cycle_life": 800
+      },
+      "created_at": "2025-11-21T16:00:27.664771"
+    },
+    {
+      "id": "测试配方",
+      "components": {
+        "solvent_1": 0.5454545454545454,
+        "solvent_2": 0.45454545454545453
+      },
+      "metrics": {
+        "retention": 0.8,
+        "capacity": 280.0,
+        "impedance": 60.0
+      },
+      "original_metrics": {
+        "energy_density": 280.0,
+        "power_density": 1000.0,
+        "cycle_life": 900.0,
+        "safety_score": 0.8,
+        "stability_score": 0.8
+      },
+      "notes": "",
+      "source": "ai_designer",
+      "user_requirements": {
+        "cycle_life": 2000,
+        "safety_score": 0.9,
+        "energy_density": 250
+      },
+      "created_at": "2025-11-21T16:00:27.697213"
+    },
+    {
+      "id": "测试配方",
+      "components": {
+        "solvent_1": 0.5454545454545454,
+        "solvent_2": 0.45454545454545453
+      },
+      "metrics": {
+        "retention": 0.8,
+        "capacity": 280.0,
+        "impedance": 60.0
+      },
+      "original_metrics": {
+        "energy_density": 280.0,
+        "power_density": 1000.0,
+        "cycle_life": 900.0,
+        "safety_score": 0.8,
+        "stability_score": 0.8
+      },
+      "notes": "",
+      "source": "ai_designer",
+      "user_requirements": {
+        "energy_density": 300,
+        "cycle_life": 1500,
+        "safety_score": 0.85
+      },
+      "created_at": "2025-11-21T16:00:27.713823"
+    },
+    {
+      "id": "测试配方",
+      "components": {
+        "solvent_1": 0.5454545454545454,
+        "solvent_2": 0.45454545454545453
+      },
+      "metrics": {
+        "retention": 0.8,
+        "capacity": 280.0,
+        "impedance": 60.0
+      },
+      "original_metrics": {
+        "energy_density": 280.0,
+        "power_density": 1000.0,
+        "cycle_life": 900.0,
+        "safety_score": 0.8,
+        "stability_score": 0.8
+      },
+      "notes": "",
+      "source": "ai_designer",
+      "user_requirements": {
+        "energy_density": 500
+      },
+      "created_at": "2025-11-21T16:00:27.731006"
+    },
+    {
+      "id": "测试配方",
+      "components": {
+        "solvent_1": 0.5454545454545454,
+        "solvent_2": 0.45454545454545453
+      },
+      "metrics": {
+        "retention": 0.8,
+        "capacity": 280.0,
+        "impedance": 60.0
+      },
+      "original_metrics": {
+        "energy_density": 280.0,
+        "power_density": 1000.0,
+        "cycle_life": 900.0,
+        "safety_score": 0.8,
+        "stability_score": 0.8
+      },
+      "notes": "",
+      "source": "ai_designer",
+      "user_requirements": {
+        "impedance": 30,
+        "cycle_life": 1000
+      },
+      "created_at": "2025-11-21T16:00:27.748575"
+    },
+    {
+      "id": "测试配方",
+      "components": {
+        "solvent_1": 0.5454545454545454,
+        "solvent_2": 0.45454545454545453
+      },
+      "metrics": {
+        "retention": 0.8,
+        "capacity": 280.0,
+        "impedance": 60.0
+      },
+      "original_metrics": {
+        "energy_density": 280.0,
+        "power_density": 1000.0,
+        "cycle_life": 900.0,
+        "safety_score": 0.8,
+        "stability_score": 0.8
+      },
+      "notes": "",
+      "source": "ai_designer",
+      "user_requirements": {
+        "energy_density": 350,
+        "power_density": 2000,
+        "cycle_life": 800
+      },
+      "created_at": "2025-11-21T16:00:53.087080"
+    },
+    {
+      "id": "测试配方",
+      "components": {
+        "solvent_1": 0.5454545454545454,
+        "solvent_2": 0.45454545454545453
+      },
+      "metrics": {
+        "retention": 0.8,
+        "capacity": 280.0,
+        "impedance": 60.0
+      },
+      "original_metrics": {
+        "energy_density": 280.0,
+        "power_density": 1000.0,
+        "cycle_life": 900.0,
+        "safety_score": 0.8,
+        "stability_score": 0.8
+      },
+      "notes": "",
+      "source": "ai_designer",
+      "user_requirements": {
+        "cycle_life": 2000,
+        "safety_score": 0.9,
+        "energy_density": 250
+      },
+      "created_at": "2025-11-21T16:00:53.154524"
+    },
+    {
+      "id": "测试配方",
+      "components": {
+        "solvent_1": 0.5454545454545454,
+        "solvent_2": 0.45454545454545453
+      },
+      "metrics": {
+        "retention": 0.8,
+        "capacity": 280.0,
+        "impedance": 60.0
+      },
+      "original_metrics": {
+        "energy_density": 280.0,
+        "power_density": 1000.0,
+        "cycle_life": 900.0,
+        "safety_score": 0.8,
+        "stability_score": 0.8
+      },
+      "notes": "",
+      "source": "ai_designer",
+      "user_requirements": {
+        "energy_density": 300,
+        "cycle_life": 1500,
+        "safety_score": 0.85
+      },
+      "created_at": "2025-11-21T16:00:53.168531"
+    },
+    {
+      "id": "测试配方",
+      "components": {
+        "solvent_1": 0.5454545454545454,
+        "solvent_2": 0.45454545454545453
+      },
+      "metrics": {
+        "retention": 0.8,
+        "capacity": 280.0,
+        "impedance": 60.0
+      },
+      "original_metrics": {
+        "energy_density": 280.0,
+        "power_density": 1000.0,
+        "cycle_life": 900.0,
+        "safety_score": 0.8,
+        "stability_score": 0.8
+      },
+      "notes": "",
+      "source": "ai_designer",
+      "user_requirements": {
+        "energy_density": 500
+      },
+      "created_at": "2025-11-21T16:00:53.187234"
+    },
+    {
+      "id": "测试配方",
+      "components": {
+        "solvent_1": 0.5454545454545454,
+        "solvent_2": 0.45454545454545453
+      },
+      "metrics": {
+        "retention": 0.8,
+        "capacity": 280.0,
+        "impedance": 60.0
+      },
+      "original_metrics": {
+        "energy_density": 280.0,
+        "power_density": 1000.0,
+        "cycle_life": 900.0,
+        "safety_score": 0.8,
+        "stability_score": 0.8
+      },
+      "notes": "",
+      "source": "ai_designer",
+      "user_requirements": {
+        "impedance": 30,
+        "cycle_life": 1000
+      },
+      "created_at": "2025-11-21T16:00:53.201964"
+    },
+    {
+      "id": "高能量密度正极电解液",
+      "components": {
+        "solvent_1": 0.1,
+        "solvent_2": 0.1,
+        "solvent_3": 0.1,
+        "solvent_4": 0.1,
+        "solvent_5": 0.1,
+        "solvent_6": 0.1,
+        "solvent_7": 0.1,
+        "solvent_8": 0.1,
+        "solvent_9": 0.1,
+        "solvent_10": 0.1
+      },
+      "metrics": {
+        "retention": 0.95,
+        "capacity": 322.0,
+        "impedance": 52.5
+      },
+      "original_metrics": {
+        "energy_density": 322.0,
+        "power_density": 1000.0,
+        "cycle_life": 1500.0,
+        "safety_score": 0.95,
+        "stability_score": 0.8
+      },
+      "notes": "",
+      "source": "ai_designer",
+      "user_requirements": {
+        "energy_density": 320,
+        "power_density": 2000,
+        "cycle_life": 2000,
+        "safety_score": 0.9,
+        "working_temperature": "-20~60°C",
+        "cost_per_kwh": 100,
+        "ionic_conductivity": 10,
+        "voltage_window": "2.5-4.2V"
+      },
+      "created_at": "2025-11-21T16:19:09.865781"
+    },
+    {
+      "id": "AI设计员生成的初始配方",
+      "components": {
+        "solvent_1": 0.39999999999999997,
+        "solvent_2": 0.3333333333333333,
+        "solvent_3": 0.26666666666666666
+      },
+      "metrics": {
+        "retention": 0.85,
+        "capacity": 250.0,
+        "impedance": 57.5
+      },
+      "original_metrics": {
+        "energy_density": 250.0,
+        "power_density": 1500.0,
+        "cycle_life": 800.0,
+        "safety_score": 0.85,
+        "stability_score": 0.8
+      },
+      "notes": "基于用户需求生成的电解液配方",
+      "source": "ai_designer",
+      "user_requirements": {
+        "energy_density": 300,
+        "power_density": 2000,
+        "cycle_life": 1500,
+        "safety_score": 0.9,
+        "working_temperature": "-20~60°C",
+        "application_scenario": "3C",
+        "cost_per_kwh": 100
+      },
+      "created_at": "2025-11-21T16:46:50.483802"
+    },
+    {
+      "id": "测试配方",
+      "components": {
+        "solvent_1": 0.5454545454545454,
+        "solvent_2": 0.45454545454545453
+      },
+      "metrics": {
+        "retention": 0.8,
+        "capacity": 280.0,
+        "impedance": 60.0
+      },
+      "original_metrics": {
+        "energy_density": 280.0,
+        "power_density": 1000.0,
+        "cycle_life": 900.0,
+        "safety_score": 0.8,
+        "stability_score": 0.8
+      },
+      "notes": "",
+      "source": "ai_designer",
+      "user_requirements": {
+        "energy_density": 350,
+        "power_density": 2000,
+        "cycle_life": 800
+      },
+      "created_at": "2025-11-21T16:47:08.389663"
+    },
+    {
+      "id": "测试配方",
+      "components": {
+        "solvent_1": 0.5454545454545454,
+        "solvent_2": 0.45454545454545453
+      },
+      "metrics": {
+        "retention": 0.8,
+        "capacity": 280.0,
+        "impedance": 60.0
+      },
+      "original_metrics": {
+        "energy_density": 280.0,
+        "power_density": 1000.0,
+        "cycle_life": 900.0,
+        "safety_score": 0.8,
+        "stability_score": 0.8
+      },
+      "notes": "",
+      "source": "ai_designer",
+      "user_requirements": {
+        "cycle_life": 2000,
+        "safety_score": 0.9,
+        "energy_density": 250
+      },
+      "created_at": "2025-11-21T16:47:08.402985"
+    },
+    {
+      "id": "测试配方",
+      "components": {
+        "solvent_1": 0.5454545454545454,
+        "solvent_2": 0.45454545454545453
+      },
+      "metrics": {
+        "retention": 0.8,
+        "capacity": 280.0,
+        "impedance": 60.0
+      },
+      "original_metrics": {
+        "energy_density": 280.0,
+        "power_density": 1000.0,
+        "cycle_life": 900.0,
+        "safety_score": 0.8,
+        "stability_score": 0.8
+      },
+      "notes": "",
+      "source": "ai_designer",
+      "user_requirements": {
+        "energy_density": 300,
+        "cycle_life": 1500,
+        "safety_score": 0.85
+      },
+      "created_at": "2025-11-21T16:47:08.414576"
+    },
+    {
+      "id": "测试配方",
+      "components": {
+        "solvent_1": 0.5454545454545454,
+        "solvent_2": 0.45454545454545453
+      },
+      "metrics": {
+        "retention": 0.8,
+        "capacity": 280.0,
+        "impedance": 60.0
+      },
+      "original_metrics": {
+        "energy_density": 280.0,
+        "power_density": 1000.0,
+        "cycle_life": 900.0,
+        "safety_score": 0.8,
+        "stability_score": 0.8
+      },
+      "notes": "",
+      "source": "ai_designer",
+      "user_requirements": {
+        "energy_density": 500
+      },
+      "created_at": "2025-11-21T16:47:08.431425"
+    },
+    {
+      "id": "测试配方",
+      "components": {
+        "solvent_1": 0.5454545454545454,
+        "solvent_2": 0.45454545454545453
+      },
+      "metrics": {
+        "retention": 0.8,
+        "capacity": 280.0,
+        "impedance": 60.0
+      },
+      "original_metrics": {
+        "energy_density": 280.0,
+        "power_density": 1000.0,
+        "cycle_life": 900.0,
+        "safety_score": 0.8,
+        "stability_score": 0.8
+      },
+      "notes": "",
+      "source": "ai_designer",
+      "user_requirements": {
+        "impedance": 30,
+        "cycle_life": 1000
+      },
+      "created_at": "2025-11-21T16:47:08.447412"
+    },
+    {
+      "id": "测试电解液配方",
+      "components": {
+        "solvent_1": 0.5454545454545454,
+        "solvent_2": 0.45454545454545453
+      },
+      "metrics": {
+        "retention": 0.8,
+        "capacity": 280.0,
+        "impedance": 60.0
+      },
+      "original_metrics": {
+        "energy_density": 280.0,
+        "power_density": 1000.0,
+        "cycle_life": 900.0,
+        "safety_score": 0.8,
+        "stability_score": 0.8
+      },
+      "notes": "",
+      "source": "ai_designer",
+      "user_requirements": {
+        "energy_density": 300,
+        "power_density": 2000,
+        "cycle_life": 1500,
+        "safety_score": 0.9
+      },
+      "created_at": "2025-11-21T16:55:08.860528"
+    },
+    {
+      "id": "测试电解液配方",
+      "components": {
+        "solvent_1": 0.5454545454545454,
+        "solvent_2": 0.45454545454545453
+      },
+      "metrics": {
+        "retention": 0.8,
+        "capacity": 280.0,
+        "impedance": 60.0
+      },
+      "original_metrics": {
+        "energy_density": 280.0,
+        "power_density": 1000.0,
+        "cycle_life": 900.0,
+        "safety_score": 0.8,
+        "stability_score": 0.8
+      },
+      "notes": "",
+      "source": "ai_designer",
+      "user_requirements": {
+        "energy_density": 300,
+        "power_density": 2000,
+        "cycle_life": 1500,
+        "safety_score": 0.9
+      },
+      "created_at": "2025-11-21T16:59:02.903791"
+    },
+    {
+      "id": "高能量密度正极电解液",
+      "components": {
+        "solvent_1": 0.1,
+        "solvent_2": 0.1,
+        "solvent_3": 0.1,
+        "solvent_4": 0.1,
+        "solvent_5": 0.1,
+        "solvent_6": 0.1,
+        "solvent_7": 0.1,
+        "solvent_8": 0.1,
+        "solvent_9": 0.1,
+        "solvent_10": 0.1
+      },
+      "metrics": {
+        "retention": 0.95,
+        "capacity": 322.0,
+        "impedance": 52.5
+      },
+      "original_metrics": {
+        "energy_density": 322.0,
+        "power_density": 1000.0,
+        "cycle_life": 1500.0,
+        "safety_score": 0.95,
+        "stability_score": 0.8
+      },
+      "notes": "",
+      "source": "ai_designer",
+      "user_requirements": {
+        "energy_density": 320,
+        "power_density": 2000,
+        "cycle_life": 2000,
+        "safety_score": 0.9,
+        "working_temperature": "-20~60°C",
+        "cost_per_kwh": 100,
+        "ionic_conductivity": 10,
+        "voltage_window": "2.5-4.2V"
+      },
+      "created_at": "2025-11-21T18:59:07.521028"
+    },
+    {
+      "id": "长寿命储能电池电解液",
+      "components": {
+        "solvent_1": 0.1,
+        "solvent_2": 0.1,
+        "solvent_3": 0.1,
+        "solvent_4": 0.1,
+        "solvent_5": 0.1,
+        "solvent_6": 0.1,
+        "solvent_7": 0.1,
+        "solvent_8": 0.1,
+        "solvent_9": 0.1,
+        "solvent_10": 0.1
+      },
+      "metrics": {
+        "retention": 0.93,
+        "capacity": 252.0,
+        "impedance": 53.5
+      },
+      "original_metrics": {
+        "energy_density": 252.0,
+        "power_density": 1000.0,
+        "cycle_life": 1920.0,
+        "safety_score": 0.93,
+        "stability_score": 0.8
+      },
+      "notes": "",
+      "source": "ai_designer",
+      "user_requirements": {
+        "energy_density": 320,
+        "power_density": 2000,
+        "cycle_life": 2000,
+        "safety_score": 0.9,
+        "working_temperature": "-20~60°C",
+        "cost_per_kwh": 100,
+        "ionic_conductivity": 10,
+        "voltage_window": "2.5-4.2V"
+      },
+      "created_at": "2025-11-21T18:59:36.656593"
+    },
+    {
+      "id": "长寿命储能电池电解液",
+      "components": {
+        "solvent_1": 0.1,
+        "solvent_2": 0.1,
+        "solvent_3": 0.1,
+        "solvent_4": 0.1,
+        "solvent_5": 0.1,
+        "solvent_6": 0.1,
+        "solvent_7": 0.1,
+        "solvent_8": 0.1,
+        "solvent_9": 0.1,
+        "solvent_10": 0.1
+      },
+      "metrics": {
+        "retention": 0.93,
+        "capacity": 252.0,
+        "impedance": 53.5
+      },
+      "original_metrics": {
+        "energy_density": 252.0,
+        "power_density": 1000.0,
+        "cycle_life": 1920.0,
+        "safety_score": 0.93,
+        "stability_score": 0.8
+      },
+      "notes": "",
+      "source": "ai_designer",
+      "user_requirements": {
+        "energy_density": 320,
+        "power_density": 2000,
+        "cycle_life": 2000,
+        "safety_score": 0.9,
+        "working_temperature": "-20~60°C",
+        "cost_per_kwh": 100,
+        "ionic_conductivity": 10,
+        "voltage_window": "2.5-4.2V"
+      },
+      "created_at": "2025-11-21T18:59:40.259947"
+    },
+    {
+      "id": "高能量密度正极电解液",
+      "components": {
+        "solvent_1": 0.1,
+        "solvent_2": 0.1,
+        "solvent_3": 0.1,
+        "solvent_4": 0.1,
+        "solvent_5": 0.1,
+        "solvent_6": 0.1,
+        "solvent_7": 0.1,
+        "solvent_8": 0.1,
+        "solvent_9": 0.1,
+        "solvent_10": 0.1
+      },
+      "metrics": {
+        "retention": 0.95,
+        "capacity": 322.0,
+        "impedance": 52.5
+      },
+      "original_metrics": {
+        "energy_density": 322.0,
+        "power_density": 1000.0,
+        "cycle_life": 1500.0,
+        "safety_score": 0.95,
+        "stability_score": 0.8
+      },
+      "notes": "",
+      "source": "ai_designer",
+      "user_requirements": {
+        "energy_density": 320,
+        "power_density": 2000,
+        "cycle_life": 2000,
+        "safety_score": 0.9,
+        "working_temperature": "-20~60°C",
+        "cost_per_kwh": 100,
+        "ionic_conductivity": 10,
+        "voltage_window": "2.5-4.2V"
+      },
+      "created_at": "2025-12-04T10:40:47.229805"
+    },
+    {
+      "id": "高能量密度正极电解液",
+      "components": {
+        "solvent_1": 0.1,
+        "solvent_2": 0.1,
+        "solvent_3": 0.1,
+        "solvent_4": 0.1,
+        "solvent_5": 0.1,
+        "solvent_6": 0.1,
+        "solvent_7": 0.1,
+        "solvent_8": 0.1,
+        "solvent_9": 0.1,
+        "solvent_10": 0.1
+      },
+      "metrics": {
+        "retention": 0.95,
+        "capacity": 322.0,
+        "impedance": 52.5
+      },
+      "original_metrics": {
+        "energy_density": 322.0,
+        "power_density": 1000.0,
+        "cycle_life": 1500.0,
+        "safety_score": 0.95,
+        "stability_score": 0.8
+      },
+      "notes": "",
+      "source": "ai_designer",
+      "user_requirements": {
+        "energy_density": 320,
+        "power_density": 2000,
+        "cycle_life": 2000,
+        "safety_score": 0.9,
+        "working_temperature": "-20~60°C",
+        "cost_per_kwh": 100,
+        "ionic_conductivity": 10,
+        "voltage_window": "2.5-4.2V"
+      },
+      "created_at": "2025-12-04T10:40:54.278554"
+    },
+    {
+      "id": "高能量密度正极电解液",
+      "components": {
+        "solvent_1": 0.1,
+        "solvent_2": 0.1,
+        "solvent_3": 0.1,
+        "solvent_4": 0.1,
+        "solvent_5": 0.1,
+        "solvent_6": 0.1,
+        "solvent_7": 0.1,
+        "solvent_8": 0.1,
+        "solvent_9": 0.1,
+        "solvent_10": 0.1
+      },
+      "metrics": {
+        "retention": 0.95,
+        "capacity": 322.0,
+        "impedance": 52.5
+      },
+      "original_metrics": {
+        "energy_density": 322.0,
+        "power_density": 1000.0,
+        "cycle_life": 1500.0,
+        "safety_score": 0.95,
+        "stability_score": 0.8
+      },
+      "notes": "",
+      "source": "ai_designer",
+      "user_requirements": {
+        "energy_density": 320,
+        "power_density": 2000,
+        "cycle_life": 2000,
+        "safety_score": 0.9,
+        "working_temperature": "-20~60°C",
+        "cost_per_kwh": 100,
+        "ionic_conductivity": 10,
+        "voltage_window": "2.5-4.2V"
+      },
+      "created_at": "2025-12-23T16:33:56.295329"
+    },
+    {
+      "id": "长寿命储能电池电解液",
+      "components": {
+        "solvent_1": 0.1,
+        "solvent_2": 0.1,
+        "solvent_3": 0.1,
+        "solvent_4": 0.1,
+        "solvent_5": 0.1,
+        "solvent_6": 0.1,
+        "solvent_7": 0.1,
+        "solvent_8": 0.1,
+        "solvent_9": 0.1,
+        "solvent_10": 0.1
+      },
+      "metrics": {
+        "retention": 0.93,
+        "capacity": 252.0,
+        "impedance": 53.5
+      },
+      "original_metrics": {
+        "energy_density": 252.0,
+        "power_density": 1000.0,
+        "cycle_life": 1920.0,
+        "safety_score": 0.93,
+        "stability_score": 0.8
+      },
+      "notes": "",
+      "source": "ai_designer",
+      "user_requirements": {
+        "energy_density": 320,
+        "power_density": 2000,
+        "cycle_life": 2000,
+        "safety_score": 0.9,
+        "working_temperature": "-20~60°C",
+        "cost_per_kwh": 100,
+        "ionic_conductivity": 10,
+        "voltage_window": "2.5-4.2V"
+      },
+      "created_at": "2025-12-26T17:51:27.755271"
+    },
+    {
+      "id": "长寿命储能电池电解液",
+      "components": {
+        "solvent_1": 0.1,
+        "solvent_2": 0.1,
+        "solvent_3": 0.1,
+        "solvent_4": 0.1,
+        "solvent_5": 0.1,
+        "solvent_6": 0.1,
+        "solvent_7": 0.1,
+        "solvent_8": 0.1,
+        "solvent_9": 0.1,
+        "solvent_10": 0.1
+      },
+      "metrics": {
+        "retention": 0.93,
+        "capacity": 252.0,
+        "impedance": 53.5
+      },
+      "original_metrics": {
+        "energy_density": 252.0,
+        "power_density": 1000.0,
+        "cycle_life": 1920.0,
+        "safety_score": 0.93,
+        "stability_score": 0.8
+      },
+      "notes": "",
+      "source": "ai_designer",
+      "user_requirements": {
+        "energy_density": 320,
+        "power_density": 2000,
+        "cycle_life": 2000,
+        "safety_score": 0.9,
+        "working_temperature": "-20~60°C",
+        "cost_per_kwh": 100,
+        "ionic_conductivity": 10,
+        "voltage_window": "2.5-4.2V"
+      },
+      "created_at": "2026-01-05T10:40:41.078899"
+    },
+    {
+      "id": "高能量密度正极电解液",
+      "components": {
+        "solvent_1": 0.1,
+        "solvent_2": 0.1,
+        "solvent_3": 0.1,
+        "solvent_4": 0.1,
+        "solvent_5": 0.1,
+        "solvent_6": 0.1,
+        "solvent_7": 0.1,
+        "solvent_8": 0.1,
+        "solvent_9": 0.1,
+        "solvent_10": 0.1
+      },
+      "metrics": {
+        "retention": 0.95,
+        "capacity": 322.0,
+        "impedance": 52.5
+      },
+      "original_metrics": {
+        "energy_density": 322.0,
+        "power_density": 1000.0,
+        "cycle_life": 1500.0,
+        "safety_score": 0.95,
+        "stability_score": 0.8
+      },
+      "notes": "",
+      "source": "ai_designer",
+      "user_requirements": {
+        "energy_density": 320,
+        "power_density": 2000,
+        "cycle_life": 2000,
+        "safety_score": 0.9,
+        "working_temperature": "-20~60°C",
+        "cost_per_kwh": 100,
+        "ionic_conductivity": 10,
+        "voltage_window": "2.5-4.2V"
+      },
+      "created_at": "2026-01-05T10:42:38.988669"
+    },
+    {
+      "id": "高能量密度正极电解液",
+      "components": {
+        "solvent_1": 0.1,
+        "solvent_2": 0.1,
+        "solvent_3": 0.1,
+        "solvent_4": 0.1,
+        "solvent_5": 0.1,
+        "solvent_6": 0.1,
+        "solvent_7": 0.1,
+        "solvent_8": 0.1,
+        "solvent_9": 0.1,
+        "solvent_10": 0.1
+      },
+      "metrics": {
+        "retention": 0.95,
+        "capacity": 322.0,
+        "impedance": 52.5
+      },
+      "original_metrics": {
+        "energy_density": 322.0,
+        "power_density": 1000.0,
+        "cycle_life": 1500.0,
+        "safety_score": 0.95,
+        "stability_score": 0.8
+      },
+      "notes": "",
+      "source": "ai_designer",
+      "user_requirements": {
+        "energy_density": 320,
+        "power_density": 2000,
+        "cycle_life": 2000,
+        "safety_score": 0.9,
+        "working_temperature": "-20~60°C",
+        "cost_per_kwh": 100,
+        "ionic_conductivity": 10,
+        "voltage_window": "2.5-4.2V"
+      },
+      "created_at": "2026-01-05T15:32:04.258946"
+    },
+    {
+      "id": "高能量密度正极电解液",
+      "components": {
+        "solvent_1": 0.1,
+        "solvent_2": 0.1,
+        "solvent_3": 0.1,
+        "solvent_4": 0.1,
+        "solvent_5": 0.1,
+        "solvent_6": 0.1,
+        "solvent_7": 0.1,
+        "solvent_8": 0.1,
+        "solvent_9": 0.1,
+        "solvent_10": 0.1
+      },
+      "metrics": {
+        "retention": 0.95,
+        "capacity": 322.0,
+        "impedance": 52.5
+      },
+      "original_metrics": {
+        "energy_density": 322.0,
+        "power_density": 1000.0,
+        "cycle_life": 1500.0,
+        "safety_score": 0.95,
+        "stability_score": 0.8
+      },
+      "notes": "",
+      "source": "ai_designer",
+      "user_requirements": {
+        "energy_density": 320,
+        "power_density": 2000,
+        "cycle_life": 2000,
+        "safety_score": 0.9,
+        "working_temperature": "-20~60°C",
+        "cost_per_kwh": 100,
+        "ionic_conductivity": 10,
+        "voltage_window": "2.5-4.2V"
+      },
+      "created_at": "2026-01-14T15:28:42.123923"
+    },
+    {
+      "id": "高能量密度正极电解液",
+      "components": {
+        "solvent_1": 0.1,
+        "solvent_2": 0.1,
+        "solvent_3": 0.1,
+        "solvent_4": 0.1,
+        "solvent_5": 0.1,
+        "solvent_6": 0.1,
+        "solvent_7": 0.1,
+        "solvent_8": 0.1,
+        "solvent_9": 0.1,
+        "solvent_10": 0.1
+      },
+      "metrics": {
+        "retention": 0.95,
+        "capacity": 322.0,
+        "impedance": 52.5
+      },
+      "original_metrics": {
+        "energy_density": 322.0,
+        "power_density": 1000.0,
+        "cycle_life": 1500.0,
+        "safety_score": 0.95,
+        "stability_score": 0.8
+      },
+      "notes": "",
+      "source": "ai_designer",
+      "user_requirements": {
+        "energy_density": 320,
+        "power_density": 2000,
+        "cycle_life": 2000,
+        "safety_score": 0.9,
+        "working_temperature": "-20~60°C",
+        "cost_per_kwh": 100,
+        "ionic_conductivity": 10,
+        "voltage_window": "2.5-4.2V"
+      },
+      "created_at": "2026-01-16T13:56:28.473598"
+    },
+    {
+      "id": "高能量密度正极电解液",
+      "components": {
+        "solvent_1": 0.1,
+        "solvent_2": 0.1,
+        "solvent_3": 0.1,
+        "solvent_4": 0.1,
+        "solvent_5": 0.1,
+        "solvent_6": 0.1,
+        "solvent_7": 0.1,
+        "solvent_8": 0.1,
+        "solvent_9": 0.1,
+        "solvent_10": 0.1
+      },
+      "metrics": {
+        "retention": 0.95,
+        "capacity": 322.0,
+        "impedance": 52.5
+      },
+      "original_metrics": {
+        "energy_density": 322.0,
+        "power_density": 1000.0,
+        "cycle_life": 1500.0,
+        "safety_score": 0.95,
+        "stability_score": 0.8
+      },
+      "notes": "",
+      "source": "ai_designer",
+      "user_requirements": {
+        "energy_density": 320,
+        "power_density": 2000,
+        "cycle_life": 2000,
+        "safety_score": 0.9,
+        "working_temperature": "-20~60°C",
+        "cost_per_kwh": 100,
+        "ionic_conductivity": 10,
+        "voltage_window": "2.5-4.2V"
+      },
+      "created_at": "2026-02-03T00:16:29.152580"
+    },
+    {
+      "id": "高能量密度正极电解液",
+      "components": {
+        "solvent_1": 0.1,
+        "solvent_2": 0.1,
+        "solvent_3": 0.1,
+        "solvent_4": 0.1,
+        "solvent_5": 0.1,
+        "solvent_6": 0.1,
+        "solvent_7": 0.1,
+        "solvent_8": 0.1,
+        "solvent_9": 0.1,
+        "solvent_10": 0.1
+      },
+      "metrics": {
+        "retention": 0.95,
+        "capacity": 322.0,
+        "impedance": 52.5
+      },
+      "original_metrics": {
+        "energy_density": 322.0,
+        "power_density": 1000.0,
+        "cycle_life": 1500.0,
+        "safety_score": 0.95,
+        "stability_score": 0.8
+      },
+      "notes": "",
+      "source": "ai_designer",
+      "user_requirements": {
+        "energy_density": 320,
+        "power_density": 2000,
+        "cycle_life": 2000,
+        "safety_score": 0.9,
+        "working_temperature": "-20~60°C",
+        "cost_per_kwh": 100,
+        "ionic_conductivity": 10,
+        "voltage_window": "2.5-4.2V"
+      },
+      "created_at": "2026-03-05T13:53:55.923206"
+    },
+    {
+      "id": "高能量密度正极电解液",
+      "components": {
+        "solvent_1": 0.1,
+        "solvent_2": 0.1,
+        "solvent_3": 0.1,
+        "solvent_4": 0.1,
+        "solvent_5": 0.1,
+        "solvent_6": 0.1,
+        "solvent_7": 0.1,
+        "solvent_8": 0.1,
+        "solvent_9": 0.1,
+        "solvent_10": 0.1
+      },
+      "metrics": {
+        "retention": 0.95,
+        "capacity": 322.0,
+        "impedance": 52.5
+      },
+      "original_metrics": {
+        "energy_density": 322.0,
+        "power_density": 1000.0,
+        "cycle_life": 1500.0,
+        "safety_score": 0.95,
+        "stability_score": 0.8
+      },
+      "notes": "",
+      "source": "ai_designer",
+      "user_requirements": {
+        "energy_density": 320,
+        "power_density": 2000,
+        "cycle_life": 2000,
+        "safety_score": 0.9,
+        "working_temperature": "-20~60°C",
+        "cost_per_kwh": 100,
+        "ionic_conductivity": 10,
+        "voltage_window": "2.5-4.2V"
+      },
+      "created_at": "2026-03-05T13:54:00.224467"
+    }
+  ],
+  "metric_info": {
+    "metrics": [
+      "retention",
+      "capacity",
+      "impedance"
+    ],
+    "descriptions": [
+      "保持率",
+      "容量",
+      "阻抗"
+    ],
+    "directions": [
+      "maximize",
+      "maximize",
+      "minimize"
+    ]
+  },
+  "component_names": [
+    "溶剂1",
+    "溶剂2",
+    "溶剂3",
+    "溶剂4",
+    "溶剂5",
+    "溶剂6",
+    "溶剂7",
+    "溶剂8",
+    "溶剂9",
+    "溶剂10"
+  ],
+  "last_updated": "2026-03-05T13:54:00.224467"
+}

@@ -1,0 +1,59 @@
+{
+  "name": "ai-battery-lab-frontend",
+  "version": "1.0.0",
+  "description": "悟行：智能电池设计与实验系统前端",
+  "private": true,
+  "dependencies": {
+    "@react-three/drei": "^9.120.0",
+    "@react-three/fiber": "^8.16.6",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.4.3",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.11",
+    "@types/react": "^18.0.26",
+    "@types/react-dom": "^18.0.10",
+    "antd": "^5.1.7",
+    "axios": "^1.2.2",
+    "buffer": "^6.0.3",
+    "echarts": "^5.4.1",
+    "echarts-for-react": "^3.0.2",
+    "process": "^0.11.10",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.6.1",
+    "react-scripts": "^4.0.3",
+    "three": "^0.162.0",
+    "typescript": "^4.9.4",
+    "web-vitals": "^2.1.4",
+    "xlsx": "^0.18.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/echarts": "^4.9.16",
+    "http-proxy-middleware": "^3.0.5"
+  }
+}

@@ -1,0 +1,12 @@
+# PostgreSQL相关依赖
+psycopg2-binary==2.9.7
+psycopg2-extras==2.9.7
+
+# 环境变量配置库
+python-dotenv==1.0.0
+
+# 如果需要连接池
+psycopg2-pool==1.10
+
+# JSON处理增强
+ujson==5.8.0

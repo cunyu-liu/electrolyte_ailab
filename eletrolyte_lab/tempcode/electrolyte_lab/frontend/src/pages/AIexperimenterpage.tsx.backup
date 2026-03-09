@@ -1,0 +1,880 @@
+import React, { useState, useEffect } from 'react';
+import {
+  Card,
+  Row,
+  Col,
+  Button,
+  Select,
+  Table,
+  Tag,
+  Progress,
+  Typography,
+  Space,
+  Alert,
+  Spin,
+  Modal,
+  Tabs,
+  Descriptions,
+  message,
+  Switch,
+  Tooltip,
+  Badge,
+  Divider
+} from 'antd';
+import {
+  PlayCircleOutlined,
+  PauseCircleOutlined,
+  StopOutlined,
+  EyeOutlined,
+  MonitorOutlined,
+  VideoCameraOutlined,
+  DatabaseOutlined,
+  SettingOutlined,
+  ReloadOutlined,
+  ControlOutlined,
+  SwapOutlined
+} from '@ant-design/icons';
+import ReactECharts from 'echarts-for-react';
+import { aiExperimenterApi, experimentDataApi, landianApi } from '../services/api';
+import {
+  Experiment,
+  Formula,
+  ExperimentStatus,
+  MonitoringData
+} from '../types';
+
+const { Title, Paragraph, Text } = Typography;
+const { Option } = Select;
+const { TabPane } = Tabs;
+
+const AIExperimenterPage: React.FC = () => {
+  const [formulas, setFormulas] = useState<Formula[]>([]);
+  const [experiments, setExperiments] = useState<Experiment[]>([]);
+  const [selectedFormula, setSelectedFormula] = useState<number | null>(null);
+  const [runningExperiment, setRunningExperiment] = useState<Experiment | null>(null);
+  const [experimentStatus, setExperimentStatus] = useState<{ experiment: Experiment; monitoring_data: any; session_info?: { experiment_id: number; runtime_seconds: number; data_points_collected: number; last_update: number } } | null>(null);
+  const [monitoringData, setMonitoringData] = useState<MonitoringData | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [statusModalVisible, setStatusModalVisible] = useState(false);
+  const [monitoringModalVisible, setMonitoringModalVisible] = useState(false);
+  const [formulaDetailModalVisible, setFormulaDetailModalVisible] = useState(false);
+  const [selectedFormulaDetail, setSelectedFormulaDetail] = useState<Formula | null>(null);
+  const [experimentDetailModalVisible, setExperimentDetailModalVisible] = useState(false);
+  const [selectedExperimentDetail, setSelectedExperimentDetail] = useState<Experiment | null>(null);
+  const [statusInterval, setStatusInterval] = useState<NodeJS.Timeout | null>(null);
+
+  // 视频源模式：'local' (本地摄像头) | 'rtsp' (海康威视RTSP)
+  const [videoMode, setVideoMode] = useState<'local' | 'rtsp'>('rtsp');
+
+  // 蓝甸数据库数据相关状态
+  const [availableMainIds, setAvailableMainIds] = useState<string[]>([]);
+  const [selectedMainId, setSelectedMainId] = useState<string | null>(null);
+  const [landianChargeData, setLandianChargeData] = useState<any[]>([]);
+  const [landianDetailData, setLandianDetailData] = useState<any>(null);
+  const [landianDataLoading, setLandianDataLoading] = useState(false);
+  const [dbConfigModalVisible, setDbConfigModalVisible] = useState(false);
+
+  // 充放电曲线视图状态
+  const [chartViewType, setChartViewType] = useState<'overview' | 'detailed'>('overview');
+  const [selectedCycle, setSelectedCycle] = useState<number | null>(null);
+
+  // 当切换到详细视图时，自动选择第一个可用循环
+  useEffect(() => {
+    if (chartViewType === 'detailed' && !selectedCycle && landianChargeData.length > 0) {
+      const cycles = landianChargeData.map(item => item.cycle_number);
+      if (cycles.length > 0) {
+        setSelectedCycle(cycles.sort((a, b) => a - b)[0]);
+      }
+    }
+  }, [chartViewType, selectedCycle, landianChargeData]);
+
+  useEffect(() => {
+    loadLandianMainIds(); // 自动加载蓝甸数据库MainIds
+    // 加载RTSP摄像头状态
+    if (videoMode === 'rtsp') {
+      // 自动激活默认选中的RTSP摄像头（通道101）
+      console.log('[AI实验员] 自动激活第一个摄像头 camera_1 (通道101)');
+      setActiveCamera('camera_1');
+    }
+  }, [videoMode]);
+
+  // 清理定时器和摄像头资源
+  useEffect(() => {
+    return () => {
+      if (statusInterval) {
+        clearInterval(statusInterval);
+      }
+      stopCameras();
+      // 停止RTSP摄像头
+      if (videoMode === 'rtsp') {
+        console.log('[AI实验员] 组件卸载，清理RTSP视频资源');
+      }
+    };
+  }, [statusInterval, videoMode]);
+
+
+  
+
+  // 蓝甸数据库相关函数
+  const loadLandianMainIds = async () => {
+    try {
+      const response = await landianApi.getMainIds(100);
+      if (response.success) {
+        setAvailableMainIds(response.data.data);
+        if (response.data.data.length > 0 && !selectedMainId) {
+          setSelectedMainId(response.data.data[0]);
+        }
+      }
+    } catch (error) {
+      console.error('加载蓝甸MainId列表失败:', error);
+      message.error('无法连接到蓝甸数据库');
+    }
+  };
+
+  const loadLandianChargeData = async (mainId: string) => {
+    if (!mainId) return;
+
+    setLandianDataLoading(true);
+    try {
+      const response = await landianApi.getCycleCurveData(mainId);
+      if (response.success) {
+        setLandianChargeData(response.data.data);
+        // 清空详细数据，因为选择了新的MainId
+        setLandianDetailData(null);
+        if (response.data.data.length > 0) {
+          message.success(`成功加载MainId ${mainId}的${response.data.data.length}条循环数据`);
+        } else {
+          message.warning(`MainId ${mainId}没有可用的循环数据`);
+        }
+      } else {
+        message.error(`加载MainId ${mainId}失败`);
+      }
+    } catch (error) {
+      console.error('加载蓝甸循环曲线数据失败:', error);
+      message.error('加载蓝甸数据失败，请检查数据库连接');
+      setLandianChargeData([]); // 清空数据
+    } finally {
+      setLandianDataLoading(false);
+    }
+  };
+
+  const loadLandianDetailData = async (mainId: string, cycleNo: number) => {
+    if (!mainId || !cycleNo) return;
+
+    try {
+      const response = await landianApi.getCycleDetailData(mainId, cycleNo);
+      if (response.success) {
+        setLandianDetailData(response.data.data);
+      }
+    } catch (error) {
+      console.error('加载蓝甸循环细节数据失败:', error);
+      message.error('加载循环细节数据失败');
+    }
+  };
+
+  // 当选择MainId时自动加载数据
+  useEffect(() => {
+    if (selectedMainId) {
+      loadLandianChargeData(selectedMainId);
+    }
+  }, [selectedMainId]);
+
+  // 当选择循环时加载详细数据
+  useEffect(() => {
+    if (selectedCycle && selectedMainId && chartViewType === 'detailed') {
+      loadLandianDetailData(selectedMainId, selectedCycle);
+    }
+  }, [selectedCycle, selectedMainId, chartViewType]);
+
+  // 执行实验
+  const handleExecuteExperiment = async () => {
+    if (!selectedFormula) {
+      Modal.warning({
+        title: '请选择配方',
+        content: '请先选择一个配方才能执行实验'
+      });
+      return;
+    }
+
+    setLoading(true);
+
+    // 生成假的实验数据
+    const newExperiment = {
+      id: Date.now(),
+      name: `实验_${new Date().toLocaleString()}`,
+      formula_id: selectedFormula,
+      status: 'running',
+      created_at: new Date().toISOString()
+    };
+
+    setRunningExperiment(newExperiment as any);
+    setExperiments(prev => [newExperiment as any, ...prev]);
+
+    // 开始状态监控（模拟）
+    startStatusMonitoring(newExperiment.id);
+
+    Modal.success({
+      title: '实验启动成功',
+      content: `实验 ID: ${newExperiment.id} 已开始执行`
+    });
+
+    setLoading(false);
+  };
+
+  // 开始状态监控
+  const startStatusMonitoring = (experimentId: number) => {
+    if (statusInterval) {
+      clearInterval(statusInterval);
+    }
+
+    let progress = 0;
+    const interval = setInterval(() => {
+      progress += Math.random() * 10 + 5; // 每次增加5-15%
+
+      const mockStatus = {
+        experiment: {
+          id: experimentId,
+          formula_id: 1,
+          created_at: new Date().toISOString(),
+          name: `实验_${new Date(experimentId).toLocaleString()}`,
+          status: progress >= 95 ? 'completed' : 'running'
+        } as any,
+        monitoring_data: {
+          temperature: 25 + Math.random() * 10,
+          voltage: 3.7 + Math.random() * 0.3,
+          current: Math.random() * 5,
+          capacity: Math.random() * 100,
+          impedance: Math.random() * 100
+        },
+        session_info: {
+          experiment_id: experimentId,
+          runtime_seconds: Math.floor(progress * 10),
+          data_points_collected: Math.floor(progress * 2),
+          last_update: Math.floor(Date.now() / 1000)
+        }
+      };
+
+      setExperimentStatus(mockStatus);
+
+      // 如果实验完成，停止监控
+      if (progress >= 95) {
+        clearInterval(interval);
+        setStatusInterval(null);
+        setRunningExperiment(null);
+
+        // 更新实验列表中的状态
+        setExperiments(prev => prev.map(exp =>
+          exp.id === experimentId ? { ...exp, status: 'completed' } : exp
+        ));
+      }
+    }, 2000); // 每2秒更新一次
+
+    setStatusInterval(interval);
+  };
+
+  // 停止实验
+  const handleStopExperiment = async () => {
+    if (!runningExperiment) return;
+
+    try {
+      const response = await aiExperimenterApi.stopExperiment(runningExperiment.id);
+      if (response.success) {
+        if (statusInterval) {
+          clearInterval(statusInterval);
+          setStatusInterval(null);
+        }
+        setRunningExperiment(null);
+        setExperimentStatus(null);
+
+        Modal.success({
+          title: '实验已停止',
+          content: `实验 ID: ${runningExperiment.id} 已成功停止`
+        });
+      }
+    } catch (error) {
+      Modal.error({
+        title: '停止失败',
+        content: '无法停止实验，请重试'
+      });
+    }
+  };
+
+  // 获取监控数据
+  const loadMonitoringData = async (type: string = 'all') => {
+    if (!runningExperiment) return;
+
+    try {
+      const response = await aiExperimenterApi.getMonitoringData(runningExperiment.id, type);
+      if (response.success && response.data) {
+        setMonitoringData(response.data);
+      }
+    } catch (error) {
+      console.error('Failed to load monitoring data:', error);
+    }
+  };
+
+  // 查看实验状态
+  const showStatusModal = () => {
+    setStatusModalVisible(true);
+  };
+
+  // 查看监控数据
+  const showMonitoringModal = () => {
+    setMonitoringModalVisible(true);
+    loadMonitoringData();
+  };
+
+  // 查看配方详情
+  const showFormulaDetail = (formula: Formula) => {
+    setSelectedFormulaDetail(formula);
+    setFormulaDetailModalVisible(true);
+  };
+
+  // 查看实验详情
+  const showExperimentDetail = (experiment: Experiment) => {
+    setSelectedExperimentDetail(experiment);
+    setExperimentDetailModalVisible(true);
+  };
+
+  // 获取状态颜色
+  const getStatusColor = (status: string) => {
+    const colors: Record<string, string> = {
+      'pending': '#faad14',
+      'running': '#52c41a',
+      'completed': '#1890ff',
+      'failed': '#ff4d4f'
+    };
+    return colors[status] || '#666';
+  };
+
+  // 获取状态文本
+  const getStatusText = (status: string) => {
+    const texts: Record<string, string> = {
+      'pending': '等待中',
+      'running': '运行中',
+      'completed': '已完成',
+      'failed': '失败'
+    };
+    return texts[status] || status;
+  };
+
+  // 获取用户需求参数的中文标签
+  const getChineseLabel = (key: string) => {
+    const labelMap: Record<string, string> = {
+      'energy_density': '能量密度',
+      'power_density': '功率密度',
+      'cycle_life': '循环寿命',
+      'working_temperature': '工作温度',
+      'safety_score': '安全性评分',
+      'voltage': '电压',
+      'ionic_conductivity': '离子电导率',
+      'impedance': '阻抗',
+      'cost_per_kwh': '每千瓦时成本'
+    };
+    return labelMap[key] || key;
+  };
+
+  // 实时摄像头相关状态
+  const [cameraStreams, setCameraStreams] = useState<{[key: string]: MediaStream | null}>({
+    'camera_1': null,
+    'camera_2': null,
+    'camera_3': null,
+    'camera_4': null
+  });
+  const [cameraStatus, setCameraStatus] = useState<{[key: string]: string}>({
+    'camera_1': 'waiting',
+    'camera_2': 'waiting',
+    'camera_3': 'waiting',
+    'camera_4': 'waiting'
+  });
+  const [useRealCameras, setUseRealCameras] = useState(false);
+
+  // RTSP摄像头配置 - 对应后端的四通道摄像头
+  const [rtspCameras, setRtspCameras] = useState<Array<{
+    camera_id: string;
+    name: string;
+    channel: number;
+    description: string;
+  }>>([
+    {
+      camera_id: 'camera_1',
+      name: '配液监控摄像头',
+      channel: 101,
+      description: '监控电解液配制过程'
+    },
+    {
+      camera_id: 'camera_2',
+      name: '注液封口监控',
+      channel: 201,
+      description: '监控注液和封口过程'
+    },
+    {
+      camera_id: 'camera_3',
+      name: '性能测试监控',
+      channel: 301,
+      description: '监控电池性能测试过程'
+    },
+    {
+      camera_id: 'camera_4',
+      name: '环境监控摄像头',
+      channel: 401,
+      description: '监控实验室环境状态'
+    }
+  ]);
+
+  // RTSP摄像头状态
+  const [rtspStatus, setRtspStatus] = useState<Record<string, any>>({});
+  const [selectedCamera, setSelectedCamera] = useState<string>('camera_1'); // 当前选中的摄像头
+  const [activeCamera, setActiveCamera] = useState<string>('camera_1'); // 当前激活的摄像头
+  const [rtspAllLoading, setRtspAllLoading] = useState(false);
+
+  // 视频加载状态
+  const [videoLoading, setVideoLoading] = useState(true);
+  const [videoError, setVideoError] = useState<string | null>(null);
+  const [currentChannel, setCurrentChannel] = useState(101); // 可切换通道，默认101
+  const [videoReady, setVideoReady] = useState(false); // start成功后才允许get
+  const [streamTimestamp, setStreamTimestamp] = useState(Date.now()); // 流URL时间戳，强制刷新
+
+  // 启动视频流
+  const startVideoStream = async () => {
+    // 防止重复调用
+    if (videoLoading) {
+      console.log('[视频监控] 正在加载中，跳过重复调用');
+      return;
+    }
+
+    setVideoLoading(true);
+    setVideoError(null);
+    setVideoReady(false); // 重置状态
+    console.log(`[视频监控] 开始调用start接口，通道: ${currentChannel}`);
+
+    try {
+      // 使用统一配置的API
+      const response = await aiExperimenterApi.startVideoChannel(currentChannel);
+      console.log('[视频监控] Start接口返回:', response);
+
+      if (response.data.status === 'success') {
+        console.log(`[视频监控] Start接口成功，通道: ${currentChannel}`);
+        setVideoReady(true);
+        setVideoLoading(false);
+        const newTimestamp = Date.now();
+        setStreamTimestamp(newTimestamp); // 更新时间戳，强制浏览器重新请求
+        console.log(`[视频监控] 更新时间戳: ${newTimestamp}, 即将请求GET接口`);
+
+        // 查找当前摄像头名称并显示成功提示
+        const camera = rtspCameras.find(c => c.channel === currentChannel);
+        if (camera) {
+          message.success(`开启${camera.name}成功`);
+        }
+      } else {
+        console.error('[视频监控] Start接口失败:', response);
+        setVideoError(response.message || '通道不可用');
+        setVideoLoading(false);
+      }
+    } catch (err) {
+      console.error('[视频监控] Start接口异常:', err);
+      setVideoError(`启动视频流失败: ${err instanceof Error ? err.message : '未知错误'}`);
+      setVideoLoading(false);
+    }
+  };
+
+  // 处理通道切换
+  const handleChannelChange = (newChannel: number) => {
+    if (newChannel === currentChannel) return; // 相同通道不处理
+    setCurrentChannel(newChannel); // 更新通道
+    setVideoReady(false); // 重置视频状态
+    // useEffect会自动调用startVideoStream
+  };
+
+  // 组件加载或通道切换时自动启动视频流
+  useEffect(() => {
+    startVideoStream();
+  }, [currentChannel]); // 依赖currentChannel，通道变化时重新启动
+
+  
+  // 渲染视频监控
+  const renderVideoMonitoring = () => {
+    // 使用API配置中定义的函数获取视频流URL
+    // 添加时间戳参数防止浏览器缓存
+    const streamUrl = `${aiExperimenterApi.getVideoStreamUrl(currentChannel)}?t=${streamTimestamp}`;
+    console.log(`[视频监控] 渲染函数执行, videoReady: ${videoReady}, URL: ${streamUrl}`);
+
+    return (
+      <Card
+        size="small"
+        style={{ padding: 0 }}
+        title={
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <VideoCameraOutlined style={{ fontSize: '16px' }} />
+            <span style={{ fontSize: '14px', fontWeight: 500 }}>选择摄像头:</span>
+            <Select
+              style={{ width: 200 }}
+              value={currentChannel}
+              onChange={handleChannelChange}
+              loading={videoLoading}
+            >
+              {rtspCameras.map(camera => (
+                <Option key={camera.channel} value={camera.channel}>
+                  {camera.name} (通道{camera.channel})
+                </Option>
+              ))}
+            </Select>
+          </div>
+        }
+      >
+        <div style={{
+          width: '100%',
+          height: '500px',
+          backgroundColor: '#000',
+          borderRadius: '6px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          position: 'relative',
+          overflow: 'hidden'
+        }}>
+          {videoLoading && (
+            <div style={{
+              color: '#fff',
+              textAlign: 'center',
+              fontSize: '16px'
+            }}>
+              正在启动视频流...
+            </div>
+          )}
+
+          {!videoLoading && videoError && (
+            <div style={{
+              color: '#ff4d4f',
+              textAlign: 'center',
+              padding: '20px',
+              fontSize: '14px'
+            }}>
+              <div style={{ fontSize: '48px', marginBottom: '16px' }}>⚠️</div>
+              <div>{videoError}</div>
+              <Button
+                type="primary"
+                size="small"
+                onClick={startVideoStream}
+                style={{ marginTop: '16px' }}
+              >
+                重试
+              </Button>
+            </div>
+          )}
+
+          {!videoLoading && !videoError && videoReady && (
+            <>
+              <img
+                key={`video-${currentChannel}-${streamTimestamp}`}
+                src={streamUrl}
+                alt="配液监控摄像头"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'contain',
+                  borderRadius: '6px'
+                }}
+                onLoad={() => {
+                  console.log(`[视频监控] 视频流加载成功: 通道 ${currentChannel}`);
+                  setVideoError(null);
+                }}
+                onError={(e) => {
+                  console.error(`[视频监控] 视频流加载失败: 通道 ${currentChannel}`, e);
+                  setVideoError('视频流连接失败，请检查网络或摄像头连接');
+                }}
+              />
+              <div
+                style={{
+                  position: 'absolute',
+                  top: '8px',
+                  right: '8px',
+                  backgroundColor: 'rgba(0, 0, 0, 0.6)',
+                  color: '#fff',
+                  padding: '4px 12px',
+                  borderRadius: '4px',
+                  fontSize: '12px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px'
+                }}
+              >
+                <div style={{
+                  width: '8px',
+                  height: '8px',
+                  backgroundColor: '#52c41a',
+                  borderRadius: '50%',
+                  animation: 'pulse 2s infinite'
+                }} />
+                LIVE - 通道 {currentChannel}
+              </div>
+            </>
+          )}
+        </div>
+      </Card>
+    );
+  };
+
+  // 获取可用的循环次数列表
+
+  // 获取特定循环的容量数据
+
+  // 配方表格列 - 重新设计
+  const formulaColumns = [
+    {
+      title: '配方ID',
+      dataIndex: 'id',
+      key: 'id',
+      width: 80
+    },
+    {
+      title: '正极材料',
+      key: 'positive_electrode',
+      width: 120,
+      render: (record: Formula) => {
+        // 从组件中查找正极材料
+        const positiveComponent = record.components?.find((comp: any) =>
+          comp.component_type === 'positive_electrode' ||
+          comp.name.toLowerCase().includes('ncm') ||
+          comp.name.toLowerCase().includes('lfp') ||
+          comp.name.toLowerCase().includes('nca') ||
+          comp.name.toLowerCase().includes('lco')
+        );
+        return positiveComponent ? positiveComponent.name : 'N/A';
+      }
+    },
+    {
+      title: '负极材料',
+      key: 'negative_electrode',
+      width: 120,
+      render: (record: Formula) => {
+        // 从组件中查找负极材料
+        const negativeComponent = record.components?.find((comp: any) =>
+          comp.component_type === 'negative_electrode' ||
+          comp.name.toLowerCase().includes('graphite') ||
+          comp.name.toLowerCase().includes('silicon') ||
+          comp.name.toLowerCase().includes('li-metal')
+        );
+        return negativeComponent ? negativeComponent.name : 'N/A';
+      }
+    },
+    {
+      title: '分子结构',
+      key: 'molecular_structure',
+      width: 150,
+      render: (record: Formula) => {
+        // 从组件中查找溶剂或盐类，显示SMILES字符串
+        const solventComponent = record.components?.find((comp: any) =>
+          comp.component_type === 'solvent' ||
+          comp.name.toLowerCase().includes('ec') ||
+          comp.name.toLowerCase().includes('dmc') ||
+          comp.name.toLowerCase().includes('emc')
+        );
+
+        const fakeSMILES = [
+          'CC(C)OC(=O)C',
+          'CC1=CC=CC=C1C(=O)O',
+          'CCN(CC)CC',
+          'C1=CC=C(C=C1)O',
+          'CC(C)(C)OC(=O)O'
+        ];
+
+        const smiles = solventComponent ?
+          fakeSMILES[Math.floor(Math.random() * fakeSMILES.length)] :
+          'CCOC(=O)C';
+
+        return (
+          <div style={{
+            fontSize: '11px',
+            color: '#666',
+            backgroundColor: '#f5f5f5',
+            padding: '4px 8px',
+            borderRadius: '4px',
+            fontFamily: 'monospace',
+            wordBreak: 'break-all'
+          }}>
+            {smiles}
+          </div>
+        );
+      }
+    },
+    {
+      title: '能量密度',
+      key: 'energy_density',
+      width: 100,
+      render: (record: Formula) => {
+        // 模拟能量密度数据
+        const energyValues = [260, 280, 320, 350, 400];
+        const energy = energyValues[Math.floor(Math.random() * energyValues.length)];
+        return `${energy} Wh/kg`;
+      }
+    },
+    {
+      title: '循环寿命',
+      key: 'cycle_life',
+      width: 100,
+      render: (record: Formula) => {
+        // 模拟循环寿命数据
+        const cycleValues = [800, 1200, 1500, 2000, 5000];
+        const cycles = cycleValues[Math.floor(Math.random() * cycleValues.length)];
+        return `${cycles} cycles`;
+      }
+    },
+    {
+      title: '倍率性能',
+      key: 'rate_performance',
+      width: 100,
+      render: (record: Formula) => {
+        // 模拟倍率性能数据
+        const rateValues = [1, 2, 3, 5, 10];
+        const rate = rateValues[Math.floor(Math.random() * rateValues.length)];
+        return `${rate}C`;
+      }
+    },
+    {
+      title: '生成方法',
+      dataIndex: 'generation_method',
+      key: 'generation_method',
+      width: 120,
+      render: (method: string) => {
+        const methodMap: Record<string, { text: string; color: string }> = {
+          'initial_design': { text: '初始设计', color: 'blue' },
+          'bayesian_opt': { text: '贝叶斯优化', color: 'green' },
+          'redesign': { text: '重新设计', color: 'orange' }
+        };
+        const config = methodMap[method] || { text: method, color: 'default' };
+        return <Tag color={config.color}>{config.text}</Tag>;
+      }
+    },
+    {
+      title: '状态',
+      key: 'status',
+      width: 80,
+      render: (record: Formula) => {
+        // 模拟状态
+        const statuses = ['可用', '测试中', '已完成'];
+        const colors = ['green', 'blue', 'default'];
+        const randomIndex = Math.floor(Math.random() * statuses.length);
+        return <Tag color={colors[randomIndex]}>{statuses[randomIndex]}</Tag>;
+      }
+    },
+    {
+      title: '操作',
+      key: 'actions',
+      width: 120,
+      render: (record: Formula) => (
+        <Space>
+          <Button
+            size="small"
+            type="primary"
+            ghost
+            onClick={() => setSelectedFormula(record.id)}
+          >
+            选择
+          </Button>
+          <Button
+            size="small"
+            onClick={() => showFormulaDetail(record)}
+          >
+            详情
+          </Button>
+        </Space>
+      )
+    }
+  ];
+
+  // 实验表格列
+  const experimentColumns = [
+    {
+      title: '实验ID',
+      dataIndex: 'id',
+      key: 'id',
+      width: 80
+    },
+    {
+      title: '实验名称',
+      dataIndex: 'name',
+      key: 'name'
+    },
+    {
+      title: '状态',
+      dataIndex: 'status',
+      key: 'status',
+      width: 100,
+      render: (status: string) => (
+        <Tag color={getStatusColor(status)}>
+          {getStatusText(status)}
+        </Tag>
+      )
+    },
+    {
+      title: '配方ID',
+      dataIndex: 'formula_id',
+      key: 'formula_id',
+      width: 80
+    },
+    {
+      title: '创建时间',
+      dataIndex: 'created_at',
+      key: 'created_at',
+      width: 150,
+      render: (date: string) => new Date(date).toLocaleString()
+    },
+    {
+      title: '操作',
+      key: 'actions',
+      width: 120,
+      render: (record: Experiment) => (
+        <Space>
+          <Button
+            type="link"
+            icon={<EyeOutlined />}
+            onClick={() => showExperimentDetail(record)}
+          >
+            查看
+          </Button>
+          {record.status === 'running' && (
+            <Button
+              type="link"
+              danger
+              icon={<StopOutlined />}
+              onClick={() => handleStopExperiment()}
+            >
+              停止
+            </Button>
+          )}
+        </Space>
+      )
+    }
+  ];
+
+  return (
+    <div>
+      <div className="page-header">
+        <Title level={2}>AI实验员</Title>
+        <Paragraph>
+          自动化实验执行平台，支持多摄像头监控、实时数据采集和全过程追踪，确保实验的准确性和可重复性。
+        </Paragraph>
+      </div>
+
+      {/* 视频监控 */}
+      <Card
+        title="配液监控摄像头"
+        style={{ marginBottom: 24 }}
+      >
+        {videoMode === 'rtsp' && (
+          <Alert
+            message="RTSP视频模式"
+            description="正在使用海康威视RTSP摄像头进行实时监控 (IP: 192.168.80.44)"
+            type="info"
+            showIcon
+            style={{ marginBottom: 16 }}
+          />
+        )}
+        {renderVideoMonitoring()}
+      </Card>
+    </div>
+  );
+};
+
+export default AIExperimenterPage;

@@ -1,0 +1,2081 @@
+import React, { useState, useEffect } from 'react';
+import {
+  Card,
+  Row,
+  Col,
+  Select,
+  Button,
+  Table,
+  Tag,
+  Progress,
+  Typography,
+  Space,
+  Alert,
+  Spin,
+  Modal,
+  Tabs,
+  Timeline,
+  Badge,
+  message
+} from 'antd';
+import {
+  ExperimentOutlined,
+  BarChartOutlined,
+  CheckCircleOutlined,
+  CloseCircleOutlined,
+  PlayCircleOutlined,
+  TrophyOutlined
+} from '@ant-design/icons';
+import ReactECharts from 'echarts-for-react';
+import { aiExperimenterApi, closedLoopApi } from '../services/api';
+import { EXPERIMENT_FORMULA_CONSTRAINTS } from '../types';
+import {
+  Experiment,
+  EvaluationResult,
+  DecisionResult,
+  OptimizationStats
+} from '../types';
+
+const { Title, Paragraph, Text } = Typography;
+const { Option } = Select;
+const { TabPane } = Tabs;
+
+const ClosedLoopPage: React.FC = () => {
+  const [experiments, setExperiments] = useState<Experiment[]>([]);
+  const [selectedExperiment, setSelectedExperiment] = useState<number | null>(null);
+  const [evaluationResult, setEvaluationResult] = useState<EvaluationResult | null>(null);
+  const [decisionResult, setDecisionResult] = useState<DecisionResult | null>(null);
+  const [optimizationStats, setOptimizationStats] = useState<OptimizationStats | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [evaluationModalVisible, setEvaluationModalVisible] = useState(false);
+  const [decisionModalVisible, setDecisionModalVisible] = useState(false);
+  const [selectedExperimentData, setSelectedExperimentData] = useState<any>(null);
+  const [formulaModalVisible, setFormulaModalVisible] = useState(false);
+  const [selectedExperimentFormulas, setSelectedExperimentFormulas] = useState<any>(null);
+  const [userRequirements, setUserRequirements] = useState<any>(null);
+  const [requirementsComparison, setRequirementsComparison] = useState<any>(null);
+
+  useEffect(() => {
+    loadOptimizationStats();
+    loadExperiments();
+  }, []);
+
+  const loadOptimizationStats = async () => {
+    // 直接使用假的统计数据
+    const mockStats: OptimizationStats = {
+      total_experiments: 156,
+      completed_experiments: 156,
+      failed_experiments: 6,
+      success_rate: 96.0,
+      formula_generation_methods: {
+        initial_design: 68,
+        bayesian_opt: 52,
+        redesign: 36
+      }
+    };
+    setOptimizationStats(mockStats);
+  };
+
+  const loadExperiments = async () => {
+    // 设置模拟用户需求
+    const mockUserRequirements = {
+      energy_density: 320, // Wh/kg
+      power_density: 2000, // W/kg
+      cycle_life: 2000, // cycles
+      safety_score: 0.9, // 评分
+      working_temperature: '-20~60°C',
+      cost_per_kwh: 100, // $/kWh
+      ionic_conductivity: 10, // mS/cm
+      voltage_window: '2.5-4.2V'
+    };
+    setUserRequirements(mockUserRequirements);
+
+    // 直接使用假的实验数据，包含详细的实验过程数据
+    const mockExperiments = [
+      {
+        id: 1001,
+        experiment_id: 'EXP-20241201-001',
+        name: '高能量密度电池筛选实验',
+        experiment_type: 'screening',
+        formula_count: 24, // 一次实验测试24种不同配方
+        status: 'completed',
+        created_at: new Date('2025-10-10T10:00:00').toISOString(),
+        completed_at: new Date('2025-10-15T16:30:00').toISOString(),
+        experiment_formulas: [
+          { experiment_id: 1001, formula_id: 1001, position_in_experiment: 1, test_status: 'completed', test_results: { performance_score: 0.87, stability_score: 0.92 } },
+          { experiment_id: 1001, formula_id: 1002, position_in_experiment: 2, test_status: 'completed', test_results: { performance_score: 0.85, stability_score: 0.89 } },
+          { experiment_id: 1001, formula_id: 1003, position_in_experiment: 3, test_status: 'completed', test_results: { performance_score: 0.91, stability_score: 0.94 } },
+        ],
+        experiment_data: {
+          formula_info: {
+            formula_name: '高能量密度正极电解液',
+            components: [
+              { name: 'EC:EMC (3:7)', type: 'solvent', ratio: '3:7' },
+              { name: 'LiPF6', type: 'salt', concentration: '1.2M' },
+              { name: 'FEC', type: 'additive', percentage: '2%' },
+              { name: 'NCM811', type: 'positive_electrode', loading: '3.8mAh/cm²' },
+              { name: '石墨', type: 'negative_electrode', loading: '4.2mAh/cm²' }
+            ]
+          },
+          injection_data: {
+            injection_volume: 2.8, // mL/Ah
+            injection_pressure: 0.8, // bar
+            wetting_time: 12, // hours
+            retention_rate: 98.5 // %
+          },
+          impedance_data: {
+            initial_impedance: 15.2, // mΩ
+            impedance_growth: 22.5, // % after 100 cycles
+            charge_transfer_resistance: 8.3, // mΩ
+            warburg_impedance: 6.9 // mΩ
+          },
+          voltage_data: {
+            nominal_voltage: 3.7, // V
+            cut_off_voltage_charge: 4.2, // V
+            cut_off_voltage_discharge: 2.5, // V
+            voltage_hysteresis: 0.15 // V
+          },
+          charge_discharge_curves: [
+            { cycle: 1, charge_capacity: 2800, discharge_capacity: 2650, efficiency: 94.6 },
+            { cycle: 10, charge_capacity: 2785, discharge_capacity: 2620, efficiency: 94.1 },
+            { cycle: 50, charge_capacity: 2750, discharge_capacity: 2580, efficiency: 93.8 },
+            { cycle: 100, charge_capacity: 2720, discharge_capacity: 2540, efficiency: 93.4 },
+            { cycle: 200, charge_capacity: 2680, discharge_capacity: 2480, efficiency: 92.5 }
+          ]
+        },
+        evaluation_result: {
+          overall_score: 0.87,
+          energy_density: 0.92,
+          cycle_life: 0.75,
+          safety: 0.95,
+          cost_efficiency: 0.88,
+          scalability: 0.82
+        },
+        decision_result: {
+          accept: true,
+          confidence: 0.91,
+          reason: '综合性能优异，满足设计要求',
+          suggested_improvements: ['增加循环寿命', '优化成本结构']
+        }
+      },
+      {
+        id: 1002,
+        experiment_id: 'EXP-20241202-002',
+        name: '长寿命储能电池优化实验',
+        experiment_type: 'optimization',
+        formula_count: 48, // 优化实验测试48种配方
+        status: 'completed',
+        created_at: new Date('2025-10-08T14:30:00').toISOString(),
+        completed_at: new Date('2025-10-12T11:45:00').toISOString(),
+        experiment_formulas: [
+          { experiment_id: 1002, formula_id: 2001, position_in_experiment: 1, test_status: 'completed', test_results: { performance_score: 0.92, stability_score: 0.95, cost_efficiency: 0.88 } },
+          { experiment_id: 1002, formula_id: 2002, position_in_experiment: 2, test_status: 'completed', test_results: { performance_score: 0.94, stability_score: 0.93, cost_efficiency: 0.86 } },
+        ],
+        experiment_data: {
+          formula_info: {
+            formula_name: '长寿命储能电池电解液',
+            components: [
+              { name: 'PC:EMC (3:7)', type: 'solvent', ratio: '3:7' },
+              { name: 'LiBF4', type: 'salt', concentration: '1.0M' },
+              { name: 'VC', type: 'additive', percentage: '1.5%' },
+              { name: 'LFP', type: 'positive_electrode', loading: '3.2mAh/cm²' },
+              { name: '石墨', type: 'negative_electrode', loading: '3.8mAh/cm²' }
+            ]
+          },
+          injection_data: {
+            injection_volume: 3.1, // mL/Ah
+            injection_pressure: 0.6, // bar
+            wetting_time: 16, // hours
+            retention_rate: 99.2 // %
+          },
+          impedance_data: {
+            initial_impedance: 18.7, // mΩ
+            impedance_growth: 8.2, // % after 100 cycles
+            charge_transfer_resistance: 10.5, // mΩ
+            warburg_impedance: 8.2 // mΩ
+          },
+          voltage_data: {
+            nominal_voltage: 3.3, // V
+            cut_off_voltage_charge: 3.65, // V
+            cut_off_voltage_discharge: 2.0, // V
+            voltage_hysteresis: 0.12 // V
+          },
+          charge_discharge_curves: [
+            { cycle: 1, charge_capacity: 3100, discharge_capacity: 3020, efficiency: 97.4 },
+            { cycle: 50, charge_capacity: 3085, discharge_capacity: 3005, efficiency: 97.4 },
+            { cycle: 200, charge_capacity: 3060, discharge_capacity: 2980, efficiency: 97.4 },
+            { cycle: 500, charge_capacity: 3020, discharge_capacity: 2935, efficiency: 97.2 },
+            { cycle: 1000, charge_capacity: 2960, discharge_capacity: 2870, efficiency: 97.0 }
+          ]
+        },
+        evaluation_result: {
+          overall_score: 0.91,
+          energy_density: 0.72,
+          cycle_life: 0.96,
+          safety: 0.93,
+          cost_efficiency: 0.89,
+          scalability: 0.94
+        },
+        decision_result: {
+          accept: true,
+          confidence: 0.88,
+          reason: '循环寿命和稳定性表现优秀',
+          suggested_improvements: ['提升能量密度', '优化低温性能']
+        }
+      },
+      {
+        id: 1003,
+        experiment_id: 'EXP-20241203-003',
+        name: '动力电池倍率性能验证实验',
+        experiment_type: 'validation',
+        formula_count: 16, // 验证实验测试16种最优配方
+        status: 'completed',
+        created_at: new Date('2025-10-05T09:15:00').toISOString(),
+        completed_at: new Date('2025-10-09T15:20:00').toISOString(),
+        experiment_formulas: [
+          { experiment_id: 1003, formula_id: 3001, position_in_experiment: 1, test_status: 'completed', test_results: { performance_score: 0.89, stability_score: 0.91, cost_efficiency: 0.82 } },
+          { experiment_id: 1003, formula_id: 3002, position_in_experiment: 2, test_status: 'completed', test_results: { performance_score: 0.87, stability_score: 0.89, cost_efficiency: 0.85 } },
+        ],
+        experiment_data: {
+          formula_info: {
+            formula_name: '动力电池高倍率电解液',
+            components: [
+              { name: 'FEC:DEC (1:4)', type: 'solvent', ratio: '1:4' },
+              { name: 'LiFSI', type: 'salt', concentration: '1.3M' },
+              { name: 'DTD', type: 'additive', percentage: '3%' },
+              { name: 'NCA', type: 'positive_electrode', loading: '4.2mAh/cm²' },
+              { name: '硅碳', type: 'negative_electrode', loading: '4.8mAh/cm²' }
+            ]
+          },
+          injection_data: {
+            injection_volume: 2.6, // mL/Ah
+            injection_pressure: 1.0, // bar
+            wetting_time: 8, // hours
+            retention_rate: 97.8 // %
+          },
+          impedance_data: {
+            initial_impedance: 12.3, // mΩ
+            impedance_growth: 35.8, // % after 100 cycles
+            charge_transfer_resistance: 6.1, // mΩ
+            warburg_impedance: 6.2 // mΩ
+          },
+          voltage_data: {
+            nominal_voltage: 3.6, // V
+            cut_off_voltage_charge: 4.3, // V
+            cut_off_voltage_discharge: 2.5, // V
+            voltage_hysteresis: 0.18 // V
+          },
+          charge_discharge_curves: [
+            { cycle: 1, charge_capacity: 3200, discharge_capacity: 2980, efficiency: 93.1 },
+            { cycle: 10, charge_capacity: 3180, discharge_capacity: 2940, efficiency: 92.5 },
+            { cycle: 50, charge_capacity: 3120, discharge_capacity: 2850, efficiency: 91.3 },
+            { cycle: 100, charge_capacity: 3050, discharge_capacity: 2720, efficiency: 89.2 },
+            { cycle: 200, charge_capacity: 2920, discharge_capacity: 2480, efficiency: 84.9 }
+          ]
+        },
+        evaluation_result: {
+          overall_score: 0.83,
+          energy_density: 0.88,
+          cycle_life: 0.79,
+          safety: 0.86,
+          cost_efficiency: 0.81,
+          scalability: 0.85
+        },
+        decision_result: {
+          accept: true,
+          confidence: 0.79,
+          reason: '倍率性能符合预期，但需要改进循环寿命',
+          suggested_improvements: ['增强循环稳定性', '优化热管理']
+        }
+      },
+      {
+        id: 1004,
+        experiment_id: 'EXP-20241204-004',
+        name: '高电压电池稳定性测试',
+        experiment_type: 'screening',
+        formula_count: 32, // 稳定性测试32种配方
+        status: 'completed',
+        created_at: new Date('2025-10-02T16:00:00').toISOString(),
+        completed_at: new Date('2025-10-06T10:30:00').toISOString(),
+        experiment_formulas: [
+          { experiment_id: 1004, formula_id: 4001, position_in_experiment: 1, test_status: 'completed', test_results: { performance_score: 0.78, stability_score: 0.85, safety: 0.92 } },
+          { experiment_id: 1004, formula_id: 4002, position_in_experiment: 2, test_status: 'failed', test_results: { performance_score: 0.65, stability_score: 0.72, safety: 0.78 } },
+        ],
+        evaluation_result: {
+          overall_score: 0.78,
+          energy_density: 0.85,
+          cycle_life: 0.68,
+          safety: 0.75,
+          cost_efficiency: 0.79,
+          scalability: 0.72
+        },
+        decision_result: {
+          accept: false,
+          confidence: 0.82,
+          reason: '循环寿命未达到预期目标',
+          suggested_improvements: ['改进电解液配方', '优化电极材料']
+        }
+      },
+      {
+        id: 1005,
+        experiment_id: 'EXP-20241205-005',
+        name: '低温电池性能验证实验',
+        experiment_type: 'validation',
+        formula_count: 64, // 验证实验测试64种最优配方
+        status: 'running',
+        created_at: new Date('2025-12-01T08:30:00').toISOString(),
+        started_at: new Date('2025-12-01T09:00:00').toISOString(),
+        experiment_formulas: [
+          { experiment_id: 1005, formula_id: 5001, position_in_experiment: 1, test_status: 'completed', test_results: { performance_score: 0.82, stability_score: 0.88, cold_resistance: 0.91 } },
+          { experiment_id: 1005, formula_id: 5002, position_in_experiment: 2, test_status: 'testing', test_results: {} },
+          { experiment_id: 1005, formula_id: 5003, position_in_experiment: 3, test_status: 'pending', test_results: {} },
+        ]
+        // running状态的实验没有evaluation_result和decision_result
+      }
+    ];
+    setExperiments(mockExperiments as any);
+  };
+
+  // 比较实验数据与用户需求
+  const compareWithRequirements = (experimentData: any, requirements: any) => {
+    const comparison = {
+      energy_density: {
+        target: requirements.energy_density,
+        actual: 285, // 从实验数据中提取
+        achieved: false,
+        gap: requirements.energy_density - 285
+      },
+      cycle_life: {
+        target: requirements.cycle_life,
+        actual: 1200, // 从实验数据中提取
+        achieved: false,
+        gap: requirements.cycle_life - 1200
+      },
+      safety_score: {
+        target: requirements.safety_score,
+        actual: 0.92, // 从实验数据中提取
+        achieved: true,
+        gap: 0
+      },
+      working_temperature: {
+        target: requirements.working_temperature,
+        actual: '-10~55°C', // 从实验数据中提取
+        achieved: false,
+        gap: '低温性能不足'
+      },
+      ionic_conductivity: {
+        target: requirements.ionic_conductivity,
+        actual: 12.5, // 从实验数据中提取
+        achieved: true,
+        gap: 0
+      },
+      cost_per_kwh: {
+        target: requirements.cost_per_kwh,
+        actual: 120, // 从实验数据中提取
+        achieved: false,
+        gap: 20
+      }
+    };
+
+    const unachievedRequirements = Object.entries(comparison)
+      .filter(([key, value]) => !value.achieved)
+      .map(([key, value]) => ({
+        metric: key,
+        chinese_name: {
+          energy_density: '能量密度',
+          cycle_life: '循环寿命',
+          safety_score: '安全评分',
+          working_temperature: '工作温度范围',
+          ionic_conductivity: '离子电导率',
+          cost_per_kwh: '成本效益'
+        }[key],
+        target: value.target,
+        actual: value.actual,
+        gap: value.gap
+      }));
+
+    return {
+      comparison,
+      unachievedRequirements,
+      overallAchievementRate: Object.values(comparison).filter(v => v.achieved).length / Object.keys(comparison).length
+    };
+  };
+
+  // 显示实验包含的配方
+  const showExperimentFormulas = (experiment: Experiment) => {
+    setSelectedExperimentFormulas(experiment);
+    setFormulaModalVisible(true);
+  };
+
+  // 统一的智能优化函数
+  const handleIntelligentOptimization = async () => {
+    if (!selectedExperiment) {
+      message.warning('请先选择一个实验');
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      // 智能判断优化策略
+      const experiment = experiments.find(exp => exp.id === selectedExperiment);
+      const hasUserRequirements = userRequirements && Object.keys(userRequirements).length > 0;
+      const hasEvaluationResult = experiment && (experiment as any).evaluation_result;
+
+      let optimizationStrategy = '';
+      let result;
+      let modalTitle = '';
+      let modalContent;
+
+      // 策略1: 如果有用户需求，优先使用基于需求的优化
+      if (hasUserRequirements) {
+        optimizationStrategy = 'requirement_based';
+
+        // 获取AI设计员的配方数据
+        let formulaData = null;
+        if (experiment && (experiment as any).experiment_data && (experiment as any).experiment_data.formula_info) {
+          formulaData = {
+            name: (experiment as any).experiment_data.formula_info.formula_name || '实验配方',
+            components: (experiment as any).experiment_data.formula_info.components || [],
+            predicted_properties: (experiment as any).evaluation_result ? {
+              energy_density: (experiment as any).evaluation_result.energy_density * 350,
+              cycle_life: (experiment as any).evaluation_result.cycle_life * 2000,
+              safety_score: (experiment as any).evaluation_result.safety
+            } : {}
+          };
+        }
+
+        result = await closedLoopApi.runRequirementBasedOptimization({
+          experiment_id: selectedExperiment!,
+          formula_data: formulaData,
+          user_requirements: userRequirements,
+          n_candidates: 5,
+          optimization_target: 'requirement_based'
+        });
+
+        if (result.success && result.data) {
+          const { optimization_result, saved_formulas } = result.data;
+          modalTitle = '基于用户需求的智能优化完成';
+          modalContent = (
+            <div>
+              <p><strong>优化策略：</strong>基于用户需求动态调整优化权重</p>
+              <p><strong>优化方法：</strong>{optimization_result.method}</p>
+              <p><strong>生成配方：</strong>{optimization_result.optimized_formulas?.length || 0} 个</p>
+              <p><strong>保存配方：</strong>{saved_formulas?.length || 0} 个</p>
+
+              {optimization_result.optimized_formulas && optimization_result.optimized_formulas.length > 0 && (
+                <div style={{ marginTop: 16 }}>
+                  <strong>优化配方详情：</strong>
+                  {optimization_result.optimized_formulas.slice(0, 3).map((formula: any, index: number) => (
+                    <div key={index} style={{
+                      marginTop: 8,
+                      padding: 12,
+                      border: '1px solid #d9d9d9',
+                      borderRadius: 4,
+                      backgroundColor: '#fafafa'
+                    }}>
+                      <div style={{ fontWeight: 'bold', marginBottom: 8 }}>
+                        配方 {index + 1} (置信度: {(formula.confidence_score * 100).toFixed(1)}%)
+                      </div>
+                      <div style={{ fontSize: '12px', color: '#666' }}>
+                        主要组分: {Object.entries(formula.solvent_ratios || {})
+                          .slice(0, 5)
+                          .map(([key, value]: [string, any]) => `${key}: ${(value * 100).toFixed(1)}%`)
+                          .join(', ')}
+                      </div>
+                      {formula.predicted_performance && (
+                        <div style={{ fontSize: '12px', color: '#666', marginTop: 4 }}>
+                          预测性能: 保持率 {(formula.predicted_performance.retention * 100).toFixed(1)}%,
+                          容量 {formula.predicted_performance.capacity.toFixed(0)} mAh/g,
+                          阻抗 {formula.predicted_performance.impedance.toFixed(0)} Ω
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {userRequirements && (
+                <div style={{ marginTop: 16, padding: 12, backgroundColor: '#f6ffed', border: '1px solid #b7eb8f', borderRadius: 4 }}>
+                  <strong>用户需求：</strong>
+                  <p style={{ margin: '8px 0', fontSize: '12px' }}>
+                    能量密度: {userRequirements.energy_density} Wh/kg,
+                    功率密度: {userRequirements.power_density} W/kg,
+                    循环寿命: {userRequirements.cycle_life} cycles,
+                    安全评分: {userRequirements.safety_score}
+                  </p>
+                </div>
+              )}
+            </div>
+          );
+        }
+      }
+      // 策略2: 默认使用快速贝叶斯优化
+      else {
+        optimizationStrategy = 'quick_bayesian';
+        result = await closedLoopApi.runBayesianOptimization({
+          experiment_id: selectedExperiment!,
+          optimization_target: 'all',
+          iteration_count: 1,
+          weights: { 'w_ret': 0.5, 'w_cap': 0.4, 'w_imp': 0.1 },
+          n_candidates: 5
+        });
+
+        if (result.success && result.data && result.data.optimization_result) {
+          const { optimization_result, stats } = result.data;
+          modalTitle = '智能优化完成';
+          modalContent = (
+            <div>
+              <p><strong>优化策略：</strong>基于历史数据的智能贝叶斯优化</p>
+              <p><strong>优化方法：</strong>{optimization_result.method}</p>
+              <p><strong>数据规模：</strong>{stats?.total_experiments || 0} 条实验数据</p>
+              <p><strong>生成配方：</strong>{optimization_result.optimized_formulas?.length || 0} 个</p>
+
+              {optimization_result.optimized_formulas && optimization_result.optimized_formulas.length > 0 && (
+                <div style={{ marginTop: 16 }}>
+                  <strong>优化配方详情：</strong>
+                  {optimization_result.optimized_formulas.slice(0, 3).map((formula: any, index: number) => (
+                    <div key={index} style={{
+                      marginTop: 8,
+                      padding: 12,
+                      border: '1px solid #d9d9d9',
+                      borderRadius: 4,
+                      backgroundColor: '#fafafa'
+                    }}>
+                      <div style={{ fontWeight: 'bold', marginBottom: 8 }}>
+                        配方 {index + 1} (置信度: {(formula.confidence_score * 100).toFixed(1)}%)
+                      </div>
+                      <div style={{ fontSize: '12px', color: '#666' }}>
+                        主要组分: {Object.entries(formula.solvent_ratios || {})
+                          .slice(0, 5)
+                          .map(([key, value]: [string, any]) => `${key}: ${(value * 100).toFixed(1)}%`)
+                          .join(', ')}
+                      </div>
+                      {formula.predicted_performance && (
+                        <div style={{ fontSize: '12px', color: '#666', marginTop: 4 }}>
+                          预测性能: 保持率 {(formula.predicted_performance.retention * 100).toFixed(1)}%,
+                          容量 {formula.predicted_performance.capacity.toFixed(0)} mAh/g,
+                          阻抗 {formula.predicted_performance.impedance.toFixed(0)} Ω
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          );
+        }
+      }
+
+      // 显示优化结果
+      if (result.success) {
+        Modal.success({
+          title: modalTitle,
+          width: 800,
+          content: modalContent
+        });
+
+        // 刷新数据
+        await loadExperiments();
+        await loadOptimizationStats();
+      } else {
+        throw new Error(result.error || result.message || '智能优化失败');
+      }
+
+    } catch (error: any) {
+      console.error('智能优化失败:', error);
+      const errorMessage = error.response?.data?.error || error.message || '智能优化失败，请检查实验数据或稍后重试';
+
+      Modal.error({
+        title: '智能优化失败',
+        content: errorMessage,
+        width: 600,
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // 评估实验结果
+  const handleEvaluateExperiment = async () => {
+    if (!selectedExperiment) {
+      Modal.warning({
+        title: '请选择实验',
+        content: '请先选择一个实验才能进行评估'
+      });
+      return;
+    }
+
+    setLoading(true);
+    try {
+      // 找到选中的实验数据
+      const experiment = experiments.find(exp => exp.id === selectedExperiment);
+      if (!experiment) {
+        Modal.error({
+          title: '实验未找到',
+          content: '无法找到选中的实验数据'
+        });
+        return;
+      }
+
+      // 设置选中的实验数据
+      setSelectedExperimentData((experiment as any).experiment_data);
+
+      // 比较实验数据与用户需求
+      const comparison = compareWithRequirements((experiment as any).experiment_data, userRequirements);
+      setRequirementsComparison(comparison);
+
+      const evaluationData = {
+        experiment_id: selectedExperiment,
+        requirements: userRequirements
+      };
+
+      // 使用假的评估结果
+      const mockEvaluationResult: any = {
+        experiment_id: selectedExperiment,
+        evaluation_timestamp: new Date().toISOString(),
+        performance_metrics: {
+          energy_density: 285,
+          power_density: 1800,
+          cycle_life: 1200,
+          safety_score: 0.92,
+          working_temperature: '-10~55°C',
+          ionic_conductivity: 12.5,
+          cost_per_kwh: 120
+        },
+        metric_evaluations: {
+          energy_density: {
+            chinese_name: '能量密度',
+            target_value: userRequirements.energy_density,
+            actual_value: 285,
+            achievement_rate: 285 / userRequirements.energy_density,
+            grade: 'good',
+            meets_requirement: 285 >= userRequirements.energy_density * 0.9,
+            unit: 'Wh/kg',
+            weight: 0.3
+          },
+          cycle_life: {
+            chinese_name: '循环寿命',
+            target_value: userRequirements.cycle_life,
+            actual_value: 1200,
+            achievement_rate: 1200 / userRequirements.cycle_life,
+            grade: 'acceptable',
+            meets_requirement: 1200 >= userRequirements.cycle_life * 0.8,
+            unit: 'cycles',
+            weight: 0.25
+          },
+          safety_score: {
+            chinese_name: '安全评分',
+            target_value: userRequirements.safety_score,
+            actual_value: 0.92,
+            achievement_rate: 0.92 / userRequirements.safety_score,
+            grade: 'excellent',
+            meets_requirement: 0.92 >= userRequirements.safety_score,
+            unit: '',
+            weight: 0.2
+          },
+          working_temperature: {
+            chinese_name: '工作温度',
+            target_value: userRequirements.working_temperature,
+            actual_value: '-10~55°C',
+            achievement_rate: 0.85,
+            grade: 'good',
+            meets_requirement: true,
+            unit: '°C',
+            weight: 0.15
+          },
+          ionic_conductivity: {
+            chinese_name: '离子电导率',
+            target_value: userRequirements.ionic_conductivity,
+            actual_value: 12.5,
+            achievement_rate: 12.5 / userRequirements.ionic_conductivity,
+            grade: 'excellent',
+            meets_requirement: 12.5 >= userRequirements.ionic_conductivity,
+            unit: 'mS/cm',
+            weight: 0.1
+          }
+        },
+        overall_evaluation: {
+          overall_score: 0.82,
+          overall_grade: 'good',
+          meets_requirements: false,
+          critical_failures: ['energy_density_insufficient', 'cycle_life_insufficient'],
+          metrics_summary: {
+            total_metrics: 5,
+            metrics_meeting_requirements: 3,
+            critical_metrics_failing: 2
+          }
+        },
+        improvement_suggestions: [
+          {
+            metric: 'energy_density',
+            chinese_name: '能量密度',
+            current_performance: 285,
+            target_performance: 320,
+            achievement_rate: 0.89,
+            improvement_needed: 35,
+            priority_score: 0.8,
+            suggested_actions: ['优化正极材料配方', '提高电极压实密度', '减少电解液量'],
+            expected_timeline: '2-3个月',
+            success_probability: 0.75
+          },
+          {
+            metric: 'cycle_life',
+            chinese_name: '循环寿命',
+            current_performance: 1200,
+            target_performance: 2000,
+            achievement_rate: 0.6,
+            improvement_needed: 800,
+            priority_score: 0.9,
+            suggested_actions: ['改进电解液配方', '优化SEI膜稳定性', '控制充放电截止电压'],
+            expected_timeline: '3-4个月',
+            success_probability: 0.8
+          }
+        ],
+        evaluation_summary: {
+          meets_requirements: false,
+          overall_score: 0.82,
+          critical_issues: ['能量密度未达到目标', '循环寿命需要提升'],
+          recommended_action: '进行贝叶斯优化或重新设计配方'
+        }
+      };
+
+      setEvaluationResult(mockEvaluationResult);
+      setEvaluationModalVisible(true);
+    } catch (error) {
+      Modal.error({
+        title: '评估失败',
+        content: '无法评估实验结果，请重试'
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // 决定下一步行动
+  const handleDecideNextStep = async () => {
+    if (!evaluationResult || !selectedExperiment) return;
+
+    setLoading(true);
+    try {
+      const decisionData = {
+        experiment_id: selectedExperiment,
+        evaluation_result: evaluationResult,
+        last_results: {}
+      };
+
+      // 使用假的决策结果
+      const mockDecisionResult: any = {
+        experiment_id: selectedExperiment,
+        decision_timestamp: new Date().toISOString(),
+        strategy_used: 'hybrid_analysis',
+        primary_decision: {
+          action_type: 'bayesian_optimization',
+          reasoning: [
+            '实验结果显示能量密度和循环寿命未完全达到预期目标',
+            '当前配方基础较好，适合进行贝叶斯优化',
+            '通过优化添加剂比例可以显著提升性能',
+            '历史数据显示类似配方优化成功率较高'
+          ],
+          confidence: 0.85,
+          priority: 'high'
+        },
+        action_plan: {
+          action_type: 'bayesian_optimization',
+          steps: [
+            '1. 分析当前配方参数空间',
+            '2. 确定关键优化变量（溶剂比例、添加剂含量）',
+            '3. 运行贝叶斯优化算法生成新配方',
+            '4. 合成并测试优化配方',
+            '5. 评估优化效果并决定下一步行动'
+          ],
+          estimated_duration: '2-3周',
+          required_resources: ['实验室设备', '化学试剂', '测试人员'],
+          success_criteria: ['能量密度 > 300 Wh/kg', '循环寿命 > 1500 cycles', '安全评分 > 0.9'],
+          monitoring_points: ['配液过程', '化成过程', '循环性能测试'],
+          optimization_target: 'multi_objective',
+          optimization_focus: ['energy_density', 'cycle_life'],
+          expected_improvement: '能量密度提升5-8%，循环寿命提升20-30%'
+        },
+        risk_assessment: {
+          risk_level: 'medium',
+          risk_probability: 0.25,
+          potential_risks: ['优化效果不明显', '配方稳定性下降', '成本增加'],
+          mitigation_strategies: ['分阶段验证', '并行测试多个配方', '成本效益分析'],
+          risk_acceptance_criteria: {
+            max_cost_increase: '15%',
+            min_performance_improvement: '5%',
+            max_stability_degradation: '10%'
+          }
+        },
+        expected_outcome: {
+          expected_score_range: {
+            min: 0.85,
+            max: 0.92,
+            most_likely: 0.88
+          },
+          success_probability: 0.75,
+          expected_time_requirement: '2-3周',
+          resource_requirements: {
+            personnel: 2,
+            equipment_hours: 120,
+            material_cost: 5000
+          },
+          potential_benefits: ['性能提升', '技术积累', '专利申请'],
+          confidence_in_prediction: 0.8
+        },
+        decision_context: {
+          meets_requirements: false,
+          overall_score: 0.82,
+          critical_failures: ['energy_density_insufficient', 'cycle_life_insufficient'],
+          iteration_count: 1,
+          success_probability: 0.75
+        },
+        next_experiment_config: {
+          experiment_type: 'optimization',
+          base_formula_id: selectedExperiment,
+          iteration_count: 1,
+          priority: 'high',
+          special_instructions: [
+            '重点优化能量密度和循环寿命',
+            '保持安全性能不降低',
+            '控制成本增幅在10%以内'
+          ],
+          optimization_parameters: {
+            solvent_ratio: { min: 0.2, max: 0.8, current: 0.3 },
+            additive_concentration: { min: 0.5, max: 5.0, current: 2.0 },
+            salt_concentration: { min: 0.8, max: 1.5, current: 1.2 }
+          }
+        }
+      };
+
+      setDecisionResult(mockDecisionResult);
+      setEvaluationModalVisible(false);
+      setDecisionModalVisible(true);
+    } catch (error) {
+      Modal.error({
+        title: '决策失败',
+        content: '无法决定下一步行动，请重试'
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // 执行决策
+  const executeDecision = async () => {
+    if (!decisionResult || !selectedExperiment) return;
+
+    const actionType = decisionResult.primary_decision.action_type;
+
+    try {
+      // 模拟异步处理时间
+      await new Promise(resolve => setTimeout(resolve, 1500));
+
+      if (actionType === 'bayesian_optimization') {
+        // 模拟贝叶斯优化成功
+        Modal.success({
+          title: '贝叶斯优化完成',
+          content: `已生成8个优化配方，预计能量密度提升15-20%，循环寿命提升10-15%`
+        });
+        message.info('优化配方已添加到候选列表，可在下一轮实验中选择使用');
+      } else if (actionType === 'redesign') {
+        // 模拟重新设计成功
+        Modal.success({
+          title: '重新设计完成',
+          content: `基于失败原因分析，已生成3套新配方方案，重点关注能量密度和安全性平衡`
+        });
+        message.info('新配方方案已准备就绪，建议优先验证高能量密度配方');
+      } else {
+        // 其他决策类型
+        Modal.success({
+          title: '决策执行完成',
+          content: '已根据实验结果制定下一步优化策略'
+        });
+      }
+
+      setDecisionModalVisible(false);
+      loadOptimizationStats();
+
+      // 延迟刷新实验列表，模拟新数据的生成
+      setTimeout(() => {
+        loadExperiments();
+      }, 1000);
+
+    } catch (error) {
+      console.error('Execute decision error:', error);
+      Modal.error({
+        title: '执行失败',
+        content: '无法执行决策，请重试'
+      });
+    }
+  };
+
+  // 渲染充放电曲线图表
+  const renderChargeDischargeChart = () => {
+    if (!selectedExperimentData) return null;
+
+    const curves = selectedExperimentData.charge_discharge_curves;
+    const chargeData = curves.map((point: any) => [point.cycle, point.charge_capacity]);
+    const dischargeData = curves.map((point: any) => [point.cycle, point.discharge_capacity]);
+    const efficiencyData = curves.map((point: any) => [point.cycle, point.efficiency]);
+
+    return {
+      title: {
+        text: '充放电曲线',
+        textStyle: { fontSize: 14 }
+      },
+      tooltip: {
+        trigger: 'axis',
+        formatter: (params: any) => {
+          const cycle = params[0].value[0];
+          let result = `循环次数: ${cycle}<br/>`;
+          params.forEach((param: any) => {
+            if (param.seriesName === '充电容量') {
+              result += `${param.seriesName}: ${param.value[1]} mAh<br/>`;
+            } else if (param.seriesName === '放电容量') {
+              result += `${param.seriesName}: ${param.value[1]} mAh<br/>`;
+            } else {
+              result += `${param.seriesName}: ${param.value[1]}%<br/>`;
+            }
+          });
+          return result;
+        }
+      },
+      legend: {
+        data: ['充电容量', '放电容量', '库伦效率'],
+        bottom: 0
+      },
+      xAxis: {
+        type: 'value',
+        name: '循环次数',
+        nameLocation: 'middle',
+        nameGap: 25
+      },
+      yAxis: [
+        {
+          type: 'value',
+          name: '容量 (mAh)',
+          position: 'left',
+          alignTicks: true,
+          axisLine: {
+            show: true,
+            lineStyle: {
+              color: '#5470C6'
+            }
+          },
+          axisLabel: {
+            formatter: '{value} mAh'
+          }
+        },
+        {
+          type: 'value',
+          name: '效率 (%)',
+          min: 85,
+          max: 100,
+          position: 'right',
+          alignTicks: true,
+          axisLine: {
+            show: true,
+            lineStyle: {
+              color: '#91CC75'
+            }
+          },
+          axisLabel: {
+            formatter: '{value}%'
+          }
+        }
+      ],
+      series: [
+        {
+          name: '充电容量',
+          type: 'line',
+          data: chargeData,
+          smooth: true,
+          itemStyle: { color: '#5470C6' }
+        },
+        {
+          name: '放电容量',
+          type: 'line',
+          data: dischargeData,
+          smooth: true,
+          itemStyle: { color: '#EE6666' }
+        },
+        {
+          name: '库伦效率',
+          type: 'line',
+          yAxisIndex: 1,
+          data: efficiencyData,
+          smooth: true,
+          itemStyle: { color: '#91CC75' }
+        }
+      ]
+    };
+  };
+
+  // 渲染性能评估图表
+  const renderPerformanceChart = () => {
+    if (!evaluationResult) return null;
+
+    const data = Object.entries(evaluationResult.metric_evaluations).map(([key, evaluation]) => ({
+      name: evaluation.chinese_name,
+      achievement: evaluation.achievement_rate * 100,
+      target: 100
+    }));
+
+    return {
+      title: {
+        text: '性能指标达成率',
+        left: 'center'
+      },
+      tooltip: {
+        trigger: 'axis',
+        formatter: '{b}: {c}%'
+      },
+      xAxis: {
+        type: 'category',
+        data: data.map(item => item.name)
+      },
+      yAxis: {
+        type: 'value',
+        max: 100,
+        axisLabel: {
+          formatter: '{value}%'
+        }
+      },
+      series: [
+        {
+          name: '达成率',
+          type: 'bar',
+          data: data.map(item => item.achievement),
+          itemStyle: (params: any) => {
+            const colors = ['#52c41a', '#1890ff', '#faad14', '#ff4d4f'];
+            const value = params.data;
+            if (value >= 95) return { color: colors[0] };
+            if (value >= 85) return { color: colors[1] };
+            if (value >= 70) return { color: colors[2] };
+            return { color: colors[3] };
+          }
+        }
+      ]
+    };
+  };
+
+  // 渲染优化历史图表
+  const renderOptimizationHistoryChart = () => {
+    const data = [
+      { iteration: 1, score: 65, energy_density: 150, cycle_life: 500 },
+      { iteration: 2, score: 75, energy_density: 165, cycle_life: 650 },
+      { iteration: 3, score: 85, energy_density: 180, cycle_life: 800 },
+      { iteration: 4, score: 88, energy_density: 185, cycle_life: 900 },
+      { iteration: 5, score: 92, energy_density: 195, cycle_life: 1000 }
+    ];
+
+    return {
+      title: {
+        text: '优化历史',
+        left: 'center'
+      },
+      tooltip: {
+        trigger: 'axis'
+      },
+      legend: {
+        data: ['综合评分', '能量密度', '循环寿命'],
+        bottom: 0
+      },
+      xAxis: {
+        type: 'category',
+        data: data.map(item => `迭代${item.iteration}`)
+      },
+      yAxis: {
+        type: 'value'
+      },
+      series: [
+        {
+          name: '综合评分',
+          type: 'line',
+          data: data.map(item => item.score),
+          smooth: true
+        },
+        {
+          name: '能量密度',
+          type: 'line',
+          data: data.map(item => item.energy_density),
+          smooth: true
+        },
+        {
+          name: '循环寿命',
+          type: 'line',
+          data: data.map(item => item.cycle_life / 10), // 缩放以适应图表
+          smooth: true
+        }
+      ]
+    };
+  };
+
+  // 获取状态颜色
+  const getStatusColor = (status: string) => {
+    const colorMap: Record<string, string> = {
+      'pending': 'orange',
+      'running': 'blue',
+      'completed': 'green',
+      'failed': 'red'
+    };
+    return colorMap[status] || 'default';
+  };
+
+  // 获取状态文本
+  const getStatusText = (status: string) => {
+    const textMap: Record<string, string> = {
+      'pending': '等待中',
+      'running': '运行中',
+      'completed': '已完成',
+      'failed': '失败'
+    };
+    return textMap[status] || status;
+  };
+
+  // 实验表格列 - 使用与实验记录目录相同的表格结构
+  const experimentColumns = [
+    {
+      title: '实验ID',
+      dataIndex: 'id',
+      key: 'id',
+      width: 80
+    },
+    {
+      title: '实验名称',
+      dataIndex: 'name',
+      key: 'name',
+      render: (text: string, record: Experiment) => (
+        <Button type="link" onClick={() => {
+          setSelectedExperiment(record.id);
+          showExperimentFormulas(record);
+        }}>
+          {text}
+        </Button>
+      )
+    },
+    {
+      title: '状态',
+      dataIndex: 'status',
+      key: 'status',
+      width: 100,
+      render: (status: string) => (
+        <Tag color={getStatusColor(status)}>
+          {getStatusText(status)}
+        </Tag>
+      )
+    },
+    {
+      title: '配方ID',
+      dataIndex: 'formula_id',
+      key: 'formula_id',
+      width: 80
+    },
+    {
+      title: '描述',
+      dataIndex: 'description',
+      key: 'description',
+      ellipsis: true
+    },
+    {
+      title: '创建时间',
+      dataIndex: 'created_at',
+      key: 'created_at',
+      width: 150,
+      render: (date: string) => new Date(date).toLocaleString()
+    },
+    {
+      title: '持续时间',
+      key: 'duration',
+      width: 100,
+      render: (record: Experiment) => {
+        if (record.started_at && record.completed_at) {
+          const duration = new Date(record.completed_at).getTime() - new Date(record.started_at).getTime();
+          const hours = Math.floor(duration / 3600000);
+          const minutes = Math.floor((duration % 3600000) / 60000);
+          return `${hours}h ${minutes}m`;
+        }
+        if (record.started_at) {
+          const duration = Date.now() - new Date(record.started_at).getTime();
+          const hours = Math.floor(duration / 3600000);
+          const minutes = Math.floor((duration % 3600000) / 60000);
+          return `${hours}h ${minutes}m (进行中)`;
+        }
+        return '-';
+      }
+    },
+    {
+      title: '操作',
+      key: 'actions',
+      width: 200,
+      render: (record: Experiment) => (
+        <Space direction="vertical" size="small">
+          <Button
+            type="link"
+            icon={<ExperimentOutlined />}
+            size="small"
+            onClick={() => {
+              setSelectedExperiment(record.id);
+              showExperimentFormulas(record);
+            }}
+          >
+            查看配方({record.formula_count || 0})
+          </Button>
+          <Button
+            type="link"
+            icon={<BarChartOutlined />}
+            size="small"
+            onClick={() => {
+              setSelectedExperiment(record.id);
+              handleEvaluateExperiment();
+            }}
+            disabled={record.status !== 'completed'}
+          >
+            评估
+          </Button>
+        </Space>
+      )
+    }
+  ];
+
+  return (
+    <div>
+      <div className="page-header">
+        <Title level={2}>闭环优化</Title>
+        <Paragraph>
+          智能评估实验结果，自动决策优化策略，通过贝叶斯优化或重新设计实现电池性能的持续改进。
+        </Paragraph>
+      </div>
+
+      {/* 统计概览 */}
+      <Row gutter={[16, 16]} style={{ marginBottom: 24 }}>
+        <Col span={6}>
+          <Card>
+            <div className="metric-card">
+              <div className="metric-value">
+                {optimizationStats?.total_experiments || 0}
+              </div>
+              <div className="metric-label">总实验数</div>
+            </div>
+          </Card>
+        </Col>
+        <Col span={6}>
+          <Card>
+            <div className="metric-card">
+              <div className="metric-value">
+                {optimizationStats?.success_rate || 0}%
+              </div>
+              <div className="metric-label">成功率</div>
+            </div>
+          </Card>
+        </Col>
+        <Col span={6}>
+          <Card>
+            <div className="metric-card">
+              <div className="metric-value">
+                {optimizationStats?.formula_generation_methods.bayesian_opt || 0}
+              </div>
+              <div className="metric-label">贝叶斯优化次数</div>
+            </div>
+          </Card>
+        </Col>
+        <Col span={6}>
+          <Card>
+            <div className="metric-card">
+              <div className="metric-value">
+                {optimizationStats?.formula_generation_methods.redesign || 0}
+              </div>
+              <div className="metric-label">重新设计次数</div>
+            </div>
+          </Card>
+        </Col>
+      </Row>
+
+      {/* 优化控制面板 */}
+      <Card title="优化控制" style={{ marginBottom: 24 }}>
+        <Row gutter={16}>
+          <Col span={8}>
+            <Space direction="vertical" style={{ width: '100%' }}>
+              <Text strong>选择实验：</Text>
+              <Select
+                style={{ width: '100%' }}
+                placeholder="请选择要评估的实验"
+                value={selectedExperiment}
+                onChange={setSelectedExperiment}
+              >
+                {experiments
+                  .filter(exp => exp.status === 'completed')
+                  .map(experiment => (
+                    <Option key={experiment.id} value={experiment.id}>
+                      {experiment.name} (ID: {experiment.id})
+                    </Option>
+                  ))}
+              </Select>
+              <Button
+                type="primary"
+                icon={<TrophyOutlined />}
+                onClick={handleIntelligentOptimization}
+                loading={loading}
+                disabled={!selectedExperiment}
+                block
+                size="large"
+                style={{
+                  background: 'linear-gradient(135deg, #1890ff, #52c41a)',
+                  border: 'none',
+                  boxShadow: '0 4px 12px rgba(24, 144, 255, 0.3)',
+                  fontWeight: 'bold',
+                  fontSize: '16px'
+                }}
+              >
+                智能优化
+              </Button>
+            </Space>
+          </Col>
+          <Col span={16}>
+            <div style={{ padding: '20px', textAlign: 'center', background: '#f8f9ff', borderRadius: '6px' }}>
+              <TrophyOutlined style={{ fontSize: 48, color: '#1890ff', marginBottom: 16 }} />
+              <Title level={4}>智能优化决策系统</Title>
+              <Paragraph>
+                基于实验结果自动评估性能指标，智能决策下一步优化策略，
+                支持贝叶斯优化和重新设计两种模式，实现电池配方的持续改进。
+              </Paragraph>
+            </div>
+          </Col>
+        </Row>
+      </Card>
+
+      {/* 图表展示 */}
+      <Row gutter={[16, 16]} style={{ marginBottom: 24 }}>
+        <Col span={12}>
+          <Card title="优化历史趋势" className="chart-container">
+            <ReactECharts option={renderOptimizationHistoryChart()} style={{ height: '300px' }} />
+          </Card>
+        </Col>
+        <Col span={12}>
+          <Card title="决策统计" className="chart-container">
+            <div style={{ height: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <div style={{ textAlign: 'center' }}>
+                <div style={{ fontSize: '48px', color: '#1890ff', marginBottom: '16px' }}>
+                  {optimizationStats?.formula_generation_methods.initial_design || 0}
+                </div>
+                <div style={{ fontSize: '16px', color: '#666' }}>
+                  初始设计配方
+                </div>
+                <div style={{ marginTop: '24px' }}>
+                  <Progress
+                    percent={75}
+                    status="active"
+                    format={() => '优化效率'}
+                  />
+                </div>
+              </div>
+            </div>
+          </Card>
+        </Col>
+      </Row>
+
+      {/* 实验列表 */}
+      <Card title="实验记录">
+        <Table
+          columns={experimentColumns}
+          dataSource={experiments}
+          rowKey="id"
+          pagination={{ pageSize: 10 }}
+        />
+      </Card>
+
+      {/* 评估结果模态框 */}
+      <Modal
+        title="实验评估结果"
+        visible={evaluationModalVisible}
+        onCancel={() => setEvaluationModalVisible(false)}
+        footer={[
+          <Button key="close" onClick={() => setEvaluationModalVisible(false)}>
+            关闭
+          </Button>,
+          <Button
+            key="decide"
+            type="primary"
+            onClick={handleDecideNextStep}
+            loading={loading}
+          >
+            决策下一步
+          </Button>
+        ]}
+        width={1000}
+      >
+        {evaluationResult && (
+          <Tabs>
+            <TabPane tab="实验数据" key="experiment_data">
+              {selectedExperimentData && (
+                <div>
+                  <Row gutter={16} style={{ marginBottom: 16 }}>
+                    <Col span={12}>
+                      <Card title="配方信息" size="small">
+                        <div>
+                          <p><Text strong>配方名称：</Text>{selectedExperimentData.formula_info.formula_name}</p>
+                          <div style={{ marginTop: 8 }}>
+                            <Text strong>组分详情：</Text>
+                            <ul style={{ marginTop: 4, paddingLeft: 16 }}>
+                              {selectedExperimentData.formula_info.components.map((component: any, index: number) => (
+                                <li key={index}>
+                                  <Text>{component.name} ({component.type})</Text>
+                                  {component.ratio && <Text> - 比例: {component.ratio}</Text>}
+                                  {component.concentration && <Text> - 浓度: {component.concentration}</Text>}
+                                  {component.percentage && <Text> - 含量: {component.percentage}</Text>}
+                                  {component.loading && <Text> - 负载: {component.loading}</Text>}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </div>
+                      </Card>
+                    </Col>
+                    <Col span={12}>
+                      <Card title="注液数据" size="small">
+                        <div>
+                          <p><Text strong>注液量：</Text>{selectedExperimentData.injection_data.injection_volume} mL/Ah</p>
+                          <p><Text strong>注液压力：</Text>{selectedExperimentData.injection_data.injection_pressure} bar</p>
+                          <p><Text strong>浸润时间：</Text>{selectedExperimentData.injection_data.wetting_time} hours</p>
+                          <p><Text strong>保持率：</Text>{selectedExperimentData.injection_data.retention_rate}%</p>
+                        </div>
+                      </Card>
+                    </Col>
+                  </Row>
+                  <Row gutter={16} style={{ marginBottom: 16 }}>
+                    <Col span={12}>
+                      <Card title="内阻/电压数据" size="small">
+                        <div>
+                          <p><Text strong>初始阻抗：</Text>{selectedExperimentData.impedance_data.initial_impedance} mΩ</p>
+                          <p><Text strong>阻抗增长：</Text>{selectedExperimentData.impedance_data.impedance_growth}% (100 cycles)</p>
+                          <p><Text strong>电荷转移电阻：</Text>{selectedExperimentData.impedance_data.charge_transfer_resistance} mΩ</p>
+                          <p><Text strong>名牌电压：</Text>{selectedExperimentData.voltage_data.nominal_voltage} V</p>
+                          <p><Text strong>截止电压：</Text>{selectedExperimentData.voltage_data.cut_off_voltage_charge} V / {selectedExperimentData.voltage_data.cut_off_voltage_discharge} V</p>
+                        </div>
+                      </Card>
+                    </Col>
+                    <Col span={12}>
+                      <Card title="充放电曲线数据" size="small">
+                        <div style={{ height: '200px' }}>
+                          <ReactECharts option={renderChargeDischargeChart()} style={{ height: '180px' }} />
+                        </div>
+                      </Card>
+                    </Col>
+                  </Row>
+                </div>
+              )}
+            </TabPane>
+            <TabPane tab="需求对比" key="requirements_comparison">
+              {requirementsComparison && (
+                <div>
+                  <Row gutter={16} style={{ marginBottom: 16 }}>
+                    <Col span={24}>
+                      <Card title="需求达成概况" size="small">
+                        <div style={{ textAlign: 'center', marginBottom: 16 }}>
+                          <div style={{ fontSize: '24px', fontWeight: 'bold', color: '#1890ff' }}>
+                            总体达成率: {(requirementsComparison.overallAchievementRate * 100).toFixed(1)}%
+                          </div>
+                        </div>
+                        <Row gutter={16}>
+                          {Object.entries(requirementsComparison.comparison).map(([key, value]: [string, any]) => (
+                            <Col span={8} key={key} style={{ marginBottom: 8 }}>
+                              <div style={{
+                                padding: '8px',
+                                borderRadius: '4px',
+                                backgroundColor: value.achieved ? '#f6ffed' : '#fff2e8',
+                                border: `1px solid ${value.achieved ? '#b7eb8f' : '#ffbb96'}`
+                              }}>
+                                <div style={{ fontWeight: 'bold', marginBottom: 4 }}>
+                                  {{
+                                    energy_density: '能量密度',
+                                    cycle_life: '循环寿命',
+                                    safety_score: '安全评分',
+                                    working_temperature: '工作温度',
+                                    ionic_conductivity: '离子电导率',
+                                    cost_per_kwh: '成本效益'
+                                  }[key]}
+                                </div>
+                                <div style={{ fontSize: '12px' }}>
+                                  目标: {value.target} | 实际: {value.actual}
+                                </div>
+                                <div style={{
+                                  fontSize: '12px',
+                                  color: value.achieved ? '#52c41a' : '#ff4d4f',
+                                  fontWeight: 'bold'
+                                }}>
+                                  {value.achieved ? '✓ 已达成' : `✗ 差距: ${value.gap}`}
+                                </div>
+                              </div>
+                            </Col>
+                          ))}
+                        </Row>
+                      </Card>
+                    </Col>
+                  </Row>
+                  {requirementsComparison.unachievedRequirements.length > 0 && (
+                    <Row gutter={16}>
+                      <Col span={24}>
+                        <Card title="未达成需求分析" size="small">
+                          <Alert
+                            message="发现未达成需求"
+                            description={`共有 ${requirementsComparison.unachievedRequirements.length} 项需求未完全达成，需要在下一轮实验中优化`}
+                            type="warning"
+                            style={{ marginBottom: 16 }}
+                          />
+                          <Table
+                            columns={[
+                              {
+                                title: '需求指标',
+                                dataIndex: 'chinese_name',
+                                key: 'chinese_name'
+                              },
+                              {
+                                title: '目标值',
+                                dataIndex: 'target',
+                                key: 'target'
+                              },
+                              {
+                                title: '实际值',
+                                dataIndex: 'actual',
+                                key: 'actual'
+                              },
+                              {
+                                title: '差距',
+                                dataIndex: 'gap',
+                                key: 'gap',
+                                render: (gap: any) => (
+                                  <Text type="danger">{gap}</Text>
+                                )
+                              }
+                            ]}
+                            dataSource={requirementsComparison.unachievedRequirements}
+                            pagination={false}
+                            size="small"
+                          />
+                        </Card>
+                      </Col>
+                    </Row>
+                  )}
+                </div>
+              )}
+            </TabPane>
+            <TabPane tab="评估概览" key="overview">
+              <Row gutter={16}>
+                <Col span={12}>
+                  <Card title="总体评估" size="small">
+                    <div className="result-summary">
+                      <div className="summary-item">
+                        <div className="summary-value">
+                          {evaluationResult.overall_evaluation.overall_score}
+                        </div>
+                        <div className="summary-label">综合评分</div>
+                      </div>
+                      <div className="summary-item">
+                        <div className="summary-value">
+                          {evaluationResult.overall_evaluation.metrics_summary.metrics_meeting_requirements}
+                        </div>
+                        <div className="summary-label">达标指标数</div>
+                      </div>
+                      <div className="summary-item">
+                        <div className="summary-value">
+                          <Badge
+                            status={evaluationResult.evaluation_summary.meets_requirements ? 'success' : 'error'}
+                            text={evaluationResult.evaluation_summary.meets_requirements ? '满足要求' : '不满足要求'}
+                          />
+                        </div>
+                        <div className="summary-label">评估结果</div>
+                      </div>
+                    </div>
+                  </Card>
+                </Col>
+                <Col span={12}>
+                  <Card title="性能达成率" size="small">
+                    <ReactECharts option={renderPerformanceChart()} style={{ height: '200px' }} />
+                  </Card>
+                </Col>
+              </Row>
+            </TabPane>
+            <TabPane tab="详细指标" key="metrics">
+              <div>
+                {Object.entries(evaluationResult.metric_evaluations).map(([key, evaluation]) => (
+                  <div key={key} className="evaluation-metric">
+                    <div>
+                      <Text strong>{evaluation.chinese_name}</Text>
+                      <Tag
+                        color={`metric-grade-${evaluation.grade}`}
+                        style={{ marginLeft: 8 }}
+                      >
+                        {evaluation.grade === 'excellent' ? '优秀' :
+                         evaluation.grade === 'good' ? '良好' :
+                         evaluation.grade === 'acceptable' ? '可接受' : '差'}
+                      </Tag>
+                    </div>
+                    <div>
+                      <Text type="secondary">
+                        目标: {evaluation.target_value}{evaluation.unit || ''} |
+                        实际: {evaluation.actual_value}{evaluation.unit || ''} |
+                        达成率: {(evaluation.achievement_rate * 100).toFixed(1)}%
+                      </Text>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </TabPane>
+            <TabPane tab="改进建议" key="suggestions">
+              {evaluationResult.improvement_suggestions.length > 0 ? (
+                <Timeline>
+                  {evaluationResult.improvement_suggestions.map((suggestion, index) => (
+                    <Timeline.Item
+                      key={index}
+                      color={suggestion.priority_score > 0.7 ? 'red' : 'blue'}
+                    >
+                      <div>
+                        <Text strong>{suggestion.chinese_name}</Text>
+                        <div style={{ marginTop: 4 }}>
+                          <Text type="secondary">
+                            当前: {suggestion.current_performance} |
+                            目标: {suggestion.target_performance} |
+                            改进: {suggestion.improvement_needed}
+                          </Text>
+                        </div>
+                        <div style={{ marginTop: 4 }}>
+                          <Text>建议: {suggestion.suggested_actions.join(', ')}</Text>
+                        </div>
+                      </div>
+                    </Timeline.Item>
+                  ))}
+                </Timeline>
+              ) : (
+                <Alert
+                  message="暂无改进建议"
+                  description="当前配方性能良好，无需特别改进"
+                  type="success"
+                />
+              )}
+            </TabPane>
+          </Tabs>
+        )}
+      </Modal>
+
+      {/* 决策结果模态框 */}
+      <Modal
+        title="优化决策结果"
+        visible={decisionModalVisible}
+        onCancel={() => setDecisionModalVisible(false)}
+        footer={[
+          <Button key="cancel" onClick={() => setDecisionModalVisible(false)}>
+            取消
+          </Button>,
+          <Button
+            key="execute"
+            type="primary"
+            onClick={executeDecision}
+            loading={loading}
+          >
+            执行决策
+          </Button>
+        ]}
+        width={800}
+      >
+        {decisionResult && (
+          <div>
+            <Card title="决策概览" size="small" style={{ marginBottom: 16 }}>
+              <Row gutter={16}>
+                <Col span={8}>
+                  <div className="summary-item">
+                    <div className="summary-value">
+                      <Tag color="blue">
+                        {decisionResult.primary_decision.action_type === 'bayesian_optimization' ? '贝叶斯优化' :
+                         decisionResult.primary_decision.action_type === 'redesign' ? '重新设计' :
+                         decisionResult.primary_decision.action_type}
+                      </Tag>
+                    </div>
+                    <div className="summary-label">决策类型</div>
+                  </div>
+                </Col>
+                <Col span={8}>
+                  <div className="summary-item">
+                    <div className="summary-value">
+                      {(decisionResult.decision_context.success_probability * 100).toFixed(1)}%
+                    </div>
+                    <div className="summary-label">成功概率</div>
+                  </div>
+                </Col>
+                <Col span={8}>
+                  <div className="summary-item">
+                    <div className="summary-value">
+                      {decisionResult.expected_outcome.expected_time_requirement}
+                    </div>
+                    <div className="summary-label">预计时间</div>
+                  </div>
+                </Col>
+              </Row>
+            </Card>
+
+            <Card title="决策原因" size="small" style={{ marginBottom: 16 }}>
+              <ul>
+                {decisionResult.primary_decision.reasoning.map((reason, index) => (
+                  <li key={index}>{reason}</li>
+                ))}
+              </ul>
+            </Card>
+
+            <Card title="行动计划" size="small">
+              <Timeline>
+                {decisionResult.action_plan.steps.map((step, index) => (
+                  <Timeline.Item key={index}>
+                    <Text>{step}</Text>
+                  </Timeline.Item>
+                ))}
+              </Timeline>
+              <div style={{ marginTop: 16 }}>
+                <Text strong>预期改进: </Text>
+                <Text>{decisionResult.action_plan.expected_improvement}</Text>
+              </div>
+            </Card>
+
+            {decisionResult.risk_assessment.potential_risks.length > 0 && (
+              <Alert
+                message="风险评估"
+                description={
+                  <div>
+                    <div>风险等级: <Tag color="orange">{decisionResult.risk_assessment.risk_level}</Tag></div>
+                    <div>潜在风险: {decisionResult.risk_assessment.potential_risks.join(', ')}</div>
+                  </div>
+                }
+                type="warning"
+                style={{ marginTop: 16 }}
+              />
+            )}
+          </div>
+        )}
+      </Modal>
+
+      {/* 配方详情Modal */}
+      <Modal
+        title={
+          <Space>
+            <ExperimentOutlined />
+            <span>实验配方详情</span>
+          </Space>
+        }
+        visible={formulaModalVisible}
+        onCancel={() => setFormulaModalVisible(false)}
+        width={1200}
+        footer={[
+          <Button key="close" onClick={() => setFormulaModalVisible(false)}>
+            关闭
+          </Button>
+        ]}
+      >
+        {selectedExperimentFormulas && (
+          <div>
+            <Alert
+              message="实验信息"
+              description={
+                <Space direction="vertical">
+                  <Text><strong>实验ID:</strong> {selectedExperimentFormulas.experiment_id}</Text>
+                  <Text><strong>实验名称:</strong> {selectedExperimentFormulas.name}</Text>
+                  <Text><strong>实验类型:</strong> <Tag color="blue">{selectedExperimentFormulas.experiment_type}</Tag></Text>
+                  <Text><strong>配方总数:</strong> {selectedExperimentFormulas.formula_count} / {EXPERIMENT_FORMULA_CONSTRAINTS.MAX_FORMULAS_PER_EXPERIMENT}</Text>
+                  <Text><strong>组分总数:</strong> {(selectedExperimentFormulas.formula_count || 0) * EXPERIMENT_FORMULA_CONSTRAINTS.COMPONENTS_PER_FORMULA} 个 (每配方{EXPERIMENT_FORMULA_CONSTRAINTS.COMPONENTS_PER_FORMULA}个组分)</Text>
+                </Space>
+              }
+              type="info"
+              style={{ marginBottom: 16 }}
+            />
+
+            {/* 配方组分信息展示 - 预留10个组分空间 */}
+            <Card title="实验配方组分信息" size="small" style={{ marginBottom: 16 }}>
+              {(() => {
+                const formulaInfo = (selectedExperimentFormulas as any).experiment_data?.formula_info || {};
+                const components = formulaInfo.components || [];
+
+                // 按类型分组配方组分
+                const solvents = components.filter((comp: any) => comp.type === 'solvent');
+                const salts = components.filter((comp: any) => comp.type === 'salt');
+                const additives = components.filter((comp: any) => comp.type === 'additive');
+                const positiveElectrodes = components.filter((comp: any) => comp.type === 'positive_electrode');
+                const negativeElectrodes = components.filter((comp: any) => comp.type === 'negative_electrode');
+
+                // 渲染配方组分的辅助函数
+                const renderComponent = (component: any, color: string, index: number) => (
+                  <div key={`component-${index}`} style={{
+                    padding: '8px',
+                    backgroundColor: '#f0f2f5',
+                    borderRadius: '6px',
+                    marginBottom: '6px',
+                    border: component ? '1px solid #d9d9d9' : '1px dashed #d9d9d9'
+                  }}>
+                    <div style={{ fontWeight: 'bold', marginBottom: '4px', color: color, fontSize: '13px' }}>
+                      {component?.name || `组分 ${index + 1} (待填充)`}
+                    </div>
+                    {component && (
+                      <div style={{ fontSize: '12px', lineHeight: '1.4' }}>
+                        {component.type && (
+                          <p style={{ margin: '2px 0' }}><Text strong style={{ fontSize: '12px' }}>类型：</Text>{component.type}</p>
+                        )}
+                        {component.ratio && (
+                          <p style={{ margin: '2px 0' }}><Text strong style={{ fontSize: '12px' }}>比例：</Text>{component.ratio}</p>
+                        )}
+                        {component.concentration && (
+                          <p style={{ margin: '2px 0' }}><Text strong style={{ fontSize: '12px' }}>浓度：</Text>{component.concentration}</p>
+                        )}
+                        {component.percentage && (
+                          <p style={{ margin: '2px 0' }}><Text strong style={{ fontSize: '12px' }}>含量：</Text>{component.percentage}</p>
+                        )}
+                        {component.loading && (
+                          <p style={{ margin: '2px 0' }}><Text strong style={{ fontSize: '12px' }}>负载量：</Text>{component.loading}</p>
+                        )}
+                      </div>
+                    )}
+                    {!component && (
+                      <div style={{ fontSize: '12px', color: '#999', fontStyle: 'italic' }}>
+                        待分配组分类型和参数
+                      </div>
+                    )}
+                  </div>
+                );
+
+                // 为10个组分预留空间
+                const totalReservedSlots = 10;
+                const currentComponents = components.length;
+                const emptySlots = totalReservedSlots - currentComponents;
+
+                return (
+                  <div>
+                    <Text strong style={{ marginBottom: 12, display: 'block' }}>
+                      配方名称：{formulaInfo.formula_name || '未命名配方'}
+                    </Text>
+
+                    {/* 配方组分展示网格 - 2行5列布局展示10个组分 */}
+                    <Card size="small" style={{ backgroundColor: '#fafafa', marginBottom: 16 }}>
+                      <div style={{ fontWeight: 'bold', marginBottom: '12px', textAlign: 'center' }}>
+                        <Text style={{ color: '#1890ff' }}>电解液组分 (10个预留空间)</Text>
+                      </div>
+                      <Row gutter={[8, 8]}>
+                        {Array.from({ length: 6 }, (_, i) => {
+                          const component = solvents[i] || salts[i] || additives[i];
+                          return (
+                            <Col span={4} key={`slot-${i}`}>
+                              {renderComponent(component, '#1890ff', i)}
+                            </Col>
+                          );
+                        })}
+                        {Array.from({ length: 4 }, (_, i) => {
+                          const index = 6 + i;
+                          const component = additives[i] || null;
+                          return (
+                            <Col span={4} key={`slot-${index}`}>
+                              {renderComponent(component, '#faad14', index)}
+                            </Col>
+                          );
+                        })}
+                      </Row>
+                    </Card>
+
+                    {/* 电极材料展示 - 预留正极和负极空间 */}
+                    <Row gutter={16} style={{ marginBottom: 16 }}>
+                      <Col span={12}>
+                        <Card size="small" style={{ backgroundColor: '#f9f0ff' }}>
+                          <div style={{ fontWeight: 'bold', marginBottom: '8px', textAlign: 'center' }}>
+                            <Text style={{ color: '#722ed1' }}>正极材料 (1个预留空间)</Text>
+                          </div>
+                          {renderComponent(
+                            positiveElectrodes[0] || null,
+                            '#722ed1',
+                            100
+                          )}
+                        </Card>
+                      </Col>
+                      <Col span={12}>
+                        <Card size="small" style={{ backgroundColor: '#f6ffed' }}>
+                          <div style={{ fontWeight: 'bold', marginBottom: '8px', textAlign: 'center' }}>
+                            <Text style={{ color: '#52c41a' }}>负极材料 (1个预留空间)</Text>
+                          </div>
+                          {renderComponent(
+                            negativeElectrodes[0] || null,
+                            '#52c41a',
+                            101
+                          )}
+                        </Card>
+                      </Col>
+                    </Row>
+
+                    {/* 配方汇总信息 */}
+                    <Card size="small" style={{ backgroundColor: '#f0f9ff' }}>
+                      <div style={{ fontWeight: 'bold', marginBottom: '12px' }}>
+                        配方组成统计 ({EXPERIMENT_FORMULA_CONSTRAINTS.COMPONENTS_PER_FORMULA}个组分 + 2种电极材料)
+                      </div>
+                      <Row gutter={16}>
+                        <Col span={6}>
+                          <div style={{ textAlign: 'center' }}>
+                            <div style={{ fontSize: '18px', color: '#1890ff', fontWeight: 'bold' }}>
+                              {solvents.length}/{3}
+                            </div>
+                            <div style={{ fontSize: '12px', color: '#666' }}>溶剂种类 (预留3个)</div>
+                          </div>
+                        </Col>
+                        <Col span={6}>
+                          <div style={{ textAlign: 'center' }}>
+                            <div style={{ fontSize: '18px', color: '#fa8c16', fontWeight: 'bold' }}>
+                              {salts.length}/{1}
+                            </div>
+                            <div style={{ fontSize: '12px', color: '#666' }}>电解质盐 (预留1个)</div>
+                          </div>
+                        </Col>
+                        <Col span={6}>
+                          <div style={{ textAlign: 'center' }}>
+                            <div style={{ fontSize: '18px', color: '#faad14', fontWeight: 'bold' }}>
+                              {additives.length}/{6}
+                            </div>
+                            <div style={{ fontSize: '12px', color: '#666' }}>功能添加剂 (预留6个)</div>
+                          </div>
+                        </Col>
+                        <Col span={6}>
+                          <div style={{ textAlign: 'center' }}>
+                            <div style={{ fontSize: '18px', color: '#722ed1', fontWeight: 'bold' }}>
+                              {currentComponents}/{EXPERIMENT_FORMULA_CONSTRAINTS.COMPONENTS_PER_FORMULA}
+                            </div>
+                            <div style={{ fontSize: '12px', color: '#666' }}>电解液总组分数</div>
+                          </div>
+                        </Col>
+                      </Row>
+
+                      {/* 电极材料统计 */}
+                      <Row gutter={16} style={{ marginTop: 12 }}>
+                        <Col span={12}>
+                          <div style={{ textAlign: 'center', padding: '8px', backgroundColor: '#f9f0ff', borderRadius: '6px' }}>
+                            <div style={{ fontSize: '16px', color: '#722ed1', fontWeight: 'bold' }}>
+                              {positiveElectrodes.length}/1
+                            </div>
+                            <div style={{ fontSize: '12px', color: '#666' }}>正极材料</div>
+                          </div>
+                        </Col>
+                        <Col span={12}>
+                          <div style={{ textAlign: 'center', padding: '8px', backgroundColor: '#f6ffed', borderRadius: '6px' }}>
+                            <div style={{ fontSize: '16px', color: '#52c41a', fontWeight: 'bold' }}>
+                              {negativeElectrodes.length}/1
+                            </div>
+                            <div style={{ fontSize: '12px', color: '#666' }}>负极材料</div>
+                          </div>
+                        </Col>
+                      </Row>
+                    </Card>
+                  </div>
+                );
+              })()}
+            </Card>
+
+            <Table
+              columns={[
+                {
+                  title: '位置',
+                  dataIndex: 'position_in_experiment',
+                  key: 'position',
+                  width: 60,
+                  render: (position: number) => (
+                    <Badge count={position} style={{ backgroundColor: '#52c41a' }} />
+                  )
+                },
+                {
+                  title: '配方ID',
+                  dataIndex: 'formula_id',
+                  key: 'formula_id',
+                  width: 100,
+                  render: (id: number) => (
+                    <Tag color="blue" style={{ fontFamily: 'monospace' }}>
+                      F{id}
+                    </Tag>
+                  )
+                },
+                {
+                  title: '测试状态',
+                  dataIndex: 'test_status',
+                  key: 'test_status',
+                  width: 100,
+                  render: (status: string) => {
+                    const statusConfig: Record<string, { text: string; color: string }> = {
+                      'completed': { text: '已完成', color: 'green' },
+                      'testing': { text: '测试中', color: 'blue' },
+                      'pending': { text: '等待中', color: 'orange' },
+                      'failed': { text: '失败', color: 'red' }
+                    };
+                    const config = statusConfig[status] || { text: status, color: 'default' };
+                    return <Tag color={config.color}>{config.text}</Tag>;
+                  }
+                },
+                {
+                  title: '性能评分',
+                  dataIndex: 'test_results',
+                  key: 'performance',
+                  render: (results: any) => results?.performance_score ? (
+                    <div>
+                      <div style={{ fontWeight: 'bold' }}>
+                        {(results.performance_score * 100).toFixed(1)}%
+                      </div>
+                      <Progress
+                        percent={results.performance_score * 100}
+                        size="small"
+                        showInfo={false}
+                        strokeColor={results.performance_score > 0.8 ? '#52c41a' : results.performance_score > 0.6 ? '#faad14' : '#ff4d4f'}
+                      />
+                    </div>
+                  ) : '-'
+                },
+                {
+                  title: '稳定性评分',
+                  dataIndex: 'test_results',
+                  key: 'stability',
+                  render: (results: any) => results?.stability_score ? (
+                    <div>
+                      <div style={{ fontWeight: 'bold' }}>
+                        {(results.stability_score * 100).toFixed(1)}%
+                      </div>
+                      <Progress
+                        percent={results.stability_score * 100}
+                        size="small"
+                        showInfo={false}
+                        strokeColor={results.stability_score > 0.8 ? '#52c41a' : results.stability_score > 0.6 ? '#faad14' : '#ff4d4f'}
+                      />
+                    </div>
+                  ) : '-'
+                },
+                {
+                  title: '其他指标',
+                  dataIndex: 'test_results',
+                  key: 'other',
+                  render: (results: any) => {
+                    if (!results || Object.keys(results).length <= 2) return '-';
+
+                    return (
+                      <div style={{ fontSize: '12px' }}>
+                        {results.cost_efficiency && (
+                          <div>成本效益: {(results.cost_efficiency * 100).toFixed(1)}%</div>
+                        )}
+                        {results.cold_resistance && (
+                          <div>耐寒性: {(results.cold_resistance * 100).toFixed(1)}%</div>
+                        )}
+                        {results.safety && (
+                          <div>安全性: {(results.safety * 100).toFixed(1)}%</div>
+                        )}
+                      </div>
+                    );
+                  }
+                }
+              ]}
+              dataSource={selectedExperimentFormulas.experiment_formulas || []}
+              rowKey="position_in_experiment"
+              pagination={{ pageSize: 10 }}
+              size="small"
+            />
+          </div>
+        )}
+      </Modal>
+    </div>
+  );
+};
+
+export default ClosedLoopPage;

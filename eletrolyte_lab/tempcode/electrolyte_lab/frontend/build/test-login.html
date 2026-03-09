@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录测试</title>
+</head>
+<body>
+    <h1>登录跳转测试页面</h1>
+
+    <div style="margin: 20px 0;">
+        <button onclick="testLogin()" style="padding: 10px 20px; margin: 10px; font-size: 16px;">
+            测试登录跳转
+        </button>
+
+        <button onclick="testRegister()" style="padding: 10px 20px; margin: 10px; font-size: 16px;">
+            测试注册跳转
+        </button>
+    </div>
+
+    <div id="result" style="margin: 20px; padding: 10px; background: #f0f0f0;"></div>
+
+    <script>
+        function testLogin() {
+            document.getElementById('result').innerHTML = '尝试跳转到登录页面...';
+            console.log('点击了登录按钮');
+
+            // 测试直接跳转
+            window.location.href = '/login';
+        }
+
+        function testRegister() {
+            document.getElementById('result').innerHTML = '尝试跳转到注册页面...';
+            console.log('点击了注册按钮');
+
+            // 测试直接跳转
+            window.location.href = '/register';
+        }
+
+        // 页面加载时的提示
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('result').innerHTML = '页面已加载，请点击按钮测试跳转功能';
+            console.log('测试页面已加载');
+        });
+    </script>
+</body>
+</html>

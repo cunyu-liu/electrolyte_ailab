@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>按钮测试</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: linear-gradient(135deg, #660874 0%, #4a0563 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-width: 600px;
+        }
+        .button {
+            padding: 12px 24px;
+            margin: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            height: 40px;
+            min-width: 120px;
+            transition: all 0.3s ease;
+        }
+        .primary {
+            background: #660874;
+            color: white;
+        }
+        .secondary {
+            background: white;
+            color: #660874;
+            border: 2px solid #660874;
+        }
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f0f0f0;
+            border-radius: 8px;
+            min-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="color: #660874; margin-bottom: 30px;">
+            🎯 React Router 按钮测试
+        </h1>
+
+        <p style="color: #666; margin-bottom: 30px;">
+            测试按钮点击和URL跳转功能
+        </p>
+
+        <div style="display: flex; gap: 15px; justify-content: center; margin-bottom: 30px;">
+            <button class="button primary" onclick="testDirectNavigation('/login')">
+                🚀 直接跳转登录
+            </button>
+            <button class="button secondary" onclick="testDirectNavigation('/register')">
+                ✍️ 直接跳转注册
+            </button>
+        </div>
+
+        <div style="display: flex; gap: 15px; justify-content: center;">
+            <button class="button secondary" onclick="testReactNavigation('/login')">
+                🔄 React Router导航登录
+            </button>
+            <button class="secondary" onclick="testReactNavigation('/register')">
+                🔄 React Router导航注册
+            </button>
+        </div>
+
+        <div id="result" class="result">
+            点击按钮测试跳转功能...
+        </div>
+
+        <div style="margin-top: 30px; font-size: 14px; color: #888;">
+            <p><strong>测试说明：</strong></p>
+            <ul style="text-align: left; line-height: 1.6;">
+                <li>✅ <strong>直接跳转</strong> - 使用 window.location.pathname</li>
+                <li>✅ <strong>React Router导航</strong> - 模拟React Router的方式</li>
+                <li>🔍 <strong>查看控制台</strong> - 确认JavaScript执行</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function updateResult(message) {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `<strong>状态：</strong> ${message}`;
+            console.log(`[TEST] ${message}`);
+        }
+
+        function testDirectNavigation(path) {
+            updateResult(`正在直接跳转到 ${path}...`);
+            console.log(`[DIRECT NAVIGATE] 跳转到: ${path}`);
+
+            // 延迟一秒执行跳转，让用户看到反馈
+            setTimeout(() => {
+                window.location.pathname = path;
+            }, 1000);
+        }
+
+        function testReactNavigation(path) {
+            updateResult(`模拟React Router导航到 ${path}...`);
+            console.log(`[REACT ROUTER NAVIGATE] 导航到: ${path}`);
+
+            // 模拟React Router的导航行为
+            // 在实际React应用中，这会触发组件重新渲染
+            // 这里只是模拟效果
+            setTimeout(() => {
+                updateResult(`✅ React Router导航到 ${path} (模拟)`);
+            }, 500);
+        }
+
+        // 页面加载完成
+        document.addEventListener('DOMContentLoaded', function() {
+            updateResult('✅ 页面加载完成，按钮可点击');
+            console.log('[PAGE] 测试页面加载完成');
+
+            // 添加键盘快捷键
+            document.addEventListener('keydown', function(e) {
+                if (e.key === '1') {
+                    testDirectNavigation('/login');
+                } else if (e.key === '2') {
+                    testDirectNavigation('/register');
+                } else if (e.key === '3') {
+                    testReactNavigation('/login');
+                } else if (e.key === '4') {
+                    testReactNavigation('/register');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

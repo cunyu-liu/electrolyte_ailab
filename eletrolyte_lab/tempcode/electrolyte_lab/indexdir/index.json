@@ -1,0 +1,1232 @@
+[
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": " \n \nDETECTION OF SAMPLE PARAMETERS IN SECONDARY \nELECTRON MICROSCOPE IMAGES (Test Results) \nSowmya Mahadevan and David Casasent \n Dept.",
+    "paragraph": " \n \nDETECTION OF SAMPLE PARAMETERS IN SECONDARY \nELECTRON MICROSCOPE IMAGES (Test Results) \nSowmya Mahadevan and David Casasent \n Dept. of ECE, Carnegie Mellon University, Pittsburgh, PA. \n \n \nABSTRACT \n \nSecondary electron microscope images (SEIs) are analyzed in an automatic system to provide material \nproperties for fracture analyses etc. The image processing presently used is summarized and initial results presented. \nOur new grain boundary (GB) detection and line following algorithms are presented. Lin"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "of ECE, Carnegie Mellon University, Pittsburgh, PA. \n \n \nABSTRACT \n \nSecondary electron microscope images (SEIs) are analyzed in an automatic system to provide material \nproperties for fracture analyses etc.",
+    "paragraph": " \n \nDETECTION OF SAMPLE PARAMETERS IN SECONDARY \nELECTRON MICROSCOPE IMAGES (Test Results) \nSowmya Mahadevan and David Casasent \n Dept. of ECE, Carnegie Mellon University, Pittsburgh, PA. \n \n \nABSTRACT \n \nSecondary electron microscope images (SEIs) are analyzed in an automatic system to provide material \nproperties for fracture analyses etc. The image processing presently used is summarized and initial results presented. \nOur new grain boundary (GB) detection and line following algorithms are presented. Lin"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "The image processing presently used is summarized and initial results presented.",
+    "paragraph": " \n \nDETECTION OF SAMPLE PARAMETERS IN SECONDARY \nELECTRON MICROSCOPE IMAGES (Test Results) \nSowmya Mahadevan and David Casasent \n Dept. of ECE, Carnegie Mellon University, Pittsburgh, PA. \n \n \nABSTRACT \n \nSecondary electron microscope images (SEIs) are analyzed in an automatic system to provide material \nproperties for fracture analyses etc. The image processing presently used is summarized and initial results presented. \nOur new grain boundary (GB) detection and line following algorithms are presented. Lin"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Our new grain boundary (GB) detection and line following algorithms are presented.",
+    "paragraph": " \n \nDETECTION OF SAMPLE PARAMETERS IN SECONDARY \nELECTRON MICROSCOPE IMAGES (Test Results) \nSowmya Mahadevan and David Casasent \n Dept. of ECE, Carnegie Mellon University, Pittsburgh, PA. \n \n \nABSTRACT \n \nSecondary electron microscope images (SEIs) are analyzed in an automatic system to provide material \nproperties for fracture analyses etc. The image processing presently used is summarized and initial results presented. \nOur new grain boundary (GB) detection and line following algorithms are presented. Lin"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "e following locates triple \njunctions (TJs) (points where 3 grains meet).",
+    "paragraph": "e following locates triple \njunctions (TJs) (points where 3 grains meet). Initial versions of advanced algorithms to calculate TJ angles, reduce \nfalse GBs and TJs and select a reduced number of good probe points are advanced using a new noise map. \nRegistration and formation of mosaic images are also addressed. Results on about 2000 sector images in 5 slices are \npresented. \n \nKey words: \n \nEdge detection, Gabor filters, SEM image processing, triple junction parameterization. \n \n1. INTRODUCTION \n \nFigure 1"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Initial versions of advanced algorithms to calculate TJ angles, reduce \nfalse GBs and TJs and select a reduced number of good probe points are advanced using a new noise map.",
+    "paragraph": "e following locates triple \njunctions (TJs) (points where 3 grains meet). Initial versions of advanced algorithms to calculate TJ angles, reduce \nfalse GBs and TJs and select a reduced number of good probe points are advanced using a new noise map. \nRegistration and formation of mosaic images are also addressed. Results on about 2000 sector images in 5 slices are \npresented. \n \nKey words: \n \nEdge detection, Gabor filters, SEM image processing, triple junction parameterization. \n \n1. INTRODUCTION \n \nFigure 1"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Registration and formation of mosaic images are also addressed.",
+    "paragraph": "e following locates triple \njunctions (TJs) (points where 3 grains meet). Initial versions of advanced algorithms to calculate TJ angles, reduce \nfalse GBs and TJs and select a reduced number of good probe points are advanced using a new noise map. \nRegistration and formation of mosaic images are also addressed. Results on about 2000 sector images in 5 slices are \npresented. \n \nKey words: \n \nEdge detection, Gabor filters, SEM image processing, triple junction parameterization. \n \n1. INTRODUCTION \n \nFigure 1"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Results on about 2000 sector images in 5 slices are \npresented.",
+    "paragraph": "e following locates triple \njunctions (TJs) (points where 3 grains meet). Initial versions of advanced algorithms to calculate TJ angles, reduce \nfalse GBs and TJs and select a reduced number of good probe points are advanced using a new noise map. \nRegistration and formation of mosaic images are also addressed. Results on about 2000 sector images in 5 slices are \npresented. \n \nKey words: \n \nEdge detection, Gabor filters, SEM image processing, triple junction parameterization. \n \n1. INTRODUCTION \n \nFigure 1"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Key words: \n \nEdge detection, Gabor filters, SEM image processing, triple junction parameterization.",
+    "paragraph": "e following locates triple \njunctions (TJs) (points where 3 grains meet). Initial versions of advanced algorithms to calculate TJ angles, reduce \nfalse GBs and TJs and select a reduced number of good probe points are advanced using a new noise map. \nRegistration and formation of mosaic images are also addressed. Results on about 2000 sector images in 5 slices are \npresented. \n \nKey words: \n \nEdge detection, Gabor filters, SEM image processing, triple junction parameterization. \n \n1. INTRODUCTION \n \nFigure 1"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "INTRODUCTION \n \nFigure 1",
+    "paragraph": "e following locates triple \njunctions (TJs) (points where 3 grains meet). Initial versions of advanced algorithms to calculate TJ angles, reduce \nfalse GBs and TJs and select a reduced number of good probe points are advanced using a new noise map. \nRegistration and formation of mosaic images are also addressed. Results on about 2000 sector images in 5 slices are \npresented. \n \nKey words: \n \nEdge detection, Gabor filters, SEM image processing, triple junction parameterization. \n \n1. INTRODUCTION \n \nFigure 1"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": " shows three SEI images.",
+    "paragraph": " shows three SEI images. They show different grains in crystalline structures. As seen, the grain \nboundaries (GBs) can vary significantly depending upon the material and its surface preparation. To obtain the \ndesired material science information, the location of each triple junction (TJ) (where three GBs meet), the angles \nbetween each pair of grain boundaries (dihedral angles), and the orientation of each grain (this is obtained from \nseparate electron backscatter pattern (EBSP) analyses [1]) are needed "
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "They show different grains in crystalline structures.",
+    "paragraph": " shows three SEI images. They show different grains in crystalline structures. As seen, the grain \nboundaries (GBs) can vary significantly depending upon the material and its surface preparation. To obtain the \ndesired material science information, the location of each triple junction (TJ) (where three GBs meet), the angles \nbetween each pair of grain boundaries (dihedral angles), and the orientation of each grain (this is obtained from \nseparate electron backscatter pattern (EBSP) analyses [1]) are needed "
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "As seen, the grain \nboundaries (GBs) can vary significantly depending upon the material and its surface preparation.",
+    "paragraph": " shows three SEI images. They show different grains in crystalline structures. As seen, the grain \nboundaries (GBs) can vary significantly depending upon the material and its surface preparation. To obtain the \ndesired material science information, the location of each triple junction (TJ) (where three GBs meet), the angles \nbetween each pair of grain boundaries (dihedral angles), and the orientation of each grain (this is obtained from \nseparate electron backscatter pattern (EBSP) analyses [1]) are needed "
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "To obtain the \ndesired material science information, the location of each triple junction (TJ) (where three GBs meet), the angles \nbetween each pair of grain boundaries (dihedral angles), and the orientation of each grain (this is obtained from \nseparate electron backscatter pattern (EBSP) analyses [1]) are needed",
+    "paragraph": " shows three SEI images. They show different grains in crystalline structures. As seen, the grain \nboundaries (GBs) can vary significantly depending upon the material and its surface preparation. To obtain the \ndesired material science information, the location of each triple junction (TJ) (where three GBs meet), the angles \nbetween each pair of grain boundaries (dihedral angles), and the orientation of each grain (this is obtained from \nseparate electron backscatter pattern (EBSP) analyses [1]) are needed "
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "The image processing steps required are \naddressed in this paper.",
+    "paragraph": "[2,3]. The image processing steps required are \naddressed in this paper. The GBs must be located. GBs can appear as transitions or lines (Fig. 1b) and images can \n \n \nFig 1: (a) Sample surface divided into sectors, (b) SEI recorded in one sector, (c) Grain \nboundary map of sector image, (d) Dihedral angles (θ1, θ2 and θ3) measured at a TJ. \n \nHybrid Image and Signal Processing VIII, David P. Casasent, Andrew G. Tescher,\nEditors, Proceedings of SPIE Vol. 4735 (2002) © 2002 SPIE · 0277-786X/02/$15.00\n104\nDown"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "The GBs must be located.",
+    "paragraph": "[2,3]. The image processing steps required are \naddressed in this paper. The GBs must be located. GBs can appear as transitions or lines (Fig. 1b) and images can \n \n \nFig 1: (a) Sample surface divided into sectors, (b) SEI recorded in one sector, (c) Grain \nboundary map of sector image, (d) Dihedral angles (θ1, θ2 and θ3) measured at a TJ. \n \nHybrid Image and Signal Processing VIII, David P. Casasent, Andrew G. Tescher,\nEditors, Proceedings of SPIE Vol. 4735 (2002) © 2002 SPIE · 0277-786X/02/$15.00\n104\nDown"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "GBs can appear as transitions or lines (Fig.",
+    "paragraph": "[2,3]. The image processing steps required are \naddressed in this paper. The GBs must be located. GBs can appear as transitions or lines (Fig. 1b) and images can \n \n \nFig 1: (a) Sample surface divided into sectors, (b) SEI recorded in one sector, (c) Grain \nboundary map of sector image, (d) Dihedral angles (θ1, θ2 and θ3) measured at a TJ. \n \nHybrid Image and Signal Processing VIII, David P. Casasent, Andrew G. Tescher,\nEditors, Proceedings of SPIE Vol. 4735 (2002) © 2002 SPIE · 0277-786X/02/$15.00\n104\nDown"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "1b) and images can \n \n \nFig 1: (a) Sample surface divided into sectors, (b) SEI recorded in one sector, (c) Grain \nboundary map of sector image, (d) Dihedral angles (θ1, θ2 and θ3) measured at a TJ.",
+    "paragraph": "[2,3]. The image processing steps required are \naddressed in this paper. The GBs must be located. GBs can appear as transitions or lines (Fig. 1b) and images can \n \n \nFig 1: (a) Sample surface divided into sectors, (b) SEI recorded in one sector, (c) Grain \nboundary map of sector image, (d) Dihedral angles (θ1, θ2 and θ3) measured at a TJ. \n \nHybrid Image and Signal Processing VIII, David P. Casasent, Andrew G. Tescher,\nEditors, Proceedings of SPIE Vol. 4735 (2002) © 2002 SPIE · 0277-786X/02/$15.00\n104\nDown"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Hybrid Image and Signal Processing VIII, David P. Casasent, Andrew G. Tescher,\nEditors, Proceedings of SPIE Vol.",
+    "paragraph": "[2,3]. The image processing steps required are \naddressed in this paper. The GBs must be located. GBs can appear as transitions or lines (Fig. 1b) and images can \n \n \nFig 1: (a) Sample surface divided into sectors, (b) SEI recorded in one sector, (c) Grain \nboundary map of sector image, (d) Dihedral angles (θ1, θ2 and θ3) measured at a TJ. \n \nHybrid Image and Signal Processing VIII, David P. Casasent, Andrew G. Tescher,\nEditors, Proceedings of SPIE Vol. 4735 (2002) © 2002 SPIE · 0277-786X/02/$15.00\n104\nDown"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "4735 (2002) © 2002 SPIE · 0277-786X/02/$15.00\n104\nDown",
+    "paragraph": "[2,3]. The image processing steps required are \naddressed in this paper. The GBs must be located. GBs can appear as transitions or lines (Fig. 1b) and images can \n \n \nFig 1: (a) Sample surface divided into sectors, (b) SEI recorded in one sector, (c) Grain \nboundary map of sector image, (d) Dihedral angles (θ1, θ2 and θ3) measured at a TJ. \n \nHybrid Image and Signal Processing VIII, David P. Casasent, Andrew G. Tescher,\nEditors, Proceedings of SPIE Vol. 4735 (2002) © 2002 SPIE · 0277-786X/02/$15.00\n104\nDown"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "loaded From: http://proceedings.spiedigitallibrary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \ncontain precipitates and pits (large bright and dark regions, which we refer to as noise) plus internal grain noise.",
+    "paragraph": "loaded From: http://proceedings.spiedigitallibrary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \ncontain precipitates and pits (large bright and dark regions, which we refer to as noise) plus internal grain noise.  A \ntypical image of one sector (a portion of the image sample) is 712 by 484 pixels. 196 sector images are obtained \nfrom one sample surface. A small (5 µm) portion depth in z of the sample is then removed and a new image of the \nnext slice of the 3D sample"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "A \ntypical image of one sector (a portion of the image sample) is 712 by 484 pixels.",
+    "paragraph": "loaded From: http://proceedings.spiedigitallibrary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \ncontain precipitates and pits (large bright and dark regions, which we refer to as noise) plus internal grain noise.  A \ntypical image of one sector (a portion of the image sample) is 712 by 484 pixels. 196 sector images are obtained \nfrom one sample surface. A small (5 µm) portion depth in z of the sample is then removed and a new image of the \nnext slice of the 3D sample"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "196 sector images are obtained \nfrom one sample surface.",
+    "paragraph": "loaded From: http://proceedings.spiedigitallibrary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \ncontain precipitates and pits (large bright and dark regions, which we refer to as noise) plus internal grain noise.  A \ntypical image of one sector (a portion of the image sample) is 712 by 484 pixels. 196 sector images are obtained \nfrom one sample surface. A small (5 µm) portion depth in z of the sample is then removed and a new image of the \nnext slice of the 3D sample"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "A small (5 µm) portion depth in z of the sample is then removed and a new image of the \nnext slice of the 3D sample",
+    "paragraph": "loaded From: http://proceedings.spiedigitallibrary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \ncontain precipitates and pits (large bright and dark regions, which we refer to as noise) plus internal grain noise.  A \ntypical image of one sector (a portion of the image sample) is 712 by 484 pixels. 196 sector images are obtained \nfrom one sample surface. A small (5 µm) portion depth in z of the sample is then removed and a new image of the \nnext slice of the 3D sample"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": " is obtained, and this process is repeated to obtain the full 3D sample data.",
+    "paragraph": " is obtained, and this process is repeated to obtain the full 3D sample data. For each \nsector image, once all TJs are located, three EBSP images are obtained for each TJ (in the 3 grains around each TJ); \nthese provide the 3D orientation of each grain and fully describe each TJ. This must be done for each sector image, \nbefore the microscope is moved to a new sector region. Fig. 1 shows these various steps.  \n \n \nUse of real and imaginary Gabor filter functions have been shown [4] to be useful in locating "
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "For each \nsector image, once all TJs are located, three EBSP images are obtained for each TJ (in the 3 grains around each TJ); \nthese provide the 3D orientation of each grain and fully describe each TJ.",
+    "paragraph": " is obtained, and this process is repeated to obtain the full 3D sample data. For each \nsector image, once all TJs are located, three EBSP images are obtained for each TJ (in the 3 grains around each TJ); \nthese provide the 3D orientation of each grain and fully describe each TJ. This must be done for each sector image, \nbefore the microscope is moved to a new sector region. Fig. 1 shows these various steps.  \n \n \nUse of real and imaginary Gabor filter functions have been shown [4] to be useful in locating "
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "This must be done for each sector image, \nbefore the microscope is moved to a new sector region.",
+    "paragraph": " is obtained, and this process is repeated to obtain the full 3D sample data. For each \nsector image, once all TJs are located, three EBSP images are obtained for each TJ (in the 3 grains around each TJ); \nthese provide the 3D orientation of each grain and fully describe each TJ. This must be done for each sector image, \nbefore the microscope is moved to a new sector region. Fig. 1 shows these various steps.  \n \n \nUse of real and imaginary Gabor filter functions have been shown [4] to be useful in locating "
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "1 shows these various steps.",
+    "paragraph": " is obtained, and this process is repeated to obtain the full 3D sample data. For each \nsector image, once all TJs are located, three EBSP images are obtained for each TJ (in the 3 grains around each TJ); \nthese provide the 3D orientation of each grain and fully describe each TJ. This must be done for each sector image, \nbefore the microscope is moved to a new sector region. Fig. 1 shows these various steps.  \n \n \nUse of real and imaginary Gabor filter functions have been shown [4] to be useful in locating "
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Use of real and imaginary Gabor filter functions have been shown [4] to be useful in locating",
+    "paragraph": " is obtained, and this process is repeated to obtain the full 3D sample data. For each \nsector image, once all TJs are located, three EBSP images are obtained for each TJ (in the 3 grains around each TJ); \nthese provide the 3D orientation of each grain and fully describe each TJ. This must be done for each sector image, \nbefore the microscope is moved to a new sector region. Fig. 1 shows these various steps.  \n \n \nUse of real and imaginary Gabor filter functions have been shown [4] to be useful in locating "
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "GB lines and \ntransitions respectively.",
+    "paragraph": "GB lines and \ntransitions respectively. A combination of gaussian and median filtered images [5] has also been used to detect line \nboundaries. Our present data is obtained for an MgO sample (Fig. 1c) with thermal grooving used to enhance the \nGBs. To obtain good contrast images, the sample is tilted at 70° with respect to the electron source; the resultant \nimages must thus be geometrically corrected. The correction method used was detailed earlier [6].  When original \nand geometrically-corrected images ar"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "A combination of gaussian and median filtered images [5] has also been used to detect line \nboundaries.",
+    "paragraph": "GB lines and \ntransitions respectively. A combination of gaussian and median filtered images [5] has also been used to detect line \nboundaries. Our present data is obtained for an MgO sample (Fig. 1c) with thermal grooving used to enhance the \nGBs. To obtain good contrast images, the sample is tilted at 70° with respect to the electron source; the resultant \nimages must thus be geometrically corrected. The correction method used was detailed earlier [6].  When original \nand geometrically-corrected images ar"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Our present data is obtained for an MgO sample (Fig.",
+    "paragraph": "GB lines and \ntransitions respectively. A combination of gaussian and median filtered images [5] has also been used to detect line \nboundaries. Our present data is obtained for an MgO sample (Fig. 1c) with thermal grooving used to enhance the \nGBs. To obtain good contrast images, the sample is tilted at 70° with respect to the electron source; the resultant \nimages must thus be geometrically corrected. The correction method used was detailed earlier [6].  When original \nand geometrically-corrected images ar"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "1c) with thermal grooving used to enhance the \nGBs.",
+    "paragraph": "GB lines and \ntransitions respectively. A combination of gaussian and median filtered images [5] has also been used to detect line \nboundaries. Our present data is obtained for an MgO sample (Fig. 1c) with thermal grooving used to enhance the \nGBs. To obtain good contrast images, the sample is tilted at 70° with respect to the electron source; the resultant \nimages must thus be geometrically corrected. The correction method used was detailed earlier [6].  When original \nand geometrically-corrected images ar"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "To obtain good contrast images, the sample is tilted at 70° with respect to the electron source; the resultant \nimages must thus be geometrically corrected.",
+    "paragraph": "GB lines and \ntransitions respectively. A combination of gaussian and median filtered images [5] has also been used to detect line \nboundaries. Our present data is obtained for an MgO sample (Fig. 1c) with thermal grooving used to enhance the \nGBs. To obtain good contrast images, the sample is tilted at 70° with respect to the electron source; the resultant \nimages must thus be geometrically corrected. The correction method used was detailed earlier [6].  When original \nand geometrically-corrected images ar"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "The correction method used was detailed earlier [6].",
+    "paragraph": "GB lines and \ntransitions respectively. A combination of gaussian and median filtered images [5] has also been used to detect line \nboundaries. Our present data is obtained for an MgO sample (Fig. 1c) with thermal grooving used to enhance the \nGBs. To obtain good contrast images, the sample is tilted at 70° with respect to the electron source; the resultant \nimages must thus be geometrically corrected. The correction method used was detailed earlier [6].  When original \nand geometrically-corrected images ar"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "When original \nand geometrically-corrected images ar",
+    "paragraph": "GB lines and \ntransitions respectively. A combination of gaussian and median filtered images [5] has also been used to detect line \nboundaries. Our present data is obtained for an MgO sample (Fig. 1c) with thermal grooving used to enhance the \nGBs. To obtain good contrast images, the sample is tilted at 70° with respect to the electron source; the resultant \nimages must thus be geometrically corrected. The correction method used was detailed earlier [6].  When original \nand geometrically-corrected images ar"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "e used is detailed later.",
+    "paragraph": "e used is detailed later. The GB detection algorithm produces wide GBs; thin \nGB images are produced by morphological skeletonization to facilitate the use of line following to locate TJs. Noise \nproduces many false TJs (especially for pits and precipitates near GBs). We use a noise map of the locations of pits \nand precipitates to facilitate TJ detection and to reduce false TJ detection, as we will detail. Weak GBs are missed in \nthe basic algorithm and can cause a number of TJs to be missed.  Methods to l"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "The GB detection algorithm produces wide GBs; thin \nGB images are produced by morphological skeletonization to facilitate the use of line following to locate TJs.",
+    "paragraph": "e used is detailed later. The GB detection algorithm produces wide GBs; thin \nGB images are produced by morphological skeletonization to facilitate the use of line following to locate TJs. Noise \nproduces many false TJs (especially for pits and precipitates near GBs). We use a noise map of the locations of pits \nand precipitates to facilitate TJ detection and to reduce false TJ detection, as we will detail. Weak GBs are missed in \nthe basic algorithm and can cause a number of TJs to be missed.  Methods to l"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Noise \nproduces many false TJs (especially for pits and precipitates near GBs).",
+    "paragraph": "e used is detailed later. The GB detection algorithm produces wide GBs; thin \nGB images are produced by morphological skeletonization to facilitate the use of line following to locate TJs. Noise \nproduces many false TJs (especially for pits and precipitates near GBs). We use a noise map of the locations of pits \nand precipitates to facilitate TJ detection and to reduce false TJ detection, as we will detail. Weak GBs are missed in \nthe basic algorithm and can cause a number of TJs to be missed.  Methods to l"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "We use a noise map of the locations of pits \nand precipitates to facilitate TJ detection and to reduce false TJ detection, as we will detail.",
+    "paragraph": "e used is detailed later. The GB detection algorithm produces wide GBs; thin \nGB images are produced by morphological skeletonization to facilitate the use of line following to locate TJs. Noise \nproduces many false TJs (especially for pits and precipitates near GBs). We use a noise map of the locations of pits \nand precipitates to facilitate TJ detection and to reduce false TJ detection, as we will detail. Weak GBs are missed in \nthe basic algorithm and can cause a number of TJs to be missed.  Methods to l"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Weak GBs are missed in \nthe basic algorithm and can cause a number of TJs to be missed.",
+    "paragraph": "e used is detailed later. The GB detection algorithm produces wide GBs; thin \nGB images are produced by morphological skeletonization to facilitate the use of line following to locate TJs. Noise \nproduces many false TJs (especially for pits and precipitates near GBs). We use a noise map of the locations of pits \nand precipitates to facilitate TJ detection and to reduce false TJ detection, as we will detail. Weak GBs are missed in \nthe basic algorithm and can cause a number of TJs to be missed.  Methods to l"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "ocate such GBs and associated TJs are \nnoted.",
+    "paragraph": "ocate such GBs and associated TJs are \nnoted. When a GB curves near a TJ and noise occurs near a TJ, its location and its dihedral angle estimates are poor; \nwe note new algorithm variations to provide accurate locations and dihedral angle estimates for TJs  (and to \nautomatically note when such estimates are expected to be poor). Once TJs are located, probe points are selected at \nwhich EBSP data in each grain is obtained. The basic algorithm and an improved one (requiring much fewer EBSP \ndata) are discus"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "When a GB curves near a TJ and noise occurs near a TJ, its location and its dihedral angle estimates are poor; \nwe note new algorithm variations to provide accurate locations and dihedral angle estimates for TJs  (and to \nautomatically note when such estimates are expected to be poor).",
+    "paragraph": "ocate such GBs and associated TJs are \nnoted. When a GB curves near a TJ and noise occurs near a TJ, its location and its dihedral angle estimates are poor; \nwe note new algorithm variations to provide accurate locations and dihedral angle estimates for TJs  (and to \nautomatically note when such estimates are expected to be poor). Once TJs are located, probe points are selected at \nwhich EBSP data in each grain is obtained. The basic algorithm and an improved one (requiring much fewer EBSP \ndata) are discus"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Once TJs are located, probe points are selected at \nwhich EBSP data in each grain is obtained.",
+    "paragraph": "ocate such GBs and associated TJs are \nnoted. When a GB curves near a TJ and noise occurs near a TJ, its location and its dihedral angle estimates are poor; \nwe note new algorithm variations to provide accurate locations and dihedral angle estimates for TJs  (and to \nautomatically note when such estimates are expected to be poor). Once TJs are located, probe points are selected at \nwhich EBSP data in each grain is obtained. The basic algorithm and an improved one (requiring much fewer EBSP \ndata) are discus"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "The basic algorithm and an improved one (requiring much fewer EBSP \ndata) are discus",
+    "paragraph": "ocate such GBs and associated TJs are \nnoted. When a GB curves near a TJ and noise occurs near a TJ, its location and its dihedral angle estimates are poor; \nwe note new algorithm variations to provide accurate locations and dihedral angle estimates for TJs  (and to \nautomatically note when such estimates are expected to be poor). Once TJs are located, probe points are selected at \nwhich EBSP data in each grain is obtained. The basic algorithm and an improved one (requiring much fewer EBSP \ndata) are discus"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "The absolute location of TJs and grains in one sample slice with respect to those in adjacent \nslices is necessary; this requires registering adjacent sector images into a mosaic image of one slice of the sample.",
+    "paragraph": "sed. The absolute location of TJs and grains in one sample slice with respect to those in adjacent \nslices is necessary; this requires registering adjacent sector images into a mosaic image of one slice of the sample. \nTable 1 notes the major steps in the improved algorithm. Subsequent sections detail the algorithm used in each stage \nand initial results.  \n \nTable.1 Basic Image Processing Steps \n \n1. Grain boundary detection \n     Image noise removal (initial) \n4. Locate triple junctions (TJs) and their an"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Table 1 notes the major steps in the improved algorithm.",
+    "paragraph": "sed. The absolute location of TJs and grains in one sample slice with respect to those in adjacent \nslices is necessary; this requires registering adjacent sector images into a mosaic image of one slice of the sample. \nTable 1 notes the major steps in the improved algorithm. Subsequent sections detail the algorithm used in each stage \nand initial results.  \n \nTable.1 Basic Image Processing Steps \n \n1. Grain boundary detection \n     Image noise removal (initial) \n4. Locate triple junctions (TJs) and their an"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Subsequent sections detail the algorithm used in each stage \nand initial results.",
+    "paragraph": "sed. The absolute location of TJs and grains in one sample slice with respect to those in adjacent \nslices is necessary; this requires registering adjacent sector images into a mosaic image of one slice of the sample. \nTable 1 notes the major steps in the improved algorithm. Subsequent sections detail the algorithm used in each stage \nand initial results.  \n \nTable.1 Basic Image Processing Steps \n \n1. Grain boundary detection \n     Image noise removal (initial) \n4. Locate triple junctions (TJs) and their an"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Table.1 Basic Image Processing Steps \n \n1.",
+    "paragraph": "sed. The absolute location of TJs and grains in one sample slice with respect to those in adjacent \nslices is necessary; this requires registering adjacent sector images into a mosaic image of one slice of the sample. \nTable 1 notes the major steps in the improved algorithm. Subsequent sections detail the algorithm used in each stage \nand initial results.  \n \nTable.1 Basic Image Processing Steps \n \n1. Grain boundary detection \n     Image noise removal (initial) \n4. Locate triple junctions (TJs) and their an"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Grain boundary detection \n     Image noise removal (initial) \n4.",
+    "paragraph": "sed. The absolute location of TJs and grains in one sample slice with respect to those in adjacent \nslices is necessary; this requires registering adjacent sector images into a mosaic image of one slice of the sample. \nTable 1 notes the major steps in the improved algorithm. Subsequent sections detail the algorithm used in each stage \nand initial results.  \n \nTable.1 Basic Image Processing Steps \n \n1. Grain boundary detection \n     Image noise removal (initial) \n4. Locate triple junctions (TJs) and their an"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Locate triple junctions (TJs) and their an",
+    "paragraph": "sed. The absolute location of TJs and grains in one sample slice with respect to those in adjacent \nslices is necessary; this requires registering adjacent sector images into a mosaic image of one slice of the sample. \nTable 1 notes the major steps in the improved algorithm. Subsequent sections detail the algorithm used in each stage \nand initial results.  \n \nTable.1 Basic Image Processing Steps \n \n1. Grain boundary detection \n     Image noise removal (initial) \n4. Locate triple junctions (TJs) and their an"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Complete all GBs and reduce false TJs \n           Improved TJ localization and angle estimates.",
+    "paragraph": "gles. \n          Complete all GBs and reduce false TJs \n           Improved TJ localization and angle estimates. \n2. Geometric correction \n5. Selection of EBSP probe points \n3. Skeletonize image (produce thin grain boundaries) \n6. Registration of sector images. \n \n \n \n2. GB DETECTION AND SKELETONIZATION \n \n \nThe MgO images considered (Fig. 1) have line GBs. We use the real part of a Gabor filter (GF) function to \nlocate such GBs. Since our GBs are dark lines (the actual GB) on a lighter background, we inver"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Geometric correction \n5.",
+    "paragraph": "gles. \n          Complete all GBs and reduce false TJs \n           Improved TJ localization and angle estimates. \n2. Geometric correction \n5. Selection of EBSP probe points \n3. Skeletonize image (produce thin grain boundaries) \n6. Registration of sector images. \n \n \n \n2. GB DETECTION AND SKELETONIZATION \n \n \nThe MgO images considered (Fig. 1) have line GBs. We use the real part of a Gabor filter (GF) function to \nlocate such GBs. Since our GBs are dark lines (the actual GB) on a lighter background, we inver"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Selection of EBSP probe points \n3.",
+    "paragraph": "gles. \n          Complete all GBs and reduce false TJs \n           Improved TJ localization and angle estimates. \n2. Geometric correction \n5. Selection of EBSP probe points \n3. Skeletonize image (produce thin grain boundaries) \n6. Registration of sector images. \n \n \n \n2. GB DETECTION AND SKELETONIZATION \n \n \nThe MgO images considered (Fig. 1) have line GBs. We use the real part of a Gabor filter (GF) function to \nlocate such GBs. Since our GBs are dark lines (the actual GB) on a lighter background, we inver"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Skeletonize image (produce thin grain boundaries) \n6.",
+    "paragraph": "gles. \n          Complete all GBs and reduce false TJs \n           Improved TJ localization and angle estimates. \n2. Geometric correction \n5. Selection of EBSP probe points \n3. Skeletonize image (produce thin grain boundaries) \n6. Registration of sector images. \n \n \n \n2. GB DETECTION AND SKELETONIZATION \n \n \nThe MgO images considered (Fig. 1) have line GBs. We use the real part of a Gabor filter (GF) function to \nlocate such GBs. Since our GBs are dark lines (the actual GB) on a lighter background, we inver"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Registration of sector images.",
+    "paragraph": "gles. \n          Complete all GBs and reduce false TJs \n           Improved TJ localization and angle estimates. \n2. Geometric correction \n5. Selection of EBSP probe points \n3. Skeletonize image (produce thin grain boundaries) \n6. Registration of sector images. \n \n \n \n2. GB DETECTION AND SKELETONIZATION \n \n \nThe MgO images considered (Fig. 1) have line GBs. We use the real part of a Gabor filter (GF) function to \nlocate such GBs. Since our GBs are dark lines (the actual GB) on a lighter background, we inver"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "GB DETECTION AND SKELETONIZATION \n \n \nThe MgO images considered (Fig.",
+    "paragraph": "gles. \n          Complete all GBs and reduce false TJs \n           Improved TJ localization and angle estimates. \n2. Geometric correction \n5. Selection of EBSP probe points \n3. Skeletonize image (produce thin grain boundaries) \n6. Registration of sector images. \n \n \n \n2. GB DETECTION AND SKELETONIZATION \n \n \nThe MgO images considered (Fig. 1) have line GBs. We use the real part of a Gabor filter (GF) function to \nlocate such GBs. Since our GBs are dark lines (the actual GB) on a lighter background, we inver"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "We use the real part of a Gabor filter (GF) function to \nlocate such GBs.",
+    "paragraph": "gles. \n          Complete all GBs and reduce false TJs \n           Improved TJ localization and angle estimates. \n2. Geometric correction \n5. Selection of EBSP probe points \n3. Skeletonize image (produce thin grain boundaries) \n6. Registration of sector images. \n \n \n \n2. GB DETECTION AND SKELETONIZATION \n \n \nThe MgO images considered (Fig. 1) have line GBs. We use the real part of a Gabor filter (GF) function to \nlocate such GBs. Since our GBs are dark lines (the actual GB) on a lighter background, we inver"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Since our GBs are dark lines (the actual GB) on a lighter background, we inver",
+    "paragraph": "gles. \n          Complete all GBs and reduce false TJs \n           Improved TJ localization and angle estimates. \n2. Geometric correction \n5. Selection of EBSP probe points \n3. Skeletonize image (produce thin grain boundaries) \n6. Registration of sector images. \n \n \n \n2. GB DETECTION AND SKELETONIZATION \n \n \nThe MgO images considered (Fig. 1) have line GBs. We use the real part of a Gabor filter (GF) function to \nlocate such GBs. Since our GBs are dark lines (the actual GB) on a lighter background, we inver"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "t the images before \napplying the GF.",
+    "paragraph": "t the images before \napplying the GF. We apply horizontal and vertical GFs and sum their outputs. Using prior guidelines [4], we select \n(a, b) =  (1,1) in the GF (based on typical GB widths and grain noise expected). We set negative outputs to zero \nbefore summing GF outputs. The output at a GB is approximately half the difference between the gray level of the \nboundary and the background. We threshold the summed GF output at 12 to detect all GBs with a contrast above \nsome reasonable level (GBs greater th"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "We apply horizontal and vertical GFs and sum their outputs.",
+    "paragraph": "t the images before \napplying the GF. We apply horizontal and vertical GFs and sum their outputs. Using prior guidelines [4], we select \n(a, b) =  (1,1) in the GF (based on typical GB widths and grain noise expected). We set negative outputs to zero \nbefore summing GF outputs. The output at a GB is approximately half the difference between the gray level of the \nboundary and the background. We threshold the summed GF output at 12 to detect all GBs with a contrast above \nsome reasonable level (GBs greater th"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Using prior guidelines [4], we select \n(a, b) =  (1,1) in the GF (based on typical GB widths and grain noise expected).",
+    "paragraph": "t the images before \napplying the GF. We apply horizontal and vertical GFs and sum their outputs. Using prior guidelines [4], we select \n(a, b) =  (1,1) in the GF (based on typical GB widths and grain noise expected). We set negative outputs to zero \nbefore summing GF outputs. The output at a GB is approximately half the difference between the gray level of the \nboundary and the background. We threshold the summed GF output at 12 to detect all GBs with a contrast above \nsome reasonable level (GBs greater th"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "We set negative outputs to zero \nbefore summing GF outputs.",
+    "paragraph": "t the images before \napplying the GF. We apply horizontal and vertical GFs and sum their outputs. Using prior guidelines [4], we select \n(a, b) =  (1,1) in the GF (based on typical GB widths and grain noise expected). We set negative outputs to zero \nbefore summing GF outputs. The output at a GB is approximately half the difference between the gray level of the \nboundary and the background. We threshold the summed GF output at 12 to detect all GBs with a contrast above \nsome reasonable level (GBs greater th"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "The output at a GB is approximately half the difference between the gray level of the \nboundary and the background.",
+    "paragraph": "t the images before \napplying the GF. We apply horizontal and vertical GFs and sum their outputs. Using prior guidelines [4], we select \n(a, b) =  (1,1) in the GF (based on typical GB widths and grain noise expected). We set negative outputs to zero \nbefore summing GF outputs. The output at a GB is approximately half the difference between the gray level of the \nboundary and the background. We threshold the summed GF output at 12 to detect all GBs with a contrast above \nsome reasonable level (GBs greater th"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "We threshold the summed GF output at 12 to detect all GBs with a contrast above \nsome reasonable level (GBs greater th",
+    "paragraph": "t the images before \napplying the GF. We apply horizontal and vertical GFs and sum their outputs. Using prior guidelines [4], we select \n(a, b) =  (1,1) in the GF (based on typical GB widths and grain noise expected). We set negative outputs to zero \nbefore summing GF outputs. The output at a GB is approximately half the difference between the gray level of the \nboundary and the background. We threshold the summed GF output at 12 to detect all GBs with a contrast above \nsome reasonable level (GBs greater th"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "an or equal to 24 graylevels below the background).",
+    "paragraph": "an or equal to 24 graylevels below the background).  \n \nFig. 2a shows a typical original image and Fig. 2b is the thresholded Gabor filter result (use of a lower \nthreshold introduces more noise). The GBs appear continuous but have gaps and noise due to pits and precipitates \n(only noise near GBs are of concern). We apply blob removal (omitting selected pixel regions less than 50 pixels in \narea) to reduce noise. To fill in gaps in GBs, we dilate the binary image with a 2x2 SE filter and then close (dilatio"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "2a shows a typical original image and Fig.",
+    "paragraph": "an or equal to 24 graylevels below the background).  \n \nFig. 2a shows a typical original image and Fig. 2b is the thresholded Gabor filter result (use of a lower \nthreshold introduces more noise). The GBs appear continuous but have gaps and noise due to pits and precipitates \n(only noise near GBs are of concern). We apply blob removal (omitting selected pixel regions less than 50 pixels in \narea) to reduce noise. To fill in gaps in GBs, we dilate the binary image with a 2x2 SE filter and then close (dilatio"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "2b is the thresholded Gabor filter result (use of a lower \nthreshold introduces more noise).",
+    "paragraph": "an or equal to 24 graylevels below the background).  \n \nFig. 2a shows a typical original image and Fig. 2b is the thresholded Gabor filter result (use of a lower \nthreshold introduces more noise). The GBs appear continuous but have gaps and noise due to pits and precipitates \n(only noise near GBs are of concern). We apply blob removal (omitting selected pixel regions less than 50 pixels in \narea) to reduce noise. To fill in gaps in GBs, we dilate the binary image with a 2x2 SE filter and then close (dilatio"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "The GBs appear continuous but have gaps and noise due to pits and precipitates \n(only noise near GBs are of concern).",
+    "paragraph": "an or equal to 24 graylevels below the background).  \n \nFig. 2a shows a typical original image and Fig. 2b is the thresholded Gabor filter result (use of a lower \nthreshold introduces more noise). The GBs appear continuous but have gaps and noise due to pits and precipitates \n(only noise near GBs are of concern). We apply blob removal (omitting selected pixel regions less than 50 pixels in \narea) to reduce noise. To fill in gaps in GBs, we dilate the binary image with a 2x2 SE filter and then close (dilatio"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "We apply blob removal (omitting selected pixel regions less than 50 pixels in \narea) to reduce noise.",
+    "paragraph": "an or equal to 24 graylevels below the background).  \n \nFig. 2a shows a typical original image and Fig. 2b is the thresholded Gabor filter result (use of a lower \nthreshold introduces more noise). The GBs appear continuous but have gaps and noise due to pits and precipitates \n(only noise near GBs are of concern). We apply blob removal (omitting selected pixel regions less than 50 pixels in \narea) to reduce noise. To fill in gaps in GBs, we dilate the binary image with a 2x2 SE filter and then close (dilatio"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "To fill in gaps in GBs, we dilate the binary image with a 2x2 SE filter and then close (dilatio",
+    "paragraph": "an or equal to 24 graylevels below the background).  \n \nFig. 2a shows a typical original image and Fig. 2b is the thresholded Gabor filter result (use of a lower \nthreshold introduces more noise). The GBs appear continuous but have gaps and noise due to pits and precipitates \n(only noise near GBs are of concern). We apply blob removal (omitting selected pixel regions less than 50 pixels in \narea) to reduce noise. To fill in gaps in GBs, we dilate the binary image with a 2x2 SE filter and then close (dilatio"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "n \nplus erosion) the image with a 4x4 SE filter.",
+    "paragraph": "n \nplus erosion) the image with a 4x4 SE filter. This gap filling fills in GB gaps up to 4 pixels wide. The result (Fig. 2c) \nhas all GB gaps (arrows) filled in. Gap filling also connects pit and precipitate noise artifacts close to the GB \nproducing false GB lines (Fig 2c). Producing some false GB lines is needed to produce continuous lines for most \nGBs. Weak GBs will be missed as expected and are addressed later. \nProc. SPIE Vol. 4735\n105\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "This gap filling fills in GB gaps up to 4 pixels wide.",
+    "paragraph": "n \nplus erosion) the image with a 4x4 SE filter. This gap filling fills in GB gaps up to 4 pixels wide. The result (Fig. 2c) \nhas all GB gaps (arrows) filled in. Gap filling also connects pit and precipitate noise artifacts close to the GB \nproducing false GB lines (Fig 2c). Producing some false GB lines is needed to produce continuous lines for most \nGBs. Weak GBs will be missed as expected and are addressed later. \nProc. SPIE Vol. 4735\n105\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "2c) \nhas all GB gaps (arrows) filled in.",
+    "paragraph": "n \nplus erosion) the image with a 4x4 SE filter. This gap filling fills in GB gaps up to 4 pixels wide. The result (Fig. 2c) \nhas all GB gaps (arrows) filled in. Gap filling also connects pit and precipitate noise artifacts close to the GB \nproducing false GB lines (Fig 2c). Producing some false GB lines is needed to produce continuous lines for most \nGBs. Weak GBs will be missed as expected and are addressed later. \nProc. SPIE Vol. 4735\n105\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Gap filling also connects pit and precipitate noise artifacts close to the GB \nproducing false GB lines (Fig 2c).",
+    "paragraph": "n \nplus erosion) the image with a 4x4 SE filter. This gap filling fills in GB gaps up to 4 pixels wide. The result (Fig. 2c) \nhas all GB gaps (arrows) filled in. Gap filling also connects pit and precipitate noise artifacts close to the GB \nproducing false GB lines (Fig 2c). Producing some false GB lines is needed to produce continuous lines for most \nGBs. Weak GBs will be missed as expected and are addressed later. \nProc. SPIE Vol. 4735\n105\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Producing some false GB lines is needed to produce continuous lines for most \nGBs.",
+    "paragraph": "n \nplus erosion) the image with a 4x4 SE filter. This gap filling fills in GB gaps up to 4 pixels wide. The result (Fig. 2c) \nhas all GB gaps (arrows) filled in. Gap filling also connects pit and precipitate noise artifacts close to the GB \nproducing false GB lines (Fig 2c). Producing some false GB lines is needed to produce continuous lines for most \nGBs. Weak GBs will be missed as expected and are addressed later. \nProc. SPIE Vol. 4735\n105\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Weak GBs will be missed as expected and are addressed later.",
+    "paragraph": "n \nplus erosion) the image with a 4x4 SE filter. This gap filling fills in GB gaps up to 4 pixels wide. The result (Fig. 2c) \nhas all GB gaps (arrows) filled in. Gap filling also connects pit and precipitate noise artifacts close to the GB \nproducing false GB lines (Fig 2c). Producing some false GB lines is needed to produce continuous lines for most \nGBs. Weak GBs will be missed as expected and are addressed later. \nProc. SPIE Vol. 4735\n105\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "4735\n105\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/",
+    "paragraph": "n \nplus erosion) the image with a 4x4 SE filter. This gap filling fills in GB gaps up to 4 pixels wide. The result (Fig. 2c) \nhas all GB gaps (arrows) filled in. Gap filling also connects pit and precipitate noise artifacts close to the GB \nproducing false GB lines (Fig 2c). Producing some false GB lines is needed to produce continuous lines for most \nGBs. Weak GBs will be missed as expected and are addressed later. \nProc. SPIE Vol. 4735\n105\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \n   \n   \n \n \n \n                       (a)  \n \n      \n(b) \n \n \n \n    (c) \nFig.",
+    "paragraph": "24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \n   \n   \n \n \n \n                       (a)  \n \n      \n(b) \n \n \n \n    (c) \nFig. 2. (a) Original Image (b) Gabor filter output (thresholded) \n(c) Gap-filled   image \n \nNot all GBs are filled in. Use of larger SEs can address this, but then TJ location and angle estimates are \nworse as noted earlier [7]. To efficiently locate TJs, a binary image with all GBs one pixel wide is needed (Sect. 3). \nThis is achieved by morphological skeletoniz"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "(a) Original Image (b) Gabor filter output (thresholded) \n(c) Gap-filled   image \n \nNot all GBs are filled in.",
+    "paragraph": "24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \n   \n   \n \n \n \n                       (a)  \n \n      \n(b) \n \n \n \n    (c) \nFig. 2. (a) Original Image (b) Gabor filter output (thresholded) \n(c) Gap-filled   image \n \nNot all GBs are filled in. Use of larger SEs can address this, but then TJ location and angle estimates are \nworse as noted earlier [7]. To efficiently locate TJs, a binary image with all GBs one pixel wide is needed (Sect. 3). \nThis is achieved by morphological skeletoniz"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Use of larger SEs can address this, but then TJ location and angle estimates are \nworse as noted earlier [7].",
+    "paragraph": "24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \n   \n   \n \n \n \n                       (a)  \n \n      \n(b) \n \n \n \n    (c) \nFig. 2. (a) Original Image (b) Gabor filter output (thresholded) \n(c) Gap-filled   image \n \nNot all GBs are filled in. Use of larger SEs can address this, but then TJ location and angle estimates are \nworse as noted earlier [7]. To efficiently locate TJs, a binary image with all GBs one pixel wide is needed (Sect. 3). \nThis is achieved by morphological skeletoniz"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "To efficiently locate TJs, a binary image with all GBs one pixel wide is needed (Sect.",
+    "paragraph": "24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \n   \n   \n \n \n \n                       (a)  \n \n      \n(b) \n \n \n \n    (c) \nFig. 2. (a) Original Image (b) Gabor filter output (thresholded) \n(c) Gap-filled   image \n \nNot all GBs are filled in. Use of larger SEs can address this, but then TJ location and angle estimates are \nworse as noted earlier [7]. To efficiently locate TJs, a binary image with all GBs one pixel wide is needed (Sect. 3). \nThis is achieved by morphological skeletoniz"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "This is achieved by morphological skeletoniz",
+    "paragraph": "24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \n   \n   \n \n \n \n                       (a)  \n \n      \n(b) \n \n \n \n    (c) \nFig. 2. (a) Original Image (b) Gabor filter output (thresholded) \n(c) Gap-filled   image \n \nNot all GBs are filled in. Use of larger SEs can address this, but then TJ location and angle estimates are \nworse as noted earlier [7]. To efficiently locate TJs, a binary image with all GBs one pixel wide is needed (Sect. 3). \nThis is achieved by morphological skeletoniz"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "A fast and efficient skeletonization algorithm, which uses a Hit-\nMiss transform with SEs of different sizes, was noted [4].",
+    "paragraph": "ation. A fast and efficient skeletonization algorithm, which uses a Hit-\nMiss transform with SEs of different sizes, was noted [4]. Skeletonization is performed on the geometrically–\ncorrected images. (If distortion correction is applied to the skeletonized image, additional gaps are introduced).  \n \n \n3. TJ PARAMETERIZATION \n \n  \nThis involves line following to locate TJs (and mean squared error, MSE, measures to estimate TJ angles) \nand methods to omit false TJs, fill in missing GBs (and their associated "
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Skeletonization is performed on the geometrically–\ncorrected images.",
+    "paragraph": "ation. A fast and efficient skeletonization algorithm, which uses a Hit-\nMiss transform with SEs of different sizes, was noted [4]. Skeletonization is performed on the geometrically–\ncorrected images. (If distortion correction is applied to the skeletonized image, additional gaps are introduced).  \n \n \n3. TJ PARAMETERIZATION \n \n  \nThis involves line following to locate TJs (and mean squared error, MSE, measures to estimate TJ angles) \nand methods to omit false TJs, fill in missing GBs (and their associated "
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "(If distortion correction is applied to the skeletonized image, additional gaps are introduced).",
+    "paragraph": "ation. A fast and efficient skeletonization algorithm, which uses a Hit-\nMiss transform with SEs of different sizes, was noted [4]. Skeletonization is performed on the geometrically–\ncorrected images. (If distortion correction is applied to the skeletonized image, additional gaps are introduced).  \n \n \n3. TJ PARAMETERIZATION \n \n  \nThis involves line following to locate TJs (and mean squared error, MSE, measures to estimate TJ angles) \nand methods to omit false TJs, fill in missing GBs (and their associated "
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "TJ PARAMETERIZATION \n \n  \nThis involves line following to locate TJs (and mean squared error, MSE, measures to estimate TJ angles) \nand methods to omit false TJs, fill in missing GBs (and their associated",
+    "paragraph": "ation. A fast and efficient skeletonization algorithm, which uses a Hit-\nMiss transform with SEs of different sizes, was noted [4]. Skeletonization is performed on the geometrically–\ncorrected images. (If distortion correction is applied to the skeletonized image, additional gaps are introduced).  \n \n \n3. TJ PARAMETERIZATION \n \n  \nThis involves line following to locate TJs (and mean squared error, MSE, measures to estimate TJ angles) \nand methods to omit false TJs, fill in missing GBs (and their associated "
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Present (initial) processing methods \nwere noted earlier [7], Sect.",
+    "paragraph": "TJs etc). Present (initial) processing methods \nwere noted earlier [7], Sect. 5 notes advanced methods that are presently in research.  These operations are all \nperformed on the binary skeleton image produced in Section 2. This image is stored as an array of pixel structures \nthat specifies if each pixel is “on” (1) or “off” (0) and whether the 8 neighbors for each are 1 or 0. \n \n3.1 LINE FOLLOWING (TJ LOCATION) \n \n \nThe search of such images for a TJ starts in the upper left of the image at the first “on”"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "5 notes advanced methods that are presently in research.",
+    "paragraph": "TJs etc). Present (initial) processing methods \nwere noted earlier [7], Sect. 5 notes advanced methods that are presently in research.  These operations are all \nperformed on the binary skeleton image produced in Section 2. This image is stored as an array of pixel structures \nthat specifies if each pixel is “on” (1) or “off” (0) and whether the 8 neighbors for each are 1 or 0. \n \n3.1 LINE FOLLOWING (TJ LOCATION) \n \n \nThe search of such images for a TJ starts in the upper left of the image at the first “on”"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "These operations are all \nperformed on the binary skeleton image produced in Section 2.",
+    "paragraph": "TJs etc). Present (initial) processing methods \nwere noted earlier [7], Sect. 5 notes advanced methods that are presently in research.  These operations are all \nperformed on the binary skeleton image produced in Section 2. This image is stored as an array of pixel structures \nthat specifies if each pixel is “on” (1) or “off” (0) and whether the 8 neighbors for each are 1 or 0. \n \n3.1 LINE FOLLOWING (TJ LOCATION) \n \n \nThe search of such images for a TJ starts in the upper left of the image at the first “on”"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "This image is stored as an array of pixel structures \nthat specifies if each pixel is “on” (1) or “off” (0) and whether the 8 neighbors for each are 1 or 0.",
+    "paragraph": "TJs etc). Present (initial) processing methods \nwere noted earlier [7], Sect. 5 notes advanced methods that are presently in research.  These operations are all \nperformed on the binary skeleton image produced in Section 2. This image is stored as an array of pixel structures \nthat specifies if each pixel is “on” (1) or “off” (0) and whether the 8 neighbors for each are 1 or 0. \n \n3.1 LINE FOLLOWING (TJ LOCATION) \n \n \nThe search of such images for a TJ starts in the upper left of the image at the first “on”"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "3.1 LINE FOLLOWING (TJ LOCATION) \n \n \nThe search of such images for a TJ starts in the upper left of the image at the first “on”",
+    "paragraph": "TJs etc). Present (initial) processing methods \nwere noted earlier [7], Sect. 5 notes advanced methods that are presently in research.  These operations are all \nperformed on the binary skeleton image produced in Section 2. This image is stored as an array of pixel structures \nthat specifies if each pixel is “on” (1) or “off” (0) and whether the 8 neighbors for each are 1 or 0. \n \n3.1 LINE FOLLOWING (TJ LOCATION) \n \n \nThe search of such images for a TJ starts in the upper left of the image at the first “on”"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Its eight \nneighbors are examined; this determines the nature of the current pixel.",
+    "paragraph": " pixel. Its eight \nneighbors are examined; this determines the nature of the current pixel. This process continues [7] until we have \nidentified GBs, TJ points, and GB end points (these are either true or false GBs in which only part of a GB is \npresent) These latter cases can result in missed TJs or false TJs. \n \n3.2 REMOVING FALSE TJs \n \n \nFig. 3 shows a typical original image and its skeletonized version. Fig. 3b contains a number of false \n(invalid) TJs (these are noted by arrows) due to precipitates ne"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "This process continues [7] until we have \nidentified GBs, TJ points, and GB end points (these are either true or false GBs in which only part of a GB is \npresent) These latter cases can result in missed TJs or false TJs.",
+    "paragraph": " pixel. Its eight \nneighbors are examined; this determines the nature of the current pixel. This process continues [7] until we have \nidentified GBs, TJ points, and GB end points (these are either true or false GBs in which only part of a GB is \npresent) These latter cases can result in missed TJs or false TJs. \n \n3.2 REMOVING FALSE TJs \n \n \nFig. 3 shows a typical original image and its skeletonized version. Fig. 3b contains a number of false \n(invalid) TJs (these are noted by arrows) due to precipitates ne"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "3.2 REMOVING FALSE TJs \n \n \nFig.",
+    "paragraph": " pixel. Its eight \nneighbors are examined; this determines the nature of the current pixel. This process continues [7] until we have \nidentified GBs, TJ points, and GB end points (these are either true or false GBs in which only part of a GB is \npresent) These latter cases can result in missed TJs or false TJs. \n \n3.2 REMOVING FALSE TJs \n \n \nFig. 3 shows a typical original image and its skeletonized version. Fig. 3b contains a number of false \n(invalid) TJs (these are noted by arrows) due to precipitates ne"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "3 shows a typical original image and its skeletonized version.",
+    "paragraph": " pixel. Its eight \nneighbors are examined; this determines the nature of the current pixel. This process continues [7] until we have \nidentified GBs, TJ points, and GB end points (these are either true or false GBs in which only part of a GB is \npresent) These latter cases can result in missed TJs or false TJs. \n \n3.2 REMOVING FALSE TJs \n \n \nFig. 3 shows a typical original image and its skeletonized version. Fig. 3b contains a number of false \n(invalid) TJs (these are noted by arrows) due to precipitates ne"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "3b contains a number of false \n(invalid) TJs (these are noted by arrows) due to precipitates ne",
+    "paragraph": " pixel. Its eight \nneighbors are examined; this determines the nature of the current pixel. This process continues [7] until we have \nidentified GBs, TJ points, and GB end points (these are either true or false GBs in which only part of a GB is \npresent) These latter cases can result in missed TJs or false TJs. \n \n3.2 REMOVING FALSE TJs \n \n \nFig. 3 shows a typical original image and its skeletonized version. Fig. 3b contains a number of false \n(invalid) TJs (these are noted by arrows) due to precipitates ne"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "ar GBs in the original image in Fig.",
+    "paragraph": "ar GBs in the original image in Fig. 3a (compare Figs. \n3a and 3b). We note that these false TJs have associated false GBs (due to precipitates) that are short. Thus, the \ninitial algorithm used to determine if a TJ is valid or false is to omit GBs that are less than 7 pixels in length. Fig. 3b \nshows the detected TJs by circles (all are detected), the four false TJs omitted are noted by arrows (no false TJs are \ndetected).  \n                                    \n \n(a) \n(b) \nFig. 3  (a) Original image (b) Sk"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "We note that these false TJs have associated false GBs (due to precipitates) that are short.",
+    "paragraph": "ar GBs in the original image in Fig. 3a (compare Figs. \n3a and 3b). We note that these false TJs have associated false GBs (due to precipitates) that are short. Thus, the \ninitial algorithm used to determine if a TJ is valid or false is to omit GBs that are less than 7 pixels in length. Fig. 3b \nshows the detected TJs by circles (all are detected), the four false TJs omitted are noted by arrows (no false TJs are \ndetected).  \n                                    \n \n(a) \n(b) \nFig. 3  (a) Original image (b) Sk"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Thus, the \ninitial algorithm used to determine if a TJ is valid or false is to omit GBs that are less than 7 pixels in length.",
+    "paragraph": "ar GBs in the original image in Fig. 3a (compare Figs. \n3a and 3b). We note that these false TJs have associated false GBs (due to precipitates) that are short. Thus, the \ninitial algorithm used to determine if a TJ is valid or false is to omit GBs that are less than 7 pixels in length. Fig. 3b \nshows the detected TJs by circles (all are detected), the four false TJs omitted are noted by arrows (no false TJs are \ndetected).  \n                                    \n \n(a) \n(b) \nFig. 3  (a) Original image (b) Sk"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "3b \nshows the detected TJs by circles (all are detected), the four false TJs omitted are noted by arrows (no false TJs are \ndetected).",
+    "paragraph": "ar GBs in the original image in Fig. 3a (compare Figs. \n3a and 3b). We note that these false TJs have associated false GBs (due to precipitates) that are short. Thus, the \ninitial algorithm used to determine if a TJ is valid or false is to omit GBs that are less than 7 pixels in length. Fig. 3b \nshows the detected TJs by circles (all are detected), the four false TJs omitted are noted by arrows (no false TJs are \ndetected).  \n                                    \n \n(a) \n(b) \nFig. 3  (a) Original image (b) Sk"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "3  (a) Original image (b) Sk",
+    "paragraph": "ar GBs in the original image in Fig. 3a (compare Figs. \n3a and 3b). We note that these false TJs have associated false GBs (due to precipitates) that are short. Thus, the \ninitial algorithm used to determine if a TJ is valid or false is to omit GBs that are less than 7 pixels in length. Fig. 3b \nshows the detected TJs by circles (all are detected), the four false TJs omitted are noted by arrows (no false TJs are \ndetected).  \n                                    \n \n(a) \n(b) \nFig. 3  (a) Original image (b) Sk"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "eletonized image (arrows show false TJs) \nProc.",
+    "paragraph": "eletonized image (arrows show false TJs) \nProc. SPIE Vol. 4735\n106\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \n3.3 INITIAL RESULTS \n \n \nTo obtain quantitative initial results, data for five slices of the MgO sample were obtained. Each \nslice contained about 4900 GBs and 2550 TJs (each sector image has ≈25 GBs and 12 TJs). Detection \nscores for each slice are given in Table 2. We see that we detect about 97% of t"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "4735\n106\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \n3.3 INITIAL RESULTS \n \n \nTo obtain quantitative initial results, data for five slices of the MgO sample were obtained.",
+    "paragraph": "eletonized image (arrows show false TJs) \nProc. SPIE Vol. 4735\n106\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \n3.3 INITIAL RESULTS \n \n \nTo obtain quantitative initial results, data for five slices of the MgO sample were obtained. Each \nslice contained about 4900 GBs and 2550 TJs (each sector image has ≈25 GBs and 12 TJs). Detection \nscores for each slice are given in Table 2. We see that we detect about 97% of t"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Each \nslice contained about 4900 GBs and 2550 TJs (each sector image has ≈25 GBs and 12 TJs).",
+    "paragraph": "eletonized image (arrows show false TJs) \nProc. SPIE Vol. 4735\n106\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \n3.3 INITIAL RESULTS \n \n \nTo obtain quantitative initial results, data for five slices of the MgO sample were obtained. Each \nslice contained about 4900 GBs and 2550 TJs (each sector image has ≈25 GBs and 12 TJs). Detection \nscores for each slice are given in Table 2. We see that we detect about 97% of t"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Detection \nscores for each slice are given in Table 2.",
+    "paragraph": "eletonized image (arrows show false TJs) \nProc. SPIE Vol. 4735\n106\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \n3.3 INITIAL RESULTS \n \n \nTo obtain quantitative initial results, data for five slices of the MgO sample were obtained. Each \nslice contained about 4900 GBs and 2550 TJs (each sector image has ≈25 GBs and 12 TJs). Detection \nscores for each slice are given in Table 2. We see that we detect about 97% of t"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "We see that we detect about 97% of t",
+    "paragraph": "eletonized image (arrows show false TJs) \nProc. SPIE Vol. 4735\n106\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \n3.3 INITIAL RESULTS \n \n \nTo obtain quantitative initial results, data for five slices of the MgO sample were obtained. Each \nslice contained about 4900 GBs and 2550 TJs (each sector image has ≈25 GBs and 12 TJs). Detection \nscores for each slice are given in Table 2. We see that we detect about 97% of t"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "he grain boundries and \nabout 93% of the triple junctions; essentially all GBs with reasonable contrast were detected.",
+    "paragraph": "he grain boundries and \nabout 93% of the triple junctions; essentially all GBs with reasonable contrast were detected. For \ncompleteness, Table 2 notes the number of GBs partially and completely missed; a partially-missed GB is \none with a gab or gaps in the GB (after gap filling), and that has the TJ at one end missing. Completely \nmissed GBs correspond to two missed TJs (one at each end) and they have no end points. \n \n \nTable 2 Initial GB and TJ detection results \nGBs missed \nTJs missed \nSlice \nCompletel"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "For \ncompleteness, Table 2 notes the number of GBs partially and completely missed; a partially-missed GB is \none with a gab or gaps in the GB (after gap filling), and that has the TJ at one end missing.",
+    "paragraph": "he grain boundries and \nabout 93% of the triple junctions; essentially all GBs with reasonable contrast were detected. For \ncompleteness, Table 2 notes the number of GBs partially and completely missed; a partially-missed GB is \none with a gab or gaps in the GB (after gap filling), and that has the TJ at one end missing. Completely \nmissed GBs correspond to two missed TJs (one at each end) and they have no end points. \n \n \nTable 2 Initial GB and TJ detection results \nGBs missed \nTJs missed \nSlice \nCompletel"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Completely \nmissed GBs correspond to two missed TJs (one at each end) and they have no end points.",
+    "paragraph": "he grain boundries and \nabout 93% of the triple junctions; essentially all GBs with reasonable contrast were detected. For \ncompleteness, Table 2 notes the number of GBs partially and completely missed; a partially-missed GB is \none with a gab or gaps in the GB (after gap filling), and that has the TJ at one end missing. Completely \nmissed GBs correspond to two missed TJs (one at each end) and they have no end points. \n \n \nTable 2 Initial GB and TJ detection results \nGBs missed \nTJs missed \nSlice \nCompletel"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Table 2 Initial GB and TJ detection results \nGBs missed \nTJs missed \nSlice \nCompletel",
+    "paragraph": "he grain boundries and \nabout 93% of the triple junctions; essentially all GBs with reasonable contrast were detected. For \ncompleteness, Table 2 notes the number of GBs partially and completely missed; a partially-missed GB is \none with a gab or gaps in the GB (after gap filling), and that has the TJ at one end missing. Completely \nmissed GBs correspond to two missed TJs (one at each end) and they have no end points. \n \n \nTable 2 Initial GB and TJ detection results \nGBs missed \nTJs missed \nSlice \nCompletel"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "y \nPartially \nTotal \n% \nTotal \n% \n1 \n35 \n94 \n129 \n2.63 \n164 \n6.69 \n2 \n31 \n105 \n136 \n2.77 \n167 \n6.81 \n3 \n59 \n147 \n206 \n4.2 \n265 \n10.81 \n4 \n41 \n97 \n138 \n2.81 \n179 \n7.3 \n5 \n30 \n95 \n125 \n2.55 \n155 \n6.32 \n \n3.4 NEW MSE DIHEDRAL ANGLE CALCULATION \n \nOnce the TJs are determined, the next step is to determine their dihedral angles.",
+    "paragraph": "y \nPartially \nTotal \n% \nTotal \n% \n1 \n35 \n94 \n129 \n2.63 \n164 \n6.69 \n2 \n31 \n105 \n136 \n2.77 \n167 \n6.81 \n3 \n59 \n147 \n206 \n4.2 \n265 \n10.81 \n4 \n41 \n97 \n138 \n2.81 \n179 \n7.3 \n5 \n30 \n95 \n125 \n2.55 \n155 \n6.32 \n \n3.4 NEW MSE DIHEDRAL ANGLE CALCULATION \n \nOnce the TJs are determined, the next step is to determine their dihedral angles. At each TJ, we move back \nseven pixels along each grain boundary, fit a straight line to each seven pixel grain boundary segment, and then \ndetermine the slope of this fitted line. We re"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "At each TJ, we move back \nseven pixels along each grain boundary, fit a straight line to each seven pixel grain boundary segment, and then \ndetermine the slope of this fitted line.",
+    "paragraph": "y \nPartially \nTotal \n% \nTotal \n% \n1 \n35 \n94 \n129 \n2.63 \n164 \n6.69 \n2 \n31 \n105 \n136 \n2.77 \n167 \n6.81 \n3 \n59 \n147 \n206 \n4.2 \n265 \n10.81 \n4 \n41 \n97 \n138 \n2.81 \n179 \n7.3 \n5 \n30 \n95 \n125 \n2.55 \n155 \n6.32 \n \n3.4 NEW MSE DIHEDRAL ANGLE CALCULATION \n \nOnce the TJs are determined, the next step is to determine their dihedral angles. At each TJ, we move back \nseven pixels along each grain boundary, fit a straight line to each seven pixel grain boundary segment, and then \ndetermine the slope of this fitted line. We re"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "cord the mean square error (MSE) of the fit.",
+    "paragraph": "cord the mean square error (MSE) of the fit. This gives the angles of the \nthree grain boundaries at a TJ with respect to the horizontal, measured in degrees counter-clockwise as shown in \nFig. 4. The software outputs a text file that gives the TJ number followed by its dihedral angles in degrees. The three \ndihedral angles are 53.7°, 183.1°, and 258.7° for Fig. 4 data. The present thermal etched image data has GBs that \ncurve near most TJs (Fig. 5). To obtain better dihedral angle estimates in such cases, "
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "This gives the angles of the \nthree grain boundaries at a TJ with respect to the horizontal, measured in degrees counter-clockwise as shown in \nFig.",
+    "paragraph": "cord the mean square error (MSE) of the fit. This gives the angles of the \nthree grain boundaries at a TJ with respect to the horizontal, measured in degrees counter-clockwise as shown in \nFig. 4. The software outputs a text file that gives the TJ number followed by its dihedral angles in degrees. The three \ndihedral angles are 53.7°, 183.1°, and 258.7° for Fig. 4 data. The present thermal etched image data has GBs that \ncurve near most TJs (Fig. 5). To obtain better dihedral angle estimates in such cases, "
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "The software outputs a text file that gives the TJ number followed by its dihedral angles in degrees.",
+    "paragraph": "cord the mean square error (MSE) of the fit. This gives the angles of the \nthree grain boundaries at a TJ with respect to the horizontal, measured in degrees counter-clockwise as shown in \nFig. 4. The software outputs a text file that gives the TJ number followed by its dihedral angles in degrees. The three \ndihedral angles are 53.7°, 183.1°, and 258.7° for Fig. 4 data. The present thermal etched image data has GBs that \ncurve near most TJs (Fig. 5). To obtain better dihedral angle estimates in such cases, "
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "The three \ndihedral angles are 53.7°, 183.1°, and 258.7° for Fig.",
+    "paragraph": "cord the mean square error (MSE) of the fit. This gives the angles of the \nthree grain boundaries at a TJ with respect to the horizontal, measured in degrees counter-clockwise as shown in \nFig. 4. The software outputs a text file that gives the TJ number followed by its dihedral angles in degrees. The three \ndihedral angles are 53.7°, 183.1°, and 258.7° for Fig. 4 data. The present thermal etched image data has GBs that \ncurve near most TJs (Fig. 5). To obtain better dihedral angle estimates in such cases, "
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "The present thermal etched image data has GBs that \ncurve near most TJs (Fig.",
+    "paragraph": "cord the mean square error (MSE) of the fit. This gives the angles of the \nthree grain boundaries at a TJ with respect to the horizontal, measured in degrees counter-clockwise as shown in \nFig. 4. The software outputs a text file that gives the TJ number followed by its dihedral angles in degrees. The three \ndihedral angles are 53.7°, 183.1°, and 258.7° for Fig. 4 data. The present thermal etched image data has GBs that \ncurve near most TJs (Fig. 5). To obtain better dihedral angle estimates in such cases, "
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "To obtain better dihedral angle estimates in such cases,",
+    "paragraph": "cord the mean square error (MSE) of the fit. This gives the angles of the \nthree grain boundaries at a TJ with respect to the horizontal, measured in degrees counter-clockwise as shown in \nFig. 4. The software outputs a text file that gives the TJ number followed by its dihedral angles in degrees. The three \ndihedral angles are 53.7°, 183.1°, and 258.7° for Fig. 4 data. The present thermal etched image data has GBs that \ncurve near most TJs (Fig. 5). To obtain better dihedral angle estimates in such cases, "
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "we use the MSE value to \ndetermine if an angle estimate is good (if MSE is greater than 0.5, we reject the angle estimate).",
+    "paragraph": "we use the MSE value to \ndetermine if an angle estimate is good (if MSE is greater than 0.5, we reject the angle estimate). In this case, we \nreduce the number of GB pixels used to estimate the angle from 7 to 5 (MSE generally improves, if MSE ≤ 0.5, we \naccept the new angle estimate). Fig. 5 shows the use of this for estimation of one of the dihedral angles. Using 7 \npixels of the GB (line 2) we estimate the angle to be 41.8°, but MSE = 1.6 is large and thus we omit this estimate, \nand use only the 5 GB pi"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "In this case, we \nreduce the number of GB pixels used to estimate the angle from 7 to 5 (MSE generally improves, if MSE ≤ 0.5, we \naccept the new angle estimate).",
+    "paragraph": "we use the MSE value to \ndetermine if an angle estimate is good (if MSE is greater than 0.5, we reject the angle estimate). In this case, we \nreduce the number of GB pixels used to estimate the angle from 7 to 5 (MSE generally improves, if MSE ≤ 0.5, we \naccept the new angle estimate). Fig. 5 shows the use of this for estimation of one of the dihedral angles. Using 7 \npixels of the GB (line 2) we estimate the angle to be 41.8°, but MSE = 1.6 is large and thus we omit this estimate, \nand use only the 5 GB pi"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "5 shows the use of this for estimation of one of the dihedral angles.",
+    "paragraph": "we use the MSE value to \ndetermine if an angle estimate is good (if MSE is greater than 0.5, we reject the angle estimate). In this case, we \nreduce the number of GB pixels used to estimate the angle from 7 to 5 (MSE generally improves, if MSE ≤ 0.5, we \naccept the new angle estimate). Fig. 5 shows the use of this for estimation of one of the dihedral angles. Using 7 \npixels of the GB (line 2) we estimate the angle to be 41.8°, but MSE = 1.6 is large and thus we omit this estimate, \nand use only the 5 GB pi"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Using 7 \npixels of the GB (line 2) we estimate the angle to be 41.8°, but MSE = 1.6 is large and thus we omit this estimate, \nand use only the 5 GB pi",
+    "paragraph": "we use the MSE value to \ndetermine if an angle estimate is good (if MSE is greater than 0.5, we reject the angle estimate). In this case, we \nreduce the number of GB pixels used to estimate the angle from 7 to 5 (MSE generally improves, if MSE ≤ 0.5, we \naccept the new angle estimate). Fig. 5 shows the use of this for estimation of one of the dihedral angles. Using 7 \npixels of the GB (line 2) we estimate the angle to be 41.8°, but MSE = 1.6 is large and thus we omit this estimate, \nand use only the 5 GB pi"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "xels closest to the TJ (line 1).",
+    "paragraph": "xels closest to the TJ (line 1). We obtain a better angle estimate (68°) with a lower MSE = \n0.49. When MSE is still large using 5 pixel lengths, we label the dihedral angle estimate as poor etc. (this is useful to \nmatch TJs in 3D in different sample slices).  \n \nProc. SPIE Vol. 4735\n107\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \n   \n \nFig. 4. Dihedral angles determined: θ1 =  \n           53.7°, θ2 = 183.1°, θ"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "We obtain a better angle estimate (68°) with a lower MSE = \n0.49.",
+    "paragraph": "xels closest to the TJ (line 1). We obtain a better angle estimate (68°) with a lower MSE = \n0.49. When MSE is still large using 5 pixel lengths, we label the dihedral angle estimate as poor etc. (this is useful to \nmatch TJs in 3D in different sample slices).  \n \nProc. SPIE Vol. 4735\n107\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \n   \n \nFig. 4. Dihedral angles determined: θ1 =  \n           53.7°, θ2 = 183.1°, θ"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "When MSE is still large using 5 pixel lengths, we label the dihedral angle estimate as poor etc.",
+    "paragraph": "xels closest to the TJ (line 1). We obtain a better angle estimate (68°) with a lower MSE = \n0.49. When MSE is still large using 5 pixel lengths, we label the dihedral angle estimate as poor etc. (this is useful to \nmatch TJs in 3D in different sample slices).  \n \nProc. SPIE Vol. 4735\n107\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \n   \n \nFig. 4. Dihedral angles determined: θ1 =  \n           53.7°, θ2 = 183.1°, θ"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "(this is useful to \nmatch TJs in 3D in different sample slices).",
+    "paragraph": "xels closest to the TJ (line 1). We obtain a better angle estimate (68°) with a lower MSE = \n0.49. When MSE is still large using 5 pixel lengths, we label the dihedral angle estimate as poor etc. (this is useful to \nmatch TJs in 3D in different sample slices).  \n \nProc. SPIE Vol. 4735\n107\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \n   \n \nFig. 4. Dihedral angles determined: θ1 =  \n           53.7°, θ2 = 183.1°, θ"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "4735\n107\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \n   \n \nFig.",
+    "paragraph": "xels closest to the TJ (line 1). We obtain a better angle estimate (68°) with a lower MSE = \n0.49. When MSE is still large using 5 pixel lengths, we label the dihedral angle estimate as poor etc. (this is useful to \nmatch TJs in 3D in different sample slices).  \n \nProc. SPIE Vol. 4735\n107\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \n   \n \nFig. 4. Dihedral angles determined: θ1 =  \n           53.7°, θ2 = 183.1°, θ"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Dihedral angles determined: θ1 =  \n           53.7°, θ2 = 183.1°, θ",
+    "paragraph": "xels closest to the TJ (line 1). We obtain a better angle estimate (68°) with a lower MSE = \n0.49. When MSE is still large using 5 pixel lengths, we label the dihedral angle estimate as poor etc. (this is useful to \nmatch TJs in 3D in different sample slices).  \n \nProc. SPIE Vol. 4735\n107\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \n   \n \nFig. 4. Dihedral angles determined: θ1 =  \n           53.7°, θ2 = 183.1°, θ"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Illustration of MSE estimates of the line                     \n             fit at a curved boundary\n \n3.5 EBSP LOCATION SELECTION \n \n \nThis step selects the points in each grain to be used for EBSP probe points (to provide 3D grain \norientations).",
+    "paragraph": "3 =258.7° \nFig.  5.  Illustration of MSE estimates of the line                     \n             fit at a curved boundary\n \n3.5 EBSP LOCATION SELECTION \n \n \nThis step selects the points in each grain to be used for EBSP probe points (to provide 3D grain \norientations). It reads in the angular locations of the grain boundaries and determines vectors that point along the \ndirections of the three grain boundaries. Two of these adjacent vectors are added together and the bisector vector is \ndetermined. We selec"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "It reads in the angular locations of the grain boundaries and determines vectors that point along the \ndirections of the three grain boundaries.",
+    "paragraph": "3 =258.7° \nFig.  5.  Illustration of MSE estimates of the line                     \n             fit at a curved boundary\n \n3.5 EBSP LOCATION SELECTION \n \n \nThis step selects the points in each grain to be used for EBSP probe points (to provide 3D grain \norientations). It reads in the angular locations of the grain boundaries and determines vectors that point along the \ndirections of the three grain boundaries. Two of these adjacent vectors are added together and the bisector vector is \ndetermined. We selec"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Two of these adjacent vectors are added together and the bisector vector is \ndetermined.",
+    "paragraph": "3 =258.7° \nFig.  5.  Illustration of MSE estimates of the line                     \n             fit at a curved boundary\n \n3.5 EBSP LOCATION SELECTION \n \n \nThis step selects the points in each grain to be used for EBSP probe points (to provide 3D grain \norientations). It reads in the angular locations of the grain boundaries and determines vectors that point along the \ndirections of the three grain boundaries. Two of these adjacent vectors are added together and the bisector vector is \ndetermined. We selec"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "t EBSP probe points along these bisector vectors 10, 15 and 20 pixels from the TJs.",
+    "paragraph": "t EBSP probe points along these bisector vectors 10, 15 and 20 pixels from the TJs. Several \nprobe points per grain are often needed, since some EBSP patterns can be bad. Fig. 6 shows the three bisector \nvectors and the  EBSP probe points selected as small solid circles for one TJ. Fig. 7 shows one sector image after \nprocessing (all TJs have been located). The EBSP points selected are noted by = (only 3 per TJ, one in each grain, \nare shown for simplicity). \n \n \n \n \n \n \n \n \n   Fig. 6. EBSP probe points loc"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Several \nprobe points per grain are often needed, since some EBSP patterns can be bad.",
+    "paragraph": "t EBSP probe points along these bisector vectors 10, 15 and 20 pixels from the TJs. Several \nprobe points per grain are often needed, since some EBSP patterns can be bad. Fig. 6 shows the three bisector \nvectors and the  EBSP probe points selected as small solid circles for one TJ. Fig. 7 shows one sector image after \nprocessing (all TJs have been located). The EBSP points selected are noted by = (only 3 per TJ, one in each grain, \nare shown for simplicity). \n \n \n \n \n \n \n \n \n   Fig. 6. EBSP probe points loc"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "6 shows the three bisector \nvectors and the  EBSP probe points selected as small solid circles for one TJ.",
+    "paragraph": "t EBSP probe points along these bisector vectors 10, 15 and 20 pixels from the TJs. Several \nprobe points per grain are often needed, since some EBSP patterns can be bad. Fig. 6 shows the three bisector \nvectors and the  EBSP probe points selected as small solid circles for one TJ. Fig. 7 shows one sector image after \nprocessing (all TJs have been located). The EBSP points selected are noted by = (only 3 per TJ, one in each grain, \nare shown for simplicity). \n \n \n \n \n \n \n \n \n   Fig. 6. EBSP probe points loc"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "7 shows one sector image after \nprocessing (all TJs have been located).",
+    "paragraph": "t EBSP probe points along these bisector vectors 10, 15 and 20 pixels from the TJs. Several \nprobe points per grain are often needed, since some EBSP patterns can be bad. Fig. 6 shows the three bisector \nvectors and the  EBSP probe points selected as small solid circles for one TJ. Fig. 7 shows one sector image after \nprocessing (all TJs have been located). The EBSP points selected are noted by = (only 3 per TJ, one in each grain, \nare shown for simplicity). \n \n \n \n \n \n \n \n \n   Fig. 6. EBSP probe points loc"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "The EBSP points selected are noted by = (only 3 per TJ, one in each grain, \nare shown for simplicity).",
+    "paragraph": "t EBSP probe points along these bisector vectors 10, 15 and 20 pixels from the TJs. Several \nprobe points per grain are often needed, since some EBSP patterns can be bad. Fig. 6 shows the three bisector \nvectors and the  EBSP probe points selected as small solid circles for one TJ. Fig. 7 shows one sector image after \nprocessing (all TJs have been located). The EBSP points selected are noted by = (only 3 per TJ, one in each grain, \nare shown for simplicity). \n \n \n \n \n \n \n \n \n   Fig. 6. EBSP probe points loc"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "EBSP probe points loc",
+    "paragraph": "t EBSP probe points along these bisector vectors 10, 15 and 20 pixels from the TJs. Several \nprobe points per grain are often needed, since some EBSP patterns can be bad. Fig. 6 shows the three bisector \nvectors and the  EBSP probe points selected as small solid circles for one TJ. Fig. 7 shows one sector image after \nprocessing (all TJs have been located). The EBSP points selected are noted by = (only 3 per TJ, one in each grain, \nare shown for simplicity). \n \n \n \n \n \n \n \n \n   Fig. 6. EBSP probe points loc"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "ated                                                    Fig.",
+    "paragraph": "ated                                                    Fig. 7. EBSP points located for each TJ \n \n \n \n4. SEI IMAGE SLICE PROCESSING \n \n4.1 MOSAIC IMAGE FORMATION (STITCHING AND REGISTRATION OF SECTOR IMAGES) \n \nFor a given sample slice, an array of 14x14 = 196 registered sector images are obtained on a square grid. \nThis provides the TJ locations in the global coordinate system of the sample (with respect to the bottom left sector \nProc. SPIE Vol. 4735\n108\nDownloaded From: http://proceedings.spiedigitallib"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "EBSP points located for each TJ \n \n \n \n4.",
+    "paragraph": "ated                                                    Fig. 7. EBSP points located for each TJ \n \n \n \n4. SEI IMAGE SLICE PROCESSING \n \n4.1 MOSAIC IMAGE FORMATION (STITCHING AND REGISTRATION OF SECTOR IMAGES) \n \nFor a given sample slice, an array of 14x14 = 196 registered sector images are obtained on a square grid. \nThis provides the TJ locations in the global coordinate system of the sample (with respect to the bottom left sector \nProc. SPIE Vol. 4735\n108\nDownloaded From: http://proceedings.spiedigitallib"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "SEI IMAGE SLICE PROCESSING \n \n4.1 MOSAIC IMAGE FORMATION (STITCHING AND REGISTRATION OF SECTOR IMAGES) \n \nFor a given sample slice, an array of 14x14 = 196 registered sector images are obtained on a square grid.",
+    "paragraph": "ated                                                    Fig. 7. EBSP points located for each TJ \n \n \n \n4. SEI IMAGE SLICE PROCESSING \n \n4.1 MOSAIC IMAGE FORMATION (STITCHING AND REGISTRATION OF SECTOR IMAGES) \n \nFor a given sample slice, an array of 14x14 = 196 registered sector images are obtained on a square grid. \nThis provides the TJ locations in the global coordinate system of the sample (with respect to the bottom left sector \nProc. SPIE Vol. 4735\n108\nDownloaded From: http://proceedings.spiedigitallib"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "This provides the TJ locations in the global coordinate system of the sample (with respect to the bottom left sector \nProc.",
+    "paragraph": "ated                                                    Fig. 7. EBSP points located for each TJ \n \n \n \n4. SEI IMAGE SLICE PROCESSING \n \n4.1 MOSAIC IMAGE FORMATION (STITCHING AND REGISTRATION OF SECTOR IMAGES) \n \nFor a given sample slice, an array of 14x14 = 196 registered sector images are obtained on a square grid. \nThis provides the TJ locations in the global coordinate system of the sample (with respect to the bottom left sector \nProc. SPIE Vol. 4735\n108\nDownloaded From: http://proceedings.spiedigitallib"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "4735\n108\nDownloaded From: http://proceedings.spiedigitallib",
+    "paragraph": "ated                                                    Fig. 7. EBSP points located for each TJ \n \n \n \n4. SEI IMAGE SLICE PROCESSING \n \n4.1 MOSAIC IMAGE FORMATION (STITCHING AND REGISTRATION OF SECTOR IMAGES) \n \nFor a given sample slice, an array of 14x14 = 196 registered sector images are obtained on a square grid. \nThis provides the TJ locations in the global coordinate system of the sample (with respect to the bottom left sector \nProc. SPIE Vol. 4735\n108\nDownloaded From: http://proceedings.spiedigitallib"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "rary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \nimage) rather than their locations within each sector image.",
+    "paragraph": "rary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \nimage) rather than their locations within each sector image. These are needed to align slice images. Thus, a mosaic \nimage of all sector images registered with respect to each other (stitched) is needed. A general sector image (model \nimage) has 4 adjacent sector images (search images) along its edges. To register a pair of images (Model and \nSearch), we use correlation. Adjacent sector images overlap by around 20%. T"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "These are needed to align slice images.",
+    "paragraph": "rary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \nimage) rather than their locations within each sector image. These are needed to align slice images. Thus, a mosaic \nimage of all sector images registered with respect to each other (stitched) is needed. A general sector image (model \nimage) has 4 adjacent sector images (search images) along its edges. To register a pair of images (Model and \nSearch), we use correlation. Adjacent sector images overlap by around 20%. T"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Thus, a mosaic \nimage of all sector images registered with respect to each other (stitched) is needed.",
+    "paragraph": "rary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \nimage) rather than their locations within each sector image. These are needed to align slice images. Thus, a mosaic \nimage of all sector images registered with respect to each other (stitched) is needed. A general sector image (model \nimage) has 4 adjacent sector images (search images) along its edges. To register a pair of images (Model and \nSearch), we use correlation. Adjacent sector images overlap by around 20%. T"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "A general sector image (model \nimage) has 4 adjacent sector images (search images) along its edges.",
+    "paragraph": "rary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \nimage) rather than their locations within each sector image. These are needed to align slice images. Thus, a mosaic \nimage of all sector images registered with respect to each other (stitched) is needed. A general sector image (model \nimage) has 4 adjacent sector images (search images) along its edges. To register a pair of images (Model and \nSearch), we use correlation. Adjacent sector images overlap by around 20%. T"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "To register a pair of images (Model and \nSearch), we use correlation.",
+    "paragraph": "rary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \nimage) rather than their locations within each sector image. These are needed to align slice images. Thus, a mosaic \nimage of all sector images registered with respect to each other (stitched) is needed. A general sector image (model \nimage) has 4 adjacent sector images (search images) along its edges. To register a pair of images (Model and \nSearch), we use correlation. Adjacent sector images overlap by around 20%. T"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Adjacent sector images overlap by around 20%.",
+    "paragraph": "rary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \nimage) rather than their locations within each sector image. These are needed to align slice images. Thus, a mosaic \nimage of all sector images registered with respect to each other (stitched) is needed. A general sector image (model \nimage) has 4 adjacent sector images (search images) along its edges. To register a pair of images (Model and \nSearch), we use correlation. Adjacent sector images overlap by around 20%. T"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "o register adjacent images, we choose \na number of rectangular regions along each edge of the Model Image and we search for these along the \ncorresponding edge of the Search Image using a normalized correlation.",
+    "paragraph": "o register adjacent images, we choose \na number of rectangular regions along each edge of the Model Image and we search for these along the \ncorresponding edge of the Search Image using a normalized correlation. The correlation peak location denotes the \namount the Search Image must be shifted for registration; the correlation peak value indicates the amount of \ncommonality between that region in the Search Image and the Model Image. A number of rectangular regions are \nused, since many regions may not cont"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "The correlation peak location denotes the \namount the Search Image must be shifted for registration; the correlation peak value indicates the amount of \ncommonality between that region in the Search Image and the Model Image.",
+    "paragraph": "o register adjacent images, we choose \na number of rectangular regions along each edge of the Model Image and we search for these along the \ncorresponding edge of the Search Image using a normalized correlation. The correlation peak location denotes the \namount the Search Image must be shifted for registration; the correlation peak value indicates the amount of \ncommonality between that region in the Search Image and the Model Image. A number of rectangular regions are \nused, since many regions may not cont"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "A number of rectangular regions are \nused, since many regions may not cont",
+    "paragraph": "o register adjacent images, we choose \na number of rectangular regions along each edge of the Model Image and we search for these along the \ncorresponding edge of the Search Image using a normalized correlation. The correlation peak location denotes the \namount the Search Image must be shifted for registration; the correlation peak value indicates the amount of \ncommonality between that region in the Search Image and the Model Image. A number of rectangular regions are \nused, since many regions may not cont"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "ain useful grain or precipitate and pit data for registration.",
+    "paragraph": "ain useful grain or precipitate and pit data for registration. We correlate only \nthose rectangular regions that have a reasonable information content (the difference between the maximum and the \nminimum gray levels in each rectangular region is calculated and if it is above a threshold of 50, that region is used \nfor registration). Since 30% of the regions provide useful correlation data, we presently use 18 rectangular regions \n(computational speed is not of major concern here). These are selected from th"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "We correlate only \nthose rectangular regions that have a reasonable information content (the difference between the maximum and the \nminimum gray levels in each rectangular region is calculated and if it is above a threshold of 50, that region is used \nfor registration).",
+    "paragraph": "ain useful grain or precipitate and pit data for registration. We correlate only \nthose rectangular regions that have a reasonable information content (the difference between the maximum and the \nminimum gray levels in each rectangular region is calculated and if it is above a threshold of 50, that region is used \nfor registration). Since 30% of the regions provide useful correlation data, we presently use 18 rectangular regions \n(computational speed is not of major concern here). These are selected from th"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Since 30% of the regions provide useful correlation data, we presently use 18 rectangular regions \n(computational speed is not of major concern here).",
+    "paragraph": "ain useful grain or precipitate and pit data for registration. We correlate only \nthose rectangular regions that have a reasonable information content (the difference between the maximum and the \nminimum gray levels in each rectangular region is calculated and if it is above a threshold of 50, that region is used \nfor registration). Since 30% of the regions provide useful correlation data, we presently use 18 rectangular regions \n(computational speed is not of major concern here). These are selected from th"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "These are selected from th",
+    "paragraph": "ain useful grain or precipitate and pit data for registration. We correlate only \nthose rectangular regions that have a reasonable information content (the difference between the maximum and the \nminimum gray levels in each rectangular region is calculated and if it is above a threshold of 50, that region is used \nfor registration). Since 30% of the regions provide useful correlation data, we presently use 18 rectangular regions \n(computational speed is not of major concern here). These are selected from th"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "e central 80% of the edge of the \nModel Image, since the top and bottom extremes of the Model Image are not expected to have associated pixels in \nthe Search Image.",
+    "paragraph": "e central 80% of the edge of the \nModel Image, since the top and bottom extremes of the Model Image are not expected to have associated pixels in \nthe Search Image. A variety of small rectangular regions are used to ensure overlap, since typical shifts between two \nadjacent sector images can be 16% of the width of the sector image in the horizontal direction and 25% of the height \nof the sector image. The mean and the standard deviation of the correlation peak shifts are calculated for all used \npatterns. A"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "A variety of small rectangular regions are used to ensure overlap, since typical shifts between two \nadjacent sector images can be 16% of the width of the sector image in the horizontal direction and 25% of the height \nof the sector image.",
+    "paragraph": "e central 80% of the edge of the \nModel Image, since the top and bottom extremes of the Model Image are not expected to have associated pixels in \nthe Search Image. A variety of small rectangular regions are used to ensure overlap, since typical shifts between two \nadjacent sector images can be 16% of the width of the sector image in the horizontal direction and 25% of the height \nof the sector image. The mean and the standard deviation of the correlation peak shifts are calculated for all used \npatterns. A"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "The mean and the standard deviation of the correlation peak shifts are calculated for all used \npatterns.",
+    "paragraph": "e central 80% of the edge of the \nModel Image, since the top and bottom extremes of the Model Image are not expected to have associated pixels in \nthe Search Image. A variety of small rectangular regions are used to ensure overlap, since typical shifts between two \nadjacent sector images can be 16% of the width of the sector image in the horizontal direction and 25% of the height \nof the sector image. The mean and the standard deviation of the correlation peak shifts are calculated for all used \npatterns. A"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "ll shifts that lie within one standard deviation of the mean shift are retained and used to calculate the \naverage shift used for one edge of each image.",
+    "paragraph": "ll shifts that lie within one standard deviation of the mean shift are retained and used to calculate the \naverage shift used for one edge of each image. We repeat this process for all four edge regions of each sector image. \nFor each sector image, this gives the shifts necessary to register its four neighboring sector images. We calculate \nthese correlations for the original grayscale images after distortion correction. The original images are used since the \nprecipitates and the texture present in the gra"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "We repeat this process for all four edge regions of each sector image.",
+    "paragraph": "ll shifts that lie within one standard deviation of the mean shift are retained and used to calculate the \naverage shift used for one edge of each image. We repeat this process for all four edge regions of each sector image. \nFor each sector image, this gives the shifts necessary to register its four neighboring sector images. We calculate \nthese correlations for the original grayscale images after distortion correction. The original images are used since the \nprecipitates and the texture present in the gra"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "For each sector image, this gives the shifts necessary to register its four neighboring sector images.",
+    "paragraph": "ll shifts that lie within one standard deviation of the mean shift are retained and used to calculate the \naverage shift used for one edge of each image. We repeat this process for all four edge regions of each sector image. \nFor each sector image, this gives the shifts necessary to register its four neighboring sector images. We calculate \nthese correlations for the original grayscale images after distortion correction. The original images are used since the \nprecipitates and the texture present in the gra"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "We calculate \nthese correlations for the original grayscale images after distortion correction.",
+    "paragraph": "ll shifts that lie within one standard deviation of the mean shift are retained and used to calculate the \naverage shift used for one edge of each image. We repeat this process for all four edge regions of each sector image. \nFor each sector image, this gives the shifts necessary to register its four neighboring sector images. We calculate \nthese correlations for the original grayscale images after distortion correction. The original images are used since the \nprecipitates and the texture present in the gra"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "The original images are used since the \nprecipitates and the texture present in the gra",
+    "paragraph": "ll shifts that lie within one standard deviation of the mean shift are retained and used to calculate the \naverage shift used for one edge of each image. We repeat this process for all four edge regions of each sector image. \nFor each sector image, this gives the shifts necessary to register its four neighboring sector images. We calculate \nthese correlations for the original grayscale images after distortion correction. The original images are used since the \nprecipitates and the texture present in the gra"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "yscale image provide valuable information for correlation in addition to \nthe grain boundary information.",
+    "paragraph": "yscale image provide valuable information for correlation in addition to \nthe grain boundary information. This is necessary, since the edges of some sector images have few grain boundaries \nand thus precipitates and grain texture information are necessary or few rectangular regions will have sufficient \ninformation. The stitching algorithm used was noted elsewhere [7]. It involves use of multiple (random walk) passes \nover the sector array and multiple estimates of the shifts needed for each sector image. \n"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "This is necessary, since the edges of some sector images have few grain boundaries \nand thus precipitates and grain texture information are necessary or few rectangular regions will have sufficient \ninformation.",
+    "paragraph": "yscale image provide valuable information for correlation in addition to \nthe grain boundary information. This is necessary, since the edges of some sector images have few grain boundaries \nand thus precipitates and grain texture information are necessary or few rectangular regions will have sufficient \ninformation. The stitching algorithm used was noted elsewhere [7]. It involves use of multiple (random walk) passes \nover the sector array and multiple estimates of the shifts needed for each sector image. \n"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "The stitching algorithm used was noted elsewhere [7].",
+    "paragraph": "yscale image provide valuable information for correlation in addition to \nthe grain boundary information. This is necessary, since the edges of some sector images have few grain boundaries \nand thus precipitates and grain texture information are necessary or few rectangular regions will have sufficient \ninformation. The stitching algorithm used was noted elsewhere [7]. It involves use of multiple (random walk) passes \nover the sector array and multiple estimates of the shifts needed for each sector image. \n"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "It involves use of multiple (random walk) passes \nover the sector array and multiple estimates of the shifts needed for each sector image.",
+    "paragraph": "yscale image provide valuable information for correlation in addition to \nthe grain boundary information. This is necessary, since the edges of some sector images have few grain boundaries \nand thus precipitates and grain texture information are necessary or few rectangular regions will have sufficient \ninformation. The stitching algorithm used was noted elsewhere [7]. It involves use of multiple (random walk) passes \nover the sector array and multiple estimates of the shifts needed for each sector image. \n"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": " \n4.2 DISTORTION CORRECTION \n \n \nDistortion correction [6] uses piecewise correction and was detailed elsewhere [6].",
+    "paragraph": " \n4.2 DISTORTION CORRECTION \n \n \nDistortion correction [6] uses piecewise correction and was detailed elsewhere [6]. We perform all image \nprocessing prior to skeletonization on the original image. We then apply geometric correction to the gap filled \nbinary image. Skeletonization is then applied, since geometric correction of a skeletonized image produces GB \ngaps. TJ locations, angle estimates, etc. must be made on the corrected images. For registration and stitching, \ndistortion-corrected grayscale image"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "We perform all image \nprocessing prior to skeletonization on the original image.",
+    "paragraph": " \n4.2 DISTORTION CORRECTION \n \n \nDistortion correction [6] uses piecewise correction and was detailed elsewhere [6]. We perform all image \nprocessing prior to skeletonization on the original image. We then apply geometric correction to the gap filled \nbinary image. Skeletonization is then applied, since geometric correction of a skeletonized image produces GB \ngaps. TJ locations, angle estimates, etc. must be made on the corrected images. For registration and stitching, \ndistortion-corrected grayscale image"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "We then apply geometric correction to the gap filled \nbinary image.",
+    "paragraph": " \n4.2 DISTORTION CORRECTION \n \n \nDistortion correction [6] uses piecewise correction and was detailed elsewhere [6]. We perform all image \nprocessing prior to skeletonization on the original image. We then apply geometric correction to the gap filled \nbinary image. Skeletonization is then applied, since geometric correction of a skeletonized image produces GB \ngaps. TJ locations, angle estimates, etc. must be made on the corrected images. For registration and stitching, \ndistortion-corrected grayscale image"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Skeletonization is then applied, since geometric correction of a skeletonized image produces GB \ngaps.",
+    "paragraph": " \n4.2 DISTORTION CORRECTION \n \n \nDistortion correction [6] uses piecewise correction and was detailed elsewhere [6]. We perform all image \nprocessing prior to skeletonization on the original image. We then apply geometric correction to the gap filled \nbinary image. Skeletonization is then applied, since geometric correction of a skeletonized image produces GB \ngaps. TJ locations, angle estimates, etc. must be made on the corrected images. For registration and stitching, \ndistortion-corrected grayscale image"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "TJ locations, angle estimates, etc.",
+    "paragraph": " \n4.2 DISTORTION CORRECTION \n \n \nDistortion correction [6] uses piecewise correction and was detailed elsewhere [6]. We perform all image \nprocessing prior to skeletonization on the original image. We then apply geometric correction to the gap filled \nbinary image. Skeletonization is then applied, since geometric correction of a skeletonized image produces GB \ngaps. TJ locations, angle estimates, etc. must be made on the corrected images. For registration and stitching, \ndistortion-corrected grayscale image"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "must be made on the corrected images.",
+    "paragraph": " \n4.2 DISTORTION CORRECTION \n \n \nDistortion correction [6] uses piecewise correction and was detailed elsewhere [6]. We perform all image \nprocessing prior to skeletonization on the original image. We then apply geometric correction to the gap filled \nbinary image. Skeletonization is then applied, since geometric correction of a skeletonized image produces GB \ngaps. TJ locations, angle estimates, etc. must be made on the corrected images. For registration and stitching, \ndistortion-corrected grayscale image"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "For registration and stitching, \ndistortion-corrected grayscale image",
+    "paragraph": " \n4.2 DISTORTION CORRECTION \n \n \nDistortion correction [6] uses piecewise correction and was detailed elsewhere [6]. We perform all image \nprocessing prior to skeletonization on the original image. We then apply geometric correction to the gap filled \nbinary image. Skeletonization is then applied, since geometric correction of a skeletonized image produces GB \ngaps. TJ locations, angle estimates, etc. must be made on the corrected images. For registration and stitching, \ndistortion-corrected grayscale image"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "ADVANCED TJ PARAMETERIZATION \n \n5.1 ANALYSIS \n \nOur initial results (Sect.",
+    "paragraph": "s are used.  \n \n5. ADVANCED TJ PARAMETERIZATION \n \n5.1 ANALYSIS \n \nOur initial results (Sect. 3) are quite good, but improvements are possible after analysis of the results. \nInitial analysis results and initial advanced algorithms follow to improve TJ detection and computation time. \nAlgorithms have not yet been finalized.  An improved dihedral angle estimate algorithm was noted in Sect. 3.4. \n \nThe precipitates and pits present (we refer to both as noise in this section) are the source of various \nproblem"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "3) are quite good, but improvements are possible after analysis of the results.",
+    "paragraph": "s are used.  \n \n5. ADVANCED TJ PARAMETERIZATION \n \n5.1 ANALYSIS \n \nOur initial results (Sect. 3) are quite good, but improvements are possible after analysis of the results. \nInitial analysis results and initial advanced algorithms follow to improve TJ detection and computation time. \nAlgorithms have not yet been finalized.  An improved dihedral angle estimate algorithm was noted in Sect. 3.4. \n \nThe precipitates and pits present (we refer to both as noise in this section) are the source of various \nproblem"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Initial analysis results and initial advanced algorithms follow to improve TJ detection and computation time.",
+    "paragraph": "s are used.  \n \n5. ADVANCED TJ PARAMETERIZATION \n \n5.1 ANALYSIS \n \nOur initial results (Sect. 3) are quite good, but improvements are possible after analysis of the results. \nInitial analysis results and initial advanced algorithms follow to improve TJ detection and computation time. \nAlgorithms have not yet been finalized.  An improved dihedral angle estimate algorithm was noted in Sect. 3.4. \n \nThe precipitates and pits present (we refer to both as noise in this section) are the source of various \nproblem"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Algorithms have not yet been finalized.",
+    "paragraph": "s are used.  \n \n5. ADVANCED TJ PARAMETERIZATION \n \n5.1 ANALYSIS \n \nOur initial results (Sect. 3) are quite good, but improvements are possible after analysis of the results. \nInitial analysis results and initial advanced algorithms follow to improve TJ detection and computation time. \nAlgorithms have not yet been finalized.  An improved dihedral angle estimate algorithm was noted in Sect. 3.4. \n \nThe precipitates and pits present (we refer to both as noise in this section) are the source of various \nproblem"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "An improved dihedral angle estimate algorithm was noted in Sect.",
+    "paragraph": "s are used.  \n \n5. ADVANCED TJ PARAMETERIZATION \n \n5.1 ANALYSIS \n \nOur initial results (Sect. 3) are quite good, but improvements are possible after analysis of the results. \nInitial analysis results and initial advanced algorithms follow to improve TJ detection and computation time. \nAlgorithms have not yet been finalized.  An improved dihedral angle estimate algorithm was noted in Sect. 3.4. \n \nThe precipitates and pits present (we refer to both as noise in this section) are the source of various \nproblem"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "The precipitates and pits present (we refer to both as noise in this section) are the source of various \nproblem",
+    "paragraph": "s are used.  \n \n5. ADVANCED TJ PARAMETERIZATION \n \n5.1 ANALYSIS \n \nOur initial results (Sect. 3) are quite good, but improvements are possible after analysis of the results. \nInitial analysis results and initial advanced algorithms follow to improve TJ detection and computation time. \nAlgorithms have not yet been finalized.  An improved dihedral angle estimate algorithm was noted in Sect. 3.4. \n \nThe precipitates and pits present (we refer to both as noise in this section) are the source of various \nproblem"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "All false TJs are due to noise near GBs, gap filling connects these and produces several \nfalse GBs and associated false TJs (g in Fig.",
+    "paragraph": "s as analysis shows. All false TJs are due to noise near GBs, gap filling connects these and produces several \nfalse GBs and associated false TJs (g in Fig. 8b) after skeletonization. Removing short GBs can omit these. \nHowever, some true TJs have a short true GB (Ο in Fig. 8b). These TJs are located if we retain and do not omit short \nGBs not near noise regions (possible short GBs). We use a binary noise map to distinguish between false GBs (due \nto noise) and possible short GBs (short GBs not near noise r"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "8b) after skeletonization.",
+    "paragraph": "s as analysis shows. All false TJs are due to noise near GBs, gap filling connects these and produces several \nfalse GBs and associated false TJs (g in Fig. 8b) after skeletonization. Removing short GBs can omit these. \nHowever, some true TJs have a short true GB (Ο in Fig. 8b). These TJs are located if we retain and do not omit short \nGBs not near noise regions (possible short GBs). We use a binary noise map to distinguish between false GBs (due \nto noise) and possible short GBs (short GBs not near noise r"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Removing short GBs can omit these.",
+    "paragraph": "s as analysis shows. All false TJs are due to noise near GBs, gap filling connects these and produces several \nfalse GBs and associated false TJs (g in Fig. 8b) after skeletonization. Removing short GBs can omit these. \nHowever, some true TJs have a short true GB (Ο in Fig. 8b). These TJs are located if we retain and do not omit short \nGBs not near noise regions (possible short GBs). We use a binary noise map to distinguish between false GBs (due \nto noise) and possible short GBs (short GBs not near noise r"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "However, some true TJs have a short true GB (Ο in Fig.",
+    "paragraph": "s as analysis shows. All false TJs are due to noise near GBs, gap filling connects these and produces several \nfalse GBs and associated false TJs (g in Fig. 8b) after skeletonization. Removing short GBs can omit these. \nHowever, some true TJs have a short true GB (Ο in Fig. 8b). These TJs are located if we retain and do not omit short \nGBs not near noise regions (possible short GBs). We use a binary noise map to distinguish between false GBs (due \nto noise) and possible short GBs (short GBs not near noise r"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "These TJs are located if we retain and do not omit short \nGBs not near noise regions (possible short GBs).",
+    "paragraph": "s as analysis shows. All false TJs are due to noise near GBs, gap filling connects these and produces several \nfalse GBs and associated false TJs (g in Fig. 8b) after skeletonization. Removing short GBs can omit these. \nHowever, some true TJs have a short true GB (Ο in Fig. 8b). These TJs are located if we retain and do not omit short \nGBs not near noise regions (possible short GBs). We use a binary noise map to distinguish between false GBs (due \nto noise) and possible short GBs (short GBs not near noise r"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "We use a binary noise map to distinguish between false GBs (due \nto noise) and possible short GBs (short GBs not near noise r",
+    "paragraph": "s as analysis shows. All false TJs are due to noise near GBs, gap filling connects these and produces several \nfalse GBs and associated false TJs (g in Fig. 8b) after skeletonization. Removing short GBs can omit these. \nHowever, some true TJs have a short true GB (Ο in Fig. 8b). These TJs are located if we retain and do not omit short \nGBs not near noise regions (possible short GBs). We use a binary noise map to distinguish between false GBs (due \nto noise) and possible short GBs (short GBs not near noise r"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "We also found that EBSP points selected near \npits or precipitates gave poor EBSP patterns, thus we also use the noise map to ensure selection of good EBSP \npoints and reduce processing time.",
+    "paragraph": "egions). We also found that EBSP points selected near \npits or precipitates gave poor EBSP patterns, thus we also use the noise map to ensure selection of good EBSP \npoints and reduce processing time. \n \nPresently, 3 EBSP patterns are needed for each TJ (actually 9 are used); with approximately 5 TJs per \ngrain, each grain has 5x3 = 15 EBSP patterns acquired and processed. Reducing the number of EBSP patterns will \nreduce the acquisition and computation time. Use of our noise map aids this. To further impro"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Presently, 3 EBSP patterns are needed for each TJ (actually 9 are used); with approximately 5 TJs per \ngrain, each grain has 5x3 = 15 EBSP patterns acquired and processed.",
+    "paragraph": "egions). We also found that EBSP points selected near \npits or precipitates gave poor EBSP patterns, thus we also use the noise map to ensure selection of good EBSP \npoints and reduce processing time. \n \nPresently, 3 EBSP patterns are needed for each TJ (actually 9 are used); with approximately 5 TJs per \ngrain, each grain has 5x3 = 15 EBSP patterns acquired and processed. Reducing the number of EBSP patterns will \nreduce the acquisition and computation time. Use of our noise map aids this. To further impro"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Reducing the number of EBSP patterns will \nreduce the acquisition and computation time.",
+    "paragraph": "egions). We also found that EBSP points selected near \npits or precipitates gave poor EBSP patterns, thus we also use the noise map to ensure selection of good EBSP \npoints and reduce processing time. \n \nPresently, 3 EBSP patterns are needed for each TJ (actually 9 are used); with approximately 5 TJs per \ngrain, each grain has 5x3 = 15 EBSP patterns acquired and processed. Reducing the number of EBSP patterns will \nreduce the acquisition and computation time. Use of our noise map aids this. To further impro"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Use of our noise map aids this.",
+    "paragraph": "egions). We also found that EBSP points selected near \npits or precipitates gave poor EBSP patterns, thus we also use the noise map to ensure selection of good EBSP \npoints and reduce processing time. \n \nPresently, 3 EBSP patterns are needed for each TJ (actually 9 are used); with approximately 5 TJs per \ngrain, each grain has 5x3 = 15 EBSP patterns acquired and processed. Reducing the number of EBSP patterns will \nreduce the acquisition and computation time. Use of our noise map aids this. To further impro"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "ve results, we \nconsidered a boundary completion algorithm (this ensures that an approximation to all GB lines are present).",
+    "paragraph": "ve results, we \nconsidered a boundary completion algorithm (this ensures that an approximation to all GB lines are present). A blob \nProc. SPIE Vol. 4735\n109\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \ncoloring algorithm is then used to locate all pixels associated with each grain. This achieves grain location. The \ncenter of each grain (blob) is then located and one good EBSP probe point near the center of each"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "4735\n109\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \ncoloring algorithm is then used to locate all pixels associated with each grain.",
+    "paragraph": "ve results, we \nconsidered a boundary completion algorithm (this ensures that an approximation to all GB lines are present). A blob \nProc. SPIE Vol. 4735\n109\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \ncoloring algorithm is then used to locate all pixels associated with each grain. This achieves grain location. The \ncenter of each grain (blob) is then located and one good EBSP probe point near the center of each"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "This achieves grain location.",
+    "paragraph": "ve results, we \nconsidered a boundary completion algorithm (this ensures that an approximation to all GB lines are present). A blob \nProc. SPIE Vol. 4735\n109\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \ncoloring algorithm is then used to locate all pixels associated with each grain. This achieves grain location. The \ncenter of each grain (blob) is then located and one good EBSP probe point near the center of each"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "The \ncenter of each grain (blob) is then located and one good EBSP probe point near the center of each",
+    "paragraph": "ve results, we \nconsidered a boundary completion algorithm (this ensures that an approximation to all GB lines are present). A blob \nProc. SPIE Vol. 4735\n109\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \ncoloring algorithm is then used to locate all pixels associated with each grain. This achieves grain location. The \ncenter of each grain (blob) is then located and one good EBSP probe point near the center of each"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": " grain is selected \n(separated from noise points, as determined by using our noise map).",
+    "paragraph": " grain is selected \n(separated from noise points, as determined by using our noise map). For this algorithm, complete GBs (or \napproximations to them) are needed.  \n \n \n \n5.2 NOISE MAP \n \nThis is a binary map with ‘on’ pixels at locations of pit (dark) or preciptate (bright) noise regions. To \nproduce the noise map, we calculate the histogram of the original SEM image (the gray level of most pixels lies in \nthe 180-200 range; this corresponds to the gray level within a grain). We find the maximum pixel coun"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "For this algorithm, complete GBs (or \napproximations to them) are needed.",
+    "paragraph": " grain is selected \n(separated from noise points, as determined by using our noise map). For this algorithm, complete GBs (or \napproximations to them) are needed.  \n \n \n \n5.2 NOISE MAP \n \nThis is a binary map with ‘on’ pixels at locations of pit (dark) or preciptate (bright) noise regions. To \nproduce the noise map, we calculate the histogram of the original SEM image (the gray level of most pixels lies in \nthe 180-200 range; this corresponds to the gray level within a grain). We find the maximum pixel coun"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "5.2 NOISE MAP \n \nThis is a binary map with ‘on’ pixels at locations of pit (dark) or preciptate (bright) noise regions.",
+    "paragraph": " grain is selected \n(separated from noise points, as determined by using our noise map). For this algorithm, complete GBs (or \napproximations to them) are needed.  \n \n \n \n5.2 NOISE MAP \n \nThis is a binary map with ‘on’ pixels at locations of pit (dark) or preciptate (bright) noise regions. To \nproduce the noise map, we calculate the histogram of the original SEM image (the gray level of most pixels lies in \nthe 180-200 range; this corresponds to the gray level within a grain). We find the maximum pixel coun"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "To \nproduce the noise map, we calculate the histogram of the original SEM image (the gray level of most pixels lies in \nthe 180-200 range; this corresponds to the gray level within a grain).",
+    "paragraph": " grain is selected \n(separated from noise points, as determined by using our noise map). For this algorithm, complete GBs (or \napproximations to them) are needed.  \n \n \n \n5.2 NOISE MAP \n \nThis is a binary map with ‘on’ pixels at locations of pit (dark) or preciptate (bright) noise regions. To \nproduce the noise map, we calculate the histogram of the original SEM image (the gray level of most pixels lies in \nthe 180-200 range; this corresponds to the gray level within a grain). We find the maximum pixel coun"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "We find the maximum pixel coun",
+    "paragraph": " grain is selected \n(separated from noise points, as determined by using our noise map). For this algorithm, complete GBs (or \napproximations to them) are needed.  \n \n \n \n5.2 NOISE MAP \n \nThis is a binary map with ‘on’ pixels at locations of pit (dark) or preciptate (bright) noise regions. To \nproduce the noise map, we calculate the histogram of the original SEM image (the gray level of most pixels lies in \nthe 180-200 range; this corresponds to the gray level within a grain). We find the maximum pixel coun"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "t value (the \nlargest number of pixels for any gray level in the 180-200 range) and threshold the image at 10% of this value (gray \nlevels with a pixel count above 10% of the maximum are set to zero and gray levels below it are set to 255 (or 1).",
+    "paragraph": "t value (the \nlargest number of pixels for any gray level in the 180-200 range) and threshold the image at 10% of this value (gray \nlevels with a pixel count above 10% of the maximum are set to zero and gray levels below it are set to 255 (or 1). \nThis binary image contains GBs. We morphologically process it to remove GBs (directional SEs are used). Fig. 9a \nshows the resultant binary noise map; Fig. 9b shows the noise map superimposed on the original image. \n \n5.3 LOCATING FALSE AND POSSIBLE GBs \n \nFig. 9c"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "This binary image contains GBs.",
+    "paragraph": "t value (the \nlargest number of pixels for any gray level in the 180-200 range) and threshold the image at 10% of this value (gray \nlevels with a pixel count above 10% of the maximum are set to zero and gray levels below it are set to 255 (or 1). \nThis binary image contains GBs. We morphologically process it to remove GBs (directional SEs are used). Fig. 9a \nshows the resultant binary noise map; Fig. 9b shows the noise map superimposed on the original image. \n \n5.3 LOCATING FALSE AND POSSIBLE GBs \n \nFig. 9c"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "We morphologically process it to remove GBs (directional SEs are used).",
+    "paragraph": "t value (the \nlargest number of pixels for any gray level in the 180-200 range) and threshold the image at 10% of this value (gray \nlevels with a pixel count above 10% of the maximum are set to zero and gray levels below it are set to 255 (or 1). \nThis binary image contains GBs. We morphologically process it to remove GBs (directional SEs are used). Fig. 9a \nshows the resultant binary noise map; Fig. 9b shows the noise map superimposed on the original image. \n \n5.3 LOCATING FALSE AND POSSIBLE GBs \n \nFig. 9c"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "9a \nshows the resultant binary noise map; Fig.",
+    "paragraph": "t value (the \nlargest number of pixels for any gray level in the 180-200 range) and threshold the image at 10% of this value (gray \nlevels with a pixel count above 10% of the maximum are set to zero and gray levels below it are set to 255 (or 1). \nThis binary image contains GBs. We morphologically process it to remove GBs (directional SEs are used). Fig. 9a \nshows the resultant binary noise map; Fig. 9b shows the noise map superimposed on the original image. \n \n5.3 LOCATING FALSE AND POSSIBLE GBs \n \nFig. 9c"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "9b shows the noise map superimposed on the original image.",
+    "paragraph": "t value (the \nlargest number of pixels for any gray level in the 180-200 range) and threshold the image at 10% of this value (gray \nlevels with a pixel count above 10% of the maximum are set to zero and gray levels below it are set to 255 (or 1). \nThis binary image contains GBs. We morphologically process it to remove GBs (directional SEs are used). Fig. 9a \nshows the resultant binary noise map; Fig. 9b shows the noise map superimposed on the original image. \n \n5.3 LOCATING FALSE AND POSSIBLE GBs \n \nFig. 9c"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "5.3 LOCATING FALSE AND POSSIBLE GBs \n \nFig.",
+    "paragraph": "t value (the \nlargest number of pixels for any gray level in the 180-200 range) and threshold the image at 10% of this value (gray \nlevels with a pixel count above 10% of the maximum are set to zero and gray levels below it are set to 255 (or 1). \nThis binary image contains GBs. We morphologically process it to remove GBs (directional SEs are used). Fig. 9a \nshows the resultant binary noise map; Fig. 9b shows the noise map superimposed on the original image. \n \n5.3 LOCATING FALSE AND POSSIBLE GBs \n \nFig. 9c"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": " shows the skeleton image using standard methods.",
+    "paragraph": " shows the skeleton image using standard methods. The TJs detected are marked by white dot. As \nnoted, this list of TJs detected include both falseTJs (arrows in Fig. 9c) (introduced by the presence of noise) and \npossible TJs (arrow in Fig. 9d) (formed by true short GBs). However, we are able to selectively eliminate the false \nTJs with the help of the noise map. If an end point lies at (or near) an‘on’ pixel in the noise map, we remove it from \nfurther consideration (this omits all false GBs and false TJs"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "The TJs detected are marked by white dot.",
+    "paragraph": " shows the skeleton image using standard methods. The TJs detected are marked by white dot. As \nnoted, this list of TJs detected include both falseTJs (arrows in Fig. 9c) (introduced by the presence of noise) and \npossible TJs (arrow in Fig. 9d) (formed by true short GBs). However, we are able to selectively eliminate the false \nTJs with the help of the noise map. If an end point lies at (or near) an‘on’ pixel in the noise map, we remove it from \nfurther consideration (this omits all false GBs and false TJs"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "As \nnoted, this list of TJs detected include both falseTJs (arrows in Fig.",
+    "paragraph": " shows the skeleton image using standard methods. The TJs detected are marked by white dot. As \nnoted, this list of TJs detected include both falseTJs (arrows in Fig. 9c) (introduced by the presence of noise) and \npossible TJs (arrow in Fig. 9d) (formed by true short GBs). However, we are able to selectively eliminate the false \nTJs with the help of the noise map. If an end point lies at (or near) an‘on’ pixel in the noise map, we remove it from \nfurther consideration (this omits all false GBs and false TJs"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "9c) (introduced by the presence of noise) and \npossible TJs (arrow in Fig.",
+    "paragraph": " shows the skeleton image using standard methods. The TJs detected are marked by white dot. As \nnoted, this list of TJs detected include both falseTJs (arrows in Fig. 9c) (introduced by the presence of noise) and \npossible TJs (arrow in Fig. 9d) (formed by true short GBs). However, we are able to selectively eliminate the false \nTJs with the help of the noise map. If an end point lies at (or near) an‘on’ pixel in the noise map, we remove it from \nfurther consideration (this omits all false GBs and false TJs"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "9d) (formed by true short GBs).",
+    "paragraph": " shows the skeleton image using standard methods. The TJs detected are marked by white dot. As \nnoted, this list of TJs detected include both falseTJs (arrows in Fig. 9c) (introduced by the presence of noise) and \npossible TJs (arrow in Fig. 9d) (formed by true short GBs). However, we are able to selectively eliminate the false \nTJs with the help of the noise map. If an end point lies at (or near) an‘on’ pixel in the noise map, we remove it from \nfurther consideration (this omits all false GBs and false TJs"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "However, we are able to selectively eliminate the false \nTJs with the help of the noise map.",
+    "paragraph": " shows the skeleton image using standard methods. The TJs detected are marked by white dot. As \nnoted, this list of TJs detected include both falseTJs (arrows in Fig. 9c) (introduced by the presence of noise) and \npossible TJs (arrow in Fig. 9d) (formed by true short GBs). However, we are able to selectively eliminate the false \nTJs with the help of the noise map. If an end point lies at (or near) an‘on’ pixel in the noise map, we remove it from \nfurther consideration (this omits all false GBs and false TJs"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "If an end point lies at (or near) an‘on’ pixel in the noise map, we remove it from \nfurther consideration (this omits all false GBs and false TJs",
+    "paragraph": " shows the skeleton image using standard methods. The TJs detected are marked by white dot. As \nnoted, this list of TJs detected include both falseTJs (arrows in Fig. 9c) (introduced by the presence of noise) and \npossible TJs (arrow in Fig. 9d) (formed by true short GBs). However, we are able to selectively eliminate the false \nTJs with the help of the noise map. If an end point lies at (or near) an‘on’ pixel in the noise map, we remove it from \nfurther consideration (this omits all false GBs and false TJs"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": ") but the possible true short GBs are not omitted.",
+    "paragraph": ") but the possible true short GBs are not omitted. Fig. 9d, \nshows the TJs that are retained after this stage. As we can see, the TJs that are retained are the true TJs, even if they \nare connected to only a short GB. \n \n5.4 PRELIMINARY RESULTS \n \n \nA grain boundary completion algorithm was used; it extends a GB end point along the direction of \nmaximum intensity in a modified local edge output. This will reduce the number of true GBs and TJs missed. \nPreliminary results with our advanced algorithms on the "
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "9d, \nshows the TJs that are retained after this stage.",
+    "paragraph": ") but the possible true short GBs are not omitted. Fig. 9d, \nshows the TJs that are retained after this stage. As we can see, the TJs that are retained are the true TJs, even if they \nare connected to only a short GB. \n \n5.4 PRELIMINARY RESULTS \n \n \nA grain boundary completion algorithm was used; it extends a GB end point along the direction of \nmaximum intensity in a modified local edge output. This will reduce the number of true GBs and TJs missed. \nPreliminary results with our advanced algorithms on the "
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "As we can see, the TJs that are retained are the true TJs, even if they \nare connected to only a short GB.",
+    "paragraph": ") but the possible true short GBs are not omitted. Fig. 9d, \nshows the TJs that are retained after this stage. As we can see, the TJs that are retained are the true TJs, even if they \nare connected to only a short GB. \n \n5.4 PRELIMINARY RESULTS \n \n \nA grain boundary completion algorithm was used; it extends a GB end point along the direction of \nmaximum intensity in a modified local edge output. This will reduce the number of true GBs and TJs missed. \nPreliminary results with our advanced algorithms on the "
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "5.4 PRELIMINARY RESULTS \n \n \nA grain boundary completion algorithm was used; it extends a GB end point along the direction of \nmaximum intensity in a modified local edge output.",
+    "paragraph": ") but the possible true short GBs are not omitted. Fig. 9d, \nshows the TJs that are retained after this stage. As we can see, the TJs that are retained are the true TJs, even if they \nare connected to only a short GB. \n \n5.4 PRELIMINARY RESULTS \n \n \nA grain boundary completion algorithm was used; it extends a GB end point along the direction of \nmaximum intensity in a modified local edge output. This will reduce the number of true GBs and TJs missed. \nPreliminary results with our advanced algorithms on the "
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "This will reduce the number of true GBs and TJs missed.",
+    "paragraph": ") but the possible true short GBs are not omitted. Fig. 9d, \nshows the TJs that are retained after this stage. As we can see, the TJs that are retained are the true TJs, even if they \nare connected to only a short GB. \n \n5.4 PRELIMINARY RESULTS \n \n \nA grain boundary completion algorithm was used; it extends a GB end point along the direction of \nmaximum intensity in a modified local edge output. This will reduce the number of true GBs and TJs missed. \nPreliminary results with our advanced algorithms on the "
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Preliminary results with our advanced algorithms on the",
+    "paragraph": ") but the possible true short GBs are not omitted. Fig. 9d, \nshows the TJs that are retained after this stage. As we can see, the TJs that are retained are the true TJs, even if they \nare connected to only a short GB. \n \n5.4 PRELIMINARY RESULTS \n \n \nA grain boundary completion algorithm was used; it extends a GB end point along the direction of \nmaximum intensity in a modified local edge output. This will reduce the number of true GBs and TJs missed. \nPreliminary results with our advanced algorithms on the "
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "same 5 MgO slice data gave noticeably improved results.",
+    "paragraph": "same 5 MgO slice data gave noticeably improved results. \nAbout 85% of the partial GBs were completed (the adaptive algorithm always follows the correct very weak GB and \nthe algorithm terminates when the threshold and confidence is too low). Results on ≈ 20,000 GBs and 12,500 TJs \nwere excellent; over 96% of all TJs were located (compared to ≈93% for the initial algorithm). \n \n \n \n           \n \n(a) \n \n \n \n \n \n \n(b) \n \nFig. 8. (a) Original Grayscale image (b) Image containing false TJs (g) and Possible true "
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "About 85% of the partial GBs were completed (the adaptive algorithm always follows the correct very weak GB and \nthe algorithm terminates when the threshold and confidence is too low).",
+    "paragraph": "same 5 MgO slice data gave noticeably improved results. \nAbout 85% of the partial GBs were completed (the adaptive algorithm always follows the correct very weak GB and \nthe algorithm terminates when the threshold and confidence is too low). Results on ≈ 20,000 GBs and 12,500 TJs \nwere excellent; over 96% of all TJs were located (compared to ≈93% for the initial algorithm). \n \n \n \n           \n \n(a) \n \n \n \n \n \n \n(b) \n \nFig. 8. (a) Original Grayscale image (b) Image containing false TJs (g) and Possible true "
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Results on ≈ 20,000 GBs and 12,500 TJs \nwere excellent; over 96% of all TJs were located (compared to ≈93% for the initial algorithm).",
+    "paragraph": "same 5 MgO slice data gave noticeably improved results. \nAbout 85% of the partial GBs were completed (the adaptive algorithm always follows the correct very weak GB and \nthe algorithm terminates when the threshold and confidence is too low). Results on ≈ 20,000 GBs and 12,500 TJs \nwere excellent; over 96% of all TJs were located (compared to ≈93% for the initial algorithm). \n \n \n \n           \n \n(a) \n \n \n \n \n \n \n(b) \n \nFig. 8. (a) Original Grayscale image (b) Image containing false TJs (g) and Possible true "
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "(a) \n \n \n \n \n \n \n(b) \n \nFig.",
+    "paragraph": "same 5 MgO slice data gave noticeably improved results. \nAbout 85% of the partial GBs were completed (the adaptive algorithm always follows the correct very weak GB and \nthe algorithm terminates when the threshold and confidence is too low). Results on ≈ 20,000 GBs and 12,500 TJs \nwere excellent; over 96% of all TJs were located (compared to ≈93% for the initial algorithm). \n \n \n \n           \n \n(a) \n \n \n \n \n \n \n(b) \n \nFig. 8. (a) Original Grayscale image (b) Image containing false TJs (g) and Possible true "
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "(a) Original Grayscale image (b) Image containing false TJs (g) and Possible true",
+    "paragraph": "same 5 MgO slice data gave noticeably improved results. \nAbout 85% of the partial GBs were completed (the adaptive algorithm always follows the correct very weak GB and \nthe algorithm terminates when the threshold and confidence is too low). Results on ≈ 20,000 GBs and 12,500 TJs \nwere excellent; over 96% of all TJs were located (compared to ≈93% for the initial algorithm). \n \n \n \n           \n \n(a) \n \n \n \n \n \n \n(b) \n \nFig. 8. (a) Original Grayscale image (b) Image containing false TJs (g) and Possible true "
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "4735\n110\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \n \n(a) \n(b) \n \n(c) \n(d) \n \nFig.",
+    "paragraph": "TJs(Ο) \nProc. SPIE Vol. 4735\n110\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \n \n(a) \n(b) \n \n(c) \n(d) \n \nFig. 9 (a) Binary noise map (b) Noise map superimposed on original image (c) TJs detected (both true and false TJs) (d) False TJs \nomitted by use of the noise map and our rule. \n \n \n5.5 GRAIN DETECTION \n \nFig 10a shows the resultant final image for the example in Fig. 9, three missing GBs have been  completed \n"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "9 (a) Binary noise map (b) Noise map superimposed on original image (c) TJs detected (both true and false TJs) (d) False TJs \nomitted by use of the noise map and our rule.",
+    "paragraph": "TJs(Ο) \nProc. SPIE Vol. 4735\n110\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \n \n(a) \n(b) \n \n(c) \n(d) \n \nFig. 9 (a) Binary noise map (b) Noise map superimposed on original image (c) TJs detected (both true and false TJs) (d) False TJs \nomitted by use of the noise map and our rule. \n \n \n5.5 GRAIN DETECTION \n \nFig 10a shows the resultant final image for the example in Fig. 9, three missing GBs have been  completed \n"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "5.5 GRAIN DETECTION \n \nFig 10a shows the resultant final image for the example in Fig.",
+    "paragraph": "TJs(Ο) \nProc. SPIE Vol. 4735\n110\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \n \n(a) \n(b) \n \n(c) \n(d) \n \nFig. 9 (a) Binary noise map (b) Noise map superimposed on original image (c) TJs detected (both true and false TJs) (d) False TJs \nomitted by use of the noise map and our rule. \n \n \n5.5 GRAIN DETECTION \n \nFig 10a shows the resultant final image for the example in Fig. 9, three missing GBs have been  completed \n"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "9, three missing GBs have been  completed",
+    "paragraph": "TJs(Ο) \nProc. SPIE Vol. 4735\n110\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \n \n(a) \n(b) \n \n(c) \n(d) \n \nFig. 9 (a) Binary noise map (b) Noise map superimposed on original image (c) TJs detected (both true and false TJs) (d) False TJs \nomitted by use of the noise map and our rule. \n \n \n5.5 GRAIN DETECTION \n \nFig 10a shows the resultant final image for the example in Fig. 9, three missing GBs have been  completed \n"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "10b shows the final image with the EBSP points selected (noted by =) in the center of each grain; as \nseen, results are perfect and only one EBSP probe point per grain is needed.",
+    "paragraph": "(arrows). Fig. 10b shows the final image with the EBSP points selected (noted by =) in the center of each grain; as \nseen, results are perfect and only one EBSP probe point per grain is needed. \n \n \n \n \n \n(a) \n(b) \n                  \n                 Fig. 10 (a) Completed Skeleton image (b) Grain centers detected (=) \nProc. SPIE Vol. 4735\n111\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \nACKNOWLEDGEMENTS \n \nThe as"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "(a) \n(b) \n                  \n                 Fig.",
+    "paragraph": "(arrows). Fig. 10b shows the final image with the EBSP points selected (noted by =) in the center of each grain; as \nseen, results are perfect and only one EBSP probe point per grain is needed. \n \n \n \n \n \n(a) \n(b) \n                  \n                 Fig. 10 (a) Completed Skeleton image (b) Grain centers detected (=) \nProc. SPIE Vol. 4735\n111\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \nACKNOWLEDGEMENTS \n \nThe as"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "10 (a) Completed Skeleton image (b) Grain centers detected (=) \nProc.",
+    "paragraph": "(arrows). Fig. 10b shows the final image with the EBSP points selected (noted by =) in the center of each grain; as \nseen, results are perfect and only one EBSP probe point per grain is needed. \n \n \n \n \n \n(a) \n(b) \n                  \n                 Fig. 10 (a) Completed Skeleton image (b) Grain centers detected (=) \nProc. SPIE Vol. 4735\n111\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \nACKNOWLEDGEMENTS \n \nThe as"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "4735\n111\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \nACKNOWLEDGEMENTS \n \nThe as",
+    "paragraph": "(arrows). Fig. 10b shows the final image with the EBSP points selected (noted by =) in the center of each grain; as \nseen, results are perfect and only one EBSP probe point per grain is needed. \n \n \n \n \n \n(a) \n(b) \n                  \n                 Fig. 10 (a) Completed Skeleton image (b) Grain centers detected (=) \nProc. SPIE Vol. 4735\n111\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n \n \nACKNOWLEDGEMENTS \n \nThe as"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "sistance of Mazin Albahkali is gratefully acknowledge.",
+    "paragraph": "sistance of Mazin Albahkali is gratefully acknowledge. This work was supported by the MRSEC \nprogram of the National Science Foundation under Award Number DMR-0079996. \n \n \n \nREFERENCES \n \n1. B. L. Adams and T. Olson, \"The Mesostructure-Properties Linkage in Polycrystals\", Progress in Materials \nScience, Vol. 43 (1998) pp.1-87. \n2. D. Casasent, Linsen Chen and A. Talukder \"Detection of bands in backscatter microscopy images using new \nHough transform techniques,’ Proc. SPIE, vol. 389, paper 10 (April 1998, "
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "This work was supported by the MRSEC \nprogram of the National Science Foundation under Award Number DMR-0079996.",
+    "paragraph": "sistance of Mazin Albahkali is gratefully acknowledge. This work was supported by the MRSEC \nprogram of the National Science Foundation under Award Number DMR-0079996. \n \n \n \nREFERENCES \n \n1. B. L. Adams and T. Olson, \"The Mesostructure-Properties Linkage in Polycrystals\", Progress in Materials \nScience, Vol. 43 (1998) pp.1-87. \n2. D. Casasent, Linsen Chen and A. Talukder \"Detection of bands in backscatter microscopy images using new \nHough transform techniques,’ Proc. SPIE, vol. 389, paper 10 (April 1998, "
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "B. L. Adams and T. Olson, \"The Mesostructure-Properties Linkage in Polycrystals\", Progress in Materials \nScience, Vol.",
+    "paragraph": "sistance of Mazin Albahkali is gratefully acknowledge. This work was supported by the MRSEC \nprogram of the National Science Foundation under Award Number DMR-0079996. \n \n \n \nREFERENCES \n \n1. B. L. Adams and T. Olson, \"The Mesostructure-Properties Linkage in Polycrystals\", Progress in Materials \nScience, Vol. 43 (1998) pp.1-87. \n2. D. Casasent, Linsen Chen and A. Talukder \"Detection of bands in backscatter microscopy images using new \nHough transform techniques,’ Proc. SPIE, vol. 389, paper 10 (April 1998, "
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "D. Casasent, Linsen Chen and A. Talukder \"Detection of bands in backscatter microscopy images using new \nHough transform techniques,’ Proc.",
+    "paragraph": "sistance of Mazin Albahkali is gratefully acknowledge. This work was supported by the MRSEC \nprogram of the National Science Foundation under Award Number DMR-0079996. \n \n \n \nREFERENCES \n \n1. B. L. Adams and T. Olson, \"The Mesostructure-Properties Linkage in Polycrystals\", Progress in Materials \nScience, Vol. 43 (1998) pp.1-87. \n2. D. Casasent, Linsen Chen and A. Talukder \"Detection of bands in backscatter microscopy images using new \nHough transform techniques,’ Proc. SPIE, vol. 389, paper 10 (April 1998, "
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "389, paper 10 (April 1998,",
+    "paragraph": "sistance of Mazin Albahkali is gratefully acknowledge. This work was supported by the MRSEC \nprogram of the National Science Foundation under Award Number DMR-0079996. \n \n \n \nREFERENCES \n \n1. B. L. Adams and T. Olson, \"The Mesostructure-Properties Linkage in Polycrystals\", Progress in Materials \nScience, Vol. 43 (1998) pp.1-87. \n2. D. Casasent, Linsen Chen and A. Talukder \"Detection of bands in backscatter microscopy images using new \nHough transform techniques,’ Proc. SPIE, vol. 389, paper 10 (April 1998, "
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "Bauer, D. Casasent, A. Morawiec, S. Ozdemir and A. Talukder, \"Mapping the \nMesoscale Interface Structure in Polycrystalline Materials,\" Met.",
+    "paragraph": "Orlando, FL). \n3. C. T. Wu, B.L. Adams, C.L. Bauer, D. Casasent, A. Morawiec, S. Ozdemir and A. Talukder, \"Mapping the \nMesoscale Interface Structure in Polycrystalline Materials,\" Met. Trans. 1999, submitted. \n4.  A. Talukder and D. Casasent, \"Multiscale Gabor Wavelet Fusion for Edge Detection in Microscopy Images,\" \n(Invited paper), Proc. SPIE: Wavelet Applications, vol. 3391 (1998) 336-347. \n5.  S. Ozdemir and D. Casasent, \"Scale-Space Median and Gabor Filtering for Boundary Detection in Electron \nMicros"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "A. Talukder and D. Casasent, \"Multiscale Gabor Wavelet Fusion for Edge Detection in Microscopy Images,\" \n(Invited paper), Proc.",
+    "paragraph": "Orlando, FL). \n3. C. T. Wu, B.L. Adams, C.L. Bauer, D. Casasent, A. Morawiec, S. Ozdemir and A. Talukder, \"Mapping the \nMesoscale Interface Structure in Polycrystalline Materials,\" Met. Trans. 1999, submitted. \n4.  A. Talukder and D. Casasent, \"Multiscale Gabor Wavelet Fusion for Edge Detection in Microscopy Images,\" \n(Invited paper), Proc. SPIE: Wavelet Applications, vol. 3391 (1998) 336-347. \n5.  S. Ozdemir and D. Casasent, \"Scale-Space Median and Gabor Filtering for Boundary Detection in Electron \nMicros"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "SPIE: Wavelet Applications, vol.",
+    "paragraph": "Orlando, FL). \n3. C. T. Wu, B.L. Adams, C.L. Bauer, D. Casasent, A. Morawiec, S. Ozdemir and A. Talukder, \"Mapping the \nMesoscale Interface Structure in Polycrystalline Materials,\" Met. Trans. 1999, submitted. \n4.  A. Talukder and D. Casasent, \"Multiscale Gabor Wavelet Fusion for Edge Detection in Microscopy Images,\" \n(Invited paper), Proc. SPIE: Wavelet Applications, vol. 3391 (1998) 336-347. \n5.  S. Ozdemir and D. Casasent, \"Scale-Space Median and Gabor Filtering for Boundary Detection in Electron \nMicros"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "S. Ozdemir and D. Casasent, \"Scale-Space Median and Gabor Filtering for Boundary Detection in Electron \nMicros",
+    "paragraph": "Orlando, FL). \n3. C. T. Wu, B.L. Adams, C.L. Bauer, D. Casasent, A. Morawiec, S. Ozdemir and A. Talukder, \"Mapping the \nMesoscale Interface Structure in Polycrystalline Materials,\" Met. Trans. 1999, submitted. \n4.  A. Talukder and D. Casasent, \"Multiscale Gabor Wavelet Fusion for Edge Detection in Microscopy Images,\" \n(Invited paper), Proc. SPIE: Wavelet Applications, vol. 3391 (1998) 336-347. \n5.  S. Ozdemir and D. Casasent, \"Scale-Space Median and Gabor Filtering for Boundary Detection in Electron \nMicros"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "SPIE Vol.3715 (1999).",
+    "paragraph": "copy Images\", Proc. SPIE Vol.3715 (1999).  \n6. J. P.Kapur, D.Casasent, ‘Geometric Correction of SEM images’, Proc. SPIE vol. 4044, #23, April 2000. \n7. S. Mahadevan and D. Casasent, “Detection of triple junction parameters in microscope images”, Proc. SPIE, \nVol. 4387 (2001), pp. 204-214 \n \nProc. SPIE Vol. 4735\n112\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "J. P.Kapur, D.Casasent, ‘Geometric Correction of SEM images’, Proc.",
+    "paragraph": "copy Images\", Proc. SPIE Vol.3715 (1999).  \n6. J. P.Kapur, D.Casasent, ‘Geometric Correction of SEM images’, Proc. SPIE vol. 4044, #23, April 2000. \n7. S. Mahadevan and D. Casasent, “Detection of triple junction parameters in microscope images”, Proc. SPIE, \nVol. 4387 (2001), pp. 204-214 \n \nProc. SPIE Vol. 4735\n112\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "4044, #23, April 2000.",
+    "paragraph": "copy Images\", Proc. SPIE Vol.3715 (1999).  \n6. J. P.Kapur, D.Casasent, ‘Geometric Correction of SEM images’, Proc. SPIE vol. 4044, #23, April 2000. \n7. S. Mahadevan and D. Casasent, “Detection of triple junction parameters in microscope images”, Proc. SPIE, \nVol. 4387 (2001), pp. 204-214 \n \nProc. SPIE Vol. 4735\n112\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "S. Mahadevan and D. Casasent, “Detection of triple junction parameters in microscope images”, Proc.",
+    "paragraph": "copy Images\", Proc. SPIE Vol.3715 (1999).  \n6. J. P.Kapur, D.Casasent, ‘Geometric Correction of SEM images’, Proc. SPIE vol. 4044, #23, April 2000. \n7. S. Mahadevan and D. Casasent, “Detection of triple junction parameters in microscope images”, Proc. SPIE, \nVol. 4387 (2001), pp. 204-214 \n \nProc. SPIE Vol. 4735\n112\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n"
+  },
+  {
+    "title": "F:\\paper\\downloads\\_lt_title_gt_Detection of sample parameters in secondary electron microscope ima",
+    "content": "4735\n112\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx",
+    "paragraph": "copy Images\", Proc. SPIE Vol.3715 (1999).  \n6. J. P.Kapur, D.Casasent, ‘Geometric Correction of SEM images’, Proc. SPIE vol. 4044, #23, April 2000. \n7. S. Mahadevan and D. Casasent, “Detection of triple junction parameters in microscope images”, Proc. SPIE, \nVol. 4387 (2001), pp. 204-214 \n \nProc. SPIE Vol. 4735\n112\nDownloaded From: http://proceedings.spiedigitallibrary.org/ on 06/24/2016 Terms of Use: http://spiedigitallibrary.org/ss/TermsOfUse.aspx\n"
+  }
+]
