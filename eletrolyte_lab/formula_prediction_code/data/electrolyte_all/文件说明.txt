@@ -1,0 +1,6 @@
+electrolyte_all_backup1：拼接后没有做任何处理。
+electrolyte_all_backup2：删除了单位列，将Paper列分成了Journal, Year, Title三列。
+mol_info_backup1：通过pubchem的api进行分子全称检索的到分子的Name, foumula, Smiles, Weight。
+electrolyte_all_backup3：将分子名称替换成了iupac_name。
+mol_info_backup2：去掉了重复分子后保留下来的行。
+electrolyte_all_backup4：将电解液组成转化成摩尔比。
