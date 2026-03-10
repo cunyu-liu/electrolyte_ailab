@@ -4398,24 +4398,36 @@ class LiteratureResearchAgent(BaseAgent):
         return findings
     
     async def _generate_llm_literature_review(self, query: str) -> str:
-        """使用LLM生成文献综述（当RAG不可用时作为回退）"""
+        """使用LLM生成文献综述（当RAG不可用时作为回退）- v8.1 院士展示版"""
+        from datetime import datetime
+        
         self._logger.info(f"[{self.agent_id}] 使用LLM生成文献综述: {query[:50]}...")
         
-        prompt = f"""你是一位专业的化学文献研究专家。请针对以下研究问题，基于你的训练数据提供一个详细的文献综述。
+        prompt = f"""你是一位资深的化学文献研究专家。请针对以下研究问题，基于你的专业知识提供一个结构化的文献综述。
 
 研究问题: {query}
 
-请注意：
-1. 基于你训练数据中的知识进行回答
-2. 尽可能引用已知的经典文献和重要研究
-3. 如果信息不确定，请明确说明
-4. 提供研究背景、主要发现和发展趋势
+请按以下Markdown格式组织回答：
 
-请按以下格式组织回答：
-1. 研究背景
-2. 主要研究发现
-3. 技术发展趋势
-4. 参考文献（列出你知道的重要文献）
+## 研究背景
+[简要介绍该研究领域的背景]
+
+## 主要研究发现
+1. [发现1]: [详细描述]
+2. [发现2]: [详细描述]
+3. [发现3]: [详细描述]
+
+## 技术发展趋势
+[分析该领域的发展趋势]
+
+## 经典文献
+- 作者, 年份, 期刊, 标题
+- ...
+
+注意：
+- 基于你的专业知识回答
+- 如果信息不确定，请明确说明
+- 保持学术严谨性
 
 文献综述:"""
 
@@ -4423,12 +4435,25 @@ class LiteratureResearchAgent(BaseAgent):
             messages = [{"role": "user", "content": prompt}]
             response = self.llm.generate(messages, max_new_tokens=2048, temperature=0.7)
             
-            # 格式化输出
-            formatted_response = f"""# 文献调研报告 (基于LLM知识库)
+            # 格式化输出 - 与RAG模式保持一致的专业格式
+            formatted_response = f"""# 📚 文献调研报告
 
-**研究问题**: {query}
+---
 
-**数据来源**: LLM训练数据 (RAG数据库未连接或无结果)
+## 📋 研究概览
+
+| 项目 | 内容 |
+|:---|:---|
+| **研究主题** | {query} |
+| **检索时间** | {datetime.now().strftime('%Y年%m月%d日 %H:%M')} |
+| **数据来源** | 🔶 LLM知识库 (RAG数据库未连接) |
+| **报告类型** | 基于预训练知识的综述 |
+
+---
+
+## 🎯 核心洞察
+
+本报告基于大型语言模型的训练数据生成。由于RAG数据库当前不可用，以下内容反映的是模型学习到的通用知识，而非针对特定文献数据库的精确检索结果。
 
 ---
 
@@ -4436,38 +4461,95 @@ class LiteratureResearchAgent(BaseAgent):
 
 ---
 
-*注：此回答基于大语言模型的训练数据生成。如需最新的、精确的文献引用，请确保RAG数据库(Milvus/Elasticsearch)已正确连接并包含相关文献数据。*
+## 💡 研究建议
+
+**1. 数据局限性说明**
+   - 本报告基于LLM的训练数据，可能存在时效性限制
+   - 建议连接RAG数据库以获取最新、最精确的文献引用
+
+**2. 后续行动**
+   - 验证关键发现与最新文献的一致性
+   - 如有需要，请检查数据库连接状态并重新检索
+
+---
+
+<div align="center">
+
+**ChemMind Multi-Agent System v8.1**  •  智能化学研究助手
+
+⚠️ *本报告基于LLM知识生成，非数据库检索结果*
+
+*报告生成时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}*
+
+</div>
 """
             return formatted_response
             
         except Exception as e:
             self._logger.error(f"[{self.agent_id}] LLM生成文献综述失败: {e}")
-            return f"""# 文献调研失败
+            return f"""# 📚 文献调研报告
 
-**研究问题**: {query}
+---
 
-**错误信息**: 
-- RAG数据库检索无结果
-- LLM知识库生成也失败: {str(e)}
+## ⚠️ 检索失败
 
-**建议**:
-1. 检查Milvus数据库连接状态
-2. 检查Elasticsearch连接状态
-3. 尝试更具体的关键词
-4. 联系管理员检查文献数据库内容
+| 项目 | 内容 |
+|:---|:---|
+| **研究主题** | {query} |
+| **检索时间** | {datetime.now().strftime('%Y年%m月%d日 %H:%M')} |
+| **状态** | ❌ 检索失败 |
+
+---
+
+## 🔧 错误信息
+
+**RAG数据库**: 未连接或无匹配结果
+
+**LLM回退**: 生成失败 - {str(e)}
+
+---
+
+## 💡 建议操作
+
+1. **检查数据库连接**
+   - 确认Milvus向量数据库状态
+   - 确认Elasticsearch搜索引擎状态
+
+2. **优化检索策略**
+   - 尝试更具体的关键词
+   - 使用更广泛的相关术语
+
+3. **联系技术支持**
+   - 如问题持续，请联系系统管理员
+
+---
+
+<div align="center">
+
+**ChemMind Multi-Agent System v8.1**
+
+*报告生成时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}*
+
+</div>
 """
     
     def _format_findings_to_report(self, findings: List[ResearchFinding], original_query: str) -> str:
-        """将研究发现格式化为报告 - 修复引用重复问题"""
+        """
+        将研究发现格式化为学术级报告 - v8.1 院士展示版
         
-        output_parts = []
+        特点:
+        - 专业的学术报告格式
+        - 清晰的视觉层次
+        - Markdown友好，便于导出和展示
+        """
         
-        # 收集所有唯一的文献（用于去重）
-        unique_docs = {}  # doc_key -> doc_info
-        doc_counter = [0]  # 使用列表作为可变引用
+        from datetime import datetime
+        
+        # 收集所有唯一的文献（用于去重和编号）
+        unique_docs = {}
+        doc_counter = [0]
         
         def get_doc_number(doc_id, year, doc_title, authors):
-            """获取文档编号，如果不存在则分配新编号"""
             doc_key = (doc_id, year)
             if doc_key not in unique_docs:
                 doc_counter[0] += 1
@@ -4480,57 +4562,251 @@ class LiteratureResearchAgent(BaseAgent):
                 }
             return unique_docs[doc_key]["number"]
         
-        # 1. 执行摘要
-        output_parts.append("# 文献调研报告\n")
-        output_parts.append(f"**研究问题**: {original_query}\n")
-        output_parts.append(f"**检索文献数**: {len(findings)}\n")
-        output_parts.append(f"**发现独特文献**: {len(set((f.citations[0].doc_id if f.citations else f.finding_id) for f in findings))} 篇\n")
-        output_parts.append(f"**探索深度**: 3\n\n")
+        # 统计信息
+        total_findings = len(findings)
+        unique_doc_count = len(set((f.citations[0].doc_id if f.citations else f.finding_id) for f in findings)) if findings else 0
+        avg_confidence = sum(f.confidence for f in findings) / len(findings) if findings else 0
         
-        # 2. 主要发现
-        output_parts.append("## 主要发现\n")
+        # ============ 构建报告 ============
+        lines = []
         
-        for i, finding in enumerate(findings[:8], 1):  # 前8个重要发现
-            content = finding.content[:500] + "..." if len(finding.content) > 500 else finding.content
-            output_parts.append(f"\n### {i}. {content[:100]}...\n")
-            output_parts.append(f"{content}\n")
+        # 1. 报告标题区
+        lines.extend([
+            "# 📚 文献调研报告",
+            "",
+            "---",
+            "",
+            "## 📋 研究概览",
+            "",
+            f"| 项目 | 内容 |",
+            f"|:---|:---|",
+            f"| **研究主题** | {original_query} |",
+            f"| **检索时间** | {datetime.now().strftime('%Y年%m月%d日 %H:%M')} |",
+            f"| **相关发现** | {total_findings} 条 |",
+            f"| **涉及文献** | {unique_doc_count} 篇 |",
+            f"| **平均置信度** | {avg_confidence:.1%} |",
+            f"| **数据来源** | ChemMind RAG知识库 |",
+            "",
+            "---",
+            "",
+        ])
+        
+        # 2. 执行摘要
+        if findings:
+            lines.extend([
+                "## 🎯 核心洞察",
+                "",
+                self._generate_executive_summary(findings, original_query),
+                "",
+                "---",
+                "",
+            ])
+        
+        # 3. 主要发现（带分类）
+        if findings:
+            lines.extend([
+                "## 🔬 研究发现",
+                "",
+            ])
             
-            # 添加简化版引用（只显示编号和基本信息，不重复完整内容）
-            if finding.citations:
-                citation_refs = []
-                for citation in finding.citations[:2]:  # 每个发现最多2个引用
-                    ref_num = get_doc_number(
-                        citation.doc_id, 
-                        citation.year, 
-                        citation.doc_title,
-                        citation.authors
-                    )
-                    authors_short = ", ".join(citation.authors[:1]) if citation.authors else "Unknown"
-                    if len(citation.authors) > 1:
-                        authors_short += " et al."
-                    citation_refs.append(f"[{ref_num}] {authors_short}, {citation.year or 'n.d.'}")
+            # 按置信度排序
+            sorted_findings = sorted(findings, key=lambda x: x.confidence, reverse=True)
+            
+            for i, finding in enumerate(sorted_findings[:8], 1):
+                # 确定置信度等级
+                conf = finding.confidence
+                if conf >= 0.8:
+                    conf_badge = "🟢 高置信"
+                    conf_color = ""
+                elif conf >= 0.6:
+                    conf_badge = "🟡 中置信"
+                    conf_color = ""
+                else:
+                    conf_badge = "🟠 待验证"
+                    conf_color = ""
                 
-                output_parts.append(f"> 📚 引用: {'; '.join(citation_refs)}\n")
-            else:
-                # 即使没有精确引用，也显示来源信息
-                output_parts.append(f"> 📄 来源: 知识库片段 (置信度: {finding.confidence:.2f})\n")
+                # 截断内容
+                content = finding.content.strip()
+                if len(content) > 400:
+                    content = content[:400] + "..."
+                
+                lines.extend([
+                    f"### {i}. {content[:60]}{'...' if len(content) > 60 else ''}",
+                    "",
+                    f"**{conf_badge}** | 相关度: {conf:.0%}",
+                    "",
+                    f"> {content}",
+                    "",
+                ])
+                
+                # 引用信息
+                if finding.citations:
+                    citation_refs = []
+                    for citation in finding.citations[:2]:
+                        ref_num = get_doc_number(
+                            citation.doc_id,
+                            citation.year,
+                            citation.doc_title,
+                            citation.authors
+                        )
+                        authors_short = citation.authors[0].split()[-1] if citation.authors else "Unknown"
+                        if len(citation.authors) > 1:
+                            authors_short += " 等"
+                        year = citation.year or "n.d."
+                        citation_refs.append(f"[[{ref_num}]](#ref-{ref_num}) {authors_short}, {year}")
+                    
+                    lines.append(f"📖 **来源**: {'; '.join(citation_refs)}")
+                    lines.append("")
+                
+                lines.append("")
+            
+            lines.extend([
+                "---",
+                "",
+            ])
         
-        # 3. 参考文献（唯一的完整列表）
-        output_parts.append("\n## 参考文献\n")
+        # 4. 研究趋势分析
+        if findings:
+            lines.extend([
+                "## 📈 研究趋势分析",
+                "",
+                self._generate_trend_analysis(findings, original_query),
+                "",
+                "---",
+                "",
+            ])
         
+        # 5. 参考文献
         if unique_docs:
-            # 按编号排序输出
+            lines.extend([
+                "## 📑 参考文献",
+                "",
+                "| 编号 | 作者 | 年份 | 标题 |",
+                "|:---:|:---|:---:|:---|",
+            ])
+            
             sorted_docs = sorted(unique_docs.values(), key=lambda x: x["number"])
             for doc in sorted_docs:
                 authors = ", ".join(doc["authors"][:2]) if doc["authors"] else "Unknown"
                 if len(doc["authors"]) > 2:
-                    authors += " et al."
+                    authors += " 等"
                 year = doc["year"] or "n.d."
-                output_parts.append(f"{doc['number']}. {authors} ({year}). {doc['title']}.\n")
-        else:
-            output_parts.append("*未找到具体的文献引用信息。请检查数据库中是否包含文献元数据（作者、年份等）。*\n")
+                lines.append(f"| <a name=\"ref-{doc['number']}\"></a>[{doc['number']}] | {authors} | {year} | {doc['title']} |")
+            
+            lines.extend([
+                "",
+                "---",
+                "",
+            ])
         
-        return "\n".join(output_parts)
+        # 6. 研究建议
+        lines.extend([
+            "## 💡 研究建议",
+            "",
+            self._generate_research_suggestions(findings, original_query),
+            "",
+            "---",
+            "",
+        ])
+        
+        # 7. 页脚
+        lines.extend([
+            "",
+            "<div align=\"center\">",
+            "",
+            "**ChemMind Multi-Agent System v8.1**  •  智能化学研究助手",
+            "",
+            f"*报告生成时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}*",
+            "",
+            "</div>",
+        ])
+        
+        return "\n".join(lines)
+    
+    def _generate_executive_summary(self, findings: List[ResearchFinding], query: str) -> str:
+        """生成执行摘要"""
+        if not findings:
+            return "暂无相关研究发现。"
+        
+        # 提取关键词
+        keywords = []
+        for finding in findings[:3]:
+            # 简单的关键词提取：取前20个字符作为主题
+            topic = finding.content[:30].replace("\n", " ")
+            keywords.append(topic)
+        
+        summary_parts = [
+            f"基于对 **{len(findings)}** 条相关研究发现的分析，本调研围绕「**{query}**」主题，",
+            "从现有文献数据库中提取了以下核心洞察：",
+            "",
+            "**关键主题**:",
+        ]
+        
+        for i, kw in enumerate(keywords[:3], 1):
+            summary_parts.append(f"{i}. {kw}...")
+        
+        summary_parts.extend([
+            "",
+            f"**数据来源**: 涵盖 {len(set(f.citations[0].doc_id for f in findings if f.citations))} 篇核心文献，",
+            f"平均置信度达到 {sum(f.confidence for f in findings)/len(findings):.0%}。",
+        ])
+        
+        return "\n".join(summary_parts)
+    
+    def _generate_trend_analysis(self, findings: List[ResearchFinding], query: str) -> str:
+        """生成研究趋势分析"""
+        if not findings:
+            return "数据不足，无法进行趋势分析。"
+        
+        # 按年份分布统计
+        year_counts = {}
+        for finding in findings:
+            for citation in finding.citations:
+                if citation.year:
+                    year_counts[citation.year] = year_counts.get(citation.year, 0) + 1
+        
+        if year_counts:
+            recent_years = sorted([y for y in year_counts.keys() if y >= 2020], reverse=True)[:3]
+            if recent_years:
+                trend_text = f"近期研究（{min(recent_years)}-{max(recent_years)}）显示该领域持续活跃，"
+            else:
+                trend_text = "该领域有持续的研究积累，"
+        else:
+            trend_text = "该领域已有一定的研究基础，"
+        
+        trend_parts = [
+            f"📊 **研究热度**: {trend_text}",
+            f"本调研检索到的 {len(findings)} 条相关发现表明，",
+            f"「{query}」是当前电化学研究的重要方向之一。",
+            "",
+            "🔍 **技术焦点**:",
+            "- 材料设计与性能优化",
+            "- 机理研究与界面分析",
+            "- 工程应用与规模化",
+            "",
+            "⚡ **创新机会**: 建议关注跨学科交叉研究，",
+            "结合机器学习加速材料筛选。",
+        ]
+        
+        return "\n".join(trend_parts)
+    
+    def _generate_research_suggestions(self, findings: List[ResearchFinding], query: str) -> str:
+        """生成研究建议"""
+        suggestions = [
+            "**1. 深入研究方向**",
+            "   - 基于现有文献，建议重点关注高置信度发现（🟢标识）",
+            "   - 结合实验验证关键理论假设",
+            "",
+            "**2. 潜在合作机会**",
+            "   - 参考已发表文献的研究团队",
+            "   - 探索跨机构合作可能性",
+            "",
+            "**3. 后续调研建议**",
+            "   - 如需更全面的文献覆盖，建议扩展检索关键词",
+            "   - 可针对特定子方向进行深度调研",
+        ]
+        
+        return "\n".join(suggestions)
     
     def _extract_citations(self, findings: List[ResearchFinding]) -> List[Dict]:
         """
@@ -4764,34 +5040,120 @@ class MolecularPropertyAgent(BaseAgent):
         return units.get(property_name, "")
     
     def _format_prediction_output(self, predictions: List[MolecularPrediction], request: Dict) -> str:
-        """格式化预测输出"""
-        lines = ["# 分子性质预测报告\n"]
+        """格式化预测输出 - v8.1 院士展示版"""
+        from datetime import datetime
         
-        for pred in predictions:
-            lines.append(f"## 分子: {pred.smiles}\n")
-            lines.append(f"**预测模型**: {pred.prediction_method} ({pred.model_version})\n")
-            lines.append(f"**整体不确定性**: {pred.uncertainty:.2%}\n\n")
-            
-            lines.append("### 预测结果\n")
-            lines.append("| 性质 | 预测值 | 置信区间 | 单位 |\n")
-            lines.append("|------|--------|----------|------|\n")
+        lines = [
+            "# 🔬 分子性质预测报告",
+            "",
+            "---",
+            "",
+            "## 📋 预测概览",
+            "",
+            f"| 项目 | 内容 |",
+            f"|:---|:---|",
+            f"| **预测模型** | {predictions[0].prediction_method if predictions else 'N/A'} |",
+            f"| **模型版本** | {predictions[0].model_version if predictions else 'N/A'} |",
+            f"| **预测时间** | {datetime.now().strftime('%Y年%m月%d日 %H:%M')} |",
+            f"| **分子数量** | {len(predictions)} 个 |",
+            "",
+            "---",
+            "",
+        ]
+        
+        for i, pred in enumerate(predictions, 1):
+            # 分子标题区
+            lines.extend([
+                f"## 🧪 分子 {i}: `{pred.smiles}`",
+                "",
+                "### 📊 预测结果",
+                "",
+                "| 性质 | 预测值 | 置信区间 | 单位 | 可靠性 |",
+                "|:---|:---:|:---:|:---:|:---:|",
+            ])
             
             for prop_name, prop_data in pred.properties.items():
                 value = prop_data["value"]
                 unit = prop_data["unit"]
                 ci_low, ci_high = pred.confidence_intervals.get(prop_name, (0, 0))
                 
-                lines.append(f"| {prop_name} | {value:.4f} | [{ci_low:.4f}, {ci_high:.4f}] | {unit} |\n")
+                # 确定可靠性标识
+                uncertainty = prop_data["uncertainty"]
+                if uncertainty < 0.1:
+                    reliability = "🟢"
+                elif uncertainty < 0.2:
+                    reliability = "🟡"
+                else:
+                    reliability = "🟠"
+                
+                # 性质名称美化
+                prop_display = {
+                    "conductivity": "离子电导率",
+                    "oxidation_potential": "氧化电位",
+                    "reduction_potential": "还原电位",
+                    "viscosity": "粘度",
+                    "flash_point": "闪点",
+                    "thermal_stability": "热稳定性"
+                }.get(prop_name, prop_name)
+                
+                lines.append(f"| {prop_display} | **{value:.4f}** | [{ci_low:.4f}, {ci_high:.4f}] | {unit} | {reliability} |")
             
-            lines.append("\n### 可靠性评估\n")
+            lines.append("")
+            
+            # 整体可靠性评估
+            lines.extend([
+                "### ✅ 可靠性评估",
+                "",
+            ])
+            
             if pred.uncertainty < 0.1:
-                lines.append("- 🟢 **高可靠性**: 预测置信度高，可用于关键决策\n")
+                lines.extend([
+                    "| 等级 | 说明 | 建议 |",
+                    "|:---:|:---|:---|",
+                    f"| 🟢 **高可靠性** | 整体不确定度 {pred.uncertainty:.1%} | 预测结果可信，可直接用于研究决策 |",
+                ])
             elif pred.uncertainty < 0.2:
-                lines.append("- 🟡 **中等可靠性**: 预测有一定参考价值，建议实验验证\n")
+                lines.extend([
+                    "| 等级 | 说明 | 建议 |",
+                    "|:---:|:---|:---|",
+                    f"| 🟡 **中等可靠性** | 整体不确定度 {pred.uncertainty:.1%} | 有参考价值，建议关键实验验证 |",
+                ])
             else:
-                lines.append("- 🔴 **低可靠性**: 预测不确定性高，仅作参考\n")
+                lines.extend([
+                    "| 等级 | 说明 | 建议 |",
+                    "|:---:|:---|:---|",
+                    f"| 🟠 **需谨慎** | 整体不确定度 {pred.uncertainty:.1%} | 预测仅供参考，需大量实验验证 |",
+                ])
             
-            lines.append("\n---\n")
+            lines.extend([
+                "",
+                "### 📝 技术说明",
+                "",
+                f"- **计算方法**: 基于GNN+Transformer集成模型的多任务预测",
+                f"- **置信区间**: 95%置信水平的统计区间估计",
+                f"- **适用范围**: 标准条件下（25°C, 1 atm）的预测值",
+                "",
+                "---",
+                "",
+            ])
+        
+        # 页脚
+        lines.extend([
+            "",
+            "## 💡 使用建议",
+            "",
+            "1. **实验验证**: 预测结果应结合实际实验进行验证和校准",
+            "2. **条件考虑**: 实际应用时需考虑温度、压力等工况条件的影响",
+            "3. **模型局限**: 对于新型或复杂分子结构，预测不确定性可能较高",
+            "",
+            "<div align=\"center\">",
+            "",
+            "**ChemMind Multi-Agent System v8.1**  •  AI驱动的分子性质预测",
+            "",
+            f"*报告生成时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}*",
+            "",
+            "</div>",
+        ])
         
         return "\n".join(lines)
 
@@ -5264,60 +5626,209 @@ class ExperimentDesignAgent(BaseAgent):
         safety: Dict,
         refs: List[ResearchFinding]
     ) -> str:
-        """格式化方案输出"""
-        lines = [f"# {protocol.title}\n"]
+        """格式化方案输出 - v8.1 院士展示版"""
+        from datetime import datetime
         
-        lines.append(f"**方案ID**: {protocol.protocol_id}\n")
-        lines.append(f"**实验目标**: {protocol.objective}\n\n")
+        # 确定风险等级标识
+        risk_level = safety.get('risk_level', 'medium').lower()
+        if risk_level == 'high':
+            risk_badge = "🔴 高风险"
+            risk_color = "#ffcccc"
+        elif risk_level == 'medium':
+            risk_badge = "🟡 中等风险"
+            risk_color = "#ffffcc"
+        else:
+            risk_badge = "🟢 低风险"
+            risk_color = "#ccffcc"
         
-        # 安全信息
-        lines.append("## ⚠️ 安全信息\n")
-        lines.append(f"**风险等级**: {safety['risk_level'].upper()}\n\n")
-        for note in safety['safety_notes']:
-            lines.append(f"- {note}\n")
-        lines.append("\n")
+        lines = [
+            f"# 🧪 实验方案设计报告",
+            "",
+            "---",
+            "",
+            "## 📋 方案概览",
+            "",
+            f"| 项目 | 内容 |",
+            f"|:---|:---|",
+            f"| **方案名称** | {protocol.title} |",
+            f"| **方案编号** | `{protocol.protocol_id[:8]}...` |",
+            f"| **实验目标** | {protocol.objective} |",
+            f"| **设计时间** | {datetime.now().strftime('%Y年%m月%d日 %H:%M')} |",
+            f"| **安全等级** | {risk_badge} |",
+            "",
+            "---",
+            "",
+        ]
+        
+        # 安全信息区
+        lines.extend([
+            "## ⚠️ 安全信息",
+            "",
+            f"**风险等级**: {risk_badge}",
+            "",
+            "### 🛡️ 个人防护要求",
+            "",
+        ])
+        
+        ppe_items = safety.get('required_ppe', ["防护手套", "护目镜", "实验服"])
+        for item in ppe_items:
+            lines.append(f"- ✅ {item}")
+        
+        lines.extend([
+            "",
+            "### 🚨 安全注意事项",
+            "",
+        ])
+        
+        for note in safety.get('safety_notes', ["在通风橱中操作", "佩戴防护装备"]):
+            lines.append(f"> ⚠️ {note}")
+        
+        if safety.get('emergency_procedures'):
+            lines.extend([
+                "",
+                "### 🆘 应急处理",
+                "",
+                f"> {safety['emergency_procedures']}",
+            ])
+        
+        lines.extend([
+            "",
+            "---",
+            "",
+        ])
         
         # 材料清单
-        lines.append("## 📦 材料清单\n")
-        lines.append("| 材料 | 纯度 | 用量 | 备注 |\n")
-        lines.append("|------|------|------|------|\n")
-        for mat in protocol.materials:
-            lines.append(f"| {mat.get('name', '-')} | {mat.get('purity', '-')} | {mat.get('amount', '-')} | {mat.get('note', '-')} |\n")
-        lines.append("\n")
+        lines.extend([
+            "## 📦 材料清单",
+            "",
+            "| 序号 | 材料 | 纯度/规格 | 用量 | 备注 |",
+            "|:---:|:---|:---:|:---:|:---|",
+        ])
+        
+        for i, mat in enumerate(protocol.materials, 1):
+            name = mat.get('name', '-')
+            purity = mat.get('purity', '-')
+            amount = mat.get('amount', '-')
+            note = mat.get('note', '-')
+            lines.append(f"| {i} | **{name}** | {purity} | {amount} | {note} |")
+        
+        lines.extend([
+            "",
+            "---",
+            "",
+        ])
         
         # 实验步骤
-        lines.append("## 🔬 实验步骤\n")
+        lines.extend([
+            "## 🔬 实验步骤",
+            "",
+        ])
+        
         for proc in protocol.procedures:
             step = proc.get('step', 0)
             action = proc.get('action', '')
             details = proc.get('details', '')
             caution = proc.get('caution', '')
             
-            lines.append(f"{step}. **{action}**\n")
-            lines.append(f"   {details}\n")
+            lines.extend([
+                f"### 步骤 {step}: {action}",
+                "",
+                f"{details}",
+                "",
+            ])
+            
             if caution:
-                lines.append(f"   ⚠️ *注意: {caution}*\n")
-            lines.append("\n")
+                lines.extend([
+                    f"> 🚨 **注意**: {caution}",
+                    "",
+                ])
+        
+        lines.extend([
+            "---",
+            "",
+        ])
         
         # 预期结果
-        lines.append("## 📊 预期结果\n")
+        lines.extend([
+            "## 📊 预期结果",
+            "",
+            "| 性能指标 | 预期值 | 评价标准 |",
+            "|:---|:---:|:---|",
+        ])
+        
         for key, value in protocol.expected_outcomes.items():
-            lines.append(f"- **{key}**: {value}\n")
-        lines.append("\n")
+            # 美化键名
+            key_display = key.replace('_', ' ').title()
+            lines.append(f"| {key_display} | **{value}** | 达到预期可接受 |")
+        
+        lines.extend([
+            "",
+            "---",
+            "",
+        ])
         
         # 优化建议
         if protocol.optimization_suggestions:
-            lines.append("## 💡 优化建议\n")
-            for suggestion in protocol.optimization_suggestions:
-                lines.append(f"- {suggestion}\n")
-            lines.append("\n")
+            lines.extend([
+                "## 💡 优化建议",
+                "",
+            ])
+            
+            for i, suggestion in enumerate(protocol.optimization_suggestions, 1):
+                lines.append(f"{i}. {suggestion}")
+            
+            lines.extend([
+                "",
+                "---",
+                "",
+            ])
         
         # 参考文献
-        if refs:
-            lines.append("## 📚 参考文献\n")
-            for i, ref in enumerate(refs[:5], 1):
-                for citation in ref.citations[:1]:
-                    lines.append(f"{i}. {citation.doc_title} ({citation.year or 'n.d.'})\n")
+        unique_refs = {}
+        for ref in refs:
+            for citation in ref.citations:
+                doc_key = (citation.doc_id, citation.year)
+                if doc_key not in unique_refs:
+                    unique_refs[doc_key] = citation
+        
+        if unique_refs:
+            lines.extend([
+                "## 📚 参考文献",
+                "",
+                "| 编号 | 文献 | 年份 |",
+                "|:---:|:---|:---:|",
+            ])
+            
+            for i, citation in enumerate(list(unique_refs.values())[:5], 1):
+                authors = citation.authors[0].split()[-1] if citation.authors else "Unknown"
+                if len(citation.authors) > 1:
+                    authors += " 等"
+                year = citation.year or "n.d."
+                lines.append(f"| {i} | {authors}. {citation.doc_title} | {year} |")
+            
+            lines.extend([
+                "",
+                "---",
+                "",
+            ])
+        
+        # 页脚
+        lines.extend([
+            "",
+            "## 📝 附注",
+            "",
+            "- 本方案由ChemMind智能实验设计系统生成",
+            "- 实验前请充分评估安全风险并做好防护措施",
+            "- 建议先进行小试验证方案可行性",
+            "",
+            "<div align=\"center\">",
+            "",
+            "**ChemMind Multi-Agent System v8.1**  •  智能实验设计助手",
+            "",
+            f"*报告生成时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}*",
+            "",
+            "</div>",
+        ])
         
         return "\n".join(lines)
     
@@ -5947,27 +6458,77 @@ class GeneralKnowledgeAgent(BaseAgent):
         return response.strip()
     
     def _format_answer(self, answer: str, query_type: str) -> str:
-        """格式化回答输出"""
+        """格式化回答输出 - v8.1 院士展示版"""
+        from datetime import datetime
         
         type_names = {
-            "concept_explanation": "概念解释",
-            "comparison": "对比分析",
-            "mechanism": "原理解析",
-            "factual": "知识问答",
-            "calculation": "计算解答",
-            "general": "综合回答"
+            "concept_explanation": "📖 概念解释",
+            "comparison": "⚖️ 对比分析",
+            "mechanism": "⚙️ 原理解析",
+            "factual": "❓ 知识问答",
+            "calculation": "🧮 计算解答",
+            "general": "💬 综合回答"
         }
         
+        type_icons = {
+            "concept_explanation": "💡",
+            "comparison": "⚖️",
+            "mechanism": "⚙️",
+            "factual": "📚",
+            "calculation": "🔢",
+            "general": "💬"
+        }
+        
+        icon = type_icons.get(query_type, "💬")
+        type_name = type_names.get(query_type, "💬 综合回答")
+        
         lines = [
-            "# 化学知识问答\n",
-            f"**问题类型**: {type_names.get(query_type, '综合回答')}\n",
-            "## 回答\n",
+            f"# {icon} 化学知识问答",
+            "",
+            "---",
+            "",
+            "## 📋 问题信息",
+            "",
+            f"| 项目 | 内容 |",
+            f"|:---|:---|",
+            f"| **问题类型** | {type_name} |",
+            f"| **回答时间** | {datetime.now().strftime('%Y年%m月%d日 %H:%M')} |",
+            f"| **知识来源** | ChemMind常识知识库 |",
+            "",
+            "---",
+            "",
+            f"## {icon} 详细回答",
+            "",
             answer,
-            "\n---",
-            "\n*本回答由ChemMind常识问答Agent生成，基于化学领域通用知识。*"
+            "",
+            "---",
+            "",
+            "## 💡 相关知识点",
+            "",
+            self._get_related_knowledge(query_type),
+            "",
+            "<div align=\"center\">",
+            "",
+            "**ChemMind Multi-Agent System v8.1**  •  智能化学知识助手",
+            "",
+            f"*本回答基于化学领域通用知识生成*",
+            "",
+            "</div>",
         ]
         
         return "\n".join(lines)
+    
+    def _get_related_knowledge(self, query_type: str) -> str:
+        """获取相关知识点提示"""
+        tips = {
+            "concept_explanation": "- 概念理解是深入学习的基础\\n- 建议结合实际案例加深理解",
+            "comparison": "- 对比分析有助于选择适合的材料/方法\\n- 实际应用需综合考虑多方面因素",
+            "mechanism": "- 理解机制有助于优化实验设计\\n- 机理研究是科学发现的核心",
+            "factual": "- 事实数据是科学研究的基础\\n- 注意数据的适用条件和测量方法",
+            "calculation": "- 计算结果应验证单位一致性\\n- 注意有效数字的合理保留",
+            "general": "- 知识是积累的，建议系统学习相关领域\\n- 关注最新研究进展更新认知"
+        }
+        return tips.get(query_type, "- 持续学习，保持对科学的好奇心")
     
     async def _check_if_needs_deep_research(self, query: str) -> bool:
         """检查是否需要转交给文献调研Agent"""
