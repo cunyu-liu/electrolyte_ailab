@@ -52,6 +52,24 @@ try:
     ORJSON_AVAILABLE = True
 except ImportError:
     ORJSON_AVAILABLE = False
+# ==================== v8.1 新增导入 ====================
+from typing import TypeVar, Generic
+from collections import deque
+import unicodedata
+
+# 尝试导入LSH用于语义缓存
+try:
+    from datasketch import MinHash, MinHashLSH
+    DATASKETCH_AVAILABLE = True
+except ImportError:
+    DATASKETCH_AVAILABLE = False
+
+# 类型定义
+T = TypeVar('T')
+QueryType = Enum('QueryType', ['FACTUAL', 'ANALYTICAL', 'EXPLORATORY'])
+WorkflowState = Enum('WorkflowState', ['CREATED', 'DISPATCHED', 'RUNNING', 'QC', 'COMPLETED', 'FAILED'])
+# ====================================================
+
 # ====================================================
 
 # ==================== DeepSeek API 配置 ====================
@@ -109,11 +127,57 @@ MILVUS_TEXT_FIELD = "content"
 ES_HOST = "http://127.0.0.1:9200"
 ES_INDEX = "electrolyte_papers_index"
 
+
+# ==================== v8.1 新增配置 ====================
+# MessageBus 配置
+MB_PARTITION_TOPICS = ["literature", "property", "design", "system"]
+MB_QC_PRIORITY_WEIGHT = 3
+MB_BACKPRESSURE_THRESHOLD = 50
+MB_WFQ_ENABLED = True
+
+# SharedMemory 配置
+SM_DELTA_SNAPSHOT_INTERVAL = 10
+SM_HOT_DATA_CACHE_SIZE = 100
+SM_MERKLE_TREE_ENABLED = True
+
+# LLM Service 配置
+LLM_ADAPTIVE_BATCH_ENABLED = True
+LLM_SEMANTIC_CACHE_ENABLED = True
+LLM_CACHE_SIMILARITY_THRESHOLD = 0.95
+LLM_DEBOUNCE_WINDOW_MS = 50
+LLM_MAX_BATCH_SIZE = 32
+
+# RAG Service 配置
+RAG_ADAPTIVE_WEIGHTS_ENABLED = True
+RAG_CASCADE_RERANK_ENABLED = True
+RAG_EARLY_EXIT_THRESHOLD = 0.5
+RAG_MMR_LAMBDA = 0.3
+RAG_INFORMATION_GAIN_THRESHOLD = 0.1
+
+# Agent 配置
+AGENT_REACT_PLUS_PLUS_ENABLED = True
+AGENT_CAPABILITY_PROFILING_ENABLED = True
+AGENT_STRUCTURED_REFLECTION_ENABLED = True
+AGENT_NEGOTIATION_ENABLED = False
+
+# Orchestrator 配置
+ORCH_HIERARCHICAL_CLASSIFICATION_ENABLED = True
+ORCH_PARALLEL_SUBTASK_ENABLED = True
+ORCH_NONBLOCKING_QC_ENABLED = True
+
+# SafetyGuard 配置
+SAFETY_CONTEXT_AWARE_ENABLED = True
+SAFETY_ADVERSARIAL_DETECTION_ENABLED = True
+
+# Observability 配置
+OBS_TRACING_ENABLED = True
+OBS_METRICS_ENABLED = True
+# ====================================================
 # 检索参数
 SEARCH_TOP_K = 100
-RERANK_TOP_K = 15
-MAX_DEEP_RESEARCH_DEPTH = 4
-MAX_DEEP_RESEARCH_BREADTH = 5
+RERANK_TOP_K = 5
+MAX_DEEP_RESEARCH_DEPTH = 2
+MAX_DEEP_RESEARCH_BREADTH = 3
 SIMILARITY_THRESHOLD = 0.75
 
 # ReAct循环参数
@@ -196,6 +260,56 @@ class LRUCache:
         self._access_order.append(key)
 
 
+
+
+# ==============================================================================
+# v8.1 新增: Trie树 - 用于快速关键词匹配
+# ==============================================================================
+
+class TrieNode:
+    """Trie树节点"""
+    def __init__(self):
+        self.children: Dict[str, 'TrieNode'] = {}
+        self.is_end = False
+        self.value: Optional[Any] = None
+
+
+class Trie:
+    """Trie树 - 用于分层分类器第一阶段零延迟匹配"""
+    
+    def __init__(self):
+        self.root = TrieNode()
+    
+    def insert(self, word: str, value: Any):
+        """插入单词"""
+        node = self.root
+        for char in word.lower():
+            if char not in node.children:
+                node.children[char] = TrieNode()
+            node = node.children[char]
+        node.is_end = True
+        node.value = value
+    
+    def search(self, text: str) -> List[Tuple[str, Any]]:
+        """搜索文本中所有匹配的关键词"""
+        results = []
+        text_lower = text.lower()
+        
+        for i in range(len(text_lower)):
+            node = self.root
+            matched = ""
+            for j in range(i, len(text_lower)):
+                char = text_lower[j]
+                if char not in node.children:
+                    break
+                node = node.children[char]
+                matched += char
+                if node.is_end:
+                    results.append((matched, node.value))
+        
+        return results
+
+
 def fast_json_dumps(obj: Any) -> str:
     """快速JSON序列化"""
     if ORJSON_AVAILABLE:
@@ -213,6 +327,78 @@ def fast_json_loads(s: str) -> Any:
 # ==============================================================================
 # 1. 任务类型与领域定义
 # ==============================================================================
+
+
+
+# ==============================================================================
+# v8.1 新增: 追踪与观测工具
+# ==============================================================================
+
+class Tracer:
+    """
+    OpenTelemetry风格追踪器
+    
+    功能：
+    - Trace ID生成与传递
+    - Span记录
+    - 性能指标收集
+    """
+    
+    def __init__(self):
+        self._current_trace_id: Optional[str] = None
+        self._spans: List[Dict] = []
+        self._lock = asyncio.Lock()
+    
+    def start_trace(self, name: str) -> str:
+        """开始新的追踪"""
+        trace_id = str(uuid.uuid4())
+        self._current_trace_id = trace_id
+        self._spans = [{
+            "trace_id": trace_id,
+            "span_id": "root",
+            "name": name,
+            "start_time": time.time(),
+            "parent_id": None
+        }]
+        return trace_id
+    
+    def start_span(self, name: str, parent_id: str = "root") -> str:
+        """开始新的span"""
+        span_id = str(uuid.uuid4())[:8]
+        span = {
+            "trace_id": self._current_trace_id,
+            "span_id": span_id,
+            "name": name,
+            "start_time": time.time(),
+            "parent_id": parent_id
+        }
+        self._spans.append(span)
+        return span_id
+    
+    def end_span(self, span_id: str, attributes: Dict = None):
+        """结束span"""
+        for span in self._spans:
+            if span["span_id"] == span_id:
+                span["end_time"] = time.time()
+                span["duration_ms"] = (span["end_time"] - span["start_time"]) * 1000
+                if attributes:
+                    span["attributes"] = attributes
+                break
+    
+    def get_current_trace_id(self) -> Optional[str]:
+        return self._current_trace_id
+    
+    def get_spans(self) -> List[Dict]:
+        return self._spans.copy()
+
+
+# 全局追踪器
+_global_tracer = Tracer()
+
+
+def get_tracer() -> Tracer:
+    """获取全局追踪器"""
+    return _global_tracer
 
 class TaskType(Enum):
     """任务类型枚举 - Agent1用于分类"""
@@ -286,6 +472,62 @@ class AgentMessage:
     requires_response: bool = field(default=False, compare=False)
 
 
+
+
+# ==============================================================================
+# v8.1 新增: 核心数据结构
+# ==============================================================================
+
+@dataclass
+class Plan:
+    """执行计划 (ReAct++)"""
+    plan_id: str
+    task_id: str
+    steps: List[Dict]
+    dependency_graph: Dict[str, List[str]]
+    fallback_strategy: str
+    estimated_cost: float
+    
+    def get_executable_steps(self, completed_steps: Set[str]) -> List[Dict]:
+        """获取当前可执行的步骤"""
+        executable = []
+        for step in self.steps:
+            step_id = step["step_id"]
+            if step_id in completed_steps:
+                continue
+            deps = self.dependency_graph.get(step_id, [])
+            if all(d in completed_steps for d in deps):
+                executable.append(step)
+        return executable
+
+
+@dataclass
+class StructuredReflection:
+    """结构化反思"""
+    progress_assessment: str
+    errors_detected: List[Dict]
+    root_cause: str
+    correction_strategy: str
+    context_to_preserve: List[str]
+    confidence: float
+
+
+@dataclass
+class CapabilityVector:
+    """Agent能力向量"""
+    load: float
+    success_rate: float
+    avg_latency: float
+    specialty_match: float
+    
+    def compute_score(self, alpha: float = 0.4, beta: float = 0.3, 
+                      gamma: float = 0.2, delta: float = 0.1) -> float:
+        """计算综合评分"""
+        return (alpha * self.specialty_match + 
+                beta * (1 - self.load) + 
+                gamma * self.success_rate - 
+                delta * self.avg_latency)
+
 @dataclass
 class Citation:
     """精确引用信息 - 定位到句子级别"""
@@ -300,6 +542,9 @@ class Citation:
     quoted_text: str                    # 引用的原文
     surrounding_context: str            # 上下文
     relevance_score: float              # 相关性分数
+    # v8.1 新增
+    conflict_mark: Optional[str] = None  # 冲突标记
+    context_window_size: int = 2         # 上下文窗口大小
 
 
 @dataclass
@@ -314,6 +559,9 @@ class ResearchFinding:
     sub_queries: List[str]              # 子查询
     supporting_evidence: List[Dict]     # 支持证据
     contradictions: List[Dict]          # 矛盾点
+    # v8.1 新增
+    information_gain: float = 0.0       # 信息增益
+    embedding: Optional[List[float]] = None  # 内容embedding（用于循环检测）
 
 
 @dataclass
@@ -383,6 +631,10 @@ class AgentState:
     accumulated_knowledge: List[Dict]   # 积累的知识
     errors: List[Dict]                  # 错误记录
     reflections: List[str]              # 反思记录
+    # v8.1 新增
+    last_checkpoint: Optional[str] = None  # 上一个检查点
+    workflow_state: WorkflowState = WorkflowState.CREATED
+    capability_vector: Optional[List[float]] = None  # 能力向量
 
 
 # ==============================================================================
@@ -2512,299 +2764,6 @@ class EnhancedToolRegistry(ToolRegistry):
 # 6.6 Master Agent - 闭环实验流程控制器
 # ==============================================================================
 
-class MasterAgent(BaseAgent):
-    """
-    Master Agent - 实现完整的闭环实验流程 (OpenClaw 风格)
-    
-    工作流：
-    1. 解析用户需求 → api_parse_request
-    2. 确认参数并匹配文献 → api_confirm_parameters
-    3. 文献挖掘生成分子 → api_mine_data
-    4. 预测分子性质 → api_predict_properties
-    5. 生成配方 → api_generate_formula
-    6. 启动实验 → api_start_experiment
-    7. 评估结果 → api_evaluate_experiment
-    8. 优化迭代 → api_optimize_bayesian / api_trigger_redesign
-    
-    特点：
-    - 自主决策执行步骤
-    - 可调用所有后端 API
-    - 支持人机协作（关键步骤询问用户）
-    """
-    
-    def __init__(self, **kwargs):
-        # 使用增强版工具注册表
-        self.tool_registry = EnhancedToolRegistry()
-        
-        super().__init__(
-            agent_id="agent0_master",
-            system_prompt="""你是 Master Agent，电池电解液研发的智能助手。
-
-你的职责是帮助用户完成从需求到实验的完整流程：
-
-1. **解析需求** - 理解用户的自然语言描述
-2. **文献调研** - 检索相关研究文献
-3. **分子设计** - 生成候选分子结构
-4. **性质预测** - 预测分子电化学性质
-5. **配方生成** - 设计电解液配方
-6. **实验控制** - 启动和监控实验
-7. **结果评估** - 分析实验数据
-8. **优化迭代** - 基于结果改进配方
-
-工作流程原则：
-- 首先全面了解用户需求
-- 然后规划执行步骤
-- 每个关键步骤完成后向用户汇报
-- 根据用户反馈调整计划
-- 遇到不确定时主动询问用户
-
-你具备完整的后端 API 调用能力，可以直接操作实验系统。
-
-可用 API 工具：
-- api_parse_request: 解析用户需求
-- api_confirm_parameters: 确认参数并匹配文献
-- api_mine_data: 文献挖掘与分子生成
-- api_predict_properties: 预测分子性质
-- api_generate_formula: 生成电解液配方
-- api_start_experiment: 启动电池实验
-- api_evaluate_experiment: 评估实验结果
-- api_optimize_bayesian: 贝叶斯优化
-- api_trigger_redesign: 触发配方重设计""",
-            available_tools=list(self.tool_registry.TOOLS.keys()),
-            **kwargs
-        )
-        
-        self._logger.info("✓ Master Agent 初始化完成")
-        self._workflow_state = {}
-    
-    async def _handle_task(self, message: AgentMessage):
-        """处理闭环实验任务"""
-        query = message.payload.get("query", "")
-        correlation_id = message.correlation_id
-        
-        self._logger.info(f"[{self.agent_id}] 开始闭环流程: {query[:50]}...")
-        
-        try:
-            # 使用 ReAct 循环执行复杂任务
-            result = await self.react_loop(
-                task_id=correlation_id,
-                task_description=query,
-                context={
-                    "stage": "init",
-                    "user_query": query,
-                    "workflow": "closed_loop"
-                }
-            )
-            
-            await self._send_result(correlation_id, result)
-            
-        except Exception as e:
-            self._logger.error(f"[{self.agent_id}] 闭环流程失败: {e}")
-            await self._send_error(correlation_id, str(e))
-    
-    async def _execute_action(self, action_result: Dict) -> Any:
-        """
-        重写执行动作方法 - 支持 API 工具调用
-        """
-        action = action_result.get("action")
-        action_input = action_result.get("action_input", {})
-        
-        # 检查是否是 API 工具
-        if action and action.startswith("api_"):
-            return await self.tool_registry.execute_tool(action, action_input)
-        
-        # 标准工具处理
-        if action in ["ask_user", "finish"]:
-            return await self._call_tool(action, action_input)
-        
-        # 其他工具通过消息总线发送
-        return await super()._execute_action(action_result)
-    
-    async def run_closed_loop_workflow(
-        self,
-        user_requirement: str,
-        auto_execute: bool = False
-    ) -> Dict:
-        """
-        运行完整的闭环实验流程
-        
-        Args:
-            user_requirement: 用户需求描述
-            auto_execute: 是否自动执行（否则在每个关键步骤询问用户）
-            
-        Returns:
-            完整的工作流结果
-        """
-        workflow_result = {
-            "status": "started",
-            "steps": [],
-            "current_step": None
-        }
-        
-        try:
-            # Step 1: 解析需求
-            self._logger.info("[闭环流程] Step 1: 解析需求")
-            workflow_result["current_step"] = "parse_request"
-            
-            parse_result = await self.tool_registry.api_tools.parse_user_request(user_requirement)
-            workflow_result["steps"].append({
-                "step": 1,
-                "name": "parse_request",
-                "result": parse_result
-            })
-            
-            if not auto_execute:
-                return {
-                    "status": "waiting_confirmation",
-                    "message": "需求解析完成，请确认是否继续参数确认和文献匹配？",
-                    "parsed_data": parse_result,
-                    "workflow_result": workflow_result
-                }
-            
-            # Step 2: 确认参数并匹配文献
-            self._logger.info("[闭环流程] Step 2: 确认参数")
-            workflow_result["current_step"] = "confirm_parameters"
-            
-            # 从解析结果中提取参数
-            parsed_params = parse_result.get("data", {})
-            if parsed_params:
-                confirm_result = await self.tool_registry.api_tools.confirm_and_match_literature(
-                    parsed_params.get("parameters", [])
-                )
-                workflow_result["steps"].append({
-                    "step": 2,
-                    "name": "confirm_parameters",
-                    "result": confirm_result
-                })
-            
-            # Step 3: 文献挖掘生成分子
-            self._logger.info("[闭环流程] Step 3: 文献挖掘")
-            workflow_result["current_step"] = "mine_data"
-            
-            literature_results = confirm_result.get("data", [])
-            if literature_results:
-                mine_result = await self.tool_registry.api_tools.mine_literature_and_generate_molecules(
-                    literature_results
-                )
-                workflow_result["steps"].append({
-                    "step": 3,
-                    "name": "mine_data",
-                    "result": mine_result
-                })
-            
-            # Step 4: 预测分子性质
-            self._logger.info("[闭环流程] Step 4: 性质预测")
-            workflow_result["current_step"] = "predict_properties"
-            
-            molecules = mine_result.get("molecules", [])
-            smiles_list = [m.get("SMILES") for m in molecules if m.get("SMILES")]
-            if smiles_list:
-                predict_result = await self.tool_registry.api_tools.predict_molecular_properties(
-                    smiles_list[:10]  # 最多预测10个
-                )
-                workflow_result["steps"].append({
-                    "step": 4,
-                    "name": "predict_properties",
-                    "result": predict_result
-                })
-            
-            # Step 5: 生成配方
-            self._logger.info("[闭环流程] Step 5: 生成配方")
-            workflow_result["current_step"] = "generate_formula"
-            
-            # 构建配方列表
-            recipe_list = self._build_recipe_list(molecules, predict_result)
-            if recipe_list:
-                formula_result = await self.tool_registry.api_tools.generate_electrolyte_formula(
-                    recipe_list=recipe_list,
-                    electrolyte_quantity=8
-                )
-                workflow_result["steps"].append({
-                    "step": 5,
-                    "name": "generate_formula",
-                    "result": formula_result
-                })
-            
-            workflow_result["status"] = "completed"
-            return workflow_result
-            
-        except Exception as e:
-            self._logger.error(f"[闭环流程] 执行失败: {e}")
-            workflow_result["status"] = "error"
-            workflow_result["error"] = str(e)
-            return workflow_result
-    
-    def _build_recipe_list(self, molecules: List[Dict], predict_result: Dict) -> List[Dict]:
-        """从分子和预测结果构建配方列表"""
-        recipe_list = []
-        
-        # 分离溶剂、盐和添加剂
-        solvents = [m for m in molecules if any(s in m.get("common_name", "") for s in ["EC", "DEC", "DMC", "EMC"])]
-        salts = [m for m in molecules if "Li" in m.get("common_name", "")]
-        additives = [m for m in molecules if m not in solvents and m not in salts]
-        
-        # 构建配方
-        for i in range(min(3, len(solvents))):  # 最多3个配方
-            recipe = {
-                "solvents": solvents[i:i+3],
-                "salt": salts[0] if salts else None,
-                "additives": additives[:3]
-            }
-            recipe_list.append(recipe)
-        
-        return recipe_list
-    
-    async def evaluate_and_optimize(
-        self,
-        experiment_id: int,
-        requirements: Dict = None
-    ) -> Dict:
-        """
-        评估实验结果并决定是否优化
-        
-        Args:
-            experiment_id: 实验ID
-            requirements: 性能要求
-            
-        Returns:
-            评估和优化结果
-        """
-        # 评估实验
-        eval_result = await self.tool_registry.api_tools.evaluate_experiment_result(
-            experiment_id, requirements
-        )
-        
-        # 如果评估成功，执行优化
-        if eval_result.get("success"):
-            optimization_result = await self.tool_registry.api_tools.optimize_with_bayesian(
-                experiment_id=experiment_id,
-                n_candidates=5
-            )
-            
-            return {
-                "evaluation": eval_result,
-                "optimization": optimization_result,
-                "recommendation": "基于评估结果，建议运行优化后的配方"
-            }
-        
-        # 如果实验失败，触发重设计
-        else:
-            failure_reasons = eval_result.get("failure_reasons", ["未达到预期性能"])
-            redesign_result = await self.tool_registry.api_tools.trigger_formula_redesign(
-                experiment_id=experiment_id,
-                failure_reasons=failure_reasons
-            )
-            
-            return {
-                "evaluation": eval_result,
-                "redesign": redesign_result,
-                "recommendation": "实验未达标，已触发配方重设计"
-            }
-
-
-# ==============================================================================
-# 7. 安全过滤器 - 敏感内容检测（增强版）
-# ==============================================================================
 
 class RiskLevel(Enum):
     """风险等级枚举"""
@@ -4311,7 +4270,7 @@ class LiteratureResearchAgent(BaseAgent):
         )
     
     async def _handle_task(self, message: AgentMessage):
-        """处理文献调研任务 - 简化版，直接执行深度研究"""
+        """处理文献调研任务 - 支持RAG检索和LLM回退"""
         query = message.payload.get("query", "")
         correlation_id = message.correlation_id
         
@@ -4319,29 +4278,48 @@ class LiteratureResearchAgent(BaseAgent):
         
         try:
             # 检查RAG服务状态
-            if self.rag.milvus_collection is None:
-                self._logger.error(f"[{self.agent_id}] Milvus未连接，无法执行检索")
+            rag_available = self.rag is not None and self.rag.milvus_collection is not None
+            
+            if not rag_available:
+                self._logger.warning(f"[{self.agent_id}] RAG数据库未连接，将使用LLM知识库")
+                # 使用LLM生成基于知识的回答
+                llm_answer = await self._generate_llm_literature_review(query)
                 await self._send_result(correlation_id, {
-                    "status": "error",
-                    "answer": "RAG数据库未连接，请检查Milvus服务状态。",
+                    "status": "success",
+                    "answer": llm_answer,
                     "citations": [],
-                    "research_depth": 0
+                    "research_depth": 0,
+                    "source": "llm_knowledge",
+                    "note": "RAG数据库未连接，此回答基于LLM训练数据，建议连接Milvus获取最新文献"
                 })
                 return
             
-            # 直接执行深度研究，不使用复杂的ReAct循环
-            self._logger.info(f"[{self.agent_id}] 调用deep_research，查询: {query[:50]}...")
-            findings = await self.rag.deep_research(query, depth=3, breadth=4)
+            # 首先尝试简单的hybrid_search（更可靠）
+            self._logger.info(f"[{self.agent_id}] 尝试hybrid_search检索...")
+            search_results = await self.rag.hybrid_search(query, top_k=10, use_cache=True)
+            self._logger.info(f"[{self.agent_id}] hybrid_search返回 {len(search_results)} 条结果")
             
-            self._logger.info(f"[{self.agent_id}] deep_research返回 {len(findings)} 条结果")
+            # 如果hybrid_search有结果，转换为findings
+            if search_results:
+                findings = self._convert_search_results_to_findings(search_results, query)
+                self._logger.info(f"[{self.agent_id}] 转换得到 {len(findings)} 条findings")
+            else:
+                # 尝试深度研究
+                self._logger.info(f"[{self.agent_id}] hybrid_search无结果，尝试deep_research...")
+                findings = await self.rag.deep_research(query, depth=2, breadth=3)
+                self._logger.info(f"[{self.agent_id}] deep_research返回 {len(findings)} 条结果")
             
             if not findings:
-                self._logger.warning(f"[{self.agent_id}] 未找到相关文献")
+                self._logger.warning(f"[{self.agent_id}] RAG检索无结果，回退到LLM知识库")
+                # RAG无结果时，使用LLM生成回答
+                llm_answer = await self._generate_llm_literature_review(query)
                 await self._send_result(correlation_id, {
                     "status": "success",
-                    "answer": f"未能找到与'{query}'直接相关的文献。请尝试更具体的关键词，或检查RAG数据库连接。",
+                    "answer": llm_answer,
                     "citations": [],
-                    "research_depth": 0
+                    "research_depth": 0,
+                    "source": "llm_knowledge",
+                    "note": "本地文献库中未找到直接相关文献，此回答基于LLM训练数据"
                 })
                 return
             
@@ -4356,17 +4334,128 @@ class LiteratureResearchAgent(BaseAgent):
                 "status": "success",
                 "answer": formatted_output,
                 "citations": citations,
-                "research_depth": 3
+                "research_depth": 3,
+                "source": "rag_retrieval"
             })
             
         except Exception as e:
             self._logger.error(f"[{self.agent_id}] 文献调研出错: {e}", exc_info=True)
-            await self._send_result(correlation_id, {
-                "status": "error",
-                "answer": f"文献调研过程中发生错误: {str(e)}",
-                "citations": [],
-                "research_depth": 0
-            })
+            # 出错时尝试LLM回退
+            try:
+                llm_answer = await self._generate_llm_literature_review(query)
+                await self._send_result(correlation_id, {
+                    "status": "success",
+                    "answer": llm_answer,
+                    "citations": [],
+                    "research_depth": 0,
+                    "source": "llm_fallback",
+                    "note": f"RAG检索出错({str(e)[:50]}...)，此回答基于LLM知识"
+                })
+            except Exception as llm_error:
+                await self._send_result(correlation_id, {
+                    "status": "error",
+                    "answer": f"文献调研失败: RAG错误({str(e)})，LLM回退也失败({str(llm_error)})",
+                    "citations": [],
+                    "research_depth": 0
+                })
+    
+    def _convert_search_results_to_findings(self, search_results: List[Dict], query: str) -> List[ResearchFinding]:
+        """将hybrid_search结果转换为ResearchFinding列表"""
+        findings = []
+        for i, result in enumerate(search_results):
+            # 提取引用信息
+            citations = self.rag._extract_precise_citations(result, query) if hasattr(self.rag, '_extract_precise_citations') else []
+            
+            # 如果没有提取到引用，创建一个基本的引用
+            if not citations:
+                citations = [Citation(
+                    doc_id=result.get("doc_id", f"doc_{i}"),
+                    doc_title=result.get("doc_title", "Unknown"),
+                    authors=result.get("authors", []),
+                    year=result.get("year"),
+                    page=result.get("page", 0),
+                    paragraph=0,
+                    sentence_start=0,
+                    sentence_end=0,
+                    quoted_text=result.get("content", "")[:200],
+                    surrounding_context=result.get("content", ""),
+                    relevance_score=result.get("rerank_score", result.get("vector_score", 0.5))
+                )]
+            
+            finding = ResearchFinding(
+                finding_id=str(uuid.uuid4()),
+                content=result.get("content", ""),
+                citations=citations,
+                confidence=result.get("rerank_score", result.get("vector_score", 0.5)),
+                exploration_depth=0,
+                query_path=[query],
+                sub_queries=[],
+                supporting_evidence=[],
+                contradictions=[]
+            )
+            findings.append(finding)
+        
+        return findings
+    
+    async def _generate_llm_literature_review(self, query: str) -> str:
+        """使用LLM生成文献综述（当RAG不可用时作为回退）"""
+        self._logger.info(f"[{self.agent_id}] 使用LLM生成文献综述: {query[:50]}...")
+        
+        prompt = f"""你是一位专业的化学文献研究专家。请针对以下研究问题，基于你的训练数据提供一个详细的文献综述。
+
+研究问题: {query}
+
+请注意：
+1. 基于你训练数据中的知识进行回答
+2. 尽可能引用已知的经典文献和重要研究
+3. 如果信息不确定，请明确说明
+4. 提供研究背景、主要发现和发展趋势
+
+请按以下格式组织回答：
+1. 研究背景
+2. 主要研究发现
+3. 技术发展趋势
+4. 参考文献（列出你知道的重要文献）
+
+文献综述:"""
+
+        try:
+            messages = [{"role": "user", "content": prompt}]
+            response = self.llm.generate(messages, max_new_tokens=2048, temperature=0.7)
+            
+            # 格式化输出
+            formatted_response = f"""# 文献调研报告 (基于LLM知识库)
+
+**研究问题**: {query}
+
+**数据来源**: LLM训练数据 (RAG数据库未连接或无结果)
+
+---
+
+{response}
+
+---
+
+*注：此回答基于大语言模型的训练数据生成。如需最新的、精确的文献引用，请确保RAG数据库(Milvus/Elasticsearch)已正确连接并包含相关文献数据。*
+"""
+            return formatted_response
+            
+        except Exception as e:
+            self._logger.error(f"[{self.agent_id}] LLM生成文献综述失败: {e}")
+            return f"""# 文献调研失败
+
+**研究问题**: {query}
+
+**错误信息**: 
+- RAG数据库检索无结果
+- LLM知识库生成也失败: {str(e)}
+
+**建议**:
+1. 检查Milvus数据库连接状态
+2. 检查Elasticsearch连接状态
+3. 尝试更具体的关键词
+4. 联系管理员检查文献数据库内容
+"""
     
     def _format_findings_to_report(self, findings: List[ResearchFinding], original_query: str) -> str:
         """将研究发现格式化为报告"""
@@ -6978,6 +7067,302 @@ async def evaluate_and_optimize(request: Dict):
 
 # ==============================================================================
 # 主入口
+# ==============================================================================
+
+
+
+class MasterAgent(BaseAgent):
+    """
+    Master Agent - 实现完整的闭环实验流程 (OpenClaw 风格)
+    
+    工作流：
+    1. 解析用户需求 → api_parse_request
+    2. 确认参数并匹配文献 → api_confirm_parameters
+    3. 文献挖掘生成分子 → api_mine_data
+    4. 预测分子性质 → api_predict_properties
+    5. 生成配方 → api_generate_formula
+    6. 启动实验 → api_start_experiment
+    7. 评估结果 → api_evaluate_experiment
+    8. 优化迭代 → api_optimize_bayesian / api_trigger_redesign
+    
+    特点：
+    - 自主决策执行步骤
+    - 可调用所有后端 API
+    - 支持人机协作（关键步骤询问用户）
+    """
+    
+    def __init__(self, **kwargs):
+        # 使用增强版工具注册表
+        self.tool_registry = EnhancedToolRegistry()
+        
+        super().__init__(
+            agent_id="agent0_master",
+            system_prompt="""你是 Master Agent，电池电解液研发的智能助手。
+
+你的职责是帮助用户完成从需求到实验的完整流程：
+
+1. **解析需求** - 理解用户的自然语言描述
+2. **文献调研** - 检索相关研究文献
+3. **分子设计** - 生成候选分子结构
+4. **性质预测** - 预测分子电化学性质
+5. **配方生成** - 设计电解液配方
+6. **实验控制** - 启动和监控实验
+7. **结果评估** - 分析实验数据
+8. **优化迭代** - 基于结果改进配方
+
+工作流程原则：
+- 首先全面了解用户需求
+- 然后规划执行步骤
+- 每个关键步骤完成后向用户汇报
+- 根据用户反馈调整计划
+- 遇到不确定时主动询问用户
+
+你具备完整的后端 API 调用能力，可以直接操作实验系统。
+
+可用 API 工具：
+- api_parse_request: 解析用户需求
+- api_confirm_parameters: 确认参数并匹配文献
+- api_mine_data: 文献挖掘与分子生成
+- api_predict_properties: 预测分子性质
+- api_generate_formula: 生成电解液配方
+- api_start_experiment: 启动电池实验
+- api_evaluate_experiment: 评估实验结果
+- api_optimize_bayesian: 贝叶斯优化
+- api_trigger_redesign: 触发配方重设计""",
+            available_tools=list(self.tool_registry.TOOLS.keys()),
+            **kwargs
+        )
+        
+        self._logger.info("✓ Master Agent 初始化完成")
+        self._workflow_state = {}
+    
+    async def _handle_task(self, message: AgentMessage):
+        """处理闭环实验任务"""
+        query = message.payload.get("query", "")
+        correlation_id = message.correlation_id
+        
+        self._logger.info(f"[{self.agent_id}] 开始闭环流程: {query[:50]}...")
+        
+        try:
+            # 使用 ReAct 循环执行复杂任务
+            result = await self.react_loop(
+                task_id=correlation_id,
+                task_description=query,
+                context={
+                    "stage": "init",
+                    "user_query": query,
+                    "workflow": "closed_loop"
+                }
+            )
+            
+            await self._send_result(correlation_id, result)
+            
+        except Exception as e:
+            self._logger.error(f"[{self.agent_id}] 闭环流程失败: {e}")
+            await self._send_error(correlation_id, str(e))
+    
+    async def _execute_action(self, action_result: Dict) -> Any:
+        """
+        重写执行动作方法 - 支持 API 工具调用
+        """
+        action = action_result.get("action")
+        action_input = action_result.get("action_input", {})
+        
+        # 检查是否是 API 工具
+        if action and action.startswith("api_"):
+            return await self.tool_registry.execute_tool(action, action_input)
+        
+        # 标准工具处理
+        if action in ["ask_user", "finish"]:
+            return await self._call_tool(action, action_input)
+        
+        # 其他工具通过消息总线发送
+        return await super()._execute_action(action_result)
+    
+    async def run_closed_loop_workflow(
+        self,
+        user_requirement: str,
+        auto_execute: bool = False
+    ) -> Dict:
+        """
+        运行完整的闭环实验流程
+        
+        Args:
+            user_requirement: 用户需求描述
+            auto_execute: 是否自动执行（否则在每个关键步骤询问用户）
+            
+        Returns:
+            完整的工作流结果
+        """
+        workflow_result = {
+            "status": "started",
+            "steps": [],
+            "current_step": None
+        }
+        
+        try:
+            # Step 1: 解析需求
+            self._logger.info("[闭环流程] Step 1: 解析需求")
+            workflow_result["current_step"] = "parse_request"
+            
+            parse_result = await self.tool_registry.api_tools.parse_user_request(user_requirement)
+            workflow_result["steps"].append({
+                "step": 1,
+                "name": "parse_request",
+                "result": parse_result
+            })
+            
+            if not auto_execute:
+                return {
+                    "status": "waiting_confirmation",
+                    "message": "需求解析完成，请确认是否继续参数确认和文献匹配？",
+                    "parsed_data": parse_result,
+                    "workflow_result": workflow_result
+                }
+            
+            # Step 2: 确认参数并匹配文献
+            self._logger.info("[闭环流程] Step 2: 确认参数")
+            workflow_result["current_step"] = "confirm_parameters"
+            
+            # 从解析结果中提取参数
+            parsed_params = parse_result.get("data", {})
+            if parsed_params:
+                confirm_result = await self.tool_registry.api_tools.confirm_and_match_literature(
+                    parsed_params.get("parameters", [])
+                )
+                workflow_result["steps"].append({
+                    "step": 2,
+                    "name": "confirm_parameters",
+                    "result": confirm_result
+                })
+            
+            # Step 3: 文献挖掘生成分子
+            self._logger.info("[闭环流程] Step 3: 文献挖掘")
+            workflow_result["current_step"] = "mine_data"
+            
+            literature_results = confirm_result.get("data", [])
+            if literature_results:
+                mine_result = await self.tool_registry.api_tools.mine_literature_and_generate_molecules(
+                    literature_results
+                )
+                workflow_result["steps"].append({
+                    "step": 3,
+                    "name": "mine_data",
+                    "result": mine_result
+                })
+            
+            # Step 4: 预测分子性质
+            self._logger.info("[闭环流程] Step 4: 性质预测")
+            workflow_result["current_step"] = "predict_properties"
+            
+            molecules = mine_result.get("molecules", [])
+            smiles_list = [m.get("SMILES") for m in molecules if m.get("SMILES")]
+            if smiles_list:
+                predict_result = await self.tool_registry.api_tools.predict_molecular_properties(
+                    smiles_list[:10]  # 最多预测10个
+                )
+                workflow_result["steps"].append({
+                    "step": 4,
+                    "name": "predict_properties",
+                    "result": predict_result
+                })
+            
+            # Step 5: 生成配方
+            self._logger.info("[闭环流程] Step 5: 生成配方")
+            workflow_result["current_step"] = "generate_formula"
+            
+            # 构建配方列表
+            recipe_list = self._build_recipe_list(molecules, predict_result)
+            if recipe_list:
+                formula_result = await self.tool_registry.api_tools.generate_electrolyte_formula(
+                    recipe_list=recipe_list,
+                    electrolyte_quantity=8
+                )
+                workflow_result["steps"].append({
+                    "step": 5,
+                    "name": "generate_formula",
+                    "result": formula_result
+                })
+            
+            workflow_result["status"] = "completed"
+            return workflow_result
+            
+        except Exception as e:
+            self._logger.error(f"[闭环流程] 执行失败: {e}")
+            workflow_result["status"] = "error"
+            workflow_result["error"] = str(e)
+            return workflow_result
+    
+    def _build_recipe_list(self, molecules: List[Dict], predict_result: Dict) -> List[Dict]:
+        """从分子和预测结果构建配方列表"""
+        recipe_list = []
+        
+        # 分离溶剂、盐和添加剂
+        solvents = [m for m in molecules if any(s in m.get("common_name", "") for s in ["EC", "DEC", "DMC", "EMC"])]
+        salts = [m for m in molecules if "Li" in m.get("common_name", "")]
+        additives = [m for m in molecules if m not in solvents and m not in salts]
+        
+        # 构建配方
+        for i in range(min(3, len(solvents))):  # 最多3个配方
+            recipe = {
+                "solvents": solvents[i:i+3],
+                "salt": salts[0] if salts else None,
+                "additives": additives[:3]
+            }
+            recipe_list.append(recipe)
+        
+        return recipe_list
+    
+    async def evaluate_and_optimize(
+        self,
+        experiment_id: int,
+        requirements: Dict = None
+    ) -> Dict:
+        """
+        评估实验结果并决定是否优化
+        
+        Args:
+            experiment_id: 实验ID
+            requirements: 性能要求
+            
+        Returns:
+            评估和优化结果
+        """
+        # 评估实验
+        eval_result = await self.tool_registry.api_tools.evaluate_experiment_result(
+            experiment_id, requirements
+        )
+        
+        # 如果评估成功，执行优化
+        if eval_result.get("success"):
+            optimization_result = await self.tool_registry.api_tools.optimize_with_bayesian(
+                experiment_id=experiment_id,
+                n_candidates=5
+            )
+            
+            return {
+                "evaluation": eval_result,
+                "optimization": optimization_result,
+                "recommendation": "基于评估结果，建议运行优化后的配方"
+            }
+        
+        # 如果实验失败，触发重设计
+        else:
+            failure_reasons = eval_result.get("failure_reasons", ["未达到预期性能"])
+            redesign_result = await self.tool_registry.api_tools.trigger_formula_redesign(
+                experiment_id=experiment_id,
+                failure_reasons=failure_reasons
+            )
+            
+            return {
+                "evaluation": eval_result,
+                "redesign": redesign_result,
+                "recommendation": "实验未达标，已触发配方重设计"
+            }
+
+
+# ==============================================================================
+# 7. 安全过滤器 - 敏感内容检测（增强版）
 # ==============================================================================
 
 if __name__ == "__main__":

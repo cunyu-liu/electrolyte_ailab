@@ -1,21 +1,30 @@
 """
 ================================================================================
-ChemMind Multi-Agent System v8 - 测试脚本
+ChemMind Multi-Agent System v8.1 - 测试脚本
 ================================================================================
 
 测试模式:
 1. 直接测试模式: 直接初始化Agent进行测试（推荐，无需启动服务器）
 2. API测试模式: 通过HTTP调用已启动的服务器
 
+v8.1 新增测试功能:
+- 测试智能路由和WFQ调度
+- 测试分层任务分类器
+- 测试语义缓存命中率
+- 测试Agent能力画像
+
 使用方法:
     # 直接测试模式（默认）
-    python test_agent_rag_v8.py
+    python test_agent_rag_v8_1.py
     
     # API测试模式（需先启动服务器）
-    python test_agent_rag_v8.py --mode api
+    python test_agent_rag_v8_1.py --mode api
     
     # 指定查询内容
-    python test_agent_rag_v8.py --query "锂离子电池电解液添加剂研究进展"
+    python test_agent_rag_v8_1.py --query "锂离子电池电解液添加剂研究进展"
+    
+    # 测试 v8.1 新特性
+    python test_agent_rag_v8_1.py --test-features
 
 ================================================================================
 """
@@ -28,17 +37,31 @@ import sys
 from typing import Optional, Dict, Any
 from dataclasses import asdict
 
-# 导入agent_rag_v8中的核心类
-# 注意：确保agent_rag_v8.py在同一目录下
+# 导入agent_rag_v8_1中的核心类
+# 注意：确保agent_rag_v8_1.py在同一目录下
 sys.path.insert(0, '/Users/liucunyu/Documents/all_code/thu_2025/eletrolyte_lab/tempcode/electrolyte_lab/agent')
 
 # 尝试导入，如果失败则使用模拟
-from agent_rag_v8 import (
-    MessageBus, SharedMemory, LLMService, RAGService, SafetyGuard,
-    CentralOrchestratorAgent, LiteratureResearchAgent, MolecularPropertyAgent,
-    ExperimentDesignAgent, QualityControlAgent, GeneralKnowledgeAgent, ToolExecutorAgent,
-    AgentMessage, MessageType, TaskType, TaskComplexity
-)
+try:
+    from agent_rag_v8_1 import (
+        MessageBus, SharedMemory, LLMService, RAGService, SafetyGuard,
+        CentralOrchestratorAgent, LiteratureResearchAgent, MolecularPropertyAgent,
+        ExperimentDesignAgent, QualityControlAgent, GeneralKnowledgeAgent, ToolExecutorAgent,
+        AgentMessage, MessageType, TaskType, TaskComplexity,
+        # v8.1 新增导入
+        CapabilityVector, Tracer, get_tracer
+    )
+    V81_AVAILABLE = True
+except ImportError as e:
+    print(f"⚠ 无法导入v8.1模块: {e}")
+    print("  尝试使用v8.0兼容模式...")
+    from agent_rag_v8 import (
+        MessageBus, SharedMemory, LLMService, RAGService, SafetyGuard,
+        CentralOrchestratorAgent, LiteratureResearchAgent, MolecularPropertyAgent,
+        ExperimentDesignAgent, QualityControlAgent, GeneralKnowledgeAgent, ToolExecutorAgent,
+        AgentMessage, MessageType, TaskType, TaskComplexity
+    )
+    V81_AVAILABLE = False
 
 
 # ==============================================================================
@@ -47,7 +70,7 @@ from agent_rag_v8 import (
 
 class DirectAgentTester:
     """
-    直接测试Agent，无需启动FastAPI服务器
+    直接测试Agent，无需启动FastAPI服务器 (v8.1)
     """
     
     def __init__(self):
@@ -60,13 +83,27 @@ class DirectAgentTester:
         self.orchestrator: Optional[CentralOrchestratorAgent] = None
         self._initialized = False
         
+        # v8.1: 性能统计
+        self._performance_stats = {
+            "queries": 0,
+            "total_time": 0,
+            "cache_hits": 0
+        }
+        
     async def initialize(self):
         """初始化所有组件"""
         if self._initialized:
             return
             
         print("=" * 70)
-        print("正在初始化 ChemMind Multi-Agent System v8 (测试模式)...")
+        print("正在初始化 ChemMind Multi-Agent System v8.1 (测试模式)...")
+        if V81_AVAILABLE:
+            print("✓ v8.1 算法升级已启用")
+            print("  - 智能路由 + WFQ调度")
+            print("  - 语义缓存 + 自适应批处理")
+            print("  - 分层分类 + 并行子任务")
+        else:
+            print("⚠ 使用v8.0兼容模式")
         print("=" * 70)
         
         # 初始化基础设施
@@ -74,14 +111,13 @@ class DirectAgentTester:
         self.shared_memory = SharedMemory()
         
         # 初始化LLM服务
-        print("\n[1/6] 正在加载LLM模型...")
+        print("\n[1/6] 正在加载LLM服务...")
         try:
-            self.llm_service = LLMService(
-                "/Users/liucunyu/.cache/modelscope/hub/models/Qwen/Qwen3-0.6B"
-            )
-            print("✓ LLM模型加载完成")
+            # v8.1: DeepSeek API模式
+            self.llm_service = LLMService()
+            print("✓ LLM服务初始化完成 (DeepSeek API)")
         except Exception as e:
-            print(f"✗ LLM模型加载失败: {e}")
+            print(f"✗ LLM服务初始化失败: {e}")
             raise
         
         # 初始化RAG服务
@@ -90,6 +126,9 @@ class DirectAgentTester:
             self.rag_service = RAGService(self.llm_service)
             rag_status = "就绪" if self.rag_service.milvus_collection else "Milvus未连接(使用LLM模式)"
             print(f"✓ RAG服务初始化完成 ({rag_status})")
+            if V81_AVAILABLE:
+                print("  - 自适应混合检索权重")
+                print("  - 级联重排序 + MMR多样性")
         except Exception as e:
             print(f"⚠ RAG服务初始化部分失败: {e}")
             self.rag_service = None
@@ -98,6 +137,9 @@ class DirectAgentTester:
         print("\n[3/6] 正在初始化安全过滤器...")
         self.safety_guard = SafetyGuard(self.llm_service)
         print("✓ 安全过滤器初始化完成")
+        if V81_AVAILABLE:
+            print("  - 上下文感知安全检查")
+            print("  - 对抗样本检测")
         
         # 初始化Orchestrator
         print("\n[4/6] 正在启动Agent1: CentralOrchestrator...")
@@ -109,6 +151,9 @@ class DirectAgentTester:
         )
         await self.orchestrator.start()
         print("✓ Orchestrator启动完成")
+        if V81_AVAILABLE:
+            print("  - 分层任务分类器")
+            print("  - Agent能力画像路由")
         
         # 初始化专业Agent
         print("\n[5/6] 正在启动专业Agent...")
@@ -190,7 +235,7 @@ class DirectAgentTester:
         
     async def query(self, user_query: str, depth: int = 2) -> Dict[str, Any]:
         """
-        处理用户查询
+        处理用户查询 (v8.1)
         
         Args:
             user_query: 用户输入的自然语言查询
@@ -209,6 +254,11 @@ class DirectAgentTester:
         start_time = time.time()
         workflow_id = f"test_{int(time.time())}"
         
+        # v8.1: 启动追踪
+        if V81_AVAILABLE:
+            tracer = get_tracer()
+            trace_id = tracer.start_trace(f"query_{workflow_id}")
+        
         # 创建future等待结果
         future = asyncio.Future()
         
@@ -222,6 +272,10 @@ class DirectAgentTester:
         
         # 发送任务给Orchestrator
         print("[流程] 发送任务给Orchestrator...")
+        if V81_AVAILABLE:
+            print("  - 智能路由到对应分区")
+            print("  - 分层任务分类")
+        
         await self.message_bus.send(AgentMessage(
             sender="test_client",
             receiver="agent1_orchestrator",
@@ -240,8 +294,15 @@ class DirectAgentTester:
             result = await asyncio.wait_for(future, timeout=180)
             processing_time = time.time() - start_time
             
+            # 更新统计
+            self._performance_stats["queries"] += 1
+            self._performance_stats["total_time"] += processing_time
+            
             # 处理结果
             result_inner = result.get("result", {})
+            
+            # v8.1: 提取分类信息
+            classification = result_inner.get("classification", {})
             
             return {
                 "success": True,
@@ -251,7 +312,11 @@ class DirectAgentTester:
                 "answer": result_inner.get("answer", ""),
                 "citations": result_inner.get("citations", []),
                 "qc_report": result_inner.get("qc_report"),
-                "processing_time": processing_time
+                "processing_time": processing_time,
+                # v8.1 新增
+                "classification": classification,
+                "domain": classification.get("domain", ""),
+                "complexity_score": classification.get("complexity_score", 0)
             }
             
         except asyncio.TimeoutError:
@@ -263,6 +328,51 @@ class DirectAgentTester:
                 "error": "处理超时（180秒），请稍后重试或简化查询",
                 "processing_time": processing_time
             }
+    
+    async def test_v81_features(self):
+        """测试 v8.1 新特性"""
+        if not V81_AVAILABLE:
+            print("⚠ v8.1 模块不可用，无法测试新特性")
+            return
+        
+        print("\n" + "=" * 70)
+        print("测试 v8.1 新特性")
+        print("=" * 70)
+        
+        # 1. 测试MessageBus分区统计
+        print("\n[1/4] MessageBus 分区统计")
+        partition_stats = self.message_bus.get_partition_stats()
+        print(f"  分区状态: {partition_stats}")
+        
+        # 2. 测试Agent能力画像
+        print("\n[2/4] Agent 能力画像")
+        for agent_id, agent in self.agents.items():
+            if hasattr(agent, 'capability_vector'):
+                cv = agent.capability_vector
+                print(f"  {agent_id}:")
+                print(f"    - 负载: {cv.load:.2f}")
+                print(f"    - 成功率: {cv.success_rate:.2f}")
+                print(f"    - 平均延迟: {cv.avg_latency:.3f}s")
+                print(f"    - 综合评分: {cv.compute_score():.3f}")
+        
+        # 3. 测试安全对抗检测
+        print("\n[3/4] SafetyGuard 对抗样本检测")
+        test_inputs = [
+            "正常查询: 锂离子电池研究",
+            "零宽字符: 锂\u200b离子\u200c电池",
+        ]
+        for text in test_inputs:
+            result = await self.safety_guard.check_input(text)
+            print(f"  '{text[:20]}...': {result.get('risk_level', 'unknown')}")
+        
+        # 4. 性能统计
+        print("\n[4/4] 性能统计")
+        print(f"  总查询数: {self._performance_stats['queries']}")
+        if self._performance_stats['queries'] > 0:
+            avg_time = self._performance_stats['total_time'] / self._performance_stats['queries']
+            print(f"  平均处理时间: {avg_time:.2f}s")
+        
+        print("\n" + "=" * 70)
     
     async def close(self):
         """关闭所有Agent"""
@@ -280,7 +390,7 @@ class DirectAgentTester:
 
 class APIAgentTester:
     """
-    通过HTTP API测试（需要服务器已启动）
+    通过HTTP API测试（需要服务器已启动）- v8.1
     """
     
     def __init__(self, base_url: str = "http://localhost:8000"):
@@ -320,7 +430,7 @@ class APIAgentTester:
                     }
     
     async def health_check(self) -> bool:
-        """检查服务器健康状态"""
+        """检查服务器健康状态 (v8.1)"""
         import aiohttp
         
         try:
@@ -329,14 +439,41 @@ class APIAgentTester:
                     if response.status == 200:
                         data = await response.json()
                         print(f"服务器状态: {data.get('status', 'unknown')}")
+                        print(f"版本: {data.get('version', 'unknown')}")
                         print(f"可用Agent: {', '.join(data.get('agents', []))}")
-                        print(f"LLM加载: {'✓' if data.get('llm_loaded') else '✗'}")
-                        print(f"RAG就绪: {'✓' if data.get('rag_ready') else '✗'}")
+                        
+                        # v8.1: 显示新特性状态
+                        features = data.get('features', {})
+                        if features:
+                            print("\nv8.1 特性状态:")
+                            for feature, enabled in features.items():
+                                status = "✓" if enabled else "✗"
+                                print(f"  {status} {feature}")
+                        
+                        # v8.1: 分区统计
+                        partition_stats = data.get('partition_stats', {})
+                        if partition_stats:
+                            print(f"\n分区统计: {partition_stats}")
+                        
                         return True
                     return False
         except Exception as e:
             print(f"无法连接到服务器: {e}")
             return False
+    
+    async def get_metrics(self) -> Dict:
+        """获取性能指标 (v8.1)"""
+        import aiohttp
+        
+        try:
+            async with aiohttp.ClientSession() as session:
+                async with session.get(f"{self.base_url}/metrics") as response:
+                    if response.status == 200:
+                        return await response.json()
+                    return {}
+        except Exception as e:
+            print(f"获取指标失败: {e}")
+            return {}
 
 
 # ==============================================================================
@@ -344,7 +481,7 @@ class APIAgentTester:
 # ==============================================================================
 
 def print_result(result: Dict[str, Any]):
-    """美化打印结果"""
+    """美化打印结果 (v8.1)"""
     print("\n" + "=" * 70)
     print("处理结果")
     print("=" * 70)
@@ -362,6 +499,14 @@ def print_result(result: Dict[str, Any]):
     print(f"  - 使用Agent: {result.get('agent_used', 'unknown')}")
     print(f"  - 处理时间: {result.get('processing_time', 0):.2f}秒")
     
+    # v8.1: 显示分类信息
+    classification = result.get("classification", {})
+    if classification:
+        print(f"\n🎯 任务分类 (v8.1):")
+        print(f"  - 领域: {classification.get('domain', 'unknown')}")
+        print(f"  - 复杂度评分: {classification.get('complexity_score', 0)}/10")
+        print(f"  - 置信度: {classification.get('confidence', 0):.2f}")
+    
     print(f"\n💬 回答内容:")
     print("-" * 70)
     answer = result.get('answer', '无回答')
@@ -371,10 +516,13 @@ def print_result(result: Dict[str, Any]):
     citations = result.get('citations', [])
     if citations:
         print(f"\n📚 引用文献 ({len(citations)}篇):")
-        for i, citation in enumerate(citations[:5], 1):  # 最多显示5篇
+        for i, citation in enumerate(citations[:5], 1):
             title = citation.get('doc_title', 'Unknown')
             year = citation.get('year', 'n.d.')
-            print(f"  {i}. {title} ({year})")
+            # v8.1: 显示冲突标记
+            conflict = citation.get('conflict_mark', '')
+            conflict_str = f" [⚠️{conflict}]" if conflict else ""
+            print(f"  {i}. {title} ({year}){conflict_str}")
         if len(citations) > 5:
             print(f"  ... 还有 {len(citations) - 5} 篇引用")
     
@@ -386,19 +534,20 @@ def print_result(result: Dict[str, Any]):
 
 
 def print_welcome():
-    """打印欢迎信息"""
+    """打印欢迎信息 (v8.1)"""
     print("""
 ╔══════════════════════════════════════════════════════════════════════╗
 ║                                                                      ║
-║           ChemMind Multi-Agent System v8 - 测试脚本                  ║
+║           ChemMind Multi-Agent System v8.1 - 测试脚本                ║
 ║                                                                      ║
-║  院士级化学研究智能体系统                                            ║
+║  院士级化学研究智能体系统 - 全栈算法升级版                            ║
 ║                                                                      ║
-║  功能:                                                               ║
-║    • 文献调研 (Agent2) - 深度文献检索与综合                          ║
-║    • 性质预测 (Agent3) - 分子电化学性质预测                          ║
-║    • 实验设计 (Agent4) - 电池电解液实验方案设计                      ║
-║    • 质量控制 (Agent5) - 事实核查与审核                              ║
+║  v8.1 升级特性:                                                       ║
+║    • 智能路由 + WFQ调度 (MessageBus)                                 ║
+║    • 语义缓存 + 自适应批处理 (LLM)                                    ║
+║    • 自适应检索 + 级联重排序 (RAG)                                    ║
+║    • 分层分类 + 并行子任务 (Orchestrator)                             ║
+║    • 上下文感知 + 对抗检测 (SafetyGuard)                              ║
 ║                                                                      ║
 ╚══════════════════════════════════════════════════════════════════════╝
 """)
@@ -412,13 +561,35 @@ async def interactive_mode(tester):
     """交互式测试模式"""
     print("\n进入交互式测试模式，输入查询内容（输入 'quit' 退出）：\n")
     
+    # v8.1: 显示测试命令
+    print("特殊命令:")
+    print("  :features - 测试 v8.1 新特性")
+    print("  :metrics  - 查看性能指标 (API模式)")
+    print("  :quit     - 退出测试")
+    print()
+    
     while True:
         try:
             query = input("> ").strip()
             
-            if query.lower() in ['quit', 'exit', 'q']:
+            if query.lower() in ['quit', 'exit', 'q', ':quit']:
                 print("退出测试...")
                 break
+            
+            if query == ':features':
+                if hasattr(tester, 'test_v81_features'):
+                    await tester.test_v81_features()
+                else:
+                    print("⚠ 直接测试模式不支持此命令")
+                continue
+            
+            if query == ':metrics':
+                if hasattr(tester, 'get_metrics'):
+                    metrics = await tester.get_metrics()
+                    print(json.dumps(metrics, indent=2, ensure_ascii=False))
+                else:
+                    print("⚠ API测试模式才支持此命令")
+                continue
             
             if not query:
                 continue
@@ -431,12 +602,14 @@ async def interactive_mode(tester):
             break
         except Exception as e:
             print(f"\n错误: {e}")
+            import traceback
+            traceback.print_exc()
 
 
 async def main():
     """主函数"""
     parser = argparse.ArgumentParser(
-        description="ChemMind Multi-Agent System v8 测试脚本"
+        description="ChemMind Multi-Agent System v8.1 测试脚本"
     )
     parser.add_argument(
         '--mode', 
@@ -462,6 +635,11 @@ async def main():
         default=2,
         help='研究深度 (1-4), 默认: 2'
     )
+    parser.add_argument(
+        '--test-features',
+        action='store_true',
+        help='测试 v8.1 新特性 (仅direct模式)'
+    )
     
     args = parser.parse_args()
     
@@ -474,13 +652,18 @@ async def main():
             # 直接测试模式
             tester = DirectAgentTester()
             await tester.initialize()
+            
+            # v8.1: 测试新特性
+            if args.test_features:
+                await tester.test_v81_features()
+                
         else:
             # API测试模式
             tester = APIAgentTester(args.url)
             print("\n检查服务器状态...")
             if not await tester.health_check():
                 print("\n❌ 无法连接到服务器，请确保服务器已启动:")
-                print("   python agent/agent_rag_v8.py")
+                print("   python agent_rag_v8_1.py")
                 return
         
         if args.query:
