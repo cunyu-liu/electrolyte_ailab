@@ -4458,14 +4458,33 @@ class LiteratureResearchAgent(BaseAgent):
 """
     
     def _format_findings_to_report(self, findings: List[ResearchFinding], original_query: str) -> str:
-        """将研究发现格式化为报告"""
+        """将研究发现格式化为报告 - 修复引用重复问题"""
         
         output_parts = []
+        
+        # 收集所有唯一的文献（用于去重）
+        unique_docs = {}  # doc_key -> doc_info
+        doc_counter = [0]  # 使用列表作为可变引用
+        
+        def get_doc_number(doc_id, year, doc_title, authors):
+            """获取文档编号，如果不存在则分配新编号"""
+            doc_key = (doc_id, year)
+            if doc_key not in unique_docs:
+                doc_counter[0] += 1
+                unique_docs[doc_key] = {
+                    "number": doc_counter[0],
+                    "title": doc_title,
+                    "authors": authors,
+                    "year": year,
+                    "doc_id": doc_id
+                }
+            return unique_docs[doc_key]["number"]
         
         # 1. 执行摘要
         output_parts.append("# 文献调研报告\n")
         output_parts.append(f"**研究问题**: {original_query}\n")
         output_parts.append(f"**检索文献数**: {len(findings)}\n")
+        output_parts.append(f"**发现独特文献**: {len(set((f.citations[0].doc_id if f.citations else f.finding_id) for f in findings))} 篇\n")
         output_parts.append(f"**探索深度**: 3\n\n")
         
         # 2. 主要发现
@@ -4476,35 +4495,39 @@ class LiteratureResearchAgent(BaseAgent):
             output_parts.append(f"\n### {i}. {content[:100]}...\n")
             output_parts.append(f"{content}\n")
             
-            # 添加引用
+            # 添加简化版引用（只显示编号和基本信息，不重复完整内容）
             if finding.citations:
+                citation_refs = []
                 for citation in finding.citations[:2]:  # 每个发现最多2个引用
-                    citation_text = self._format_citation(citation)
-                    output_parts.append(f"> 📄 {citation_text}\n")
+                    ref_num = get_doc_number(
+                        citation.doc_id, 
+                        citation.year, 
+                        citation.doc_title,
+                        citation.authors
+                    )
+                    authors_short = ", ".join(citation.authors[:1]) if citation.authors else "Unknown"
+                    if len(citation.authors) > 1:
+                        authors_short += " et al."
+                    citation_refs.append(f"[{ref_num}] {authors_short}, {citation.year or 'n.d.'}")
+                
+                output_parts.append(f"> 📚 引用: {'; '.join(citation_refs)}\n")
             else:
                 # 即使没有精确引用，也显示来源信息
-                output_parts.append(f"> 📄 来源: {finding.content[:50]}... (置信度: {finding.confidence:.2f})\n")
+                output_parts.append(f"> 📄 来源: 知识库片段 (置信度: {finding.confidence:.2f})\n")
         
-        # 3. 研究来源
+        # 3. 参考文献（唯一的完整列表）
         output_parts.append("\n## 参考文献\n")
-        seen_docs = set()
-        ref_num = 1
         
-        # 从所有 findings 的 citations 中收集文献
-        for finding in findings:
-            for citation in finding.citations:
-                doc_key = (citation.doc_id, citation.year)
-                if doc_key not in seen_docs:
-                    seen_docs.add(doc_key)
-                    authors = ", ".join(citation.authors[:2]) if citation.authors else "Unknown"
-                    if len(citation.authors) > 2:
-                        authors += " et al."
-                    year = citation.year or "n.d."
-                    output_parts.append(f"{ref_num}. {authors} ({year}). {citation.doc_title}.\n")
-                    ref_num += 1
-        
-        # 如果没有收集到任何引用，添加一个提示
-        if ref_num == 1:
+        if unique_docs:
+            # 按编号排序输出
+            sorted_docs = sorted(unique_docs.values(), key=lambda x: x["number"])
+            for doc in sorted_docs:
+                authors = ", ".join(doc["authors"][:2]) if doc["authors"] else "Unknown"
+                if len(doc["authors"]) > 2:
+                    authors += " et al."
+                year = doc["year"] or "n.d."
+                output_parts.append(f"{doc['number']}. {authors} ({year}). {doc['title']}.\n")
+        else:
             output_parts.append("*未找到具体的文献引用信息。请检查数据库中是否包含文献元数据（作者、年份等）。*\n")
         
         return "\n".join(output_parts)

@@ -34,6 +34,7 @@ import argparse
 import json
 import time
 import sys
+import os
 from typing import Optional, Dict, Any
 from dataclasses import asdict
 
@@ -65,6 +66,205 @@ except ImportError as e:
 
 
 # ==============================================================================
+# 0. 测试日志记录器 - v8.1 新增
+# ==============================================================================
+
+class TestLogger:
+    """
+    测试会话日志记录器
+    
+    自动记录所有测试输入/输出到 timestamped 文件夹
+    文件结构:
+        test_logs/
+            YYYYMMDD_HHMMSS/
+                session.json     - 会话元数据
+                inputs.txt       - 所有查询输入
+                outputs.txt      - 所有回答输出
+                conversations/   - 完整对话记录
+    """
+    
+    def __init__(self, session_name: str = None):
+        from datetime import datetime
+        
+        # 创建日志目录
+        self.base_dir = os.path.join(os.path.dirname(__file__), "test_logs")
+        os.makedirs(self.base_dir, exist_ok=True)
+        
+        # 创建会话目录 (timestamped)
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        session_name = session_name or f"session_{timestamp}"
+        self.session_dir = os.path.join(self.base_dir, session_name)
+        os.makedirs(self.session_dir, exist_ok=True)
+        
+        # 创建子目录
+        self.conv_dir = os.path.join(self.session_dir, "conversations")
+        os.makedirs(self.conv_dir, exist_ok=True)
+        
+        # 文件路径
+        self.session_file = os.path.join(self.session_dir, "session.json")
+        self.inputs_file = os.path.join(self.session_dir, "inputs.txt")
+        self.outputs_file = os.path.join(self.session_dir, "outputs.txt")
+        
+        # 会话元数据
+        self.session_data = {
+            "session_name": session_name,
+            "start_time": datetime.now().isoformat(),
+            "queries": [],
+            "query_count": 0
+        }
+        
+        # 初始化文件
+        self._init_files()
+        
+        print(f"📁 测试日志目录: {self.session_dir}")
+    
+    def _init_files(self):
+        """初始化日志文件"""
+        # 会话元数据
+        with open(self.session_file, 'w', encoding='utf-8') as f:
+            json.dump(self.session_data, f, ensure_ascii=False, indent=2)
+        
+        # 输入日志头部
+        with open(self.inputs_file, 'w', encoding='utf-8') as f:
+            f.write(f"{'='*70}\n")
+            f.write(f"测试输入记录 - 会话: {self.session_data['session_name']}\n")
+            f.write(f"开始时间: {self.session_data['start_time']}\n")
+            f.write(f"{'='*70}\n\n")
+        
+        # 输出日志头部
+        with open(self.outputs_file, 'w', encoding='utf-8') as f:
+            f.write(f"{'='*70}\n")
+            f.write(f"测试输出记录 - 会话: {self.session_data['session_name']}\n")
+            f.write(f"开始时间: {self.session_data['start_time']}\n")
+            f.write(f"{'='*70}\n\n")
+    
+    def log_query(self, query: str, query_type: str = "user") -> int:
+        """
+        记录用户查询
+        
+        Returns:
+            query_id: 查询ID
+        """
+        from datetime import datetime
+        
+        self.session_data["query_count"] += 1
+        query_id = self.session_data["query_count"]
+        
+        query_entry = {
+            "id": query_id,
+            "timestamp": datetime.now().isoformat(),
+            "type": query_type,
+            "query": query
+        }
+        self.session_data["queries"].append(query_entry)
+        
+        # 写入 inputs.txt
+        with open(self.inputs_file, 'a', encoding='utf-8') as f:
+            f.write(f"\n[{query_id}] {query_entry['timestamp']}\n")
+            f.write(f"类型: {query_type}\n")
+            f.write(f"内容: {query}\n")
+            f.write("-" * 70 + "\n")
+        
+        # 更新 session.json
+        with open(self.session_file, 'w', encoding='utf-8') as f:
+            json.dump(self.session_data, f, ensure_ascii=False, indent=2)
+        
+        return query_id
+    
+    def log_response(self, query_id: int, result: Dict[str, Any], response_text: str = None):
+        """
+        记录系统响应
+        
+        Args:
+            query_id: 对应的查询ID
+            result: 完整的返回结果字典
+            response_text: 可选的预格式化响应文本
+        """
+        from datetime import datetime
+        
+        timestamp = datetime.now().isoformat()
+        
+        # 提取关键信息
+        agent_used = result.get("agent_used", "unknown")
+        status = result.get("status", "unknown")
+        processing_time = result.get("processing_time", 0)
+        success = result.get("success", False)
+        
+        # 构建输出内容
+        output_content = response_text or result.get("answer", "")
+        
+        # 写入 outputs.txt
+        with open(self.outputs_file, 'a', encoding='utf-8') as f:
+            f.write(f"\n[响应 #{query_id}] {timestamp}\n")
+            f.write(f"Agent: {agent_used} | 状态: {status} | 耗时: {processing_time:.2f}s\n")
+            f.write(f"成功: {success}\n")
+            f.write("-" * 70 + "\n")
+            f.write(output_content)
+            f.write("\n" + "=" * 70 + "\n")
+        
+        # 保存完整对话记录 (JSON格式)
+        conv_file = os.path.join(self.conv_dir, f"query_{query_id:04d}.json")
+        conversation = {
+            "query_id": query_id,
+            "timestamp": timestamp,
+            "query": self.session_data["queries"][query_id - 1]["query"] if query_id <= len(self.session_data["queries"]) else "",
+            "result": result,
+            "formatted_response": output_content
+        }
+        with open(conv_file, 'w', encoding='utf-8') as f:
+            json.dump(conversation, f, ensure_ascii=False, indent=2)
+        
+        # 更新查询条目
+        for q in self.session_data["queries"]:
+            if q["id"] == query_id:
+                q["response_timestamp"] = timestamp
+                q["agent_used"] = agent_used
+                q["status"] = status
+                q["processing_time"] = processing_time
+                q["success"] = success
+                break
+        
+        # 更新 session.json
+        with open(self.session_file, 'w', encoding='utf-8') as f:
+            json.dump(self.session_data, f, ensure_ascii=False, indent=2)
+    
+    def get_session_summary(self) -> Dict[str, Any]:
+        """获取会话摘要"""
+        from datetime import datetime
+        
+        duration = 0
+        if self.session_data["queries"]:
+            start = datetime.fromisoformat(self.session_data["start_time"])
+            now = datetime.now()
+            duration = (now - start).total_seconds()
+        
+        successful = sum(1 for q in self.session_data["queries"] if q.get("success", False))
+        failed = self.session_data["query_count"] - successful
+        
+        return {
+            "session_name": self.session_data["session_name"],
+            "total_queries": self.session_data["query_count"],
+            "successful": successful,
+            "failed": failed,
+            "duration_seconds": duration,
+            "log_directory": self.session_dir
+        }
+    
+    def print_summary(self):
+        """打印会话摘要"""
+        summary = self.get_session_summary()
+        print(f"\n{'='*70}")
+        print("📊 测试会话摘要")
+        print(f"{'='*70}")
+        print(f"会话名称: {summary['session_name']}")
+        print(f"总查询数: {summary['total_queries']}")
+        print(f"成功: {summary['successful']} | 失败: {summary['failed']}")
+        print(f"总耗时: {summary['duration_seconds']:.2f}s")
+        print(f"日志目录: {summary['log_directory']}")
+        print(f"{'='*70}\n")
+
+
+# ==============================================================================
 # 1. 直接测试模式 - 直接初始化Agent
 # ==============================================================================
 
@@ -73,7 +273,7 @@ class DirectAgentTester:
     直接测试Agent，无需启动FastAPI服务器 (v8.1)
     """
     
-    def __init__(self):
+    def __init__(self, enable_logging: bool = True, session_name: str = None):
         self.message_bus: Optional[MessageBus] = None
         self.shared_memory: Optional[SharedMemory] = None
         self.llm_service: Optional[LLMService] = None
@@ -89,6 +289,11 @@ class DirectAgentTester:
             "total_time": 0,
             "cache_hits": 0
         }
+        
+        # v8.1: 测试日志记录器
+        self.logger: Optional[TestLogger] = None
+        if enable_logging:
+            self.logger = TestLogger(session_name=session_name)
         
     async def initialize(self):
         """初始化所有组件"""
@@ -233,19 +438,25 @@ class DirectAgentTester:
         
         self._initialized = True
         
-    async def query(self, user_query: str, depth: int = 2) -> Dict[str, Any]:
+    async def query(self, user_query: str, depth: int = 2, query_type: str = "user") -> Dict[str, Any]:
         """
         处理用户查询 (v8.1)
         
         Args:
             user_query: 用户输入的自然语言查询
             depth: 研究深度 (1-4)
+            query_type: 查询类型 (用于日志记录)
             
         Returns:
             包含回答和元数据的字典
         """
         if not self._initialized:
             await self.initialize()
+        
+        # v8.1: 记录输入
+        query_id = None
+        if self.logger:
+            query_id = self.logger.log_query(user_query, query_type)
         
         print(f"\n{'='*70}")
         print(f"用户查询: {user_query}")
@@ -304,7 +515,7 @@ class DirectAgentTester:
             # v8.1: 提取分类信息
             classification = result_inner.get("classification", {})
             
-            return {
+            response = {
                 "success": True,
                 "workflow_id": workflow_id,
                 "status": result.get("status", "unknown"),
@@ -319,15 +530,27 @@ class DirectAgentTester:
                 "complexity_score": classification.get("complexity_score", 0)
             }
             
+            # v8.1: 记录输出
+            if self.logger and query_id:
+                self.logger.log_response(query_id, response)
+            
+            return response
+            
         except asyncio.TimeoutError:
             processing_time = time.time() - start_time
-            return {
+            error_response = {
                 "success": False,
                 "workflow_id": workflow_id,
                 "status": "timeout",
                 "error": "处理超时（180秒），请稍后重试或简化查询",
                 "processing_time": processing_time
             }
+            
+            # v8.1: 记录错误
+            if self.logger and query_id:
+                self.logger.log_response(query_id, error_response)
+            
+            return error_response
     
     async def test_v81_features(self):
         """测试 v8.1 新特性"""
@@ -382,6 +605,10 @@ class DirectAgentTester:
         if self.orchestrator:
             await self.orchestrator.stop()
         print("✓ 系统已关闭")
+        
+        # v8.1: 打印日志摘要
+        if self.logger:
+            self.logger.print_summary()
 
 
 # ==============================================================================
@@ -393,12 +620,22 @@ class APIAgentTester:
     通过HTTP API测试（需要服务器已启动）- v8.1
     """
     
-    def __init__(self, base_url: str = "http://localhost:8000"):
+    def __init__(self, base_url: str = "http://localhost:8000", enable_logging: bool = True, session_name: str = None):
         self.base_url = base_url
         
-    async def query(self, user_query: str, depth: int = 2) -> Dict[str, Any]:
+        # v8.1: 测试日志记录器
+        self.logger: Optional[TestLogger] = None
+        if enable_logging:
+            self.logger = TestLogger(session_name=session_name)
+        
+    async def query(self, user_query: str, depth: int = 2, query_type: str = "user") -> Dict[str, Any]:
         """通过API发送查询"""
         import aiohttp
+        
+        # v8.1: 记录输入
+        query_id = None
+        if self.logger:
+            query_id = self.logger.log_query(user_query, query_type)
         
         print(f"\n{'='*70}")
         print(f"用户查询: {user_query}")
@@ -407,27 +644,57 @@ class APIAgentTester:
         
         start_time = time.time()
         
-        async with aiohttp.ClientSession() as session:
-            async with session.post(
-                f"{self.base_url}/query",
-                json={
-                    "query": user_query,
-                    "depth": depth,
-                    "require_citations": True
-                }
-            ) as response:
-                if response.status == 200:
-                    result = await response.json()
-                    result["processing_time"] = time.time() - start_time
-                    return result
-                else:
-                    error_text = await response.text()
-                    return {
-                        "success": False,
-                        "status": f"error_{response.status}",
-                        "error": error_text,
-                        "processing_time": time.time() - start_time
+        try:
+            async with aiohttp.ClientSession() as session:
+                async with session.post(
+                    f"{self.base_url}/query",
+                    json={
+                        "query": user_query,
+                        "depth": depth,
+                        "require_citations": True
                     }
+                ) as response:
+                    if response.status == 200:
+                        result = await response.json()
+                        result["processing_time"] = time.time() - start_time
+                        
+                        # v8.1: 记录输出
+                        if self.logger and query_id:
+                            self.logger.log_response(query_id, result)
+                        
+                        return result
+                    else:
+                        error_text = await response.text()
+                        error_result = {
+                            "success": False,
+                            "status": f"error_{response.status}",
+                            "error": error_text,
+                            "processing_time": time.time() - start_time
+                        }
+                        
+                        # v8.1: 记录错误
+                        if self.logger and query_id:
+                            self.logger.log_response(query_id, error_result)
+                        
+                        return error_result
+        except Exception as e:
+            error_result = {
+                "success": False,
+                "status": "exception",
+                "error": str(e),
+                "processing_time": time.time() - start_time
+            }
+            
+            # v8.1: 记录异常
+            if self.logger and query_id:
+                self.logger.log_response(query_id, error_result)
+            
+            return error_result
+    
+    def print_summary(self):
+        """打印日志摘要 (v8.1)"""
+        if self.logger:
+            self.logger.print_summary()
     
     async def health_check(self) -> bool:
         """检查服务器健康状态 (v8.1)"""
@@ -681,6 +948,8 @@ async def main():
     finally:
         if isinstance(tester, DirectAgentTester):
             await tester.close()
+        elif isinstance(tester, APIAgentTester):
+            tester.print_summary()
 
 
 # 预定义的测试查询示例
