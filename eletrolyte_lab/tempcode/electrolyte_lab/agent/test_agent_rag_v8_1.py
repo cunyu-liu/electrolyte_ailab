@@ -782,16 +782,26 @@ def print_result(result: Dict[str, Any]):
     
     citations = result.get('citations', [])
     if citations:
+        # 去重：基于标题去重，保留第一个出现的
+        seen_titles = set()
+        unique_citations = []
+        for citation in citations:
+            title = citation.get('doc_title', 'Unknown')
+            if title not in seen_titles:
+                seen_titles.add(title)
+                unique_citations.append(citation)
+        citations = unique_citations
+        
         print(f"\n📚 引用文献 ({len(citations)}篇):")
-        for i, citation in enumerate(citations[:5], 1):
+        for i, citation in enumerate(citations, 1):
             title = citation.get('doc_title', 'Unknown')
             year = citation.get('year', 'n.d.')
             # v8.1: 显示冲突标记
             conflict = citation.get('conflict_mark', '')
             conflict_str = f" [⚠️{conflict}]" if conflict else ""
             print(f"  {i}. {title} ({year}){conflict_str}")
-        if len(citations) > 5:
-            print(f"  ... 还有 {len(citations) - 5} 篇引用")
+        # if len(citations) > 5:
+        #     print(f"  ... 还有 {len(citations) - 5} 篇引用")
     
     qc_report = result.get('qc_report')
     if qc_report:
