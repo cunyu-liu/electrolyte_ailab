@@ -1,0 +1,2649 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.064,
+                0.032,
+                0.2,
+                0.053
+            ],
+            "angle": 0,
+            "content": "Perspective"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.065,
+                0.058,
+                0.843,
+                0.132
+            ],
+            "angle": 0,
+            "content": "Designing the next generation of proton-exchange membrane fuel cells"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.181,
+                0.341,
+                0.195
+            ],
+            "angle": 0,
+            "content": "https://doi.org/10.1038/s41586-021-03482-7"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.202,
+                0.232,
+                0.216
+            ],
+            "angle": 0,
+            "content": "Received: 10 August 2020"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.222,
+                0.227,
+                0.236
+            ],
+            "angle": 0,
+            "content": "Accepted: 22 March 2021"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.242,
+                0.255,
+                0.256
+            ],
+            "angle": 0,
+            "content": "Published online: 14 July 2021"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.263,
+                0.204,
+                0.277
+            ],
+            "angle": 0,
+            "content": "Check for updates"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.36,
+                0.181,
+                0.901,
+                0.222
+            ],
+            "angle": 0,
+            "content": "Kui Jiao\\(^{1,7\\boxtimes}\\), Jin Xuan\\(^{2,7}\\), Qing Du\\(^{1,7}\\), Zhiming Bao\\(^{1}\\), Biao Xie\\(^{1}\\), Bowen Wang\\(^{1}\\), Yan Zhao\\(^{3}\\), Linhao Fan\\(^{1}\\), Huizhi Wang\\(^{3}\\), Zhongjun Hou\\(^{4\\boxtimes}\\), Sen Huo\\(^{4}\\), Nigel P. Brandon\\(^{5}\\), Yan Yin\\(^{1}\\) & Michael D. Guiver\\(^{1,6\\boxtimes}\\)"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.36,
+                0.248,
+                0.942,
+                0.462
+            ],
+            "angle": 0,
+            "content": "With the rapid growth and development of proton-exchange membrane fuel cell (PEMFC) technology, there has been increasing demand for clean and sustainable global energy applications. Of the many device-level and infrastructure challenges that need to be overcome before wide commercialization can be realized, one of the most critical ones is increasing the PEMFC power density, and ambitious goals have been proposed globally. For example, the short- and long-term power density goals of Japan's New Energy and Industrial Technology Development Organization are 6 kilowatts per litre by 2030 and 9 kilowatts per litre by 2040, respectively. To this end, here we propose technical development directions for next-generation high-power-density PEMFCs. We present the latest ideas for improvements in the membrane electrode assembly and its components with regard to water and thermal management and materials. These concepts are expected to be implemented in next-generation PEMFCs to achieve high power density."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.061,
+                0.494,
+                0.496,
+                0.629
+            ],
+            "angle": 0,
+            "content": "Addressing the increasing global energy consumption and environmental pollution caused by fossil-fuel energy usage has spurred worldwide growth in renewable and eco-friendly energy solutions<sup>1</sup>. A hydrogen economy based on renewables—including hydrogen production, hydrogen storage and conversion of hydrogen to electricity—is widely considered as a promising solution for the future of energy. In the hydrogen economy, fuel cell vehicles (FCVs) are critical for delivering low-carbon transport, and the well-to-wheels greenhouse gas emissions are expected to be reduced to near zero when hydrogen is produced from renewables<sup>2-4</sup>."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.061,
+                0.63,
+                0.497,
+                0.89
+            ],
+            "angle": 0,
+            "content": "As the two low-carbon transport routes, FCVs and battery electric vehicles (BEVs) are often compared. Batteries are energy storage devices, whereas fuel cells are energy conversion devices that typically use hydrogen for energy storage. As a storage medium, hydrogen has inherent advantages over lithium ion batteries, exhibiting higher energy density and shorter refuelling time for \\(\\mathrm{FCVs}^6\\). The FCV also outperforms the BEV under sub-zero temperature conditions, because the BEV often exhibits considerably reduced discharge capacity[7,8]. The cost of FCVs is currently higher than that of BEVs for short-range vehicles (below 200 miles, \\(322\\mathrm{km}\\)); however, it is comparable to or lower than that of BEVs with high annual production rates, particularly for long-range vehicles (above 300 miles, \\(483\\mathrm{km}\\))[6,9]. On the downside, the efficiency of FCVs is considerably lower than that of BEVs regarding usage, and the hydrogen infrastructure is still at the preliminary stage[10-12]. On the basis of the differences in their technical characteristics, the prevailing opinion is that FCVs are better suited to heavy-duty and long-distance transportation, as well as for other commercial vehicles such as forklifts, whereas BEVs are more suitable for light-duty and short-distance transportation (Fig. 1)[13]. Large-scale expansion of the"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.494,
+                0.945,
+                0.739
+            ],
+            "angle": 0,
+            "content": "BEV market has been achieved with the rapid technical development of lithium ion batteries in the past two decades, combined with grid at-home recharging. The core component of FCVs, PEMFCs, have technical barriers that need to be overcome. Moreover, the performance, cost and durability of the PEMFC stack greatly affect the large-scale commercialization of FCVs. Improving power density is vital for the development of \\(\\mathsf{FCVs}^{3,5,8}\\). The stack power densities with and without end plates in the second-generation MIRAI (the latest Toyota FCV, launched at the end of 2020) reached \\(4.4\\mathrm{kW}\\mathrm{l}^{-1}\\) and \\(5.4\\mathrm{kW}\\mathrm{l}^{-1}\\), respectively, an increase of \\(42\\%\\) and \\(54\\%\\) in comparison with those achieved in the previous generation[8,14,15]. According to Japan's New Energy and Industrial Technology Development Organization (Japan NEDO), the 2030 and 2040 targets of the stack power density for automotive applications are \\(6.0\\mathrm{kW}\\mathrm{l}^{-1}\\) and \\(9.0\\mathrm{kW}\\mathrm{l}^{-1}\\), respectively[16]. The European Union Fuel Cells and Hydrogen 2 Joint Undertaking (EU-FCH2JU) recently demonstrated a PEMFC stack with a power density of \\(5.38\\mathrm{kW}\\mathrm{l}^{-1}\\) (with end plates) at a current density of \\(2.67\\mathrm{Acm}^{-2}\\) and a single-cell voltage of \\(0.6\\mathrm{V}\\) (ref.[17]), and the goal is \\(9.3\\mathrm{kW}\\mathrm{l}^{-1}\\) by \\(2024^{18}\\)."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.739,
+                0.945,
+                0.889
+            ],
+            "angle": 0,
+            "content": "An overview of the progressive improvements needed for PEMFCs to meet the future high-power-density requirements is illustrated in Fig. 2, accompanied by a schematic explanation of the working principle. The current technical status and the widely acknowledged prospects of PEMFCs are listed on the basis of individual components. A typical single PEMFC generally comprises a membrane electrode assembly (MEA) and bipolar plates (BPs), wherein the MEA comprises a gas diffusion layer (GDL) with a microporous layer (MPL), a catalyst layer (CL) and a proton-exchange membrane (PEM). In addition to the desired electrical output, water and heat are generated by electrochemical reactions, which affect the PEMFC operation. It is vital to maintain"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.061,
+                0.897,
+                0.942,
+                0.942
+            ],
+            "angle": 0,
+            "content": "<sup>1</sup>State Key Laboratory of Engines, Tianjin University, Tianjin, China. <sup>2</sup>Department of Chemical Engineering, Loughborough University, Loughborough, UK. <sup>3</sup>Department of Mechanical Engineering, Imperial College London, London, UK. <sup>4</sup>Shanghai Hydrogen Propulsion Technology Co. Ltd, Shanghai, China. <sup>5</sup>Department of Earth Science and Engineering, Imperial College London, London, UK. <sup>6</sup>Collaborative Innovation Center of Chemical Science and Engineering (Tianjin), Tianjin, China. <sup>7</sup>These authors contributed equally: Kui Jiao, Jin Xuan, Qing Du. <sup>e</sup>e-mail: kjiao@tju.edu.cn; hou_zhongjun@shpt.com; michael.guiver@outlook.com"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.712,
+                0.963,
+                0.903,
+                0.976
+            ],
+            "angle": 0,
+            "content": "Nature | Vol 595 | 15 July 2021"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.917,
+                0.963,
+                0.944,
+                0.975
+            ],
+            "angle": 0,
+            "content": "361"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.064,
+                0.033,
+                0.201,
+                0.053
+            ],
+            "angle": 0,
+            "content": "Perspective"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.064,
+                0.068,
+                0.495,
+                0.257
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.067,
+                0.264,
+                0.496,
+                0.446
+            ],
+            "angle": 0,
+            "content": "<table><tr><td></td><td>BEV</td><td>FCV</td></tr><tr><td>Storage media</td><td>Li-ion batteries</td><td>Hydrogen</td></tr><tr><td>Energy density</td><td>&lt;200 Wh kg-1</td><td>~300 Wh kg-1</td></tr><tr><td>Refuelling time</td><td>Hours</td><td>Minutes</td></tr><tr><td>Low temperature</td><td>Severe degradation</td><td>Demonstrated at -30 °C</td></tr><tr><td>Efficiency</td><td>~90%</td><td>~60%</td></tr><tr><td>Infrastructure</td><td>Grid and charging piles</td><td>Hydrogen stations</td></tr></table>"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.062,
+                0.454,
+                0.43,
+                0.479
+            ],
+            "angle": 0,
+            "content": "Fig.1|Expected application domains of BEVs and FCVs in future automotive transportation, and comparison of their technical"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.061,
+                0.48,
+                0.491,
+                0.633
+            ],
+            "angle": 0,
+            "content": "characteristics\\(^{6-13}\\). The advantages of FCVs include better energy medium, higher energy density, shorter refuelling time, lower cost and safety risks with increasing energy density, and better low-temperature performance. BEVs have higher efficiency regarding usage and a wider infrastructure. The table shows the energy density of the powertrain system, which includes the battery pack and battery management system for BEVs, and the fuel cell system and hydrogen tank for FCVs. The refuelling time of fuel cell passenger vehicles is approximately 5-10 min; the typical charging time of similar-scale BEVs is several to dozens of hours. Fast charging of BEVs is not considered here because it substantially compromises cycle life and cannot be used for daily charging. The displayed efficiency is charging efficiency for BEVs and hydrogen-to-electricity conversion efficiency for FCVs."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.061,
+                0.657,
+                0.498,
+                0.944
+            ],
+            "angle": 0,
+            "content": "an appropriate water content and a suitable operating temperature, through water and thermal management, to attain a desirable trade-off among sufficient PEM hydration, unobstructed reactant supply, high catalyst activity and adequate component lifetime. The GDL is a layer of carbon paper, which plays multiple important parts in gas distribution, mechanical support and electrical connection. It is typically attached to another layer made up of carbon black and polytetrafluoroethylene (PTFE), commonly known as the MPL, which assists in the timely removal of electrochemically produced water. The CL is the site where the hydrogen oxidation and oxygen reduction electrochemical reactions occur, through a series of coupled physiochemical processes. Platinum-loaded carbon, which is finely dispersed with ionomer, is the most frequently used catalyst owing to its excellent activity and durability in an electrochemical environment. Decreasing the platinum group metal (PGM) loading is an unchanging goal for the development of the CL, owing to its high cost and limited resources. The core component of a PEMFC is the PEM, which functions as a proton conductor, an electrical insulator and a gas separator. Better temperature- and humidity-range tolerances, as well as sufficient mechanical strength, are necessary to meet the future higher power density and durability demands. The BP is a rigid support structure in the PEMFC stack"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.059,
+                0.946,
+                0.181
+            ],
+            "angle": 0,
+            "content": "onto which the reactant and coolant flow fields are fabricated, and is responsible for current collection and heat dissipation. However, the BP also constitutes a large proportion of the stack volume and cost. A more thinly structured BP with better mass-transfer capacity, electrical conductivity, thermal conductivity and lower cost is an obvious design strategy to achieve higher-power-density and lower-cost PEMFCs\\(^{15}\\). A more detailed perspective of potential expectations and possible avenues for implementation at the component level, as depicted in Fig. 2, is presented in the following sections."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.182,
+                0.945,
+                0.4
+            ],
+            "angle": 0,
+            "content": "According to state-of-the-art FCV products and worldwide fuel cell programmes, the volume power density of a stack with end plates is expected to reach \\(6\\mathrm{kW}\\mathrm{l}^{-1}\\) in the next 5-10 years, with the working current density and cell voltage increasing to \\(3 - 4\\mathrm{Acm}^{-2}\\) and \\(0.7 - 0.8\\mathrm{V}\\), respectively. Furthermore, an ultimate stack target of \\(9\\mathrm{kW}\\mathrm{l}^{-1}\\) may be achieved with further developments, with cell operating points raised to even higher levels, such as \\(4 - 5\\mathrm{Acm}^{-2}\\) and \\(0.8 - 0.9\\mathrm{V}\\). The mathematical conversion between the two description indices of the PEMFC performance (volume power density of stack, expressed in \\(\\mathrm{kWl^{-1}}\\), and current density of active area, in \\(\\mathrm{Acm}^{-2}\\)) is based on public domain data and a calculation of the number of cells and the thickness of the end plates. Throughout this paper, volume power density refers to that of a stack with end plates, unless otherwise specified. To achieve the substantial boost required in the PEMFC stack power density, thorough understanding of the current challenges and potentials involving all the components of a PEMFC is needed, which is the objective of this Perspective."
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.509,
+                0.423,
+                0.757,
+                0.438
+            ],
+            "angle": 0,
+            "content": "Membrane electrode assembly"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.439,
+                0.945,
+                0.535
+            ],
+            "angle": 0,
+            "content": "The MEA consists of the following individual components: the electrically conductive GDL, which allows gases to permeate through it; the CL, in which the redox reactions occur; and the PEM, which acts as the electrolyte. In order to increase the power density and promote the more extensive commercial adoption of PEMFCs, it is of great importance to fabricate MEAs with higher performance, better durability and lower cost."
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.509,
+                0.559,
+                0.661,
+                0.574
+            ],
+            "angle": 0,
+            "content": "Gas diffusion layer"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.576,
+                0.945,
+                0.78
+            ],
+            "angle": 0,
+            "content": "In the foreseeable future, carbon paper is expected to continue to be the mainstream choice for GDLs owing to its advantages in terms of electrical conductivity, mechanical strength, chemical resistance and fabrication cost\\(^{19}\\). Structural modification of GDLs, such as laser perforation, has been tested, and may provide a potential future direction\\(^{20}\\). Owing to the scale discrepancies in the transport characteristics of the BP and MEA (pore sizes range from micrometres to nanometres), mass transfer for gas permeation and water management is complex. GDLs with a gradient pore size—possibly realized via manipulation of the carbon fibre arrangement—are expected to establish a more effective bridge between the flow field and the MEA, and improve the mass-transfer ability of the MEA itself (Fig. 3a, left)\\(^{21-31}\\). For example, decreasing the porosity on one or both sides of the GDL may reduce the contact resistance and create pore gradients inside the GDL to facilitate reactant supply and water removal."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.78,
+                0.945,
+                0.944
+            ],
+            "angle": 0,
+            "content": "Another important factor is the interfacial resistance between components, which depends mainly on the material properties and assembly process. The contact resistance between the BP and GDL is the main source of electrical impedance, which is approximately two orders of magnitude higher than the resistance of the GDL itself (estimated considering a GDL conductivity of \\(10^{3}\\mathrm{S}\\mathrm{m}^{-1}\\), a thickness of \\(150\\mu \\mathrm{m}\\) and a contact resistance of \\(10^{-6}\\Omega \\mathrm{m}^2\\)). A metal-sheet GDL has been used to lower Ohmic loss; however, the problem of corrosion needs to be solved. To alleviate, or even eliminate, the interfacial effect, the concept of component integration or unification has been proposed. This entails replacing the BP and GDL with another component to meet the requirements of electric conduction, gas distribution and water management"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.064,
+                0.964,
+                0.093,
+                0.974
+            ],
+            "angle": 0,
+            "content": "362"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.107,
+                0.963,
+                0.298,
+                0.975
+            ],
+            "angle": 0,
+            "content": "Nature | Vol 595 | 15 July 2021"
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.145,
+                0.061,
+                0.864,
+                0.395
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.144,
+                0.397,
+                0.864,
+                0.635
+            ],
+            "angle": 0,
+            "content": "<table><tr><td></td><td>Biopolar plate (flow field)</td><td>Catalyst layer</td><td>Proton-exchange membrane</td><td>Gas-diffusion layer (microporous layer)</td></tr><tr><td>Major functions</td><td>• Current collection\n• Heat dissipation\n• Reactant distribution\n• Water management</td><td>• Electrochemical reaction site</td><td>• Proton conductor\n• Reactant separator\n• Electron barrier</td><td>• Reactant distribution\n• Electricity and heat conduction\n• Structure transition\n• Water drainage</td></tr><tr><td>Present state</td><td>• Carbon (~1.0 mm thick)\n• Metal (~0.6 mm thick)\n• Rib/channel structures (0.5-0.8 mm width)</td><td>• Platinum loading (0.1-0.2 g kW-1)\n• Heterogeneous ionomer coverage</td><td>• Perfluorosulfonic acid -based polymers\n• ~90 °C operation</td><td>• Carbon paper with fibre structure\n• Carbon black and hydrophobic agents</td></tr><tr><td>Future trends</td><td>• Metallic material mainly (&lt;0.5 mm thick)\n• Convection-enhanced structures (0.1-0.5 mm unit)</td><td>• Platinum loading (&lt;0.1 g kW-1)\n• Lower ionomer content and better distribution</td><td>• Composite material -based polymers\n• &gt;100 °C operation</td><td>• Carbon paper with modified fibre structure or porous material integrated with BP\n• Carbon black and adapted wettability agents</td></tr></table>"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.061,
+                0.641,
+                0.496,
+                0.73
+            ],
+            "angle": 0,
+            "content": "Fig. 2 | Overview of progressive improvements in PEMFCs to meet future high-power-density requirements and a schematic explanation of the working principle. Owing to the largely proprietary nature of many commercial technologies, some estimations of the present technology status and potential for the future are given. Seven components of a PEMFC are presented, including BPs with flow channel/field, GDLs and CLs at the anode and cathode, respectively, and the central PEM. During PEMFC operation, hydrogen"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.061,
+                0.752,
+                0.496,
+                0.834
+            ],
+            "angle": 0,
+            "content": "simultaneously\\(^{33}\\). The mass-transfer path becomes shorter (expected through-plane distance from \\(0.5 - 0.6 \\, \\mathrm{mm}\\) to \\(0.3 - 0.4 \\, \\mathrm{mm}\\)) to fulfil the demand for higher current density (\\(3 - 4 \\, \\mathrm{A} \\, \\mathrm{cm}^{-2}\\)). This so-called 'integrated BP-MEA' or 'GDL-less' design—which involves, for example, the adoption of foam materials (see Fig. 3a, right)—is further discussed in section 'Integrated porous BP-MEA design'."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.061,
+                0.834,
+                0.496,
+                0.944
+            ],
+            "angle": 0,
+            "content": "The proposed future power density target \\((6 - 9\\mathrm{kW}\\mathrm{l}^{-1})\\) also imposes higher requirements on water management capability. The MPL coating (typically \\(20 - 40\\%\\) PTFE content) on the GDL impedes liquid water from pooling at the CL/MPL interface, thereby diminishing the blocking effect of liquid water on the gas transport[34]. Nevertheless, with the continuous improvement of membrane materials to tolerate higher temperatures and lower humidity, water management can be simplified[16]. Consequently, hydrophobic coating is not necessarily the only"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.641,
+                0.945,
+                0.73
+            ],
+            "angle": 0,
+            "content": "is fed to the anode and air (or oxygen) is fed to the cathode. The hydrogen oxidation reaction dissociates the hydrogen molecules into protons and electrons at the anode CL. Protons transport to the cathode CL through the PEM, and electrons travel through the external circuit. The oxygen reduction reaction occurs at the cathode CL among protons, electrons and oxygen molecules, and generates water, heat and electricity. In the table, the BP thickness refers to the distance between two adjacent MEAs in the fuel cell stack."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.752,
+                0.945,
+                0.875
+            ],
+            "angle": 0,
+            "content": "choice, and the design of MPL and GDL wettability, as well as their microstructures, should be adapted to meet the evolving practical requirements. For instance, a hydrophilic anode and hydrophobic cathode, or an MEA divided into hydrophilic and hydrophobic zones, may better fit the operation of a PEMFC stack without an external humidifier. It is anticipated that the development of GDLs together with MPLs will contribute about \\(10\\%\\) towards the improvement of power density, owing to the improved matching of other components (see Supplementary Information for the estimation)."
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.51,
+                0.898,
+                0.623,
+                0.913
+            ],
+            "angle": 0,
+            "content": "Catalyst layer"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.509,
+                0.916,
+                0.944,
+                0.944
+            ],
+            "angle": 0,
+            "content": "The maximum power density is dominated by the performance of the CLs. To achieve a power density of \\(9\\mathrm{kW}\\mathrm{l}^{-1}\\) at a low catalyst loading, a"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.709,
+                0.963,
+                0.901,
+                0.976
+            ],
+            "angle": 0,
+            "content": "Nature | Vol 595 | 15 July 2021"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.915,
+                0.963,
+                0.943,
+                0.974
+            ],
+            "angle": 0,
+            "content": "363"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.064,
+                0.033,
+                0.201,
+                0.053
+            ],
+            "angle": 0,
+            "content": "Perspective"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.215,
+                0.068,
+                0.513,
+                0.081
+            ],
+            "angle": 0,
+            "content": "a Potential approaches for further GDL design"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.231,
+                0.083,
+                0.496,
+                0.173
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.328,
+                0.174,
+                0.425,
+                0.185
+            ],
+            "angle": 0,
+            "content": "Pore size gradient"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.52,
+                0.095,
+                0.761,
+                0.173
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.59,
+                0.174,
+                0.697,
+                0.185
+            ],
+            "angle": 0,
+            "content": "Integrated structure"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.224,
+                0.194,
+                0.356,
+                0.206
+            ],
+            "angle": 0,
+            "content": "b Key CL advances"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.227,
+                0.208,
+                0.33,
+                0.221
+            ],
+            "angle": 0,
+            "content": "(I) Novel catalysts"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.229,
+                0.224,
+                0.35,
+                0.297
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.252,
+                0.297,
+                0.333,
+                0.307
+            ],
+            "angle": 0,
+            "content": "PtNi nanocage"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.384,
+                0.208,
+                0.447,
+                0.22
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.462,
+                0.208,
+                0.509,
+                0.219
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.524,
+                0.208,
+                0.573,
+                0.219
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.588,
+                0.208,
+                0.671,
+                0.219
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.371,
+                0.229,
+                0.455,
+                0.291
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.372,
+                0.296,
+                0.455,
+                0.306
+            ],
+            "angle": 0,
+            "content": "PtCo core shell"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.473,
+                0.229,
+                0.558,
+                0.29
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.485,
+                0.296,
+                0.545,
+                0.306
+            ],
+            "angle": 0,
+            "content": "Nanoframe"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.574,
+                0.225,
+                0.672,
+                0.284
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.596,
+                0.296,
+                0.649,
+                0.306
+            ],
+            "angle": 0,
+            "content": "Nanowire"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.688,
+                0.211,
+                0.782,
+                0.283
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.71,
+                0.286,
+                0.773,
+                0.306
+            ],
+            "angle": 0,
+            "content": "PtNiMo octahedron"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.224,
+                0.32,
+                0.478,
+                0.475
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.227,
+                0.491,
+                0.421,
+                0.503
+            ],
+            "angle": 0,
+            "content": "(III) Boosting Pt/ionomer interface"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.229,
+                0.507,
+                0.46,
+                0.604
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.286,
+                0.604,
+                0.39,
+                0.614
+            ],
+            "angle": 0,
+            "content": "Pt/Aq 825 interface"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.472,
+                0.336,
+                0.673,
+                0.348
+            ],
+            "angle": 0,
+            "content": "(II) Modification of carbon supports"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.472,
+                0.356,
+                0.525,
+                0.366
+            ],
+            "angle": 0,
+            "content": "■ Carbon"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.547,
+                0.357,
+                0.608,
+                0.367
+            ],
+            "angle": 0,
+            "content": "Platinum"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.629,
+                0.357,
+                0.686,
+                0.367
+            ],
+            "angle": 0,
+            "content": "Ionomer"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.71,
+                0.357,
+                0.768,
+                0.368
+            ],
+            "angle": 0,
+            "content": "Nitrogen"
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.472,
+                0.357,
+                0.768,
+                0.368
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.471,
+                0.377,
+                0.661,
+                0.452
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.472,
+                0.457,
+                0.626,
+                0.468
+            ],
+            "angle": 0,
+            "content": "Pt/N-doped carbon supports"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.675,
+                0.376,
+                0.77,
+                0.446
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.676,
+                0.448,
+                0.776,
+                0.469
+            ],
+            "angle": 0,
+            "content": "Accessible carbon mesopores"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.47,
+                0.507,
+                0.701,
+                0.604
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.53,
+                0.604,
+                0.645,
+                0.613
+            ],
+            "angle": 0,
+            "content": "Pt/Naf 1100 interface"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.709,
+                0.508,
+                0.765,
+                0.518
+            ],
+            "angle": 0,
+            "content": "Carbon"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.709,
+                0.525,
+                0.771,
+                0.535
+            ],
+            "angle": 0,
+            "content": "Platinum"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.709,
+                0.54,
+                0.78,
+                0.559
+            ],
+            "angle": 0,
+            "content": "lonomer backbone"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.709,
+                0.565,
+                0.768,
+                0.585
+            ],
+            "angle": 0,
+            "content": "Sulfonic acid"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.709,
+                0.593,
+                0.758,
+                0.603
+            ],
+            "angle": 0,
+            "content": "Water"
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.709,
+                0.508,
+                0.78,
+                0.603
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.215,
+                0.639,
+                0.446,
+                0.651
+            ],
+            "angle": 0,
+            "content": "c New design approaches for PEMs"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.217,
+                0.66,
+                0.314,
+                0.761
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.216,
+                0.785,
+                0.315,
+                0.806
+            ],
+            "angle": 0,
+            "content": "\\(\\mathrm{CeO}_x / \\mathrm{PD}\\) -treated PTFE membrane"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.334,
+                0.674,
+                0.532,
+                0.773
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.336,
+                0.785,
+                0.494,
+                0.807
+            ],
+            "angle": 0,
+            "content": "Nanocrack-regulated self-humidifying membrane"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.54,
+                0.646,
+                0.792,
+                0.772
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.544,
+                0.785,
+                0.744,
+                0.807
+            ],
+            "angle": 0,
+            "content": "Membrane with through-plane oriented proton transport channels"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.061,
+                0.815,
+                0.496,
+                0.942
+            ],
+            "angle": 0,
+            "content": "Fig. 3 | State-of-the-art and next-generation MEA designs. a, Two potential approaches for future GDL development: left, pore size gradient, realized by manipulation of the carbon fibre arrangement; right, integrated BP-MEA design or GDL-less design with foam materials. b, Key advances in the CL. (I) Novel catalysts with special shapes and ultrahigh activities achieve high power density and lower catalyst loadings \\(\\mathrm{(Pt_{1.5}Ni}\\) nanocage\\(^{21}\\), PtCo core shell\\(^{22}\\), PtNi nanoframe\\(^{23}\\), Pt nanowire\\(^{24}\\), transition-metal-doped \\(\\mathrm{Pt}_3\\mathrm{Ni}\\) octahedra\\(^{25}\\)). (II) Modification of carbon supports enables the uniform distribution of ionomers and high catalyst utilization (nitrogen-doping of carbon supports\\(^{26}\\) and carbon with accessible mesopores\\(^{27}\\)). (III) Boosting Pt/ionomer interface via molecular"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.509,
+                0.815,
+                0.942,
+                0.942
+            ],
+            "angle": 0,
+            "content": "arrangements\\(^{28}\\). c, Recent design approaches for PEMs: left, Ce-doping of the membrane enhances membrane stability\\(^{29}\\); middle, a nanocrack-regulated self-humidifying membrane regulates water retention\\(^{30}\\); right, a membrane with through-plane-oriented proton-transport channels enables efficient proton conduction even at an extremely low relative humidity\\(^{31}\\). PSf, polysulfone; PD, polydopamine; PWA, phosphotungstic acid; CP4VP, ferrocyanide-coordinated poly(4-vinylpyridine). Images in b, c adapted with permission from refs.\\(^{21-25}\\) (the American Association for the Advancement of Science), ref.\\(^{27}\\) (American Chemical Society), ref.\\(^{28}\\) (Multidisciplinary Digital Publishing Institute), ref.\\(^{29}\\) (John Wiley & Sons) and refs.\\(^{26,30,31}\\) (Springer Nature)."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.064,
+                0.963,
+                0.093,
+                0.974
+            ],
+            "angle": 0,
+            "content": "364"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.108,
+                0.963,
+                0.213,
+                0.975
+            ],
+            "angle": 0,
+            "content": "Nature | Vol 595"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.226,
+                0.963,
+                0.298,
+                0.975
+            ],
+            "angle": 0,
+            "content": "15 July 2021"
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.06,
+                0.059,
+                0.496,
+                0.099
+            ],
+            "angle": 0,
+            "content": "high cell output voltage of over \\(0.8\\mathrm{V}\\) and a current density of \\(4.4\\mathrm{Acm}^{-2}\\) are required[16]; however, this would necessitate considerable breakthroughs in catalyst activity and CL design, as depicted in Figs. 2, 3b."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.06,
+                0.1,
+                0.497,
+                0.385
+            ],
+            "angle": 0,
+            "content": "One main approach to increasing the specific activity or mass activity of the catalyst is the design of novel catalyst architectures (such as nanocages\\(^{21}\\), core-shell\\(^{22}\\), nanoframes\\(^{23}\\), nanowires\\(^{24}\\), nanocrystals\\(^{25}\\)). A representative example is \\(\\mathrm{Pt}_3\\mathrm{Ni}\\) nanoframe catalysts with extended platinum surfaces, which achieve enhancement factors of 36 in mass activity and 22 in specific activity in comparison with commercial Pt/C catalyst\\(^{23}\\). Thus far, the highest specific activity and mass activity values reported are \\(11.5\\mathrm{mAcm}^{-2}\\) and 13.6 A per milligram Pt \\((\\mathrm{mg}_{\\mathrm{Pt}})\\), respectively, by using ultrafine jagged platinum nanowires\\(^{24}\\). However, these catalysts are typically evaluated using the rotating disk electrode (RDE) method, with little practical application being reported at the MEA level. Recently, a breakthrough catalyst with an ultralow concentration of Pt alloy supported on PGM-free materials (denoted as LP@ PF-1) achieved a mass activity of \\(1.08\\mathrm{A}\\mathrm{mg}_{\\mathrm{Pt}}^{-1}\\) and retained \\(64\\%\\) of its initial value after 30,000 cycles in a fuel cell. However, mass activity decreased by one order of magnitude in comparison with the value measured by RDE\\(^{22}\\). Furthermore, some Pt nanoparticles are considered to be metastable, and the shape geometries diminish with catalyst age\\(^{35}\\). Thus, a future challenge is the stabilization of catalyst particle shapes to enhance their durability and simultaneously maintain their ultrahigh specific or mass activity in an operating fuel cell environment."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.06,
+                0.386,
+                0.497,
+                0.725
+            ],
+            "angle": 0,
+            "content": "Ionomers, in contact with the catalyst, ensure accessibility and transport of protons to and from the catalyst particles at the cathode and anode. Their distribution has a pronounced effect on ionic conductivity and Pt catalyst utilization\\(^{26}\\). For example, recent research showed that nitrogen-doped carbon supports could ensure very uniform coverage of the ionomer, owing to the Coulombic attraction between the ionomer and N groups on the carbon support, eventually achieving fuel cell power densities of up to \\(1.39 \\mathrm{~W} \\mathrm{~cm}^{-2}\\) for a pure Pt catalyst\\(^{26}\\). Furthermore, carbon supports with a preferred internal pore opening of \\(4-7 \\mathrm{~nm}\\) conferred excellent oxygen reduction reaction activity and transport properties simultaneously\\(^{27}\\). These results indicated that appropriate modification of the carbon supports could lead to marked improvements in PEMFC power densities. Interestingly, with regard to the catalyst/ionomer interface, shortening the side-chain length of ionomers also enhanced proton transport, but decreased local \\(\\mathrm{O}_2\\) transport\\(^{28}\\), suggesting another promising approach to achieving a balanced trade-off between proton transport and oxygen transport, as well as promoting full utilization of the Pt catalyst\\(^{36}\\). In addition, given that the water swelling/deswelling of the ionomer may cause interfacial degradation between the CL and PEM\\(^{37}\\), the ionomer must be dimensionally and physically compatible with the PEM with which it is in contact\\(^{38}\\). A previous study demonstrated that it is of great importance to develop ionomers with high stability and reliable water retention ability in order to fabricate MEAs with improved durability and good performance in the future\\(^{39}\\)."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.061,
+                0.726,
+                0.496,
+                0.943
+            ],
+            "angle": 0,
+            "content": "Order-structured MEAs possess highly efficient mass transport pathways and reaction sites, as well as high utilization of Pt, enabling high power densities at relatively low catalyst loadings. The 3M nanostructured thin film (NSTF) catalyst is a well known example of an extended surface area catalyst in an order-structured \\(\\mathrm{MEA}^{40,41}\\), which has achieved total PGM loading \\((0.094\\mathrm{mgcm}^{-2},0.106\\mathrm{g}_{\\mathrm{PGM}}\\mathrm{kW}^{-1})\\) for the MEAs, meeting the US Department of Energy's (DOE) target for \\(2020^{42}\\). However, the NSTF CL has a wetting issue, making it unsuitable for integration into a CL. The mechanism of proton transport in this CL is currently unknown, and no commercial applications have been achieved. In addition, order-structured MEA based on vertically aligned carbon nanotube CNT arrays and ionomers is another promising structure, which can deliver a high current density \\((2.6\\mathrm{Acm}^{-2}\\) at \\(0.6\\mathrm{V})\\) with low cathode Pt loading \\((0.1\\mathrm{mgcm}^{-2},0.064\\mathrm{g}\\mathrm{kW}^{-1})^{43}\\). These results indicate that order-structured MEAs are a promising approach to achieving high-power fuel cells with ultralow catalyst loading. It is"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.059,
+                0.944,
+                0.101
+            ],
+            "angle": 0,
+            "content": "expected that improvements in CL design will be able to achieve about \\(40\\%\\) improvement in power via advanced catalysts and CL architecture (see Supplementary Information for the estimation)."
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.51,
+                0.124,
+                0.741,
+                0.138
+            ],
+            "angle": 0,
+            "content": "Proton-exchange membrane"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.14,
+                0.944,
+                0.466
+            ],
+            "angle": 0,
+            "content": "An ideal membrane for high-power PEMFCs is one with high proton conductivity under low humidity conditions and good electrochemical and mechanical stability\\(^{44}\\). To improve the power density of fuel cells by optimizing the PEMs, the main strategy is to reduce the membrane thickness of commercial perfluorosulfonic acid (PFSA)-based membranes. For example, the first-generation MIRAI adopted a state-of-the-art reinforced ultrathin membrane (about \\(10\\mu \\mathrm{m}\\))\\(^{45}\\), which not only reduced the proton and water transport path, but also achieved self-humidification to avoid anode dryness; however, thin membranes also face challenges of mechanical damage or electrochemical degradation\\(^{46,47}\\). Thin perfluorinated membranes reinforced with PTFE exhibited enhanced mechanical and dimensional stability, whereas the first-generation MIRAI used a porous-medium flow field over the cathode GDL to further enhance the mechanical support of the thin PEM\\(^{45}\\). Another classic strategy that is used in commercial practice to extend the stability of thin membranes is to incorporate cerium salt into the membrane\\(^{48}\\). For example, the second-generation MIRAI adopted the latest GORE-SELECT Membrane\\(^{49}\\) containing cerium salt, which achieved improved performance and mechanical durability, despite being 30% thinner than the previous version. Furthermore, polydopamine-treated composite membranes with self-supported \\(\\mathrm{CeO}_x\\) radical scavengers exhibited simultaneously enhanced chemical and mechanical durability, which might be a suitable approach to stabilizing future high-performance PEMFCs (as depicted in Fig. 3c)\\(^{29}\\)."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.468,
+                0.944,
+                0.887
+            ],
+            "angle": 0,
+            "content": "Sulfonated hydrocarbon polymers, including sulfonated poly(ether ketone)s (SPEEK)\\(^{50}\\), sulfonated poly(ether sulfone) (SPES)\\(^{51}\\), sulfonated polyimides (SPI)\\(^{52}\\) and sulfonated polyphenylene-based PEMs\\(^{53}\\) have also been considered as promising alternatives, owing to their high proton conductivity and thermal stability at high temperatures and humidities. However, many hydrocarbon-based PEMs usually suffer from relatively low conductivity at low relative humidity (RH), for example, \\(<40\\%\\) RH, compared with \\(\\mathrm{PFSA}^{54,55}\\). Examples of some of the most promising hydrocarbon-based PEMs, in terms of stability or fuel cell performance under low RH conditions, are sulfonated polyphenylenes\\(^{56-58}\\), phosphoric acid quaternary amine-biphosphate ion pair membranes\\(^{59}\\) and interpenetrating network membranes\\(^{60}\\). To address low-RH and high-temperature operation, cactus-inspired nanocrack-structured self-humidifying membranes have been reported\\(^{30}\\). Thin (of the order of nanometre) hydrophobic layers with nanocracks on the surface of hydrocarbon PEMs can regulate water retention, even at low humidities and high temperatures (about \\(120^{\\circ}\\mathrm{C}\\)). Recently, through-plane-oriented proton-transport channels in hydrocarbon PEMs demonstrated efficient proton conduction even at very low RH (20–40%) and exhibited a fairly high power output at \\(120^{\\circ}\\mathrm{C}\\) (Fig. 3c)\\(^{31}\\). Most interestingly, these PEMs with oriented proton-transport structures also displayed considerably high water retention, owing to their microporous structures and unexpected durability compared with that of Nafion 212\\(^{61}\\). Furthermore, ferrocyanide groups incorporated into polymeric structures imparted both proton conduction and a high resistance to oxidative free radical degradation, suggesting that this strategy may be a new avenue towards inexpensive and durable ferrocyanide-stabilized, hydrocarbon-based PEMs\\(^{62}\\). An open-circuit voltage held at \\(90^{\\circ}\\mathrm{C}\\) and \\(30\\%\\) RH on MEAs displayed only about \\(2.0\\%\\) loss after \\(80\\mathrm{h}\\), in comparison with a \\(28.2\\%\\) loss for Nafion after \\(50\\mathrm{h}\\)."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.888,
+                0.944,
+                0.943
+            ],
+            "angle": 0,
+            "content": "PFSA-based polymer membranes are expected to continue to play a dominant role for the next 5-10 years, and continuous improvements in PEMs are expected to contribute \\(10 - 20\\%\\) to the improvement of power density (see Supplementary Information for the estimation)."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.709,
+                0.963,
+                0.9,
+                0.975
+            ],
+            "angle": 0,
+            "content": "Nature | Vol 595 | 15 July 2021"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.915,
+                0.963,
+                0.944,
+                0.974
+            ],
+            "angle": 0,
+            "content": "365"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.064,
+                0.033,
+                0.201,
+                0.053
+            ],
+            "angle": 0,
+            "content": "Perspective"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.068,
+                0.058,
+                0.496,
+                0.266
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.062,
+                0.275,
+                0.49,
+                0.427
+            ],
+            "angle": 0,
+            "content": "Fig. 4 | Trends in the development of BPs for FCVs. Information shown is for Toyota and Honda FCV products\\(^{15,69-72}\\); the dotted lines represent trend predictions. The power density by volume is evaluated with the end plates of a stack. Asterisks denote four types of BP: *, straight carbon flow channel; ** straight metal flow channel; ***, wavy metal (refined) flow channel; ****, 3D fine-mesh metal flow field. BPs with wavy channels were first used in Honda FCVs in 2006 and have undergone constant refinements in each generation. The 3D fine-mesh flow field was developed for the first-generation MIRAI in 2014, and represents an innovative approach to BP design. However, it was simplified into a 2D structure for the BPs of the second-generation MIRAI in 2020, possibly owing to cost restraints. Japan NEDO predicted that the target power density should be achieved with a current density of \\(3.0\\mathrm{Acm}^{-2}\\) in \\(2025^{16}\\)."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.061,
+                0.453,
+                0.497,
+                0.522
+            ],
+            "angle": 0,
+            "content": "However, with substantial step-change improvements and innovations in stability, less expensive non-perfluorinated PEMs are expected to gain more prominence. Furthermore, PEMs capable of operating under low RH conditions may reduce the humidification requirements, thus indirectly improving the power density."
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.062,
+                0.545,
+                0.172,
+                0.56
+            ],
+            "angle": 0,
+            "content": "Bipolar plate"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.061,
+                0.562,
+                0.496,
+                0.739
+            ],
+            "angle": 0,
+            "content": "Since the adoption of PEMFCs for automotive application in the late 20th century, BP development and innovation have been continuous\\(^{63,64}\\). However, further improvements in the stack power density to \\(6.0 \\mathrm{kW} \\mathrm{l}^{-1}\\) and \\(9.0 \\mathrm{kW} \\mathrm{l}^{-1}\\) will inevitably introduce additional technical challenges, and will still require an additional \\(-20\\%\\) contribution of power density from BP innovation (see Supplementary Information). Here, we present the technical limitations of BPs and discuss the challenges involved in individual technical designs, in combination with US DOE and Japan NEDO reports\\(^{16,65-68}\\). Using as examples these reports, as well as Toyota and Honda products, in Fig. 4 we provide a comprehensive overview of these technical challenges over the past two decades\\(^{15,16,69-72}\\). Both carbon and metal BPs have been considered, because of their long-term development and remarkable progress."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.061,
+                0.74,
+                0.496,
+                0.943
+            ],
+            "angle": 0,
+            "content": "The mass transport capacity is an important criterion for a BP design, and is mainly dependent on the flow field structure. Currently, there are two established design routes for BP structural designs, as shown in Fig. 4. One is to modify and narrow the channel-rib structure, and the other is to develop flow fields with no ribs but with microbaffles or porous structures. These routes have shown some advantages over conventional designs, but they are also accompanied by new complications. For example, the three-dimensional (3D) fine-mesh BP of the first-generation MIRAI, with baffles stamped in a fish-scale pattern, demonstrated efficient mass transfer[67]. However, the tearing process also caused fracture surface cracks, exposing the metallic substrate to an acidic electrochemical environment[74]. Furthermore, progressive stamping of refined meshes increases the BP costs. The US DOE requires that the BP should achieve a permeability to hydrogen and oxygen lower than \\(2 \\times 10^{-6} \\mathrm{~m}^2\\) by 2020, whereas current flow channels/fields"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.059,
+                0.946,
+                0.304
+            ],
+            "angle": 0,
+            "content": "with a depth lower than \\(0.5\\mathrm{mm}\\) can easily reach a permeability of \\(10^{-8}\\mathrm{m}^2\\). Toyota has replaced the 3D flow field by a two-dimensional (2D) wavy channel on the second-generation MIRAI. Recent changes in BP design indicate that the mass transport capacity may not be a major concern for current stacks. However, there is still a gulf between the current status \\((4.4\\mathrm{kW}\\mathrm{l}^{-1}\\) for second-generation MIRAI) and the power and current density goals of \\(9\\mathrm{kW}\\mathrm{l}^{-1}\\) and \\(4.4\\mathrm{Acm}^{-2}\\), respectively (by Japan NEDO)\\(^{16}\\). A concomitant increase in the gas flow rate can exacerbate the pressure drop and maldistribution in the flow channels/fields, leading to an increase in parasitic power loss, local fuel starvation and, thus, mass-transfer loss. Another issue is the liquid removal induced by a high electrochemical water production rate. Although modified MEAs can be operated at lower humidification levels, water condensation and accumulation are still difficult to avoid, particularly at current densities of \\(2\\mathrm{Acm}^{-2}\\) and above\\(^{75}\\). However, at operating temperatures exceeding \\(100^{\\circ}\\mathrm{C}\\), this issue might be largely mitigated by evaporation. In summary, the enhancement of mass transfer remains a main challenge for the BP design of next-generation PEMFCs."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.304,
+                0.945,
+                0.629
+            ],
+            "angle": 0,
+            "content": "Heat and electron conduction are two other challenges in BP design. Because the heat dissipated from the cell edges or removed by mass flow is almost negligible, most of the waste heat must be transferred through the MEA and BP and then removed by the external radiator coolant through thermal convection<sup>76</sup>. For a stack with a power density of about \\(4\\mathrm{kW}\\mathrm{l}^{-1}\\), the BP has a thermal conductivity around 30 times higher than that of the GDL or CL, but the interfacial thermal resistance between the BP and GDL can be about 10 times larger than that in BP<sup>77</sup>. The interfacial electrical resistance between the BP and GDL (about \\(10^{-6}\\Omega \\mathrm{m}^2\\)) is nearly four orders of magnitude higher than that in the BP (around \\(10^{-10}\\Omega \\mathrm{m}^2\\)). Although current metal separators can easily reach thermal and electrical conductivity values of \\(50\\mathrm{Wm}^{-1}\\mathrm{K}^{-1}\\) and \\(1.4\\times 10^{6}\\mathrm{Sm}^{-1}\\), respectively, far exceeding the US DOE criteria for 2020, the interfacial resistance is only comparable<sup>68</sup>. Japan NEDO proposed that the output voltage and operating temperature should be further improved from the current status, that is, \\(0.65\\mathrm{V}\\) and \\(90 - 100^{\\circ}\\mathrm{C}\\), to \\(0.85\\mathrm{V}\\) and \\(120^{\\circ}\\mathrm{C}\\) in \\(2040^{16}\\). Thus, the main concern is to reduce the thermal and electrical interfacial contact resistance between the BP and GDL, which is sensitive to the cell stack compactness, the contact area between BP and MEA, the BP surface roughness and the substrate conductivity. In addition, the current coolant channels must be integrated with hydrogen and/or air distributors for a compact cell structure, suggesting a conflict between increasing cooling capacity and thickness reduction."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.63,
+                0.946,
+                0.944
+            ],
+            "angle": 0,
+            "content": "The durability of the BP is predominantly influenced by electrochemical corrosion and mechanical degradation. A further increase in the current density (about \\(3.8\\mathrm{Acm}^{-2}\\) by 2030, according to Japan \\(\\mathrm{NEDO^{16}}\\)) may cause an increase in the electrochemical corrosion of the components, which is a leading cause of cell degradation, especially for metal BPs. For carbon BPs, corrosion also occurs, but is almost negligible under normal operating conditions. To mitigate corrosion, the BP is generally treated with a passive layer by incorporating materials capable of forming low-resistance oxide films or by the deposition of corrosion-resistant coatings. The efficacy of corrosion resistance is mainly determined by the uniformity of defect-free coatings, stable passive films or nitride layers[78]. According to the US DOE criteria, the corrosion current density of the anode and cathode BPs should be limited to \\(< 1\\mu \\mathrm{Acm}^{-2}\\) in 2020[65]. Currently used coatings—for example, multi-layer chromium carbide and amorphous carbon—on SS 316L (or graphite) already meet these criteria[66]. However, an advanced coating technique is still necessary to achieve better corrosion resistance, lower contact resistance and, most importantly, lower coating cost[66,67]. Mechanically, swelling and shrinking of the MEA and pressure variations of the gas and coolant may induce load and pressure fluctuations of the metal BP, leading to plastic deformation and fatigue failure[79]. The 2020 US DOE criteria for the flexural and impact strength of the BP are 25 MPa and \\(40.5\\mathrm{Jm}^{-1}\\), respectively[64]. Typical BP substrate materials,"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.064,
+                0.963,
+                0.094,
+                0.974
+            ],
+            "angle": 0,
+            "content": "366"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.107,
+                0.963,
+                0.298,
+                0.975
+            ],
+            "angle": 0,
+            "content": "Nature | Vol 595 | 15 July 2021"
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.061,
+                0.058,
+                0.497,
+                0.153
+            ],
+            "angle": 0,
+            "content": "such as stainless steel (by Honda\\(^{70}\\)) and flexible graphite (by Ballard\\(^{80}\\)) have already met these criteria. However, localized thickness reduction, cracks and susceptibility to plastic deformation may occur during manufacturing processes or after long-term operation. Furthermore, for refined ribs, ultrathin plates, meshes, baffles or metal ligaments, a high compact pressure can result in BP deformation and weak contact between the BP and GDL\\(^{81}\\)."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.155,
+                0.499,
+                0.4
+            ],
+            "angle": 0,
+            "content": "While achieving target transport capabilities, the fabrication capacity of BPs should correspond with the industrial base for the mass production of fuel cell products. The cost and volume of BPs can account for over \\(30\\%\\) and \\(70\\%\\) of the entire PEMFC stack, respectively, depending on the substrate material, fabrication capacity and coating technique[64]. The US DOE criterion for 2020 for the total BP cost, inclusive of materials, forming and coating, is \\(\\mathrm{US\\\\) 3 kW^{-1}}\\). However, for the substrate material alone, such as SS 316L, the cost is about \\(\\mathrm{US\\\\( 2.7 kW^{-1}}\\), making it difficult to achieve this goal[67]. Furthermore, the use of ultrarefined plates has recently become a widely adopted approach for BP design, but it requires high-precision and rapid fabrication processes for metal or graphite substrates, such as progressive stamping and compression moulding. Precision and uniform manufacturing of both BPs and coatings are anticipated to present major technical obstacles for high-volume production. Thus, both Japan NEDO and US DOE have emphasized the importance of cost reduction for BPs to the further development of fuel cell technology and to the FCV industry[16,67]."
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.062,
+                0.423,
+                0.333,
+                0.437
+            ],
+            "angle": 0,
+            "content": "Integrated porous BP-MEA design"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.44,
+                0.499,
+                0.875
+            ],
+            "angle": 0,
+            "content": "Recently, a new type of BP has been proposed, which utilizes a metal/graphene porous foam as a reactant distributor\\(^{82}\\). With the appropriate mechanical properties, porous BPs of reduced volume and weight can achieve uniform mass and heat distribution\\(^{83}\\). These porous materials can be fabricated at a considerably lower cost than that of refined ribs or baffles, and their geometric parameters—including porosity, pore density and pore shape—are controllable\\(^{84}\\). This may allow the complete removal of the GDL, and its replacement with porous material for mass transport between the CL and external environment—that is, an integrated porous BP-MEA design. In addition to providing a more compact cell structure, this integration may advantageously eliminate the interfacial transport of mass, heat and electrons between the BP and GDL, thereby avoiding interfacial transport resistances. Tanaka et al.\\(^{33}\\) introduced a GDL-less cell design using a corrugated SS mesh flow channel instead of a porous material and a freestanding MPL, demonstrating the feasibility of the integration. Park et al.\\(^{85}\\) adopted graphene foam to fabricate a unified flow field/GDL without an MPL; the cell thickness decreased by \\(82\\%\\) while achieving a higher power output over a wide current density range. Although better performance is obtained with a thinner cell in the integrated BP-MEA design, porous flow field materials with high electrical conductivity are susceptible to chemical corrosion in acidic environments. Consequently, effective coating materials and coating methods for 3D porous structures are necessary to achieve long-term operational stability. Moreover, porous materials exhibit a lower stiffness than conventional BPs. A BP stiffness enhancement process—for example, compression—is necessary to avoid over-deformation of the flow field. In summary, integrated BP-MEA or GDL-less designs can simultaneously improve mass transport, alleviate water flooding and decrease the volume of PEMFC stacks, and may provide a promising approach to achieving ultrahigh power density (\\(9\\mathrm{kW}1^{-1}\\)), owing to the considerable improvement in stack compactness."
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.063,
+                0.898,
+                0.245,
+                0.913
+            ],
+            "angle": 0,
+            "content": "Summary and outlook"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.062,
+                0.916,
+                0.497,
+                0.943
+            ],
+            "angle": 0,
+            "content": "PEMFCs have attracted attention owing to their advantages for automotive propulsion in FCVs and their remarkable technical progress"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.058,
+                0.944,
+                0.141
+            ],
+            "angle": 0,
+            "content": "in recent years. This Perspective highlights the development directions for PEMFC components, in the entirety of their interrelationships and design, that could help to achieve the power density goals for next-generation PEMFCs; that is, increasing the power density from the current status of about \\(4\\mathrm{kW}\\mathrm{l}^{-1}\\) to the short-term target of \\(6\\mathrm{kW}\\mathrm{l}^{-1}\\), and to the long-term target of \\(9\\mathrm{kW}\\mathrm{l}^{-1}\\)."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.141,
+                0.945,
+                0.385
+            ],
+            "angle": 0,
+            "content": "Future development of GDLs and MPLs should focus on the optimization of cross-scale and cross-component transport while being compatible with improvements in other components in terms of control of structure and wettability. For the CL, the activities of novel catalysts are sufficiently large at the RDE level, but still need considerable improvement at the MEA and stack levels. Modification of carbon supports and catalyst/polymer interfaces based on molecular arrangements is promising for improving the ionomer distribution and catalyst utilization. The order-structured MEA is a strong candidate because it enables high power density at ultralow catalyst loadings. In the next 5–10 years, PFSA-based polymers with enhanced durability and adaptability are expected to continue to dominate the PEM market. The future goal in BP design is to solve the corrosion resistance, fabrication cost and interfacial contact resistance issues. The mass transport capacity needs to be enhanced for future ultrahigh-power-density operations. The integrated BP-MEA design is expected to provide a promising path towards ultrahigh power density, owing to its advantages of interface elimination and volume reduction."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.386,
+                0.945,
+                0.508
+            ],
+            "angle": 0,
+            "content": "Improving power densities, reducing costs and increasing the durability of PEMFCs will directly promote large-scale commercialization. These three criteria are largely connected to, and sometimes constrained by, each other, and should be considered holistically in the development of different fuel cell products. Overall, establishing refined and controllable structural designs that can be readily manufactured is a key direction considering the existing framework of materials, and the development of new materials is expected to have far-reaching effects in the long term."
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.51,
+                0.532,
+                0.634,
+                0.545
+            ],
+            "angle": 0,
+            "content": "Online content"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.548,
+                0.945,
+                0.617
+            ],
+            "angle": 0,
+            "content": "Any methods, additional references, Nature Research reporting summaries, source data, extended data, supplementary information, acknowledgements, peer review information; details of author contributions and competing interests; and statements of data and code availability are available at https://doi.org/10.1038/s41586-021-03482-7."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.511,
+                0.637,
+                0.897,
+                0.658
+            ],
+            "angle": 0,
+            "content": "1. Jewell, J. et al. Limited emission reductions from fuel subsidy removal except in energy-exporting regions. Nature 554, 229-233 (2018)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.511,
+                0.659,
+                0.928,
+                0.677
+            ],
+            "angle": 0,
+            "content": "2. Staffell, I. et al. The role of hydrogen and fuel cells in the global energy system. Energy Environ. Sci. 12, 463-491 (2019)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.511,
+                0.679,
+                0.943,
+                0.707
+            ],
+            "angle": 0,
+            "content": "3. Itaoka, K., Saito, A. & Sasaki, K. Public perception on hydrogen infrastructure in Japan: Influence of rollout of commercial fuel cell vehicles. Int. J. Hydrogen Energy 42, 7290-7296 (2017)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.511,
+                0.709,
+                0.94,
+                0.728
+            ],
+            "angle": 0,
+            "content": "4. Eberle, U., Müller, B. & Helmolt, R. Fuel cell electric vehicles and hydrogen infrastructure: status 2012. Energy Environ. Sci. 5, 8780-8798 (2012)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.511,
+                0.729,
+                0.944,
+                0.748
+            ],
+            "angle": 0,
+            "content": "5. Cano, Z. P. et al. Batteries and fuel cells for emerging electric vehicle markets. Nat. Energy 3, 279-289 (2018)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.511,
+                0.749,
+                0.925,
+                0.799
+            ],
+            "angle": 0,
+            "content": "6. Gröger, O., Gasteiger, H. A. & Suchsland, J. P. Electromobility: batteries or fuel cells? J. Electrochem. Soc. 162, A2605-A2622 (2015). This review compares batteries and fuel cells for automotive applications, suggesting that the high energy density of fuel cells makes them suitable for heavy-duty and long-distance transportation."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.511,
+                0.8,
+                0.943,
+                0.829
+            ],
+            "angle": 0,
+            "content": "7. Hu, X., et al. Battery warm-up methodologies at subzero temperatures for automotive applications: recent advances and perspectives. *Pror. Energy Combust. Sci.* **77**, 100806 (2020)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.511,
+                0.83,
+                0.943,
+                0.85
+            ],
+            "angle": 0,
+            "content": "8. Introducing the all-new Toyota MIRAI. Toyota Europe Newsroom https://newsroom toyota.eu/introducing-the-all-new-toyota-MIRAI/ (2020)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.511,
+                0.851,
+                0.939,
+                0.88
+            ],
+            "angle": 0,
+            "content": "9. Wilson, A., Kleen, G. & Papageorgopoulos, D. Fuel Cell System Cost-2017. DOE Hydrogen and Fuel Cells Program Record 17007. https://www.hydrogen.energy.gov/pdfs/17007_fuel_cell_system_cost_2017.pdf (DOE Fuel Cell Technologies Office, 2017)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.511,
+                0.881,
+                0.923,
+                0.901
+            ],
+            "angle": 0,
+            "content": "10. Wang, Y. et al. Fundamentals, materials, and machine learning of polymer electrolyte membrane fuel cell technology. Energy AI 1, 100014 (2020)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.511,
+                0.902,
+                0.924,
+                0.921
+            ],
+            "angle": 0,
+            "content": "11. Frendo, O. et al. Data-driven smart charging for heterogeneous electric vehicle fleets. Energy AI 1, 100007 (2020)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.511,
+                0.922,
+                0.901,
+                0.941
+            ],
+            "angle": 0,
+            "content": "12. Jin, D. & Jiao, K. Charging infrastructure intellectualization and future of different automotive powertrains. Joule 4, 1634-1636 (2020)."
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.511,
+                0.637,
+                0.944,
+                0.941
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.71,
+                0.963,
+                0.9,
+                0.975
+            ],
+            "angle": 0,
+            "content": "Nature | Vol 595 | 15 July 2021"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.916,
+                0.963,
+                0.944,
+                0.975
+            ],
+            "angle": 0,
+            "content": "367"
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "bbox": [
+                0.064,
+                0.033,
+                0.201,
+                0.053
+            ],
+            "angle": 0,
+            "content": "Perspective"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.065,
+                0.06,
+                0.486,
+                0.09
+            ],
+            "angle": 0,
+            "content": "13. Harrison, M. Toyota electrification strategy in Europe today and tomorrow. Toyota Motor Europe https://www.autoneews.com/assets/pdf/ane-congress/presentations2019/matthew_harrison.pdf (2019)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.065,
+                0.091,
+                0.476,
+                0.111
+            ],
+            "angle": 0,
+            "content": "14. Full specs of Toyota MIRAI 2021. Toyota USA https://www toyota.com/MIRAI/features/mileage_estimators/3002/3003 (2020)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.066,
+                0.112,
+                0.482,
+                0.131
+            ],
+            "angle": 0,
+            "content": "15. Konno, N., Mizuno, S. & Nakaji, H. Development of compact and high-performance fuel cell stack. SAE Mobilus 4, 123-129 (2015)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.066,
+                0.132,
+                0.491,
+                0.171
+            ],
+            "angle": 0,
+            "content": "16. Amamiya, I., & Tanaka, S. Current topics proposed by PEFC manufacturers, etc. - current status and topics of fuel cells for FCV. In Hydrogen, Fuel Cell Project Evaluation, and Issue Sharing Week (Japan New Energy and Industrial Technology Development Organization, 2019); available at https://www.nedo.go.jp/content/100895101.pdf (in Japanese)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.066,
+                0.172,
+                0.488,
+                0.192
+            ],
+            "angle": 0,
+            "content": "17. Volume manufacturing of PEM FC stacks for transportation and in-line quality assurance (European Commission, 2019); https://cordis.europa.eu/project/id/671465"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.066,
+                0.192,
+                0.474,
+                0.222
+            ],
+            "angle": 0,
+            "content": "18. Fuel Cells and Hydrogen 2 Joint Undertaking (FCH 2 JU). 2019 annual work plan and budget (FCH 2 JU, 2018); https://ec.europa.eu/research/participants/data/ref/h2020/other/wp/jtis/h2020-wp19-fch_en.pdf"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.066,
+                0.223,
+                0.489,
+                0.252
+            ],
+            "angle": 0,
+            "content": "19. Ozden, A., Shahgaldi, S., Li, X. & Hamdullahpur, F. A review of gas diffusion layers for proton exchange membrane fuel cells - with a focus on characteristics, characterization techniques, materials and designs. *Pror. Energy Combust. Sci.* **74**, 50-102 (2019)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.066,
+                0.253,
+                0.458,
+                0.282
+            ],
+            "angle": 0,
+            "content": "20. Gerteisen, D. & Sadeler, C. Stability and performance improvement of a polymer electrolyte membrane fuel cell stack by a laser perforation of gas diffusion layers. J. Power Sources 195, 5252-5257 (2010)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.066,
+                0.283,
+                0.485,
+                0.303
+            ],
+            "angle": 0,
+            "content": "21. Tian, X. et al. Engineering bunched Pt-Ni alloy nanocages for efficient oxygen reduction in practical fuel cells. Science 366, 850-856 (2019)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.066,
+                0.304,
+                0.454,
+                0.323
+            ],
+            "angle": 0,
+            "content": "22. Chong, L. et al. Ultralow-loading platinum-cobalt fuel cell catalysts derived from imidazolate frameworks. Science 362, 1276-1281 (2018)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.066,
+                0.324,
+                0.461,
+                0.343
+            ],
+            "angle": 0,
+            "content": "23. Chen, C. et al. Highly crystalline multimetallic nanoframes with three-dimensional electrocatalytic surfaces. Science 343, 1339-1343 (2014)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.066,
+                0.344,
+                0.475,
+                0.393
+            ],
+            "angle": 0,
+            "content": "24. Li, M. et al. Ultrafine jagged platinum nanowires enable ultrahigh mass activity for the oxygen reduction reaction. Science 354, 1414-1419 (2016). This study achieves high specific and mass activity using ultrafine jagged platinum nanowires for oxygen reduction, suggesting a promising approach to realizing high-current-density fuel cells."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.066,
+                0.395,
+                0.481,
+                0.414
+            ],
+            "angle": 0,
+            "content": "25. Huang, X. et al. High-performance transition metal-doped Pt3Ni octahedra for oxygen reduction reaction. Science 348, 1230-1234 (2015)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.066,
+                0.415,
+                0.495,
+                0.445
+            ],
+            "angle": 0,
+            "content": "26. Ott, S. et al. Ionomer distribution control in porous carbon-supported catalyst layers for high-power and low Pt-loaded proton exchange membrane fuel cells. Nat. Mater. 19, 77-85 (2020)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.088,
+                0.446,
+                0.495,
+                0.475
+            ],
+            "angle": 0,
+            "content": "This study shows that N-doped carbon supports can improve ionomer distribution in the catalyst layer, providing an important path to next-generation high-power-density fuel cells."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.066,
+                0.476,
+                0.485,
+                0.495
+            ],
+            "angle": 0,
+            "content": "27. Yarlagadda, V. et al. Boosting fuel cell performance with accessible carbon mesopores. ACS Energy Lett. 3, 618-621 (2018)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.066,
+                0.496,
+                0.49,
+                0.526
+            ],
+            "angle": 0,
+            "content": "28. Poojary, S., Islam, M. N., Shrivastava, U. N., Roberts, E. P. L. & Karan, K. Transport and electrochemical interface properties of ionomers in low-Pt loading catalyst layers: effect of ionomer equivalent weight and relative humidity. Molecular 25, 3387 (2020)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.066,
+                0.527,
+                0.493,
+                0.556
+            ],
+            "angle": 0,
+            "content": "29. Yoon, K. R. et al. Mussel-inspired polydopamine-treated reinforced composite membranes with self-supported \\(\\mathrm{CeO}_x\\) radical scavengers for highly stable PEM fuel cells. Adv. Funct. Mater. 29, 1806929 (2019)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.066,
+                0.557,
+                0.495,
+                0.597
+            ],
+            "angle": 0,
+            "content": "30. Park, C. H. et al. Nanocrack-regulated self-humidifying membranes. Nature 532, 480-483 (2016). This study develops self-humidifying membranes with surface nanocrack coatings, providing an alternative solution for membranes that tolerate low-humidity conditions."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.066,
+                0.598,
+                0.466,
+                0.648
+            ],
+            "angle": 0,
+            "content": "31. Liu, X. et al. Magnetic field alignment of stable proton-conducting channels in an electrolyte membrane. Nat. Commun. 10, 842 (2019). This study develops composite membranes with through-plane-aligned proton channels, showing that thus oriented channels improve proton conductivity and durability, and that microporous channels strongly retain water."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.066,
+                0.649,
+                0.492,
+                0.688
+            ],
+            "angle": 0,
+            "content": "32. Tanaka, S., Bradfield, W. W., Legrand, C. & Malan, A. G. Numerical and experimental study of the effects of the electrical resistance and diffusivity under clamping pressure on the performance of a metallic gas-diffusion layer in polymer electrolyte fuel cells. J. Power Sources 330, 273-284 (2016)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.066,
+                0.689,
+                0.495,
+                0.718
+            ],
+            "angle": 0,
+            "content": "33. Tanaka, S. & Shudo, T. Corrugated mesh flow channel and novel microporous layers for reducing flooding and resistance in gas diffusion layer-less polymer electrolyte fuel cells. J. Power Sources 268, 183-193 (2014)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.066,
+                0.719,
+                0.495,
+                0.748
+            ],
+            "angle": 0,
+            "content": "34. Lee, J., Hinebaugh, J. & Bazylak, A. Synchrotron X-ray radiographic investigations of liquid water transport behavior in a PEMFC with MPL-coated GDLs. J. Power Sources 227, 123-130 (2013)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.066,
+                0.749,
+                0.49,
+                0.779
+            ],
+            "angle": 0,
+            "content": "35. Li, D. et al. Functional links between Pt single crystal morphology and nanoparticles with different size and shape: the oxygen reduction reaction case. Energy Environ. Sci. 7, 4061-4069 (2014)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.066,
+                0.78,
+                0.43,
+                0.799
+            ],
+            "angle": 0,
+            "content": "36. Karan, K. PECF catalyst layer: recent advances in materials, microstructural characterization, and modeling. Curr. Opin. Electrochem. 5, 27-35 (2017)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.066,
+                0.8,
+                0.477,
+                0.82
+            ],
+            "angle": 0,
+            "content": "37. Kim, Y. S. & Pivovar, B. S. The membrane-electrode interface in PEFCs. J. Electrochem. Soc. 157, B1616 (2010)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.066,
+                0.821,
+                0.482,
+                0.839
+            ],
+            "angle": 0,
+            "content": "38. Holdcroft, S. Fuel cell catalyst layers: a polymer science perspective. Chem. Mater. 26, 381-393 (2014)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.066,
+                0.841,
+                0.455,
+                0.86
+            ],
+            "angle": 0,
+            "content": "39. Yin, Y. et al. Ionomer migration within PEMFC catalyst layers induced by humidity changes. Electrochem. Commun. 109, 106590 (2019)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.066,
+                0.861,
+                0.482,
+                0.89
+            ],
+            "angle": 0,
+            "content": "40. Crowtz, T. C. & Dahn, J. R. Screening bifunctional Pt based NSTF catalysts for durability with the rotating disk electrode: The effect of Ir and Ru. J. Electrochem. Soc. 165, F854–F862 (2018)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.066,
+                0.891,
+                0.473,
+                0.911
+            ],
+            "angle": 0,
+            "content": "41. Steinbach, A. J. et al. Ultrathin film NSTF ORR electrocatalysts for PEM fuel cells. ECS Trans. 80, 659-676 (2017)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.066,
+                0.912,
+                0.463,
+                0.942
+            ],
+            "angle": 0,
+            "content": "42. Steinbach, A. Final Technical Report for Project Entitled Highly Active, Durable, and Ultra-Low PGM NSTF Thin Film ORR Catalysts and Support. Technical Report DOE-3M-0007270 (US Department of Energy, 2020)."
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.065,
+                0.06,
+                0.495,
+                0.942
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.513,
+                0.06,
+                0.928,
+                0.09
+            ],
+            "angle": 0,
+            "content": "43. Murata, S., Imanishi, M., Hasegawa, S. & Namba, R. Vertically aligned carbon nanotube electrodes for high current density operating proton exchange membrane fuel cells. J. Power Sources 253, 104-113 (2014)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.513,
+                0.091,
+                0.938,
+                0.11
+            ],
+            "angle": 0,
+            "content": "44. Kraytsberg, A. & Ein-Eli, Y. Review of advanced materials for proton exchange membrane fuel cells. Energy Fuels 28, 7303-7330 (2014)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.513,
+                0.111,
+                0.93,
+                0.131
+            ],
+            "angle": 0,
+            "content": "45. Wang, Y., Ruiz Diaz, D. F., Chen, K. S., Wang, Z. & Adroher, X. C. Materials, technological status, and fundamentals of PEM fuel cells - A review. Mater. Today 32, 178-203 (2020)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.513,
+                0.132,
+                0.923,
+                0.151
+            ],
+            "angle": 0,
+            "content": "46. Zamel, N. & Li, X. Effect of contaminants on polymer electrolyte membrane fuel cells. *Pror. Energy Combust. Sci.* 37, 292-329 (2011)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.513,
+                0.152,
+                0.917,
+                0.171
+            ],
+            "angle": 0,
+            "content": "47. Kinumoto, T. et al. Durability of perfluorinated ionomer membrane against hydrogen peroxide. J. Power Sources 158, 1222-1228 (2006)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.513,
+                0.172,
+                0.932,
+                0.202
+            ],
+            "angle": 0,
+            "content": "48. Pearman, B. P. et al. The chemical behavior and degradation mitigation effect of cerium oxide nanoparticles in perfluorosulfonic acid polymer electrolyte membranes. Polym. Degrad. Stabil. 98, 1766-1772 (2013)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.513,
+                0.203,
+                0.94,
+                0.222
+            ],
+            "angle": 0,
+            "content": "49. Durante, V. A. & Delaney, W. E. Highly stable fuel cell membranes and methods of making them. US patent 7,989,115 B2 (2011)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.513,
+                0.223,
+                0.94,
+                0.252
+            ],
+            "angle": 0,
+            "content": "50. Zaidi, S. M. J., Mikhailenko, S. D., Robertson, G. P., Guiver, M. D. & Kaliaguine, S. Proton conducting composite membranes from polyether ether ketone and heteropolysacids for fuel cell applications. J. Membr. Sci. 173, 17-34 (2000)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.513,
+                0.253,
+                0.928,
+                0.282
+            ],
+            "angle": 0,
+            "content": "51. Miyatake, K., Chikashige, Y., Higuchi, E. & Watanabe, M. Tuned Polymer electrolyte membranes based on aromatic polyethers for fuel cell applications. J. Am. Chem. Soc. 129, 3879-3887 (2007)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.513,
+                0.283,
+                0.937,
+                0.303
+            ],
+            "angle": 0,
+            "content": "52. Yin, Y. et al. Synthesis and properties of highly sulfonated proton conducting polyimides from bis(3-sulfopropoxy)benzidine diamines. J. Mater. Chem. 14, 1062-1070 (2004)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.513,
+                0.304,
+                0.942,
+                0.323
+            ],
+            "angle": 0,
+            "content": "53. Wu, S. et al. The direct synthesis of wholly aromatic poly(p-phenylene)s bearing sulfobenzoyl side groups as proton exchange membranes. Polymer 47, 6993-7000 (2006)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.513,
+                0.324,
+                0.929,
+                0.343
+            ],
+            "angle": 0,
+            "content": "54. Rikukawa, M. & Sanui, K. Proton-conducting polymer electrolyte membranes based on hydrocarbon polymers. Prog. Polym. Sci. 25, 1463-1502 (2000)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.513,
+                0.344,
+                0.924,
+                0.364
+            ],
+            "angle": 0,
+            "content": "55. Smitha, B., Sridhar, S. & Khan, A. A. Solid polymer electrolyte membranes for fuel cell applications—a review. J. Membr. Sci. 259, 10-26 (2005)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.513,
+                0.365,
+                0.913,
+                0.384
+            ],
+            "angle": 0,
+            "content": "56. Miyake, J. et al. Design of flexible polyphenylene proton-conducting membrane for next-generation fuel cells. Sci. Adv. 3, eaao0476 (2017)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.513,
+                0.385,
+                0.93,
+                0.404
+            ],
+            "angle": 0,
+            "content": "57. Kang, N. R., Pham, T. H. & Jannasch, P. Polyaromatic perfluorophenylsulfonic acids with high radical resistance and proton conductivity. ACS Macro Lett. 8, 1247-1251 (2019)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.513,
+                0.405,
+                0.913,
+                0.424
+            ],
+            "angle": 0,
+            "content": "58. Adamski, M. et al. Molecular branching as a simple approach to improving polymer electrolyte membranes. J. Membr. Sci. 595, 117539 (2020)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.513,
+                0.425,
+                0.935,
+                0.454
+            ],
+            "angle": 0,
+            "content": "59. Lee, K.-S., Spendelow, J. S., Choe, Y.-K., Fujimoto, C. & Kim, Y. S. An operationally flexible fuel cell based on quaternary ammonium-biphosphate ion pairs. Nat. Energy 1, 16120 (2016)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.513,
+                0.455,
+                0.934,
+                0.485
+            ],
+            "angle": 0,
+            "content": "60. Lee, S. Y. et al. Morphological transformation during cross-linking of a highly sulfonated poly(phenylene sulfide nitrile) random copolymer. Energy Environ. Sci. 5, 9795-9802 (2012)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.513,
+                0.486,
+                0.924,
+                0.505
+            ],
+            "angle": 0,
+            "content": "61. Liu, X. et al. Oriented proton-conductive nano-sponge-facilitated polymer electrolyte membranes. Energy Environ. Sci. 13, 297-309 (2020)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.513,
+                0.506,
+                0.942,
+                0.536
+            ],
+            "angle": 0,
+            "content": "62. Zhang, X. et al. A paradigm shift for a new class of proton exchange membranes with ferrocyanide proton-conducting groups providing enhanced oxidative stability. J. Membr. Sci. 616, 118536 (2020)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.513,
+                0.537,
+                0.923,
+                0.555
+            ],
+            "angle": 0,
+            "content": "63. Steele, B. C. H. & Heinzel, A. Materials for fuel-cell technologies. Nature 414, 345-352 (2001)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.513,
+                0.557,
+                0.937,
+                0.587
+            ],
+            "angle": 0,
+            "content": "64. Taherian, R. A review of composite and metallic bipolar plates in proton exchange membrane fuel cell: materials, fabrication, and material selection. J. Power Sources 265, 370-390 (2014); retraction 265, 370-390 (2014)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.513,
+                0.588,
+                0.938,
+                0.627
+            ],
+            "angle": 0,
+            "content": "65. Office of Energy Efficiency & Renewable Energy. DOE Technical targets for polymer electrolyte membrane fuel cell components https://www.energy.gov/eere/fuelcells/ doc-technical-targets-polymer-electrolyte-membrane-fuel-cell-components#bipolarpla te (accessed 3 July 2021)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.513,
+                0.628,
+                0.942,
+                0.657
+            ],
+            "angle": 0,
+            "content": "66. Wang, C. & Cullen, D. A. Novel structured metal bipolar plates for low cost manufacturing https://www.hydrogen.energy.gov/pdfs/review20/fc105_wang_2020_p.pdf (TreadStone Technologies Inc., 2020)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.513,
+                0.658,
+                0.941,
+                0.728
+            ],
+            "angle": 0,
+            "content": "67. James, B. D., Huya-Kouadio, J. M., Houchins, C. & DeSantis, D. A. Mass production cost estimation of direct \\(\\mathsf{H}_2\\) PEM fuel cell systems for transportation applications: 2018 update https://www.energy.gov/sites/default/files/2020/02/f71/fcto-sa-2018-transportation-fuel-cell-cost-analysis-2.pdf (Strateg. Anal. Inc., 2018). This study evaluates the manufacturing cost of fuel cells from individual components to transportation systems. The paper supports the discussion on bipolar plates presented in this Perspective."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.513,
+                0.729,
+                0.935,
+                0.759
+            ],
+            "angle": 0,
+            "content": "68. Adrianowycz, O. et al. Next Generation Bipolar Plates for Automotive PEM Fuel Cells. Report DE-FC36-07GO17012 (Office of Scientific & Technical Information, 2010); https:// digital.library.uni.edu/ark:/67531/metadc927369/"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.513,
+                0.76,
+                0.942,
+                0.779
+            ],
+            "angle": 0,
+            "content": "69. Saito, N., Kikuchi, H. & Nakao, Y. New Fuel Cell Stack for FCX Clarity. Honda R&D Technical Review 21, 1 (Honda, 2009)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.513,
+                0.78,
+                0.934,
+                0.799
+            ],
+            "angle": 0,
+            "content": "70. Inoue, M., Saito, N. & Uchibori, K. Next-Generation Fuel Cell Stack for Honda FCX. Honda R&D Technical Review 12 (Honda, 2005)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.513,
+                0.8,
+                0.938,
+                0.82
+            ],
+            "angle": 0,
+            "content": "71. Kikuchi, H., Kaji, H., Nishiyama, T., Okonogi, D. & Harata, H. Development of New FC Stack for Clarity Fuel Cell. Honda R&D Technical Review 28, 2 (Honda, 2016)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.513,
+                0.821,
+                0.942,
+                0.84
+            ],
+            "angle": 0,
+            "content": "72. Kimura, Y., Oyama, S., Giga, A. & Okonogi, D. Development of New FC Separator for Clarity Fuel Cell. Honda R&D Technical Review 29, 2 (Honda, 2017)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.513,
+                0.841,
+                0.932,
+                0.871
+            ],
+            "angle": 0,
+            "content": "73. Wilberforce, T. et al. A comprehensive study of the effect of bipolar plate (BP) geometry design on the performance of proton exchange membrane (PEM) fuel cells. Renew. Sustain. Energy Rev. 111, 236-260 (2019)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.513,
+                0.871,
+                0.922,
+                0.901
+            ],
+            "angle": 0,
+            "content": "74. Dubau, L. et al. A review of PEM fuel cell durability: materials degradation, local heterogeneities of aging and possible mitigation strategies. WIREs Energy Environ. 3, 540-560 (2014)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.513,
+                0.902,
+                0.933,
+                0.921
+            ],
+            "angle": 0,
+            "content": "75. Jiao, K. & Li, X. Water transport in polymer electrolyte membrane fuel cells. *Pror. Energy Combust. Sci.* 37, 221-291 (2011)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.513,
+                0.922,
+                0.926,
+                0.942
+            ],
+            "angle": 0,
+            "content": "76. Zhang, G. & Kandlikar, S. G. A critical review of cooling techniques in proton exchange membrane fuel cell stacks. Int. J. Hydrogen Energy 37, 2412-2429 (2012)."
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.513,
+                0.06,
+                0.942,
+                0.942
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.065,
+                0.964,
+                0.094,
+                0.974
+            ],
+            "angle": 0,
+            "content": "368"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.107,
+                0.963,
+                0.298,
+                0.975
+            ],
+            "angle": 0,
+            "content": "Nature | Vol 595 | 15 July 2021"
+        }
+    ],
+    [
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.063,
+                0.06,
+                0.489,
+                0.09
+            ],
+            "angle": 0,
+            "content": "77. Khandelwal, M. & Mench, M. M. Direct measurement of through-plane thermal conductivity and contact resistance in fuel cell material. J. Power Sources 161, 1106-1115 (2006)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.063,
+                0.091,
+                0.489,
+                0.111
+            ],
+            "angle": 0,
+            "content": "78. Antunes, R. A., Oliveira, M. C. L., Ett, G. & Ett, V. Corrosion of metal bipolar plates for PEM fuel cells: a review. Int. J. Hydrogen Energy 35, 3632-3647 (2010)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.063,
+                0.112,
+                0.494,
+                0.131
+            ],
+            "angle": 0,
+            "content": "79. Saiki, K. Strength Design Method of Metallic Separator for Fuel Cell. Honda R&D Technical Review 29, 1 (Honda, 2017)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.063,
+                0.132,
+                0.496,
+                0.161
+            ],
+            "angle": 0,
+            "content": "80. Norley, J. Graphite-based bipolar plates for PEM motive fuel cell applications. In DOE Bipolar Plates Workshop (GrafTech Int. Holdings Ltd, 2017); https://www.energy.gov/sites/prod/files/2017/05/f34/fcto_biploar Plates_wkshp_norley.pdf"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.063,
+                0.162,
+                0.489,
+                0.182
+            ],
+            "angle": 0,
+            "content": "81. Wu, J. et al. A review of PEM fuel cell durability: degradation mechanisms and mitigation strategies. J. Power Sources 184, 104-119 (2008)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.063,
+                0.183,
+                0.489,
+                0.202
+            ],
+            "angle": 0,
+            "content": "82. Wang, Y. Porous-media flow fields for polymer electrolyte fuel cells. J. Electrochem. Soc. 156, B1124 (2009)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.063,
+                0.203,
+                0.484,
+                0.232
+            ],
+            "angle": 0,
+            "content": "83. Srouji, A. K., Zheng, L. J., Dross, R., Turhan, A. & Mench, M. M. Ultra-high current density water management in polymer electrolyte fuel cell with porous metallic flow field. J. Power Sources 239, 433-442 (2013)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.063,
+                0.233,
+                0.441,
+                0.252
+            ],
+            "angle": 0,
+            "content": "84. Yuan, W., Tang, Y., Yang, X. & Wan, Z. Porous metal materials for polymer elect membrane fuel cells - a review. Appl. Energy 94, 309-329 (2012)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.063,
+                0.253,
+                0.486,
+                0.304
+            ],
+            "angle": 0,
+            "content": "85. Park, J. E. et al. Gas diffusion layer/flow-field unified membrane-electrode assembly in fuel cell using graphene foam. Electrochim. Acta 323, 134808 (2019). This study proposes an integrated design of the gas diffusion layer and flow field with boosted fuel cell performance, demonstrating that such a design is promising for increasing the power density."
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.063,
+                0.06,
+                0.496,
+                0.304
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.51,
+                0.06,
+                0.938,
+                0.121
+            ],
+            "angle": 0,
+            "content": "Acknowledgements This research was supported by the China-UK International Cooperation and Exchange Project (Newton Advanced Fellowship), supported by the National Natural Science Foundation of China (grant number 51861130359), the UK Royal Society (grant number NAF\\(\\mathsf{R}1\\)180146), UK EPSRC (grant number EP/S000933/1), and the Natural Science Foundation of Tianjin (China) for Distinguished Young Scholars (grant number 18JCJQJC46700)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.51,
+                0.13,
+                0.943,
+                0.162
+            ],
+            "angle": 0,
+            "content": "Author contributions K.J., J.X., Q.D., Z.H. and M.D.G. conceived the idea for the study. All authors contributed to the writing and commented on the manuscript. K.J., Z.B., B.X., B.W., Y.Z., L.F. and M.D.G. contributed to the preparation of the figures."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.51,
+                0.171,
+                0.813,
+                0.182
+            ],
+            "angle": 0,
+            "content": "Competing interests The authors declare no competing interests."
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.511,
+                0.192,
+                0.621,
+                0.2
+            ],
+            "angle": 0,
+            "content": "Additional information"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.51,
+                0.202,
+                0.937,
+                0.222
+            ],
+            "angle": 0,
+            "content": "Supplementary information The online version contains supplementary material available at https://doi.org/10.1038/s41586-021-03482-7."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.51,
+                0.223,
+                0.912,
+                0.232
+            ],
+            "angle": 0,
+            "content": "Correspondence and requests for materials should be addressed to K.J., Z.H. or M.D.G."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.51,
+                0.233,
+                0.94,
+                0.252
+            ],
+            "angle": 0,
+            "content": "Peer review information Nature thanks Shangfeng Du, Julien Durst and the other, anonymous, reviewer(s) for their contribution to the peer review of this work."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.51,
+                0.253,
+                0.903,
+                0.263
+            ],
+            "angle": 0,
+            "content": "Reprints and permissions information is available at http://www.nature.com/reprints."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.51,
+                0.264,
+                0.906,
+                0.283
+            ],
+            "angle": 0,
+            "content": "Publisher's note Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.51,
+                0.293,
+                0.845,
+                0.304
+            ],
+            "angle": 0,
+            "content": "© The Author(s), under exclusive licence to Springer Nature Limited 2021"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.709,
+                0.963,
+                0.9,
+                0.975
+            ],
+            "angle": 0,
+            "content": "Nature | Vol 595 | 15 July 2021"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.915,
+                0.963,
+                0.943,
+                0.974
+            ],
+            "angle": 0,
+            "content": "369"
+        }
+    ]
+]

@@ -1,0 +1,94 @@
+{
+    "entity_relationships": {
+        "RESEARCH_PAPER": {
+            "Electrolyte": "REPORTS",
+            "Ionic_Conductivity_Property": "CONTAINS_DATA_ON"
+        },
+
+        "Electrolyte": {
+            "Ionic_Conductivity_Property": "MEASUREMENT",
+            "Polymers": "CONSISTS_OF",
+            "Monomers": "CONSISTS_OF",
+            "Salts": "CONSISTS_OF",
+            "Additives": "CONSISTS_OF",
+            "Initiators": "CONSISTS_OF"
+        }
+    },
+
+    "relationship_attributes": {
+        "REPORTS": {
+            "description": "string",
+            "section_in_paper": "string"
+        },
+
+        "MEASUREMENT": {
+            "Temperature_condition": "string"
+        },
+
+        "CONSISTS_OF": {
+            "concentration": "string",
+            "ratio": "string",
+            "role": "string (SOLVENT, SALT, ADDITIVE, POLYMER, MONOMER,Initiators)"
+        },
+        "CONTAINS_DATA_ON": {
+            "description": "integer",
+            "data_location": "string"
+        }
+
+    },
+
+    "entity_schemas": {
+        "RESEARCH_PAPER": {
+            "doi": "string",
+            "title": "string",
+            "year": "integer",
+            "ionic_property_focus": "boolean",
+            "keywords": ["array", "of", "strings"]
+        },
+
+        "Electrolyte": {
+            "name": "string",
+            "type": "string (Liquid, Solid, Quasi-solid, Composite, Polymer, Gel, etc)",
+            "description": "string"
+        },
+
+        "Ionic_Conductivity_Property": {
+            "Type_of_ions":"string(Li+, Na+, K+, Zn2+,Cs etc.)",
+            "ionic_conductivity_value": "string",
+            "ionic_conductivity_unit": "string"
+        },
+
+        "Polymers": {
+            "name": "string",
+            "cas": "string",
+            "smiles": "string",
+            "Abbreviation": "string",
+            "Polimerzation_Temperature": "string",
+            "Polimerzation_Time": "string"
+        },
+       "Monomers": {
+            "name": "string",
+            "cas": "string",
+            "smiles": "string",
+            "Abbreviation": "string"
+        },
+        "Salts": {
+            "name": "string",
+            "cas": "string",
+            "smiles": "string",
+            "Abbreviation": "string"
+        },
+        "Additives": {
+            "name": "string",
+            "cas": "string",
+            "smiles": "string",
+            "Abbreviation": "string"
+        },
+        "Initiators": {
+            "name": "string",
+            "cas": "string",
+            "smiles": "string",
+            "Abbreviation": "string"
+        }
+    }
+}

@@ -1,0 +1,2135 @@
+[
+    {
+        "type": "text",
+        "text": "Batteries and fuel cells for emerging electric vehicle markets",
+        "text_level": 1,
+        "bbox": [
+            67,
+            124,
+            823,
+            189
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Zachary P. Cano $^{1}$ , Dustin Banham $^{2}$ , Siyu Ye $^{2}$ , Andreas Hintennach $^{3}$ , Jun Lu $^{4}$ , Michael Fowler $^{1}$  and Zhongwei Chen $^{1\\star}$",
+        "bbox": [
+            65,
+            211,
+            877,
+            250
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Today's electric vehicles are almost exclusively powered by lithium-ion batteries, but there is a long way to go before electric vehicles become dominant in the global automotive market. In addition to policy support, widespread deployment of electric vehicles requires high-performance and low-cost energy storage technologies, including not only batteries but also alternative electrochemical devices. Here, we provide a comprehensive evaluation of various batteries and hydrogen fuel cells that have the greatest potential to succeed in commercial applications. Three sectors that are not well served by current lithium-ion-powered electric vehicles, namely the long-range, low-cost and high-utilization transportation markets, are discussed. The technological properties that must be improved to fully enable these electric vehicle markets include specific energy, cost, safety and power grid compatibility. Six energy storage and conversion technologies that possess varying combinations of these improved characteristics are compared and separately evaluated for each market. The remainder of the Review briefly discusses the technological status of these clean energy technologies, emphasizing barriers that must be overcome.",
+        "bbox": [
+            63,
+            265,
+            931,
+            401
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Although first introduced as early as the  $1800\\mathrm{s}^{1}$ , electric vehicles (EVs) have only begun to be widely adopted since the start of the present decade. Global EV sales have escalated from less than 10,000 in 2010 to 774,000 in 2016, surpassing 2 million cumulative sales<sup>2</sup>. Vehicle electrification is now seen as the main decarbonization pathway for nearly all road-based transportation<sup>3</sup>. Worsening urban air quality has also led several countries to announce intentions to ban sales of internal combustion engine vehicles (ICEVs)<sup>4</sup>, which will need to be replaced by EVs.",
+        "bbox": [
+            65,
+            425,
+            490,
+            545
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "The growing success of EVs can be attributed, from a technological perspective, to advances in electrochemical energy storage technology. The specific energy of lithium-ion (Li-ion) batteries, which increased from approximately 90 Wh  $\\mathrm{kg}^{-1}_{\\mathrm{cell}}$  in the 1990s to over 250 Wh  $\\mathrm{kg}^{-1}_{\\mathrm{cell}}$  today[5,6], has allowed full-size automobiles to travel sufficient distances for typical driving patterns[7]. Meanwhile, the cost of Li-ion battery packs has decreased from over 1,000 US $\\mathrm{kWh}^{-1}$  to about 250 US $\\mathrm{kWh}^{-1}$  (refs [5,8-11]), allowing EV prices to fall to a price that early adopters are willing to pay.",
+        "bbox": [
+            65,
+            545,
+            490,
+            665
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Figure 1 shows the evolution of cumulative EV sales and EV market share that is needed to conform to the International Energy Agency (IEA)'s scenario for limiting global temperature increase to  $1.75^{\\circ}\\mathrm{C}$ . Referred to as the Beyond 2 Degrees Scenario (B2DS), this pathway calls for cumulative EV sales of 1.8 billion and an EV market share of  $86\\%$  by 2060. The inset within Fig. 1, displaying cumulative vehicle sales of about 2 million and a market share of  $0.2\\%$  in 2016, demonstrates the extremely early stage of current global EV adoption and the large amount of future adoption that is needed. EV adoption has so far been heavily dictated by government policy instruments, such as financial incentives, sales mandates and free vehicle charging[12,13]. Although these policies are likely to spur further adoption, it could become financially unsustainable or undesirable to scale them up to the level needed to reach the market share prescribed in Fig. 1. Moreover, it is not certain that EVs powered by Li-ion batteries will be suitable for every vehicle market, owing to",
+        "bbox": [
+            65,
+            665,
+            492,
+            878
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "inherent limits in their energy storage capacity, safety and achievable cost. Alternative technologies that can power EV drivetrains are therefore an important focus.",
+        "bbox": [
+            502,
+            425,
+            929,
+            465
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Here, we evaluate the potential of batteries and hydrogen fuel cells for improving the performance and reducing the cost of EVs. We first outline three automotive markets that have not seen much penetration by Li-ion powered EVs, and we discuss the energy characteristics that require improvement for EVs to succeed in these markets. Then, we compare and evaluate the properties of five battery types that are commonly discussed as candidates to power new EVs. Finally, we provide a brief status review of each battery, in addition to hydrogen fuel cells, and discuss the potential of each technology in fulfilling requirements for emerging EV markets.",
+        "bbox": [
+            502,
+            465,
+            929,
+            600
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Energy storage barriers in emerging EV markets",
+        "text_level": 1,
+        "bbox": [
+            504,
+            610,
+            850,
+            625
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Below, we outline the characteristics of energy storage technologies that require improvement to succeed in the areas of long-range transport, low-cost transport and high-utilization transport.",
+        "bbox": [
+            502,
+            625,
+            929,
+            665
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Long-range transport. Inadequate driving range, or 'range anxiety', is frequently reported as a key technological barrier preventing consumers from purchasing EVs $^{14,15}$ . Longer EV ranges are particularly desired in the United States $^{16}$ , perhaps because of longer potential travel distances and less reliance on public transit than other developed regions $^{17}$ . Over half (54%) of US consumers in a 2016 survey required a range of at least 175 miles (282 km) to consider purchasing an EV, and over a quarter (29%) required a range of 375 miles (604 km) $^{14}$ . When considering an EV that could reduce fuel costs by one-third, 52% of respondents were unwilling to spend more than US $5,000 above the price of a petrol- (gasoline)-powered vehicle, and 29% would not spend above a premium of US$ 1,000.",
+        "bbox": [
+            502,
+            677,
+            929,
+            837
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "In Fig. 2, the driving ranges for EVs currently available in the US market are shown plotted against their price premium relative to average vehicle prices in the same size segment. Notably, each",
+        "bbox": [
+            504,
+            837,
+            929,
+            878
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "nature energy",
+        "bbox": [
+            85,
+            37,
+            206,
+            81
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "REVIEW ARTICLE",
+        "bbox": [
+            658,
+            36,
+            915,
+            60
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "https://doi.org/10.1038/s41560-018-0108-1",
+        "bbox": [
+            657,
+            65,
+            914,
+            77
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{1}$ Department of Chemical Engineering, University of Waterloo, Waterloo, Ontario, Canada.  $^{2}$ Ballard Power Systems, Burnaby, British Columbia, Canada.  $^{3}$ Daimler AG (Mercedes-Benz), Group Research, Böblingen, Germany.  $^{4}$ Chemical Sciences and Engineering Division, Argonne National Laboratory, Lemont, IL, USA. *e-mail: zhwchen@uwaterloo.ca",
+        "bbox": [
+            65,
+            903,
+            929,
+            943
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "NATURE ENERGY|VOL 3 | APRIL 2018|279-289|www.nature.com/natureenergy",
+        "bbox": [
+            65,
+            955,
+            463,
+            967
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_number",
+        "text": "279",
+        "bbox": [
+            905,
+            959,
+            929,
+            969
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "© 2018 Macmillan Publishers Limited, part of Springer Nature. All rights reserved.",
+        "bbox": [
+            299,
+            973,
+            697,
+            984
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/f57dbdaacd7fbfc6a7b315b0c5f0d5e7ef404e9b533313ddef7a2d44d3dba388.jpg",
+        "image_caption": [
+            "Fig. 1 | Evolution of cumulative EV sales and EV market share prescribed in the IEA's 'Beyond 2 Degrees Scenario'. Cumulative EV sales up to  $2016^{2}$  are shown in the inset. Battery, plug-in hybrid and hydrogen fuel-cell EVs are all included in these data. The scenario data are from ref. 22."
+        ],
+        "image_footnote": [],
+        "bbox": [
+            68,
+            67,
+            489,
+            324
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "EV costs at least US$5,000 more than the average vehicle price in its respective vehicle size class. Although other factors such as low manufacturing volumes and extra vehicle features may contribute to high prices, the positive correlation between EV range and price premium indicates the considerable cost contribution of the batteries. A range-dependent willingness-to-pay model for US consumers<sup>16</sup> was used to expand the aforementioned consumer survey results into boundaries of requirement, in which 52–54% of US consumers require an EV with a price premium and range below the upper requirement boundary, and 29% of US consumers require an EV with a price premium and range below the lower requirement boundary. This figure shows that without government incentives, none of the currently available EVs would satisfy the requirements of over 50% of US consumers.",
+        "bbox": [
+            65,
+            412,
+            490,
+            598
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Recent forecasts predict that the cost of Li-ion battery packs will fall to near 70 US $\\mathbb{S}$  kWh $^{-1}$  by 2030 or 2040 as manufacturing efficiency is further improved $^{9,18}$ . If 2017 EV prices are adjusted to reflect this value, three models (Chevrolet Bolt, Hyundai Ioniq electric and Tesla Model 3) appear to pass the  $50\\%$  US consumer requirement threshold (Fig. 2). However, EVs with these adjusted prices would remain far short of meeting the requisites of nearly  $30\\%$  of US consumers, and probably many other consumers in highly automobile-dependent countries. Even if energy storage costs are removed from the vehicle prices, none of the current EV models would provide a driving range that  $30\\%$  of US consumers would be willing to pay for. Therefore, substantially improving EV ranges without increasing cost seems to be the only way to satisfy the long-range transportation market. This requires vehicle weight to be reduced by increasing the specific energy  $(\\mathrm{Whkg^{-1}})$  stored in the vehicle. With Li-ion batteries, however, substantially increasing the specific energy is likely to require metallic lithium anodes, increased cell voltages or reduced safety components, all of which may involve an unacceptable trade-off in safety $^{19-21}$ . Solid-state Li-ion batteries are one of the most promising pathways for safely incorporating lithium metal and higher-voltage materials; cells reported so far, however, have either unacceptably low areal capacities (less than  $1\\mathrm{mAhcm}^{-2}$ , which would translate to lower specific energy than state-of-the-art Li-ion batteries $^{22}$ ) or unacceptably low cycle life (20 cycles or less) $^{23}$ . Even a highly optimized Li-ion cell with a lithium metal anode may not practically surpass",
+        "bbox": [
+            65,
+            598,
+            492,
+            945
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "350 Wh  $\\mathrm{l}^{-1}_{\\mathrm{cell}}$  (ref. 22). Consequently, alternative battery chemistries and energy storage technologies with higher specific energy, lower cost and improved safety are needed to enable electrification of the long-range transportation market.",
+        "bbox": [
+            502,
+            65,
+            929,
+            121
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Low-cost transport. The cost of EVs, as opposed to their range, is likely to be the primary concern for a large and increasing percentage of future vehicle owners. Figure 3 displays results of a discrete choice model fitted to vehicle registration data (for both EVs and conventional vehicles) from a selection of countries[24]. US consumers were willing to pay an additional 21 US$ per additional kilometre of range (21 US$ km $^{-1}$ ), whereas consumers in emerging countries (China, India, Brazil and Indonesia) were only willing to pay an average of 8.4 US$ km $^{-1}$ . Figure 3 also displays the negative logit coefficient for vehicle price fitted to each country, which measures the degree to which a price increase reduces the probability that a consumer will purchase a vehicle[24,25]. The negative coefficient for emerging countries was, on average, significantly higher than that of the United States. China was the one exception, with a negative value indicating that a higher price surprisingly increased the probability of a vehicle purchase. Nevertheless, high Chinese sales figures for cheaper and smaller low-speed EVs, including tow-hewlers and three-wheelers, versus those for conventional EVs (over 200 million versus 0.6 million in total as of 2016[13]) indicate the high market desire for low-cost transportation in China alongside India, Brazil and Indonesia.",
+        "bbox": [
+            502,
+            132,
+            929,
+            412
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "EVs available in emerging markets such as China have a similar price premium to the developed countries[26]. The low-cost transportation market, which is expected to grow quickly as emerging countries continue to industrialize, is thus underserved by current Li-ion-powered EVs. If the battery energy of the compact and subcompact cars in Fig. 2 are plotted against vehicle ranges, a slope of  $0.19\\mathrm{kWh}\\mathrm{km}^{-1}$  (representing energy consumption per additional kilometre of range) is obtained. For emerging countries, the average willingness to pay  $(8.4\\mathrm{US\\$ km^{-1}}$  as mentioned above) is divided by  $0.19\\mathrm{kWh}\\mathrm{km}^{-1}$  to obtain a target for energy storage cost of approximately  $45\\mathrm{US\\$ kWh^{-1}}$ . Development of an electrochemical storage technology costing below  $45\\mathrm{US\\$ kWh^{-1}}$  is therefore a worthwhile goal for enabling electrified transportation in emerging markets. Alternatively, technologies with a higher specific energy and similar cost to Li-ion batteries could also help this market by reducing the energy consumption value used in the above calculation.",
+        "bbox": [
+            502,
+            412,
+            929,
+            626
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "High-utilization transport. Vehicles that experience higher utilization—that is, the percentage of time they are in operation—than consumer vehicles are a considerable contributor to climate change and poor air quality. For instance, road freight vehicles accounted for about a third of carbon dioxide emissions from the global transportation industry in 2015, and this share is increasing in industrialized countries as passenger vehicles become more fuel-efficient[27]. Therefore, the unique challenges of transitioning to high-utilization EVs for public transportation and goods transportation must be addressed.",
+        "bbox": [
+            502,
+            637,
+            929,
+            770
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "High utilization has important implications for the requirements of the energy storage technology used in EVs. First, the capability for fast charging (for example, less than an hour) becomes a more important consideration, as the time required to charge the vehicle should not disrupt the operating schedule of the vehicle. Li-ion batteries are capable of fast charging, and electric buses designed for quick partial recharging at bus stops have been deployed in several countries[28]; however, this can cause increased cell degradation and safety issues[29-31]. Simultaneous fast charging of several EVs can also put excessive stress on the components of power grids, thus necessitating expensive upgrades[32,33]. Therefore, an important aspect to consider for high-utilization EVs is their ability to recharge quickly while smoothly integrating with power grids.",
+        "bbox": [
+            502,
+            770,
+            929,
+            945
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "REVIEW ARTICLE",
+        "bbox": [
+            65,
+            27,
+            297,
+            50
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "NATURE ENERGY",
+        "bbox": [
+            771,
+            32,
+            929,
+            46
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "280",
+        "bbox": [
+            68,
+            958,
+            92,
+            969
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "NATURE ENERGY|VOL 3|APRIL 2018|279-289|www.nature.com/natureenergy",
+        "bbox": [
+            532,
+            955,
+            929,
+            967
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "© 2018 Macmillan Publishers Limited, part of Springer Nature. All rights reserved.",
+        "bbox": [
+            299,
+            973,
+            697,
+            984
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "image",
+        "img_path": "images/c01c55117de45da77e0cf733894fc806e24203289fd92ace8d2a3f34b51e19c7.jpg",
+        "image_caption": [
+            "Subcompact car",
+            "1. Mitsubishi I-MIEV",
+            "2. Fiat 500e",
+            "3. Mercedes-Benz B250e",
+            "4. Kia Soul electric",
+            "5. Nissan Leaf",
+            "6. BMW i3",
+            "7. Ford Focus electric",
+            "8. Hyundai Ioniq electric",
+            "9. Volkswagen e-Golf",
+            "10. Tesla Model 3",
+            "12. Chevrolet Bolt"
+        ],
+        "image_footnote": [],
+        "bbox": [
+            67,
+            62,
+            495,
+            311
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/3a512638ff76a22393f17fbd60864e6ef9b73eba7ecf4a1f84ada7d42247b6f1.jpg",
+        "image_caption": [
+            "Compact car",
+            "Mid-size car",
+            "Full-size car",
+            "Subcompact SUV/crossover",
+            "Full-size SUV/crossover",
+            "Fig. 2 | Ranges and price premiums for 2017 model EVs. Price premiums are defined relative to average transaction price for vehicle size segment (including ICEVs and excluding luxury vehicles). Selected 2017 model EVs are also re-plotted in the green area with their price adjusted for a battery cost of 70 US $\\$ 6$  kWh $^{-1}$  (initial battery cost assumed to be 250 US $\\$ 6$  kWh $^{-1}$ ). The + and  $\\times$  coordinates represent the range and price requirements for 52-54% and 29% of US consumers, respectively $^{14}$ . These data points are expanded into requirement boundaries using a range-dependent willingness-to-pay model for US consumers $^{16}$ . The price premiums of luxury-class EVs were not measured relative to other luxury-class vehicles; this was chosen so that each vehicle price premium could be compared to the price requirements of typical consumers for whom cost is a primary concern. Further vehicle data provided in Supplementary Table 1."
+        ],
+        "image_footnote": [],
+        "bbox": [
+            84,
+            315,
+            102,
+            329
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Another key characteristic of many high-utilization vehicles such as trucks, buses and trains is their larger weight relative to personal transport vehicles. Li-ion battery packs must be proportionally scaled to larger sizes for these vehicles to travel an equivalent distance. But the lower surface-to-volume ratios of larger battery packs mean that heat dissipation is slower, often resulting in increased degradation and safety concerns, and the need for complex cooling techniques with expensive or toxic chemicals[29]. Therefore, energy storage and conversion technologies that have higher specific energies and safer characteristics (for example, non-flammable materials) are particularly attractive for high-utilization EVs.",
+        "bbox": [
+            65,
+            598,
+            490,
+            745
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Evaluation of electrochemical technology candidates",
+        "text_level": 1,
+        "bbox": [
+            65,
+            756,
+            443,
+            770
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "The previous section specified that increased specific energy or lower energy storage cost (in comparison to Li-ion batteries) is essential for EVs with longer driving ranges and lower cost, while fast charging, power grid compatibility and safe operation are crucial for high-utilization EVs. Of course, Li-ion batteries possess several other characteristics with which other electrochemical technologies need to compete. Characteristics of the technologies regarded as candidates for new EVs, in addition to those of Li-ion batteries, are compared in Fig. 4. Qualitative safety ratings were determined by the type of electrolyte (flammable or non-flammable), potential for over-heating, and potential for toxic or corrosive material release. Fast-charging capability for each battery was rated semi-quantitatively from its specific power, while each battery's power grid compatibility was rated",
+        "bbox": [
+            65,
+            770,
+            490,
+            945
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/0160260aece4832bbff52ef056b5bcfdcff738c8ba2dd39ed740c92528a892b5.jpg",
+        "image_caption": [
+            "11. Tesla Model X 75D",
+            "13. Tesla model S 75",
+            "Fig. 3 | Consumer vehicle purchasing habits in the United States versus emerging countries. Willingness to pay for additional range and the negative of the logit coefficient for vehicle price are compared for consumers in the United States and selected emerging countries[24]. Readers are referred to ref.[22] for the calculation methods. A higher magnitude for the negative logit coefficient indicates that an increased vehicle price causes a greater reduction of the probability that a consumer will purchase the vehicle. Note that the average willingness to pay for emerging countries is not the mean of the given willingness-to-pay values; this was calculated from the mean logit coefficients for vehicle price and vehicle range for each emerging country."
+        ],
+        "image_footnote": [],
+        "bbox": [
+            507,
+            67,
+            924,
+            318
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "semi-quantitatively from its energy efficiency. Hydrogen fuel cells have the highest fast-charging and power grid compatibility owing to the ability to transfer hydrogen gas quickly without disrupting power grids.",
+        "bbox": [
+            502,
+            478,
+            929,
+            532
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Note that the energy characteristics of hydrogen storage in Fig. 4 (specific energy, energy density and energy storage cost) should not be directly compared with those of the various battery chemistries without accounting for the mass, volume and cost of a coupled fuel-cell system. Unlike batteries, the total energy of a hydrogen fuel-cell combination (that is, amount of stored hydrogen) can be increased separately from the total power of the fuel cell. Because of this fundamental difference, hydrogen fuel cells are not included in the analysis below; they are evaluated relative to Li-ion batteries in a separate section.",
+        "bbox": [
+            502,
+            532,
+            929,
+            651
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Certain metrics for the batteries in Fig. 4, namely specific energy, energy density and energy storage cost, can be evaluated more practically by using them in approximating calculations of vehicle range  $(R_{\\mathrm{V}})$ , total vehicle cost  $(C_{\\mathrm{V,T}})$  and battery pack volume  $(\\mathrm{Vol}_{\\mathrm{B}})$ . Each of these is a function of the battery pack energy  $(E_{\\mathrm{B}})$  and can be calculated from equations (1)<sup>34</sup>, (2) and (3) respectively:",
+        "bbox": [
+            502,
+            651,
+            929,
+            732
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nR _ {\\mathrm {V}} = \\frac {E _ {\\mathrm {B}}}{\\mathrm {E C E} _ {\\mathrm {V}} \\left(M _ {\\mathrm {V}} + \\frac {E _ {\\mathrm {B}} k _ {\\mathrm {m , B}}}{\\mathrm {S E} _ {\\mathrm {B C}}}\\right)} \\tag {1}\n$$\n",
+        "text_format": "latex",
+        "bbox": [
+            620,
+            741,
+            927,
+            784
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nC _ {\\mathrm {V}, \\mathrm {T}} = C _ {\\mathrm {V}} + C _ {\\mathrm {B}} E _ {\\mathrm {B}} \\tag {2}\n$$\n",
+        "text_format": "latex",
+        "bbox": [
+            647,
+            808,
+            927,
+            822
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathrm {V o l} _ {\\mathrm {B}} = \\frac {E _ {\\mathrm {B}} \\times k _ {\\mathrm {v o l , B}}}{\\mathrm {E D} _ {\\mathrm {B C}}} \\tag {3}\n$$\n",
+        "text_format": "latex",
+        "bbox": [
+            647,
+            856,
+            927,
+            889
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "where  $\\mathrm{ECE}_{\\mathrm{V}}$  (Wh  $\\mathrm{km}^{-1}\\mathrm{kg}^{-1}$ ) is the energy consumption efficiency of the vehicle,  $M_{\\mathrm{V}}(\\mathrm{kg})$  and  $C_{\\mathrm{V}}(\\mathrm{US}\\$$  are the vehicle mass and vehicle cost not including the battery pack,  $C_{\\mathrm{B}}(\\mathrm{US}\\$\\mathrm{kWh}^{-1})$  is the",
+        "bbox": [
+            502,
+            903,
+            929,
+            945
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "NATURE ENERGY",
+        "bbox": [
+            67,
+            32,
+            223,
+            46
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "REVIEW ARTICLE",
+        "bbox": [
+            700,
+            27,
+            929,
+            49
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "NATURE ENERGY | VOL 3 | APRIL 2018 | 279-289 | www.nature.com/natureenergy",
+        "bbox": [
+            67,
+            956,
+            463,
+            967
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "281",
+        "bbox": [
+            905,
+            959,
+            927,
+            968
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "© 2018 Macmillan Publishers Limited, part of Springer Nature. All rights reserved.",
+        "bbox": [
+            299,
+            973,
+            697,
+            984
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/a5b207d965e83e8eb5ef458ace1214c9da82d168f1845be8a29068bfb6c9f226.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            80,
+            68,
+            272,
+            175
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/a4d0b6cad904537ea36ea8814337934349d520a0d058961203077c6270ae22c6.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            295,
+            68,
+            487,
+            175
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/f581fbcc66a6fff91e709d08b1cebb06e3bf372dcedfd6ca94bea91595cc3bd4.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            504,
+            68,
+            709,
+            175
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/6efe39b97e37baff31156382fd72009a6d855acd45d54c9f51dd99e4959c8792.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            727,
+            68,
+            919,
+            175
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/481ab976b6a35457aff410bbb86f8250b79083d373e804a977a1f7cd4e6981f4.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            80,
+            186,
+            272,
+            294
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/d9454b9f7cf4479c403af0e53ba65de9d58913baae96e12614b3232068144f55.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            295,
+            186,
+            487,
+            294
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/f9a7915c809fefac8cb8949b3fcba9145c831872c1d05ce18a9ea90d638fa2c7.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            504,
+            186,
+            705,
+            294
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/67e6192c34d402d121a3994b6660182fda143e877eea0e2e202c46b22b0dbc3e.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            737,
+            187,
+            919,
+            294
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/08fc9fc3cc62b94bc8d37117f234ca24d035d0d7500ffabe9f2767d3d0835da3.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Li-ion"
+        ],
+        "bbox": [
+            80,
+            312,
+            272,
+            418
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/2e95dc7cd23511eacf90a4e62c9bfa355b3b59cb009981f17a8f186cb160614a.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Pb-",
+            "Ni-MH",
+            "Li-S"
+        ],
+        "bbox": [
+            297,
+            310,
+            487,
+            418
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/9d09dcb0c36891f1bb7e572b443fb73847b79767a82e5cfda24aff0c883d17c8.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Li-air"
+        ],
+        "bbox": [
+            505,
+            312,
+            705,
+            418
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/cfff99963c4531be5192cfa7539a48495a09c1c63828cec1146f3c70df953cb4.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            737,
+            311,
+            919,
+            418
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/b2ae85ef66717307f9be8602da92326be2423c4d45f405e79a8aa90d6a8d4f7a.jpg",
+        "image_caption": [
+            "Fig. 4 | Characteristics of rechargeable batteries and hydrogen fuel cells. The upper bounds of the specific energy, energy density and specific power ranges represent estimates of what can be practically achieved (refer to references in Supplementary Table 2 for details), whereas the lower bounds indicate what has already been achieved (vice versa for energy storage cost). Cycle life, calendar life, energy efficiency, self-discharge and operating temperature ranges represent upper and lower values observed in commercial or prototype cells. Energy storage cost refers to the cost of the battery pack or system, while specific energy, energy density and specific power refer to cell-level values. Literature information was not sufficient to specify upper and lower bounds or values confidently for the specific power, energy efficiency and self-discharge rate of Li-air batteries. For hydrogen fuel cells, energy-related characteristics apply only to hydrogen within a typical hydrogen storage tank (that is, not including the fuel cell) and specific power applies only to the fuel cell (that is, not including hydrogen storage). Cycle life and self-discharge rates are not applicable to hydrogen fuel cells, and thus are not included. Safety, fast-charging compatibility and power grid compatibility are qualitative ratings between 0 (worst) and 10 (best). Separate safety ratings are assigned to the solid-state versions of lithium-based batteries due to the replacement of flammable, liquid electrolytes with solid, non-flammable electrolytes. Numeric values and references for each characteristic are provided in Supplementary Table 2."
+        ],
+        "image_footnote": [
+            "Zn-air",
+            "Hydrogen fuel cell"
+        ],
+        "bbox": [
+            700,
+            436,
+            719,
+            450
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "battery pack cost,  $\\mathrm{SE}_{\\mathrm{BC}}(\\mathrm{Wh}\\mathrm{kg}^{-1})$  and  $\\mathrm{ED}_{\\mathrm{BC}}(\\mathrm{Wh}\\mathrm{l}^{-1})$  are the specific energy and energy density of the battery cell, and  $k_{\\mathrm{m,B}}$  and  $k_{\\mathrm{vol,B}}$  (unitless) are factors for the battery pack mass and volume overheads, respectively. The overhead factors assigned to each battery (Supplementary Table 2) reflect the level of safety equipment or air management equipment (for metal-air batteries) needed to operate each battery.",
+        "bbox": [
+            63,
+            637,
+            490,
+            731
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Results for a mini vehicle (common in markets that demand low-cost vehicles), a mid-size vehicle (common in markets demanding long-range vehicles) and a semi-trailer truck (representing the high-utilization market) are exhibited in Figs. 5a,b, 5c,d and 5e,f, respectively. Data for the three vehicle types can be found in Supplementary Tables 1 and 2, and ref. [22]. Vehicle cost as a function of driving range is plotted in Fig. 5a,c,e until the battery volume exceeds an assigned space limit within each vehicle. Because of the space limitations, the low energy densities of lead-acid (Pb-acid) and nickel-metal hydride (Ni-MH) batteries are clearly recognized as a large drawback. The potential for lithium-sulfur (Li-S), lithium-air (Li-air) and zinc-air (Zn-air) batteries to enable long-range EVs at a much lower cost than Li-ion batteries is also apparent. The cost of adding greater range  $(\\mathrm{US\\$ km^{-1}})$ , which may be compared with investigations of consumers' willingness to pay for additional range [16,24], is plotted against vehicle range in Fig. 5b,d,f. Figure 5b shows that",
+        "bbox": [
+            63,
+            731,
+            492,
+            945
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Li-S, Li-air and Zn-air batteries can bring the cost of additional range of a mini vehicle substantially closer to the average willingness-to-pay value for emerging countries identified in Fig. 3.",
+        "bbox": [
+            502,
+            637,
+            929,
+            678
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Figure 6 displays the approximate span of vehicle cost and range combinations that could be achieved for a mid-size vehicle using the upper and lower bounds of the energy and cost characteristics of each battery in Fig. 4. It can be seen here that Zn-air batteries have the potential to enable the longest-range EV, while Li-S batteries could enable the lowest-cost EV. But this evaluation does not dictate whether each battery has sufficient power, cycle/calendar life, efficiency and self-discharge rate to function reliably in an EV. Therefore, Figs. 5 and 6 demonstrate only the basic potential of each battery chemistry to lower costs and increase driving ranges. Details of the practicality of implementing these technologies in consumer, commercial and public transportation applications are discussed below.",
+        "bbox": [
+            502,
+            678,
+            929,
+            850
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Commercial rechargeable batteries",
+        "text_level": 1,
+        "bbox": [
+            504,
+            862,
+            759,
+            875
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "We look first at two types of rechargeable battery currently in commercial use and evaluate them as alternatives to Li-ion batteries.",
+        "bbox": [
+            502,
+            877,
+            927,
+            903
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Lead-acid batteries. These are currently the lowest-cost and most-used rechargeable batteries in the world[9,36]. Owing to their low",
+        "bbox": [
+            502,
+            916,
+            929,
+            945
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "REVIEW ARTICLE",
+        "bbox": [
+            65,
+            27,
+            297,
+            50
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "NATURE ENERGY",
+        "bbox": [
+            771,
+            32,
+            929,
+            46
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "282",
+        "bbox": [
+            68,
+            958,
+            92,
+            969
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "NATURE ENERGY|VOL 3|APRIL 2018|279-289|www.nature.com/natureenergy",
+        "bbox": [
+            532,
+            955,
+            929,
+            967
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "© 2018 Macmillan Publishers Limited, part of Springer Nature. All rights reserved.",
+        "bbox": [
+            299,
+            973,
+            697,
+            984
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/fb97b9be8dc6860dcfbb98ecbf8efbd4462f61d3f51afe0b60e42ecf042f204c.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            67,
+            65,
+            346,
+            248
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/65d355a02347de8619b1b33491fb8d848e3f38ba8ae9be6b48e6aec2d8683831.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            351,
+            65,
+            636,
+            249
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/551b5f56b98f746bdacaa72ed652c0916965cf3ded95ff2916dfca1a225b2533.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            645,
+            65,
+            929,
+            249
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/ca8bc6d41672fb82e8dfd8311e6b4f1a906fb93fe85407fc485b73945e83309f.jpg",
+        "image_caption": [
+            "Fig. 5 | Vehicle cost and cost of additional range as a function of driving range. Curves are plotted for (a,b) mini vehicle ( $C_{\\mathrm{v}} = 10,000 \\, \\mathrm{US}$ ,  $M_{\\mathrm{v}} = 650 \\, \\mathrm{kg}$ ,  $ECE_{\\mathrm{v}} = 0.0985 \\, \\mathrm{Wh} \\, \\mathrm{km}^{-1} \\, \\mathrm{kg}^{-1}$  (Supplementary Table 1)), (c,d) mid-size vehicle ( $C_{\\mathrm{v}} = 25,000 \\, \\mathrm{US}$ ,  $M_{\\mathrm{v}} = 1,500 \\, \\mathrm{kg}$ ,  $ECE_{\\mathrm{v}} = 0.0777 \\, \\mathrm{Wh} \\, \\mathrm{km}^{-1} \\, \\mathrm{kg}^{-1}$  (Supplementary Table 1)) and (e,f) semi-trailer truck ( $C_{\\mathrm{v}} = 100,000 \\, \\mathrm{US}$ ,  $M_{\\mathrm{v}} = 24,000 \\, \\mathrm{kg}$ ,  $ECE_{\\mathrm{v}} = 0.0445 \\, \\mathrm{Wh} \\, \\mathrm{km}^{-1} \\, \\mathrm{kg}^{-1}$  (ref. [35]). Curves in a,c,e are calculated with equations (1) and (2) and are plotted until the battery volume (equation (3)) exceeds a chosen maximum. Curves in b,d,f are plotted by calculating the respective tangents of curves from a,c,e. Midpoint values of the specific energy, energy density, energy storage cost and battery system overhead ranges (Fig. 4, Supplementary Table 2) were used for each curve."
+        ],
+        "image_footnote": [],
+        "bbox": [
+            67,
+            256,
+            344,
+            437
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/e4339f1ef9e825d71f3ee783596a2dd466279af4487a87f4a7232833b5dee07f.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            351,
+            256,
+            636,
+            437
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/3da085b7cb93fb3b607c7ca26b3c0d44530956c289b023ab24558926414a7163.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            645,
+            256,
+            929,
+            437
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "specific energy and energy density, however, they are only more cost-effective than Li-ion batteries for low-range EVs (Fig. 5). Also, their larger volume and lower cycle life, specific power and energy efficiency tend to make them less preferred than Li-ion batteries in newer low-cost and low-speed bicycles and vehicles<sup>37</sup>. Nevertheless, Pb-acid batteries have some advantages that make them attractive for assistive roles in vehicle electrification. Besides their low cost, these include low-temperature operation (as low as  $-40^{\\circ}\\mathrm{C})^{38}$ , better charging safety<sup>39</sup> and potentially very low self-discharge rates<sup>40</sup>.",
+        "bbox": [
+            63,
+            556,
+            490,
+            678
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Most work on Pb-acid batteries is thus now aimed at making them capable of regenerative brake charging and motor assist in hybrid vehicles[41,42]. This requires batteries that can survive up to hundreds of thousands of high-power 'micro-cycles' at partial states of charge[43]. A major problem when subjecting conventional Pb-acid batteries to high discharge rates is irreversible growth of large, insulating lead sulfate crystals on the negative electrode, which subsequently harms its ability to accept fast recharges[42]. Various carbon additives were discovered to mitigate this problem by improving conductivity, promoting smaller sulfate crystal growth, and introducing capacitive behaviour to buffer high charge and discharge rates[41,44]. These 'Pb-carbon' batteries have shown promise in low-cost hybrid EV concepts[45], and, with further power improvements, could be attractive for fully electrified low-cost vehicles with dual energy sources.",
+        "bbox": [
+            63,
+            678,
+            492,
+            878
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Nickel-metal hydride batteries. The Ni-MH battery, commercially introduced in 1989, is the most common nickel-based battery and offers considerably better performance than Pb-acid batteries across most metrics<sup>46</sup>. They were the default battery choice for",
+        "bbox": [
+            65,
+            889,
+            490,
+            945
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "hybrid EVs until very recently, and therefore the technology is already well-optimized for regenerative brake charging and full-electric traction $^{43}$ . However, the higher cost of nickel and hydride storage metals also makes them more expensive than  $\\mathrm{Pb}$ -acid batteries; in fact, they are now more expensive than Li-ion batteries following the latter's rapid cost reduction $^{9}$ .",
+        "bbox": [
+            502,
+            556,
+            929,
+            637
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Because Li-ion batteries have higher specific energy, energy density and cycle life, while Pb-acid batteries are cheaper, Ni-MH batteries do not seem to provide any distinct advantages for emerging EV markets. However, the aqueous electrolyte and lower-reactivity metals used in Ni-MH batteries makes them inherently safer to operate, and their better low-temperature performance could make them useful for vehicle start-up in cold climates $^{46}$ . Their safer operation also allows them to be placed in more impact-exposed areas of a vehicle, such as the front end, which would be too dangerous for lithium-based batteries. Substitution of structural components and energy absorption materials with Ni-MH batteries has been advocated as a creative method to reduce vehicle weight, thus offering the potential for longer-range EVs $^{34}$ .",
+        "bbox": [
+            502,
+            637,
+            929,
+            812
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Emerging rechargeable batteries",
+        "text_level": 1,
+        "bbox": [
+            504,
+            822,
+            742,
+            837
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Below, we consider the characteristics of three different emerging battery technologies that are commonly envisioned as energy storage solutions for EV applications.",
+        "bbox": [
+            502,
+            837,
+            929,
+            878
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Lithium-sulfur batteries. These batteries have received increased attention owing to the 4.5 times higher theoretical lithium capacity and much lower cost of sulfur cathodes relative to typical Li-ion insertion cathodes<sup>47</sup>. Unfortunately, sulfur cathodes have several",
+        "bbox": [
+            502,
+            889,
+            929,
+            945
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "NATURE ENERGY",
+        "bbox": [
+            67,
+            32,
+            225,
+            48
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "REVIEW ARTICLE",
+        "bbox": [
+            700,
+            27,
+            929,
+            49
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "NATURE ENERGY|VOL 3 | APRIL 2018|279-289|www.nature.com/natureenergy",
+        "bbox": [
+            65,
+            955,
+            463,
+            967
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "283",
+        "bbox": [
+            905,
+            959,
+            929,
+            969
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "© 2018 Macmillan Publishers Limited, part of Springer Nature. All rights reserved.",
+        "bbox": [
+            299,
+            973,
+            697,
+            984
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/c928a59799fb2be6c814953197cfef6dff863466ad8376ac6fa56a7bacbb1d4c.jpg",
+        "image_caption": [
+            "Fig. 6 | Sensitivity plots of mid-size vehicle cost and range. Curves show sensitivity to minimum specific energy, minimum energy density, maximum cost and maximum system overheads (defined as the worst-case characteristics) and maximum specific energy, maximum energy density, minimum cost and minimum system overheads (defined as the best-case characteristics) for each battery. The area between the two curves shows the span of possible costs and driving ranges that could be enabled by each battery."
+        ],
+        "image_footnote": [],
+        "bbox": [
+            70,
+            65,
+            487,
+            307
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "challenging characteristics such as high volume change upon cycling, low conductivity of the sulfur and lithium sulfide phases, and relatively high solubility of sulfur species in common lithium battery electrolytes $^{47,48}$ . These issues lead to low cycle life and high self-discharge rates, which are both problematic for EV energy storage technologies. Li-S batteries must also incorporate a lithium metal anode to provide an appreciable specific energy advantage over Li-ion batteries $^{22}$ . Lithium metal anodes have several challenges including poor cycle life and fast-charging ability (due to lithium dendrite formation and irreversible electrolyte consumption), high self-discharge (due to unwanted side reactions) and increased safety concerns for both manufacturing and operation $^{21,49,50}$ .",
+        "bbox": [
+            65,
+            451,
+            489,
+            611
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "To address the above difficulties, researchers have reported electrodes incorporating sulfur intertwined with porous carbon or conductive polymer 'containers', which inhibit sulfur dissolution while accommodating volume expansion, improving conductivity and allowing reversible lithium ion migration during charging and discharging[47,49,51]. Regarding the lithium metal anode, most strategies to reduce dendrite formation and mitigate side reactions involve protecting the anode with a passivation layer, coating, separator or solid-state electrolyte[50]. Developments such as these must result in higher cycle life and higher allowable currents without sacrificing specific energy and energy density[52], which has proved difficult as demonstration cells in the literature thus far have not achieved more than 500 cycles at practical charge rates and specific energies[51].",
+        "bbox": [
+            65,
+            611,
+            489,
+            797
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The maximum practically achievable specific energy  $(600\\mathrm{Whkg^{-1}}_{\\mathrm{cell}})$  and estimated minimum cost (36 US $\\mathbb{kWh}^{-1}$ ) for Li-S batteries would be a considerable improvement over Li-ion batteries, making them attractive for all three emerging EV markets discussed earlier. But unless their cycle life is substantially improved, Li-S batteries seem to be a poor choice for high-utilization EVs. A consumer vehicle that is driven long distances occasionally, on the other hand, could be practical because the battery would rarely be subjected to full discharge cycles. Very few drivers travel long distances (greater than  $200~\\mathrm{km}$ ) necessary to cause deep discharges of moderately sized Li-S batteries on a frequent basis; thus, anxiety over battery",
+        "bbox": [
+            65,
+            797,
+            490,
+            944
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "degradation from frequently driving long distances should be much less likely than conventional range anxiety (that is, inability to drive long distances). Therefore, Li-S batteries are a strong candidate to succeed Li-ion batteries in consumer EVs, because they can lower costs and reduce range anxiety at a relatively affordable cost (Fig. 5).",
+        "bbox": [
+            502,
+            65,
+            929,
+            136
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Lithium-air batteries. These batteries offer a further improvement in specific energy and energy density above Li-S batteries owing to their use of atmospheric oxygen to produce power. However, their demonstrated cycle life has thus far been much lower, with a maximum around only 100 cycles[53,54]. Improving their cycle life has proved difficult because of several issues, such as the air electrode clogging from lithium discharge products, catalyst degradation from high-voltage charging, lithium metal side-reactions from atmospheric moisture and irreversible electrolyte decomposition[55,56]. In addition, although reliable estimates of specific power and energy efficiency are not available for Li-air batteries, these metrics are likely to be much poorer than the previously discussed batteries because of sluggish oxygen kinetics at the air electrode[57].",
+        "bbox": [
+            502,
+            146,
+            929,
+            331
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Moreover, the maximum energy density of Li-air batteries at an automotive system level has been projected to be only  $384\\mathrm{Whl^{-1}}$  system after accounting for equipment to protect the battery from atmospheric carbon dioxide and moisture[58]. This places a volumetric limit on the ability of Li-air batteries to enable substantially longer driving ranges than Li-ion batteries (Fig. 6). On the other hand, their combined low cost and high specific energy are still attractive for long-range and low-cost consumer EVs (Fig. 5). Unlike Li-S batteries, however, Li-air batteries would require a complimentary high-power battery for practical operation, because their specific power is likely to be poor.",
+        "bbox": [
+            502,
+            332,
+            929,
+            479
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Zinc-air batteries. Zinc-air batteries, despite having a lower specific energy than Li-air batteries, seem more likely to be used in future EVs because of their more advanced technology status and higher practically achievable energy density[59,60]. Rechargeable Zn-air batteries were identified as a promising candidate for vehicle electrification in the decades before the emergence of Li-ion batteries[61]. Similarly to Li-air batteries, their poor specific power and energy efficiency will probably prevent them from being used as a primary energy source for EVs; however, they could be promising when used in a dual-battery configuration. They could be combined with high-power Pb-carbon batteries to produce a low-cost  $\\mathrm{EV^{62}}$ , although they would probably need a higher cycle life to provide a long vehicle lifetime. Alternatively, they could be implemented as range-extendsers for an EV primarily powered by Li-ion batteries, to enable long-range EVs; this makes their short cycle life and low efficiency relatively unimportant, assuming that the driver only occasionally needs to travel long distances[63]. Although dual-battery concepts can considerably increase cost and complexity[64], the inherent safety of Zn-air batteries[65,66] also makes them well-suited for a dual-battery configuration because (like Ni-MH batteries) there are fewer constraints in their physical location within a vehicle.",
+        "bbox": [
+            502,
+            491,
+            929,
+            770
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The success of these applications depends on making rechargeable Zn-air batteries more durable. Improving the cycling stability of bifunctional oxygen catalysts and zinc electrodes, while maintaining high specific energy and energy density, will be necessary to achieve greater cycle life[67,68]. Reducing or eliminating carbon in the air electrode[69] can also improve the calendar life of Zn-air batteries, because carbon-based air electrodes are subjected to corrosion by the alkaline electrolyte[70] even when the battery is at rest. Carbonate formation within the air electrode pores from carbon dioxide in the air, in addition to electrolyte evaporation, are further challenges for long-lasting Zn-air batteries. For range-extender applications, these problems could be managed with air filters and re-sealable air vents[71,72].",
+        "bbox": [
+            502,
+            770,
+            929,
+            943
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "REVIEW ARTICLE",
+        "bbox": [
+            65,
+            27,
+            297,
+            50
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "NATURE ENERGY",
+        "bbox": [
+            771,
+            32,
+            929,
+            46
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "284",
+        "bbox": [
+            68,
+            958,
+            92,
+            969
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "NATURE ENERGY|VOL 3|APRIL 2018|279-289|www.nature.com/natureenergy",
+        "bbox": [
+            532,
+            955,
+            929,
+            967
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "© 2018 Macmillan Publishers Limited, part of Springer Nature. All rights reserved.",
+        "bbox": [
+            299,
+            973,
+            697,
+            984
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Hydrogen fuel cells",
+        "text_level": 1,
+        "bbox": [
+            65,
+            65,
+            208,
+            79
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Hydrogen is an energy carrier that can be produced from low-carbon sources and stored with a high specific energy relative to most batteries (Fig. 4). Therefore, hydrogen fuel cells have been targeted for their potential to contribute to decarbonization in the transportation sector[73,74]. The first mass-produced fuel-cell electric vehicles (FCEVs), which use polymer electrolyte membrane (PEM) fuel cells, were introduced in 2013-2014 by Hyundai, Toyota and Daimler. The advantages of these vehicles relative to current battery electric vehicles (BEVs) include higher driving ranges (over  $500\\mathrm{km}$ ) and faster refuelling (3-5 minutes to re-fill the hydrogen storage tank). But cumulative FCEV deployments represent a small fraction of total EV sales through 2016 (less than 10,000 or  $0.5\\%$ )[75,76], and they must overcome several challenges to achieve better market uptake.",
+        "bbox": [
+            63,
+            79,
+            490,
+            251
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "FCEVs have higher purchase prices than conventional vehicles, and similarly to BEVs, this is attributed to their electrochemical power supply. The hydrogen storage tank and fuel-cell system are the most expensive components because of the inclusion of expensive materials and equipment such as platinum, carbon fibre, humidifiers and heat exchangers[77-79]. The cost of nearly all these components will decline considerably with increased manufacturing volumes, with the main exception being platinum-group metal (PGM) catalysts owing to their scarcity. To reach a similar total PGM content to ICEVs, FCEVs must reduce PGM loadings to about a quarter of their current state-of-the-art levels[80]. This highlights the importance of research efforts to develop catalysts with reduced levels of PGMs and improved efficiency and durability[81-83].",
+        "bbox": [
+            63,
+            253,
+            490,
+            437
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Cost comparisons for BEV and FCEV versions of an electric mid-size vehicle and an electric semi-trailer truck are displayed in Fig. 7a and Fig. 7b, respectively. The range and cost of the conventional FCEV and the total volume of its energy storage and conversion system were approximated by adapting equations (1)-(3), with the hydrogen consumption efficiency replacing the energy consumption efficiency, and the extra mass, volume and cost of the hydrogen tank and fuel-cell system accounted for. The resulting equations for FCEV range, total vehicle cost and the total volume of its battery pack, fuel-cell system and hydrogen tank (the former necessary for supplemental power) are provided in equations (4), (5) and (6) respectively:",
+        "bbox": [
+            63,
+            439,
+            489,
+            600
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nR _ {\\mathrm {V}} = \\frac {M _ {\\mathrm {H} 2}}{\\mathrm {H C E} _ {\\mathrm {V}} \\left(M _ {\\mathrm {V}} + \\frac {E _ {\\mathrm {B}} k _ {\\mathrm {m} , \\mathrm {B}}}{\\mathrm {S E} _ {\\mathrm {B C}}} + M _ {\\mathrm {H} 2} + M _ {\\mathrm {F C}} P _ {\\mathrm {F C}} + M _ {\\mathrm {H T}}\\right)} \\tag {4}\n$$\n",
+        "text_format": "latex",
+        "bbox": [
+            105,
+            608,
+            489,
+            651
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nC _ {\\mathrm {V}, \\mathrm {T}} = C _ {\\mathrm {V}} + C _ {\\mathrm {B}} E _ {\\mathrm {B}} + C _ {\\mathrm {F C}} P _ {\\mathrm {F C}} + C _ {\\mathrm {H T}} \\mathrm {S E} _ {\\mathrm {H 2}} M _ {\\mathrm {H 2}} \\tag {5}\n$$\n",
+        "text_format": "latex",
+        "bbox": [
+            129,
+            675,
+            489,
+            692
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathrm {V o l} _ {\\mathrm {B}, \\mathrm {F C}, \\mathrm {H T}} = \\frac {E _ {\\mathrm {B}} \\times k _ {\\mathrm {v o l} , \\mathrm {B}}}{\\mathrm {E D} _ {\\mathrm {B C}}} + V _ {\\mathrm {F C}} + V _ {\\mathrm {H T}} \\tag {6}\n$$\n",
+        "text_format": "latex",
+        "bbox": [
+            152,
+            724,
+            489,
+            756
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "where  $M_{\\mathrm{H2}}(\\mathrm{kg})$  is the mass of stored hydrogen,  $\\mathrm{HCE}_{\\mathrm{V}}(\\mathrm{kg}_{\\mathrm{H2}}\\mathrm{km}^{-1}\\mathrm{kg}^{-1})$  is the hydrogen consumption efficiency of the vehicle,  $\\mathrm{SE}_{\\mathrm{H2}}(\\mathrm{kWh}\\mathrm{kg}^{-1})$  is the specific energy of hydrogen,  $M_{\\mathrm{FC}}(\\mathrm{kg}\\mathrm{kW}^{-1}),P_{\\mathrm{FC}}(\\mathrm{kW}),C_{\\mathrm{FC}}$ $(\\mathrm{US\\$ kW^{-1}})$  and  $V_{\\mathrm{FC}}$  (l) are the mass, power, cost and volume of the fuel-cell system and  $M_{\\mathrm{HT}}(\\mathrm{kg}),C_{\\mathrm{HT}}(\\mathrm{US\\$ kWh^{-1}})$  and  $V_{\\mathrm{HT}}$  (l) are the mass, cost and volume of the hydrogen tank, respectively (refer to Supplementary Table 3 for details). FCEV costs are less sensitive to increased driving range because increasing the range requires only increasing the size, quantity or pressure of hydrogen storage tanks, which are lighter and less expensive than Li-ion battery packs on a perkWh basis. However, the high present cost of fuel-cell systems makes current conventional FCEVs more expensive than BEVs for consumer vehicles (Fig. 7a). Previous estimates projected the equal-cost",
+        "bbox": [
+            65,
+            770,
+            490,
+            945
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "crossing point for consumer FCEVs and BEVs to occur at lower driving ranges[22,84]; but the steep decline of Li-ion battery costs in recent years and their even lower long-term projected costs have increased the equal-cost point. Semi-trailer trucks, on the other hand, seem to be well suited to electrification by a fuel-cell system rather than Li-ion batteries at most practical driving ranges (Fig. 6b). This is particularly true when considering that the additional weight of the battery system (required to achieve long driving ranges) reduces the total payload that the battery-powered semi-trailer truck can haul.",
+        "bbox": [
+            502,
+            65,
+            929,
+            200
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Some new FCEVs incorporate a larger Li-ion battery that provides (i) pure battery-powered propulsion for short-range trips and (ii) greater power-assisting to the fuel cell, which allows a smaller fuel-cell system to be used[85]. The range of these plug-in hybrid FCEVs may be approximated with equation (7), which we adapted from a combination of equations (1) and (4):",
+        "bbox": [
+            502,
+            200,
+            929,
+            281
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{l} R _ {\\mathrm {V}} = \\frac {E _ {\\mathrm {B}}}{\\mathrm {E C E} _ {\\mathrm {V}} \\left(M _ {\\mathrm {V}} + \\frac {E _ {\\mathrm {B}} k _ {\\mathrm {w} , \\mathrm {B}}}{\\mathrm {S E} _ {\\mathrm {B C}}} + M _ {\\mathrm {H} 2} + M _ {\\mathrm {F C}} P _ {\\mathrm {F C}} + M _ {\\mathrm {H T}}\\right)} \\tag {7} \\\\ + \\frac {M _ {\\mathrm {H} 2}}{\\mathrm {H C E} _ {\\mathrm {V}} \\left(M _ {\\mathrm {V}} + \\frac {E _ {\\mathrm {B}} k _ {\\mathrm {w} , \\mathrm {B}}}{\\mathrm {S E} _ {\\mathrm {B C}}} + M _ {\\mathrm {H} 2} + M _ {\\mathrm {F C}} P _ {\\mathrm {F C}} + M _ {\\mathrm {H T}}\\right)} \\\\ \\end{array}\n$$\n",
+        "text_format": "latex",
+        "bbox": [
+            536,
+            298,
+            927,
+            386
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Plotting equation (7) as a function of stored hydrogen mass (other parameter assumptions in Supplementary Table 3) results in lower vehicle costs and considerably longer achievable ranges, owing to the smaller size of the fuel-cell system (Fig. 7a). Using long-term projected costs and  $800\\mathrm{km}$  of range, a mid-size plug-in hybrid FCEV could be US\\ $5,000 less expensive than a mid-size Li-ion BEV and US\\$ 6,000 more expensive than an average mid-size ICEV, making them more attractive to a sizeable portion of US consumers (Fig. 2). Hybrid FCEV trucks enabling ranges of nearly  $2,000\\mathrm{km}$  are also in development[86].",
+        "bbox": [
+            502,
+            398,
+            929,
+            532
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "A greater barrier to FCEV adoption is the current lack of infrastructure for hydrogen transportation and distribution[74,87]. The capital cost of a hydrogen refilling station (including hydrogen delivery or on-site production) can range from 1 to 10 million US$[88,89], which is much larger than that for an EV fast-charging station (less than 0.2 million US$[90]). Therefore, in the near-term, FCEVs and hydrogen infrastructure development are best suited to the high-utilization commercial vehicle sector, in which a small number of strategically located hydrogen stations could service pre-planned high-utilization driving routes to justify their high investment cost[74]. At large scales, however, it may be more expensive to upgrade the electrical grid to accommodate the charging demands of BEVs than to install a hydrogen refuelling network.",
+        "bbox": [
+            502,
+            532,
+            929,
+            705
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Another consideration for widespread FCEV adoption is their energy efficiency relative to batteries. The entire 'green mobile hydrogen cycle', which includes storing energy as hydrogen gas through electrolysis of water, compression (and transportation if necessary) of the hydrogen gas, and conversion of hydrogen back to power in an FCEV, is typically around  $25 - 30\\%$  efficient (without heat recovery and utilization)[74,91]. Industrial hydrogen is available at present with higher efficiency, albeit with higher carbon emissions[92]. For comparison, the total efficiency for charging and driving a BEV is around  $80 - 85\\%$ [93], meaning that an FCEV could require about 2.5-3.5 times as much energy from the power grid to drive the same distance. But the full cost comparison between FCEV and BEV operation must include (i) the cost of upgrading the current power grid versus building a hydrogen infrastructure and (ii) consideration of how excess energy, required to meet peak demand, will be stored during times of low electricity demand. One such study of the United Kingdom indicated that an 'electrification' strategy relying only on electricity for powering end-use technologies (such as",
+        "bbox": [
+            502,
+            703,
+            929,
+            945
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "NATURE ENERGY",
+        "bbox": [
+            67,
+            32,
+            226,
+            48
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "REVIEW ARTICLE",
+        "bbox": [
+            700,
+            27,
+            932,
+            49
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "NATURE ENERGY | VOL 3 | APRIL 2018 | 279-289 | www.nature.com/natureenergy",
+        "bbox": [
+            65,
+            955,
+            465,
+            967
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "285",
+        "bbox": [
+            904,
+            959,
+            929,
+            969
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "© 2018 Macmillan Publishers Limited, part of Springer Nature. All rights reserved.",
+        "bbox": [
+            299,
+            973,
+            697,
+            984
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/14eb7b4b1307938cbd137a73a6291395953d52dc0c1b8ddcf364eafc567c6c11.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Li-ion BEV (2017)",
+            "Li-ion BEV (2040, projected costs)",
+            "Conventional FCEV (2017)"
+        ],
+        "bbox": [
+            102,
+            60,
+            453,
+            267
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/7e5c5eed6d790c1647ac801818165db5cb9fe64b795d9046d30fb844f77a352c.jpg",
+        "image_caption": [
+            "Fig. 7 | Vehicle cost as a function of driving range for Li-ion battery and hydrogen fuel-cell EVs. Curves for BEVs and FCEVs are plotted for (a) mid-size vehicle and (b) semi-trailer truck. Curves are calculated from equations (4)-(7) with the variables in Supplementary Table 3. Note that the differences between 2017 and 2040 account only for projected price reductions, and do not account for specific energy improvements of Li-ion batteries nor specific power and efficiency improvements of hydrogen fuel cells. Minimum values of specific energy and energy density and maximum values for energy storage cost and overhead factors (Supplementary Table 2) were used for the Li-ion batteries in each vehicle. The 'x' on each curve indicates the point at which the total volume of the battery pack, hydrogen tank and fuel-cell system surpasses 300 litres (mid-size vehicle) or 2,500 litres (semi-trailer truck)."
+        ],
+        "image_footnote": [
+            "- Conventional FCEV (2040, projected costs)",
+            "Plug-in hybrid FCEV (2017)",
+            "-- Plug-in hybrid FCEV (2040, projected costs)",
+            "Li-ion BEV (2017)",
+            "Li-ion BEV (2040, projected costs)",
+            "Conventional FCEV (2017)",
+            "Conventional FCEV (2040, projected costs)"
+        ],
+        "bbox": [
+            102,
+            341,
+            457,
+            550
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "BEVs) would be around three times as expensive as a 'full contribution' model in which hydrogen is the primary energy carrier for end-use technologies[94]. It should also be noted that alkaline electrolysis combined with hydrogen storage has the lowest capital costs of any other commercialized utility-scale technology, on a per-kWh basis[95].",
+        "bbox": [
+            65,
+            797,
+            489,
+            864
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Finally, the durability of PEM fuel cells is an important factor to be considered for their potential success[95,96]. Particularly for the high-utilization market, a challenge for PEM fuel cells is to demonstrate high enough durability to achieve a similar lifetime to incumbent ICEVs. Encouragingly, two buses powered by PEM fuel cells (one of which uses Ballard's FCveloCity-HD6 module)",
+        "bbox": [
+            65,
+            864,
+            490,
+            944
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/e5aa284f923ab2d6b413fd965e8520ba299646df3894b8513676ac7fc1c1bd2c.jpg",
+        "image_caption": [
+            "Fig. 8 | Suitability of alternative batteries and fuel cells to emerging"
+        ],
+        "image_footnote": [
+            "EV markets. Lead-acid (particularly lead-carbon) batteries can provide supplementary power for low-cost EVs owing to their low cost and high specific power, but they must be paired with a complementary high-energy battery due to their low specific energy and energy density. Nickel-metal hydride batteries, although they have a higher cost and lower specific energy and energy density than lithium-ion batteries, may be implemented in place of structural or energy adsorption components in long-range EVs owing to their safer internal chemistry. Lithium-sulfur batteries can offer higher specific energy and lower cost than lithium-ion batteries, and are therefore attractive to both the long-range and low-cost transportation markets. Lithium-air and zinc-air batteries have similarly attractive characteristics for both of these markets, but their relatively low cycle life, calendar life and specific power make them better suited as range-extenders to be paired with a more durable and higher-power battery. Hydrogen fuel cells are a fundamentally different technology with decoupled energy and power characteristics, which can make them more cost-effective than pure battery-powered vehicles in long-range applications. Additionally, the flexibility of hydrogen production powered by intermittent renewable energy, low cost of hydrogen storage and quick fuelling of hydrogen into FCEVs make them attractive to high-utilization transportation markets."
+        ],
+        "bbox": [
+            539,
+            67,
+            897,
+            354
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "have recently achieved over 25,000 hours of operation $^{97,98}$ , which is equivalent to 4 to 6 years and meets the US Department of Energy and Federal Transit Administration targeted lifetime for a fuel-cell powertrain $^{99}$ . Consumer FCEVs are also near their target of 5,000 hours of operation $^{100}$ , and plug-in hybrid FCEVs can provide greater reliability through optimized power shifting between the fuel cell and a larger battery $^{85}$ .",
+        "bbox": [
+            502,
+            689,
+            929,
+            786
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Outlook",
+        "text_level": 1,
+        "bbox": [
+            504,
+            797,
+            566,
+            808
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Batteries and fuel cells with improved specific energy, energy density, cost, safety and grid compatibility are necessary to electrify the long-range, low-cost and high-utilization transportation sectors. Although no technology is suitable for every application, each one discussed in this Review can help to enable at least one of the emerging EV markets (Fig. 8). High-power Pb-acid (Pb-carbon) batteries can supplement a low-power, high-specific-energy battery within a low-cost EV, while Ni-MH batteries could improve the range of Li-ion-powered EVs by providing extra energy and simultaneously replacing structural or energy adsorption components. Lithium-sulfur",
+        "bbox": [
+            502,
+            811,
+            929,
+            944
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "REVIEW ARTICLE",
+        "bbox": [
+            67,
+            27,
+            295,
+            50
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "NATURE ENERGY",
+        "bbox": [
+            771,
+            32,
+            929,
+            46
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "286",
+        "bbox": [
+            68,
+            958,
+            92,
+            969
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "NATURE ENERGY|VOL 3|APRIL 2018|279-289|www.nature.com/natureenergy",
+        "bbox": [
+            532,
+            955,
+            929,
+            967
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "© 2018 Macmillan Publishers Limited, part of Springer Nature. All rights reserved.",
+        "bbox": [
+            300,
+            973,
+            697,
+            984
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "batteries could completely replace Li-ion batteries to enhance the long-range and low-cost EV markets, while Zn-air and Li-air batteries could serve as range-extendsers to succeed in these sectors as well. Finally, fast-refuelling and grid-compatible hydrogen fuel cells are a natural fit for high-utilization transportation, while the high specific energy and energy density of hydrogen also make them attractive for long-range consumer EVs. Lithium-ion batteries possess the best combination of properties for certain electric mobility applications; however, targeted adoption of a diverse mix of battery and fuel-cell-powered EVs will increase the chance of a full transition to clean, low-carbon transportation.",
+        "bbox": [
+            63,
+            67,
+            492,
+            213
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Received: 10 September 2017; Accepted: 4 February 2018; Published online: 12 April 2018",
+        "bbox": [
+            65,
+            224,
+            430,
+            251
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "References",
+        "text_level": 1,
+        "bbox": [
+            67,
+            264,
+            149,
+            275
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "list",
+        "sub_type": "ref_text",
+        "list_items": [
+            "1. Guarnieri, M. Looking back to electric cars. In 2012 Third IEEE History of Electro-technology Conf. (HISTELCON) 1-6 (2012); https://doi.org/10.1109/HISTELCON.2012.6487583",
+            "2. Global Plug-in Sales for 2016 (EV-Volumes, accessed 3 August 2017); http://www.ev-volumes.com/news/global-plug-in-sales-for-2016/",
+            "3. Energy Technology Perspectives 2017 (IEA, 2017); http://www.iaea.org/ etp2017/",
+            "4. Castle, S. Britain to ban new diesel and gas cars by 2040. The New York Times (2017); https://www.nytimes.com/2017/07/26/world/europe/uk-diesel-petrol-emissions.html",
+            "5. Hocking, M., Kan, J., Young, P., Terry, C. & Begleiter, D. Welcome to the Lithium-ion Age. (Deutsche Bank Markets Research, 2016); http://www.belmontresources.com/LithiumReport.pdf",
+            "6. Placke, T., Kloepsch, R., Duhnen, S. & Winter, M. Lithium ion, lithium metal, and alternative rechargeable battery technologies: the odyssey for high energy density. J. Solid State Electrochem. 21, 1939-1964 (2017).",
+            "7. Saxena, S., MacDonald, J. & Moura, S. Charging ahead on the transition to electric vehicles with standard 120 V wall outlets. Appl. Energy 157, 720-728 (2015).",
+            "8. Nykvist, B. & Nilsson, M. Rapidly falling costs of battery packs for electric vehicles. Nat. Clim. Change 5, 329-332 (2015).",
+            "9. Schmidt, O., Hawkes, A., Gambhir, A. & Staffell, I. The future cost of electrical energy storage based on experience rates. Nat. Energy 6, 17110 (2017).",
+            "10. Curry, C. Lithium-ion battery costs: squeezed margins and new business models. Bloomberg New Energy Finance (accessed 14 July 2017); https://about.bnef.com/blog/lithium-ion-battery-costs-squeezed-margins-new-business-models/",
+            "11. Knupfer, S. M. et al. Electrifying Insights: How Automakers Can Drive Electrified Vehicle Sales and Profitability (McKinsey & Company, 2017); http://go.nature.com/2HsQLmP",
+            "12. Sierczchula, W., Bakker, S., Maat, K. & van Wee, B. The influence of financial incentives and other socio-economic factors on electric vehicle adoption. Energy Policy 68, 183-194 (2014).",
+            "13. Global EV Outlook 2017: Two Million and Counting (IEA, 2017); https://www.iea.org/publications/freepublications/publication/global-evoutlook-2017.html",
+            "14. Singer, M. Consumer Views on Plug-in Electric Vehicles—National Benchmark Report 2nd edn (NREL, 2016); http://www.nrel.gov/docs/fy17osti/67107.pdf",
+            "15. Li, W., Long, R., Chen, H. & Geng, J. A review of factors influencing consumer intentions to adopt battery electric vehicles. Renew. Sustain. Energy Rev. 78, 318-328 (2017).",
+            "16. Dimitropoulos, A., Rietveld, P. & van Ommeren, J. N. Consumer valuation of changes in driving range: a meta-analysis. Transp. Res. Part Policy Pract. 55, 27-45 (2013). This paper is a meta-analysis of studies investigating consumers' willingness to pay for higher driving ranges for electric vehicles.",
+            "17. Kenworthy, J. R. & Laube, F. B. Patterns of automobile dependence in cities: an international overview of key physical and economic dimensions with some implications for urban policy. Transp. Res. Part Policy Pract. 33, 691-723 (1999).",
+            "18. Liebreich, M. Bloomerberg New Energy Finance London Summit 2017: Breaking Clean (2017); https://data.bloomberglp.com/bnef/sites/14/2017/09/BNEF-Summit-London-2017-Michael-Liebreich-State-of-the-Industry.pdf",
+            "19. Dahn, J. & Ehrlich, G. M. in *Linden's Handbook of Batteries* 4th edn (ed. Reddy, T. B.) Ch. 26 (McGraw Hill, New York, 2011).",
+            "20. Andre, D. et al. Future generations of cathode materials: an automotive industry perspective. J. Mater. Chem. A 3, 6709-6732 (2015)."
+        ],
+        "bbox": [
+            67,
+            275,
+            487,
+            932
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "list",
+        "sub_type": "ref_text",
+        "list_items": [
+            "21. Hagen, M. et al. Lithium-sulfur cells: the gap between the state-of-the-art and the requirements for high energy battery cells. Adv. Energy Mater. 5, 1401986 (2015). This paper, along with refs 22, 51 and 52, evaluates the practically achievable specific energy and energy density of lithium-sulfur batteries.",
+            "22. Gröger, O., Gasteiger, H. A. & Suchsland, J.-P. Review—Electromobility: batteries or fuel cells? J. Electrochem. Soc. 162, A2605-A2622 (2015).",
+            "23. Kerman, K., Luntz, A., Viswanathan, V., Chiang, Y.-M. & Chen, Z. Review—practical challenges hindering the development of solid state Li ion batteries. J. Electrochem. Soc. 164, A1731-A1744 (2017). This paper summarizes the reported efforts and challenges in developing solid-state lithium-ion battery cells.",
+            "24. Fulton, L., Jenn, A. & Tal, G. GFEI Working Paper 16: Can We Reach 100 Million Electric Cars Worldwide by 2030? A Modelling/Scenario Analysis (Global Fuel Economy Initiative, 2017); https://www.globalfuelseconomy.org/data-and-research/publications/gfei-working-paper-16",
+            "25. McFadden, D. Conditional Logit Analysis of Qualitative Choice Behavior (1973); https://elsa.berkeley.edu/reprints/mcfadden/zarembka.pdf",
+            "26. Chinese-made electric cars. ChinaAutoWeb (accessed 31 July 2017); http://chinaautoweb.com/electric-cars/",
+            "27. The Future of Trucks: Implications for Energy and the Environment (IEA, 2017); https://www.iea.org/publications/freepublications/publication/the-future-of-trucks--implications-for-energy-and-the-environment.html",
+            "28. Li, J.-Q. Battery-electric transit bus developments and operations: a review. Int. J. Sustain. Transp. 10, 157-169 (2016).",
+            "29. Ye, Y., Saw, L. H., Shi, Y., Somasundaram, K. & Tay, A. A. O. Effect of thermal contact resistances on fast charging of large format lithium ion batteries. Electrochim. Acta 134, 327-337 (2014).",
+            "30. Liu, Q. et al. Understanding undesirable anode lithium plating issues in lithium-ion batteries. RSC Adv. 6, 88683-88700 (2016).",
+            "31. Gao, Y. et al. Lithium-ion battery aging mechanisms and life model under different charging stresses. J. Power Sources 356, 103-114 (2017).",
+            "32. Akhavan-Rezai, E., Shaaban, M. F., El-Saadany, E. F. & Zidan, A. Uncoordinated charging impacts of electric vehicles on electric distribution grids: normal and fast charging comparison. In 2012 IEEE Power and Energy Society General Meeting 1-7 (2012); https://doi.org/10.1109/PESGM.2012.6345583",
+            "33. Dharmakeerthi, C. H., Mithulananthan, N. & Saha, T. K. Impact of electric vehicle fast charging on power system voltage stability. Int. J. Electr. Power Energy Syst. 57, 241-249 (2014).",
+            "34. Liu, P., Ross, R. & Newman, A. Long-range, low-cost electric vehicles enabled by robust energy storage. MRS Energy & Sustain. Rev. J. 2, E12 (2015). This paper discusses the use of aqueous batteries with inherently sa chemistries to enable long-range and low-cost electric vehicles.",
+            "35. Sripad, S. & Viswanathan, V. Performance metrics required of next-generation batteries to make a practical electric semi truck. ACS Energy Lett. 2, 1669-1673 (2017).",
+            "36. Yamaguchi, Y. in Encyclopedia of Applied Electrochemistry (eds Kreysa, G., Ota, K. & Savinell, R. F.) 1161-1165 (Springer, New York, 2014); https://doi.org/10.1007/978-1-4419-6996-5_144",
+            "37. Liu, W., Chen, L. & Tian, J. Uncovering the evolution of lead in-use stocks in lead-acid batteries and the impact on future lead metabolism in China. *Environ. Sci. Technol.* 50, 5412-5419 (2016).",
+            "38. Jung, J., Zhang, L. & Zhang, J. Lead-Acid Battery Technologies: Fundamentals, Materials, and Applications (CRC, Boca Raton, 2015)",
+            "39. Weinert, J. X., Burke, A. F. & Wei, X. Lead-acid and lithium-ion batteries for the Chinese electric bike market and implications on future technology advancement. I. Power Sources 172, 938-945 (2007).",
+            "40. Salkind, A. & Zguris, G. Lead-Acid Batteries. in *Linden's Handbook of Batteries* 4th edn (ed. Reddy, T. B.) Ch. 16 (McGraw Hill, New York, 2011).",
+            "41. Moseley, P. T., Rand, D. A. J. & Peters, K. Enhancing the performance of lead-acid batteries with carbon—in pursuit of an understanding. J. Power Sources 295, 268-274 (2015). This paper, along with refs 42 and 43, reviews the performance of lead-carbon batteries and their power-assisting applications in hybrid electric vehicles.",
+            "42. Yang, J. et al. Review on the research of failure modes and mechanism for lead-acid batteries. Int. J. Energy Res. 41, 336-352 (2017).",
+            "43. Karden, E., Ploumen, S., Fricke, B., Miller, T. & Snyder, K. Energy storage devices for future hybrid electric vehicles. J. Power Sources 168, 2-11 (2007).",
+            "44. Jaiswal, A. & Chalasani, S. C. The role of carbon in the negative plate of the lead-acid battery. J. Energy Storage 1, 15-21 (2015).",
+            "45. The Advanced Lead-Acid Battery Consortium. Lead-Carbon Batteries to Boost Market Prospects of 48V Hybrids—ALABC (accessed 28 August 2017); http://www.alabc.org/press-releases/lead-carbon-batteries-to-boost-market-prospects-of-48v-hybrids"
+        ],
+        "bbox": [
+            507,
+            65,
+            927,
+            931
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "NATURE ENERGY",
+        "bbox": [
+            67,
+            32,
+            226,
+            48
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "REVIEW ARTICLE",
+        "bbox": [
+            700,
+            27,
+            931,
+            49
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "NATURE ENERGY | VOL 3 | APRIL 2018 | 279-289 | www.nature.com/natureenergy",
+        "bbox": [
+            67,
+            956,
+            463,
+            967
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "287",
+        "bbox": [
+            905,
+            959,
+            929,
+            968
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "© 2018 Macmillan Publishers Limited, part of Springer Nature. All rights reserved.",
+        "bbox": [
+            299,
+            973,
+            697,
+            984
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "list",
+        "sub_type": "ref_text",
+        "list_items": [
+            "46. Fetcenko, M. & Koch, J. in *Linden's Handbook of Batteries* 4th edn (ed. Reddy, T. B.) Ch. 22 (McGraw Hill, New York, 2011).",
+            "47. Manthiram, A., Fu, Y., Chung, S.-H., Zu, C. & Su, Y.-S. Rechargeable Lithium-Sulfur Batteries. Chem. Rev. 114, 11751-11787 (2014). This paper, along with refs 48-51, reviews the progress and challenges in improving the cycle life of lithium-sulfur batteries.",
+            "48. Eroglu, D., Zavadil, K. R. & Gallagher, K. G. Critical link between materials chemistry and cell-level design for high energy density and low cost lithium-sulfur transportation battery. J. Electrochem. Soc. 162, A982-A990 (2015).",
+            "49. Yin, Y.-X., Xin, S., Guo, Y.-G. & Wan, L.-J. Lithium-sulfur batteries: electrochemistry, materials, and prospects. Angew. Chem. Int. Ed. 52, 13186-13200 (2013).",
+            "50. Cheng, X.-B., Huang, J.-Q. & Zhang, Q. Review—Li metal anode in working lithium-sulfur batteries. J. Electrochem. Soc. 165, A6058–A6072 (2018).",
+            "51. Pope, M. A. & Aksay, I. A. Structural design of cathodes for Li-S batteries. Adv. Energy Mater. 5, 1500124 (2015).",
+            "52. Bonnick, P., Nagai, E. & Muldoon, J. Perspective—lithium-sulfur batteries. J. Electrochem. Soc. 165, A6005-A6007 (2018).",
+            "53. Liu, Q.-C. et al. A Flexible and wearable lithium-oxygen battery with record energy density achieved by the interlaced architecture inspired by bamboo slips. Adv. Mater. 28, 8413-8418 (2016).",
+            "54. Mizuno, F., Nakanishi, S., Kotani, Y., Yokoiishi, S. & Iba, H. Rechargeable Li-air batteries with carbonate-based liquid electrolytes. Electrochemistry 78, 403-405 (2010).",
+            "55. Luntz, A. C. & McCloskey, B. D. Nonaqueous Li-air batteries: a status report. Chem. Rev. 114, 11721-11750 (2014). This paper, along with refs 56-58, reviews the progress and challenges in improving the cycle life and practical energy density of lithium-air batteries.",
+            "56. Manthiram, A. & Li, L. Hybrid and aqueous lithium-air batteries. Adv. Energy Mater. 5 (2015).",
+            "57. Christensen, J. et al. A critical review of Li/air batteries. J. Electrochem. Soc. 159, R1-R30 (2012).",
+            "58. Gallagher, G. K. et al. Quantifying the promise of lithium-air batteries for electric vehicles. Energy Environ. Sci. 7, 1555-1563 (2014).",
+            "59. Fu, J. et al. Electrically rechargeable zinc-air batteries: progress, challenges, and perspectives. Adv. Mater. 29, 1604685 (2017). This paper, along with refs 60, 67 and 68, reviews the progress and challenges in improving the durability and energy efficiency of zinc-air batteries.",
+            "60. Li, Y. & Lu, J. Metal-air batteries: will they be the future electrochemical energy storage device of choice? ACS Energy Lett. 2, 1370-1377 (2017).",
+            "61. Blurton, K. F. & Sammells, A. F. Metal/air batteries: their status and potential—a review. J. Power Sources 4, 263-279 (1979).",
+            "62. Atwater, T. B. & Dobley, A. in *Linden's Handbook of Batteries* 4th edn (ed. Reddy, T. B.) Ch. 33 (McGraw Hill, New York, 2011)",
+            "63. Eckl, R., Burda, P., Foerg, A., Finke, H. & Lienkamp, P. D.-I. M. Alternative range extender for electric cars - zinc air batteries. In Conf. Future Automotive Technology (ed. Lienkamp, M.) 3-18 (Springer Fachmedien, Wiesbaden, 2013); https://doi.org/10.1007/978-3-658-01141-3_1",
+            "64. Bockstette, J., Habermann, K., Ogrzewalla, J., Pischinger, M. & Seibert, D. Performance plus range: combined battery concept for plug-in hybrid vehicles. SAE Int. J. Altern. Powertrains 2, 156-171 (2013).",
+            "65. Sieminski, D. Recent advances in rechargeable zinc-air battery technology. in Twelfth Annual Battery Conf. Applications and Advances 171-180 (1997); https://doi.org/10.1109/BCAA.1997.574099",
+            "66. Larsson, F., Rytinki, A., Ahmed, I., Albinsson, I. & Mellander, B.-E. Overcurrent abuse of primary prismatic zinc-air battery cells studying air supply effects on performance and safety shut-down. Batteries 3, 1 (2017).",
+            "67. Lee, D. U. et al. Recent progress and perspectives on bi-functional oxygen electrocatalysts for advanced rechargeable metal-air batteries. J. Mater. Chem. A 4, 7107-7134 (2016).",
+            "68. Mainar, A. R., Colmenares, L. C., Blázquez, J. A. & Urdampilleta, I. A brief overview of secondary zinc anode development: the key of improving zinc-based energy storage systems. Int. J. Energy Res. 42, 903-918 (2017).",
+            "69. Price, S. W. T. et al. The fabrication of a bifunctional oxygen electrode without carbon components for alkaline secondary batteries. J. Power Sources 259, 43-49 (2014).",
+            "70. Ross, P. N. & Sokol, H. The corrosion of carbon black anodes in alkaline electrolyte I. Acetylene black and the effect of cobalt catalyzation. J. Electrochem. Soc. 131, 1742-1750 (1984).",
+            "71. Cheiky, M. C. (Dreisbach Electromotive, Inc.) Air manager system for metal-air battery. US patent 5,571,630 (1996); http://www.google.com/ patents/US5571630",
+            "72. Goldstein, J. R., Harats, Y., Sharon, Y. & Naimer, N. (Electric Fuel Ltd.) Scrubber system for removing carbon dioxide from a metal-air or fuel cell battery. US patent 5595,949 (1997); http://www.google.com/patents/US5595949"
+        ],
+        "bbox": [
+            67,
+            67,
+            487,
+            941
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "list",
+        "sub_type": "ref_text",
+        "list_items": [
+            "73. Pivovar, B.  $H_{2}$  at Scale: Deeply Decarbonizing Our Energy System (NREL, 2016); http://www.nrel.gov/docs/fy16osti/66246.pdf",
+            "74. Technology Roadmap: Hydrogen and Fuel Cells (IEA, 2017); http://www.iea.org/publications/freepublications/publication/TechnologyRoadmapHydrogenandFuelCells.pdf",
+            "75. Pontes, J. Fuel Cells 2016; http://ev-sales.blogspot.com/2017/02/fuelcells-2016.html",
+            "76. Toyota Mirai US car sales figures (accessed 8 August 2017); http://carsalesbase.com/us-car-sales-data/toyota/toyota-mirai/",
+            "77. Guerrero Moreno, N., Cisneros Molina, M., Gervasio, D. & Pérez Robles, J. F. Approaches to polymer electrolyte membrane fuel cells (PEMFCs) and their cost. Renew. Sustain. Energy Rev. 52, 897-906 (2015).",
+            "78. Wei, M., Smith, S. J. & Sohn, M. D. Experience curve development and cost reduction disaggregation for fuel cell markets in Japan and the US. Appl. Energy 191, 346-357 (2017).",
+            "79. Miotti, M., Hofer, J. & Bauer, C. Integrated environmental and economic assessment of current and future fuel cell vehicles. Int. J. Life Cycle Assess. 22, 94-110 (2017).",
+            "80. Kongkanand, A. & Mathias, M. F. The priority and challenge of high-power performance of low-platinum proton-exchange membrane fuel cells. J. Phys. Chem. Lett. 7, 1127-1137 (2016). This paper, along with refs 81-83, reviews the progress and challenges in reducing the cost and improving the lifetime of hydrogen fuel cells.",
+            "81. Wang, J. Barriers of scaling-up fuel cells: cost, durability and reliability. Energy 80, 509-521 (2015).",
+            "82. Banham, D. et al. A review of the stability and durability of non-precious metal catalysts for the oxygen reduction reaction in proton exchange membrane fuel cells. J. Power Sources 285, 334-348 (2015).",
+            "83. Banham, D. et al. New insights into non-precious metal catalyst layer designs for proton exchange membrane fuel cells: improving performance and stability. J. Power Sources 344, 39-45 (2017).",
+            "84. Wagner, F. T., Lakshmanan, B. & Mathias, M. F. Electrochemistry and the future of the automobile. J. Phys. Chem. Lett. 1, 2204-2219 (2010).",
+            "85. Mercedes-Benz GLC F-CELL in 2017 will be plug-in FCEV. Fuel Cells Bull. 2016, 12 (2016).",
+            "86. Vinsnic, B. Nikola CEO: Fuel-cell class 8 truck on track for 2021 (SAE International, accessed 20 November 2017); http://articles.sae.org/15616/",
+            "87. Alazemi, J. & Andrews, J. Automotive hydrogen fuelling stations: an international review. Renew. Sustain. Energy Rev. 48, 483-499 (2015). This paper, along with ref. 74, reviews international deployments and future development of hydrogen production and fuelling infrastructure.",
+            "88. Melaina, M. & Penev, M. Hydrogen Station Cost Estimates: Comparing Hydrogen Station Cost Calculator Results with Other Recent Estimates (NREL, 2013); https://pdfssemanticscholar.org/a677/6ff7178ccc80060ebaf945c277c46aaf4dab.pdf",
+            "89. Qin, N., Brooker, P. & Srinivasan, S. Hydrogen Fueling Stations Infrastructure (2014); http://fsec.ucf.edu/en/publications/pdf/fsec-cr-1986-14.pdf",
+            "90. Schroeder, A. & Traber, T. The economics of fast charging infrastructure for electric vehicles. Energy Policy 43, 136-144 (2012).",
+            "91. Lajunen, A. & Lipman, T. Lifecycle cost assessment and carbon dioxide emissions of diesel, natural gas, hybrid electric, fuel cell hybrid and electric transit buses. Energy 106, 329-342 (2016).",
+            "92. Kalamaras, C. M. & Efstathiou, A. M. Hydrogen production technologies: current state and future developments. In Conference Papers in Science, 690627 (Hindawi Publishing Corporation, Limassol, 2013).",
+            "93. Ramachandran, S. & Stimming, U. Well to wheel analysis of low carbon alternatives for road traffic. Energy Environ. Sci. 8, 3313-3324 (2015).",
+            "94. Staffell, I. & Dodds, P. The role of hydrogen and fuel cells in future energy systems. (H2FC SUPERGEN, 2017); http://www.h2fcsupergen.com/wp-content/uploads/2015/08/J5212_H2FC_Supergen_Energy_SystemsWEB.pdf",
+            "95. Zihrul, P. et al. Voltage cycling induced losses in electrochemically active surface area and in  $\\mathrm{H}_2/$  air-performance of PEM fuel cells. J. Electrochem. Soc. 163, F492-F498 (2016).",
+            "96. Hua, T. et al. Status of hydrogen fuel cell electric buses worldwide. J. Power Sources 269, 975-993 (2014).",
+            "97. Ballard Powered Fuel Cell Electric Bus Achieves 25,000 Hours of Revenue Operation (Ballard Power Systems, accessed 8 September 2017); http://www ballard.com/modules-display/news-releases/2017/08/29/ballard-powered-fuel-cell-electric-bus-achieves-25-000-hours-of-revenue-operation",
+            "98. AC Transit's Fuel Cell Program Breaks 25,000 Hour Operating Record (AC Transit, accessed 23 November 2017); http://www.actransit.org/2017/07/11/fuel-cell-record-25k/",
+            "99. Eudy, L., Post, M. & Jeffers, M. Fuel Cell Buses in US Transit Fleets: Current Status 2016 (NREL, 2016); https://energy.gov/sites/prod/files/2016/12/f34/fcto_2016_fuel_cell_bus_report.pdf",
+            "100. Kurtz, J., Sprik, S., Ainscough, C. & Saur, G. Fuel Cell Electric Vehicle Evaluation (2017); https://www.hydrogen.energy.gov/pdfs/review17/tv001_kurtz_2017_o.pdf"
+        ],
+        "bbox": [
+            507,
+            67,
+            927,
+            943
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "REVIEW ARTICLE",
+        "bbox": [
+            65,
+            27,
+            297,
+            50
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "NATURE ENERGY",
+        "bbox": [
+            771,
+            32,
+            929,
+            46
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "288",
+        "bbox": [
+            68,
+            958,
+            92,
+            969
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "NATURE ENERGY|VOL 3|APRIL 2018|279-289|www.nature.com/natureenergy",
+        "bbox": [
+            532,
+            955,
+            929,
+            967
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "© 2018 Macmillan Publishers Limited, part of Springer Nature. All rights reserved.",
+        "bbox": [
+            300,
+            973,
+            697,
+            984
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Acknowledgements",
+        "text_level": 1,
+        "bbox": [
+            67,
+            67,
+            213,
+            79
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "We thank the Natural Sciences and Engineering Research Council of Canada for financial support. We also thank S. Knights and C. Reid (Ballard) for their feedback and comments.",
+        "bbox": [
+            65,
+            79,
+            462,
+            113
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Competing interests",
+        "text_level": 1,
+        "bbox": [
+            67,
+            134,
+            216,
+            148
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Z.C. has patents filed involving lead-carbon batteries (US 62/606,602), lithium-based batteries (US 15/548,549) and zinc-air batteries (US 15/555,668), and patents published or issued involving metal-air batteries (US 15/106,222, US 9,590,253, US 9,419,287). D.B. and S.Y. are employed by Ballard Power Systems, Inc., a provider of clean energy and fuel-cell",
+        "bbox": [
+            65,
+            148,
+            480,
+            193
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "solutions. A.H. works in the group research unit of Daimler AG, where he is involved in hydrogen fuel-cell and lithium-ion, metal-sulfur and solid-state battery projects.",
+        "bbox": [
+            504,
+            65,
+            907,
+            89
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Additional information",
+        "text_level": 1,
+        "bbox": [
+            505,
+            101,
+            672,
+            113
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Supplementary information is available for this paper at https://doi.org/10.1038/s41560-018-0108-1.",
+        "bbox": [
+            504,
+            113,
+            892,
+            135
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Reprints and permissions information is available at www.nature.com/reprints.",
+        "bbox": [
+            505,
+            140,
+            889,
+            151
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Correspondence and requests for materials should be addressed to Z.C.",
+        "bbox": [
+            505,
+            154,
+            853,
+            165
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Publisher's note: Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.",
+        "bbox": [
+            504,
+            169,
+            924,
+            192
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "NATURE ENERGY",
+        "bbox": [
+            67,
+            32,
+            225,
+            48
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "REVIEW ARTICLE",
+        "bbox": [
+            700,
+            27,
+            931,
+            49
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "NATURE ENERGY | VOL 3 | APRIL 2018 | 279-289 | www.nature.com/natureenergy",
+        "bbox": [
+            67,
+            956,
+            462,
+            967
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "289",
+        "bbox": [
+            904,
+            959,
+            927,
+            968
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "© 2018 Macmillan Publishers Limited, part of Springer Nature. All rights reserved.",
+        "bbox": [
+            300,
+            973,
+            697,
+            984
+        ],
+        "page_idx": 10
+    }
+]
