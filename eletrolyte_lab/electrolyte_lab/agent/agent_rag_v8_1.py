@@ -10,8 +10,7 @@
 
   # 3. 测试
   python test_api_tools.py
-export DEEPSEEK_API_KEY='sk-e387e1a310824ad7ac7b84f6f82cd284
-'
+export DEEPSEEK_API_KEY='sk-e387e1a310824ad7ac7b84f6f82cd284'
 ================================================================================
 """
 
